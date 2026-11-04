@@ -1,0 +1,29 @@
+{
+ "tag": "_T45",
+ "P_IT_kW": 188.0,
+ "ratios": {
+  "radiator": 1.3036286124219878,
+  "array": 0.2616966565349551,
+  "A_face": 1.318228625859883
+ },
+ "d_bus_kg": -28.02733138680469,
+ "n_built": 264,
+ "n_panels_with_added": 266,
+ "base_kg": 2606.066666666666,
+ "launch_nominal_kg": 14496.820438825784,
+ "launch_low_kg": 12375.150935159383,
+ "launch_high_kg": 20949.63340561152,
+ "kg_per_kW": 77.11074701503077,
+ "items": {
+  "1": 269.0919126617915,
+  "2": 510.5554421768725,
+  "3": 221.3,
+  "4": 452.1219690591856,
+  "5": 340.8814254913383,
+  "6": 23.83999999999999,
+  "7": 143.53287563193845,
+  "8": 2411.42089149693
+ },
+ "M_F4_relaxed_kg": 10019.661497326793,
+ "_replica_note": "replica A4_MID inputs written under the baseline file name for the overlay only (t434); not the adopted baseline"
+}

@@ -1,0 +1,94 @@
+Jun adapted: n_sat 46 layers 19 clip 3.889 0.867 pod_mount -0.88 z_arr_mm 987.8
+patched ~/gb10_work/gb10_render_replica/work/ov_Jun/experiments/poster/fleet_kin_T45.py
+patched ~/gb10_work/gb10_render_replica/work/ov_Jun/experiments/poster/fleet_full_clearance_T45.py
+patched ~/gb10_work/gb10_render_replica/work/ov_Jun/experiments/poster/fleet_stage_plan_T45.py
+patched release directions in ~/gb10_work/gb10_render_replica/work/ov_Jun/experiments/poster
+overlay ready: ~/gb10_work/gb10_render_replica/work/ov_Jun  (layout+pack = replica Jun, ESTIMATE)
+Aug adapted: n_sat 30 layers 16 clip 4.667 1.345 pod_mount -1.237 z_arr_mm 1539.0
+patched ~/gb10_work/gb10_render_replica/work/ov_Aug/experiments/poster/fleet_kin_T45.py
+patched ~/gb10_work/gb10_render_replica/work/ov_Aug/experiments/poster/fleet_full_clearance_T45.py
+patched ~/gb10_work/gb10_render_replica/work/ov_Aug/experiments/poster/fleet_stage_plan_T45.py
+patched release directions in ~/gb10_work/gb10_render_replica/work/ov_Aug/experiments/poster
+overlay ready: ~/gb10_work/gb10_render_replica/work/ov_Aug  (layout+pack = replica Aug, ESTIMATE)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.65 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.44 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 12.39 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.34 ms  (cached)
+{'n_hinge': 6, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 275.3762733667154, 'peak_latch_torque_hinge': 4, 'peak_drive_torque_max_Nm': 2604.2753313849084, 'max_sync_error_frac': 2.1145047738537164, 'bus_yaw_final_deg': -4.687113285064697, 'bus_yaw_peak_deg': 8.885467529296875, 'bus_rate_peak_deg_s': 0.8785544037818909, 'ang_mom_total_max_abs': 2.812109157655014, 'ang_mom_wing_peak_Nms': 723.4239910067214, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 0.00034439931976815163, 'bus_xy_shift_m': 0.8706479072570801, 'n_blocks': 5, 'W0': 0.1, 'block_len_m': 2.7999999999999963, 'block_kg': 240.4092071611257, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 42.98735475540161, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.67 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.46 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 12.58 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.34 ms  (cached)
+{'n_hinge': 6, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 437.26308997472745, 'peak_latch_torque_hinge': 4, 'peak_drive_torque_max_Nm': 7526.355707702386, 'max_sync_error_frac': 2.114498102561308, 'bus_yaw_final_deg': -6.196544170379639, 'bus_yaw_peak_deg': 8.885274887084961, 'bus_rate_peak_deg_s': 1.4936128854751587, 'ang_mom_total_max_abs': 2.4953116048485384, 'ang_mom_wing_peak_Nms': 1228.6313466902188, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 0.0009358302450798717, 'bus_xy_shift_m': 0.8589261770248413, 'n_blocks': 5, 'W0': 0.17, 'block_len_m': 2.7999999999999963, 'block_kg': 240.4092071611257, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 42.86793541908264, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.59 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.40 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 12.03 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.32 ms  (cached)
+{'n_hinge': 6, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 718.7550227780398, 'peak_latch_torque_hinge': 4, 'peak_drive_torque_max_Nm': 148230.00483010642, 'max_sync_error_frac': 2.1144910850162546, 'bus_yaw_final_deg': -5.719241142272949, 'bus_yaw_peak_deg': 8.88518238067627, 'bus_rate_peak_deg_s': 2.1963326930999756, 'ang_mom_total_max_abs': 4.435202667453979, 'ang_mom_wing_peak_Nms': 1806.7306344537362, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 0.0017506583437484347, 'bus_xy_shift_m': 0.861583948135376, 'n_blocks': 5, 'W0': 0.25, 'block_len_m': 2.7999999999999963, 'block_kg': 240.4092071611257, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 42.95947599411011, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.67 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.46 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 12.60 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.33 ms  (cached)
+{'n_hinge': 7, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 247.18126731762067, 'peak_latch_torque_hinge': 5, 'peak_drive_torque_max_Nm': 2604.2753313849084, 'max_sync_error_frac': 2.1950262150999444, 'bus_yaw_final_deg': -11.244626998901367, 'bus_yaw_peak_deg': 16.99217414855957, 'bus_rate_peak_deg_s': 0.8828873038291931, 'ang_mom_total_max_abs': 5.07927926779945, 'ang_mom_wing_peak_Nms': 782.9934638049461, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 0.0002774349089740835, 'bus_xy_shift_m': 0.8695415258407593, 'n_blocks': 6, 'W0': 0.1, 'block_len_m': 2.3333333333333304, 'block_kg': 200.34100596760473, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 54.97317838668823, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.58 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.40 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 11.74 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.32 ms  (cached)
+{'n_hinge': 7, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 416.65719759050086, 'peak_latch_torque_hinge': 5, 'peak_drive_torque_max_Nm': 7526.355707702386, 'max_sync_error_frac': 2.1950181966283866, 'bus_yaw_final_deg': -7.796969413757324, 'bus_yaw_peak_deg': 16.99176025390625, 'bus_rate_peak_deg_s': 1.4999521970748901, 'ang_mom_total_max_abs': 3.8584335327553845, 'ang_mom_wing_peak_Nms': 1328.852697004088, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 0.0009376915426198007, 'bus_xy_shift_m': 0.85712069272995, 'n_blocks': 6, 'W0': 0.17, 'block_len_m': 2.3333333333333304, 'block_kg': 200.34100596760473, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 54.934609174728394, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.65 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.44 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 13.10 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.33 ms  (cached)
+{'n_hinge': 7, 'n_latched': 1, 't_all_latched_s': None, 't_all_settled_s': None, 'latch_order_inversions_root_to_tip': 0, 'latch_time_spread_s': 0.0, 'peak_latch_torque_max_Nm': 3744.9614099058663, 'peak_latch_torque_hinge': 6, 'peak_drive_torque_max_Nm': 5697747.987100091, 'max_sync_error_frac': 1.6561058366057229, 'bus_yaw_final_deg': -43.41907501220703, 'bus_yaw_peak_deg': 43.41907501220703, 'bus_rate_peak_deg_s': 23.55804443359375, 'ang_mom_total_max_abs': 22850.505545228727, 'ang_mom_wing_peak_Nms': 11096.48890752153, 'bus_Izz_kgm2': 53462.17931901261, 'com_drift_m': 49.522282627585625, 'bus_xy_shift_m': 51.537132263183594, 'n_blocks': 6, 'W0': 0.25, 'block_len_m': 2.3333333333333304, 'block_kg': 200.34100596760473, 'wing_kg': 1202.0460358056284, 'dt': 0.001, 't_end': 60.0, 'wall_s': 54.92349648475647, 'label': "ASSUMED analog (repo hinge ESTIMATE values, rigid blocks, planar, zero g); not validated; the repo clip's 14 s width fold is an assumed timing, this gives a dynamics-based time to compare"}
+(b) panel FEA : max_axial {'max_abs_uz_mm': 0.849, 'max_inplane_mm': 0.006, 'theta_deg': 0, 'at_xyz_m': [0.0, 2.536, 0.0]} clearance_mm {'8mm_pitch': 2.32, '10mm_pitch': 4.32, '12mm_pitch': 6.32, '20mm_pitch': 14.32}
+(c) stack f1  : derisk/stack_stiffness.json (t440). Untied 6.9/3.3 Hz (Jun), 7.0/3.4 Hz (Aug). With bay-wall ties every 3 levels: Jun 25.4/>58 Hz (rigid wall; 24.8 at 10x compliance, 23.4 at 3x), Aug 33.3 Hz. vs Falcon guide 25/10 Hz (STATEMENT) applied to Starship (ASSUMED). Needs tie anchors on the bay wall (ASSUMED free).
+(a2) blanket strain check (box): {'pitch_6.0mm': {'substrate_25um': {'Rc_mm': 2.98, 'eps_pct': 0.42, 'ok_below_yield': True}, 'substrate_50um': {'Rc_mm': 2.95, 'eps_pct': 0.85, 'ok_below_yield': True}, 'substrate_75um': {'Rc_mm': 2.92, 'eps_pct': 1.28, 'ok_below_yield': True}, 'cells_bent_would_need_Rc_mm': 2.5, 'cell_strain_pct_if_bent_0.4mm_stack': 7.7, 'cell_free_fold_zone_mm_each_fold': 9.4}, 'verdict_rule': 'pass if substrate strain at the chosen pitch is below the assumed 3 % yield strain with cells kept off the fold line'}
+(a) Jun n=5 wfold_n5_w0.1.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Jun n=5 wfold_n5_w0.17.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Jun n=5 wfold_n5_w0.25.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Aug n=6 wfold_n6_w0.1.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Aug n=6 wfold_n6_w0.17.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Aug n=6 wfold_n6_w0.25.json: ['n_hinge', 't_latch_first_contact_s', 't_settle_2deg_s', 'n_latched', 't_all_latched_s', 't_all_settled_s', 'latch_order_inversions_root_to_tip', 'latch_time_spread_s']
+(a) Newton fold chain: MISSING or NOT latched -> FAIL

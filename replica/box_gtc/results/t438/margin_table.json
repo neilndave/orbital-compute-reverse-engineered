@@ -1,0 +1,58 @@
+{
+ "Jun": {
+  "N": 46,
+  "fold": 5,
+  "P_kW": 150.0,
+  "sat_mass_kg": 2130.4348,
+  "kW_per_t": 70.41,
+  "kW_per_t_limit": 70.0,
+  "fcc_4t_ok": true,
+  "stack_mass_t": 98.0,
+  "margin_line_before_kg": 345.38,
+  "loadpath_kg_per_sat": 24.1,
+  "loadpath_kg_per_sat_idealised_3col": 19.7,
+  "packed_levels": 19,
+  "packed_stack_top_m": 16.97,
+  "loadpath_detail": {
+   "levels": 19,
+   "stack_height_m": 16.97,
+   "posts": 998.0,
+   "rod": 103.0,
+   "pins": 7.0,
+   "shortening_mm_6g": 43.8
+  },
+  "fold_hinge_kg_per_sat": 19.4,
+  "absorbed_total_kg": 43.5,
+  "margin_line_after_kg": 301.9,
+  "margin_used_pct": 12.6,
+  "total_mass_change_kg": 0.0
+ },
+ "Aug": {
+  "N": 30,
+  "fold": 6,
+  "P_kW": 250.0,
+  "sat_mass_kg": 3266.6667,
+  "kW_per_t": 76.53,
+  "kW_per_t_limit": 75.0,
+  "fcc_4t_ok": true,
+  "stack_mass_t": 98.0,
+  "margin_line_before_kg": 535.05,
+  "loadpath_kg_per_sat": 36.2,
+  "loadpath_kg_per_sat_idealised_3col": 18.7,
+  "packed_levels": 18,
+  "packed_stack_top_m": 16.54,
+  "loadpath_detail": {
+   "levels": 18,
+   "stack_height_m": 16.54,
+   "posts": 977.0,
+   "rod": 100.0,
+   "pins": 10.0,
+   "shortening_mm_6g": 42.8
+  },
+  "fold_hinge_kg_per_sat": 64.6,
+  "absorbed_total_kg": 100.8,
+  "margin_line_after_kg": 434.2,
+  "margin_used_pct": 18.8,
+  "total_mass_change_kg": 0.0
+ }
+}

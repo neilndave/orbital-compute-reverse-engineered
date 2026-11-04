@@ -1,0 +1,450 @@
+{
+ "Jun": {
+  "N": 46,
+  "levels": 19,
+  "eff_cols": 2.42,
+  "level_height_m": 0.823,
+  "base_post_kg_per_sat": 21.7,
+  "margin_line": 345.38,
+  "margin_used_t438": 43.5,
+  "rows": [
+   {
+    "tie_every_levels": null,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 0,
+    "f_axial_Hz": 6.9,
+    "f_lat_Hz": 3.3,
+    "kappa_25Hz_axial": 13.02,
+    "kappa_10Hz_lat": 9.23,
+    "kappa_both": 13.02,
+    "post_kg_per_sat_at_kappa": 282.4,
+    "tie_hardware_kg_per_sat": 0.0,
+    "extra_kg_per_sat_vs_t438": 260.7
+   },
+   {
+    "tie_every_levels": 12,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 1,
+    "f_axial_Hz": 11.2,
+    "f_lat_Hz": 9.9,
+    "kappa_25Hz_axial": 5.0,
+    "kappa_10Hz_lat": 1.03,
+    "kappa_both": 5.0,
+    "post_kg_per_sat_at_kappa": 108.5,
+    "tie_hardware_kg_per_sat": 5.0,
+    "extra_kg_per_sat_vs_t438": 91.8
+   },
+   {
+    "tie_every_levels": 12,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 1,
+    "f_axial_Hz": 11.2,
+    "f_lat_Hz": 5.8,
+    "kappa_25Hz_axial": 5.0,
+    "kappa_10Hz_lat": 2.99,
+    "kappa_both": 5.0,
+    "post_kg_per_sat_at_kappa": 60.5,
+    "tie_hardware_kg_per_sat": 5.0,
+    "extra_kg_per_sat_vs_t438": 43.9
+   },
+   {
+    "tie_every_levels": 8,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 2,
+    "f_axial_Hz": 16.4,
+    "f_lat_Hz": 26.8,
+    "kappa_25Hz_axial": 2.32,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 2.32,
+    "post_kg_per_sat_at_kappa": 50.4,
+    "tie_hardware_kg_per_sat": 6.7,
+    "extra_kg_per_sat_vs_t438": 35.4
+   },
+   {
+    "tie_every_levels": 8,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 2,
+    "f_axial_Hz": 16.4,
+    "f_lat_Hz": 17.2,
+    "kappa_25Hz_axial": 2.32,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 2.32,
+    "post_kg_per_sat_at_kappa": 20.7,
+    "tie_hardware_kg_per_sat": 6.7,
+    "extra_kg_per_sat_vs_t438": 5.7
+   },
+   {
+    "tie_every_levels": 6,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 3,
+    "f_axial_Hz": 25.4,
+    "f_lat_Hz": 58.9,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 21.7,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": 7.6
+   },
+   {
+    "tie_every_levels": 6,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 3,
+    "f_axial_Hz": 21.5,
+    "f_lat_Hz": 41.8,
+    "kappa_25Hz_axial": 1.35,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.35,
+    "post_kg_per_sat_at_kappa": 9.9,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": -4.3
+   },
+   {
+    "tie_every_levels": 4,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 4,
+    "f_axial_Hz": 16.4,
+    "f_lat_Hz": 32.5,
+    "kappa_25Hz_axial": 2.32,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 2.32,
+    "post_kg_per_sat_at_kappa": 50.4,
+    "tie_hardware_kg_per_sat": 6.7,
+    "extra_kg_per_sat_vs_t438": 35.4
+   },
+   {
+    "tie_every_levels": 4,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 4,
+    "f_axial_Hz": 16.4,
+    "f_lat_Hz": 21.7,
+    "kappa_25Hz_axial": 2.32,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 2.32,
+    "post_kg_per_sat_at_kappa": 12.2,
+    "tie_hardware_kg_per_sat": 6.7,
+    "extra_kg_per_sat_vs_t438": -2.8
+   },
+   {
+    "tie_every_levels": 3,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 6,
+    "f_axial_Hz": 25.4,
+    "f_lat_Hz": 104.9,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 21.7,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": 7.6
+   },
+   {
+    "tie_every_levels": 3,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 6,
+    "f_axial_Hz": 25.4,
+    "f_lat_Hz": 80.8,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 4.2,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": -9.9
+   },
+   {
+    "tie_every_levels": 2,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 9,
+    "f_axial_Hz": 25.4,
+    "f_lat_Hz": 118.0,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 21.7,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": 7.6
+   },
+   {
+    "tie_every_levels": 2,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 9,
+    "f_axial_Hz": 25.4,
+    "f_lat_Hz": 95.9,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 3.2,
+    "tie_hardware_kg_per_sat": 7.6,
+    "extra_kg_per_sat_vs_t438": -10.9
+   }
+  ]
+ },
+ "Aug": {
+  "N": 30,
+  "levels": 18,
+  "eff_cols": 1.67,
+  "level_height_m": 0.849,
+  "base_post_kg_per_sat": 32.6,
+  "margin_line": 535.05,
+  "margin_used_t438": 100.8,
+  "rows": [
+   {
+    "tie_every_levels": null,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 0,
+    "f_axial_Hz": 7.0,
+    "f_lat_Hz": 3.4,
+    "kappa_25Hz_axial": 12.74,
+    "kappa_10Hz_lat": 8.58,
+    "kappa_both": 12.74,
+    "post_kg_per_sat_at_kappa": 414.9,
+    "tie_hardware_kg_per_sat": 0.0,
+    "extra_kg_per_sat_vs_t438": 382.4
+   },
+   {
+    "tie_every_levels": 12,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 1,
+    "f_axial_Hz": 11.8,
+    "f_lat_Hz": 11.3,
+    "kappa_25Hz_axial": 4.47,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 4.47,
+    "post_kg_per_sat_at_kappa": 145.5,
+    "tie_hardware_kg_per_sat": 8.2,
+    "extra_kg_per_sat_vs_t438": 121.1
+   },
+   {
+    "tie_every_levels": 12,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 1,
+    "f_axial_Hz": 11.8,
+    "f_lat_Hz": 6.8,
+    "kappa_25Hz_axial": 4.47,
+    "kappa_10Hz_lat": 2.15,
+    "kappa_both": 4.47,
+    "post_kg_per_sat_at_kappa": 84.3,
+    "tie_hardware_kg_per_sat": 8.2,
+    "extra_kg_per_sat_vs_t438": 59.9
+   },
+   {
+    "tie_every_levels": 8,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 2,
+    "f_axial_Hz": 19.2,
+    "f_lat_Hz": 34.3,
+    "kappa_25Hz_axial": 1.7,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.7,
+    "post_kg_per_sat_at_kappa": 55.4,
+    "tie_hardware_kg_per_sat": 10.9,
+    "extra_kg_per_sat_vs_t438": 33.7
+   },
+   {
+    "tie_every_levels": 8,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 2,
+    "f_axial_Hz": 17.6,
+    "f_lat_Hz": 23.1,
+    "kappa_25Hz_axial": 2.01,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 2.01,
+    "post_kg_per_sat_at_kappa": 28.7,
+    "tie_hardware_kg_per_sat": 10.9,
+    "extra_kg_per_sat_vs_t438": 7.0
+   },
+   {
+    "tie_every_levels": 6,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 3,
+    "f_axial_Hz": 21.2,
+    "f_lat_Hz": 53.9,
+    "kappa_25Hz_axial": 1.39,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.39,
+    "post_kg_per_sat_at_kappa": 45.3,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": 25.0
+   },
+   {
+    "tie_every_levels": 6,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 3,
+    "f_axial_Hz": 21.2,
+    "f_lat_Hz": 43.1,
+    "kappa_25Hz_axial": 1.39,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.39,
+    "post_kg_per_sat_at_kappa": 16.7,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": -3.6
+   },
+   {
+    "tie_every_levels": 4,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 4,
+    "f_axial_Hz": 19.2,
+    "f_lat_Hz": 48.3,
+    "kappa_25Hz_axial": 1.7,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.7,
+    "post_kg_per_sat_at_kappa": 55.4,
+    "tie_hardware_kg_per_sat": 10.9,
+    "extra_kg_per_sat_vs_t438": 33.7
+   },
+   {
+    "tie_every_levels": 4,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 4,
+    "f_axial_Hz": 19.2,
+    "f_lat_Hz": 33.9,
+    "kappa_25Hz_axial": 1.7,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.7,
+    "post_kg_per_sat_at_kappa": 13.9,
+    "tie_hardware_kg_per_sat": 10.9,
+    "extra_kg_per_sat_vs_t438": -7.8
+   },
+   {
+    "tie_every_levels": 3,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 6,
+    "f_axial_Hz": 33.3,
+    "f_lat_Hz": 161.8,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 32.6,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": 12.3
+   },
+   {
+    "tie_every_levels": 3,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 6,
+    "f_axial_Hz": 33.3,
+    "f_lat_Hz": 128.6,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 6.9,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": -13.5
+   },
+   {
+    "tie_every_levels": 2,
+    "posts": "unchanged (full-stack strength sized)",
+    "n_ties": 9,
+    "f_axial_Hz": 43.4,
+    "f_lat_Hz": 312.1,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 32.6,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": 12.3
+   },
+   {
+    "tie_every_levels": 2,
+    "posts": "re-sized to span load (credit)",
+    "n_ties": 9,
+    "f_axial_Hz": 43.4,
+    "f_lat_Hz": 250.5,
+    "kappa_25Hz_axial": 1.0,
+    "kappa_10Hz_lat": 1.0,
+    "kappa_both": 1.0,
+    "post_kg_per_sat_at_kappa": 5.1,
+    "tie_hardware_kg_per_sat": 12.3,
+    "extra_kg_per_sat_vs_t438": -15.2
+   }
+  ]
+ },
+ "wall_compliance_sensitivity": {
+  "Jun": {
+   "s=3": {
+    "x=1": 20.3,
+    "x=3": 23.4,
+    "x=10": 24.8,
+    "x=30": 25.2,
+    "x=1000": 25.4
+   },
+   "s=2": {
+    "x=1": 20.9,
+    "x=3": 23.6,
+    "x=10": 24.8,
+    "x=30": 25.2,
+    "x=1000": 25.4
+   }
+  },
+  "Aug": {
+   "s=3": {
+    "x=1": 22.3,
+    "x=3": 28.8,
+    "x=10": 32.0,
+    "x=30": 32.8,
+    "x=1000": 33.3
+   },
+   "s=2": {
+    "x=1": 26.0,
+    "x=3": 36.0,
+    "x=10": 41.5,
+    "x=30": 42.8,
+    "x=1000": 43.4
+   }
+  }
+ },
+ "kappa_for_25Hz_with_compliant_wall": {
+  "Jun": {
+   "s=3,x=10": {
+    "kappa": 1.02,
+    "extra_kg_per_sat": 7.9,
+    "ties_kg": 7.6,
+    "n_ties": 6
+   },
+   "s=3,x=3": {
+    "kappa": 1.14,
+    "extra_kg_per_sat": 10.6,
+    "ties_kg": 7.6,
+    "n_ties": 6
+   },
+   "s=2,x=10": {
+    "kappa": 1.01,
+    "extra_kg_per_sat": 7.9,
+    "ties_kg": 7.6,
+    "n_ties": 9
+   },
+   "s=2,x=3": {
+    "kappa": 1.13,
+    "extra_kg_per_sat": 10.3,
+    "ties_kg": 7.6,
+    "n_ties": 9
+   }
+  },
+  "Aug": {
+   "s=3,x=10": {
+    "kappa": 1.0,
+    "extra_kg_per_sat": 12.3,
+    "ties_kg": 12.3,
+    "n_ties": 6
+   },
+   "s=3,x=3": {
+    "kappa": 1.0,
+    "extra_kg_per_sat": 12.3,
+    "ties_kg": 12.3,
+    "n_ties": 6
+   },
+   "s=2,x=10": {
+    "kappa": 1.0,
+    "extra_kg_per_sat": 12.3,
+    "ties_kg": 12.3,
+    "n_ties": 9
+   },
+   "s=2,x=3": {
+    "kappa": 1.0,
+    "extra_kg_per_sat": 12.3,
+    "ties_kg": 12.3,
+    "n_ties": 9
+   }
+  }
+ }
+}

@@ -1,0 +1,212 @@
+{
+ "leaf_power_density_kW_per_m3_blanket_only": {
+  "Jun": {
+   "2mm": 148.8,
+   "3mm": 99.2,
+   "4mm": 74.4,
+   "5mm": 59.5,
+   "6mm": 49.6,
+   "7.5mm": 39.7,
+   "9mm": 33.1,
+   "12mm": 24.8
+  },
+  "Aug": {
+   "2mm": 148.8,
+   "3mm": 99.2,
+   "4mm": 74.4,
+   "5mm": 59.5,
+   "6mm": 49.6,
+   "7.5mm": 39.7,
+   "9mm": 33.1,
+   "12mm": 24.8
+  }
+ },
+ "pitch_equivalent_mm_for_public_kW_m3": {
+  "ROSA_flown_40": 7.44,
+  "MegaROSA_claim_50": 5.95,
+  "SOLAROSA_claim_60": 4.96,
+  "SOLAROSA_claim_80": 3.72
+ },
+ "rigid_sandwich_leaf": {
+  "4mm": {
+   "core_mm": 3.2,
+   "D_Nm": 58.9,
+   "bare_leaf_kg_m2": 0.84,
+   "with_cells_kg_m2": 1.29
+  },
+  "3mm": {
+   "core_mm": 2.2,
+   "D_Nm": 29.0,
+   "bare_leaf_kg_m2": 0.79,
+   "with_cells_kg_m2": 1.24
+  },
+  "2mm": {
+   "core_mm": 1.2,
+   "D_Nm": 9.6,
+   "bare_leaf_kg_m2": 0.74,
+   "with_cells_kg_m2": 1.19
+  }
+ },
+ "replica_array_kg_m2": {
+  "Jun_C1": 0.962,
+  "Jun_C2": 0.612,
+  "Aug_C1": 0.962
+ },
+ "newton_latch_K_per_m_width_Nm_rad_m": 35714.28571428572,
+ "leaf_vs_hinge_stiffness_ratio": {
+  "4mm": 0.0018,
+  "3mm": 0.0009,
+  "2mm": 0.0003
+ },
+ "core_mm_needed_for_leaf_stiff_equal_latch": 78.2,
+ "newton_peak_hinge_Nm_public_repo_run_k5e4": 360.0,
+ "flexible_blanket_pitch_mm_range_ASSUMED": [
+  0.8,
+  2.0
+ ],
+ "radiator": {
+  "tube_outer_mm": 5.68,
+  "repo_header_mm": 14.0,
+  "clearance_mm": {
+   "5mm": -0.68,
+   "6mm": 0.32,
+   "7mm": 1.32,
+   "8mm": 2.32,
+   "10mm": 4.32,
+   "12mm": 6.32,
+   "20mm": 14.32
+  },
+  "flat_header_7mm_tall": {
+   "width_mm": 34.2,
+   "perimeter_ratio_vs_square": 1.47,
+   "panel_len_growth_mm": 40.0
+  },
+  "flat_header_8mm_tall": {
+   "width_mm": 27.6,
+   "perimeter_ratio_vs_square": 1.27,
+   "panel_len_growth_mm": 27.0
+  },
+  "sag_mm_6g_between_7_pad_rows_simply_supported": 1.429,
+  "sag_mm_at_2x_amp": 2.858
+ },
+ "densities_kg_m3": {
+  "GB200 NVL72 rack (public dims 2236x600x1068 mm, ~1.36 t)": 949,
+  "NVL72 HPE variant (1472 kg, 2495 tall)": 921,
+  "DGX H100 8U (130.45 kg, 356x482.3x897.1 mm; NVIDIA docs)": 847,
+  "Repo rack (1814 kg in 0.6x1.2x2.296)": 1097,
+  "Starlink V2 Mini-class whole sat stowed (960 kg over ~4.1x2.7x0.3 m; 3rd-party dims, INFERENCE)": 289,
+  "Repo equipment default (rho 400)": 400
+ },
+ "equip_check_Jun_C1": {
+  "non_array_rack_rad_mass_kg": 1069,
+  "Veq_at_400_m3": 2.58,
+  "implied_density_if_all_boxed": {
+   "400": 414,
+   "600": 621,
+   "800": 827
+  },
+  "mass_excl_margin_mmod_adapter_kg": 524
+ },
+ "loadpath": {
+  "Jun_N46_2130kg": {
+   "N": 46,
+   "levels": 16,
+   "stack_height_m": 14.24,
+   "base_post_area_cm2": 104.0,
+   "n_posts_per_sat": 4,
+   "post_area_cm2_each_base": 26.0,
+   "post_mass_kg_total": 817.0,
+   "rod_mass_kg_total": 90.0,
+   "pin_mass_kg_total": 6.0,
+   "total_added_kg": 912.0,
+   "added_kg_per_sat": 19.8,
+   "stack_shortening_mm_6g": 34.0,
+   "base_shear_MN": 0.84,
+   "base_axial_MN_per_col": 2.51
+  },
+  "Jun_N44_2130kg": {
+   "N": 44,
+   "levels": 15,
+   "stack_height_m": 13.35,
+   "base_post_area_cm2": 97.5,
+   "n_posts_per_sat": 4,
+   "post_area_cm2_each_base": 24.4,
+   "post_mass_kg_total": 721.0,
+   "rod_mass_kg_total": 79.0,
+   "pin_mass_kg_total": 5.0,
+   "total_added_kg": 805.0,
+   "added_kg_per_sat": 18.3,
+   "stack_shortening_mm_6g": 31.9,
+   "base_shear_MN": 0.78,
+   "base_axial_MN_per_col": 2.35
+  },
+  "Aug_N30_3267kg": {
+   "N": 30,
+   "levels": 10,
+   "stack_height_m": 8.9,
+   "base_post_area_cm2": 99.7,
+   "n_posts_per_sat": 4,
+   "post_area_cm2_each_base": 24.9,
+   "post_mass_kg_total": 507.0,
+   "rod_mass_kg_total": 54.0,
+   "pin_mass_kg_total": 5.0,
+   "total_added_kg": 566.0,
+   "added_kg_per_sat": 18.9,
+   "stack_shortening_mm_6g": 21.3,
+   "base_shear_MN": 0.8,
+   "base_axial_MN_per_col": 2.4
+  },
+  "Jun_N35": {
+   "N": 35,
+   "levels": 12,
+   "stack_height_m": 10.68,
+   "base_post_area_cm2": 78.0,
+   "n_posts_per_sat": 4,
+   "post_area_cm2_each_base": 19.5,
+   "post_mass_kg_total": 468.0,
+   "rod_mass_kg_total": 51.0,
+   "pin_mass_kg_total": 4.0,
+   "total_added_kg": 523.0,
+   "added_kg_per_sat": 14.9,
+   "stack_shortening_mm_6g": 25.5,
+   "base_shear_MN": 0.63,
+   "base_axial_MN_per_col": 1.88
+  },
+  "Aug_N25": {
+   "N": 25,
+   "levels": 9,
+   "stack_height_m": 8.01,
+   "base_post_area_cm2": 89.8,
+   "n_posts_per_sat": 4,
+   "post_area_cm2_each_base": 22.4,
+   "post_mass_kg_total": 414.0,
+   "rod_mass_kg_total": 44.0,
+   "pin_mass_kg_total": 5.0,
+   "total_added_kg": 463.0,
+   "added_kg_per_sat": 18.5,
+   "stack_shortening_mm_6g": 19.1,
+   "base_shear_MN": 0.72,
+   "base_axial_MN_per_col": 2.16
+  }
+ },
+ "mass_ceiling": {
+  "Jun": {
+   "without": 46,
+   "with_added": 45
+  },
+  "Aug": {
+   "without": 30,
+   "with_added": 29
+  }
+ },
+ "margin_fraction_used": {
+  "Jun": 0.057,
+  "Aug": 0.035
+ },
+ "margin_lines_kg": {
+  "Jun_C1": 345.4,
+  "Aug_C1": 535.0,
+  "adapter_line_per_sat": 62.0,
+  "structure_line_Jun": 106.9
+ }
+}

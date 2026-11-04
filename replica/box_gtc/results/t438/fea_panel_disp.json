@@ -1,0 +1,52 @@
+{
+ "max_axial": {
+  "max_abs_uz_mm": 0.849,
+  "max_inplane_mm": 0.006,
+  "theta_deg": 0,
+  "at_xyz_m": [
+   0.0,
+   2.536,
+   0.0
+  ]
+ },
+ "max_lateral": {
+  "max_abs_uz_mm": 0.522,
+  "max_inplane_mm": 0.004,
+  "theta_deg": 0,
+  "at_xyz_m": [
+   0.0,
+   2.536,
+   0.0
+  ]
+ },
+ "tension_lat": {
+  "max_abs_uz_mm": 0.241,
+  "max_inplane_mm": 0.003,
+  "theta_deg": 180,
+  "at_xyz_m": [
+   0.0,
+   2.536,
+   0.0
+  ]
+ },
+ "max_tension": {
+  "max_abs_uz_mm": 0.288,
+  "max_inplane_mm": 0.002,
+  "theta_deg": 180,
+  "at_xyz_m": [
+   0.0,
+   2.536,
+   0.0
+  ]
+ },
+ "clearance_mm": {
+  "8mm_pitch": 2.32,
+  "10mm_pitch": 4.32,
+  "12mm_pitch": 6.32,
+  "20mm_pitch": 14.32
+ },
+ "unit_1g_max_uz_mm": 0.1403,
+ "mass_kg": 5.712544020972759,
+ "n_nodes": 14761,
+ "label": "ESTIMATE: repo P8a O5_T45 panel + stack_7station pad layout (ASSUMED), quasi-static, header as lumped mass; relative displacement of one panel vs its pads; two adjacent panels deflect together only if both are loaded alike (this is the worst-case magnitude vs the clearance, not a contact analysis)"
+}

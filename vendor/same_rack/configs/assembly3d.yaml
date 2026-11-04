@@ -1,0 +1,58 @@
+# Idealized 3-D assembly (src/rack_two_skies/assembly3d.py): geometry inputs that the co-design optimiser does NOT set.
+# What the optimiser sets (panel size, tube count, gauge field, panel count, array mass, coolant temperature) is read from
+# results/codesign/best_design.json at run time, never copied here.
+# Every input carries tag (C cited / D derived / E ESTIMATE) and source; tests/test_assembly3d.py enforces it.
+meta:
+  name: assembly3d
+  status: IDEALIZED_NOT_A_FLIGHT_DESIGN
+  written: "2026-10-29 Taipei (Oct 28 PT)"
+  scope: "Radiator wings, solar array wings, bus and rack envelope, deployed and stowed. Left out: harness, mechanisms, bolts, blankets, attitude control, hinge kinematics, deployment dynamics. Every dimension below is an ESTIMATE unless tagged C or D."
+
+launch_vehicle:
+  name:    {value: "SpaceX Starship (Starship + Super Heavy)", tag: C, source: "SpaceX's own Starmind page names Starship as the delivery vehicle for its AI satellites (section 'Mass to Orbit': Starship's fully reusable architecture and payload capacity are critical for deploying large, heavy AI satellites): https://www.spacex.com/spacexai/starmind , read 2026-10-29. See docs/CAD_3D.md section 1 for the full evidence list"}
+  payload_envelope_diameter_m: {value: 8.0, tag: C, source: "Starship Users Guide, initial release (March 2020), Figure 4 'Starship payload volume (dimensions in m)': diameter 8.00 m dynamic envelope: https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf (mirror of the SpaceX PDF; the current SpaceX site publishes no newer guide). Version uncertainty: this guide pre-dates the V2 and V3 vehicles"}
+  payload_envelope_cylinder_height_m: {value: 8.0, tag: C, source: "same guide as above (https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf), Figure 4: the cylinder runs from station 0 to station 8 m"}
+  payload_envelope_ogive:
+    value:
+      # (station m, radius m) read from Figure 4 of the guide; station 8 radius is the cylinder radius (4.00 m)
+      - [8.0, 4.00]
+      - [9.0, 3.85]
+      - [10.0, 3.68]
+      - [11.0, 3.49]
+      - [12.0, 3.27]
+      - [13.0, 3.04]
+      - [14.0, 2.78]
+      - [15.0, 2.51]
+      - [16.0, 2.20]
+      - [17.24, 1.80]
+    tag: C
+    source: "same guide (https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf), Figure 4 (radii column and station column read by eye from the figure at 130 dpi; values are to the two decimals printed on the figure)"
+  extended_volume_height_m: {value: 22.0, tag: C, source: "same guide (https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf), section Payload volume: an extended payload volume is available for payloads requiring up to 22 m of height"}
+  payload_mass_leo_t: {value: 100.0, tag: C, source: "SpaceX Starship page, 'designed to carry more than 100 metric tonnes to orbit in a fully reusable configuration' (100+ t): https://www.spacex.com/vehicles/starship/ , read 2026-10-29. No SSO figure is published; Starmind targets sun-synchronous orbit, so the usable mass there is lower and unknown"}
+  bay_volume_third_party_m3: {value: 614.0, tag: E, source: "ESTIMATE (third party, not SpaceX): 614 m^3 payload bay reported for V3 by https://orbitcodex.com/spacecraft/starship-v3 ; used only as a plausibility check on the integrated envelope volume"}
+  slot_height_m: {value: 0.8, tag: E, source: "ESTIMATE (third party, V2-era, not verified for V3): operational Starship deploys satellites through a narrow 'Pez dispenser' slot about 0.8 m high and 7.3 m wide (https://www.linkedin.com/pulse/candy-cosmos-starship-pez-dispenser-brenden-swanik-025bc ; V3 reworked the dispenser, https://ringwatchers.com/article/ship-pez-dispenser). Used only for the secondary 'flat slab' check"}
+  slot_width_m: {value: 7.3, tag: E, source: "same as slot_height_m"}
+  clearance_m: {value: 0.05, tag: E, source: "radial and axial clearance kept between stowed items and the envelope (no dynamic-envelope margin policy published)"}
+
+radiator:
+  panels_across_wing: {value: 16, tag: E, source: "panels across the wing width (0.5 m each, so the wing is 8 m wide in the Sun direction)"}
+  wings: {value: 2, tag: E, source: "two radiator wings, one each side of the bus"}
+  panel_gap_m: {value: 0.004, tag: E, source: "gap between neighbouring panels in the deployed wing (hinge line)"}
+  stack_pitch_m: {value: 0.020, tag: E, source: "stowed centre-to-centre spacing of panels in an accordion stack: 14 mm header height plus 6 mm clearance"}
+  trunk_od_m: {value: 0.040, tag: E, source: "supply and return trunk pipe outer diameter along the wing edges (illustration; its mass is inside the 4.2 kg per face-m2 overhead allowance, not counted twice)"}
+
+array:
+  bol_power_density_W_m2: {value: 400.0, tag: E, source: "ESTIMATE of beginning-of-life electrical power per m^2 of array: the baseline cites Starlink V3 at about 100 kW from 250 m^2 (van Berkel, https://arxiv.org/abs/2607.14172, quoted in configs/baseline_default.yaml), 100 kW / 250 m^2 = 400 W/m^2. Not independently checked; the optimiser sets array MASS, not area, so this sets the array area"}
+  wings: {value: 2, tag: E, source: "two array wings, one each side of the bus"}
+  wing_width_m: {value: 8.0, tag: E, source: "array wing width (along the radiator-wing direction). 8 m also makes the deployed array span about 79 m, near the 75 m wingspan on SpaceX's Starmind page (https://www.spacex.com/spacexai/starmind); a coincidence of the estimates, not a fit"}
+  leaves_per_wing: {value: 20, tag: E, source: "accordion leaves per wing"}
+  fold_across_width: {value: 2, tag: E, source: "each leaf is folded once across its width when stowed, so the stowed block is half the leaf width"}
+  stack_pitch_m: {value: 0.012, tag: E, source: "stowed spacing of array leaves (substrate plus cells plus clearance)"}
+  thickness_deployed_m: {value: 0.010, tag: E, source: "drawn thickness of a deployed leaf (illustration only; array mass is areal density times area, not volume times density)"}
+
+bus:
+  size_xyz_m: {value: [2.0, 2.0, 3.0], tag: E, source: "bus box around the rack (x across the array wings, y across the radiator wings, z toward the Sun); pumps, heat exchangers, attitude control and avionics are not designed. Its mass is NOT in the optimiser and is not assigned here"}
+  rack_size_xyz_m: {value: [0.6, 1.2, 2.2], tag: E, source: "rack envelope, typical 19-inch-class liquid-cooled rack footprint (0.6 x 1.2 m) and a 2.2 m height; NVIDIA publishes no Vera Rubin NVL72 dimensions that were checked here. Mass not assigned"}
+
+reconcile:
+  mass_tolerance: {value: 0.01, tag: D, source: "go criterion of docs/PLAN_3D_IDEALIZED.md section 3: CAD mass within 1 % of the optimiser's"}

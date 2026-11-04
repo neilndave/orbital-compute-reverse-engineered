@@ -1,0 +1,23 @@
+{
+ "label": "motor_tdep300_dt0.001_gtc_J8_C2",
+ "t_nan_newton_s": 262.0,
+ "klat": 500000.0,
+ "zlat": 0.3,
+ "newton_wall_s": 2120.133581161499,
+ "warp_wall_s": 58.17420315742493,
+ "dt": 0.001,
+ "n_latched_newton": 19,
+ "n_latched_warp": 21,
+ "max_angle_diff_deg": 0.42094966769218445,
+ "rms_angle_diff_deg": 0.2149932086467743,
+ "max_angle_diff_deg_per_hinge_p50": 0.41856080293655396,
+ "latch_time_diff_s_max": 13.266204833984375,
+ "t_latch_last_newton": null,
+ "t_latch_last_warp": 276.0429992675781,
+ "peak_torque_newton": 7.078778245210176e+29,
+ "peak_torque_warp": 253.8948516845703,
+ "peak_root_moment_newton": 1.314084137586478e+29,
+ "peak_root_moment_warp": 253.8948516845703,
+ "final_err_deg_newton": NaN,
+ "final_err_deg_warp": 0.014631516300141811
+}

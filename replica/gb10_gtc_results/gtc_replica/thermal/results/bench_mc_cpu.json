@@ -1,0 +1,1 @@
+{"kind": "mc", "device": "cpu", "draws": 2000000, "wall_s": 4.280919551849365, "p50": 376.7379976654736, "metrics": {"wall_s": 4.351, "util_mean": 6.0, "gpu_busy_s": 0.261, "power_mean_W": 11.9, "energy_Wh": 0.0142, "temp_max_C": 41.0}}

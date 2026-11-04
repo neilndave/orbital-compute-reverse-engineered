@@ -1,0 +1,1 @@
+{"state": "finished", "pid": 4047972, "device": "cpu", "profile": "tiny", "updated_pt": "2026-11-03 17:27:10", "done": 28, "total": 28, "last_chunk": "size_A4_loop_avg_F1_L60_t0p8_e92F99_343K", "note": "all chunks done", "root": "~/gb10_work/gtc_replica/smoke", "gpu_temp_C": 35.0, "zone_max_C": 39.5}

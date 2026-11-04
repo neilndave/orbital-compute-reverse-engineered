@@ -1,0 +1,45 @@
+2026-11-03 17:27:18 thermal attempt 1 device=auto
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+2026-11-03 17:27:19 runner start profile=full device=cuda:0 gpu=yes chunks total=266 todo=266 root=~/gb10_work/gtc_replica/thermal
+Module warp_fin_ref 65f94a6 load on device 'cuda:0' took 0.67 ms  (cached)
+2026-11-03 17:27:25 [1/266] G0_validate validate_fin 6.1s rate=1.65 fin solves util=2.1 T=37.0
+Module ai1_model eed5158 load on device 'cuda:0' took 0.46 ms  (cached)
+Module warp_fin_ref cb4e042 load on device 'cpu' took 1.32 ms  (cached)
+2026-11-03 17:27:27 [3/266] G0_bench bench_fin_small_cpu 1.9s rate=6.32 fin solves util=2.7 T=37.0
+Module ai1_model 57298d1 load on device 'cpu' took 0.23 ms  (cached)
+2026-11-03 17:30:22 [9/266] G2_mc_base mc_J8_loop_peak_F1_L60_t0p8_e95F100_r0 0.3s rate=12307692.31 draws util=0.0 T=43.0
+2026-11-03 17:30:23 [10/266] G2_mc_base mc_J8_loop_peak_F1_L60_t0p8_e95F100_r1 0.3s rate=12618296.53 draws util=0.0 T=43.0
+2026-11-03 17:30:26 [20/266] G2_mc_base mc_J8_loop_peak_F1_L60_t0p8_e90F85_r2 0.3s rate=12307692.31 draws util=0.0 T=41.0
+2026-11-03 17:30:30 [30/266] G2_mc_base mc_J8_loop_peak_F2_L80_t1p0_e90F85_r0 0.3s rate=12158054.71 draws util=2.0 T=41.0
+2026-11-03 17:30:35 [40/266] G2_mc_base mc_J8_loop_peak_F3_L40_t0p5_e92F95_r1 1.2s rate=3289473.68 draws util=1.0 T=42.0
+2026-11-03 17:30:39 [50/266] G2_mc_base mc_J8_loop_avg_F1_L60_t0p8_e92F99_r2 0.3s rate=12422360.25 draws util=0.0 T=41.0
+2026-11-03 17:30:45 [60/266] G2_mc_base mc_J8_loop_avg_F2_L80_t1p0_e92F99_r0 1.2s rate=3286770.75 draws util=1.3 T=43.0
+2026-11-03 17:30:49 [70/266] G2_mc_base mc_J8_loop_avg_F3_L40_t0p5_e95F100_r1 0.3s rate=12618296.53 draws util=2.0 T=42.0
+2026-11-03 17:30:53 [80/266] G2_mc_base mc_J8_loop_avg_F3_L40_t0p5_e90F85_r2 0.3s rate=12578616.35 draws util=2.0 T=42.0
+2026-11-03 17:30:57 [90/266] G2_mc_base mc_A4_loop_peak_F1_L60_t0p8_e90F85_r0 0.3s rate=12461059.19 draws util=2.0 T=42.0
+2026-11-03 17:31:00 [100/266] G2_mc_base mc_A4_loop_peak_F2_L80_t1p0_e92F95_r1 0.3s rate=12820512.82 draws util=29.0 T=42.0
+2026-11-03 17:31:05 [110/266] G2_mc_base mc_A4_loop_peak_F3_L40_t0p5_e92F99_r2 1.2s rate=3289473.68 draws util=4.7 T=42.0
+2026-11-03 17:31:10 [120/266] G2_mc_base mc_A4_loop_avg_F1_L60_t0p8_e92F99_r0 0.3s rate=12269938.65 draws util=0.0 T=42.0
+2026-11-03 17:31:14 [130/266] G2_mc_base mc_A4_loop_avg_F2_L80_t1p0_e95F100_r1 0.3s rate=11940298.51 draws util=0.0 T=44.0
+2026-11-03 17:31:18 [140/266] G2_mc_base mc_A4_loop_avg_F2_L80_t1p0_e90F85_r2 0.3s rate=12461059.19 draws util=0.0 T=44.0
+2026-11-03 17:31:22 [150/266] G2_mc_base mc_A4_loop_avg_F3_L40_t0p5_e90F85_r0 0.3s rate=12345679.01 draws util=0.0 T=44.0
+2026-11-03 17:31:23 [153/266] G3_mc_sens mc_J8_loop_peak_F1_L60_t0p8_e92F99_pt1_r0 0.3s rate=12500000.0 draws util=0.0 T=44.0
+2026-11-03 17:31:26 [160/266] G3_mc_sens mc_J8_loop_peak_F1_L60_t0p8_e92F99_pt3_r1 0.3s rate=12539184.95 draws util=0.0 T=44.0
+2026-11-03 17:31:30 [170/266] G3_mc_sens mc_J8_loop_peak_F1_L60_t0p8_e92F99_dT10_r2 0.3s rate=12307692.31 draws util=0.0 T=43.0
+2026-11-03 17:31:35 [180/266] G3_mc_sens mc_J8_loop_peak_F1_L60_t0p8_e92F99_leak_r0 1.1s rate=3707136.24 draws util=3.0 T=44.0
+2026-11-03 17:31:39 [190/266] G3_mc_sens mc_A4_loop_peak_F1_L60_t0p8_e92F99_pt2_r1 0.3s rate=12345679.01 draws util=0.0 T=44.0
+2026-11-03 17:31:43 [200/266] G3_mc_sens mc_A4_loop_peak_F1_L60_t0p8_e92F99_pt2_fg1_r2 0.3s rate=12618296.53 draws util=48.0 T=45.0
+2026-11-03 17:31:47 [210/266] G3_mc_sens mc_A4_loop_peak_F1_L60_t0p8_e92F99_pair1_r0 0.3s rate=12779552.72 draws util=10.0 T=43.0
+2026-11-03 17:31:51 [219/266] G4_area_sizing size_J8_loop_peak_F1_L60_t0p8_e92F99_370K 0.8s rate=19973368.84 draws util=80.0 T=45.0
+2026-11-03 17:31:52 [220/266] G4_area_sizing size_J8_loop_peak_F1_L60_t0p8_e90F85_370K 0.8s rate=19893899.2 draws util=80.0 T=44.0
+2026-11-03 17:32:00 [230/266] G4_area_sizing size_J8_loop_avg_F3_L40_t0p5_e90F85_370K 0.8s rate=19920318.73 draws util=83.0 T=45.0
+2026-11-03 17:32:08 [240/266] G4_area_sizing size_A4_loop_avg_F2_L80_t1p0_e90F85_370K 0.8s rate=19736842.11 draws util=79.5 T=45.0
+2026-11-03 17:32:17 [250/266] G4_area_sizing size_J8_loop_avg_F1_L60_t0p8_e90F85_343K 0.8s rate=19841269.84 draws util=84.0 T=46.0
+2026-11-03 17:32:25 [260/266] G4_area_sizing size_A4_loop_peak_F3_L40_t0p5_e90F85_343K 0.8s rate=19893899.2 draws util=80.0 T=46.0
+2026-11-03 17:32:30 FINISHED all chunks

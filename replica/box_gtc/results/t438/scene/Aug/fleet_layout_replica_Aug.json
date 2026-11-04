@@ -1,0 +1,154 @@
+{
+ "panel_bbox_mm": {
+  "x": [
+   -30.0,
+   393.4175776637853
+  ],
+  "y": [
+   -14.0,
+   2958.5579551660426
+  ],
+  "z": [
+   -7.0,
+   7.0
+  ]
+ },
+ "panel_W_mm": 363.4175776637853,
+ "panel_L_mm": 2944.5579551660426,
+ "gap_mm": 4.0,
+ "across": 7,
+ "along": 9,
+ "wing_width_mm": 2567.9230436464973,
+ "wing_length_mm": 29991.399999999998,
+ "y0_mm": 1060.0,
+ "z_top_mm": 2202.505465982712,
+ "z_arr_mm": 2457.505465982712,
+ "bus_mm": [
+  700.0,
+  2000.0,
+  4625.939938818421
+ ],
+ "rack_mm": [
+  600.0,
+  1200.0,
+  937.2146118721462
+ ],
+ "mast": {
+  "od": 200.0,
+  "z0": 2312.9699694092105,
+  "z1": 2457.505465982712
+ },
+ "leaves": 20,
+ "leaf_len_mm": 1499.5700000000002,
+ "array_width_mm": 14000.0,
+ "fold": 6,
+ "stack_pitch_mm": 6.0,
+ "array_thick_mm": 10.0,
+ "n_panels_built": 128,
+ "first_M_wing0": [
+  [
+   6.123233995736766e-17,
+   0.0,
+   -1.0,
+   0.0
+  ],
+  [
+   0.0,
+   1.0,
+   0.0,
+   1060.0
+  ],
+  [
+   1.0,
+   0.0,
+   6.123233995736766e-17,
+   -2202.505465982712
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "first_M_wing1": [
+  [
+   -6.123233995736766e-17,
+   -1.2246467991473532e-16,
+   1.0,
+   0.0
+  ],
+  [
+   7.498798913309288e-33,
+   -1.0,
+   -1.2246467991473532e-16,
+   -1060.0
+  ],
+  [
+   1.0,
+   0.0,
+   6.123233995736766e-17,
+   -2202.505465982712
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "z_lo_mm": -1283.9615218232486,
+ "panel_pitch_mm": null,
+ "al_keys": [
+  "wings",
+  "strips",
+  "leaves",
+  "width_mm",
+  "strip_width_mm",
+  "leaf_len_mm",
+  "area_total_m2",
+  "wing_len_mm",
+  "areal_density_kg_m2",
+  "fold",
+  "stack_pitch_mm",
+  "stowed_block_mm"
+ ],
+ "rl_keys": [
+  "wings",
+  "decks",
+  "across",
+  "along",
+  "n_built",
+  "n_cont",
+  "gap_mm",
+  "wing_width_mm",
+  "wing_length_mm",
+  "deck_gap_mm",
+  "extra_panels_pct",
+  "deck_height_mm"
+ ],
+ "_replica": {
+  "build": "Aug",
+  "id": "A4_C1",
+  "column_plan": {
+   "panels_per_column": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    9,
+    9
+   ],
+   "wing0_cols": 7,
+   "wing1_cols": 6
+  },
+  "label": "ASSUMED: panel mesh = adopted-baseline panel; columns/wing from the packer's radiator stack count; array deployed thickness kept at the baseline 10 mm; yoke root kept at the baseline 1.968 m (point JSON) vs 4.137 m in the repo chain params (to resolve)"
+ }
+}

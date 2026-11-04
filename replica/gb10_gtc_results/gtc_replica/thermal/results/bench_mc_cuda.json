@@ -1,0 +1,1 @@
+{"kind": "mc", "device": "cuda:0", "draws": 2000000, "wall_s": 0.08737516403198242, "p50": 376.7379976654736, "metrics": {"wall_s": 0.156, "util_mean": 0.0, "gpu_busy_s": 0.0, "power_mean_W": 11.88, "energy_Wh": 0.0005, "temp_max_C": 41.0}}

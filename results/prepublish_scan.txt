@@ -1,0 +1,23 @@
+Prepublish hygiene scan - Wed Nov 04 2026 15:43 Taipei (UTC+8), pass t448
+Tree: 781 files, 11.7 MB; largest file 2679756 B (STEP envelope, kept by decision)
+
+== Case-insensitive text patterns: personal names and usernames, host and machine names, home/box paths, ssh config and keys, API tokens, passwords, emails, IP addresses, and out-of-scope project terms
+   Result: 0 hits
+
+== Image files (8), all matplotlib figures made by this project's scripts:
+    211594 B results/figures/fig_t423e_firstprinciples.png
+    207676 B results/figures/fig_t423g_calibrated.png
+    454350 B results/figures/fig_t434_spacex_region.png
+    148339 B results/figures/fig_t436_sats_vs_pass.png
+    293846 B results/figures/fig_t436_stowed_stack.png
+    325415 B results/figures/fig_t436b_credibility.png
+    313693 B results/figures/fig_t438_final_designs.png
+    295239 B results/figures/fig_t438_stowed_stack_final.png
+   No SpaceX images or logos. No third-party images.
+
+== Blue Marble texture files: none (no *marble*/*topo* image; find matched only scripts/get_blue_marble.sh, the run-time downloader).
+   Blue Marble appears only as credit text and code references (render scripts, README, CREDITS.md).
+== Files over 5 MB: none.
+
+Substitutions applied to copies: machine names -> GB10 desktop; home and box paths -> relative or ~/gb10_work; personal names and usernames -> the author / user; sibling repo path -> vendor/same_rack; internal message ids removed; out-of-scope comments reworded.
+Left by decision: Starcloud (public company) mentions.

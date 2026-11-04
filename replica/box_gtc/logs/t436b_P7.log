@@ -1,0 +1,18 @@
+c_fold2 J8_C1 {'layers': 16, 'books': 19} vol 6.634 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 2}
+c_fold2 A4_C1 {'layers': 14, 'books': 15} vol 10.354 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 2}
+c_fold3 J8_C1 {'layers': 29, 'books': 30} vol 6.634 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 3}
+c_fold6 J8_C1 {'layers': 35, 'books': 37} vol 6.634 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 6}
+c_fold3 A4_C1 {'layers': 18, 'books': 22} vol 10.354 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 3}
+c_fold6 A4_C1 {'layers': 24, 'books': 26} vol 10.354 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 6}
+c_fold8 J8_C1 {'layers': 37, 'books': 37} vol 6.634 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 8}
+c_rp8 J8_C1 {'layers': 31, 'books': 34} vol 6.487 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.008, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books']}
+c_fold8 A4_C1 {'layers': 25, 'books': 25} vol 10.354 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'fold': 8}
+c_a05 J8_C1 {'layers': 33, 'books': 39} vol 6.634 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.05, 'gap': 0.02, 'archs': ['layers', 'books']}
+c_rp8 A4_C1 {'layers': 23, 'books': 25} vol 10.108 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.008, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books']}
+c_a05 A4_C1 {'layers': 24, 'books': 26} vol 10.354 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.05, 'gap': 0.02, 'archs': ['layers', 'books']}
+c_ns4 J8_C1 {'layers': 31, 'books': 33} vol 6.664 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 4}
+c_ns6 A4_C1 {'layers': 22, 'books': 25} vol 10.407 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 6}
+c_ns12 J8_C1 {'layers': 31, 'books': 34} vol 6.604 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 12}
+c_ns16 J8_C1 {'layers': 31, 'books': 34} vol 6.575 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 16}
+c_ns26 A4_C1 {'layers': 22, 'books': 25} vol 10.257 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 26}
+c_ns40 A4_C1 {'layers': 22, 'books': 25} vol 10.152 S {'bus': 'rackeq', 'leaf': 0.006, 'rpitch': 0.01, 'rho': 600, 'rho_rack': 949, 'adapt': 0.1, 'gap': 0.03, 'archs': ['layers', 'books'], 'n_stacks': 40}

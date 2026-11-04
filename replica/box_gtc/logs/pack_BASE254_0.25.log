@@ -1,0 +1,6 @@
+BASE254 fold2 layers n_sat 9 stacks 27 table_s 76.0
+BASE254 fold2 stack1 n_sat 8 stacks 27 table_s 76.0
+BASE254 fold2 books n_sat 11 stacks 27 table_s 76.0
+BASE254 fold4 layers n_sat 14 stacks 27 table_s 74.0
+BASE254 fold4 stack1 n_sat 12 stacks 27 table_s 74.0
+BASE254 fold4 books n_sat 14 stacks 27 table_s 74.0

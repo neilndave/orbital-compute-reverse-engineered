@@ -1,0 +1,47 @@
+   park shifted col0_02 0.2 [1. 0. 0.]
+  sat 24 phase A: park layout f=1.5 min gap 0.117
+  sat 24: yoke0     t0   0.0 dur   6.8 end   6.8  [1/18] (3s)
+  sat 24: yoke1     t0   0.0 dur   2.0 end   2.0  [2/18] (3s)
+  sat 24: col1_01   t0   0.0 dur   7.7 end   7.7  [3/18] (7s)
+  sat 24: col0_05   t0   0.0 dur   5.1 end   5.1  [4/18] (10s)
+  sat 24: col1_03   t0   3.8 dur   7.9 end  11.7  [5/18] (10s)
+  sat 24: col0_02   t0   0.0 dur   5.1 end   5.1  [6/18] (15s)
+  sat 24: col1_05   t0   0.0 dur   6.1 end   6.1  [7/18] (17s)
+  sat 24: col0_00   t0   0.0 dur   5.8 end   5.8  [8/18] (17s)
+  sat 24: col0_01   t0   2.6 dur   5.2 end   7.8  [9/18] (17s)
+  sat 24: plates1   t0   0.0 dur   2.1 end   2.1  [10/18] (18s)
+  sat 24: plates0   t0   3.0 dur   6.4 end   9.4  [11/18] (76s)
+  sat 24: col1_00   t0   3.6 dur   8.2 end  11.8  [12/18] (78s)
+  sat 24: col1_04   t0   8.6 dur   6.7 end  15.3  [13/18] (79s)
+  sat 24: col0_03   t0   5.0 dur   5.4 end  10.4  [14/18] (80s)
+  sat 24: col0_06   t0   0.2 dur   5.7 end   5.9  [15/18] (80s)
+  sat 24: col1_02   t0   3.0 dur   6.6 end   9.6  [16/18] (81s)
+  sat 24: col0_04   t0   4.4 dur   3.4 end   7.8  [17/18] (81s)
+  sat 24: pod       t0   9.0 dur   2.4 end  11.4  [18/18] (82s)
+   park shifted col0_02 0.2 [1. 0. 0.]
+  sat 24 phase B: park layout f=1.5 min gap 0.117
+  sat 24: yoke0     t0   0.0 dur   2.0 end   2.0  [1/18] (0s)
+  sat 24: yoke1     t0   0.0 dur   2.0 end   2.0  [2/18] (0s)
+    col1_01: no plan; cands 684 passed-sweep 0
+    col0_05: no plan; cands 684 passed-sweep 0
+  sat 24: col1_03   t0   0.0 dur   2.0 end   2.0  [3/18] (10s)
+  sat 24: col0_02   t0   0.0 dur   2.0 end   2.0  [4/18] (10s)
+    col1_05: no plan; cands 684 passed-sweep 0
+    col0_00: no plan; cands 684 passed-sweep 0
+  sat 24: col0_01   t0   0.0 dur   2.0 end   2.0  [5/18] (19s)
+  sat 24: plates1   t0   0.0 dur   2.0 end   2.0  [6/18] (19s)
+  sat 24: plates0   t0   0.0 dur   2.6 end   2.6  [7/18] (19s)
+    col1_00: no plan; cands 684 passed-sweep 0
+  sat 24: col1_04   t0   0.0 dur   2.0 end   2.0  [8/18] (23s)
+  sat 24: col0_03   t0   0.0 dur   2.0 end   2.0  [9/18] (23s)
+    col0_06: no plan; cands 684 passed-sweep 0
+  sat 24: col1_02   t0   0.0 dur   2.0 end   2.0  [10/18] (27s)
+  sat 24: col0_04   t0   0.0 dur   2.0 end   2.0  [11/18] (27s)
+  sat 24: pod       t0   0.0 dur   2.0 end   2.0  [12/18] (27s)
+  sat 24: col1_01   t0   0.0 dur   2.0 end   2.0  [13/18] (27s)
+  sat 24: col0_05   t0   0.0 dur   2.0 end   2.0  [14/18] (27s)
+  sat 24: col1_05   t0   0.0 dur   2.0 end   2.0  [15/18] (27s)
+  sat 24: col0_00   t0   0.0 dur   2.1 end   2.1  [16/18] (27s)
+  sat 24: col1_00   t0   0.0 dur   2.1 end   2.1  [17/18] (27s)
+  sat 24: col0_06   t0   0.0 dur   2.1 end   2.1  [18/18] (27s)
+sat 24 ready 18.5 issues [('col0_02', 'plates1', 'stowed overlap', -0.0007027410452207228), ('col0_03', 'col0_04', 'stowed overlap', -0.028917577268824463), ('col1_00', 'pod', 'stowed overlap', -0.07400000000000018), ('col1_00', 'bus', 'stowed overlap', -0.17400000000000013), ('col1_02', 'plates1', 'stowed overlap', -0.1841333881866897)]

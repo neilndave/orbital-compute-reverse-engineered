@@ -1,0 +1,11 @@
+J8_C1 fold2 layers n_sat 12 stacks 8 table_s 25.0
+J8_C1 fold2 stack1 n_sat 10 stacks 8 table_s 25.0
+J8_C1 fold2 books n_sat 17 stacks 8 table_s 25.0
+J8_C1 fold4 layers n_sat 22 stacks 8 table_s 26.2
+J8_C1 fold4 stack1 n_sat 15 stacks 8 table_s 26.2
+J8_C1 fold4 books n_sat 24 stacks 8 table_s 26.2
+Traceback (most recent call last):
+  File "replica/box_gtc/replica_pack.py", line 29, in <module>
+    json.dump(out, open(HERE / "results" / f"pack_{pid}_step{step}" + ("" if VS == "1.0" else f"_veq{VS}") + ".json", "w"), indent=1)
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'PosixPath' and 'str'

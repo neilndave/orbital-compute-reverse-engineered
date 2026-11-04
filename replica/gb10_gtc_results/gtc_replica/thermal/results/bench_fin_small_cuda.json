@@ -1,0 +1,1 @@
+{"kind": "fin_small", "device": "cuda:0", "solves": 12, "wall_s": 2.1344335079193115, "grid": [320, 8], "metrics": {"wall_s": 2.184, "util_mean": 16.0, "gpu_busy_s": 0.349, "power_mean_W": 12.07, "energy_Wh": 0.0073, "temp_max_C": 38.0}}

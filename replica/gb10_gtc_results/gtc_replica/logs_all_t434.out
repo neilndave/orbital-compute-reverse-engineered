@@ -1,0 +1,10 @@
+2026-11-03 17:32:30 thermal done (see ~/gb10_work/gtc_replica/logs/thermal_20261103_172718.log)
+2026-11-03 17:32:30 PT  [newton] start J8_C1 (motor tdep 300 s, dt 1 ms, tend 330 s, latch K 5e5 zeta 0.3)
+2026-11-03 18:08:51 PT  [newton] J8_C1 rc=0 wall=2181 s
+2026-11-03 18:08:51 PT  [newton] start J8_C2 (motor tdep 300 s, dt 1 ms, tend 330 s, latch K 5e5 zeta 0.3)
+2026-11-03 18:45:12 PT  [newton] J8_C2 rc=0 wall=2181 s
+2026-11-03 18:45:12 PT  [newton] start A4_C1 (motor tdep 300 s, dt 1 ms, tend 330 s, latch K 5e5 zeta 0.3)
+2026-11-03 19:30:43 PT  [newton] A4_C1 rc=0 wall=2731 s
+2026-11-03 19:30:43 PT  [newton] start A4_C2 (motor tdep 300 s, dt 1 ms, tend 330 s, latch K 5e5 zeta 0.3)
+2026-11-03 20:07:53 PT  [newton] A4_C2 rc=0 wall=2230 s
+2026-11-03 20:07:53 PT  [newton] all requested cases processed
