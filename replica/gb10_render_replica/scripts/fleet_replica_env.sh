@@ -7,3 +7,6 @@ source "$_D/fleet_cam_t360_env_T45.sh"
 export FLEET_TAU_W="${FLEET_TAU_W:-14.0}"
 [ -n "${WFOLD_ENV:-}" ] && [ -f "$WFOLD_ENV" ] && source "$WFOLD_ENV"
 echo "replica env: FLEET_TAU_W=$FLEET_TAU_W (14.0 = PLACEHOLDER until Newton wfold results are applied)"
+
+# [t445] hide the yoke boom while stowed (tau<0): the pack has no yoke volume, see patch_yoke_hide.py
+export FLEET_YOKE_HIDE_STOWED=1

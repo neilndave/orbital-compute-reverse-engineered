@@ -3,7 +3,7 @@ Poses come from fleet_kin_T45.py (kinematic/analytic, array accordion = Newton r
 Run through run_fleet_render.sh (start-up pinned to 4 CPUs): python render_fleet_omniverse.py spp W H frame0 frame1 outdir
 Resumable: frames whose PNG exists are skipped. Pre-flight design study, NOT a flight design, NOT a statement of how any launch provider would deploy."""
 import os, sys, time, json
-os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")   # the author Dave accepted the NVIDIA Omniverse licence terms (2026-10-30 11:39 Taipei)
+os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")   # the author accepted the NVIDIA Omniverse licence terms (2026-10-30 11:39 Taipei)
 import pathlib
 import numpy as np
 ROOT = pathlib.Path(__file__).resolve().parents[2]

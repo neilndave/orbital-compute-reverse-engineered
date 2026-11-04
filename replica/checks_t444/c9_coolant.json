@@ -1,0 +1,430 @@
+{
+ "label": "ESTIMATE; hose ID/K/corrugation factor ASSUMED; panel tube geometry 4 tubes a=6.094 mm w=1.57 mm (MMOD input set) and a=6.805 mm (repo P6 bus_model) bracketed",
+ "builds": {
+  "Jun": {
+   "loop_dT20.0": {
+    "total_kg": 98.65298831721327,
+    "pumps": 35.72144515262713,
+    "fluid": 53.542358401475106,
+    "piping": 1.389184763111043,
+    "mdot": 1.7942583732057416,
+    "Vdot_L_s": 1.8346200135028032,
+    "trunk_d_mm": 24.165630297771706,
+    "dp_kPa_model": 55.4496560189693,
+    "P_hyd_W": 101.72904867424724,
+    "n_active_by_power": 1,
+    "n_active_by_flow": 2,
+    "module_flow_L_s": 1.67
+   },
+   "loop_dT9.8": {
+    "total_kg": 214.3459389367442,
+    "pumps": 141.52,
+    "fluid": 62.86046717998457,
+    "piping": 1.9654717567596398,
+    "mdot": 3.661751782052534,
+    "Vdot_L_s": 3.7441224765363335,
+    "trunk_d_mm": 34.522328996816725,
+    "dp_kPa_model": 162.32654467583737,
+    "P_hyd_W": 607.7704644592819,
+    "n_active_by_power": 2,
+    "n_active_by_flow": 3,
+    "module_flow_L_s": 1.67
+   },
+   "tube_a6.094": {
+    "panel_Q_mL_s": 23.826233941594847,
+    "panel_dp_kPa": 2.6213319217334714,
+    "u_tube_m_s": 0.6826128010902802,
+    "bore_mm": 2.954,
+    "Re_tube": 4930.1914342585815,
+    "series_column": {
+     "n10": {
+      "Qcol_L_s": 0.23826233941594843,
+      "dp_kPa": 877.3404920444709,
+      "u_tube": 6.826128010902801
+     },
+     "n9": {
+      "Qcol_L_s": 0.21443610547435363,
+      "dp_kPa": 655.2771415676204,
+      "u_tube": 6.143515209812522
+     }
+    },
+    "parallel_design_closure": {
+     "n10": {
+      "hose_ID_for_maldist1p15_mm": 43.29421130694333,
+      "dp_root_kPa_big_hose": 3.2133878809931518,
+      "manifold_u_root_m_s": 0.1618474477970668,
+      "fluid_kg_per_column_manifolds": 84.90519387310063,
+      "orifice_ko": 273.0506225022964,
+      "dp_root_kPa_orifice": 879.5673300774373,
+      "hose_ID_orifice_mm": 12.31594561057934,
+      "fluid_kg_per_column_manifolds_orifice": 6.8708444665382435
+     },
+     "n9": {
+      "hose_ID_for_maldist1p15_mm": 40.15603476571499,
+      "dp_root_kPa_big_hose": 3.24127569085781,
+      "manifold_u_root_m_s": 0.16931926969510808,
+      "fluid_kg_per_column_manifolds": 65.73834186643404,
+      "orifice_ko": 251.09965544638868,
+      "dp_root_kPa_orifice": 815.9673519629233,
+      "hose_ID_orifice_mm": 11.683931900455159,
+      "fluid_kg_per_column_manifolds_orifice": 5.565384017895981
+     }
+    },
+    "parallel_feed": {
+     "n10_K2.0_corr2.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 69.02661932458379,
+      "maldistribution_max_over_mean": 5.948724308622916,
+      "min_over_mean": 0.07908327372469592,
+      "picard_iters": 18,
+      "resid": 2.0306608653068204e-11
+     },
+     "n10_K4.0_corr3.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 121.28906823250472,
+      "maldistribution_max_over_mean": 6.739898326047546,
+      "min_over_mean": 0.04228034511651499,
+      "picard_iters": 19,
+      "resid": 1.4322681758680234e-11
+     },
+     "n10_K0.0_corr1.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 30.950582244197726,
+      "maldistribution_max_over_mean": 4.59997566268642,
+      "min_over_mean": 0.1692737700502855,
+      "picard_iters": 16,
+      "resid": 2.1954654321745468e-11
+     },
+     "n9_K2.0_corr2.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 70.5115778848891,
+      "maldistribution_max_over_mean": 5.534068853823406,
+      "min_over_mean": 0.091957802914555,
+      "picard_iters": 199,
+      "resid": 7.803488656076831e-07
+     },
+     "n9_K4.0_corr3.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 123.79308192390369,
+      "maldistribution_max_over_mean": 6.223424808095935,
+      "min_over_mean": 0.04462663562343611,
+      "picard_iters": 19,
+      "resid": 1.2797413893907692e-11
+     },
+     "n9_K0.0_corr1.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 31.59094069294082,
+      "maldistribution_max_over_mean": 4.353690323485636,
+      "min_over_mean": 0.1812696772532551,
+      "picard_iters": 19,
+      "resid": 1.4099570384791321e-11
+     }
+    }
+   },
+   "tube_a6.805": {
+    "panel_Q_mL_s": 23.826233941594847,
+    "panel_dp_kPa": 1.1029133547180894,
+    "u_tube_m_s": 0.4427760462961518,
+    "bore_mm": 3.6677999999999997,
+    "Re_tube": 3970.7141874692875,
+    "series_column": {
+     "n10": {
+      "Qcol_L_s": 0.23826233941594843,
+      "dp_kPa": 369.13697852918153,
+      "u_tube": 4.427760462961517
+     },
+     "n9": {
+      "Qcol_L_s": 0.21443610547435363,
+      "dp_kPa": 275.7048447334736,
+      "u_tube": 3.984984416665366
+     }
+    },
+    "parallel_design_closure": {
+     "n10": {
+      "hose_ID_for_maldist1p15_mm": 52.74407235155481,
+      "dp_root_kPa_big_hose": 1.3526024921577775,
+      "manifold_u_root_m_s": 0.10904812518067868,
+      "fluid_kg_per_column_manifolds": 126.01490314765415,
+      "orifice_ko": 650.3454949685042,
+      "dp_root_kPa_orifice": 879.5673300774813,
+      "hose_ID_orifice_mm": 12.31594561057934,
+      "fluid_kg_per_column_manifolds_orifice": 6.8708444665382435
+     },
+     "n9": {
+      "hose_ID_for_maldist1p15_mm": 48.93487482441406,
+      "dp_root_kPa_big_hose": 1.364006248950793,
+      "manifold_u_root_m_s": 0.11401738239444704,
+      "fluid_kg_per_column_manifolds": 97.62343076150167,
+      "orifice_ko": 598.1738802080238,
+      "dp_root_kPa_orifice": 815.9673519629266,
+      "hose_ID_orifice_mm": 11.683931900455159,
+      "fluid_kg_per_column_manifolds_orifice": 5.565384017895981
+     }
+    },
+    "parallel_feed": {
+     "n10_K2.0_corr2.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 61.20200703800411,
+      "maldistribution_max_over_mean": 7.044042584098544,
+      "min_over_mean": 0.025104707128798497,
+      "picard_iters": 199,
+      "resid": 1.139607486023491e-06
+     },
+     "n10_K4.0_corr3.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 112.09969913358499,
+      "maldistribution_max_over_mean": 7.687042228766147,
+      "min_over_mean": 0.011262278416250947,
+      "picard_iters": 20,
+      "resid": 1.913024424718155e-11
+     },
+     "n10_K0.0_corr1.0": {
+      "hose_ID_mm": 12.31594561057934,
+      "dp_root_kPa": 25.291539649611998,
+      "maldistribution_max_over_mean": 5.801924894496493,
+      "min_over_mean": 0.0846507184661086,
+      "picard_iters": 19,
+      "resid": 1.363827645771003e-11
+     },
+     "n9_K2.0_corr2.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 63.16269019918252,
+      "maldistribution_max_over_mean": 6.4898512900152285,
+      "min_over_mean": 0.03183628294154094,
+      "picard_iters": 20,
+      "resid": 1.4905943587255267e-11
+     },
+     "n9_K4.0_corr3.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 115.25046522819036,
+      "maldistribution_max_over_mean": 7.045925577936579,
+      "min_over_mean": 0.012243214387272293,
+      "picard_iters": 20,
+      "resid": 1.7528325587449944e-11
+     },
+     "n9_K0.0_corr1.0": {
+      "hose_ID_mm": 11.683931900455159,
+      "dp_root_kPa": 26.1699777192128,
+      "maldistribution_max_over_mean": 5.4324344001601546,
+      "min_over_mean": 0.08404883835340639,
+      "picard_iters": 19,
+      "resid": 1.8091410175367006e-11
+     }
+    }
+   }
+  },
+  "Aug": {
+   "loop_dT20.0": {
+    "total_kg": 162.7541738428206,
+    "pumps": 57.87591913661578,
+    "fluid": 95.09777853902285,
+    "piping": 1.780476167181948,
+    "mdot": 2.9904306220095696,
+    "Vdot_L_s": 3.057700022504672,
+    "trunk_d_mm": 31.197694564625067,
+    "dp_kPa_model": 53.9037509965524,
+    "P_hyd_W": 164.8215006352445,
+    "n_active_by_power": 1,
+    "n_active_by_flow": 2,
+    "module_flow_L_s": 1.67
+   },
+   "loop_dT9.8": {
+    "total_kg": 268.7721385249257,
+    "pumps": 141.52,
+    "fluid": 116.72767904806477,
+    "piping": 2.5244594768609394,
+    "mdot": 6.1029196367542236,
+    "Vdot_L_s": 6.240204127560556,
+    "trunk_d_mm": 44.568135092321526,
+    "dp_kPa_model": 161.33672665100096,
+    "P_hyd_W": 1006.7741075746853,
+    "n_active_by_power": 2,
+    "n_active_by_flow": 4,
+    "module_flow_L_s": 1.67
+   },
+   "tube_a6.094": {
+    "panel_Q_mL_s": 23.888281425817752,
+    "panel_dp_kPa": 2.6281583069463195,
+    "u_tube_m_s": 0.6843904385931195,
+    "bore_mm": 2.954,
+    "Re_tube": 4943.0304744519635,
+    "series_column": {
+     "n10": {
+      "Qcol_L_s": 0.2388828142581775,
+      "dp_kPa": 881.2315073941043,
+      "u_tube": 6.843904385931196
+     },
+     "n9": {
+      "Qcol_L_s": 0.21499453283235975,
+      "dp_kPa": 658.140110086272,
+      "u_tube": 6.159513947338076
+     }
+    },
+    "parallel_design_closure": {
+     "n10": {
+      "hose_ID_for_maldist1p15_mm": 43.31666641464585,
+      "dp_root_kPa_big_hose": 3.2217606978126843,
+      "manifold_u_root_m_s": 0.1621007305999465,
+      "fluid_kg_per_column_manifolds": 84.99329108726583,
+      "orifice_ko": 272.0173572510163,
+      "dp_root_kPa_orifice": 878.5344298538599,
+      "hose_ID_orifice_mm": 12.331971571308792,
+      "fluid_kg_per_column_manifolds_orifice": 6.888737290669857
+     },
+     "n9": {
+      "hose_ID_for_maldist1p15_mm": 40.176654317287436,
+      "dp_root_kPa_big_hose": 3.249722044049322,
+      "manifold_u_root_m_s": 0.1695860005900065,
+      "fluid_kg_per_column_manifolds": 65.8058706028757,
+      "orifice_ko": 250.14369877670896,
+      "dp_root_kPa_orifice": 814.9916079770558,
+      "hose_ID_orifice_mm": 11.6991354617344,
+      "fluid_kg_per_column_manifolds_orifice": 5.579877205442584
+     }
+    },
+    "parallel_feed": {
+     "n10_K2.0_corr2.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 68.9923856870102,
+      "maldistribution_max_over_mean": 5.943598032757744,
+      "min_over_mean": 0.07946684075799505,
+      "picard_iters": 18,
+      "resid": 2.0184833660363583e-11
+     },
+     "n10_K4.0_corr3.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 121.23155681630531,
+      "maldistribution_max_over_mean": 6.735535318940014,
+      "min_over_mean": 0.042519403725147495,
+      "picard_iters": 19,
+      "resid": 1.4261757066993627e-11
+     },
+     "n10_K0.0_corr1.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 30.935980471717507,
+      "maldistribution_max_over_mean": 4.594147113501211,
+      "min_over_mean": 0.16991306724930758,
+      "picard_iters": 16,
+      "resid": 2.2117927254245925e-11
+     },
+     "n9_K2.0_corr2.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 70.47171293069138,
+      "maldistribution_max_over_mean": 5.5294663259305565,
+      "min_over_mean": 0.09240881181011734,
+      "picard_iters": 199,
+      "resid": 7.861360060383328e-07
+     },
+     "n9_K4.0_corr3.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 123.72713585286658,
+      "maldistribution_max_over_mean": 6.219578059601214,
+      "min_over_mean": 0.04487443122680493,
+      "picard_iters": 19,
+      "resid": 1.274360497100394e-11
+     },
+     "n9_K0.0_corr1.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 31.573977593520002,
+      "maldistribution_max_over_mean": 4.348397707514219,
+      "min_over_mean": 0.18195025465291886,
+      "picard_iters": 19,
+      "resid": 1.4252038448126056e-11
+     }
+    }
+   },
+   "tube_a6.805": {
+    "panel_Q_mL_s": 23.888281425817752,
+    "panel_dp_kPa": 1.1057855249126678,
+    "u_tube_m_s": 0.4439291089167147,
+    "bore_mm": 3.6677999999999997,
+    "Re_tube": 3981.0545889991554,
+    "series_column": {
+     "n10": {
+      "Qcol_L_s": 0.2388828142581775,
+      "dp_kPa": 370.7741053489265,
+      "u_tube": 4.439291089167147
+     },
+     "n9": {
+      "Qcol_L_s": 0.21499453283235975,
+      "dp_kPa": 276.90942557544105,
+      "u_tube": 3.9953619802504323
+     }
+    },
+    "parallel_design_closure": {
+     "n10": {
+      "hose_ID_for_maldist1p15_mm": 52.77186535032996,
+      "dp_root_kPa_big_hose": 1.3561270543840764,
+      "manifold_u_root_m_s": 0.10921697260991367,
+      "fluid_kg_per_column_manifolds": 126.14774290208742,
+      "orifice_ko": 647.8896980781634,
+      "dp_root_kPa_orifice": 878.5344298538671,
+      "hose_ID_orifice_mm": 12.331971571308792,
+      "fluid_kg_per_column_manifolds_orifice": 6.888737290669857
+     },
+     "n9": {
+      "hose_ID_for_maldist1p15_mm": 48.96042749281551,
+      "dp_root_kPa_big_hose": 1.3675607333388606,
+      "manifold_u_root_m_s": 0.114195011496043,
+      "fluid_kg_per_column_manifolds": 97.72541080983969,
+      "orifice_ko": 595.9018252697525,
+      "dp_root_kPa_orifice": 814.9916079770502,
+      "hose_ID_orifice_mm": 11.6991354617344,
+      "fluid_kg_per_column_manifolds_orifice": 5.579877205442584
+     }
+    },
+    "parallel_feed": {
+     "n10_K2.0_corr2.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 61.15596984385939,
+      "maldistribution_max_over_mean": 7.039611682750483,
+      "min_over_mean": 0.025290901129026575,
+      "picard_iters": 199,
+      "resid": 1.1481558211278817e-06
+     },
+     "n10_K4.0_corr3.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 112.02578327110602,
+      "maldistribution_max_over_mean": 7.683478724932341,
+      "min_over_mean": 0.01136444331092687,
+      "picard_iters": 20,
+      "resid": 1.9031351200719766e-11
+     },
+     "n10_K0.0_corr1.0": {
+      "hose_ID_mm": 12.331971571308792,
+      "dp_root_kPa": 25.271083715247816,
+      "maldistribution_max_over_mean": 5.7961051205826735,
+      "min_over_mean": 0.08513669223005292,
+      "picard_iters": 19,
+      "resid": 1.3437392162210895e-11
+     },
+     "n9_K2.0_corr2.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 63.11142696439994,
+      "maldistribution_max_over_mean": 6.485911354056753,
+      "min_over_mean": 0.03207721592455948,
+      "picard_iters": 20,
+      "resid": 1.4844904058229803e-11
+     },
+     "n9_K4.0_corr3.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 115.1689618971219,
+      "maldistribution_max_over_mean": 7.042832097039391,
+      "min_over_mean": 0.012352092338938058,
+      "picard_iters": 20,
+      "resid": 1.7436138913548376e-11
+     },
+     "n9_K0.0_corr1.0": {
+      "hose_ID_mm": 11.6991354617344,
+      "dp_root_kPa": 26.147114854634687,
+      "maldistribution_max_over_mean": 5.427286469949658,
+      "min_over_mean": 0.0845103457334332,
+      "picard_iters": 19,
+      "resid": 1.7972543818417324e-11
+     }
+    }
+   }
+  }
+ },
+ "_s": 434.2657718658447
+}
