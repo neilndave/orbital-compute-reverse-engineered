@@ -19,6 +19,8 @@ python3 "$HERE/adapt_scene.py" "$OUT" "$B"   # two-box body (equip bus + comp_po
 python3 "$HERE/patch_fleet_kin.py" "$OUT"     # replica-aware fleet_kin + clearance checker (overlay copies only)
 python3 "$HERE/patch_stage_plan.py" "$OUT"    # count-generic stage planner (overlay copy only)
 python3 "$HERE/patch_release_dirs.py" "$OUT"   # outward release for 2-3 satellites per layer (overlay copy only)
+python3 "$HERE/patch_yoke_hide.py" "$OUT"    # [t445] yoke hidden while stowed (tau<0): the pack has no yoke volume (env FLEET_YOKE_HIDE_STOWED=1)
 python3 "$HERE/patch_render_replica.py" "$OUT" "$B"   # [t441] box-tested render script/hero module, fleet-fit + shared-distance camera hooks, replica caption, optional hide-ship
+[ "${FLEET_PEZ_BUILD:-0}" = "1" ] && python3 "$HERE/pez_t460/patch_pez.py" "$OUT"   # [t460] indexed-PEZ Render 1 build (opt-in; default overlay unchanged)
 cp "$HERE/scripts/fleet_replica_env.sh" "$OUT/experiments/poster/"
 echo "overlay ready: $OUT  (layout+pack = replica $B, ESTIMATE)"

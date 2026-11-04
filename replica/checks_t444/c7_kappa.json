@@ -1,0 +1,40 @@
+{
+ "Jun": {
+  "f_axial_as_sized": 18.722531188630988,
+  "post_mass_kg": 577.1662564254812,
+  "kappa_levels_1_to_19": {
+   "kappa": 1.783,
+   "extra_post_kg": 451.9,
+   "extra_pct_of_stack": 0.461
+  },
+  "kappa_levels_16_to_19": {
+   "kappa": 1.783,
+   "extra_post_kg": 17.6,
+   "extra_pct_of_stack": 0.018
+  },
+  "kappa_levels_13_to_19": {
+   "kappa": 1.783,
+   "extra_post_kg": 47.1,
+   "extra_pct_of_stack": 0.048
+  }
+ },
+ "Aug": {
+  "f_axial_as_sized": 26.65359074361465,
+  "post_mass_kg": 536.1628227440603,
+  "kappa_levels_1_to_16": {
+   "kappa": 1.0,
+   "extra_post_kg": 0.0,
+   "extra_pct_of_stack": 0.0
+  },
+  "kappa_levels_13_to_16": {
+   "kappa": 1.0,
+   "extra_post_kg": 0.0,
+   "extra_pct_of_stack": 0.0
+  },
+  "kappa_levels_10_to_16": {
+   "kappa": 1.0,
+   "extra_post_kg": 0.0,
+   "extra_pct_of_stack": 0.0
+  }
+ }
+}

@@ -11,10 +11,11 @@
  "knobs": {
   "n": 0.6,
   "f_struct": 0.08,
-  "pcdu": 3.0,
+  "pcdu": 5.57,
   "pump_spares": 2,
   "rack_spare": 0.05,
-  "growth": 0.205
+  "growth": 0.205,
+  "pcdu_previous": 3.0
  },
  "rack_kg_per_kW": 2.723531013785149,
  "wing_W_per_kg": 332.4488883660746,
@@ -40,18 +41,18 @@
  },
  "mass_lines_kg": {
   "rack": 408.53,
-  "array": 484.53,
-  "radiator": 168.42,
-  "coolant_loop": 98.65,
-  "structure_mech": 106.9,
-  "power_electronics": 81.25,
-  "harness": 17.13,
-  "propulsion_adcs": 131.87,
+  "array": 486.87,
+  "radiator": 122.28,
+  "coolant_loop": 202.01,
+  "structure_mech": 86.57,
+  "power_electronics": 43.76,
+  "harness": 22.44,
+  "propulsion_adcs": 134.44,
   "shielding_radiation": 20.43,
-  "mmod_bumper": 137.74,
+  "mmod_bumper": 190.23,
   "avionics_links": 67.6,
-  "margin": 345.38,
-  "adapter": 62.0
+  "adapter": 0.0,
+  "margin": 345.27
  },
  "geometry_derived": {
   "label": "ASSUMED/ESTIMATE: same panel and array architecture as the adopted baseline, scaled to the replica areas",
@@ -68,8 +69,9 @@
    "wings": 2,
    "leaf_len_m": 0.89974,
    "wing_len_m": 17.9948,
-   "yoke_root_m": 1.968278816700644,
-   "basis": "A_arr / (2 wings x 14 m x 20 leaves); yoke kept at baseline (ASSUMED)"
+   "yoke_root_m": 4.137,
+   "basis": "A_arr / (2 wings x 14 m x 20 leaves); yoke_root 4.137 m ASSUMED placeholder (t456; recommended ESTIMATE; repo T45 optimiser value 4.1366; older config 1.968 m)",
+   "yoke_note_t456": "4.1366 m = array_root_m of repo results/full3d/optimized_design_T45.json (t179 codesign3d, T45) used by the replica render (FLEET_YOKE=1); 1.968 m = older optimized_design.json (70 C design), stale vs T45; 0.25 m = ROOT_OFF stub in fleet_kin_T45.py, not a design value"
   },
   "bus": {
    "rack_envelope_m": [
@@ -82,12 +84,420 @@
   }
  },
  "newton_overlay_inputs": {
-  "m_array_kg": 484.53,
+  "m_array_kg": 486.87,
   "A_array_m2": 503.85509611136735,
   "wing_len_m": 17.99482486112026,
   "array_width_m": 14.0,
-  "yoke_root_m": 1.968278816700644,
-  "mass_gaps_ratio_array": 0.19194653495440778,
-  "base_kg": 1645.9047826086937
+  "yoke_root_m": 4.137,
+  "mass_gaps_ratio_array": 0.19287352583586675,
+  "base_kg": 1643.5647826086938,
+  "note_t456": "base_kg = M - array under consumed accounting (M held at baseline); yoke_root 4.137 ASSUMED",
+  "note_t462": "array line unchanged by t462; base_kg = M - array (consumed accounting); 200 V harness and Al7075 posts are inside base_kg"
+ },
+ "t454": {
+  "label": "t454 update (the author OK Nov 4 4:22 PM Taipei): approved items 1-3 applied at the CURRENT radiator; labels in CHECKS_t454.md (STATEMENT/ESTIMATE/INFERENCE/ASSUMED)",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 484.53,
+    "radiator": 168.42,
+    "coolant_loop": 98.65,
+    "structure_mech": 106.9,
+    "power_electronics": 81.25,
+    "harness": 17.13,
+    "propulsion_adcs": 131.87,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 137.74,
+    "avionics_links": 67.6,
+    "margin": 345.38,
+    "adapter": 62.0
+   },
+   "result": {
+    "P_IT_peak_kW": 150.0,
+    "P_IT_avg_kW": 120.0,
+    "mass_kg": 2130.4347826086937,
+    "kW_per_t": 70.40816326530619,
+    "sats_per_98t": 46,
+    "sats_per_100t": 46,
+    "orbit_h_km": 600,
+    "ltan_h": 6.0,
+    "fcc_flags": []
+   }
+  },
+  "generated": "2026-11-04T17:02:36+08:00",
+  "item1_structure": {
+   "design": "bay-wall ties every 3rd level + top-level tie, posts re-sized (untied overturn dp factor 2, 3.5g+2g lateral, 6g, 6g+0.5g)",
+   "post_total_delta_kg_vs_t440": 128.295,
+   "per_sat_kg": 2.7890217391304346,
+   "f_axial_tied_Hz": 33.883,
+   "f_lat_tied_Hz": 194.69,
+   "lat2g_untied_mm": 43.757,
+   "lat2g_tied_mm": 0.012,
+   "clearance_mm": 50.0,
+   "tie_assumption": "ties rigid in axial and lateral (ASSUMED); lateral-only ties leave f_axial at ~7.9 Hz"
+  },
+  "item2_coolant": {
+   "design": "per-column pump module (n_col + 2 spares), tapered header 20 mm root -> 10 mm, per-panel orifices, 40.4 kPa column dp, 0.8 mm Al header wall",
+   "coolant_loop_kg": 237.3998089504673,
+   "coolant_loop_baseline_kg": 98.65,
+   "electric_pump_W_total": 613.3941347472963
+  },
+  "item3_mmod": {
+   "standoff_mm_for_90pct": 65,
+   "P_no_puncture_5yr": 0.905845,
+   "bumper_kg": 198.71041154013886,
+   "bumper_baseline_kg": 137.74,
+   "note": "repo Whipple (Gruen + NASA90, normal incidence); 0.5 mm bumper held; standoff hardware mass not included"
+  },
+  "thermal_open_risk": {
+   "radiator_unchanged": true,
+   "panels": 77,
+   "T_peak_K_at_render_yoke_4p137": 377.3812237720746,
+   "T_peak_K_at_config_yoke_1p968": 379.3817991927456,
+   "T_peak_K_at_render_default_root_0p25": 384.83599531955144,
+   "supply_cap_K": 370.15,
+   "note": "peak coolant supply peak modelled coolant supply 377-379 K is above the 370.15 K chip-temperature assumption and far above the chip-consistent supply of 318-348 K (CHECKS_t468.md); the old 'misses by 7-9 K' framing is retired at the current radiator; growth needed +8.0/+9.2 % (4.137 m yoke), +10.2/+11.9 % (1.968 m), +16.3/+16.4 % (0.25 m)",
+   "chip_temperature_assumption_K": 370.15,
+   "supply_cap_K_label": "legacy key name: 370.15 K is a chip-temperature assumption, NOT a coolant supply cap"
+  },
+  "grown_radiator_trade_not_adopted": {
+   "M_kg": 2450.776036356383,
+   "kW_per_t": 61.20510310807835,
+   "sats_per_98t": 39,
+   "npan": 84,
+   "note": "policy margin 20.5%; targets fail"
+  },
+  "proposal_consumed_margin_not_adopted": {
+   "note": "same total mass as the old baseline, items paid from the growth reserve",
+   "M_kg_curRad": 2130.43,
+   "kW_per_t": 70.40832132480298,
+   "sats_per_98t": 46,
+   "margin_left_kg_curRad": 140.29867582337204,
+   "margin_left_kg_grownRad": 78.94088958858413,
+   "margin_pct_of_core_grownRad": 0.04052945717508968
+  }
+ },
+ "t456": {
+  "label": "t456 update (the author decision Nov 4 5:13 PM Taipei): proposal 1 adopted = items 1-3 paid from the 20.5% growth reserve (consumed accounting), current radiator; + mass-reduction pass; yoke root 4.137 m as ASSUMED/recommended pending the author",
+  "generated": "2026-11-04T17:53:44+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 484.53,
+    "radiator": 168.42,
+    "coolant_loop": 237.4,
+    "structure_mech": 109.69,
+    "power_electronics": 81.25,
+    "harness": 17.13,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 198.71,
+    "avionics_links": 67.6,
+    "margin": 386.89,
+    "adapter": 62.0
+   },
+   "result": {
+    "P_IT_peak_kW": 150.0,
+    "P_IT_avg_kW": 120.0,
+    "mass_kg": 2377.025279553702,
+    "kW_per_t": 63.104082775326326,
+    "sats_per_98t": 41,
+    "sats_per_100t": 42,
+    "orbit_h_km": 600,
+    "ltan_h": 6.0,
+    "fcc_flags": []
+   },
+   "yoke_root_m": 1.968278816700644,
+   "note": "state after t454 (repo margin policy lines, margin 20.5% grown on core)"
+  },
+  "accounting": "consumed: total mass held at the old baseline; margin line = cap - sum(other lines); reserve% = margin/(core+bumper-propellant); core = all lines except margin, adapter, bumper",
+  "adopted": {
+   "coolant_header_taper_mm": "16 root -> 8 end, wall 0.8 mm, per-column pump module 2.5 kg (head under 148 kPa floor)",
+   "coolant_loop_kg": 202.01,
+   "mmod_bumper_kg": 190.23,
+   "standoff_mm": 62,
+   "array_pump_power_penalty_kg": 2.04,
+   "yoke_boom_delta_kg": 0.3,
+   "harness_yoke_delta_kg": 2.33,
+   "fold_hinges_kg": 0.8,
+   "yoke_root_m": 4.137,
+   "yoke_stow": "2-segment fold per wing (1.82 m segments), ASSUMED hinge 0.4 kg each; 46/30 pack check c19"
+  },
+  "result_reserve": {
+   "margin_kg": 178.7,
+   "core_kg": 1699.5,
+   "denominator_kg": 1848.89,
+   "reserve_pct": 9.665,
+   "t454_reserve_kg": 140.3,
+   "t454_reserve_pct": 7.434
+  },
+  "not_adopted": "see CHECKS_t456.md proposals table (need the author OK): header wall 0.5 mm, pump spares 2->1, post dp1/materials, 200 V bus, etc.",
+  "thermal_open_risk": {
+   "radiator_unchanged": true,
+   "panels": 77,
+   "T_peak_K_yoke_4p137": 377.3812237720746,
+   "T_peak_K_yoke_1p968": 379.3817991927456,
+   "pump_heat_dT_K_estimate": 0.4,
+   "supply_cap_K": 370.15,
+   "note": "peak coolant supply still peak modelled coolant supply 377-379 K is above the 370.15 K chip-temperature assumption and far above the chip-consistent supply of 318-348 K (CHECKS_t468.md); the old 'misses by 7-9 K' framing is retired; OPEN RISK. +0.4 K from added pump electric power (ESTIMATE, T^4 scaling, not re-run)",
+   "chip_temperature_assumption_K": 370.15,
+   "supply_cap_K_label": "legacy key name: 370.15 K is a chip-temperature assumption, NOT a coolant supply cap"
+  }
+ },
+ "t462": {
+  "label": "t462 update (the author approval Nov 4 2026 6:06 PM Taipei): yoke root 4.137 m + 2-segment fold; 200 V bus; Al7075 posts. Rejected: header wall 0.5 mm, pump spare 2->1.",
+  "generated": "2026-11-04T18:21:54+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 486.87,
+    "radiator": 168.42,
+    "coolant_loop": 202.01,
+    "structure_mech": 110.49,
+    "power_electronics": 81.25,
+    "harness": 19.46,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 190.23,
+    "avionics_links": 67.6,
+    "adapter": 62.0,
+    "margin": 178.7
+   },
+   "result": {
+    "P_IT_peak_kW": 150.0,
+    "P_IT_avg_kW": 120.0,
+    "mass_kg": 2130.4347826086937,
+    "kW_per_t": 70.40816326530619,
+    "sats_per_98t": 46,
+    "sats_per_100t": 46,
+    "orbit_h_km": 600,
+    "ltan_h": 6.0,
+    "fcc_flags": []
+   },
+   "reserve_kg": 178.7,
+   "reserve_pct": 9.665,
+   "note": "state after t456"
+  },
+  "adopted": {
+   "posts": "Al7075-T6 dp factor 2 with kappa stiffening to hold f_axial>=25 Hz and 2 g deflection<50 mm (Warp FEA c26)",
+   "structure_mech_delta_kg": -1.91,
+   "bus_V": 200,
+   "harness_kg_200V_at_yoke_4p137": 50.5,
+   "harness_model": "replica model t423e_fp.harness_kg: m=2700*2.82e-8*(2*L1)^2*(P/V)^2/(loss*P)*1.5, L1=15+(4.137-1.968)=17.169 m, loss 1 pct, P=150.0 kW (ESTIMATE)",
+   "premise_error": "t456 proposal said a 200 V bus would halve the harness (assumed a 100 V base). The replica baseline harness already assumed 300 V (lever E1c, t423g). 200 V therefore ADDS mass (x2.25 for the same loss budget). the author approved 200 V on the wrong premise; applied as approved, reversible: see alt_300V.",
+   "yoke_root_m": 4.137,
+   "yoke_stow": "2-segment fold per wing (1.82 m segments), hinges already in structure_mech (t456)"
+  },
+  "result_reserve": {
+   "margin_kg": 149.57,
+   "core_kg": 1728.63,
+   "denominator_kg": 1878.02,
+   "reserve_pct": 7.964
+  },
+  "alt_300V": {
+   "harness_kg": 22.44,
+   "margin_kg": 177.63,
+   "reserve_pct": 9.602,
+   "note": "same but bus kept at 300 V (what the replica baseline harness already assumed); ESTIMATE"
+  },
+  "sens_200V_loss2pct": {
+   "harness_kg": 25.25,
+   "margin_kg": 174.82,
+   "reserve_pct": 9.436,
+   "note": "200 V with the harness loss budget relaxed 1 %->2 % (ASSUMED option, not approved)"
+  },
+  "unmodelled": "PCDU mass at 200 V (assumed unchanged), arc-protection/encapsulation hardware, hose/fitting mass, latch hardware",
+  "thermal_open_risk_unchanged": {
+   "T_peak_K_Jun": 377.38,
+   "T_peak_K_Aug": 378.55,
+   "supply_cap_K": 370.15,
+   "chip_temperature_assumption_K": 370.15,
+   "supply_cap_K_label": "legacy key name: 370.15 K is a chip-temperature assumption, NOT a coolant supply cap"
+  }
+ },
+ "t463": {
+  "label": "t463 (the author Nov 4 2026 6:29 PM Taipei): back to a 300 V bus = t462.alt_300V applied; 200 V reverted. Posts Al7075 and yoke 4.137 m 2-seg fold stay.",
+  "generated": "2026-11-04T18:29:27+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 486.87,
+    "radiator": 168.42,
+    "coolant_loop": 202.01,
+    "structure_mech": 108.58,
+    "power_electronics": 81.25,
+    "harness": 50.5,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 190.23,
+    "avionics_links": 67.6,
+    "adapter": 62.0,
+    "margin": 149.57
+   },
+   "reserve_kg": 149.57,
+   "note": "state after t462 (200 V)"
+  },
+  "bus_V": 300,
+  "harness_kg": 22.44,
+  "result_reserve": {
+   "margin_kg": 177.63,
+   "core_kg": 1700.57,
+   "denominator_kg": 1849.96,
+   "reserve_pct": 9.602
+  },
+  "note": "400 V is evaluated as a proposal only in CHECKS_t463.md, NOT adopted"
+ },
+ "t469": {
+  "label": "t469 (the author Nov 4 2026 6:53 PM Taipei): posts Al7075-T6 -> Al-Li 2195-T8 (Falcon 9 tank-alloy heritage), Warp c27",
+  "generated": "2026-11-04T18:53:32+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 486.87,
+    "radiator": 168.42,
+    "coolant_loop": 202.01,
+    "structure_mech": 108.58,
+    "power_electronics": 81.25,
+    "harness": 22.44,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 190.23,
+    "avionics_links": 67.6,
+    "adapter": 62.0,
+    "margin": 177.63
+   },
+   "reserve_kg": 177.63
+  },
+  "posts_kg_per_sat": {
+   "old_Al7075": 13.423,
+   "new_AlLi2195": 12.213
+  },
+  "structure_mech_delta_kg": -1.21,
+  "fea": {
+   "f_axial": 31.697811711553786,
+   "lat2g_mm": 49.999934509877484,
+   "ms_strength": 0.8697915329194608,
+   "ms_buckling": 2.688076951328039,
+   "binding": "lat2g"
+  },
+  "props_ASSUMED": "E 76 GPa, Fty 530 MPa, rho 2710 kg/m3 (handbook-typical 2195-T8)",
+  "result_reserve": {
+   "margin_kg": 178.84,
+   "core_kg": 1699.36,
+   "denominator_kg": 1848.75,
+   "reserve_pct": 9.674
+  }
+ },
+ "t474": {
+  "label": "t474 (the author Nov 4 2026 7:20 PM Taipei, ): option 1 plan of record = PCDU 5.57 kW/kg (repo FP 2.15x margin stack: 12 kW/kg base / (1.2 derate x 1.3 rad x 1.15 redundancy x 1.2 housing)); 370.15 K relabelled as a chip-temperature assumption",
+  "generated": "2026-11-04T19:21:54+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 486.87,
+    "radiator": 168.42,
+    "coolant_loop": 202.01,
+    "structure_mech": 107.37,
+    "power_electronics": 81.25,
+    "harness": 22.44,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 190.23,
+    "avionics_links": 67.6,
+    "adapter": 62.0,
+    "margin": 178.84
+   },
+   "reserve_kg": 178.84
+  },
+  "pcdu": {
+   "kW_per_kg_old": 3.0,
+   "kW_per_kg_new": 5.57,
+   "implied_power_kW": 243.75,
+   "kg_old": 81.25,
+   "kg_new": 43.76,
+   "delta_kg": -37.49,
+   "basis": "t423e_fp.pcdu_kwkg stack; the old 3.0 was a further x1.86 'dual-string' knob (repo policy, no external source)"
+  },
+  "accounting": "consumed: total mass held; saved kg go to the margin line. reserve_pct = margin/(core+bumper-propellant) as t456-t469",
+  "result_reserve": {
+   "margin_kg": 216.33,
+   "core_kg": 1661.87,
+   "denominator_kg": 1811.26,
+   "reserve_pct": 11.944
+  },
+  "alt_if_removed_from_M": {
+   "mass_kg": 2092.94,
+   "kW_per_t": 71.669,
+   "sats_per_98t": 46,
+   "sats_per_100t": 47,
+   "note": "ESTIMATE; not the adopted accounting"
+  },
+  "chip_temperature_label": "370.15 K is a CHIP-temperature assumption (Musk, Jan 20 2026 post: 'GPU designed to operate at ~370 Kelvin'; STATEMENT of a GPU temperature, secondary mirrors). It is NOT a coolant supply cap. Real chip-consistent coolant supply is 318-348 K (CHECKS_t468.md item 1, ESTIMATE). Legacy key name 'supply_cap_K' kept so readers do not break."
+ },
+ "thermal_label_t474": "370.15 K is a CHIP-temperature assumption (Musk, Jan 20 2026 post: 'GPU designed to operate at ~370 Kelvin'; STATEMENT of a GPU temperature, secondary mirrors). It is NOT a coolant supply cap. Real chip-consistent coolant supply is 318-348 K (CHECKS_t468.md item 1, ESTIMATE). Legacy key name 'supply_cap_K' kept so readers do not break.",
+ "t479": {
+  "label": "t479 (the author Nov 4 2026 7:31 PM Taipei, t479u/ 'if it works update the design'): radiator fin -> K13D pitch-CFRP 70% across-fin, half-length 30 mm, 0.20 mm, bonded to Al tube (area-neutral); t481 (7:37 PM Taipei): 62 kg per-sat adapter deleted, 2 t dispenser is the interface; all freed mass to reserve",
+  "generated": "2026-11-04T19:39:21+08:00",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 408.53,
+    "array": 486.87,
+    "radiator": 168.42,
+    "coolant_loop": 202.01,
+    "structure_mech": 107.37,
+    "power_electronics": 43.76,
+    "harness": 22.44,
+    "propulsion_adcs": 134.44,
+    "shielding_radiation": 20.43,
+    "mmod_bumper": 190.23,
+    "avionics_links": 67.6,
+    "adapter": 62.0,
+    "margin": 216.33
+   },
+   "reserve_kg": 216.33
+  },
+  "fin": {
+   "old": "Al6061 F3 L40 t0.5 k167: eta_cell 0.9062, 1.4519 kg/kW (Warp, GB10 t472)",
+   "new": "K13D 70% across-fin k350 rho1900 L30 t0.20, h_bond 3000 W/m2K ASSUMED: eta_cell 0.9142, 0.9885 kg/kW (ESTIMATE, Warp)",
+   "area_factor": 0.9913,
+   "n_panels_unchanged": 77,
+   "same_heat": "eta_cell new >= old, so the same A_rad_face rejects the same heat (INFERENCE)",
+   "adhesive_kg": 7.61,
+   "adhesive_basis": "0.25 kg/m2 film adhesive x 2 bonds x pi*D/2 per 68 mm cell = 0.0924 kg/m2 planform (ASSUMED)",
+   "radiator_kg_old": 168.42,
+   "radiator_kg_new": 122.28,
+   "delta_kg": -46.14,
+   "bond_sensitivity": "area-neutral (<= current panel count) for h_bond >= 2000 W/m2K; at 1000 area x1.035 (Jun 79 / Aug 132 panels), at 500 x1.098 (ESTIMATE)",
+   "rejected": [
+    "Al 50/0.25 (the author's named option): eta_cell 0.774, +17% area -> Jun 90 panels packs 42-43 sats < 46 (c15) FAIL",
+    "K13D 80/0.15 +45% area: Jun 111 panels -> 40-43 sats FAIL"
+   ]
+  },
+  "t481_adapter": {
+   "adapter_kg_old": 62.0,
+   "adapter_kg_new": 0.0,
+   "to_reserve_kg": 62.0,
+   "note": "total mass, kW/t, sat counts held; not converted to kW/t"
+  },
+  "drawn_from_reserve_kg": 0.0,
+  "drawn_note": "CFRP adhesive charged to the radiator line; no added hinges/deploy hardware (panel count and dims unchanged)",
+  "reserve_kg_new": 324.47,
+  "frame_members": "not adopted (see CHECKS_t479.md)",
+  "accounting": "consumed: M held, savings to margin"
+ },
+ "t494_frame": {
+  "frame_kg": 50.0,
+  "lumped_kg_replaced": 70.8,
+  "label": "t494 option1 M55J wide min-wall ESTIMATE (k40 scale, b/t 200)",
+  "mount": "all equipment at post-corner fittings; frame carries self mass only",
+  "status": "ESTIMATE, pending GB10 fixed-wall verification",
+  "history": [
+   {
+    "frame_kg": 50.0,
+    "delta_vs_prev_kg": -20.8,
+    "backup": "point_J8_C1.json.bak_t494",
+    "label": "t494 option1 M55J wide min-wall ESTIMATE (k40 scale, b/t 200)"
+   }
+  ]
  }
 }

@@ -9,7 +9,7 @@ import os
 import sys
 import time
 
-os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")   # the author Dave accepted the NVIDIA Omniverse licence terms (2026-10-30 11:39 Taipei)
+os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")   # the author accepted the NVIDIA Omniverse licence terms (2026-10-30 11:39 Taipei)
 import pathlib
 import numpy as np
 

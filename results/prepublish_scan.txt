@@ -1,27 +1,16 @@
-Prepublish hygiene scan - Wed Nov 04 2026 15:49 Taipei (UTC+8), pass t450
-Tree: 792 files, 17.2 MB; largest file 5172382 B (NASA Blue Marble 8192 texture; under the 100 MB per-file limit)
+Prepublish hygiene scan - Wed Nov 04 2026 23:15 Taipei (UTC+8) / 07:15 PT, routine refresh
+Tree: 844 files, 17.9 MB; no file over 50 MB; largest file 5172382 B (NASA Blue Marble 8192 texture)
 
-== Case-insensitive text patterns: personal names and usernames, host and machine names, home/box paths, ssh config and keys, API tokens, passwords, emails, IP addresses, and out-of-scope project terms
+== Case-insensitive text patterns, scanned over every text file: machine and host names, personal names and usernames,
+   home/box paths, ssh config and keys, API tokens, passwords, emails, IP addresses, and out-of-scope project terms
    Result: 0 hits
 
-== Image files (10):
-   Project figures (matplotlib, made by this project's scripts):
-      211594 B results/figures/fig_t423e_firstprinciples.png
-      207676 B results/figures/fig_t423g_calibrated.png
-      454350 B results/figures/fig_t434_spacex_region.png
-      148339 B results/figures/fig_t436_sats_vs_pass.png
-      293846 B results/figures/fig_t436_stowed_stack.png
-      325415 B results/figures/fig_t436b_credibility.png
-      313693 B results/figures/fig_t438_final_designs.png
-      295239 B results/figures/fig_t438_stowed_stack_final.png
-   Third-party images (credited in CREDITS.md and README):
-      238676 B vendor/same_rack/results/omniverse/assets/bluemarble_2048.jpg  (NASA Visible Earth / Blue Marble; NASA imagery, no endorsement implied)
-     5172382 B vendor/same_rack/results/omniverse/assets/bluemarble_8192.jpg  (NASA Visible Earth / Blue Marble; NASA imagery, no endorsement implied)
-   No SpaceX images or logos.
-
-== Blue Marble texture files: the two credited copies listed above only (added intentionally in t450). scripts/get_blue_marble.sh is kept as a fallback.
+== Image files: unchanged since the previous scan (8 project matplotlib figures, 2 credited NASA Blue Marble textures).
+   No SpaceX images or logos. No new binary files in this refresh.
 == Outside documents: none redistributed. The Starcloud white paper is cited by link only.
-== Files over 100 MB: none. Files over 5 MB: 1 (the 8192 texture, 5.2 MB).
 
-Substitutions applied to copies: machine names -> GB10 desktop; home and box paths -> relative or ~/gb10_work; personal names and usernames -> the author / user; sibling repo path -> vendor/same_rack; internal message ids removed; out-of-scope comments reworded.
-Left by decision: Starcloud (public company) mentions.
+Substitutions applied to copies only: machine names -> GB10 desktop; home and box paths and venv interpreter paths -> relative, ~/gb10_work or "python";
+personal names and usernames -> the author / user (this refresh also removes a surname left in three render-script comments);
+sibling repo path -> vendor/same_rack; internal message ids removed; out-of-scope comments reworded.
+Excluded by pattern: backups, caches, solver output (CalculiX .12d/.cvg/.dat/.frd/.sta and the regenerable ccx input decks), npz/usd/video/frames.
+Left by decision: Starcloud (public company) mentions; the sibling package name used by vendored imports.
