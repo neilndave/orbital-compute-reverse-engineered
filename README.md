@@ -34,7 +34,7 @@ This is an independent analysis. SpaceX is named only as the source of the publi
 Not every pass is fully scripted end to end yet. The process logs record the inputs of each pass.
 
 ## Renders and Earth imagery
-Renders are pending. Before rendering, run `scripts/get_blue_marble.sh`. It fetches the NASA Blue Marble texture, which is not stored in this repo. Earth imagery: NASA Visible Earth / Blue Marble. Use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
+Renders are pending. The NASA Blue Marble textures the render scripts expect are included, with credit, in `vendor/same_rack/results/omniverse/assets/`. `scripts/get_blue_marble.sh` is a fallback that re-downloads them from NASA Visible Earth. Earth imagery: NASA Visible Earth / Blue Marble. Use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
 
 ## Licence
 Apache-2.0. See `LICENSE`.

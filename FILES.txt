@@ -1,9 +1,9 @@
-FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
+FILES.txt - tree manifest (792 files incl. this one, 17.2 MB). Sizes in bytes.
 
-       264  .gitignore
-       468  CREDITS.md
+       362  .gitignore
+      1088  CREDITS.md
      11385  LICENSE
-      4643  README.md
+      4739  README.md
       5474  docs/CALIBRATION.md
      34267  docs/REPLICA_PLAN.md
       3012  replica/box_gtc/blanket_check.py
@@ -80,6 +80,13 @@ FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
       5421  replica/checks_t444/check2_geometry.py
        564  replica/checks_t444/t444log.py
       4682  replica/coolant_t423d.py
+     10982  replica/eclipse/dose/dose_1000km_99.47deg.json
+     10999  replica/eclipse/dose/dose_1200km_100.4deg.json
+     11042  replica/eclipse/dose/dose_400km_97.03deg.json
+     11039  replica/eclipse/dose/dose_500km_97.40deg.json
+     11036  replica/eclipse/dose/dose_600km_97.79deg.json
+     11022  replica/eclipse/dose/dose_725km_98.28deg.json
+     11006  replica/eclipse/dose/dose_800km_98.60deg.json
       2651  replica/gb10_gtc/README.md
      17232  replica/gb10_gtc/newton/overlay_A4_C1/experiments/newton_array/run_array.py
       7586  replica/gb10_gtc/newton/overlay_A4_C1/experiments/newton_deploy/run_hinge.py
@@ -714,7 +721,7 @@ FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
       4524  replica/make_fig_t436b_credibility.py
       4281  replica/make_fig_t438_final.py
       4613  replica/make_fig_t438_stack.py
-     17636  replica/orbit_loop.py
+     17832  replica/orbit_loop.py
       9065  replica/orbit_loop_run_t423d.py
      14503  replica/orbit_loop_t423d.py
       1431  replica/plog.py
@@ -749,8 +756,8 @@ FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
     325415  results/figures/fig_t436b_credibility.png
     313693  results/figures/fig_t438_final_designs.png
     295239  results/figures/fig_t438_stowed_stack_final.png
-      1854  results/prepublish_scan.txt
-      1199  scripts/get_blue_marble.sh
+      1539  results/prepublish_scan.txt
+      1442  scripts/get_blue_marble.sh
      11358  vendor/same_rack/LICENSE
       6760  vendor/same_rack/configs/assembly3d.yaml
       2013  vendor/same_rack/configs/gap_layouts_T45.json
@@ -774,6 +781,10 @@ FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
      13662  vendor/same_rack/results/fleet/fleet_assets_T45.npz
       9493  vendor/same_rack/results/full3d/optimized_design_T45.json
      15825  vendor/same_rack/results/full3d/stageC_T45.json
+     11041  vendor/same_rack/results/mass_claims/dose_depth_550km_97.6deg.json
+     28663  vendor/same_rack/results/mass_claims/dose_total.json
+    238676  vendor/same_rack/results/omniverse/assets/bluemarble_2048.jpg
+   5172382  vendor/same_rack/results/omniverse/assets/bluemarble_8192.jpg
       1663  vendor/same_rack/results/phase2_T45/chain_params_T45.json
        758  vendor/same_rack/src/rack_two_skies/__init__.py
      29144  vendor/same_rack/src/rack_two_skies/assembly3d.py
@@ -889,3 +900,10 @@ FILES.txt - tree manifest (781 files incl. this one, 11.7 MB). Sizes in bytes.
   vendor/same_rack/src/rack_two_skies/cad.py  <- src/rack_two_skies/cad.py: imported by assembly3d
   vendor/same_rack/src/rack_two_skies/design_tag.py  <- src/rack_two_skies/design_tag.py: imported by the Newton overlays and gen_params
   vendor/same_rack/src/rack_two_skies/env_leo.py  <- src/rack_two_skies/env_leo.py: imported by orbit_loop.py
+  vendor/same_rack/results/omniverse/assets/bluemarble_8192.jpg  <- results/omniverse/assets/bluemarble_8192.jpg: NASA Blue Marble Earth texture (8192x4096) loaded by render_omniverse.py / render_fleet_omniverse_t360_T45.py; credit in CREDITS.md
+  vendor/same_rack/results/omniverse/assets/bluemarble_2048.jpg  <- results/omniverse/assets/bluemarble_2048.jpg: low-res Earth texture for preview renders; credit in CREDITS.md
+  vendor/same_rack/results/mass_claims/dose_total.json  <- results/mass_claims/dose_total.json: 5-yr design dose vs depth at 550 km read by replica/orbit_loop.py
+  vendor/same_rack/results/mass_claims/dose_depth_550km_97.6deg.json  <- results/mass_claims/dose_depth_550km_97.6deg.json: trapped-particle dose table at 550 km read by replica/orbit_loop.py
+
+== Replica-generated inputs added in t450 (not from the sibling repo):
+  replica/eclipse/dose/dose_*.json (7 files)  : dose tables at 400-1200 km read by replica/orbit_loop.py dose5()
