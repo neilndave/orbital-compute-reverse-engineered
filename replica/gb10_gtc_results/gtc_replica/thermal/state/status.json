@@ -1,0 +1,1 @@
+{"state": "finished", "pid": 4048188, "device": "cuda:0", "profile": "full", "updated_pt": "2026-11-03 17:32:30", "done": 266, "total": 266, "last_chunk": "size_A4_loop_avg_F3_L40_t0p5_e90F85_343K", "note": "all chunks done", "root": "~/gb10_work/gtc_replica/thermal", "gpu_temp_C": 46.0, "zone_max_C": 48.0}

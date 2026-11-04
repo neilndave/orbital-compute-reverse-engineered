@@ -1,0 +1,6 @@
+J8_C1 fold2 layers n_sat 12 stacks 8 table_s 26.0
+J8_C1 fold2 stack1 n_sat 10 stacks 8 table_s 26.0
+J8_C1 fold2 books n_sat 16 stacks 8 table_s 26.0
+J8_C1 fold4 layers n_sat 17 stacks 8 table_s 26.5
+J8_C1 fold4 stack1 n_sat 14 stacks 8 table_s 26.5
+J8_C1 fold4 books n_sat 20 stacks 8 table_s 26.5

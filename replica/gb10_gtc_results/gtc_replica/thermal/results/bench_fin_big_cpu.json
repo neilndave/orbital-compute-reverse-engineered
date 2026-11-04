@@ -1,0 +1,1 @@
+{"kind": "fin_big", "device": "cpu", "solves": 2, "wall_s": 144.92399501800537, "grid": [1280, 32], "metrics": {"wall_s": 144.974, "util_mean": 0.1, "gpu_busy_s": 0.213, "power_mean_W": 11.1, "energy_Wh": 0.447, "temp_max_C": 40.0}}

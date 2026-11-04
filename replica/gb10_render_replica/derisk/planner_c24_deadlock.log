@@ -1,0 +1,36 @@
+  sat 24 phase A: park layout f=1.8 min gap 0.295
+  sat 24: yoke0     t0   0.0 dur   2.4 end   2.4  [1/18] (0s)
+  sat 24: yoke1     t0   0.0 dur   3.3 end   3.3  [2/18] (2s)
+  sat 24: col1_05   t0   1.2 dur   5.7 end   6.9  [3/18] (3s)
+  sat 24: col0_00   t0   0.0 dur   6.2 end   6.2  [4/18] (4s)
+  sat 24: col0_01   t0   0.0 dur   6.1 end   6.1  [5/18] (6s)
+    col0_03: no plan; cands 1368 passed-sweep 0
+  sat 24: col1_03   t0   0.0 dur   9.8 end   9.8  [6/18] (74s)
+  sat 24: col1_00   t0   0.0 dur   8.9 end   8.9  [7/18] (93s)
+    col0_02: no plan; cands 1368 passed-sweep 0
+  sat 24: col0_04   t0   0.0 dur   5.4 end   5.4  [8/18] (161s)
+  sat 24: col0_05   t0   0.0 dur   6.7 end   6.7  [9/18] (183s)
+    col1_01: no plan; cands 1368 passed-sweep 0
+  sat 24: col1_02   t0   0.2 dur  10.2 end  10.4  [10/18] (339s)
+    col1_04: no plan; cands 1368 passed-sweep 40
+  sat 24: col0_06   t0   2.6 dur   7.9 end  10.5  [11/18] (442s)
+    plates0: no plan; cands 684 passed-sweep 40
+  sat 24: plates1   t0   0.0 dur   2.1 end   2.1  [12/18] (510s)
+    pod: no plan; cands 684 passed-sweep 5
+    col0_03: no plan; cands 1368 passed-sweep 0
+    col0_02: no plan; cands 1368 passed-sweep 0
+  sat 24: col1_01   t0   5.2 dur   7.5 end  12.7  [13/18] (627s)
+  sat 24: col1_04   t0   9.2 dur   8.7 end  17.9  [14/18] (646s)
+    plates0: no plan; cands 684 passed-sweep 40
+    pod: no plan; cands 684 passed-sweep 5
+    col0_03: no plan; cands 1368 passed-sweep 0
+  sat 24: col0_02   t0   8.0 dur   3.0 end  11.0  [15/18] (778s)
+    plates0: no plan; cands 684 passed-sweep 40
+  sat 24: pod       t0   9.4 dur   2.5 end  11.9  [16/18] (862s)
+  sat 24: col0_03   t0   6.8 dur   4.2 end  11.0  [17/18] (864s)
+    plates0: no plan; cands 684 passed-sweep 40
+    plates0: no plan; cands 684 passed-sweep 40
+sat 24 DEADLOCK, unscheduled: ['plates0']
+   explain plates0 stowed gaps vs others (static, thr):
+     vs yoke1     stow/pose gap   0.087  final/pose gap   5.008 thr 0.039 
+sat 24 ready None issues None

@@ -1,0 +1,20 @@
+{
+ "id": "A4_C1",
+ "n_solids": 169,
+ "bbox_m": [
+  14.0,
+  65.893,
+  26.029
+ ],
+ "array_area_m2": 822.96,
+ "radiator_face_area_m2": 136.97,
+ "target_A_arr": 839.7584935189456,
+ "target_A_rad": 136.0469306233244,
+ "fcc": {
+  "array_le_1500": true,
+  "radiator_le_200": true,
+  "mass_le_4000": true
+ },
+ "build_s": 0.3,
+ "label": "ESTIMATE: idealised deployed envelope; panel/array architecture ASSUMED same as adopted baseline; not the fleet layout, not a clearance check; the bbox Z of the radiator block is an artefact of the idealised stacking and must not be quoted -- use only the measured areas and the FCC flags"
+}

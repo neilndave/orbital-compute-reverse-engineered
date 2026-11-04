@@ -1,0 +1,16 @@
+P1_leaf6 J8_C1 {'layers': 21, 'stack1': 15, 'books': 22} vol 10.603 S {'leaf': 0.006}
+P1_leaf6 A4_C1 {'layers': 14, 'stack1': 13, 'books': 15} vol 14.669 S {'leaf': 0.006}
+P1_leaf4 J8_C1 {'layers': 23, 'stack1': 15, 'books': 26} vol 9.595 S {'leaf': 0.004}
+P1_leaf4 A4_C1 {'layers': 16, 'stack1': 13, 'books': 17} vol 12.989 S {'leaf': 0.004}
+P1_leaf2 J8_C1 {'layers': 26, 'stack1': 15, 'books': 28} vol 8.588 S {'leaf': 0.002}
+P1_roll40 J8_C1 {'layers': 11, 'stack1': 9, 'books': 14} vol 12.828 S {'roll_kw_m3': 40}
+P1_leaf2 A4_C1 {'layers': 18, 'stack1': 13, 'books': 20} vol 11.31 S {'leaf': 0.002}
+P1_roll100 J8_C1 {'layers': 13, 'stack1': 11, 'books': 17} vol 9.793 S {'roll_kw_m3': 100}
+P1_roll40 A4_C1 {'layers': 9, 'stack1': 7, 'books': 10} vol 18.196 S {'roll_kw_m3': 40}
+P1_roll100 A4_C1 {'layers': 12, 'stack1': 10, 'books': 15} vol 13.202 S {'roll_kw_m3': 100}
+P1_rpitch10 J8_C1 {'layers': 18, 'stack1': 15, 'books': 22} vol 11.376 S {'rpitch': 0.01}
+P1_rpitch10 A4_C1 {'layers': 13, 'stack1': 12, 'books': 15} vol 15.958 S {'rpitch': 0.01}
+P1_rackeq J8_C1 {'layers': 21, 'stack1': 15, 'books': 23} vol 9.631 S {'bus': 'rackeq'}
+P1_rackeq_rho800 J8_C1 {'layers': 27, 'stack1': 16, 'books': 30} vol 8.34 S {'bus': 'rackeq', 'rho': 800}
+P1_rackeq A4_C1 {'layers': 15, 'stack1': 13, 'books': 16} vol 15.134 S {'bus': 'rackeq'}
+P1_rackeq_rho800 A4_C1 {'layers': 18, 'stack1': 14, 'books': 19} vol 13.317 S {'bus': 'rackeq', 'rho': 800}

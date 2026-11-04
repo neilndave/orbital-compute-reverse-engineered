@@ -1,0 +1,34 @@
+{
+ "Jun": {
+  "N": 46,
+  "levels": 16,
+  "stack_height_m": 13.28,
+  "stack_mass_t": 98.0,
+  "post_area_base_cm2_per_column": 104.1,
+  "axial_f1_Hz_rigid_base_strength_sized_posts": 7.8,
+  "lateral_f1_Hz_post_bending_only_rigid_shear": 4.7,
+  "post_stiffness_scale_for_25Hz_axial": 10.2,
+  "post_stiffness_scale_for_10Hz_lateral_bending_only": 4.5,
+  "post_mass_kg_per_sat_strength_sized": 17.8,
+  "post_mass_kg_per_sat_if_scaled_for_25Hz": 181.0,
+  "post_mass_kg_per_sat_if_scaled_for_10Hz_lat": 80.0,
+  "margin_line_kg_per_sat": 345.38
+ },
+ "Aug": {
+  "N": 30,
+  "levels": 10,
+  "stack_height_m": 8.3,
+  "stack_mass_t": 98.0,
+  "post_area_base_cm2_per_column": 99.7,
+  "axial_f1_Hz_rigid_base_strength_sized_posts": 9.8,
+  "lateral_f1_Hz_post_bending_only_rigid_shear": 9.3,
+  "post_stiffness_scale_for_25Hz_axial": 6.5,
+  "post_stiffness_scale_for_10Hz_lateral_bending_only": 1.2,
+  "post_mass_kg_per_sat_strength_sized": 16.9,
+  "post_mass_kg_per_sat_if_scaled_for_25Hz": 109.0,
+  "post_mass_kg_per_sat_if_scaled_for_10Hz_lat": 20.0,
+  "margin_line_kg_per_sat": 535.05
+ },
+ "recommendation_STATEMENT": "SpaceX Falcon Payload User's Guide (2025-05-09 and 2021-09 editions): primary lateral > 10 Hz, primary axial > 25 Hz, secondary structure > 35 Hz (a recommendation; payloads below it 'can be accommodated' with mission-specific loads). Written for payloads of ~1.8-9 t (Rev 2 text); a 98 t stack is far outside that range. The Starship Payload User's Guide v1 gives load factors only and states no frequency requirement (so applying 10/25 Hz to Starship is an ASSUMPTION).",
+ "label": "ESTIMATE: posts-only axial spring chain, rigid base and bodies (upper-bound frequency); lateral = post-group bending plus an undesigned shear path; not a coupled-loads analysis"
+}

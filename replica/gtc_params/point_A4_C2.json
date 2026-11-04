@@ -1,0 +1,93 @@
+{
+ "id": "A4_C2",
+ "build": "Aug4",
+ "point": "C2",
+ "source": "t423g model via t434_region.py (ESTIMATE); knobs below",
+ "generated": "2026-11-04T09:18:32+08:00",
+ "targets": {
+  "kWt": 75.0,
+  "sats_per_starship_98t": 30
+ },
+ "knobs": {
+  "n": 0.25,
+  "f_struct": 0.06,
+  "pcdu": 5.57,
+  "pump_spares": 1,
+  "rack_spare": 0.0,
+  "growth": 0.1
+ },
+ "rack_kg_per_kW": 5.09109590831645,
+ "wing_W_per_kg": 522.6831884594044,
+ "result": {
+  "P_IT_peak_kW": 250.0,
+  "P_IT_avg_kW": 175.0,
+  "mass_kg": 3266.666666666666,
+  "kW_per_t": 76.53061224489798,
+  "sats_per_98t": 30,
+  "sats_per_100t": 30,
+  "orbit_h_km": 600,
+  "ltan_h": 6.0,
+  "fcc_flags": []
+ },
+ "areas": {
+  "A_rad_face_m2": 136.0469306233244,
+  "A_arr_m2": 839.7584935189456,
+  "FCC": {
+   "mass_kg": 4000,
+   "A_rad_m2": 200,
+   "A_arr_m2": 1500
+  }
+ },
+ "mass_lines_kg": {
+  "rack": 1272.77,
+  "array": 513.64,
+  "radiator": 280.7,
+  "coolant_loop": 143.46,
+  "structure_mech": 149.05,
+  "power_electronics": 76.13,
+  "harness": 28.55,
+  "propulsion_adcs": 157.68,
+  "shielding_radiation": 0.0,
+  "mmod_bumper": 229.56,
+  "avionics_links": 67.6,
+  "margin": 285.51,
+  "adapter": 62.0
+ },
+ "geometry_derived": {
+  "label": "ASSUMED/ESTIMATE: same panel and array architecture as the adopted baseline, scaled to the replica areas",
+  "radiator": {
+   "panel_W_mm": 363.4175776637853,
+   "panel_L_mm": 2944.5579551660426,
+   "panel_planform_m2": 1.0701,
+   "n_panels": 128,
+   "n_panels_basis": "ceil(A_rad_face / panel planform); baseline 254 panels = 271.8 m2 vs 273.5 m2 stated per face"
+  },
+  "array": {
+   "width_m": 14.0,
+   "leaves_per_wing": 20,
+   "wings": 2,
+   "leaf_len_m": 1.49957,
+   "wing_len_m": 29.9914,
+   "yoke_root_m": 1.968278816700644,
+   "basis": "A_arr / (2 wings x 14 m x 20 leaves); yoke kept at baseline (ASSUMED)"
+  },
+  "bus": {
+   "rack_envelope_m": [
+    0.6,
+    1.2,
+    2.296
+   ],
+   "note": "packer uses the repo bus model: BX 0.7, BY 2.0, BUS_Z0 + V_eq/(BX BY), V_eq scaled (0.338+0.662 f), f = P/188; rack volume NOT changed with kg/kW (rack density differs between C1 and C2 only in mass: ASSUMED)",
+   "f_power": 1.3298
+  }
+ },
+ "newton_overlay_inputs": {
+  "m_array_kg": 513.64,
+  "A_array_m2": 839.7584935189456,
+  "wing_len_m": 29.99137476853377,
+  "array_width_m": 14.0,
+  "yoke_root_m": 1.968278816700644,
+  "mass_gaps_ratio_array": 0.2034784599797371,
+  "base_kg": 2753.026666666666
+ }
+}

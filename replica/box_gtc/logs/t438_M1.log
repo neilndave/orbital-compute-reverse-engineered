@@ -1,0 +1,5 @@
+m_J_ad10_f5 J8_C1 {'layers': 43, 'books': 45} vol 5.789 S {'bus': 'rackeq', 'rpitch': 0.01, 'rho': 800, 'rho_rack': 949, 'archs': ['layers', 'books'], 'step': 0.1, 'adapt': 0.1, 'gap': 0.03, 'fold': 5, 'leaf': 0.006}
+m_J_rho700_f5 J8_C1 {'layers': 43, 'books': 45} vol 5.974 S {'bus': 'rackeq', 'rpitch': 0.01, 'rho': 700, 'rho_rack': 949, 'archs': ['layers', 'books'], 'step': 0.1, 'adapt': 0.05, 'gap': 0.02, 'fold': 5, 'leaf': 0.006}
+m_J_MID_f5 J8_MID {'layers': 46, 'books': 47} vol 5.789 S {'bus': 'rackeq', 'rpitch': 0.01, 'rho': 800, 'rho_rack': 949, 'archs': ['layers', 'books'], 'step': 0.1, 'adapt': 0.05, 'gap': 0.02, 'fold': 5, 'leaf': 0.006}
+m_J_C2_f5 J8_C2 {'layers': 46, 'books': 47} vol 5.789 S {'bus': 'rackeq', 'rpitch': 0.01, 'rho': 800, 'rho_rack': 949, 'archs': ['layers', 'books'], 'step': 0.1, 'adapt': 0.05, 'gap': 0.02, 'fold': 5, 'leaf': 0.006}
+m_A_E_f5 A4_C1 {'layers': 33, 'books': 33} vol 9.082 S {'bus': 'rackeq', 'rpitch': 0.01, 'rho': 800, 'rho_rack': 949, 'archs': ['layers', 'books'], 'step': 0.1, 'adapt': 0.05, 'gap': 0.02, 'fold': 5, 'leaf': 0.006}

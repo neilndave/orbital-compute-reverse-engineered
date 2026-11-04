@@ -1,0 +1,25 @@
+{
+ "note": "ESTIMATE; kinematic model, AABB-level; sample steps 0.5 s (0-400 s), 5 s (to 1190 s), 0.25 s (unfold 1190-1345 s)",
+ "n_sats": 30,
+ "T_end_s": 1345.0,
+ "min_pair_gap_m": 0.035499999999998755,
+ "min_pair": [
+  24,
+  25
+ ],
+ "min_pair_T_s": 0.0,
+ "n_pairs_with_negative_gap": 0,
+ "real_body_overlaps": [],
+ "n_real_overlap_events": 0,
+ "rail_min_clearance_m": 0.7179999999999996,
+ "exit_x_m_s": 0.2,
+ "momentum": {
+  "label": "ESTIMATE / ASSUMED",
+  "sat_mass_kg": 6426.1,
+  "ship_mass_kg": 200000.0,
+  "sum_sat_px_kg_m_s": -4112.704,
+  "ship_recoil_x_m_s_if_all_released": 0.5698633781349591,
+  "note": "by construction: each release is an internal impulse; the ship (not drawn moving) takes the opposite momentum; net-zero momentum of ship+fleet. Extra drift velocities (v_y, v_z) are ASSUMED and applied after exit (their reaction is not tracked)."
+ }
+}
+[('24-25', [0.035499999999998755, 0.0]), ('25-26', [0.03549999999999898, 0.0]), ('0-1', [0.0534999999999982, 0.0]), ('2-3', [0.0534999999999982, 0.0]), ('4-5', [0.0534999999999982, 0.0]), ('6-7', [0.0534999999999982, 0.0]), ('8-9', [0.0534999999999982, 0.0]), ('10-11', [0.0534999999999982, 0.0])]

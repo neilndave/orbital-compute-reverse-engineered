@@ -1,0 +1,23 @@
+{
+ "label": "motor_tdep300_dt0.001_gtc_A4_C1",
+ "t_nan_newton_s": null,
+ "klat": 500000.0,
+ "zlat": 0.3,
+ "newton_wall_s": 2670.803733110428,
+ "warp_wall_s": 58.17754650115967,
+ "dt": 0.001,
+ "n_latched_newton": 21,
+ "n_latched_warp": 21,
+ "max_angle_diff_deg": 1.102350115776062,
+ "rms_angle_diff_deg": 0.19560381770133972,
+ "max_angle_diff_deg_per_hinge_p50": 0.42194515466690063,
+ "latch_time_diff_s_max": 6.351715087890625,
+ "t_latch_last_newton": 280.7300109863281,
+ "t_latch_last_warp": 280.8690185546875,
+ "peak_torque_newton": 4508.9404296875,
+ "peak_torque_warp": 581.689697265625,
+ "peak_root_moment_newton": 1017.8505859375,
+ "peak_root_moment_warp": 581.689697265625,
+ "final_err_deg_newton": 0.08131164783096302,
+ "final_err_deg_warp": 0.049080461263656616
+}

@@ -1,0 +1,46 @@
+{
+ "Jun": {
+  "S": {
+   "bus": "rackeq",
+   "rpitch": 0.01,
+   "rho": 800,
+   "rho_rack": 949,
+   "archs": [
+    "layers",
+    "books"
+   ],
+   "step": 0.1,
+   "adapt": 0.05,
+   "gap": 0.02,
+   "fold": 5,
+   "leaf": 0.006
+  },
+  "id": "J8_C1",
+  "arch": "layers",
+  "N_target": 46,
+  "pass": "r_J_f5",
+  "N_packed": 46
+ },
+ "Aug": {
+  "S": {
+   "bus": "rackeq",
+   "rpitch": 0.01,
+   "rho": 800,
+   "rho_rack": 949,
+   "archs": [
+    "layers",
+    "books"
+   ],
+   "step": 0.1,
+   "adapt": 0.05,
+   "gap": 0.02,
+   "fold": 6,
+   "leaf": 0.006
+  },
+  "id": "A4_C1",
+  "arch": "layers",
+  "N_target": 30,
+  "pass": "r_A_f6",
+  "N_packed": 32
+ }
+}

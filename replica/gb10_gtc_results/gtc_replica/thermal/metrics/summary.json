@@ -1,0 +1,142 @@
+{
+ "updated_pt": "2026-11-03 17:32:30",
+ "phases": {
+  "G0_validate|cuda:0": {
+   "chunks": 2,
+   "wall_s": 6.1,
+   "gpu_busy_s": 0.1,
+   "energy_Wh": 0.018,
+   "work_n": 26.0,
+   "work_unit": "fin solves",
+   "rate_per_s": 4.24,
+   "util_mean": 1.05,
+   "power_mean_W": 11.2,
+   "sm_mhz_mean": 2291.5,
+   "temp_max_C": 37.0,
+   "thermal_throttle_samples": 0
+  },
+  "G0_bench|cpu": {
+   "chunks": 3,
+   "wall_s": 151.2,
+   "gpu_busy_s": 0.5,
+   "energy_Wh": 0.467,
+   "work_n": 2000014.0,
+   "work_unit": "fin solves",
+   "rate_per_s": 13225.59,
+   "util_mean": 2.93,
+   "power_mean_W": 11.43,
+   "sm_mhz_mean": 2405.0,
+   "temp_max_C": 41.0,
+   "thermal_throttle_samples": 0
+  },
+  "G0_bench|cuda:0": {
+   "chunks": 3,
+   "wall_s": 24.8,
+   "gpu_busy_s": 8.1,
+   "energy_Wh": 0.105,
+   "work_n": 2000014.0,
+   "work_unit": "fin solves",
+   "rate_per_s": 80694.53,
+   "util_mean": 16.8,
+   "power_mean_W": 13.15,
+   "sm_mhz_mean": 2405.0,
+   "temp_max_C": 41.0,
+   "thermal_throttle_samples": 0
+  },
+  "G2_mc_base|cuda:0": {
+   "chunks": 144,
+   "wall_s": 50.7,
+   "gpu_busy_s": 4.9,
+   "energy_Wh": 0.232,
+   "work_n": 576000000.0,
+   "work_unit": "draws",
+   "rate_per_s": 11351095.7,
+   "util_mean": 10.38,
+   "power_mean_W": 16.68,
+   "sm_mhz_mean": 2404.66,
+   "temp_max_C": 44.0,
+   "thermal_throttle_samples": 0
+  },
+  "G3_mc_sens|cuda:0": {
+   "chunks": 66,
+   "wall_s": 22.7,
+   "gpu_busy_s": 3.4,
+   "energy_Wh": 0.106,
+   "work_n": 264000000.0,
+   "work_unit": "draws",
+   "rate_per_s": 11617672.94,
+   "util_mean": 15.89,
+   "power_mean_W": 16.95,
+   "sm_mhz_mean": 2400.38,
+   "temp_max_C": 45.0,
+   "thermal_throttle_samples": 0
+  },
+  "G4_area_sizing|cuda:0": {
+   "chunks": 48,
+   "wall_s": 36.0,
+   "gpu_busy_s": 27.6,
+   "energy_Wh": 0.216,
+   "work_n": 720000000.0,
+   "work_unit": "draws",
+   "rate_per_s": 20020576.7,
+   "util_mean": 76.7,
+   "power_mean_W": 21.64,
+   "sm_mhz_mean": 2392.12,
+   "temp_max_C": 46.0,
+   "thermal_throttle_samples": 0
+  }
+ },
+ "total": {
+  "wall_s": 291.5,
+  "energy_Wh": 1.144,
+  "chunks": 266
+ },
+ "thermal_pauses": 0,
+ "user_pauses": 0,
+ "cpu_vs_gpu": {
+  "bench_fin_small_cpu|cpu": {
+   "wall_s": "1.898",
+   "rate_per_s": "6.32",
+   "work_unit": "fin solves"
+  },
+  "bench_fin_small_cuda|cuda:0": {
+   "wall_s": "2.184",
+   "rate_per_s": "5.49",
+   "work_unit": "fin solves"
+  },
+  "bench_fin_big_cpu|cpu": {
+   "wall_s": "144.974",
+   "rate_per_s": "0.01",
+   "work_unit": "fin solves"
+  },
+  "bench_fin_big_cuda|cuda:0": {
+   "wall_s": "22.445",
+   "rate_per_s": "0.09",
+   "work_unit": "fin solves"
+  },
+  "bench_mc_cpu|cpu": {
+   "wall_s": "4.351",
+   "rate_per_s": "459664.44",
+   "work_unit": "draws"
+  },
+  "bench_mc_cuda|cuda:0": {
+   "wall_s": "0.156",
+   "rate_per_s": "12820512.82",
+   "work_unit": "draws"
+  }
+ },
+ "thermal_log_tail": {
+  "rows": 954,
+  "last": {
+   "time_pt": "2026-11-03_17:31",
+   "gpu_C": "44",
+   "gpu_util": "0",
+   "power_W": "18.33",
+   "sm_MHz": "2398",
+   "hw_throttle": "NotActive",
+   "sw_throttle": "NotActive",
+   "zone_max_C": "45"
+  },
+  "note": "1-minute board log from ~/gb10_work/logs/thermal_log.sh (reused, not duplicated)"
+ }
+}

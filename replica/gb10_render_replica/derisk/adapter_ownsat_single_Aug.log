@@ -1,0 +1,17 @@
+0/79 0s
+50/79 1s
+global min per category (m):
+  colcol_adj    min +0.0010  frame 426  sat 0  n<=0 sat-frames 0
+  colcol_other  min +0.0136  frame 366  sat 0  n<=0 sat-frames 0
+  col_bus       min +0.0580  frame 426  sat 0  n<=0 sat-frames 0
+  col_wing      min +0.0089  frame 342  sat 0  n<=0 sat-frames 0
+  col_yoke      min +0.3635  frame 402  sat 0  n<=0 sat-frames 0
+  wing_bus      min +0.0167  frame 348  sat 0  n<=0 sat-frames 0
+  wing_wing     min +0.0104  frame 342  sat 0  n<=0 sat-frames 0
+  wing_yoke     min +0.2134  frame 348  sat 0  n<=0 sat-frames 0
+  yoke_bus      min +0.0500  frame 426  sat 0  n<=0 sat-frames 0
+  yoke_yoke     min +9.0000  frame 342  sat 0  n<=0 sat-frames 0
+  intra_col     min +0.0170  frame 378  sat 0  n<=0 sat-frames 0
+  intra_wing    min +0.0130  frame 396  sat 0  n<=0 sat-frames 0
+  pod_own       min -0.1483  frame 402  sat 0  n<=0 sat-frames 1
+total 1s

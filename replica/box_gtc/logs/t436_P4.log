@@ -1,0 +1,12 @@
+P4_a15_l2_r5_rho800 J8_C1 {'layers': 45, 'books': 50} vol 3.705 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.002, 'rpitch': 0.005, 'rho': 800}
+P4_a15_l3_r10_rho800 J8_C1 {'layers': 43, 'books': 47} vol 4.578 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.003, 'rpitch': 0.01, 'rho': 800}
+P4_a15_l2_r5_rho800 A4_C1 {'layers': 33, 'books': 35} vol 5.593 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.002, 'rpitch': 0.005, 'rho': 800}
+P4_a15_l3_r10_rho800 A4_C1 {'layers': 28, 'books': 31} vol 7.048 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.003, 'rpitch': 0.01, 'rho': 800}
+P4_a15_l2_r5_rho1000 J8_C1 {'layers': 45, 'books': 53} vol 3.447 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.002, 'rpitch': 0.005, 'rho': 1000}
+P4_a15_l2_r5_rho1000 A4_C1 {'layers': 32, 'books': 35} vol 5.23 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.15, 'gap': 0.05, 'leaf': 0.002, 'rpitch': 0.005, 'rho': 1000}
+P4_a10_l3_r7_rho800 J8_C1 {'layers': 46, 'books': 50} vol 4.357 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.1, 'gap': 0.03, 'leaf': 0.003, 'rpitch': 0.007, 'rho': 800}
+P4_a10_l3_r7_rho800 A4_C1 {'layers': 31, 'books': 35} vol 6.679 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.1, 'gap': 0.03, 'leaf': 0.003, 'rpitch': 0.007, 'rho': 800}
+P4_a10_l4_r10_rho1000 J8_C1 {'layers': 43, 'books': 45} vol 4.824 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.1, 'gap': 0.03, 'leaf': 0.004, 'rpitch': 0.01, 'rho': 1000}
+P4_a05_l4_r10_rho1000 J8_C1 {'layers': 46, 'books': 47} vol 4.824 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.05, 'gap': 0.02, 'leaf': 0.004, 'rpitch': 0.01, 'rho': 1000}
+P4_a10_l4_r10_rho1000 A4_C1 {'layers': 30, 'books': 32} vol 7.524 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.1, 'gap': 0.03, 'leaf': 0.004, 'rpitch': 0.01, 'rho': 1000}
+P4_a05_l4_r10_rho1000 A4_C1 {'layers': 32, 'books': 33} vol 7.524 S {'bus': 'rackeq', 'archs': ['layers', 'books'], 'adapt': 0.05, 'gap': 0.02, 'leaf': 0.004, 'rpitch': 0.01, 'rho': 1000}

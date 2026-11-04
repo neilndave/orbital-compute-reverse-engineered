@@ -1,0 +1,36 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module validate_and_correct_inertia_kernel_1ff2ac62 1ff2ac6 load on device 'cuda:0' took 0.58 ms  (cached)
+Module newton._src.geometry.bvh 58a3a49 load on device 'cuda:0' took 0.40 ms  (cached)
+Module create_eval_articulation_fk_tile__locals__eval_articulation_fk_tile_b34ba77f ef8e4d4 load on device 'cuda:0' took 0.28 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 0a6f929 load on device 'cuda:0' took 12.31 ms  (cached)
+Module __main__ 8342a80 load on device 'cuda:0' took 0.31 ms  (cached)
+Module fold_chain_T45 0fc4ec8 load on device 'cuda:0' took 0.38 ms  (cached)
+{
+ "label": "motor_tdep300_dt0.001_gtc_J8_C1",
+ "t_nan_newton_s": 262.0,
+ "klat": 500000.0,
+ "zlat": 0.3,
+ "newton_wall_s": 2120.5842723846436,
+ "warp_wall_s": 58.174126386642456,
+ "dt": 0.001,
+ "n_latched_newton": 19,
+ "n_latched_warp": 21,
+ "max_angle_diff_deg": 0.4235912263393402,
+ "rms_angle_diff_deg": 0.21488310396671295,
+ "max_angle_diff_deg_per_hinge_p50": 0.4184344410896301,
+ "latch_time_diff_s_max": 15.375823974609375,
+ "t_latch_last_newton": null,
+ "t_latch_last_warp": 277.6410217285156,
+ "peak_torque_newton": 3.0552207655350345e+35,
+ "peak_torque_warp": 349.3804931640625,
+ "peak_root_moment_newton": 2.0421348256535816e+33,
+ "peak_root_moment_warp": 349.3804931640625,
+ "final_err_deg_newton": NaN,
+ "final_err_deg_warp": 0.017044808715581894
+}

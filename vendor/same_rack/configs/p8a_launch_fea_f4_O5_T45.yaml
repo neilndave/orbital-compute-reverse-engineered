@@ -1,0 +1,185 @@
+# T45 / : THIS COPY holds the stack_O5 panel (0.3634 x 2.9446 m, 4 tubes, 216 panels, 5.7125 kg) in place of the 45 C baseline panel; geometry from results/full3d/optimized_design_T45.json (exported by experiments/knobs/export_stack_design_T45.py)
+# P14 45 C BASELINE variant of configs/p8a_launch_fea_f4.yaml (use P8A_VARIANT=_f4_T45): only the panel geometry, wall, header/stub and panel mass change; loads, mounts (y_frac layouts scale with the panel length) and mesh are as the 70 C file.
+# P8a-F4: the F4 full-system optimum panel (4 tubes, 3.0 m).  Derived from p8a_launch_fea.yaml (the P6 panel).
+# P8a CalculiX quasi-static launch-load FEA of ONE radiator panel and its mounts.  IDEALIZED, a SCREENING analysis, not a sign-off.
+# Tags: (C) cited public source, (E) ESTIMATE / engineering judgement, (A) ASSUMPTION the user has not defined (easy to change here).
+# Load factors live in configs/mass_gaps.yaml (launch_loads); this file holds the model, the mount layout and the run settings.
+geometry:
+  design_json: results/full3d/optimized_design_T45.json   # P14 45 C baseline: F4 optimum panel 0.3900 x 2.7976 m, 4 tubes, 264 panels as built (the 70 C panel is configs/p8a_launch_fea_f4.yaml)
+  tube_wall_m: 0.0023307936397516443                   # (E) from cad.build_panel on the 45 C design (experiments/p8a_launch_fea/derive_cad_inputs.py): wall that makes tubes+headers+stubs = the optimiser's lump (70 C: 1.8135 mm)
+  header_kg: 0.21536484409994383                      # (E) CAD, both headers; carried as mass on the tube end rows (conservative: no header stiffness)
+  stub_kg: 0.009097438645579365                       # (E) CAD, both stubs
+  sheet_t_scale: 1.0                                  # sheet thickness multiplier (sensitivity)
+  panel_kg_total: 5.712544020972292                          # 45 C panel mass from design_tag.summary() (CAD metal 2.346 kg + 4.2 kg/m2 overhead on both faces, as the 70 C 12.8717 kg)
+material:                                             # 6061-T6 sheet and tube, as configs/mass_gaps.yaml launch_loads
+  E_Pa: 68.9e+9
+  nu: 0.33
+  rho_kg_m3: 2700.0
+mesh:
+  ny_el: 150             # elements along the 2.798 m length (18.7 mm; 70 C: 20 mm)
+  n_edge: 2              # sheet elements across each outer strip
+  n_gap: 4               # sheet elements across each strip between tubes
+  t_bin_m: 0.000002        # sheet thickness is binned to this step to limit the number of sections
+mounts:                  # ASSUMPTION (A): the author has not defined the supports.  Pads sit on the BOTTOM face of the chosen tubes.
+  label: ASSUMPTION
+  pad_len_m: 0.06        # pad footprint along the tube; held on the centre line of the tube bottom face (corner nodes are shell knots and are left free)
+  end_inset_m: 0.04      # distance of the end pads' centres from the tube ends
+  active: stack_7station   # BASELINE since 2026-10-30 00:11 Taipei (author adopted the 35 Hz secondary-structure target, Falcon Payload User Guide sec 5.3: 7 stations = 36.98 Hz FEA)
+  layouts:
+    stack_all_tubes:     # SENSITIVITY (the old 3-station baseline, fails guide loads):  the panel rides in a stack and a pad row (bearing strip / rail) touches ALL four tubes at three stations
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    stack_4station:      # SENSITIVITY (fix option): one extra station pair, four stations (thirds) on all four tubes -> 1.0 m spans
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    stack_5station:      # SENSITIVITY (fix option): two extra stations (quarter points) on all four tubes
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.25, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.25, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.25, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.25, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.75, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.75, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.75, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.75, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    stack_6station:      # SENSITIVITY (P7 side item, 35 Hz check): 6 stations, equal spans, on all four tubes
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.2, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.2, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.2, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.2, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.4, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.4, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.4, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.4, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.6, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.6, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.6, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.6, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.8, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.8, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.8, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.8, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    stack_7station:      # BASELINE (adopted 2026-10-30): 7 stations, equal 0.5 m spans, on all four tubes (ASSUMPTION: a pad under every tube; first mode 36.98 Hz by FEA)
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.166667, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.166667, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.166667, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.166667, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.333333, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.333333, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.333333, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.333333, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.666667, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.666667, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.666667, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.666667, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.833333, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 0.833333, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 0.833333, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.833333, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 1, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 2, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    outer_6pad:          # SENSITIVITY: pads only under the two outer tubes (ends and mid-length); the two inner tubes hang from the sheet
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.5, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    corner_4pad:         # fewer supports: corners only
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    dense_8pad:          # more supports: four stations along the length on both outer tubes
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.3333333333, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.6666666667, dofs: [1, 2, 3]}
+        - {tube: 0, y_frac: 1.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 1.0, dofs: [1, 2, 3]}
+    kinematic_6pad:      # statically determinate-style mount (conservative bound): one pad holds x, y, z, one holds y and z, the rest only z
+      pads:
+        - {tube: 0, y_frac: 0.0, dofs: [1, 2, 3]}
+        - {tube: 3, y_frac: 0.0, dofs: [2, 3]}
+        - {tube: 0, y_frac: 0.5, dofs: [3]}
+        - {tube: 3, y_frac: 0.5, dofs: [3]}
+        - {tube: 0, y_frac: 1.0, dofs: [3]}
+        - {tube: 3, y_frac: 1.0, dofs: [3]}
+loads:                   # quasi-static inertial load factors acting at the panel (rigid-body, payload-CG envelope). Positive axial = compressive (guide convention).
+  # (C) Starship Payload Users Guide v1 (2020), Fig. 5 "Payload maximum design load factors" (envelope read by eye; https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf,
+  #     "maximum expected design load factors for a single payload"; real loads need a coupled-loads analysis). Corner values cross-checked against the Falcon 9 / Falcon Heavy guide Table 5-3
+  #     (>1,800 kg class, limit level, no qualification factor): (6.0, 0.5), (3.5, 2.0), (-1.5, 2.0), (-2.0, 0.5) axial, lateral g (https://www.spacex.com/media/falcon-users-guide-2021-09.pdf).
+  #     Confidence: medium that the Starship polygon equals these corners (eye reading plus the Falcon match); LOW that the 2020 guide applies to the current Starship V3.
+  corners:
+    - {name: max_axial,    axial_g: 6.0,  lateral_g: 0.5}
+    - {name: max_lateral,  axial_g: 3.5,  lateral_g: 2.0}
+    - {name: tension_lat,  axial_g: -1.5, lateral_g: 2.0}
+    - {name: max_tension,  axial_g: -2.0, lateral_g: 0.5}
+  axial_axis: z          # panel normal = stack axis (ASSUMPTION: panels ride stacked flat, normal to the thrust line)
+  lateral_dirs_deg_step: 15   # lateral vector swept around the panel plane (x across the width, y along the tubes)
+  factor_of_safety_yield: 1.25   # (E) bracketed by NASA-STD-5001B yield 1.25 / ultimate 1.4 and Falcon guide Table 6-1 yield 1.10 / ultimate 1.25 (cited in docs/P8A_LAUNCH_FEA.md)
+  sigma_y_Pa: 241.0e+6    # (C) 6061-T6 sheet minimum yield, ASTM B209 via gneealuminum.com (as configs/mass_gaps.yaml)
+  amplification_sensitivity: [1.0, 2.0]   # (E) local amplification of the payload-CG factors at the panel (guide gives none); 2.0 is a screening sensitivity, not a source value

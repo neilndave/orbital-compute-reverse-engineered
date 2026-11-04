@@ -1,0 +1,92 @@
+{
+ "build": "Jun",
+ "point": "J8_C1",
+ "N_per_Starship_target": 46,
+ "N_packed": 46,
+ "arch": "layers",
+ "S": {
+  "bus": "rackeq",
+  "rpitch": 0.01,
+  "rho": 800,
+  "rho_rack": 949,
+  "archs": [
+   "layers",
+   "books"
+  ],
+  "step": 0.1,
+  "adapt": 0.05,
+  "gap": 0.02,
+  "fold": 5,
+  "leaf": 0.006
+ },
+ "n_levels": 19,
+ "radiator": {
+  "panel_W_mm": 363.4175776637853,
+  "panel_L_mm": 2944.5579551660426,
+  "panel_planform_m2": 1.0701,
+  "n_panels": 77,
+  "n_panels_basis": "ceil(A_rad_face / panel planform); baseline 254 panels = 271.8 m2 vs 273.5 m2 stated per face",
+  "n_stacks": 8,
+  "panels_per_column": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   9,
+   9,
+   9
+  ],
+  "wing0_cols": 4,
+  "wing1_cols": 4
+ },
+ "array": {
+  "width_m": 14.0,
+  "leaves_per_wing": 20,
+  "wings": 2,
+  "leaf_len_m": 0.89974,
+  "wing_len_m": 17.9948,
+  "yoke_root_m": 1.968278816700644,
+  "basis": "A_arr / (2 wings x 14 m x 20 leaves); yoke kept at baseline (ASSUMED)",
+  "fold_n": 5,
+  "leaf_mm": 6.0,
+  "block_width_m": 2.8,
+  "stowed_thickness_m": 0.6
+ },
+ "mass": {
+  "P_IT_peak_kW": 150.0,
+  "P_IT_avg_kW": 120.0,
+  "mass_kg": 2130.4347826086937,
+  "kW_per_t": 70.40816326530619,
+  "sats_per_98t": 46,
+  "sats_per_100t": 46,
+  "orbit_h_km": 600,
+  "ltan_h": 6.0,
+  "fcc_flags": []
+ },
+ "mass_lines_kg": {
+  "rack": 408.53,
+  "array": 484.53,
+  "radiator": 168.42,
+  "coolant_loop": 98.65,
+  "structure_mech": 106.9,
+  "power_electronics": 81.25,
+  "harness": 17.13,
+  "propulsion_adcs": 131.87,
+  "shielding_radiation": 20.43,
+  "mmod_bumper": 137.74,
+  "avionics_links": 67.6,
+  "margin": 345.38,
+  "adapter": 62.0
+ },
+ "newton_overlay_inputs": {
+  "m_array_kg": 484.53,
+  "A_array_m2": 503.85509611136735,
+  "wing_len_m": 17.99482486112026,
+  "array_width_m": 14.0,
+  "yoke_root_m": 1.968278816700644,
+  "mass_gaps_ratio_array": 0.19194653495440778,
+  "base_kg": 1645.9047826086937
+ },
+ "label": "ESTIMATE / ASSUMED, see GTC_REPLICA_PLAN.md section 3c"
+}

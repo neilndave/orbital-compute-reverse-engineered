@@ -1,0 +1,121 @@
+
+************************************************************
+
+CalculiX Version 2.21, Copyright(C) 1998-2023 Guido Dhondt
+CalculiX comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+certain conditions, see gpl.htm
+
+************************************************************
+
+You are using an executable made on Sat Aug  3 10:15:36 UTC 2024
+
+  The numbers below are estimated upper bounds
+
+  number of:
+
+   nodes:       321961
+   elements:         4800
+   one-dimensional elements:            0
+   two-dimensional elements:         4800
+   integration points per element:            8
+   degrees of freedom per node:            3
+   layers per element:            1
+
+   distributed facial loads:            0
+   distributed volumetric loads:            3
+   concentrated loads:            0
+   single point constraints:       346704
+   multiple point constraints:       576001
+   terms in all multiple point constraints:      3686401
+   tie constraints:            0
+   dependent nodes tied by cyclic constraints:            0
+   dependent nodes in pre-tension constraints:            0
+
+   sets:          177
+   terms in all sets:        14587
+
+   materials:          146
+   constants per material and temperature:            2
+   temperature points per material:            1
+   plastic data points per material:            0
+
+   orientations:         4800
+   amplitudes:            4
+   data points in all amplitudes:            4
+   print requests:            3
+   transformations:            0
+   property cards:            0
+
+
+ STEP            1
+
+ Static analysis was selected
+
+ Decascading the MPC's
+
+ Determining the structure of the matrix:
+ Using up to 1 cpu(s) for setting up the structure of the matrix.
+ number of equations
+ 95181
+ number of nonzero lower triangular matrix elements
+ 4807262
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+
+ STEP            2
+
+ Static analysis was selected
+
+ Determining the structure of the matrix:
+ Using up to 1 cpu(s) for setting up the structure of the matrix.
+ number of equations
+ 95181
+ number of nonzero lower triangular matrix elements
+ 4807262
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+
+ STEP            3
+
+ Static analysis was selected
+
+ Determining the structure of the matrix:
+ Using up to 1 cpu(s) for setting up the structure of the matrix.
+ number of equations
+ 95181
+ number of nonzero lower triangular matrix elements
+ 4807262
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+
+ Job finished
+
+________________________________________
+
+Total CalculiX Time: 155.203869
+________________________________________

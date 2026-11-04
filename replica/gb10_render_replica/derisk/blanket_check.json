@@ -1,0 +1,86 @@
+{
+ "pitch_7.4mm": {
+  "substrate_25um": {
+   "Rc_mm": 3.68,
+   "eps_pct": 0.34,
+   "ok_below_yield": true
+  },
+  "substrate_50um": {
+   "Rc_mm": 3.65,
+   "eps_pct": 0.68,
+   "ok_below_yield": true
+  },
+  "substrate_75um": {
+   "Rc_mm": 3.62,
+   "eps_pct": 1.03,
+   "ok_below_yield": true
+  },
+  "cells_bent_would_need_Rc_mm": 3.2,
+  "cell_strain_pct_if_bent_0.4mm_stack": 6.1,
+  "cell_free_fold_zone_mm_each_fold": 11.6
+ },
+ "pitch_6.0mm": {
+  "substrate_25um": {
+   "Rc_mm": 2.98,
+   "eps_pct": 0.42,
+   "ok_below_yield": true
+  },
+  "substrate_50um": {
+   "Rc_mm": 2.95,
+   "eps_pct": 0.85,
+   "ok_below_yield": true
+  },
+  "substrate_75um": {
+   "Rc_mm": 2.92,
+   "eps_pct": 1.28,
+   "ok_below_yield": true
+  },
+  "cells_bent_would_need_Rc_mm": 2.5,
+  "cell_strain_pct_if_bent_0.4mm_stack": 7.7,
+  "cell_free_fold_zone_mm_each_fold": 9.4
+ },
+ "pitch_5.0mm": {
+  "substrate_25um": {
+   "Rc_mm": 2.48,
+   "eps_pct": 0.51,
+   "ok_below_yield": true
+  },
+  "substrate_50um": {
+   "Rc_mm": 2.45,
+   "eps_pct": 1.02,
+   "ok_below_yield": true
+  },
+  "substrate_75um": {
+   "Rc_mm": 2.42,
+   "eps_pct": 1.55,
+   "ok_below_yield": true
+  },
+  "cells_bent_would_need_Rc_mm": 2.0,
+  "cell_strain_pct_if_bent_0.4mm_stack": 9.5,
+  "cell_free_fold_zone_mm_each_fold": 7.9
+ },
+ "pitch_4.0mm": {
+  "substrate_25um": {
+   "Rc_mm": 1.98,
+   "eps_pct": 0.63,
+   "ok_below_yield": true
+  },
+  "substrate_50um": {
+   "Rc_mm": 1.95,
+   "eps_pct": 1.28,
+   "ok_below_yield": true
+  },
+  "substrate_75um": {
+   "Rc_mm": 1.93,
+   "eps_pct": 1.95,
+   "ok_below_yield": true
+  },
+  "cells_bent_would_need_Rc_mm": 1.5,
+  "cell_strain_pct_if_bent_0.4mm_stack": 12.5,
+  "cell_free_fold_zone_mm_each_fold": 6.3
+ },
+ "stowed_bearing_pressure_6g_FS1.25_Pa": 1416.0,
+ "stowed_bearing_pressure_note": "about 1.4 kPa on the bottom blanket of one 20-leaf stack (blanket weight only, flat hold-down) -- negligible vs any cell/coverglass load limit; the real hold-down (spring plate) force is a design choice (ASSUMED)",
+ "label": "ESTIMATE/ASSUMED: analytic hairpin bending strain only; no creep/crease-fatigue, no deployment-torque or tension test; real blankets (ROSA 7.4 mm flown pitch = STATEMENT, Redwire flysheet) are rolled/z-folded with proprietary details",
+ "verdict_rule": "pass if substrate strain at the chosen pitch is below the assumed 3 % yield strain with cells kept off the fold line"
+}

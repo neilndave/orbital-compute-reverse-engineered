@@ -1,0 +1,97 @@
+{
+ "build": "Aug",
+ "point": "A4_C1",
+ "N_per_Starship_target": 30,
+ "N_packed": 31,
+ "arch": "layers",
+ "S": {
+  "bus": "rackeq",
+  "rpitch": 0.01,
+  "rho": 800,
+  "rho_rack": 949,
+  "archs": [
+   "layers",
+   "books"
+  ],
+  "step": 0.1,
+  "adapt": 0.05,
+  "gap": 0.02,
+  "fold": 6,
+  "leaf": 0.006
+ },
+ "n_levels": 18,
+ "radiator": {
+  "panel_W_mm": 363.4175776637853,
+  "panel_L_mm": 2944.5579551660426,
+  "panel_planform_m2": 1.0701,
+  "n_panels": 128,
+  "n_panels_basis": "ceil(A_rad_face / panel planform); baseline 254 panels = 271.8 m2 vs 273.5 m2 stated per face",
+  "n_stacks": 13,
+  "panels_per_column": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   9,
+   9
+  ],
+  "wing0_cols": 7,
+  "wing1_cols": 6
+ },
+ "array": {
+  "width_m": 14.0,
+  "leaves_per_wing": 20,
+  "wings": 2,
+  "leaf_len_m": 1.49957,
+  "wing_len_m": 29.9914,
+  "yoke_root_m": 1.968278816700644,
+  "basis": "A_arr / (2 wings x 14 m x 20 leaves); yoke kept at baseline (ASSUMED)",
+  "fold_n": 6,
+  "leaf_mm": 6.0,
+  "block_width_m": 2.3333333333333335,
+  "stowed_thickness_m": 0.72
+ },
+ "mass": {
+  "P_IT_peak_kW": 250.0,
+  "P_IT_avg_kW": 175.0,
+  "mass_kg": 3266.666666666663,
+  "kW_per_t": 76.53061224489804,
+  "sats_per_98t": 30,
+  "sats_per_100t": 30,
+  "orbit_h_km": 600,
+  "ltan_h": 6.0,
+  "fcc_flags": []
+ },
+ "mass_lines_kg": {
+  "rack": 640.38,
+  "array": 807.56,
+  "radiator": 280.7,
+  "coolant_loop": 162.75,
+  "structure_mech": 152.68,
+  "power_electronics": 114.58,
+  "harness": 28.55,
+  "propulsion_adcs": 153.23,
+  "shielding_radiation": 32.02,
+  "mmod_bumper": 229.56,
+  "avionics_links": 67.6,
+  "margin": 535.05,
+  "adapter": 62.0
+ },
+ "newton_overlay_inputs": {
+  "m_array_kg": 807.56,
+  "A_array_m2": 839.7584935189456,
+  "wing_len_m": 29.99137476853377,
+  "array_width_m": 14.0,
+  "yoke_root_m": 1.968278816700644,
+  "mass_gaps_ratio_array": 0.31991485309017303,
+  "base_kg": 2459.106666666663
+ },
+ "label": "ESTIMATE / ASSUMED, see GTC_REPLICA_PLAN.md section 3c"
+}

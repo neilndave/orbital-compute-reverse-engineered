@@ -1,0 +1,6 @@
+A4_C1 fold2 layers n_sat 10 stacks 13 table_s 37.5
+A4_C1 fold2 stack1 n_sat 9 stacks 13 table_s 37.5
+A4_C1 fold2 books n_sat 11 stacks 13 table_s 37.5
+A4_C1 fold4 layers n_sat 12 stacks 13 table_s 39.2
+A4_C1 fold4 stack1 n_sat 12 stacks 13 table_s 39.2
+A4_C1 fold4 books n_sat 15 stacks 13 table_s 39.2
