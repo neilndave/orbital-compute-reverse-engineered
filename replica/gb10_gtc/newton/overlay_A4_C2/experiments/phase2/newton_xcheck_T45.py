@@ -1,7 +1,7 @@
 """Phase 2 chunk 2 (1): cross-check of the 21-hinge array chain in NVIDIA Newton 1.7.0 (SolverFeatherstone) against the Warp chain kernel.
 Newton supplies the multibody dynamics (fixed bus, planar chain, same geometry/masses as newton_array/run_array.py).  The hinge torque model (min-jerk PD motor with
 torque limit, Coulomb friction, captured latch, stow stop) is the same ESTIMATE model as fold_chain_T45.py, applied through Control.joint_f by a small Warp kernel.
-usage: RTS_TAG=_T45 python newton_xcheck_T45.py motor TDEP [DT] [fric_scale_hinge fric_scale] | spring [DT]  [--no-implicit-damp]      (GB10 desktop)"""
+usage: RTS_TAG=_T45 python newton_xcheck_T45.py motor TDEP [DT] [fric_scale_hinge fric_scale] | spring [DT]      (GB10 desktop)"""
 import sys, os, json, math, time
 import numpy as np
 import warp as wp, newton
@@ -57,18 +57,6 @@ def torque_kernel(tt: wp.array(dtype=float), q: wp.array(dtype=float), qd: wp.ar
 def advance(tt: wp.array(dtype=float), dt: float):
     tt[0] = tt[0] + dt
 
-@wp.kernel
-def arm_kernel(q: wp.array(dtype=float), qd: wp.array(dtype=float), sgn: wp.array(dtype=float), stroke: wp.array(dtype=float), kd: wp.array(dtype=float), fric: wp.array(dtype=float),
-               clat: wp.array(dtype=float), tl: wp.array(dtype=float), eps_v: float, dt: float, arm0: wp.array(dtype=float), arm: wp.array(dtype=float)):
-    # t476/t491 fix: same semi-implicit damping as the Warp reference (fold_chain_T45 Dc term on the mass-matrix diagonal):
-    # dt * (motor kd + d(friction)/d(rate) + latch/stop damping when engaged), written into joint_armature before each Featherstone step
-    # (Featherstone rebuilds the mass matrix every step, so the armature acts as the implicit damping term).  Off: --no-implicit-damp
-    i = wp.tid(); d = sgn[i] * q[i]; dd = sgn[i] * qd[i]; th = wp.tanh(dd / eps_v)
-    c = kd[i] + fric[i] / eps_v * (1.0 - th * th)
-    if tl[i] >= 0.0 or d > stroke[i]:
-        c = c + clat[i]
-    arm[i] = arm0[i] + dt * c
-
 def build():
     K, C, KL, CL, Kc = A.hinge_params("tuned")
     model, m_bus, _ = A.build("tuned", free_bus=False)
@@ -76,7 +64,7 @@ def build():
         a = getattr(model, nm); a.assign(np.zeros(a.shape, dtype=np.float32))
     return model
 
-def run(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, tau=10.0, rec_every=None, klat_val=None, zlat_val=None, implicit_damp=True):
+def run(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, tau=10.0, rec_every=None, klat_val=None, zlat_val=None):
     rec_every = rec_every or int(round(1.0 / dt))
     model = build(); tend = tend if tend is not None else (tdep + 90.0 if mode == "motor" else 600.0)
     s0, s1 = model.state(), model.state(); ctrl = model.control()
@@ -95,10 +83,7 @@ def run(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, tau=1
     tl = dev(np.full(N, -1.0)); pk = dev(np.zeros(N)); ctrl.joint_f.assign(np.zeros(N, dtype=np.float32))
     n = int(round(tend / dt)); H = []; t0 = time.time(); md = 1 if mode == "motor" else 0
     tt = dev([0.0])
-    arm0 = wp.clone(model.joint_armature); assert arm0.shape[0] == N, arm0.shape
     def one(a, b):
-        if implicit_damp:
-            wp.launch(arm_kernel, dim=N, inputs=[a.joint_q, a.joint_qd, sg, stk, kdd, frd, cl, tl, 1e-3, float(dt), arm0], outputs=[model.joint_armature])
         wp.launch(torque_kernel, dim=N, inputs=[tt, a.joint_q, a.joint_qd, sg, stk, md, float(tdep), kpd, kdd, tmx, frd, float(Ksp[0]), float(Cd[0]), F.OVER, F.OVR, kl, cl, 1e-3],
                   outputs=[ctrl.joint_f, tl, pk])
         solver.step(a, b, ctrl, None, dt)
@@ -121,7 +106,7 @@ def run(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, tau=1
         wp.capture_launch(graph)
     wp.synchronize(); wall = time.time() - t0
     PK = np.array(PK); good = np.isfinite(PK).all(1); pk_last = PK[good][-1] if good.any() else pk.numpy()
-    return dict(h=np.array(H), t_latch=tl.numpy(), pk=pk_last, wall=wall, dt=dt, d_final=(F.SIGN * s0.joint_q.numpy())[:N], t_nan=t_nan, klat=kl_, zlat=zl_, implicit_damp=bool(implicit_damp))
+    return dict(h=np.array(H), t_latch=tl.numpy(), pk=pk_last, wall=wall, dt=dt, d_final=(F.SIGN * s0.joint_q.numpy())[:N], t_nan=t_nan, klat=kl_, zlat=zl_)
 
 def warp_ref(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, tau=10.0):
     tend = tend if tend is not None else (tdep + 90.0 if mode == "motor" else 600.0)
@@ -135,7 +120,7 @@ def warp_ref(mode, tdep=300.0, dt=4e-3, tend=None, fric_scale=None, margin=3.0, 
 def compare(rn, rw, label):
     hn = rn["h"]; hw = rw["hist"][0]; m = min(len(hn), len(hw)); dth = np.degrees(np.abs(hn[:m] - hw[:m])); fin = np.isfinite(dth).all(1); dth = dth[fin] if fin.any() else dth
     tw = rw["t_latch"][0]; tn = rn["t_latch"]; both = (tw >= 0) & (tn >= 0)
-    out = dict(label=label, implicit_damp=rn.get("implicit_damp"), t_nan_newton_s=rn.get("t_nan"), klat=rn.get("klat"), zlat=rn.get("zlat"), newton_wall_s=rn["wall"], warp_wall_s=rw["wall_s"], dt=rn["dt"], n_latched_newton=int((tn >= 0).sum()), n_latched_warp=int((tw >= 0).sum()),
+    out = dict(label=label, t_nan_newton_s=rn.get("t_nan"), klat=rn.get("klat"), zlat=rn.get("zlat"), newton_wall_s=rn["wall"], warp_wall_s=rw["wall_s"], dt=rn["dt"], n_latched_newton=int((tn >= 0).sum()), n_latched_warp=int((tw >= 0).sum()),
                max_angle_diff_deg=float(dth.max()), rms_angle_diff_deg=float(np.sqrt((dth**2).mean())),
                max_angle_diff_deg_per_hinge_p50=float(np.median(dth.max(0))),
                latch_time_diff_s_max=float(np.abs(tn[both] - tw[both]).max()) if both.any() else None,
@@ -149,18 +134,17 @@ if __name__ == "__main__":
     mode = sys.argv[1]
     import argparse
     ap = argparse.ArgumentParser(); ap.add_argument("--klat", type=float); ap.add_argument("--zlat", type=float); ap.add_argument("--tend", type=float); ap.add_argument("--tag", default="")
-    ap.add_argument("--no-implicit-damp", dest="imp", action="store_false", help="t476 fix off (old explicit damping; NaNs near 263-270 s in variant B)")
     ex, rest = ap.parse_known_args(sys.argv[2:]); sys.argv = [sys.argv[0], mode] + rest
     if ex.klat: F.KLAT = ex.klat
     if ex.zlat: F.ZLAT = ex.zlat
     if mode == "motor":
         tdep = float(sys.argv[2]); dt = float(sys.argv[3]) if len(sys.argv) > 3 else 4e-3
         fs = {int(sys.argv[4]): float(sys.argv[5])} if len(sys.argv) > 5 else None
-        lab = "motor_tdep%g_dt%g%s%s" % (tdep, dt, "" if not fs else "_f%d_x%g" % list(fs.items())[0], ex.tag + ("" if ex.imp else "_explicit"))
-        rn = run("motor", tdep, dt, tend=ex.tend, fric_scale=fs, klat_val=ex.klat, zlat_val=ex.zlat, implicit_damp=ex.imp); rw = warp_ref("motor", tdep, dt, tend=ex.tend, fric_scale=fs)
+        lab = "motor_tdep%g_dt%g%s%s" % (tdep, dt, "" if not fs else "_f%d_x%g" % list(fs.items())[0], ex.tag)
+        rn = run("motor", tdep, dt, tend=ex.tend, fric_scale=fs, klat_val=ex.klat, zlat_val=ex.zlat); rw = warp_ref("motor", tdep, dt, tend=ex.tend, fric_scale=fs)
     else:
-        dt = float(sys.argv[2]) if len(sys.argv) > 2 else 4e-3; lab = "spring_dt%g%s" % (dt, ex.tag + ("" if ex.imp else "_explicit"))
-        rn = run("spring", dt=dt, tend=ex.tend, klat_val=ex.klat, zlat_val=ex.zlat, implicit_damp=ex.imp); rw = warp_ref("spring", dt=dt, tend=ex.tend)
+        dt = float(sys.argv[2]) if len(sys.argv) > 2 else 4e-3; lab = "spring_dt%g%s" % (dt, ex.tag)
+        rn = run("spring", dt=dt, tend=ex.tend, klat_val=ex.klat, zlat_val=ex.zlat); rw = warp_ref("spring", dt=dt, tend=ex.tend)
     c = compare(rn, rw, lab); print(json.dumps(c, indent=1), flush=True)
     os.makedirs(F.RES, exist_ok=True); np.savez(os.path.join(F.RES, "xcheck_%s.npz" % lab), hn=rn["h"], hw=rw["hist"][0])
     json.dump(c, open(os.path.join(F.RES, "xcheck_%s.json" % lab), "w"), indent=1)

@@ -71,7 +71,7 @@ REG = [
  L("V4", "design life [yr] (refresh vs EOL sizing)", "life", 5.0, 5.0, 3.0, 2.0, "ESTIMATE (repo 5 yr; Suncatcher 5-yr refresh logic; 2-3 yr refresh ASSUMED by the task)",
    "https://arxiv.org/html/2511.19468 ; configs/bus.yaml"),
  L("V4b", "array degradation per year", "arr_deg", 0.03, 0.03, 0.03, 0.0015, "ESTIMATE (repo 0.85 EOL over 5 yr = 3%/yr linear) / STATEMENT (Starcloud 0.15%/yr demonstrated for selected cells)",
-   "Starcloud (Lumen Orbit) white paper v1.03, Sep 2024, p. 3 (~line 111 of its text extract): https://starcloudinc.github.io/wp.pdf (also https://www.starcloud.com/whitepaper); not redistributed, download it from that link"),
+   "<not included> line 111"),
  L("V5", "radiation hardness: (tolerance rad(Si), inherent Al g/cm2, spare fraction)", "rad", (1000.0, 1.0, 0.02), (500.0, 0.5, 0.05), (7500.0, 2.0, 0.0), (7500.0, 2.0, 0.0),
    "ESTIMATE (repo triple; Suncatcher HBM irregularities from 2 krad(Si), TPU 15 krad no hard failure)", "https://arxiv.org/html/2511.19468 ; configs/mass_gaps.yaml radiation"),
  L("V6a", "solar activity for drag", "solar", "solar_mean", "solar_max", "solar_min", "solar_min", "ESTIMATE (MSIS F10.7 70/150/230 at LST 6/18)", "pymsis 0.13 (NRLMSIS2)"),
