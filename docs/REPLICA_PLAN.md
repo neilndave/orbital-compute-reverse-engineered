@@ -300,3 +300,12 @@ Built in `gb10_render_replica/pez_t460` + `run_pez_render.sh` (not launched). Fu
 - All 30 own-sat scans PASS (0 FAIL). Fallback (PEZ off) poses bit-identical to the plain overlay.
 
 [t493, Nov 4 06:14 AM PT / 10:14 PM Taipei] Full Render 1 PEZ launched (the author t493u option 1) after the frame sweep ended 06:11:03 PT. Scripts on the GB10: gb10_pez_t480/pez_r1_waitlaunch_t493.sh (pid 685848) -> out/R1_Aug_PEZ_full_t493/ ; gb10_newton_diag_t476/chain_j8c2_t493.sh runs J8_C2 after the render exits. Progress: gb10_pez_t480/out/R1_Aug_PEZ_full_t493_progress.log.
+
+### t494 (2026-11-04 07:30 PT / 23:30 Taipei): bus frame, fitting-mounted M55J; ESTIMATE, pending GB10 verification
+- the author approved (06:39 PT) the 50 kg Jun / 58 kg Aug frame with equipment on post-corner fittings, and asked for issues to be iterated. The CPU checks replaced it with: **Jun 28.21 kg, Aug 62.09 kg** (ESTIMATE). These replace the 70.8 / 94.9 kg lumps.
+- Design: M55J [0/45/0/-45]s, t 1.0 mm (8 × 0.125 mm plies, STATEMENT ply / ASSUMED layup). X-braces on the horizontal faces of the end bays only; the centre bay is left open for the rack. Jun b 46.4 / 52.9 mm; Aug b 82.4 / 84.2 mm.
+- Live reserve (c42): Jun 367.06 kg (21.31 %), Aug 441.81 kg (16.00 %). kW/t is unchanged (70.41 / 76.53); sats are unchanged (46 / 30).
+- GB10 check: `~/gb10_work/gb10_bus_t494/wait_verify_t494.sh` (PID 748293). It is gated on chain_t493.done plus an idle GPU. Details are in CHECKS_t494_frame.md.
+
+## Render note (t498, add-only)
+Render 1 re-run into out/R1_Aug_PEZ_full_t498 (960 frames, 1280x720, 128 spp, GB10 desktop). Changes vs t493: (1) Earth uses the NASA Blue Marble texture (public domain; caption credit "NASA Earth Observatory / Blue Marble"; texture fetched at render time, not committed; clouds procedural), diffuse-only material; (2) chase camera re-framed tight on the newest sats, then the hero sat, then a face-on reveal (2-sat phase limited by 72 m sat spacing); (3) deployed arrays get a procedural solar-cell look (dark cell grid, silver interconnects, slight specular, grey back side; cell pitch exaggerated). Physics, timing and captions otherwise unchanged. Test contact sheet: R1_Aug_PEZ_t498_test_contact.png.

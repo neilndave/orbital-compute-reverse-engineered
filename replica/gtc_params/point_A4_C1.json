@@ -44,7 +44,7 @@
   "array": 813.82,
   "radiator": 203.77,
   "coolant_loop": 324.56,
-  "structure_mech": 112.39,
+  "structure_mech": 116.48,
   "power_electronics": 61.71,
   "harness": 37.41,
   "propulsion_adcs": 157.28,
@@ -52,7 +52,7 @@
   "mmod_bumper": 369.83,
   "avionics_links": 67.6,
   "adapter": 0.0,
-  "margin": 445.9
+  "margin": 441.81
  },
  "geometry_derived": {
   "label": "ASSUMED/ESTIMATE: same panel and array architecture as the adopted baseline, scaled to the replica areas",
@@ -486,9 +486,9 @@
   "accounting": "consumed: M held, savings to margin"
  },
  "t494_frame": {
-  "frame_kg": 58.0,
+  "frame_kg": 62.09,
   "lumped_kg_replaced": 94.9,
-  "label": "t494 option1 M55J wide min-wall ESTIMATE (k40 scale, b/t 200)",
+  "label": "t494 final M55J [0/45/0/-45]s t1.0 X-braced end bays, centre bay open for rack, CPU ESTIMATE",
   "mount": "all equipment at post-corner fittings; frame carries self mass only",
   "status": "ESTIMATE, pending GB10 fixed-wall verification",
   "history": [
@@ -497,6 +497,12 @@
     "delta_vs_prev_kg": -36.9,
     "backup": "point_A4_C1.json.bak_t494",
     "label": "t494 option1 M55J wide min-wall ESTIMATE (k40 scale, b/t 200)"
+   },
+   {
+    "frame_kg": 62.09,
+    "delta_vs_prev_kg": 4.09,
+    "backup": "point_A4_C1.json.bak_t494b",
+    "label": "t494 final M55J [0/45/0/-45]s t1.0 X-braced end bays, centre bay open for rack, CPU ESTIMATE"
    }
   ]
  }
