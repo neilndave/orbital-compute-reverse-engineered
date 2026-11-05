@@ -1,9 +1,13 @@
+# [t523 2026-11-05, the author ] BASELINE CHANGE: the C1 5% rack_spare (unsourced) is replaced by 1 spare GPU per sat (Jun 72+1, Aug 79+1): rack_spare = 1/N.  Total mass M and k_rack are HELD (so kW/t and sats per Starship do not move); the freed spare mass goes to the growth reserve (growth is solved).
+#   T423G_LEGACY=1 reproduces the pre-t523 run exactly and writes results/t423g_legacy.json only (needed as the held-k_rack source).  Default (t523) writes results/t423g.json.  Backup of the old json: results/t423g.json.bak_t523.
 # t423g: calibrate a 'SpaceX-like' design to ~70/75 kW/t and ~46/30 sats per Starship (98 t) by adding realistic margin/redundancy to the first-principles stack.  Box only; ESTIMATE unless tagged.
 import sys, os, json, math
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.dont_write_bytecode = True
 src = open(os.path.join(HERE, "t423e_fp.py")).read().split("OUT = {\"info\": info}")[0]
 ns = {"__file__": os.path.join(HERE, "t423e_fp_.py")}; exec(src, ns)
 run, O, T, RES, LV, FP_B, info, PD3 = [ns[k] for k in ("run", "O", "T", "RES", "LV", "FP_B", "info", "PD3")]
+LEGACY = os.environ.get("T423G_LEGACY") == "1"; NSP = {"Jun8": 72, "Aug4": 79}      # t523: GPUs per sat (the author )
+LEG = json.load(open(os.path.join(HERE, "results", "t423g_legacy.json"))) if not LEGACY else None
 def wing(n): return ns["array_fp"](884.0, n)
 BASE = [i for i in FP_B if i not in ("FPr_b", "FPp_b", "FPs_b", "FPa_b")]      # E1c P1 E2 D1 D2 A2 C_str (coolant/ADCS/pmad as t423d)
 def build(b, k_rack, n=0.25, f_struct=0.06, pcdu=5.57, pump_spares=1, rack_spare=0.0, harn=(0.01, 15.0), arr_deg=0.01, growth=0.205, bumper=True, adapter=True):
@@ -33,7 +37,23 @@ OUT = {};
 for b in ("Jun8", "Aug4"):
     OUT[b] = {}; tg = O.TARGET[b]["kwt"]
     for nm, c in CAND.items():
-        kw = {k: v for k, v in c.items() if k != "desc"}; k = solve(b, **kw); r = build(b, k_rack=k, **kw)
+        kw = {k: v for k, v in c.items() if k != "desc"}
+        if nm == "C1_margin_forward" and not LEGACY:      # t523: 1 spare GPU per sat; hold k_rack (=> M, kW/t, N98 held), solve growth so that M returns to target (freed kg -> growth reserve)
+            kw["rack_spare"] = 1.0 / NSP[b]; k = LEG[b][nm]["k_rack"]; g0 = 0.205; kw.pop("growth")
+            gs = solve(b, knob="growth", lo=0.01, hi=3.0, k_rack=k, **kw); kw["growth"] = gs; CAND[nm]["rack_spare"] = kw["rack_spare"]; CAND[nm]["growth"] = gs
+            print(b, "t523 C1: rack_spare", round(kw["rack_spare"], 5), "growth", round(g0, 4), "->", round(gs, 5), "(solved, k_rack held at", round(k, 4), ")")
+        else: k = solve(b, **kw)
+        r = build(b, k_rack=k, **kw)
+        if nm == "C1_margin_forward" and not LEGACY:
+            dm = r["lines"]["margin"] - LEG[b][nm]["lines"]["margin"]; r["t523_check"] = dict(M_held=abs(r["M"] - LEG[b][nm]["M"]) < 1e-6, N98_held=r["N98"] == LEG[b][nm]["N98"], freed_to_margin_kg=dm,
+                spare_line_kg=r["lines"].get("shielding_radiation"), spare_line_kg_legacy=LEG[b][nm]["lines"].get("shielding_radiation"))
+            pf = json.load(open(os.path.join(HERE, "gtc_params", {"Jun8": "point_J8_C1.json", "Aug4": "point_A4_C1.json"}[b])))["t523"]["freed_kg"]      # consumed-accounting freed kg (point file, authoritative)
+            dprop = LEG[b][nm]["lines"]["propulsion_adcs"] - r["lines"]["propulsion_adcs"]      # t423g first-principles also re-sizes propulsion_adcs a little (point files hold it)
+            r["t523_check"].update(freed_pointfile_kg=pf, propulsion_resize_kg=dprop, residual_kg=dm - pf - dprop)
+            assert abs(dm - pf - dprop) < 0.15, r["t523_check"]      # residual only the 0.1 kg line rounding
+            print(b, "t523 check: freed->margin", round(dm, 2), "kg (t423g) vs point file", pf, "kg + propulsion re-size", round(dprop, 2), "kg; residual", round(dm - pf - dprop, 3))
+            assert r["t523_check"]["M_held"] and r["t523_check"]["N98_held"], r["t523_check"]
+            if "shielding_radiation" in r["lines"]: r["lines"]["spare_compute"] = r["lines"].pop("shielding_radiation")      # t523: renamed (it is spare compute, not a shield)
         r["lines"] = {a: round(v, 1) for a, v in r["lines"].items()}; OUT[b][nm] = {a: v for a, v in r.items() if a != "o"}
         print(b, nm, "k_rack", round(k, 2), "wing", round(r["wing"]), "M", round(r["M"]), "core", round(r["M_core"]), "kwt", round(r["kwt"], 1), "N98", r["N98"], "N100", r["N100"], r["orbit"], "A_rad", round(r["A_rad"]), "A_arr", round(r["A_arr"]), r["fcc"], r["lines"])
     # single-knob explanations (FP base + full add-back 20.5%): which one knob alone gives target
@@ -70,4 +90,4 @@ for b in ("Jun8", "Aug4"):
             vol[f"{nm}|{lab}"] = dict(V_sat=V, N_vol=int(1100.0 * pk // V), N_vol_614=int(614.0 * pk // V), thick_over_V3_footprint=V / 24.5)
     OUT[b]["volume"] = vol
     for k, v in vol.items(): print(b, k, {a: round(c, 2) for a, c in v.items()})
-json.dump(OUT, open(f"{RES}/t423g.json", "w"), indent=1, default=str)
+json.dump(OUT, open(f"{RES}/t423g_legacy.json" if LEGACY else f"{RES}/t423g.json", "w"), indent=1, default=str)
