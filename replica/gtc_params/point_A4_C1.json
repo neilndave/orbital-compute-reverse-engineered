@@ -13,9 +13,12 @@
   "f_struct": 0.08,
   "pcdu": 5.57,
   "pump_spares": 2,
-  "rack_spare": 0.05,
+  "rack_spare": 0.012658,
   "growth": 0.205,
-  "pcdu_previous": 3.0
+  "pcdu_previous": 3.0,
+  "rack_spare_previous": 0.05,
+  "spare_gpus_per_sat": 1,
+  "n_gpu_rack": 79
  },
  "rack_kg_per_kW": 2.561535912234976,
  "wing_W_per_kg": 332.4488883660746,
@@ -48,11 +51,11 @@
   "power_electronics": 61.71,
   "harness": 37.41,
   "propulsion_adcs": 157.28,
-  "shielding_radiation": 32.02,
+  "spare_compute": 8.11,
   "mmod_bumper": 369.83,
   "avionics_links": 67.6,
   "adapter": 0.0,
-  "margin": 441.81
+  "margin": 465.72
  },
  "geometry_derived": {
   "label": "ASSUMED/ESTIMATE: same panel and array architecture as the adopted baseline, scaled to the replica areas",
@@ -505,5 +508,46 @@
     "label": "t494 final M55J [0/45/0/-45]s t1.0 X-braced end bays, centre bay open for rack, CPU ESTIMATE"
    }
   ]
+ },
+ "legacy_key_aliases": {
+  "shielding_radiation": "spare_compute",
+  "note": "t523: the mass line formerly named shielding_radiation is spare compute (not a shield). Readers that index the old key should use L.get('spare_compute', L.get('shielding_radiation'))."
+ },
+ "t523": {
+  "decision": "the author  option 1: 1 spare GPU per satellite replaces the 5 % rack_spare (Jun 72+1, Aug 79+1)",
+  "time_pt": "2026-11-05 05:22 PST",
+  "time_taipei": "2026-11-05 21:22 CST",
+  "previous": {
+   "mass_lines_kg": {
+    "rack": 640.38,
+    "array": 813.82,
+    "radiator": 203.77,
+    "coolant_loop": 324.56,
+    "structure_mech": 116.48,
+    "power_electronics": 61.71,
+    "harness": 37.41,
+    "propulsion_adcs": 157.28,
+    "shielding_radiation": 32.02,
+    "mmod_bumper": 369.83,
+    "avionics_links": 67.6,
+    "adapter": 0.0,
+    "margin": 441.81
+   },
+   "reserve_kg": 441.81,
+   "reserve_pct": 16.001,
+   "spare_kg": 32.02,
+   "rack_spare": 0.05
+  },
+  "spare_kg_new": 8.11,
+  "spare_basis": "rack line kg / N_GPU = 640.38 / 79 (ESTIMATE; upper bound for a bare GPU board)",
+  "freed_kg": 23.91,
+  "freed_kg_to": "margin (growth reserve), total mass held",
+  "result_reserve": {
+   "margin_kg": 465.72,
+   "denominator_kg": 2737.28,
+   "reserve_pct": 17.014
+  },
+  "total_mass_held_kg": 3266.6666666666665,
+  "note": "Do not copy reserve numbers into the plan or poster text (the author t475u); recompute live with checks_t454/c42_live_baseline.py"
  }
 }
