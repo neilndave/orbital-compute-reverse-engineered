@@ -1,6 +1,5 @@
 .gitignore
 CREDITS.md
-FILES.txt
 LICENSE
 README.md
 docs/CALIBRATION.md
@@ -790,9 +789,13 @@ replica/gen_params_t434.py
 replica/gtc_params/point_A4_C1.json
 replica/gtc_params/point_A4_C2.json
 replica/gtc_params/point_A4_MID.json
+replica/gtc_params/point_A4_t538.json
+replica/gtc_params/point_A4_t547.json
 replica/gtc_params/point_J8_C1.json
 replica/gtc_params/point_J8_C2.json
 replica/gtc_params/point_J8_MID.json
+replica/gtc_params/point_J8_t538.json
+replica/gtc_params/point_J8_t547.json
 replica/make_fig_t423e.py
 replica/make_fig_t423g.py
 replica/make_fig_t434.py
