@@ -1,12 +1,12 @@
 # Orbital Compute, Reverse-Engineered
 ### working back from SpaceX's published AI1 numbers
 
-**Status: work in progress.** The engineering checks are being run now. Renders are pending (Render 1: the August fleet from release to full unfold; Render 2: June and August single satellites unfolding side by side). Numbers may change before the GTC poster freeze.
+**Status: GTC final candidate.** The poster numbers come from one reproducible configuration in [`replica/gtc_final/`](replica/gtc_final/README.md) (scoped baseline + peak battery + MPG40 freeze/restart + trunk shields). Earlier documents in `docs/` and `replica/` describe the design history and use older configurations; where they differ, `replica/gtc_final/results/GTC_FINAL_CANDIDATE.json` wins. Renders are complete (Render 1: the August fleet from release to full unfold; Render 2: June and August single satellites side by side).
 
 ## The story
-SpaceX has published headline figures for its AI1 orbital-compute satellites ([source](https://www.spacex.com/spacexai/starmind)): a June build of about 150 kW and 2,130 kg, 46 per Starship (about 70 kW/t), and an August build of about 250 kW and 3,270 kg, 30 per Starship (about 75 kW/t) (STATEMENT). This repo works backwards from those numbers. It does not use any non-public SpaceX information. We ask what a satellite would have to look like to hit them, using first-principles subsystem sizing and FCC-filing limits (4 t, 200 m² radiator, 1,500 m² array; STATEMENT). The answer is a band of designs, not a single point. It runs from **C1 "margin-forward"** (wing about 332 W/kg, rack about 2.6–2.7 kg/kW, 20.5 % growth margin) to **C2 "compute-limited"** (wing about 523 W/kg, rack about 5.1–5.4 kg/kW, 10 % growth) (ESTIMATE). We call this band the "SpaceX-like region". The poster designs are the C1 points: **June J8_C1, 46 per Starship, 70.4 kW/t** and **August A4_C1 (stow config E), 30 per Starship, 76.5 kW/t** (both ESTIMATE). We then check those designs with NVIDIA tools on one GB10 desktop:
+SpaceX has published headline figures for its AI1 orbital-compute satellites ([source](https://www.spacex.com/spacexai/starmind)): a June build of about 150 kW and 2,130 kg, 46 per Starship (about 70 kW/t), and an August build of about 250 kW and 3,270 kg, 30 per Starship (about 75 kW/t) (STATEMENT). This repo works backwards from those numbers. It does not use any non-public SpaceX information. We ask what a satellite would have to look like to hit them, using first-principles subsystem sizing and FCC-filing limits (4 t, 200 m² radiator, 1,500 m² array; STATEMENT). The answer is a band of designs, not a single point. It runs from **C1 "margin-forward"** (wing about 332 W/kg, rack about 2.6–2.7 kg/kW, 20.5 % growth margin) to **C2 "compute-limited"** (wing about 523 W/kg, rack about 5.1–5.4 kg/kW, 10 % growth) (ESTIMATE). We call this band the "SpaceX-like region". The poster designs are the C1 points: **June J8_C1, 46 per Starship, 70.4 kW/t** and **August A4_C1 (stow config E), 30 per Starship, 76.5 kW/t** (both ESTIMATE). We then check those designs with NVIDIA tools on one GB10 desktop (the final-candidate masses and specific power differ from these C1 points; see `replica/gtc_final/`):
 - radiator fin and thermal Monte Carlo in **NVIDIA Warp**
-- a **PhysicsNeMo** thermal surrogate
+- an exploratory **PhysicsNeMo** surrogate (not used by any final number)
 - array deployment in **NVIDIA Newton**
 - fleet renders in **Omniverse / Isaac Sim RTX**
 
@@ -34,7 +34,7 @@ This is an independent analysis. SpaceX is named only as the source of the publi
 Not every pass is fully scripted end to end yet. The process logs record the inputs of each pass.
 
 ## Renders and Earth imagery
-Renders are pending. The NASA Blue Marble textures the render scripts expect are included, with credit, in `vendor/same_rack/results/omniverse/assets/`. `scripts/get_blue_marble.sh` is a fallback that re-downloads them from NASA Visible Earth. Earth imagery: NASA Visible Earth / Blue Marble. Use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
+The NASA Blue Marble textures the render scripts expect are included, with credit, in `vendor/same_rack/results/omniverse/assets/`. `scripts/get_blue_marble.sh` is a fallback that re-downloads them from NASA Visible Earth. Earth imagery: NASA Visible Earth / Blue Marble. Use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
 
 ## Licence
 Apache-2.0. See `LICENSE`.

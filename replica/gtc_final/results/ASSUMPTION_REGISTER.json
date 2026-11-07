@@ -1,0 +1,234 @@
+[
+ {
+  "item": "AI1 June/August 150/250 kW peak, 46/30 per Starship, ~2,130/3,270 kg",
+  "label": "SOURCED",
+  "value": "STATEMENT",
+  "used_in": "targets, counts",
+  "source": "https://www.spacex.com/spacexai/starmind",
+  "note": ""
+ },
+ {
+  "item": "Nominal load 120/175 kW per spacecraft",
+  "label": "ENGINEERING ASSUMPTION",
+  "value": "0.8/0.7 x peak",
+  "used_in": "thermal nominal, battery",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Launch payload budget 100 t incl. 2 t dispenser; 0 % weight reserve",
+  "label": "ENGINEERING ASSUMPTION (owner decision t602/t603)",
+  "value": "100000 / 2000 kg",
+  "used_in": "launch mass, headroom",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Orbit 600 km dawn-dusk SSO, LTAN 06:00; eclipse grid from skyfield DE421",
+  "label": "ENGINEERING ASSUMPTION (orbit); computed eclipse",
+  "value": "max 21.17 min, 1391 orbits/yr",
+  "used_in": "battery, freeze, downtime",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Inclination 97.57 deg in model_t549 env (600-km SSO is ~97.79 deg)",
+  "label": "FLAG (minor inconsistency)",
+  "value": "97.57",
+  "used_in": "model_t549 env only; eclipse uses own grid",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "21.66-min / 17.41-min eclipse (550-km t590 values)",
+  "label": "SENSITIVITY ONLY",
+  "value": "7.36/7.26 min restart",
+  "used_in": "envelope",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Cold-plate resistance 14.22 K/kW (from t583 Q378g1, DTL 8 K)",
+  "label": "ENGINEERING ASSUMPTION (not vendor-sourced)",
+  "value": "14.22 K/kW",
+  "used_in": "GPU temperature",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "GPU plate load 1.7 kW per GPU at nominal-load fraction",
+  "label": "ENGINEERING ASSUMPTION",
+  "value": "1.7 x load",
+  "used_in": "GPU temperature",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "HBM rise 18 K x load over supply+10 K",
+  "label": "ENGINEERING ASSUMPTION (ASSUMED)",
+  "value": "18 K",
+  "used_in": "HBM temperature",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Rack coolant rise 20 K",
+  "label": "ENGINEERING ASSUMPTION (design choice)",
+  "value": "20 K",
+  "used_in": "mass flow, rack rise",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "PMAD/conversion efficiency 0.92 and 2 kW bus overhead",
+  "label": "ENGINEERING ASSUMPTION",
+  "value": "0.92, 2000 W",
+  "used_in": "rejected heat",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Radiator fin performance table F3_L40_t0p5 (K13D70, 0.91 emissivity)",
+  "label": "COMPUTED (NVIDIA Warp t410) on assumed optics",
+  "value": "table",
+  "used_in": "all temperatures",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "K13D effective-area factor 0.9913; MC margin 0.44 K",
+  "label": "COMPUTED (inherited t549 MC)",
+  "value": "0.9913, 0.44 K",
+  "used_in": "thermal",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "MPG40 properties (liquidus 252.05 K)",
+  "label": "SOURCED",
+  "value": "CoolProp INCOMP::MPG[0.4]",
+  "used_in": "coolant, freeze",
+  "source": "http://www.coolprop.org/fluid_properties/Incompressibles.html",
+  "note": ""
+ },
+ {
+  "item": "Dow recommended max ~393 K for PG fluids",
+  "label": "SOURCED",
+  "value": "393 K",
+  "used_in": "OPEN item (peak inlet 404 K)",
+  "source": "https://doccenter.dow.com/content/dam/internal/documents/180/180-01592-05-dowfrost-technical-data-sheet.pdf",
+  "note": ""
+ },
+ {
+  "item": "Saft VES16 8s4p pack, LEO cycle life",
+  "label": "SOURCED",
+  "value": "cell/pack data",
+  "used_in": "battery mass",
+  "source": "https://www.satnow.com/products/batteries/saft/98-1277-ves16-8s4p-battery",
+  "note": "also https://www.nasa.gov/wp-content/uploads/2024/01/saft-ves16-cell-life-test-performance-update.pdf"
+ },
+ {
+  "item": "Battery DoD 30 %, round-trip eta 0.93, 30-min peak window per orbit",
+  "label": "ENGINEERING ASSUMPTION",
+  "value": "0.30, 0.93, 30 min",
+  "used_in": "battery",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Solar cells Spectrolab XTJ Prime / AZUR 4G32 BOL & EOL retention",
+  "label": "SOURCED",
+  "value": "datasheets",
+  "used_in": "power, EOL deficit",
+  "source": "https://www.spectrolab.com/photovoltaics/XTJ-Prime_Data_Sheet%20_07.27.22.pdf",
+  "note": "https://www.azurspace.com/media/uploads/file_links/file/bdb_00010895-02-00_4g32-advanced_4x8.pdf"
+ },
+ {
+  "item": "Fin-root heater line power 40 W/m (60 W/m sensitivity); heater power from array at sunrise",
+  "label": "ENGINEERING ASSUMPTION",
+  "value": "40 W/m",
+  "used_in": "restart time, downtime",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Restart window counted as downtime each eclipsed orbit",
+  "label": "ENGINEERING ASSUMPTION (conservative)",
+  "value": "t_open x 1391/yr",
+  "used_in": "downtime",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Whipple BLE (Christiansen NNO)",
+  "label": "SOURCED",
+  "value": "equations",
+  "used_in": "trunk shields",
+  "source": "https://ntrs.nasa.gov/citations/20030068423",
+  "note": "http://hdl.handle.net/2060/19920010826"
+ },
+ {
+  "item": "MMOD flux NASA90 debris + Gruen meteoroid, flux x3",
+  "label": "ENGINEERING ASSUMPTION (dated model) -> OPEN: rerun with ORDEM/MASTER",
+  "value": "x3",
+  "used_in": "MMOD",
+  "source": "https://www.spenvis.eu/help/background/metdeb/metdeb.html",
+  "note": ""
+ },
+ {
+  "item": "Radiator header MMOD protection",
+  "label": "OPEN ITEM",
+  "value": "193/495 kg for N<=1",
+  "used_in": "not in mass",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Panel-spare coverage",
+  "label": "OPEN ITEM",
+  "value": "within 80/140 kg allocation",
+  "used_in": "mass allocation",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Deployment/capture/release/interlock hardware",
+  "label": "OPEN ITEM (allocation)",
+  "value": "70/120 kg",
+  "used_in": "mass",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Life/hardening/compute provision",
+  "label": "OPEN ITEM (allocation)",
+  "value": "50/80 kg",
+  "used_in": "mass",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Sustained / EOL peak power",
+  "label": "OPEN ITEM",
+  "value": "EOL deficit 14.5/22.7 kW",
+  "used_in": "not covered by battery",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Launcher same-orbit performance, packing/CG, qualification",
+  "label": "OPEN ITEM",
+  "value": "-",
+  "used_in": "-",
+  "source": null,
+  "note": ""
+ },
+ {
+  "item": "Mass lines rack/array/radiator/structure/etc. (t494/t523 C1 points)",
+  "label": "INHERITED ESTIMATE (replica calibration)",
+  "value": "ledger",
+  "used_in": "mass",
+  "source": null,
+  "note": ""
+ }
+]

@@ -1,0 +1,416 @@
+{
+ "schema_version": 1,
+ "note": "Variable schema for the t538 design model and surrogate. To add a variable: append an entry to 'inputs' (name, lo, hi, default, unit, group, label) and, if the direct model does not already read it, register a hook in model_t538.HOOKS; the surrogate reads this file for its input columns and normalisation, so no surrogate code changes. 'sample': false keeps a variable fixed at default in the sampled design space (still a column).",
+ "labels": "STATEMENT = read from a source/file; ESTIMATE = model computed; INFERENCE = reasoned; ASSUMED = input with no verified source",
+ "inputs": [
+  {
+   "name": "T_chip_K",
+   "group": "chip thermal chain",
+   "default": 370.0,
+   "lo": 360.15,
+   "hi": 378.15,
+   "unit": "K",
+   "sample": true,
+   "label": "chip (GPU) temperature limit, ~370 K planning requirement (author t544; Musk Jan 20 2026 '~370 Kelvin', GPU not junction, approximate). 370.0 used; no .15 precision claimed."
+  },
+  {
+   "name": "hbm_offset_K",
+   "group": "chip thermal chain",
+   "default": 0.0,
+   "lo": -10.0,
+   "hi": 0.0,
+   "unit": "K",
+   "sample": false,
+   "label": "HBM runs this many K below the chip limit (explicit HBM handling); 0 = HBM may sit at the 370.15 K chip temperature (stack is inside Micron 105 C = 378.15 K, above the 95 C qualification point 368.15 K, i.e. -2.0 K); effective limit = T_chip_K + hbm_offset_K [t547: superseded by explicit T_hbm_max_K / hbm_dT_K; keep 0]"
+  },
+  {
+   "name": "q_plate_kW",
+   "group": "chip thermal chain",
+   "default": 1.7,
+   "lo": 1.0,
+   "hi": 2.1,
+   "unit": "kW",
+   "sample": true,
+   "label": "heat through one cold plate (per GPU); repo COOLANT_CAP.md 1.2-1.7 kW (GB200-class); 150 kW / 72 GPUs = 2.08 kW is the all-in IT share (INFERENCE); default 1.7 = conservative end (ASSUMED)"
+  },
+  {
+   "name": "R_plate_KW",
+   "group": "chip thermal chain",
+   "default": 0.02,
+   "lo": 0.0065,
+   "hi": 0.03,
+   "unit": "K/W",
+   "sample": true,
+   "label": "junction-to-coolant resistance. 0.020-0.030 measured H100-class two-phase assemblies (doi 10.1115/ipack2024-141261); 0.0083-0.0085 skived Cu microchannel (doi 10.1109/itherm55375.2024.10709400); <=0.0065 (Illinois, experts.illinois.edu); 0.0105 replica microfluidic x0.35 (lab claim)"
+  },
+  {
+   "name": "derate",
+   "group": "chip thermal chain",
+   "default": 1.0,
+   "lo": 0.8,
+   "hi": 1.0,
+   "unit": "-",
+   "sample": true,
+   "label": "sustained load fraction of nameplate peak IT power (clock derating / throttle at peak). Lowers heat and plate q; delivered kW/t = derate x P / M (compute per launch falls with it)"
+  },
+  {
+   "name": "dT_loop_K",
+   "group": "loop / radiator thermal",
+   "default": 20.0,
+   "lo": 10.0,
+   "hi": 30.0,
+   "unit": "K",
+   "sample": true,
+   "label": "coolant temperature rise across the loop; plate sees supply + dT_loop/2 (ASSUMED convention, THERMAL_t536 section 3); flow, pump power and fluid mass scale with 1/dT"
+  },
+  {
+   "name": "mc_offset_K",
+   "group": "loop / radiator thermal",
+   "default": 0.44,
+   "lo": 0.0,
+   "hi": 1.0,
+   "unit": "K",
+   "sample": false,
+   "label": "Monte-Carlo median minus deterministic draw (t444, J8; ESTIMATE), subtracted from the allowed supply"
+  },
+  {
+   "name": "eps0",
+   "group": "radiator optics",
+   "default": 0.92,
+   "lo": 0.88,
+   "hi": 0.95,
+   "unit": "-",
+   "sample": true,
+   "label": "radiator emissivity (0.92 baseline; 0.95 = e95F100 coating option, INFERENCE)"
+  },
+  {
+   "name": "coat_F0",
+   "group": "radiator optics",
+   "default": 0.99,
+   "lo": 0.97,
+   "hi": 1.0,
+   "unit": "-",
+   "sample": true,
+   "label": "coating-dependent effective factor on F_eff (0.99 baseline, 1.0 = e95F100 option; t454)"
+  },
+  {
+   "name": "alpha_eol",
+   "group": "radiator optics",
+   "default": 0.2,
+   "lo": 0.2,
+   "hi": 0.36,
+   "unit": "-",
+   "sample": true,
+   "label": "solar absorptivity of the radiator (0.2 BOL baseline; 0.30/0.36 EOL in c52)"
+  },
+  {
+   "name": "qscale",
+   "group": "orbit / attitude",
+   "default": 1.0,
+   "lo": 0.5,
+   "hi": 1.0,
+   "unit": "-",
+   "sample": false,
+   "label": "scale on Earth IR + albedo heat load seen by the radiator (1 = baseline LTAN 6 h, beta 58.99 deg draw u=0.25; <1 = attitude/orbit change, ASSUMED proxy; 0 would be no environment)"
+  },
+  {
+   "name": "yoke_Feff_scale",
+   "group": "orbit / attitude",
+   "default": 1.0,
+   "lo": 0.95,
+   "hi": 1.0101,
+   "unit": "-",
+   "sample": false,
+   "label": "multiplier on the view-factor-derived F_eff (yoke root / array-bus blockage; 1.0 = render yoke 4.137 m, t444)"
+  },
+  {
+   "name": "fin",
+   "group": "radiator fin",
+   "default": 0,
+   "lo": 0,
+   "hi": 1,
+   "unit": "0=F1 repo fin table, 1=F3/K13D proxy",
+   "sample": true,
+   "label": "fin thermal table: 0 = F1_L60_t0p8 (the table behind the reported 377.38 / 378.55 K), 1 = F3_L40_t0p5 with K13D 30x0.20 mm (t479 eta_cell 0.9142 >= F3 0.9062, area factor 0.9913, INFERENCE) which is -4.4 K at the same area (c52)"
+  },
+  {
+   "name": "hp_lift_K",
+   "group": "heat pump",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 40.0,
+   "unit": "K",
+   "sample": true,
+   "label": "heat-pump lift between chip loop and radiator loop (0 = none). COP = hp_eta x Tc/lift (Carnot fraction); work adds heat and array power"
+  },
+  {
+   "name": "hp_eta",
+   "group": "heat pump",
+   "default": 0.5,
+   "lo": 0.3,
+   "hi": 0.6,
+   "unit": "-",
+   "sample": false,
+   "label": "fraction of Carnot COP (0.5/0.3 used in c52; ASSUMED)"
+  },
+  {
+   "name": "hp_kg_per_kW_el",
+   "group": "heat pump",
+   "default": 6.0,
+   "lo": 3.0,
+   "hi": 12.0,
+   "unit": "kg/kW",
+   "sample": false,
+   "label": "heat-pump hardware mass per kW electric (NO public figure found: ASSUMED placeholder)"
+  },
+  {
+   "name": "P_mmod",
+   "group": "requirement (MMOD)",
+   "default": 0.9,
+   "lo": 0.75,
+   "hi": 0.95,
+   "unit": "-",
+   "sample": true,
+   "label": "5-year no-puncture probability the radiator bumper is sized to (0.90 adopted t454 by the owner; old baseline was 0.85 / 0.76); stuffed-Whipple not used; repo Whipple model, ORDEM not run"
+  },
+  {
+   "name": "standoff_kg_per_mm_panel",
+   "group": "requirement (MMOD)",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 0.02,
+   "unit": "kg/mm/panel",
+   "sample": false,
+   "label": "mass of the bumper standoff hardware per mm of standoff per panel. The repo bumper model has NO standoff hardware (0 = repo convention, ASSUMED); the Whipple mass saturates beyond ~70 mm standoff so P_mmod costs no mass in the replica; this knob exposes that gap (anchored at the baseline 61.7 mm x 77 panels)"
+  },
+  {
+   "name": "standoff_hw_kg_per_panel",
+   "group": "requirement (MMOD)",
+   "default": 0.24,
+   "lo": 0.0,
+   "hi": 0.5,
+   "unit": "kg/panel",
+   "sample": true,
+   "label": "bumper standoff HARDWARE mass per radiator panel (absolute, added to the bumper line). ASSUMED, from CHECKS_t456.md: 5 g x 6 spacers per 2.94 m strip = 30 g per strip, 8 strips per panel (4 tubes x 2 sides) = 0.24 kg/panel; reproduces t456's +18.5 kg (Jun, 77 panels) / +30.7 kg (Aug, 128 panels). No public source found for the spacer mass. 0 = live baseline convention (hardware absent). 0.5 = about 2x, covers a standoff-scaled design (0.24 x 124 mm / 65 mm = 0.46 at Aug's standoff). Only the t456 sensitivity exists; this is NOT in the live baseline mass."
+  },
+  {
+   "name": "pump_spares",
+   "group": "spares",
+   "default": 2,
+   "lo": 0,
+   "hi": 2,
+   "unit": "count",
+   "sample": true,
+   "label": "spare column pump modules per sat (baseline 2; the author rejected 2->1 at t462 so default 2)"
+  },
+  {
+   "name": "spare_gpus",
+   "group": "spares",
+   "default": 1,
+   "lo": 0,
+   "hi": 2,
+   "unit": "count",
+   "sample": true,
+   "label": "spare GPUs per sat (t523: 1 per sat, 5.67 kg Jun / 8.11 kg Aug each; also sets availability)"
+  },
+  {
+   "name": "frame_kg",
+   "group": "structure",
+   "default": null,
+   "lo": null,
+   "hi": null,
+   "unit": "kg",
+   "sample": false,
+   "label": "frame mass per sat (t494 M55J frame 28.21 kg Jun vs 70.8 kg lumped); default read live from the point file"
+  },
+  {
+   "name": "struct_scale",
+   "group": "structure",
+   "default": 1.0,
+   "lo": 0.9,
+   "hi": 1.15,
+   "unit": "-",
+   "sample": true,
+   "label": "multiplier on the structure_mech line (f_struct proxy; ASSUMED range)"
+  },
+  {
+   "name": "adapter_kg",
+   "group": "structure",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 62.0,
+   "unit": "kg",
+   "sample": false,
+   "label": "per-sat launch adapter (t481: deleted, 62 kg previously)"
+  },
+  {
+   "name": "pcdu_kWkg",
+   "group": "power",
+   "default": 5.57,
+   "lo": 3.0,
+   "hi": 8.0,
+   "unit": "kW/kg",
+   "sample": true,
+   "label": "PCDU specific power (t474 plan of record 5.57; old 3.0; 12 kW/kg raw base)"
+  },
+  {
+   "name": "bus_V",
+   "group": "power",
+   "default": 300.0,
+   "lo": 200.0,
+   "hi": 400.0,
+   "unit": "V",
+   "sample": false,
+   "label": "bus voltage (t536 confirmed 300 V; harness ~ 1/V^2 at fixed loss)"
+  },
+  {
+   "name": "wing_scale",
+   "group": "power",
+   "default": 1.0,
+   "lo": 0.9,
+   "hi": 1.572,
+   "unit": "-",
+   "sample": true,
+   "label": "array specific power relative to the live line (332.4 W/kg Jun at C1). 1.572 = 522.7 W/kg = the aggressive C2 corner of the original SpaceX region (t423g, INFERENCE needed to reach SpaceX-like numbers); <1 = heavier array"
+  },
+  {
+   "name": "reserve_floor",
+   "group": "requirement (margin)",
+   "default": 0.1,
+   "lo": 0.0,
+   "hi": 0.205,
+   "unit": "-",
+   "sample": true,
+   "label": "minimum reserve as fraction of (core+bumper-propellant): 10 % = lower edge of the original C1-C2 region (C2 growth), ASSUMED; 20.5 % = repo margin policy; evaluate also at 0"
+  },
+  {
+   "name": "rpitch_mm",
+   "group": "packing / deploy",
+   "default": 10.0,
+   "lo": 5.0,
+   "hi": 10.0,
+   "unit": "mm",
+   "sample": true,
+   "label": "stowed radiator panel stacking pitch (10 mm baseline packer; 5-7 mm is a deploy-config lever, volume check only)"
+  },
+  {
+   "name": "extra_mass_kg",
+   "group": "hook",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 50.0,
+   "unit": "kg",
+   "sample": false,
+   "label": "generic hook: any later variable's mass effect"
+  },
+  {
+   "name": "extra_power_kW",
+   "group": "hook",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 10.0,
+   "unit": "kW",
+   "sample": false,
+   "label": "generic hook: extra electrical load (array/PCDU sized, also heat)"
+  },
+  {
+   "name": "T_hbm_max_K",
+   "group": "thermal",
+   "default": 368.15,
+   "lo": 368.15,
+   "hi": 378.15,
+   "unit": "K",
+   "sample": true,
+   "label": "HBM limit: 368.15 = 95 C HBM qualification (H100 product brief THBM, via THERMAL_t536 sec 2, secondary); 378.15 = Micron HBM3E 105 C operating (STATEMENT, THERMAL_t536)"
+  },
+  {
+   "name": "hbm_dT_K",
+   "group": "thermal",
+   "default": -1.0,
+   "lo": -1.0,
+   "hi": 20.0,
+   "unit": "K",
+   "sample": false,
+   "label": "HBM-to-coolant-reference rise; -1 = same as chip q*R (THERMAL_t536 convention 'HBM numbers are the die numbers'; no HBM-specific R found, ASSUMED)"
+  },
+  {
+   "name": "pmad_eff",
+   "group": "power",
+   "default": 0.92,
+   "lo": 0.88,
+   "hi": 0.97,
+   "unit": "-",
+   "sample": true,
+   "label": "PMAD+harness efficiency; 0.92 = repo array-sizing convention (orbit_loop.py A_arr = P/(319.7*0.92*eol)), ASSUMED"
+  },
+  {
+   "name": "pmad_heat_to_rad",
+   "group": "power",
+   "default": 1.0,
+   "lo": 0.0,
+   "hi": 1.0,
+   "unit": "-",
+   "sample": true,
+   "label": "fraction of PMAD/harness loss rejected by the main radiator (1 = conservative, no separate bus radiator modeled; 0 = live convention), ASSUMED"
+  },
+  {
+   "name": "q_other_kW",
+   "group": "power",
+   "default": 0.0,
+   "lo": 0.0,
+   "hi": 3.0,
+   "unit": "kW",
+   "sample": true,
+   "label": "avionics/laser terminals/ADCS heat on the main loop; no power figure in the replica (OMISSION flag), 0 default"
+  },
+  {
+   "name": "fin_area_rel",
+   "lo": 0.9,
+   "hi": 1.6,
+   "default": 1.0,
+   "sample": false,
+   "source": "t548 Warp fin_t548 (ESTIMATE): required planform vs live K13D 30/0.20 at equal duty"
+  },
+  {
+   "name": "fin_mass_rel",
+   "lo": 0.6,
+   "hi": 2.0,
+   "default": 1.0,
+   "sample": false,
+   "source": "t548 Warp fin_t548 areal (fin+tube+fluid) incl. bond, vs live K13D (ESTIMATE)"
+  },
+  {
+   "name": "cref_frac",
+   "lo": 0,
+   "hi": 1,
+   "default": 0.5,
+   "sample": false,
+   "source": "t549: where in the per-plate coolant rise the chip R is referenced (0.5 = t547 mean; 1.0 = plate outlet, conservative for series/worst GPU)"
+  },
+  {
+   "name": "hbm_off_K",
+   "lo": 0,
+   "hi": 8,
+   "default": 0.0,
+   "sample": false,
+   "source": "t549: HBM above die-equivalent rise; 8 K = gap between H100 HBM 95 C and GPU TAVG 87 C qualification points (INFERENCE)"
+  }
+ ],
+ "outputs": [
+  "k_rack_solved",
+  "M_req_kg",
+  "kWt",
+  "N98",
+  "reserve_pct_at_Mt",
+  "A_rad_m2",
+  "npan",
+  "T_supply_K",
+  "T_plate_mean_K",
+  "T_chip_K_out",
+  "rad_kg",
+  "coolant_kg",
+  "bumper_kg",
+  "array_kg",
+  "margin_kg"
+ ]
+}

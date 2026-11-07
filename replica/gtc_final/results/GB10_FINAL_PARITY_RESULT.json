@@ -1,0 +1,191 @@
+{
+  "label": "Native NVIDIA Warp GB10 fp64 FINAL-CANDIDATE thermal-root and mass parity",
+  "scope": "Native NVIDIA Warp CUDA fp64 parity for the GTC FINAL CANDIDATE (independent GPU re-solve of every poster temperature root and the mass rollup). Derived from SPIN1: same inherited fin-table thermal root as the frozen baseline parity kernel, plus explicit extra radiator heat\n(battery-recharge loss), film dR, and the SPIN1 rollup ledger. Cases: T2 recommended nominal (MPG40 + recharge heat), T1 MPG40 peak, T4 header-protected sensitivity. Not qualification.",
+  "machine": "aarch64",
+  "device": "cuda:0",
+  "device_name": "NVIDIA GB10",
+  "warp_version": "1.18.0",
+  "configuration_sha256": "b89c202f6372032f0337f4cb81888e99df3f5c7290745c26fac786c4f0a24d00",
+  "thermal_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+  "script_sha256": "505ffe9787c9221c9f8cdc5d27ce9809780abbb290767b23dd7c7f321116461d",
+  "fin_lookup_sha256": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
+  "wall_seconds": 0.0021178722381591797,
+  "columns": [
+    "total_heat_W",
+    "radiator_delta_K",
+    "coolant_supply_K",
+    "coolant_rack_mean_K",
+    "GPU_K",
+    "HBM_K",
+    "coolant_radiator_inlet_K",
+    "sc_mass_kg",
+    "launch_kg",
+    "energy_residual_W"
+  ],
+  "rows": [
+    {
+      "case": "June_FINAL_nominal_T2",
+      "values": [
+        133725.09924495386,
+        22.287516540825642,
+        360.5107838853117,
+        370.5107838853117,
+        389.8499838853117,
+        384.9107838853117,
+        382.79830042613736,
+        1937.770869806895,
+        91137.46001111717,
+        1.5916157281026244e-12
+      ],
+      "max_absolute_box_difference": 1.0686562745831907e-11
+    },
+    {
+      "case": "June_FINAL_peak_T1",
+      "values": [
+        166177.2779307568,
+        22.156970390767572,
+        381.61790591731784,
+        391.61790591731784,
+        415.7919059173178,
+        409.61790591731784,
+        403.7748763080854,
+        1937.770869806895,
+        91137.46001111717,
+        0.0
+      ],
+      "max_absolute_box_difference": 9.049472282640636e-11
+    },
+    {
+      "case": "June_BASELINE_nominal_T0",
+      "values": [
+        133144.78266513385,
+        22.19079711085564,
+        360.15560699215524,
+        370.15560699215524,
+        389.49480699215525,
+        384.5556069921552,
+        382.34640410301085,
+        1806.1238841679267,
+        85081.69867172463,
+        0.0
+      ],
+      "max_absolute_box_difference": 7.73070496506989e-12
+    },
+    {
+      "case": "June_BASELINE_peak_T0",
+      "values": [
+        165884.1240595079,
+        22.117883207934387,
+        381.46012275067875,
+        391.46012275067875,
+        415.6341227506787,
+        409.46012275067875,
+        403.5780059586131,
+        1806.1238841679267,
+        85081.69867172463,
+        0.0
+      ],
+      "max_absolute_box_difference": 9.157474778476171e-11
+    },
+    {
+      "case": "June_SENS_header_protected_T4",
+      "values": [
+        133696.61390387375,
+        22.282768983978958,
+        365.82057223529665,
+        375.82057223529665,
+        395.15977223529666,
+        390.22057223529663,
+        388.1033412192756,
+        1937.770869806895,
+        91137.46001111717,
+        1.5916157281026244e-12
+      ],
+      "max_absolute_box_difference": 1.5916157281026244e-12
+    },
+    {
+      "case": "August_FINAL_nominal_T2",
+      "values": [
+        194183.24104259498,
+        22.192370404867997,
+        349.14598154721835,
+        359.14598154721835,
+        376.0677815472184,
+        371.7459815472184,
+        371.3383519520863,
+        3024.075702175173,
+        92722.27106525519,
+        1.3642420526593924e-11
+      ],
+      "max_absolute_box_difference": 1.3642420526593924e-11
+    },
+    {
+      "case": "August_FINAL_peak_T1",
+      "values": [
+        275502.57862266316,
+        22.040206289813053,
+        382.34218752831333,
+        392.34218752831333,
+        416.5161875283133,
+        410.34218752831333,
+        404.3823938181264,
+        3024.075702175173,
+        92722.27106525519,
+        0.0
+      ],
+      "max_absolute_box_difference": 8.93578544491902e-11
+    },
+    {
+      "case": "August_BASELINE_nominal_T0",
+      "values": [
+        193166.7419734137,
+        22.076199082675853,
+        348.7401392833885,
+        358.7401392833885,
+        375.6619392833885,
+        371.3401392833885,
+        370.8163383660643,
+        2842.1181493803365,
+        87263.54448141009,
+        0.0
+      ],
+      "max_absolute_box_difference": 5.752553988713771e-11
+    },
+    {
+      "case": "August_BASELINE_peak_T0",
+      "values": [
+        275013.98883724835,
+        22.001119106979868,
+        382.18331661575104,
+        392.18331661575104,
+        416.357316615751,
+        410.18331661575104,
+        404.1844357227309,
+        2842.1181493803365,
+        87263.54448141009,
+        0.0
+      ],
+      "max_absolute_box_difference": 9.043787940754555e-11
+    },
+    {
+      "case": "August_SENS_header_protected_T4",
+      "values": [
+        194082.81080261056,
+        22.180892663155493,
+        354.55039741080856,
+        364.55039741080856,
+        381.4721974108086,
+        377.1503974108086,
+        376.73129007396403,
+        3024.075702175173,
+        92722.27106525519,
+        1.3642420526593924e-11
+      ],
+      "max_absolute_box_difference": 1.3642420526593924e-11
+    }
+  ],
+  "max_abs_difference": 9.157474778476171e-11,
+  "tolerance": 1e-06,
+  "passed": true,
+  "qualification_claim": false
+}
