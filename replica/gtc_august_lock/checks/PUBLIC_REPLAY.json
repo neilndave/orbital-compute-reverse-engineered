@@ -46,18 +46,6 @@
     {
       "check": "Safe-mode retained",
       "passed": true
-    },
-    {
-      "check": "SWEEP replay numerical parity",
-      "passed": true
-    },
-    {
-      "check": "MC replay numerical parity",
-      "passed": true
-    },
-    {
-      "check": "Tape optimum replay",
-      "passed": true
     }
   ],
   "scope": "Frozen point/tools verification, not hardware qualification. Runtime timings are not hash reproducibility targets."

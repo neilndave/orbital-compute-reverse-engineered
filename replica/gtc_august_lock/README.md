@@ -21,3 +21,7 @@ Component-envelope stow and representative rigid deployment/local strength are s
 Install Python, NumPy, SciPy, Matplotlib, CoolProp and Warp matching the measured versions where possible. Optional training requires the specified PhysicsNeMo container. `python reproduce.py` validates frozen artifacts and arithmetic; `python reproduce.py --cpu-studies` additionally replays the three Warp study stages. `--cuda-studies` requires CUDA. Run the native CUDA thermal verifier separately from its folder.
 
 `GTC_POSTER_DRAFT.pdf` is the author-attributed final-design draft with the finished 4K Isaac Sim RTX Earth-background hero. LICENSE applies to original work only; CREDITS covers external dependencies. No logo/endorsement is implied.
+
+## Workflow and process provenance
+
+The poster presents one engineer plus a closed-product AI agent orchestrating open Apache-2.0 analysis, GPU studies and native checks, with human approval. The agent and Isaac Sim renderer are proprietary. `checks/PROCESS_METRICS.json` and its separate SHA256 sidecar document the approximate calendar span, reduced-model grid count, bounded uncertainty scenarios and two release-audit gates; none is a measured labor saving or productivity multiplier. The approved author attribution and repository link appear only in the poster PDF.

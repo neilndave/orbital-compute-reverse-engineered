@@ -1,15 +1,17 @@
 {
+  "process_metrics_sha256": "47c6b39df9352de26fe118d15fbb0f3f6419723e78eaad5c98916f286f83ae80",
+  "repository_link": "https://github.com/OWNER/REPOSITORY",
   "canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
-  "pdf_sha256": "87496d4dd8072130f8000d6c8295f4c59cd511c444a3cfbeab4b8018a424ea54",
-  "file": "publication/GTC_POSTER_V3_LOCK_PUBLIC.pdf",
-  "size_bytes": 2035145,
+  "pdf_sha256": "ff40844ba24d857b5b72f04d74a7140ddb99374ffca0c3f7038b17c529a1a2a8",
+  "file": "GTC_POSTER_DRAFT.pdf",
+  "size_bytes": 2037889,
   "page_inches": [
     43,
     24
   ],
   "margin_inches": 1,
-  "source_generator_sha256": "5d87377ba01cb493870bf3e7e7d3a42f01a49f7c79fed4b092580eb56351f92d",
-  "all_text": "Batch first, verify natively: GPU tools for orbital compute\n[poster author]  |  Reproducible engineering study  |  Draft for review\n8.49 million designs/s; 33.1\u00d7 warm sweep speedup vs one GB10 Cortex-X925 CPU core.\nProblem / contribution: GPU tools close the 30 \u00d7 250 kW / 100-t mass-and-thermal design point, then verify it natively. Batch physics, held-out checks and mechanical screens deliver a\nmeasured, reproducible engineering result\u2014not flight qualification.\n1  Warp | discrete sizing\n1,806,336 designs\nMinimum full mass in verified stow subset. Star:\nsurrogate estimate; native check: 3022.48 kg/sc, 140\npanels.\n2  Warp | stress uncertainty\n42.08% meet inlet cap\n1,048,576 bounded engineering scenarios + rank\nsensitivity, not measured reliability. Coating spec:\n\u03b5 = 0.92 (BOL).\n3  warp.Tape | gradients\n0.82% relaxed mass gap\nFinite-difference gradient check PASS. Continuous\nrelaxation cross-checks the grid; not adopted\nhardware or a global optimum.\n4  PhysicsNeMo | held out\nMax |\u0394\u03b7| = 9.3e-05\n384 native training labels; 128 independent held-out\nlabels. Selected fins re-solved natively.\n5  Newton | rigid deployment\n31 / 31 representative locks\nSampled clearance PASS; angle parity 0.0061 deg.\nForce-step convergence and flexible hardware OPEN.\nBoth solvers on CUDA.\n6  Honest speed | same fp64 work\nBatching wins; serial work can lose\nSame fp64 kernel; CPU: 1 core / 1 thread, not all 20\nArm cores. Warm runs exclude setup/JIT/training;\nserial GPU work can lose.\nApplication | requirements\n30 \u00d7 250 kW = 7.5 MW installed peak\n175 kW nominal (sunlit); annual 164.4 kW/sc\n92.674 t incl. 2-t dispenser; 7.326 t reserve\n140 panels; 861.75 m\u00b2 gross array\nGPU/HBM 366.16 / 361.84 K nominal\nPeak inlet 391.91 K [BOL; \u03b5 = 0.92]\nEarth: NASA Blue Marble; rendered in Isaac Sim (RTX\npath tracing); illustrative\nWhat we designed\nNot designed / OPEN\n861.75 m\u00b2 solar array.\nAl 6061-T6 radiator:\n7 round 8/7-mm tubes.\nMPG40; safe-mode\npack: 31.25 kg.\nEclipse compute pause.\nTrunk Whipple shields.\n30-envelope stow.\nRigid Newton; local FEA.\nHeader MMOD:\n694 expected / 5 yr.\nEOL: \u221216.53 kW/sc.\nFull-peak GPU: 404.0 K.\nFlight stow / hinges /\nhoses; launcher loads.\nFlexible dynamics.\nTID/SEE; ADCS; links.\nSpares; braze; disposal.\n23-mm seams: 1.495% gross area. 319.7 W/m\u00b2 gross\nimplies 324.55 W/m\u00b2 active (cell-fill OPEN). Freeze\nreference FAIL waived; full mass charged. Annual\n175-kW interpretation OPEN.\nHardware: GB10 GPU; CPU: 1 Cortex-X925 core / 1 thread; box: x86 VM. Warp 1.18.0 / 1.19.0; Newton 1.7.0; PhysicsNeMo 2.2.0; CalculiX 2.21.\nReferences: SpaceX Starmind; Warp; Newton; PhysicsNeMo; CoolProp; Dow DOWFROST; Christiansen (NASA NTRS 20030068423). Links and evidence: bundle.\nAI assistance: Grok Bot; the author is responsible for assumptions and claims. Engineering screens, not flight qualification.\nCanonical SHA256: f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+  "source_generator_sha256": "801faa07b7ec7dba236c682df1fe56f91865385fc107bb16cb47d4970d63ea1d",
+  "all_text": "Agent-orchestrated engineering: batch first, verify natively\nthe author\nOne engineer + an AI agent + open analysis: GPU exploration with native verification on NVIDIA GB10.\n8.49 million designs/s; 33.1\u00d7 warm sweep speedup vs one GB10 Cortex-X925 CPU core.\n\u224811-day documented build | 1.81M designs screened | 1.05M uncertainty scenarios | 2 release-audit gates\nHuman requirements /\ndesign decisions\nAI agent: inference\nclosed-product black box\nOpen analysis scripts\nApache-2.0\nGPU: Warp 1\u20133; PhysicsNeMo 4; Newton 5\n4: train \u2192 infer; CPU: CalculiX FEA; speed 6\nNative numerical\nchecks\nHuman approval\ngates A + B\n1  Warp | discrete sizing\n1,806,336 designs\nMinimum full mass in verified stow subset. Star:\nsurrogate estimate; native check: 3022.48 kg/sc, 140\npanels.\n2  Warp | stress uncertainty\n42.08% scenario pass fraction\n1,048,576 bounded engineering scenarios + rank\nsensitivity, not measured reliability. Coating spec:\n\u03b5 = 0.92 (BOL).\n3  warp.Tape | gradients\n0.82% relaxed mass gap\nFinite-difference gradient check PASS. Continuous\nrelaxation cross-checks the grid; not adopted\nhardware or a global optimum.\n4  PhysicsNeMo | held out\nMax |\u0394\u03b7| = 9.3e-05\n384 native training labels; 128 independent held-out\nlabels. Selected fins re-solved natively.\n5  Newton | rigid deployment\n31 / 31 representative locks\nSampled clearance PASS; angle parity 0.0061 deg.\nForce-step convergence and flexible hardware OPEN.\nBoth solvers on CUDA.\n6  Honest speed | same fp64 work\nBatching wins; serial work can lose\nSame fp64 kernel; CPU: 1 core / 1 thread, not all 20\nArm cores. Warm runs exclude setup/JIT/training;\nserial GPU work can lose.\nVerified mass-and-thermal trade point\n30 \u00d7 250 kW = 7.5 MW installed peak\n175 kW nominal (sunlit); annual 164.4 kW/sc\n92.674 t incl. 2-t dispenser; 7.326 t reserve\n140 panels; 861.75 m\u00b2 gross array\nGPU/HBM 366.16 / 361.84 K nominal\nPeak inlet 391.91 K [BOL; \u03b5 = 0.92]\nEarth: NASA Blue Marble; rendered in Isaac Sim (RTX\npath tracing); illustrative\nDesigned / screened\nNot designed / OPEN\n861.75 m\u00b2 solar array.\n140-panel Al 6061-T6.\n7 round 8/7-mm tubes.\nMPG40; 31.25-kg pack.\nEclipse compute pause.\n30-envelope stow; FEA.\nMMOD: 694 / 5 yr.\nEOL: \u221216.53 kW/sc.\nPeak GPU: 404.0 K.\nFlight loads / stow.\nFlex / force tests.\nRadiation; ADCS / links.\nSo what? A verified trade point\nScreened 1.81M designs, quantified uncertainty,\nverified natively; exposed OPEN limits in \u224811 days.\nOpen, reproducible analogue: Dassault / Synopsys\nshowed agentic engineering at GTC Berlin 2026.\n23-mm seams 1.495%: 319.7 \u2192 324.55 W/m\u00b2 active.\nFill / annual OPEN; freeze FAIL waived, mass charged.\nHardware: GB10 GPU; CPU: 1 Cortex-X925 core / 1 thread; box: x86 VM. Warp 1.18.0 / 1.19.0; Newton 1.7.0; PhysicsNeMo 2.2.0; CalculiX 2.21.\nhttps://github.com/OWNER/REPOSITORY  |  References: SpaceX; Warp; Newton; PhysicsNeMo; Dow; NASA NTRS 20030068423.\nApache-2.0 analysis scripts; proprietary AI agent and Isaac Sim renderer. AI assistance: Grok Bot; author responsible. Not flight qualification.\nCanonical SHA256: f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
   "numeric_trace": [
     {
       "source": "timings/SWEEP/CPU_kernel_seconds \u00f7 GPU_kernel_seconds",
@@ -22,6 +24,12 @@
       "scale": 1e-06,
       "format": ".2f",
       "shown": "8.49"
+    },
+    {
+      "source": "checks/PROCESS_METRICS.json",
+      "sha256": "47c6b39df9352de26fe118d15fbb0f3f6419723e78eaad5c98916f286f83ae80",
+      "shown": "\u224811-day documented build | 1.81M designs screened | 1.05M uncertainty scenarios | 2 release-audit gates",
+      "scope": "Separately hashed process provenance, not physical canonical fields"
     },
     {
       "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/sweep/configurations",
@@ -202,5 +210,5 @@
     "lock/dynamics/results_lock/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f",
     "figs/v3_lock_hero.png": "9639a5f408b9cf3adeccd3c22fd773f5a07f6cbc5e19f23a444dc807ab01c5c5"
   },
-  "scope": "Vector text/charts and final 4K Isaac Sim RTX hero; layout-only revision, scientific canonical unchanged. Explicit thermal BOL/coating and seam assumptions."
+  "scope": "Layout-only agentic framing, connected observable workflow, separate process provenance, QR, final-design claims and final 4K hero. Scientific canonical unchanged. The public target and author identity appear only in the poster PDF."
 }
