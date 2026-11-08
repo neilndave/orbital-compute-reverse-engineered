@@ -1,0 +1,33 @@
+{
+  "cache_scope": "Existing compiled kernel cache retained; compile/warmup timings are NOT pristine cold-cache costs.",
+  "cpu_baseline": {
+    "CPU_part": "0xd85",
+    "backend": "Warp CPU single-threaded",
+    "comparison": "Same fp64 Warp kernels, not a comparison against all host cores",
+    "core_model": "Cortex-X925",
+    "correction": "Original CPU0 Cortex-A725 timings retained externally; final comparisons use one Cortex-X925 core. No CUDA stage repeated.",
+    "host_logical_cpus": 20,
+    "physical_cores_used": 1,
+    "pinned_logical_cpu": 5,
+    "software_threads": 1
+  },
+  "cpu_identity": {
+    "Architecture": "aarch64",
+    "CPU(s)": "20",
+    "Model name": "Cortex-A725",
+    "Vendor ID": "ARM"
+  },
+  "cpu_models": [
+    "Cortex-X925",
+    "Cortex-A725"
+  ],
+  "machine": "aarch64",
+  "numpy": "2.5.4",
+  "nvidia_smi": "NVIDIA GB10, 580.178.04, [N/A]",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "thread_environment": {
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1
+  },
+  "warp": "1.18.0"
+}

@@ -1,0 +1,69 @@
+[
+  {
+    "file": "tools/run_tools.py",
+    "measured_source_sha256": "475aebad4accc8f721ca1660c34f2abca5a058f04d30894ce6254d0c36f8bc32",
+    "published_sha256": "3cd1a8a41f09146aa7c36017fefdd9f77bf5459218be0ac1c9c2d2af3c1208b5",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/fin_al_benchmark.py",
+    "measured_source_sha256": "270d10e21ee42a79914aa8a3846f6bd811d6ded594b9e763f9858ea4fbdafd06",
+    "published_sha256": "009b5ddcf2751c66c52e3f0d36fb31d56a49db14f9e2fe93d2b13811996599d3",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/validate_and_plot.py",
+    "measured_source_sha256": "4f2494a907458d18897dbe431fc7fa67f9ec489df65b1fc132fa286f0299e8d0",
+    "published_sha256": "0d7782f9cad022526e78aee1280bcb40de0ba6c7775a1a3861e0f9a4121ce605",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/SWEEP_GB10_ARM_CPU.json",
+    "measured_source_sha256": "887da670589318d02644cbcb1f4f90b21b850cd7f37362d3ecdf2289ee947931",
+    "published_sha256": "6b9bfbf433ead7031a64f644f0f7a74a8e37e5a2c647def6dbc2c3592e6a315a",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/MC_GB10_ARM_CPU.json",
+    "measured_source_sha256": "34ab70a944b787872bd476194dcf08b70fb9f476a518b97ef1e7bc7f95572f50",
+    "published_sha256": "7022711dfd367c7bc200def816f0a1bc5d1ea5d4e8c1da198e6494b9abdbf0fa",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/OPT_GB10_ARM_CPU.json",
+    "measured_source_sha256": "2124afbe8b97972d03f95a5eb6518ccca2febc10012b32fbac2ec75d41b53cae",
+    "published_sha256": "4efea6f4bb6b2af43abb7ac1b967c7a0ee52a04440e549dbe496dad7d3b68aa9",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/FINAL_TOOL_VERSIONS.json",
+    "measured_source_sha256": "30dde8ca217bc3795d7cefa9e8fff657bc1f08969a9a11d24f0d3c8ddcb7d29a",
+    "published_sha256": "797476e0a2a9a207114a45544959b9fad65ced2edbf40fe721753b275d51d045",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/VALIDATION.json",
+    "measured_source_sha256": "4659119b3244e15c49eb5c8f9fa15ebde39593ad79c6f2a931343284d7149ad1",
+    "published_sha256": "28997ac469f89fe2ee18eb55007dfc760df436e5c9fed01742b47fc766a1fcee",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "tools/SPEED_PANEL.json",
+    "measured_source_sha256": "6e0540ec069614db655951b6281ea0b04d033cb7b9a2b76e81666a145743c93f",
+    "published_sha256": "ef68557327c4fdc0ccc53d76ea328bdf08f21073897878a7130fd9425bbbdf2c",
+    "reason": "Publication-only CPU-label normalization or removal of unused non-application initialization; numerical model unchanged. Public hash is distinct, not a byte-identical private source claim."
+  },
+  {
+    "file": "reproduce.py",
+    "measured_source_sha256": "614e3bcc770793797bb45247ae40f94b3ae9cb80edfce4d75e6392fc0c84acfb",
+    "published_sha256": "5c21e6303ecec5b2b5290a185340c5d171aa5dd4b878f59969c65345463a7873",
+    "reason": "Verifier-only correction: local Tape replay uses its same-device reference. Cross-backend local-optimizer trajectory is not bit-identical; gradient and sweep/MC parity unchanged."
+  },
+  {
+    "scope": "Layout-only poster revision2; all scientific/model/tool files unchanged from preceding release.",
+    "source_canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+    "poster_sha256": "87496d4dd8072130f8000d6c8295f4c59cd511c444a3cfbeab4b8018a424ea54",
+    "hero_sha256": "9639a5f408b9cf3adeccd3c22fd773f5a07f6cbc5e19f23a444dc807ab01c5c5",
+    "author_byline": "Explicitly requested author attribution on poster; no affiliation."
+  }
+]

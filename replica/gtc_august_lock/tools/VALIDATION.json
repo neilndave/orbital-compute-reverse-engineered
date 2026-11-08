@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "check": "SWEEP CUDA vs GB10_ARM_CPU",
+      "max_abs_difference": 1.3642420526593924e-12,
+      "passed": true,
+      "samples": 2049
+    },
+    {
+      "check": "SWEEP CUDA vs BOX_CPU",
+      "max_abs_difference": 1.3642420526593924e-12,
+      "passed": true,
+      "samples": 2049
+    },
+    {
+      "check": "MC CUDA vs GB10_ARM_CPU",
+      "max_abs_difference": 8.36735125631094e-11,
+      "passed": true,
+      "samples": 2048
+    },
+    {
+      "check": "MC CUDA vs BOX_CPU",
+      "max_abs_difference": 8.36735125631094e-11,
+      "passed": true,
+      "samples": 2048
+    },
+    {
+      "check": "MC independent SciPy brentq / NumPy roots and film arithmetic",
+      "max_abs_difference": 7.09405867382884e-11,
+      "passed": true,
+      "samples": 32,
+      "wall_seconds": 0.4999295590023394
+    },
+    {
+      "check": "Selected native 585-point fin table CUDA vs BOX_CPU",
+      "max_abs_eta": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "Selected native 585-point fin table CUDA vs GB10_ARM_CPU",
+      "max_abs_eta": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "PhysicsNeMo truly held-out native Warp labels",
+      "max_abs_eta": 9.301506847192442e-05,
+      "passed": true,
+      "samples": 128
+    },
+    {
+      "check": "Tape gradients vs central finite differences",
+      "max_relative_error": 1.9958374978179152e-10,
+      "passed": true
+    },
+    {
+      "check": "Selected surrogate design vs native full pipeline",
+      "native_minus_sweep": {
+        "GPU_nominal_K": 0.039078619693725614,
+        "HBM_nominal_K": 0.03907861969366877,
+        "inlet_peak_K": -0.003781879679195299,
+        "sc_mass_kg": 1.5958600375461174
+      },
+      "passed": true,
+      "relative_mass_tolerance": 0.005,
+      "temperature_tolerance_K": 1.0
+    }
+  ],
+  "passed": true,
+  "scope": "Arithmetic/numerical agreement, not hardware or stochastic reliability qualification",
+  "validated_native_physical_projection": {
+    "GPU_nominal_K": 366.159729,
+    "HBM_nominal_K": 361.837929,
+    "coolant_radiator_inlet_peak_K": 391.9053633,
+    "radiator_panels": 140,
+    "sc_mass_kg": 3022.482411,
+    "solar_area_m2": 861.7534521
+  }
+}

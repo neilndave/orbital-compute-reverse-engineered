@@ -1,0 +1,16 @@
+{
+  "additional_axis_clearance_m": 0.0005,
+  "gross_planform_loss_fraction": 0.014946270269360268,
+  "interfering_pairs_examined": 252,
+  "local_active_surface_W_m2_required": 324.5508243366797,
+  "recommended_m": 0.023,
+  "required_max_m": 0.02268067515751028,
+  "scope": "One-dimensional exact SAT support bound for the recorded width-fold path.\nShrinking only finite opaque leaf bodies inside unchanged gross module/hinge envelopes.\nAssembly masses, hinge pitch and conservative gross assembly inertia unchanged.\n",
+  "within_bounded_30mm_fix": true,
+  "worst_pair": {
+    "a": "plate_0",
+    "b": "plate_6",
+    "frame": 61,
+    "required_m": 0.02268067515751028
+  }
+}

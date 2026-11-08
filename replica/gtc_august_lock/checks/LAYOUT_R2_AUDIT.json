@@ -1,0 +1,42 @@
+{
+  "canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+  "canonical_unchanged": true,
+  "revision": "layout_r2",
+  "original_frozen_poster_generator_sha256": "d1ae84c48deb3efebb6944dd2fb4f9f125dabd73a54b94ccd8f2241639c207f6",
+  "original_frozen_generator_archived_at": "publication/layout_r1_source/make_poster_pdf.py",
+  "current_generator_sha256": "5d87377ba01cb493870bf3e7e7d3a42f01a49f7c79fed4b092580eb56351f92d",
+  "scope": "Approved layout/wording-only change; existing scientific Gates A/B remain frozen. This separate audit supersedes their poster-layout evidence without rewriting scientific canonical.",
+  "tool_area_percent": 55.12749445676275,
+  "body_font_pt": 24,
+  "exceptions": {
+    "chart_ticks_legends_pt": 22,
+    "provenance_hash_pt": 20
+  },
+  "edge_audit": {
+    "canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+    "passed": true,
+    "required_white_margin_inches": 1,
+    "bounds_inches": [
+      1,
+      1,
+      42,
+      23
+    ],
+    "violations": [],
+    "generator_sha256": "5d87377ba01cb493870bf3e7e7d3a42f01a49f7c79fed4b092580eb56351f92d"
+  },
+  "visual_inspection": {
+    "passed": true,
+    "preview": "poster_v3lock_preview_r2.png",
+    "dpi": 60,
+    "pixels": [
+      2580,
+      1440
+    ],
+    "findings": "No overlapping scope columns, clipped plots/text, or page-margin violations. Larger Earth-background hero and readable separated footer confirmed."
+  },
+  "author": "[poster author]",
+  "affiliation": null,
+  "no_design_history": true,
+  "no_nvidia_logos": true
+}

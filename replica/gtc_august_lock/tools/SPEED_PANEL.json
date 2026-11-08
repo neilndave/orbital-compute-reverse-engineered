@@ -1,0 +1,243 @@
+{
+  "MC": {
+    "BOX_CPU": {
+      "cached_model_time_to_answer_seconds": 6.323938824003562,
+      "compile_and_warmup_seconds": 0.009115321001445409,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 8,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          0
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 5.482006429003377
+    },
+    "GB10_ARM_CPU": {
+      "cached_model_time_to_answer_seconds": 4.342867677100003,
+      "compile_and_warmup_seconds": 0.005814025993458927,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 20,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          5
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 3.805288746021688
+    },
+    "GB10_GPU": {
+      "cached_model_time_to_answer_seconds": 0.9342304590390995,
+      "compile_and_warmup_seconds": 0.01846736005973071,
+      "cpu_baseline": {
+        "backend": "CUDA",
+        "host_logical_cpus": 20,
+        "physical_cores_used": null,
+        "process_cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "software_threads": null,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 0.12194303900469095
+    }
+  },
+  "OPT": {
+    "BOX_CPU": {
+      "compile_and_first_tape_seconds": 0.007090257997333538,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 8,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          0
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "optimization_wall_seconds": 0.35781430399947567
+    },
+    "GB10_ARM_CPU": {
+      "compile_and_first_tape_seconds": 0.003975625964812934,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 20,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          5
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "optimization_wall_seconds": 0.16963595093693584
+    },
+    "GB10_GPU": {
+      "compile_and_first_tape_seconds": 0.046778431977145374,
+      "cpu_baseline": {
+        "backend": "CUDA",
+        "host_logical_cpus": 20,
+        "physical_cores_used": null,
+        "process_cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "software_threads": null,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "optimization_wall_seconds": 6.2469274420291185
+    }
+  },
+  "SWEEP": {
+    "BOX_CPU": {
+      "cached_model_time_to_answer_seconds": 9.913943198000197,
+      "compile_and_warmup_seconds": 0.050367407995508984,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 8,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          0
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 9.878087233999395
+    },
+    "GB10_ARM_CPU": {
+      "cached_model_time_to_answer_seconds": 7.052013396052644,
+      "compile_and_warmup_seconds": 0.006018202053382993,
+      "cpu_baseline": {
+        "backend": "Warp CPU single-threaded",
+        "host_logical_cpus": 20,
+        "physical_cores_used": 1,
+        "process_cpu_affinity": [
+          5
+        ],
+        "software_threads": 1,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 7.043135851039551
+    },
+    "GB10_GPU": {
+      "cached_model_time_to_answer_seconds": 0.26243862695991993,
+      "compile_and_warmup_seconds": 0.020879703923128545,
+      "cpu_baseline": {
+        "backend": "CUDA",
+        "host_logical_cpus": 20,
+        "physical_cores_used": null,
+        "process_cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "software_threads": null,
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "kernel_seconds": 0.21282428596168756
+    }
+  },
+  "fin_table": {
+    "BOX_CPU": 147.70641803741455,
+    "GB10_ARM_CPU": 83.90012979507446,
+    "GB10_GPU": 99.54132127761841
+  },
+  "setup": {
+    "PhysicsNeMo_GPU_training_seconds": 5.9833765079965815,
+    "native_GPU_labels_seconds": 50.16114995197859,
+    "scope": "No CPU label-generation/training benchmark: do NOT claim full cold end-to-end GPU speedup. All warmed study kernels use a frozen trained surrogate. Tape optimization is serial/launch-bound and is slower on GPU."
+  }
+}

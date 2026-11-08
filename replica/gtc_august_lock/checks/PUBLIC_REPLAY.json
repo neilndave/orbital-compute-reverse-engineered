@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "public_canonical_sha256": "a64dc61e2347373c0e1f63fea683aca6dee7bc4a25d6b26c014aef76611a550f",
+  "source_canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+  "checks": [
+    {
+      "check": "Frozen-file manifest",
+      "passed": true
+    },
+    {
+      "check": "Mass ledger",
+      "passed": true
+    },
+    {
+      "check": "Launch+dispenser",
+      "passed": true
+    },
+    {
+      "check": "Mass budget",
+      "passed": true
+    },
+    {
+      "check": "Reserve/sc",
+      "passed": true
+    },
+    {
+      "check": "Reserve/launch",
+      "passed": true
+    },
+    {
+      "check": "Installed compute",
+      "passed": true
+    },
+    {
+      "check": "Nominal GPU cap",
+      "passed": true
+    },
+    {
+      "check": "Peak inlet cap at specified BOL optics",
+      "passed": true
+    },
+    {
+      "check": "Peak battery/recharge absent",
+      "passed": true
+    },
+    {
+      "check": "Safe-mode retained",
+      "passed": true
+    },
+    {
+      "check": "SWEEP replay numerical parity",
+      "passed": true
+    },
+    {
+      "check": "MC replay numerical parity",
+      "passed": true
+    },
+    {
+      "check": "Tape optimum replay",
+      "passed": true
+    }
+  ],
+  "scope": "Frozen point/tools verification, not hardware qualification. Runtime timings are not hash reproducibility targets."
+}

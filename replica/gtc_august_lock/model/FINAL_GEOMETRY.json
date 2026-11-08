@@ -1,0 +1,254 @@
+{
+  "array_root_m": 4.1366,
+  "array_width_m": 14.0,
+  "array_wing_length_m": 30.776909,
+  "canonical_sha256": null,
+  "case": "August",
+  "finite_body_repair": {
+    "array_main_leaf_seam_m": 0.023,
+    "array_width_fold_height_m": 0.72,
+    "array_width_pitch_m": 0.006,
+    "array_width_sections": 6,
+    "root_yoke_depth_m": 0.06,
+    "root_yoke_normal_offset_m": 0.09,
+    "root_yoke_width_m": 0.25
+  },
+  "ledger_kg": {
+    "MMOD_spare_panel_allocation": 140.0,
+    "adapter": 0.0,
+    "array": 835.1355774,
+    "avionics_links": 67.6,
+    "coolant_loop": 346.7474287,
+    "deployment_mechanisms": 131.25,
+    "freeze_restart_including_battery": 100.3249281,
+    "harness": 38.3898429,
+    "life_and_compute_provision": 80.0,
+    "power_electronics": 63.32630862,
+    "propellant_delta_al_radiator_c13_prop": 0.5834974375,
+    "propellant_delta_inherited_c13_prop": 3.522390895,
+    "propulsion_adcs": 157.28,
+    "rack": 640.38,
+    "radiator": 290.5424372,
+    "structure_mech": 127.4
+  },
+  "mass_sc_kg": 3022.482411,
+  "metadata_correction": "Unused legacy packing count 13 -> 14; physical dynamics/thermal inputs unchanged. Original consumed input preserved in TESTED_GEOMETRY_INPUT.json.",
+  "packing_items": [
+    [
+      "array_0",
+      "array",
+      [
+        2.333333333,
+        1.53884545,
+        0.72
+      ]
+    ],
+    [
+      "array_1",
+      "array",
+      [
+        2.333333333,
+        1.53884545,
+        0.72
+      ]
+    ],
+    [
+      "rack",
+      "bus",
+      [
+        0.6,
+        1.2,
+        0.9372146119
+      ]
+    ],
+    [
+      "equip",
+      "bus",
+      [
+        0.7,
+        2.0,
+        1.497509894
+      ]
+    ],
+    [
+      "rad_0",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_1",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_2",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_3",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_4",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_5",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_6",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_7",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_8",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_9",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_10",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_11",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_12",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "rad_13",
+      "radiator",
+      [
+        0.3634175777,
+        2.9446,
+        0.098
+      ]
+    ],
+    [
+      "yoke_0",
+      "yoke",
+      [
+        0.25,
+        0.06,
+        3.6366
+      ]
+    ],
+    [
+      "yoke_1",
+      "yoke",
+      [
+        0.25,
+        0.06,
+        3.6366
+      ]
+    ]
+  ],
+  "packing_stacks": 14,
+  "panels_per_column": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "parent_canonical_sha256": "213a17554108b45f8452d10f7e67f21300e7b96b4a9deb98dbeb25bac052e636",
+  "proposal_scope": "Owner-approved high-level first iteration; repaired representative rigid deployment and local supported-panel FEA; whole-system qualification OPEN.",
+  "radiator": {
+    "NT": 7,
+    "fin_id": "AL6061_V3_AUG",
+    "fluid_geometry": "round",
+    "half_length_m": 0.0219583984,
+    "panel_length_m": 2.9446,
+    "panel_width_m": 0.3634175777,
+    "radiator_film": true,
+    "source": "Final once-only GB10 lock/gpu/SWEEP_GB10_GPU.json verifies the owner-approved NVIDIA-selected hardware",
+    "table_rel": "inputs/ai1_replica/gb10_final_al/table_AL6061_V3_AUG.json",
+    "thickness_m": 0.0002587301587,
+    "tube_ID_m": 0.007,
+    "tube_OD_m": 0.008
+  },
+  "radiator_columns": 14,
+  "radiator_panels": 140,
+  "solar_area_m2": 861.7534521
+}

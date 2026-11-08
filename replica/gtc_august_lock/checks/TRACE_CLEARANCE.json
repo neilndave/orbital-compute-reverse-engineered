@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "penetration_tolerance_m": 1e-06,
+  "rows": [
+    {
+      "intersecting_samples": 0,
+      "min_separating_axis_gap_m": 0.000929566253190778,
+      "samples": 961,
+      "stage": "solar_Newton",
+      "worst_pairs": []
+    },
+    {
+      "intersecting_samples": 0,
+      "min_separating_axis_gap_m": -4.440892098500626e-16,
+      "samples": 121,
+      "stage": "width_fold",
+      "worst_pairs": []
+    },
+    {
+      "intersecting_samples": 0,
+      "min_separating_axis_gap_m": -4.440892098500626e-16,
+      "samples": 691,
+      "stage": "radiator_Newton",
+      "worst_pairs": []
+    }
+  ],
+  "scope": "Finite-body collision checks on recorded Newton trajectories, plus width fold.\nRepresentative spacecraft, rigid bodies; neither continuous-time contact proof nor\nfull fleet release/hose/hinge/flexible-body qualification.\n",
+  "source_hashes": {
+    "lock/dynamics/results_lock/radiator_t660_dt0.01_kl5000.npz": "4395c464c1b1debb055b6c2873808a34a84c2eff5fb478b664c6c6e0cc64bab7",
+    "lock/dynamics/results_lock/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f"
+  },
+  "wall_s": 76.70361684600357
+}

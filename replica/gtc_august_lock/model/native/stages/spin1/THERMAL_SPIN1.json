@@ -1,0 +1,111 @@
+{
+  "cases": {
+    "August": {
+      "T1_MPG40_peak": {
+        "F_scale": 1.0,
+        "GPU_K": 404.039157,
+        "HBM_K": 397.865157,
+        "IT_kW": 250.0,
+        "coolant_colder_than_chips": true,
+        "coolant_rack_mean_K": 379.865157,
+        "coolant_radiator_inlet_K": 391.9053633,
+        "coolant_supply_K": 369.865157,
+        "dR_plate_KW": 0.0,
+        "effective_emissivity": 0.8826716274,
+        "effective_radiation_sink_K": 186.120194,
+        "extra_heat_W": 0.0,
+        "fin_root_supply_K": 368.8789758,
+        "fluid": "MPG40",
+        "fluid_props": {
+          "cp": 3956.657274,
+          "k": 0.4534466402,
+          "mu": 0.0006284631057,
+          "rho": 976.6211316
+        },
+        "inventory": {
+          "Vdot_L_s": 3.057700023,
+          "fluid_rack": 74.31610942,
+          "fluid_trunk": 6.130382775,
+          "hdr_fluid": 131.7204561,
+          "mu_ratio": 1.571157764,
+          "panel_fluid": 108.4587168
+        },
+        "load_fraction": 1.0,
+        "mass_flow_kg_s": 3.159232436,
+        "pump_electric_W": 1462.372333,
+        "radiator_delta_K": 22.04020629,
+        "radiator_film": {
+          "Nu": 67.95798229,
+          "Re": 9330.132157,
+          "delta_K": 0.9861812647,
+          "h_W_m2K": 4402.188392,
+          "internal_area_m2": 63.46003337,
+          "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+        },
+        "total_solar_power_and_rejected_heat_W": 275502.5786
+      },
+      "T2_rec_nominal_MPG40_plus_recharge": {
+        "F_scale": 1.0,
+        "GPU_K": 366.159729,
+        "HBM_K": 361.837929,
+        "IT_kW": 175.0,
+        "coolant_colder_than_chips": true,
+        "coolant_rack_mean_K": 349.237929,
+        "coolant_radiator_inlet_K": 361.4058592,
+        "coolant_supply_K": 339.237929,
+        "dR_plate_KW": 0.0,
+        "effective_emissivity": 0.8826716274,
+        "effective_radiation_sink_K": 186.120194,
+        "extra_heat_W": 0.0,
+        "fin_root_supply_K": 337.9523056,
+        "fluid": "MPG40",
+        "fluid_props": {
+          "cp": 3883.784068,
+          "k": 0.4373416704,
+          "mu": 0.0009361647568,
+          "rho": 994.5503572
+        },
+        "inventory": {
+          "Vdot_L_s": 2.140390016,
+          "fluid_rack": 52.0212766,
+          "fluid_trunk": 4.291267943,
+          "hdr_fluid": 134.1386362,
+          "mu_ratio": 2.340411892,
+          "panel_fluid": 110.449848
+        },
+        "load_fraction": 0.7,
+        "mass_flow_kg_s": 2.252957386,
+        "pump_electric_W": 1451.837896,
+        "radiator_delta_K": 22.16793017,
+        "radiator_film": {
+          "Nu": 38.05364749,
+          "Re": 4466.699054,
+          "delta_K": 1.285623468,
+          "h_W_m2K": 2377.492251,
+          "internal_area_m2": 63.46003337,
+          "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+        },
+        "total_solar_power_and_rejected_heat_W": 193969.389
+      },
+      "geometry_v3": {
+        "fin": {
+          "NT": 7,
+          "fin_id": "AL6061_V3_AUG",
+          "fluid_geometry": "round",
+          "half_length_m": 0.0219583984,
+          "panel_length_m": 2.9446,
+          "panel_width_m": 0.3634175777,
+          "radiator_film": true,
+          "source": "Final once-only GB10 lock/gpu/SWEEP_GB10_GPU.json verifies the owner-approved NVIDIA-selected hardware",
+          "table_rel": "inputs/ai1_replica/gb10_final_al/table_AL6061_V3_AUG.json",
+          "thickness_m": 0.0002587301587,
+          "tube_ID_m": 0.007,
+          "tube_OD_m": 0.008
+        },
+        "radiator_columns": 14,
+        "radiator_face_area_m2": 149.8167159,
+        "radiator_panels": 140
+      }
+    }
+  }
+}

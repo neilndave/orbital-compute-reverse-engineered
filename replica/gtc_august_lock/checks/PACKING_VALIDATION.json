@@ -1,0 +1,13 @@
+{
+  "PASS": true,
+  "caveat": "Idealized component envelopes, inherited 50-mm adapters and 20-mm interlayer gap; connected harness/hinge interfaces, rails, CG and flight dispenser remain OPEN.",
+  "components_per_sc": 20,
+  "count": 30,
+  "min_component_separating_gap_m": 0.010000000000000009,
+  "min_payload_profile_radial_margin_m": 0.003950441069623167,
+  "panel_fold_pitch_mm": 10.0,
+  "radiator_stacks_per_sc": 14,
+  "rigid_solar_yokes_per_sc": 2,
+  "scope": "Independent exact AABB + payload-profile validation of constructive packing.",
+  "top_payload_m": 15.6
+}
