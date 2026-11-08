@@ -1,0 +1,136 @@
+{
+ "hash_checks": [
+  {
+   "path": "<work>/ai1_replica/r1_t520/R1_Aug_PEZ_full_t520.mp4",
+   "expected": "a0962082759312a6beb41f65999b2553329ae6a6298120db33faaadabdce7016",
+   "actual": "a0962082759312a6beb41f65999b2553329ae6a6298120db33faaadabdce7016",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/R2_Jun_Aug_t517.mp4",
+   "expected": "26bb1adb8e81ab16766224fed4c0d1d83644b4f64e25dcc0144fcf201217d780",
+   "actual": "26bb1adb8e81ab16766224fed4c0d1d83644b4f64e25dcc0144fcf201217d780",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/r1_t520/R1_Aug_PEZ_full_t520_contact.png",
+   "expected": "d84e84f73b63542c51d616eb9f96cef95d1fc8df163bd2eba4ac2b6b40c643c3",
+   "actual": "d84e84f73b63542c51d616eb9f96cef95d1fc8df163bd2eba4ac2b6b40c643c3",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/R2_Jun_Aug_t517_contact.png",
+   "expected": "2489cf34e0c24668dd9e8584a06b4b3ceea2347566f794faf4f869de2aa39907",
+   "actual": "2489cf34e0c24668dd9e8584a06b4b3ceea2347566f794faf4f869de2aa39907",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/gb10_render_replica/scene/Jun/scene_params_Jun.json",
+   "expected": "5844f9f6788761537f76a06ae9dd9ddfecf21f9ebf6900e3e8c2ed4a33abe834",
+   "actual": "5844f9f6788761537f76a06ae9dd9ddfecf21f9ebf6900e3e8c2ed4a33abe834",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/gb10_render_replica/scene/Aug/scene_params_Aug.json",
+   "expected": "7177efc8dc26b4fc731ed62d22c94459027113da755ef082ccc07e3059d8ae02",
+   "actual": "7177efc8dc26b4fc731ed62d22c94459027113da755ef082ccc07e3059d8ae02",
+   "match": true
+  },
+  {
+   "path": "<work>/ai1_replica/gb10_render_replica/scene/Aug/stage_plan_Aug30_singleplan_n0s.json",
+   "expected": "428fd4ec7db3e13af25afc177a38f97e4b1ee3145416cb1077012ac30f9b78d8",
+   "actual": "428fd4ec7db3e13af25afc177a38f97e4b1ee3145416cb1077012ac30f9b78d8",
+   "match": true
+  }
+ ],
+ "geometry_checks": [
+  {
+   "item": "Jun radiator panels",
+   "render": 77,
+   "final_config": 77,
+   "match": true
+  },
+  {
+   "item": "Jun panel W mm",
+   "render": 363.4175776637853,
+   "final_config": 363.4175776637853,
+   "match": true
+  },
+  {
+   "item": "Jun solar array area m2",
+   "render": 503.85509611136735,
+   "final_config": 503.85509611136735,
+   "match": true
+  },
+  {
+   "item": "Jun peak kW/sc",
+   "render": 150.0,
+   "final_config": 150.0,
+   "match": true
+  },
+  {
+   "item": "Jun sats per launch (target)",
+   "render": 46,
+   "final_config": 46,
+   "match": true
+  },
+  {
+   "item": "Aug radiator panels",
+   "render": 128,
+   "final_config": 128,
+   "match": true
+  },
+  {
+   "item": "Aug panel W mm",
+   "render": 363.4175776637853,
+   "final_config": 363.4175776637853,
+   "match": true
+  },
+  {
+   "item": "Aug solar array area m2",
+   "render": 839.7584935189456,
+   "final_config": 839.7584935189456,
+   "match": true
+  },
+  {
+   "item": "Aug peak kW/sc",
+   "render": 250.0,
+   "final_config": 250.0,
+   "match": true
+  },
+  {
+   "item": "Aug sats per launch (target)",
+   "render": 30,
+   "final_config": 30,
+   "match": true
+  }
+ ],
+ "discrepancies": [
+  "Jun: scene_params mass 2130.4 kg and old mass lines (margin 345.38 kg, mmod_bumper 137.74 kg, adapter 62.0 kg) vs final 1937.8 kg; metadata only, not drawn",
+  "Jun: scene_params yoke_root 1.968 m stale; render override uses 4.137 m (per provenance)",
+  "Aug: scene_params N_packed=32 (packer capacity) vs 30 flown/rendered; metadata only",
+  "Aug: scene_params mass 3266.7 kg and old mass lines (margin 535.05 kg, mmod_bumper 229.56 kg, adapter 62.0 kg) vs final 3024.1 kg; metadata only, not drawn",
+  "Aug: scene_params yoke_root 1.968 m stale; render override uses 4.137 m (per provenance)",
+  "Trunk Whipple shields (spin1 item 3, 6.55/8.73 kg) are NOT rendered (owner t605: not added to render)",
+  "Peak-power battery packs (9.78/13.33 kWh, 120/164 kg) not modelled as visible geometry",
+  "MPG40 coolant swap / fin-root heaters / accumulator not visible (internal); no visual change expected",
+  "Radiator header MMOD protection is OPEN; render header ridge is unprotected baseline geometry",
+  "Renders are kinematic visualisation of the t494/t523-era geometry; they certify no mass, thermal or MMOD number"
+ ],
+ "video": {
+  "r1_t520/R1_Aug_PEZ_full_t520.mp4": {
+   "width": 1280,
+   "height": 720,
+   "r_frame_rate": "24/1",
+   "nb_frames": "960"
+  },
+  "R2_Jun_Aug_t517.mp4": {
+   "width": 2560,
+   "height": 720,
+   "r_frame_rate": "24/1",
+   "nb_frames": "476"
+  }
+ },
+ "R1_stage_plan_entries": 30,
+ "verdict": "PASS (hashes match provenance; geometry/counts consistent; metadata/visual discrepancies disclosed)"
+}
