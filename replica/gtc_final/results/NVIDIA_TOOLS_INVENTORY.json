@@ -1,313 +1,120 @@
 {
+ "configuration_id": "AI1_GTC_FINAL_V2_AL",
  "tools": [
   {
-   "tool": "NVIDIA Warp 1.18.0 (CUDA, GB10)",
-   "run": "t410 G1_fin_table: F3_L40_t0p5 radiating-fin table",
+   "tool": "NVIDIA Warp 1.18.0 fp64 (GB10 cuda:0)",
+   "run": "v2 fin table AL6061_L26_t0p225 (Al 6061-T6, 26 mm / 0.225 mm, integral/brazed, no bondline): 585 Newton+PCG solves, nx 320 x ny 8",
    "status": "COMPLETED",
-   "produced": [
-    "every coolant supply/inlet, GPU and HBM temperature in GTC_FINAL_CANDIDATE.json (via model_t549.supply_for_area interpolation)",
-    "radiator rises",
-    "mass flow / coolant inventory (through the thermal root)"
-   ],
    "final_numbers_depend": true,
+   "produced": "every coolant supply/inlet, GPU and HBM temperature in GTC_FINAL_CANDIDATE.json (v2); radiator rises; mass flow (area factor 1.0)",
+   "metrics": "table wall GPU 102 s vs Grace CPU 88 s (same Warp code); max |d eta| vs vendored 3.1e-15; production-grid error vs independent 1-D BVP 5.5e-07, observed order 2.00, energy residual <= 5e-13",
    "evidence": [
-    {
-     "path": "<work>/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json",
-     "exists": true,
-     "sha256": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce"
-    },
-    {
-     "path": "<work>/ai1_replica/gb10_run_t410/logs/runner_20261103_074944.log",
-     "exists": true,
-     "sha256": "7d8643fbe57d671dec1f33e3a9e2f4a25c8112836f133f9c63542b4281fa5865"
-    }
+    "pipeline/inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json",
+    "nvidia_metrics/VALIDATE_GB10.json",
+    "nvidia_metrics/E2E_GB10/e2e.log"
    ]
   },
   {
    "tool": "NVIDIA Warp 1.18.0 fp64 (GB10 cuda:0)",
-   "run": "t602/t603 scoped-baseline parity; t605 spin1 parity; t606 FINAL parity (this audit)",
-   "status": "COMPLETED, PASS (max abs diff 9.16e-11)",
-   "produced": [
-    "independent GPU re-evaluation of fin-table interpolation, thermal root, energy and mass ledger for the final config (10 rows: final T2/T1, baseline T0 nominal/peak, T4 sensitivity x 2 months)"
-   ],
+   "run": "v2 final parity (gb10_final_parity.py, 10 rows: final T2/T1, baseline T0 nominal/peak, T4 sensitivity x 2 months)",
+   "status": "COMPLETED, PASS (max abs diff 1.44e-10)",
    "final_numbers_depend": "verification",
+   "produced": "independent GPU re-solve of fin-table interpolation, thermal root, energy balance and mass ledger of the v2 config",
    "evidence": [
-    {
-     "path": "<work>/gtc_scoped_baseline/GB10_BASELINE_PARITY_RESULT.json",
-     "exists": true,
-     "sha256": "82f50b7ac82e69b1003312f97c52b37d8860a2b9b2eae1b6a8be89eca7087d83"
-    },
-    {
-     "path": "<work>/gtc_scoped_spin1/GB10_SPIN1_PARITY_RESULT.json",
-     "exists": true,
-     "sha256": "148e7d370abed7a4093f3df59668db095c795070e6e6cb42bbcf131a3b166482"
-    },
-    {
-     "path": "<work>/gtc_final_candidate/runs/gb10_clean/final/GB10_FINAL_PARITY_RESULT.json",
-     "exists": true,
-     "sha256": "16cead5d2e6c256bcad3a8556234d0f68ffe3fb87920a6dfdcd9cfa48e709b41"
-    }
+    "GB10_FINAL_PARITY_RESULT.json"
    ]
   },
   {
-   "tool": "NVIDIA Warp CUDA",
-   "run": "t472 2-D fin/material sweep; t479 K13D fin/bondline trade",
-   "status": "COMPLETED (historical)",
-   "produced": [
-    "choice of K13D70 0.20 mm / 30 mm half-fin (design decision; the final temperatures use the t410 table, not these runs)",
-    "DR fin-mass deletion 46.1/76.9 kg"
-   ],
+   "tool": "NVIDIA Warp 1.18.0 fp64 (GB10 cuda:0)",
+   "run": "v2 thermal-root Monte Carlo benchmark (parity kernel on 1e3-1e7 perturbed draws)",
+   "status": "COMPLETED (benchmark)",
    "final_numbers_depend": false,
+   "produced": "GPU-vs-CPU throughput; not a design number",
+   "metrics": "21 M draws/s at 1e+07; 370x NumPy on Grace; 60x the same Warp code on Grace (1e6); max |diff| 1.1e-13",
    "evidence": [
-    {
-     "path": "<work>/gtc_t600_scoped/sources/NVIDIA_WARP_FIN_t472_RESULT.json",
-     "exists": true,
-     "sha256": "3867b3ae9e9a5e079bff257a8a4e44cb447c6ed12f0bba267fb1983ecae6b174"
-    },
-    {
-     "path": "<work>/gtc_t600_scoped/sources/CHECKS_t479.md",
-     "exists": true,
-     "sha256": "4ab7db3484e9aa731784e407f9976e1656ecb5b29d6042a89858d97bdc14416f"
-    }
+    "nvidia_metrics/BENCH_GB10.json",
+    "nvidia_metrics/NVIDIA_METRICS.json"
+   ]
+  },
+  {
+   "tool": "NVIDIA Warp CUDA (GB10)",
+   "run": "Al fin screen (fin_al_v2.py, screen_al_fine.json): Al/K13D cell areal ratio",
+   "status": "COMPLETED",
+   "final_numbers_depend": true,
+   "produced": "radiator mass line 141.89/236.45 kg (x 1.16037 of the K13D wet line)",
+   "evidence": [
+    "pipeline/inputs/ai1_replica/gb10_final_al/screen_al_fine.json"
    ]
   },
   {
    "tool": "NVIDIA Warp FEA (CG beam/frame) + warp.fem",
-   "run": "t479/t494 carbon frame (GB10 NE8), post-cell warp.fem check",
-   "status": "COMPLETED (historical)",
-   "produced": [
-    "frame mass 28.21/62.09 kg, first mode 64.97/57.14 Hz, utilisation 0.27/0.67 (DR \u00a76.2) -> structure_mech mass line inherited into the baseline"
-   ],
+   "run": "t479/t494 carbon frame (GB10)",
+   "status": "COMPLETED (inherited; frame unchanged in v2)",
    "final_numbers_depend": "inherited mass line only",
+   "produced": "carbon frame: mass 28.21/62.09 kg, first mode 64.97/57.14 Hz, utilisation 0.27/0.67",
    "evidence": [
-    {
-     "path": "<work>/ai1_replica/design_review/_build/gb10/eval_t494_Jun__gb10_ne8.json",
-     "exists": true,
-     "sha256": "167183c8ee360ba98d21b8a151fc5bd2d0896aa31a78dcb8b4066be9ca22f5cd"
-    },
-    {
-     "path": "<work>/ai1_replica/design_review/_build/gb10/eval_t494_Aug__gb10_ne8.json",
-     "exists": true,
-     "sha256": "f53fb4774fa6b2e54a1b4f6403b7eb38d6fc053c1e91fa2d0cae140d3d8cf0a4"
-    },
-    {
-     "path": "<work>/gtc_t600_scoped/sources/RENDER_DELTA_t494.md",
-     "exists": true,
-     "sha256": "506699813a592b25c7fb50acfcf44e1a4b6844296c1bdb6c2a1114d2fe39bc74"
-    }
-   ],
-   "caveat": "CalculiX vs Warp tied-axial post-stack disagreement unresolved (DR \u00a77.2)."
+    "<work>/poster_work/ai1_replica/design_review/_build/gb10/eval_t494_Jun__gb10_ne8.json; DESIGN_REVIEW.md 6.2"
+   ]
   },
   {
-   "tool": "NVIDIA Newton 1.7.0 (+ Warp articulated reference; MuJoCo-Warp)",
-   "run": "fold-latch dynamics A4_C1/A4_C2/J8_C1/J8_C2; NB2F3 single hinge; M12-M17 bounded deployment",
+   "tool": "NVIDIA Newton 1.7.0 (+ Warp articulated reference)",
+   "run": "fold-latch deployment dynamics, 4 cases (geometry identical in v2)",
    "status": "COMPLETED (bounded subsystems)",
-   "produced": [
-    "peak hinge torque 252.5/204.9/144.6/105.8 N\u00b7m, Newton vs Warp within 0.25 % (DR \u00a76.1, Fig 18)",
-    "deployment-mechanism risk findings; the final config carries deployment as a 70/120 kg OPEN allocation"
-   ],
    "final_numbers_depend": false,
+   "produced": "peak hinge torque 252.5 N.m (A4_C1); Newton vs Warp within 0.25 %; deployment hardware stays an allocation",
+   "metrics": "Newton 2120-2731 s per case vs ~58 s Warp reference",
    "evidence": [
-    {
-     "path": "<work>/ai1_replica/design_review/_build/gb10/run_fix_J8_C2_t493.log",
-     "exists": true,
-     "sha256": "bd734667b19f832427aa2bc9c720e4fef72f41e258be239d09fe22aecc21394b"
-    },
-    {
-     "path": "<work>/ai1_replica/design_review/_build/gb10/run_warp_J8_C2.log",
-     "exists": true,
-     "sha256": "15284b4b460c7935a3649b03b2227060db2ba3c34235827eae5b51b63ab0815a"
-    },
-    {
-     "path": "<work>/gtc_t600_scoped/sources/NB2F3.md",
-     "exists": true,
-     "sha256": "ae01fe208a56065c1ea2257e03e986476acdea199310222a3995b9d52ee6a19e"
-    },
-    {
-     "path": "<work>/gtc_t600_scoped/sources/M12_REPORT.md",
-     "exists": true,
-     "sha256": "6e890b98351061e3f83d0e8d3b533e63a0b023941934d4e6e9dfcefd89df5365"
-    }
-   ],
-   "caveat": "Not a complete flight deployment; E29 assertion withdrawn, E30 fixed (ERRATA)."
-  },
-  {
-   "tool": "GB10 PyTorch fp64 (CUDA)",
-   "run": "NB2F3 SB3 eigenpairs",
-   "status": "COMPLETED",
-   "produced": [
-    "numerical confirmation of an old support model (max rel diff 7.9e-13)"
-   ],
-   "final_numbers_depend": false,
-   "evidence": [
-    {
-     "path": "<work>/gtc_t600_scoped/sources/NB2F3.md",
-     "exists": true,
-     "sha256": "ae01fe208a56065c1ea2257e03e986476acdea199310222a3995b9d52ee6a19e"
-    }
+    "<work>/poster_work/ai1_replica/CHECKS_t444.md; DESIGN_REVIEW.md 6.1 (Fig 18)"
    ]
   },
   {
-   "tool": "NVIDIA Omniverse / Isaac Sim 6.0 RTX",
-   "run": "R1 t520 (Aug 30-sat PEZ release + unfold, 960 fr 1280x720 24 fps); R2 t517 (Jun/Aug side-by-side, 476 fr 2560x720)",
-   "status": "COMPLETED",
-   "produced": [
-    "poster figures/videos R1, R2 and contact sheets (kinematic visualisation only)"
-   ],
+   "tool": "NVIDIA Omniverse / Isaac Sim 6.0 RTX (GB10)",
+   "run": "R1 (Aug 30-sat release + unfold, 960 fr) and R2 (Jun/Aug, 2 x 476 fr)",
+   "status": "COMPLETED (visualisation; radiator geometry unchanged by the Al switch)",
    "final_numbers_depend": false,
+   "produced": "poster figures/videos",
+   "metrics": "R1 14.54 s/frame at 37.8 W mean GPU; R2 12.15 s/frame",
    "evidence": [
-    {
-     "path": "<work>/ai1_replica/r1_t520/R1_Aug_PEZ_full_t520.mp4",
-     "exists": true,
-     "sha256": "a0962082759312a6beb41f65999b2553329ae6a6298120db33faaadabdce7016"
-    },
-    {
-     "path": "<work>/ai1_replica/R2_Jun_Aug_t517.mp4",
-     "exists": true,
-     "sha256": "26bb1adb8e81ab16766224fed4c0d1d83644b4f64e25dcc0144fcf201217d780"
-    },
-    {
-     "path": "<work>/gtc_final_candidate/RENDER_CHECK.json",
-     "exists": true,
-     "sha256": "e445815182c899378bf6fc176adef20c207fe075a8c1aab983ddc09aebea6002"
-    }
+    "GB10 log <gb10-work>/gb10_pez_t480/out/R1_Aug_PEZ_full_t520_progress.log (07:04:22-10:57:04 PST Nov 5) and gpu_mem_R1_t520.csv (203 samples, mean 37.81 W)",
+    "GB10 log <gb10-work>/gb10_pez_t480/t517/r2_full.log (03:50:51-07:03:38 PST Nov 5)"
    ]
   },
   {
-   "tool": "NVIDIA PhysicsNeMo (FullyConnected ensemble, GB10 container)",
-   "run": "t538 surrogate over the unadopted t538 design space (3,794 s on GB10); earlier fin-grid spike",
-   "status": "COMPLETED as EXPLORATION only",
-   "produced": [
-    "nothing in the final config; no poster number depends on it"
-   ],
+   "tool": "NVIDIA PhysicsNeMo (GB10 container)",
+   "run": "t538 surrogate over an unadopted design space",
+   "status": "EXPLORATORY",
    "final_numbers_depend": false,
+   "produced": "nothing in v2",
+   "metrics": "3794 s on GB10",
    "evidence": [
-    {
-     "path": "<work>/ai1_replica/SURROGATE_t538.md",
-     "exists": true,
-     "sha256": "892f1dee9151b112288da08b5db75645e8f71cf016d7c8a9431a2d0fd16f1125"
-    }
-   ],
-   "caveat": "Do not list as a design tool for the final numbers; at most \"explored a PhysicsNeMo surrogate\"."
+    "<work>/poster_work/ai1_replica/SURROGATE_t538.md"
+   ]
   },
   {
-   "tool": "CPU (not NVIDIA): numpy/scipy/CoolProp 8.0.0, skyfield DE421",
-   "run": "full final pipeline s00-s15 (box x86_64 and GB10 aarch64 CPU)",
-   "status": "COMPLETED, canonical hash match",
-   "produced": [
-    "all mass, power/battery, MMOD, freeze/restart transient, eclipse and downtime numbers"
-   ],
+   "tool": "NVIDIA PhysicsNeMo 2.2.0 (GB10 container)",
+   "run": "v2 local Al 6061 fin-efficiency surrogate (FullyConnected 4x64, supervised; not a PINN)",
+   "status": "COMPLETED (supporting poster panel; no baseline number depends on it)",
+   "final_numbers_depend": false,
+   "produced": "held-out heat error max 0.0068 %; fixed-rise GPU-temp closure max 0.0025 K; 84.3x vs batched Warp fp64 at 100k; 100k-design screen 20 ms; degree-4 polynomial control also accurate (no neural-necessity claim)",
+   "metrics": "training 8.9 s on GB10",
+   "evidence": [
+    "nvidia_metrics/SURROGATE_V2.json",
+    "gtc_surrogate_v2/REPORT.md"
+   ]
+  },
+  {
+   "tool": "CPU (not NVIDIA): numpy/scipy/CoolProp",
+   "run": "full v2 pipeline s00-s15 (box x86_64 and GB10 aarch64)",
+   "status": "COMPLETED, canonical hash match: True",
    "final_numbers_depend": true,
+   "produced": "all mass, power/battery, MMOD, freeze/restart transient, eclipse and downtime numbers",
+   "metrics": "wall 23 s GB10 / 60 s box (median of 3)",
    "evidence": [
-    {
-     "path": "<work>/gtc_final_candidate/runs/box_clean/final/RESULTS_CANONICAL.json",
-     "exists": true,
-     "sha256": "e151e4e1f5b6a588be95560a1251de018a868ba60588ae807f51e17d05030870"
-    },
-    {
-     "path": "<work>/gtc_final_candidate/runs/gb10_clean/final/RESULTS_CANONICAL.json",
-     "exists": true,
-     "sha256": "e151e4e1f5b6a588be95560a1251de018a868ba60588ae807f51e17d05030870"
-    }
+    "RESULTS_CANONICAL.sha256",
+    "nvidia_metrics/E2E_GB10/e2e.log",
+    "nvidia_metrics/E2E_BOX/e2e.log"
    ]
   }
  ],
- "claims_audit": [
-  {
-   "where": "<work>/gtc_scoped_baseline/REPORT.md draft takeaway",
-   "claim": "We used NVIDIA Warp for radiator-fin and structural studies",
-   "verdict": "BACKED",
-   "note": "t410/t472/t479 fin, t494 frame FEA. Strengthen: Warp fin table underlies every final temperature and GB10 Warp fp64 parity re-verified the final config."
-  },
-  {
-   "where": "same",
-   "claim": "NVIDIA Newton for bounded deployment studies",
-   "verdict": "BACKED with limits",
-   "note": "fold-latch/NB2F3/M12-M17; bounded subsystems, not a flight deployment; deployment hardware is an OPEN allocation."
-  },
-  {
-   "where": "same",
-   "claim": "Omniverse RTX to visualize an AI1-inspired architecture",
-   "verdict": "BACKED",
-   "note": "R1/R2 hashes verified; visualisation only, shields/battery not drawn."
-  },
-  {
-   "where": "same",
-   "claim": "6.9/7.5 MW installed peak compute per launch",
-   "verdict": "BACKED, unchanged",
-   "note": "46x150 kW, 30x250 kW."
-  },
-  {
-   "where": "same",
-   "claim": "within 85.1/87.3 t of modeled payload including a 2 t dispenser",
-   "verdict": "STALE (baseline config)",
-   "note": "final candidate is 91.14/92.72 t (adds battery, MPG40 freeze hardware, trunk shields, open-item allocations)."
-  },
-  {
-   "where": "same",
-   "claim": "GPU 389.5/375.7 K, HBM 384.6/371.3 K",
-   "verdict": "STALE (baseline config)",
-   "note": "final: GPU 389.85/376.07 K, HBM 384.91/371.75 K (MPG40 properties)."
-  },
-  {
-   "where": "same",
-   "claim": "MMOD/lifetime coverage, freeze/restart, peak-power buffering ... remain NOT DESIGNED",
-   "verdict": "STALE (partly closed)",
-   "note": "freeze/restart, peak-power battery and trunk MMOD now sized; headers, spares, deployment, sustained/EOL peak, launcher interfaces still OPEN."
-  },
-  {
-   "where": "repo README.md (main d8ad116 / PR #5) line 9",
-   "claim": "a PhysicsNeMo thermal surrogate",
-   "verdict": "UNBACKED for the final numbers",
-   "note": "t538 surrogate ran on GB10 but over an unadopted design space; no final number uses it. Remove or relabel \"exploratory\"."
-  },
-  {
-   "where": "repo README.md lines 4, 37",
-   "claim": "Renders are pending",
-   "verdict": "STALE",
-   "note": "R1 t520 and R2 t517 are complete."
-  },
-  {
-   "where": "repo README.md line 7",
-   "claim": "June J8_C1 70.4 kW/t, August A4_C1 76.5 kW/t; ~2,130/3,270 kg",
-   "verdict": "OLDER CONFIG",
-   "note": "final candidate 1937.8/3024.1 kg => 77.4/82.7 kW/t peak at 0 % reserve; the C1 point files carried margin lines."
-  },
-  {
-   "where": "DESIGN_REVIEW.md (t527 era)",
-   "claim": "98 t cap, reserve 381.82/465.72 kg (22.36/17.01 %)",
-   "verdict": "OLDER CONFIG",
-   "note": "final uses 0 % reserve, 100 t budget incl. 2 t dispenser, headroom 8.86/7.28 t."
-  },
-  {
-   "where": "DESIGN_REVIEW.md finding 4",
-   "claim": "peak coolant supply 377.4/378.6 K",
-   "verdict": "OLDER CONFIG",
-   "note": "final nominal supply 360.51/349.15 K, peak radiator inlet 403.77/404.38 K; different model (t549) and loop."
-  },
-  {
-   "where": "DESIGN_REVIEW.md finding 6",
-   "claim": "No eclipse battery",
-   "verdict": "SUPERSEDED",
-   "note": "final has a 30-min peak battery and MPG40 freeze/restart (pumps off in eclipse)."
-  },
-  {
-   "where": "DESIGN_REVIEW.md \u00a76.6",
-   "claim": "Render 2 being re-rendered; neither movie part of review",
-   "verdict": "STALE",
-   "note": "R2 t517 done."
-  },
-  {
-   "where": "DESIGN_REVIEW.md \u00a76.5",
-   "claim": "PhysicsNeMo spike only",
-   "verdict": "CONSISTENT",
-   "note": "t538 surrogate later completed but still not in the design path."
-  },
-  {
-   "where": "spin1 REPORT.md",
-   "claim": "21.17-min eclipse (O.grid) and 17 min sensitivity",
-   "verdict": "WRONG (fixed here)",
-   "note": "spin1 runs actually used 550-km 21.66/17.41 min; final uses consistent 600-km 21.17/16.95 min and keeps 21.66 as an envelope."
-  }
- ]
+ "superseded": "K13D70 bonded-fin wording (F3_L40_t0p5 table, 0.9913 area factor, bondline) applies only to prior_candidate_k13d/"
 }

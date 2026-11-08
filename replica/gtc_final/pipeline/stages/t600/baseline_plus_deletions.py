@@ -1,7 +1,7 @@
 """Read-only adopted/rendered-C1 desk screen; no baseline or render edits."""
 from pathlib import Path
 import json,sys,hashlib,copy,math
-P=Path(__file__).resolve().parent;R=Path('/tmp/gtcfc_root/inputs/ai1_replica');sys.path.insert(0,str(R/'checks_t538'))
+P=Path(__file__).resolve().parent;R=Path('/tmp/gtcv2_root/inputs/ai1_replica');sys.path.insert(0,str(R/'checks_t538'))
 import model_t549 as M
 out=[]
 for i,tag in enumerate(['J8','A4']):

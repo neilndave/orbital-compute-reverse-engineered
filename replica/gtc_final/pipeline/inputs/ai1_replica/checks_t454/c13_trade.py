@@ -1,13 +1,13 @@
 """t454: mass / kW per t / sats-per-Starship recompute with ALL approved changes, and the radiator-growth trade.  Box CPU, NVIDIA Warp for thermal-geometry (c14), MMOD MC (c12 method), coolant ladder (c10c).  ESTIMATE; labelled assumptions inline."""
 import sys, os, json, math, numpy as np, warp as wp
 wp.config.quiet = True
-HERE = "/tmp/gtcfc_root/inputs/ai1_replica"; sys.path.insert(0, HERE); sys.path.insert(0, HERE + "/checks_t454"); sys.dont_write_bytecode = True
+HERE = "/tmp/gtcv2_root/inputs/ai1_replica"; sys.path.insert(0, HERE); sys.path.insert(0, HERE + "/checks_t454"); sys.dont_write_bytecode = True
 sys.argv = sys.argv[:1]
 import coolant_t423d as CT
 import orbit_loop as O
 from c10_coolant import RHO, panel_dp, LS
 from c10c_taper import taper, fluid_kg, ladder_t
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src")
 from rack_two_skies.mmod_env import whipple
 from c12_mmod_fn import sweep
 PT = json.load(open(f"{HERE}/results/t434_region.json"))["points"]

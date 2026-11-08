@@ -1,7 +1,7 @@
 """Independent arithmetic re-derivation of every poster-facing number in GTC_FINAL_CANDIDATE.json from primitive inputs
 (plain arithmetic written separately from the stage scripts; the thermal ROOT itself is checked independently by the GB10 Warp kernel)."""
 import json, math, os
-ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcfc_root")
+ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcv2_root")
 J = lambda p: json.load(open(os.path.join(ROOT, p)))
 X = J("final/GTC_FINAL_CANDIDATE.json"); B = J("stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"); TH = J("stages/spin1/THERMAL_SPIN1.json")["cases"]
 PWJ = J("stages/spin1/POWER_SPIN1.json"); EC = J("stages/orbit/ECLIPSE_600KM.json"); NB = J("inputs/ai1_replica/checks_t538/t596/final_config_NB2F2_t596.json")
@@ -33,7 +33,11 @@ for i, F in enumerate(X["fleets"]):
         chk(f"{nm} {case} inlet = supply + rise", t["coolant_supply_K"] + 20 * Q / IT, t["coolant_radiator_inlet_K"])
     # freeze hardware (independent per-panel port of NB2F2 breakdown)
     nb = NB["BAT_breakdown"][tag]; npan_nb = NB["panels"][tag]; npan = F["radiator_panels"]["value"]; add = NB["ADD_breakdown_kg_per_panel"]
-    per = (nb["heater_strips_fin_root"] + nb["heater_harness"] + nb["swivel_patch_heaters"]) / npan_nb + add["insert_cord"] + add["fitting_swivel_compliance_plugs"]
+    NTR = 6 / 4.0   # v2 t619: 6 tubes/panel (60 mm pitch, 363.4 mm panel) vs NB2F2 4; fin-root strips + harness are per tube
+    per = ((nb["heater_strips_fin_root"] + nb["heater_harness"]) * NTR + nb["swivel_patch_heaters"]) / npan_nb + add["insert_cord"] + add["fitting_swivel_compliance_plugs"]
+    k13d_rad = {"June": 122.28, "August": 203.77}[nm]; rel = 1.7526374327573164 / (1.417180087727044 + 7.61 / 81.62815837399465)   # Warp screen areal Al / (K13D + t479 bond)
+    chk(f"{nm} Al radiator line = K13D wet line x Al/K13D areal ratio", k13d_rad * rel, F["ledger_kg"]["value"]["radiator"], tol=0.02)
+    chk(f"{nm} reserve kg/sc = reserve / N", (100000 - F["launch_mass_kg"]["value"]) / N, F["reserve_kg_per_sc"]["value"])
     FMJ = J("stages/spin1/freeze/FREEZE_MASS_SPIN1.json")[nm]
     chk(f"{nm} freeze hardware kg", per * npan + FMJ["items_kg"]["accumulator"] + 2.0 + 31.25, F["freeze_restart"]["hardware_kg"]["value"])
     acc = NB["accumulator"][tag]; chk(f"{nm} accumulator kg = (kg/L NB2F2) x dV", acc["accumulator_kg"] / acc["dV_cold240_to_hot352_L"] * FMJ["dV_240_to_peak_inlet_L"], FMJ["items_kg"]["accumulator"])

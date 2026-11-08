@@ -1,8 +1,8 @@
 """GTC final candidate: single source-of-truth config = frozen GTC scoped baseline (t602/t603) + spin1 recommended additions
 (30-min peak battery, MPG40 glycol swap + NB2F2-port freeze/restart hardware, 4-trunk Whipple shields; headers/spares OPEN), with every
-poster-facing number carrying provenance (stage script + traced inputs + sha256 + tool).  Runs inside the pipeline root (/tmp/gtcfc_root)."""
+poster-facing number carrying provenance (stage script + traced inputs + sha256 + tool).  Runs inside the pipeline root (/tmp/gtcv2_root)."""
 import json, hashlib, os, glob, math
-ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcfc_root")
+ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcv2_root")
 def rp(p): return os.path.relpath(p, ROOT)
 def sha(p): return hashlib.sha256(open(os.path.join(ROOT, p), "rb").read()).hexdigest()
 def J(p): return json.load(open(os.path.join(ROOT, p)))
@@ -20,27 +20,29 @@ for st, scr in STAGE_SCRIPT.items():
     rd = sorted({r["path"] for r in rows if not r["write"] and r["path"] not in w and r["path"] != scr})
     STAGES[st] = dict(script=scr, script_sha256=sha(scr), inputs={p: sha(p) for p in rd if os.path.isfile(os.path.join(ROOT, p))}, outputs={p: sha(p) for p in w if os.path.isfile(os.path.join(ROOT, p))}, tool=TOOL)
     for p in w: PRODUCER.setdefault(p, st)
-WARP_TABLE = "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json"
+WARP_TABLE = "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json"   # v2 t619 Al6061 26/0.225 fin
 def V(value, unit, src, path, note=None, warp_fin_table=False):
     st = PRODUCER.get(src); d = dict(value=value, unit=unit, source_file=src, json_path=path, stage=st, script=STAGES[st]["script"] if st else None,
                                      script_sha256=STAGES[st]["script_sha256"] if st else None, source_file_sha256=sha(src), tool=TOOL)
-    if warp_fin_table: d["upstream_NVIDIA"] = f"fin-efficiency table {WARP_TABLE} (sha256 {sha(WARP_TABLE)[:16]}...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    if warp_fin_table: d["upstream_NVIDIA"] = f"fin-efficiency table {WARP_TABLE} (sha256 {sha(WARP_TABLE)[:16]}...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
     if note: d["note"] = note
     return d
 BASE = "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"; SP = "stages/spin1/SPIN1_EXACT.json"; TH = "stages/spin1/THERMAL_SPIN1.json"
 PW = "stages/spin1/POWER_SPIN1.json"; FM = "stages/spin1/freeze/FREEZE_MASS_SPIN1.json"; EC = "stages/orbit/ECLIPSE_600KM.json"; WK = "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json"
 b = J(BASE); s = J(SP); th = J(TH)["cases"]; pw = J(PW)["cases"]; fm = J(FM); ec = J(EC); wk = J(WK)
-x = dict(label="GTC final candidate configuration (scoped baseline t602/t603 + spin1 recommended additions)", configuration_id="AI1_GTC_FINAL_CANDIDATE_v1",
-         adopted_baseline=False, status="CANDIDATE for the final repo; not published; not vendor-qualified", geometry_unchanged=True, render_change=False,
-         authority=["the author t602/t603: scoped baseline, 0 % weight reserve, 370/378.15 K caps waived for this concept", "the author t605: spin1 items 1-3 (item 3 not rendered)", "the author t606: final-candidate audit"],
-         mass_reserve_fraction=0.0, launch_payload_budget_kg=100000.0, dispenser_all_in_kg=2000.0,
+x = dict(label="GTC FINAL v2 baseline (scoped baseline t602/t603 + spin1 additions + t619 all-aluminium radiator, GTC_FINAL_AL option (b))", configuration_id="AI1_GTC_FINAL_V2_AL",
+         supersedes=dict(configuration_id="AI1_GTC_FINAL_CANDIDATE_v1", sha256="b89c202f6372032f0337f4cb81888e99df3f5c7290745c26fac786c4f0a24d00", change="K13D70 30/0.20 bonded CFRP fins -> Al 6061-T6 26 mm / 0.225 mm integral/brazed fins, same 77/128 panels"),
+         radiator_fin=dict(alloy="Al 6061-T6", k_W_mK=167.0, rho_kg_m3=2700.0, half_length_mm=26.0, thickness_mm=0.225, tube_pitch_mm=60.0, bondline=False, warp_table=WARP_TABLE, area_factor=1.0, coating="unchanged", material_source="ASM/MatWeb 6061-T6 (AA typical)"),
+         adopted_baseline=True, status="FINAL v2 baseline (adopted t619); not published; not vendor-qualified", geometry_unchanged=True, render_change=False,
+         authority=["the author t602/t603: scoped baseline, 0 % weight reserve, 370/378.15 K caps waived for this concept", "the author t605: spin1 items 1-3 (item 3 not rendered)", "the author t606: final-candidate audit", "the author t612-t615: Al-only radiator study (GTC_FINAL_AL)", "the author t619: ADOPT Al option (b) as the new final baseline"],
+         mass_reserve_fraction=0.0, mass_reserve_policy="Minimum weight reserve 0 %; all unused mass under the 100 t launch budget is listed as RESERVE (kg/sc, t/launch, % of 100 t) (t615).", launch_payload_budget_kg=100000.0, dispenser_all_in_kg=2000.0,
          orbit=dict(h_km=600, ltan_h=6.0, max_shadow_min=V(ec["max_shadow_min"], "min", EC, "max_shadow_min"), eclipsed_orbits_per_year=V(ec["eclipsed_orbits_per_year"], "1/yr", EC, "eclipsed_orbits_per_year"),
                     mean_shadow_min_when_eclipsed=V(ec["mean_shadow_min_when_eclipsed"], "min", EC, "mean_shadow_min_when_eclipsed"), shadow_hours_per_year=V(ec["shadow_hours_per_year"], "h/yr", EC, "shadow_hours_per_year"),
                     eclipse_strategy="IT paused in eclipse (inherited DECISIONS #65)"),
          selected_additions=dict(item1="30-min-per-orbit peak battery (VES16-class 8s4p packs, 30 % DoD)", item2="coolant swap water-proxy -> MPG40 (40 wt% PG) with NB2F2-port fin-root heaters (array-powered at sunrise), N2/EPDM insert, accumulator; pumps off in eclipse",
                                  item3="Whipple shields on the 4 central coolant trunks (SPF, bus side, no fin view)"),
          open_items=["radiator header MMOD protection (no simple bumper closes; architecture change needed)", "panel-spare coverage", "deployment/capture/release/interlock hardware (70/120 kg allocation)",
-                     "life/hardening/compute provision (50/80 kg allocation)", "sustained / EOL peak power (battery covers <=30-min BOL bursts only)", "MPG40 peak inlet 404 K > Dow 393 K recommended max (pressurisation, glycol life)",
+                     "life/hardening/compute provision (50/80 kg allocation)", "sustained / EOL peak power (battery covers <=30-min BOL bursts only)", "MPG40 peak inlet 403.4/404.1 K > Dow 393 K recommended max (pressurisation, glycol life)", "6061 braze process for the integral/brazed fin-tube panel (narrow braze window; post-braze re-age) not designed", "+13 % tube length per m2 (60 vs 68 mm pitch) raises tube MMOD exposure; not re-screened",
                      "ORDEM-based MMOD flux (NASA90+Gruen used)", "launcher same-orbit performance, finite-hardware packing/CG, qualification"],
          fleets=[])
 for i, f in enumerate(b["fleets"]):
@@ -59,7 +61,11 @@ for i, f in enumerate(b["fleets"]):
       installed_peak_per_launch_MW=V(f["peak_installed_compute_MW"], "MW", BASE, f"{bk}.peak_installed_compute_MW", "installed peak compute-power-equivalent rating; not continuous delivery"),
       nominal_IT_per_launch_MW=V(f["nominal_fleet_IT_MW"], "MW", BASE, f"{bk}.nominal_fleet_IT_MW"),
       sc_mass_kg=V(sf["sc_mass_kg"], "kg", SP, f"{sk}.sc_mass_kg"), launch_mass_kg=V(sf["launch_total_kg"], "kg", SP, f"{sk}.launch_total_kg", "includes 2 t all-in dispenser; 0 % weight reserve"),
-      headroom_to_100t_kg=V(sf["margin_to_100t_kg"], "kg", SP, f"{sk}.margin_to_100t_kg", "unused payload budget, not launched reserve"),
+      headroom_to_100t_kg=V(sf["margin_to_100t_kg"], "kg", SP, f"{sk}.margin_to_100t_kg", "alias of reserve_kg (t615)"),
+      reserve_kg=V(sf["margin_to_100t_kg"], "kg", SP, f"{sk}.margin_to_100t_kg", "RESERVE per launch = all unused mass under 100 t (0 % minimum)"),
+      reserve_kg_per_sc=dict(value=sf["margin_to_100t_kg"] / f["count"], unit="kg", derivation="reserve_kg / spacecraft_count"),
+      reserve_t_per_launch=dict(value=sf["margin_to_100t_kg"] / 1000.0, unit="t", derivation="reserve_kg / 1000"),
+      reserve_pct_of_100t=dict(value=sf["margin_to_100t_kg"] / 1000.0, unit="%", derivation="reserve_kg / 100000 x 100"),
       ledger_kg=V(sf["ledger_kg"], "kg", SP, f"{sk}.ledger_kg"),
       GPU_nominal_K=V(nom["GPU_K"], "K", TH, f"{thk}.T2_rec_nominal_MPG40_plus_recharge.GPU_K", warp_fin_table=True),
       HBM_nominal_K=V(nom["HBM_K"], "K", TH, f"{thk}.T2_rec_nominal_MPG40_plus_recharge.HBM_K", warp_fin_table=True),
@@ -99,5 +105,6 @@ for i, f in enumerate(b["fleets"]):
       baseline_reference=dict(launch_mass_kg=f["launch_total_kg"], GPU_nominal_K=f["nominal"]["GPU_K"], HBM_nominal_K=f["nominal"]["HBM_K"], GPU_peak_K=f["full_peak_steady_sensitivity"]["GPU_K"]))
     x["fleets"].append(F)
 x["stages"] = STAGES
-x["NVIDIA_upstream_inputs"] = {WARP_TABLE: dict(sha256=sha(WARP_TABLE), produced_by="NVIDIA Warp CUDA fin solves on GB10 (t410 runner, Warp 1.18.0, 2026-11-03)", used_by="every coolant/GPU/HBM temperature via model_t549.supply_for_area")}
+x["NVIDIA_upstream_inputs"] = {WARP_TABLE: dict(sha256=sha(WARP_TABLE), produced_by="NVIDIA Warp 1.18.0 fp64 CUDA fin solves on GB10 cuda:0 (fin_al.py table mode, 585 solves, nx 320 x ny 8; 2026-11-06 PT); box-CPU Warp reproduction max |d eta| 3.1e-15", used_by="every coolant/GPU/HBM temperature via model_t549.supply_for_area (area factor 1.0)"),
+    "inputs/ai1_replica/gb10_final_al/screen_al_fine.json": dict(sha256=sha("inputs/ai1_replica/gb10_final_al/screen_al_fine.json"), produced_by="NVIDIA Warp fp64 GB10 fin screen (fin_al_v2.py)", used_by="Al/K13D areal ratio -> radiator mass line (fin_v2.FIN_MASS_REL)")}
 json.dump(x, open("GTC_FINAL_CANDIDATE.json", "w"), indent=1, sort_keys=False); print("written GTC_FINAL_CANDIDATE.json")

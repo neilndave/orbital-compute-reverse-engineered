@@ -2,15 +2,15 @@
 designed item exceeds them (then the designed value replaces the allocation); new lines (peak battery, MPG40 coolant-line delta, propellant delta) are added."""
 import sys, json, math, hashlib
 from pathlib import Path
-sys.argv = sys.argv[:1]; sys.path.insert(0, "/tmp/gtcfc_root/inputs/ai1_replica/checks_t538")
+sys.argv = sys.argv[:1]; sys.path.insert(0, "/tmp/gtcv2_root/inputs/ai1_replica/checks_t538")
 import model_t549 as M
 P = Path(__file__).resolve().parent
-base = json.load(open("/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
+base = json.load(open("/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
 PW = json.load(open(P / "POWER_SPIN1.json")); TH = json.load(open(P / "THERMAL_SPIN1.json")); FM = json.load(open(P / "freeze/FREEZE_MASS_SPIN1.json"))
 WK = json.load(open(P / "freeze/WATER_KEEPWARM_SPIN1.json")); MG = json.load(open(P / "MMOD_GRID_SPIN1.json")); MT = json.load(open(P / "MMOD_TRUNK_ALLOC_SPIN1.json"))
 FR = {f.name[4:-5]: json.load(open(f)) for f in sorted((P / "freeze").glob("out_*.json"))}
 x = dict(label="GTC scoped baseline concept — SPIN1 sidecar (peak buffer, freeze/restart, MMOD screen)", configuration_id="AI1_GTC_SPIN1_on_t602_t603_scoped_baseline_v1",
-         parent_configuration=dict(path="/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json", sha256=hashlib.sha256(open("/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json", "rb").read()).hexdigest()),
+         parent_configuration=dict(path="/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json", sha256=hashlib.sha256(open("/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json", "rb").read()).hexdigest()),
          adopted_baseline=False, geometry_unchanged=True, render_change=False, authority="the author t605: do spins 1,2,3; #3 not added to render",
          mass_reserve_fraction=0.0, launch_payload_budget_kg=100000.0, dispenser_all_in_kg=2000.0,
          rollup_rule=__doc__, fleets=[])

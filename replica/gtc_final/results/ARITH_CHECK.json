@@ -1,5 +1,5 @@
 {
- "n": 59,
+ "n": 63,
  "failed": [],
  "passed": true,
  "checks": [
@@ -26,15 +26,15 @@
   },
   {
    "check": "June baseline sc mass = ledger sum",
-   "recomputed": 1806.1238841679267,
-   "reported": 1806.1238841679267,
-   "abs_diff": 0.0,
+   "recomputed": 1826.0845282956018,
+   "reported": 1826.0845282956016,
+   "abs_diff": 2.2737367544323206e-13,
    "passed": true
   },
   {
    "check": "June baseline launch = N x sc + 2000",
-   "recomputed": 85081.69867172463,
-   "reported": 85081.69867172463,
+   "recomputed": 85999.88830159768,
+   "reported": 85999.88830159768,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -75,36 +75,36 @@
   },
   {
    "check": "June nominal rejected heat W",
-   "recomputed": 133725.09924495386,
-   "reported": 133725.09924495386,
+   "recomputed": 133726.94199751006,
+   "reported": 133726.94199751006,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June nominal radiator rise K = 20 Q/IT",
-   "recomputed": 22.287516540825642,
-   "reported": 22.287516540825642,
+   "recomputed": 22.287823666251676,
+   "reported": 22.287823666251676,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June nominal GPU = supply + 10 + 1.7 load 14.22",
-   "recomputed": 389.8499838853224,
-   "reported": 389.8499838853224,
+   "recomputed": 389.68255662619544,
+   "reported": 389.68255662619544,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June nominal HBM = supply + 10 + 18 load",
-   "recomputed": 384.91078388532236,
-   "reported": 384.91078388532236,
+   "recomputed": 384.7433566261954,
+   "reported": 384.7433566261954,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June nominal inlet = supply + rise",
-   "recomputed": 382.79830042614805,
-   "reported": 382.79830042614805,
+   "recomputed": 382.6311802924471,
+   "reported": 382.6311802924471,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -124,65 +124,79 @@
   },
   {
    "check": "June peak GPU = supply + 10 + 1.7 load 14.22",
-   "recomputed": 415.7919059172273,
-   "reported": 415.7919059172273,
+   "recomputed": 415.45553236474717,
+   "reported": 415.45553236474717,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June peak HBM = supply + 10 + 18 load",
-   "recomputed": 409.61790591722735,
-   "reported": 409.61790591722735,
+   "recomputed": 409.2815323647472,
+   "reported": 409.2815323647472,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June peak inlet = supply + rise",
-   "recomputed": 403.77487630799493,
-   "reported": 403.77487630799493,
+   "recomputed": 403.4385027555148,
+   "reported": 403.4385027555148,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June Al radiator line = K13D wet line x Al/K13D areal ratio",
+   "recomputed": 141.89049904973984,
+   "reported": 141.89049904973984,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June reserve kg/sc = reserve / N",
+   "recomputed": 166.9423170223014,
+   "reported": 166.9423170223014,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June freeze hardware kg",
-   "recomputed": 58.44145841287741,
-   "reported": 58.4414584128774,
-   "abs_diff": 7.105427357601002e-15,
+   "recomputed": 65.65989728387235,
+   "reported": 65.65989728387235,
+   "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June accumulator kg = (kg/L NB2F2) x dV",
-   "recomputed": 7.2596984128774045,
-   "reported": 7.2596984128774045,
+   "recomputed": 7.240137283872353,
+   "reported": 7.240137283872353,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June final sc mass = ledger sum",
-   "recomputed": 1937.7708698068952,
-   "reported": 1937.7708698068952,
+   "recomputed": 1963.4924655863942,
+   "reported": 1963.4924655863942,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June final launch = N x sc + 2000",
-   "recomputed": 91137.46001111717,
-   "reported": 91137.46001111717,
+   "recomputed": 92320.65341697414,
+   "reported": 92320.65341697414,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June headroom = 100000 - launch",
-   "recomputed": 8862.539988882825,
-   "reported": 8862.539988882825,
+   "recomputed": 7679.346583025865,
+   "reported": 7679.346583025865,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "June added lines = battery + coolant swap + propellant",
-   "recomputed": 131.64698563896854,
-   "reported": 131.6469856389685,
-   "abs_diff": 5.684341886080802e-14,
+   "recomputed": 137.40793729079246,
+   "reported": 137.40793729079257,
+   "abs_diff": 1.1368683772161603e-13,
    "passed": true
   },
   {
@@ -194,8 +208,8 @@
   },
   {
    "check": "June added downtime h/yr",
-   "recomputed": 169.70200000000003,
-   "reported": 169.70200000000003,
+   "recomputed": 112.20733333333332,
+   "reported": 112.20733333333332,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -229,15 +243,15 @@
   },
   {
    "check": "August baseline sc mass = ledger sum",
-   "recomputed": 2842.1181493803365,
-   "reported": 2842.1181493803365,
+   "recomputed": 2875.381000688958,
+   "reported": 2875.381000688958,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August baseline launch = N x sc + 2000",
-   "recomputed": 87263.54448141009,
-   "reported": 87263.54448141009,
+   "recomputed": 88261.43002066875,
+   "reported": 88261.43002066875,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -278,36 +292,36 @@
   },
   {
    "check": "August nominal rejected heat W",
-   "recomputed": 194183.24104259498,
-   "reported": 194183.24104259498,
+   "recomputed": 194184.81861311072,
+   "reported": 194184.81861311072,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August nominal radiator rise K = 20 Q/IT",
-   "recomputed": 22.192370404867997,
-   "reported": 22.192370404867997,
+   "recomputed": 22.192550698641224,
+   "reported": 22.192550698641224,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August nominal GPU = supply + 10 + 1.7 load 14.22",
-   "recomputed": 376.0677815472184,
-   "reported": 376.0677815472184,
+   "recomputed": 375.98740035316655,
+   "reported": 375.98740035316655,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August nominal HBM = supply + 10 + 18 load",
-   "recomputed": 371.7459815472184,
-   "reported": 371.7459815472184,
+   "recomputed": 371.66560035316655,
+   "reported": 371.66560035316655,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August nominal inlet = supply + rise",
-   "recomputed": 371.3383519520863,
-   "reported": 371.3383519520863,
+   "recomputed": 371.2581510518078,
+   "reported": 371.2581510518078,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -327,57 +341,71 @@
   },
   {
    "check": "August peak GPU = supply + 10 + 1.7 load 14.22",
-   "recomputed": 416.51618752822395,
-   "reported": 416.51618752822395,
+   "recomputed": 416.1870071629465,
+   "reported": 416.1870071629465,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August peak HBM = supply + 10 + 18 load",
-   "recomputed": 410.342187528224,
-   "reported": 410.342187528224,
+   "recomputed": 410.0130071629465,
+   "reported": 410.0130071629465,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August peak inlet = supply + rise",
-   "recomputed": 404.38239381803703,
-   "reported": 404.38239381803703,
+   "recomputed": 404.05321345275956,
+   "reported": 404.05321345275956,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August Al radiator line = K13D wet line x Al/K13D areal ratio",
+   "recomputed": 236.44935387116035,
+   "reported": 236.44935387116035,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August reserve kg/sc = reserve / N",
+   "recomputed": 209.32811318287227,
+   "reported": 209.32811318287227,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August freeze hardware kg",
-   "recomputed": 73.4507311937783,
-   "reported": 73.4507311937783,
+   "recomputed": 85.48471794483015,
+   "reported": 85.48471794483015,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August accumulator kg = (kg/L NB2F2) x dV",
-   "recomputed": 10.328731193778298,
-   "reported": 10.328731193778298,
+   "recomputed": 10.301179483291687,
+   "reported": 10.301179483291687,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August final sc mass = ledger sum",
-   "recomputed": 3024.075702175173,
-   "reported": 3024.075702175173,
+   "recomputed": 3057.3385534837944,
+   "reported": 3057.3385534837944,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August final launch = N x sc + 2000",
-   "recomputed": 92722.27106525519,
-   "reported": 92722.27106525519,
+   "recomputed": 93720.15660451383,
+   "reported": 93720.15660451383,
    "abs_diff": 0.0,
    "passed": true
   },
   {
    "check": "August headroom = 100000 - launch",
-   "recomputed": 7277.7289347448095,
-   "reported": 7277.7289347448095,
+   "recomputed": 6279.843395486168,
+   "reported": 6279.843395486168,
    "abs_diff": 0.0,
    "passed": true
   },
@@ -397,8 +425,8 @@
   },
   {
    "check": "August added downtime h/yr",
-   "recomputed": 167.38366666666667,
-   "reported": 167.38366666666667,
+   "recomputed": 111.51183333333331,
+   "reported": 111.51183333333331,
    "abs_diff": 0.0,
    "passed": true
   },

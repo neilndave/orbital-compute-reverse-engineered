@@ -1,6 +1,6 @@
 import sys, math, numpy as np, warp as wp
 wp.config.quiet = True
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src")
 from rack_two_skies.mmod_env import whipple
 @wp.kernel
 def mc(lam: float, npan: int, seed: int, hit: wp.array(dtype=int)):

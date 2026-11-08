@@ -1,0 +1,30 @@
+{
+ "note": "Earlier NVIDIA-tool runs whose outputs the v2 baseline inherits unchanged (geometry, panel count, renders and deployment kinematics are identical between the K13D candidate and v2; only fin material/thickness and the radiator mass line changed). Values are copied from the cited logs/reports, not re-measured today.",
+ "tools": {
+  "warp_fin_table_v2": {"tool": "NVIDIA Warp 1.18.0 fp64, GB10 cuda:0", "what": "eta_cell(Tb, ee, Ts) table for Al 6061-T6 26 mm / 0.225 mm fin, 13 x 9 x 5 = 585 Newton+PCG solves, nx 320 x ny 8", "feeds": "every coolant/GPU/HBM temperature of v2", "wall_s": 206.6, "pcg_iters_total": 833549, "source": "pipeline/inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (wall_s, n_cg_total)"},
+  "warp_fp64_parity_v2": {"tool": "NVIDIA Warp 1.18.0 fp64, GB10 cuda:0", "what": "independent GPU re-solve of 10 thermal-root + mass rows of the v2 config", "source": "../GB10_FINAL_PARITY_RESULT.json"},
+  "warp_fea_frame": {"tool": "NVIDIA Warp FEA (CG beam/frame) + warp.fem, GB10", "what": "carbon frame: mass 28.21/62.09 kg, first mode 64.97/57.14 Hz, utilisation 0.27/0.67", "first_mode_Hz_June": 64.97, "first_mode_Hz_August": 57.14, "feeds": "structure_mech mass line (inherited)", "source": "<work>/poster_work/ai1_replica/design_review/_build/gb10/eval_t494_Jun__gb10_ne8.json; DESIGN_REVIEW.md 6.2"},
+  "newton_deployment": {"tool": "NVIDIA Newton 1.7.0 (+ Warp articulated reference), GB10", "what": "fold-latch deployment dynamics, 4 cases; peak hinge torque A4_C1/A4_C2/J8_C1/J8_C2", "peak_hinge_torque_Nm": [252.5, 204.9, 144.6, 105.8], "peak_hinge_torque_max_Nm": 252.5, "newton_vs_warp_max_rel_diff_pct": 0.25, "newton_wall_s_per_case_min": 2120, "newton_wall_s_per_case_max": 2731, "warp_reference_wall_s_per_case": 58, "feeds": "deployment risk findings; deployment hardware stays a 70/120 kg allocation", "source": "<work>/poster_work/ai1_replica/CHECKS_t444.md; DESIGN_REVIEW.md 6.1 (Fig 18)"},
+  "omniverse_rtx_R1": {"tool": "NVIDIA Omniverse / Isaac Sim 6.0 RTX, GB10", "what": "R1 August 30-satellite release + unfold, 1280x720, 24 fps", "frames": 960, "wall_s": 13962, "s_per_frame": 14.54, "mean_gpu_W": 37.8, "gpu_util_pct": 96, "source": "GB10 log <gb10-work>/gb10_pez_t480/out/R1_Aug_PEZ_full_t520_progress.log (07:04:22-10:57:04 PST Nov 5) and gpu_mem_R1_t520.csv (203 samples, mean 37.81 W)"},
+  "omniverse_rtx_R2": {"tool": "NVIDIA Omniverse / Isaac Sim 6.0 RTX, GB10", "what": "R2 June/August single satellites, 476 frames each, composed side by side 2560x720", "frames": 952, "wall_s": 11567, "s_per_frame": 12.15, "source": "GB10 log <gb10-work>/gb10_pez_t480/t517/r2_full.log (03:50:51-07:03:38 PST Nov 5)"},
+  "physicsnemo": {"tool": "NVIDIA PhysicsNeMo FullyConnected ensemble, GB10 container (torch 2.13.0a0 nv26.07)", "what": "surrogate over the unadopted t538 design space", "wall_s": 3794, "status": "EXPLORATORY; no v2 number uses it", "source": "<work>/poster_work/ai1_replica/SURROGATE_t538.md"}
+ },
+ "gb10_gpu_hours": {
+  "R1_render": {"hours": 3.8783, "mean_W": 37.8, "W_basis": "MEASURED nvidia-smi 60 s samples"},
+  "R2_render": {"hours": 3.2131, "mean_W": 37.8, "W_basis": "ESTIMATE = R1 mean (same renderer/settings)"},
+  "newton_4_cases": {"hours": 3.0344, "mean_W": 37.8, "W_basis": "ESTIMATE; hours = 4 x 2731 s upper bound"},
+  "physicsnemo_t538": {"hours": 1.0539, "mean_W": 37.8, "W_basis": "ESTIMATE"},
+  "warp_v2_fin_table": {"hours": 0.0574, "mean_W": 37.8, "W_basis": "ESTIMATE"}
+ },
+ "cost_assumptions": {"gb10_price_usd": 5859.0, "gb10_price_source": "Lenovo ThinkStation PGX 30KL0002US MSRP (alinc.com / avadirect.com listings, opened 2026-11-07)", "amortisation_years": 3.0,
+  "tariff_usd_per_kWh": 0.30, "tariff_basis": "ASSUMED flat residential rate", "cloud_usd_per_h": 1.861, "cloud_instance": "AWS g6e.xlarge (1x L40S) on-demand us-east-1", "cloud_source": "calculator.holori.com / instances.vantage.sh, updated 2026-11-06",
+  "energy_basis": "GPU board power from nvidia-smi only (no CPU/SoC rail exposed on this GB10); excludes host idle"},
+ "method_notes": [
+  "Same fp64 problem on every device; GPU = GB10 cuda:0 (Warp 1.18.0, CUDA 13.0 driver); CPU = the same Warp kernels on the Warp CPU backend (one thread per launch), and a conventional NumPy (vectorised) or SciPy (sparse direct) code.",
+  "Grace CPU = GB10's own 20-core Arm (10 Cortex-X925 + 10 Cortex-A725); box CPU = 8-vCPU Intel Xeon VM (Warp 1.19.0). NumPy/SciPy use their default threading.",
+  "Warm timings: 1 warm-up excluded, median of 5 (GPU) / 3-5 (CPU; 1 at the largest CPU fin grid), wp.synchronize inside the boundary. Cold: fresh empty kernel cache, first solve includes compile.",
+  "Fin solver: Newton + Jacobi-PCG with a host-side dot product per CG iteration, so small grids are latency-bound on the GPU; the production table (585 x 2,560 cells) is run serially.",
+  "Thermal MC: one GPU thread per draw (70-step bisection + mass roll-up); host->device copies excluded from the kernel time and reported separately.",
+  "Parity = GPU vs CPU agreement (numerical), validation = convergence to an independent 1-D BVP reference + energy balance (physical)."
+ ]
+}

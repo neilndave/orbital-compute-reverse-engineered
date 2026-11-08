@@ -1,0 +1,10 @@
+Warp CUDA warning: Could not find or load the NVIDIA CUDA driver. GPU execution will not be available.
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, CUDA driver not available (NVRTC compilation available)
+   Devices:
+     "cpu"      : "CPU"
+   Kernel cache:
+     <home>/.cache/warp/1.19.0
+Module warp_fin_ref d43bbcd load on device 'cpu' took 2230.83 ms  (compiled)
+AL6061_L26_t0p225 done 168.9 s eta[mid] 0.9128199108450522
+DONE wall_s 168.9

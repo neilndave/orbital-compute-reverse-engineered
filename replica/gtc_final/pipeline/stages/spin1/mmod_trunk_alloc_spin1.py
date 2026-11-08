@@ -1,7 +1,7 @@
 """SPIN1 item 3c (reconstructed generator for MMOD_TRUNK_ALLOC_SPIN1.json): trunk SPF wall x standoff grid at PNP 0.95/0.99, flux x1/x3,
 and best header N within (allocation - trunk P0.95_flux1)."""
 import json, sys
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src")
 import mmod_spin1 as MM, mmod_grid_spin1 as G
 ALLOC = {"June": 80.0, "August": 140.0}
 CASES = {"June": dict(npan=77, ncol=8, trunk_bore_m=24.1656e-3), "August": dict(npan=128, ncol=13, trunk_bore_m=31.1977e-3)}

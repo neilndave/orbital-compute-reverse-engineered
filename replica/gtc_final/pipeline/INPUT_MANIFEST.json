@@ -786,5 +786,37 @@
   "original_sha256": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
   "vendored_sha256": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
   "rewritten": true
+ },
+ {
+  "path": "inputs/ai1_replica/gb10_final_al/fin_al.py",
+  "original": "<work>/gtc_final_al/fin/fin_al.py",
+  "original_sha256": "e2a3795854b080331f93dd1aebf0258682165846404521a9d447b5630badaffc",
+  "vendored_sha256": "e2a3795854b080331f93dd1aebf0258682165846404521a9d447b5630badaffc",
+  "rewritten": false,
+  "added_in": "v2 t619 (Al 6061 radiator)"
+ },
+ {
+  "path": "inputs/ai1_replica/gb10_final_al/fin_al_v2.py",
+  "original": "<work>/gtc_final_al/fin/fin_al_v2.py",
+  "original_sha256": "e2a3795854b080331f93dd1aebf0258682165846404521a9d447b5630badaffc",
+  "vendored_sha256": "e2a3795854b080331f93dd1aebf0258682165846404521a9d447b5630badaffc",
+  "rewritten": false,
+  "added_in": "v2 t619 (Al 6061 radiator)"
+ },
+ {
+  "path": "inputs/ai1_replica/gb10_final_al/screen_al_fine.json",
+  "original": "<work>/gtc_final_al/fin/results/screen_al_fine.json",
+  "original_sha256": "f4520de392723e654498a778b5a8f22577631e31717f4022aeabbb4bbe453e92",
+  "vendored_sha256": "f4520de392723e654498a778b5a8f22577631e31717f4022aeabbb4bbe453e92",
+  "rewritten": false,
+  "added_in": "v2 t619 (Al 6061 radiator)"
+ },
+ {
+  "path": "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json",
+  "original": "<work>/gtc_final_al/fin/results/table_AL6061_L26_t0p225.json",
+  "original_sha256": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
+  "vendored_sha256": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
+  "rewritten": false,
+  "added_in": "v2 t619 (Al 6061 radiator)"
  }
 ]

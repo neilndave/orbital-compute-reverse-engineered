@@ -2,7 +2,7 @@
 raw-byte sha256 of pipeline-GENERATED json files omitted (their numbers are all included instead). Script and vendored-input hashes are kept.
 Its sha256 is the single reproducibility hash compared across clean checkouts (box x86 and GB10 aarch64)."""
 import json, os, glob, hashlib
-ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcfc_root")
+ROOT = os.environ.get("GTCFC_ROOT", "/tmp/gtcv2_root")
 GEN = lambda k: k.startswith(("stages/", "final/")) and k.endswith(".json")   # pipeline-generated file: raw-byte hash is platform dependent (last-bit float formatting)
 def norm(v):
     if isinstance(v, float): return float(f"{v:.10g}")

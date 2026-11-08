@@ -1,0 +1,126 @@
+{
+ "meta": {
+  "machine": "x86_64",
+  "device": "cpu",
+  "device_name": "cpu",
+  "warp": "1.19.0",
+  "point": {
+   "k": 167.0,
+   "L": 0.026,
+   "t": 0.000225,
+   "Tb": 371.88699999999994,
+   "ee": 0.8919908588528411,
+   "Ts": 185.63214687303105
+  },
+  "started": "2026-11-07 16:33:51 CST",
+  "finished": "2026-11-07 16:34:33 CST"
+ },
+ "V4_cold_warm": {
+  "warp_init_s": 0.04291246700449847,
+  "kernel_cache": "fresh empty dir",
+  "devices": {
+   "cpu": {
+    "cold_first_solve_s_incl_kernel_compile": 2.2458065209939377,
+    "warm_median_s": 0.2643988899944816,
+    "warm_min_s": 0.26120782099314965,
+    "warm_max_s": 0.27191891899565235,
+    "repeats": 5,
+    "grid": "320x8"
+   }
+  }
+ },
+ "V2_reference_1D_BVP": {
+  "Qp_W_per_m": 42.259779435838375,
+  "root_conduction_W_per_m": 42.259779435805406,
+  "bvp_energy_residual_rel": 7.801551115363645e-13,
+  "status": 1,
+  "nodes": 339823,
+  "fin_efficiency": 0.8956598737084289,
+  "tip_T_K": 357.6773556327189
+ },
+ "V1_grid_convergence": {
+  "warp": [
+   {
+    "nx": 80,
+    "ny": 8,
+    "Qp_W_per_m": 42.259407880316125,
+    "energy_residual_rel": 5.355368303366511e-14,
+    "newton_residual": 3.2135818868278875e-14,
+    "pcg_iters": 431,
+    "err_vs_BVP_rel": 8.792178454551527e-06
+   },
+   {
+    "nx": 160,
+    "ny": 8,
+    "Qp_W_per_m": 42.2596865458635,
+    "energy_residual_rel": 8.424545056457406e-14,
+    "newton_residual": 5.4085611228270826e-14,
+    "pcg_iters": 767,
+    "err_vs_BVP_rel": 2.198070508482452e-06
+   },
+   {
+    "nx": 320,
+    "ny": 8,
+    "Qp_W_per_m": 42.259756213253084,
+    "energy_residual_rel": 5.151973408534432e-13,
+    "newton_residual": 7.478201293473311e-14,
+    "pcg_iters": 1425,
+    "err_vs_BVP_rel": 5.495197940266558e-07
+   },
+   {
+    "nx": 640,
+    "ny": 8,
+    "Qp_W_per_m": 42.25977363016312,
+    "energy_residual_rel": 1.8516278264548349e-13,
+    "newton_residual": 1.1220409671059782e-13,
+    "pcg_iters": 2754,
+    "err_vs_BVP_rel": 1.373806332020633e-07
+   },
+   {
+    "nx": 1280,
+    "ny": 8,
+    "Qp_W_per_m": 42.25977798439479,
+    "energy_residual_rel": 4.913254776784628e-14,
+    "newton_residual": 1.455334093152769e-13,
+    "pcg_iters": 72043,
+    "err_vs_BVP_rel": 3.434574450973918e-08
+   }
+  ],
+  "scipy_direct": [
+   {
+    "nx": 320,
+    "Qp_W_per_m": 42.25975621326901,
+    "err_vs_BVP_rel": 5.495194172319134e-07
+   },
+   {
+    "nx": 640,
+    "Qp_W_per_m": 42.25977363014161,
+    "err_vs_BVP_rel": 1.3738114215239146e-07
+   },
+   {
+    "nx": 1280,
+    "Qp_W_per_m": 42.25977798432775,
+    "err_vs_BVP_rel": 3.4347330881178264e-08
+   },
+   {
+    "nx": 2560,
+    "Qp_W_per_m": 42.25977907271548,
+    "err_vs_BVP_rel": 8.592635796484128e-09
+   },
+   {
+    "nx": 5120,
+    "Qp_W_per_m": 42.259779344624356,
+    "err_vs_BVP_rel": 2.158412104047023e-09
+   },
+   {
+    "nx": 10240,
+    "Qp_W_per_m": 42.259779413979125,
+    "err_vs_BVP_rel": 5.172589800888483e-10
+   }
+  ],
+  "observed_order": 1.9999986209953988,
+  "richardson_Qp": 42.2597794358072,
+  "richardson_err_vs_BVP_rel": 7.377846184098205e-13,
+  "production_grid_err_vs_BVP_rel": 5.495197940266558e-07
+ }
+}

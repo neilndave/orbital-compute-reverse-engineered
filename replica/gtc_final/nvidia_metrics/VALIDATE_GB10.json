@@ -1,0 +1,134 @@
+{
+ "meta": {
+  "machine": "aarch64",
+  "device": "cuda:0",
+  "device_name": "NVIDIA GB10",
+  "warp": "1.18.0",
+  "point": {
+   "k": 167.0,
+   "L": 0.026,
+   "t": 0.000225,
+   "Tb": 371.88699999999994,
+   "ee": 0.8919908588528411,
+   "Ts": 185.63214687303105
+  },
+  "started": "2026-11-07 00:51:36 PST",
+  "finished": "2026-11-07 00:51:56 PST"
+ },
+ "V4_cold_warm": {
+  "warp_init_s": 0.48783986596390605,
+  "kernel_cache": "fresh empty dir",
+  "devices": {
+   "cuda:0": {
+    "cold_first_solve_s_incl_kernel_compile": 1.0902994660427794,
+    "warm_median_s": 0.17483840603381395,
+    "warm_min_s": 0.17443688691128045,
+    "warm_max_s": 0.19099075195845217,
+    "repeats": 5,
+    "grid": "320x8"
+   },
+   "cpu": {
+    "cold_first_solve_s_incl_kernel_compile": 1.0907344319857657,
+    "warm_median_s": 0.1507436929969117,
+    "warm_min_s": 0.15008180297445506,
+    "warm_max_s": 0.16414789797272533,
+    "repeats": 5,
+    "grid": "320x8"
+   }
+  }
+ },
+ "V2_reference_1D_BVP": {
+  "Qp_W_per_m": 42.259779435838375,
+  "root_conduction_W_per_m": 42.259779435805406,
+  "bvp_energy_residual_rel": 7.801551115363645e-13,
+  "status": 1,
+  "nodes": 339821,
+  "fin_efficiency": 0.8956598737084289,
+  "tip_T_K": 357.6773556327189
+ },
+ "V1_grid_convergence": {
+  "warp": [
+   {
+    "nx": 80,
+    "ny": 8,
+    "Qp_W_per_m": 42.259407880316125,
+    "energy_residual_rel": 5.355368303366511e-14,
+    "newton_residual": 3.314489911930972e-14,
+    "pcg_iters": 431,
+    "err_vs_BVP_rel": 8.792178454551527e-06
+   },
+   {
+    "nx": 160,
+    "ny": 8,
+    "Qp_W_per_m": 42.259686545863545,
+    "energy_residual_rel": 8.336131540122764e-14,
+    "newton_residual": 5.345912013230118e-14,
+    "pcg_iters": 767,
+    "err_vs_BVP_rel": 2.1980705074736308e-06
+   },
+   {
+    "nx": 320,
+    "ny": 8,
+    "Qp_W_per_m": 42.25975621325314,
+    "energy_residual_rel": 5.165866938197057e-13,
+    "newton_residual": 7.623803465687274e-14,
+    "pcg_iters": 1429,
+    "err_vs_BVP_rel": 5.495197926815608e-07
+   },
+   {
+    "nx": 640,
+    "ny": 8,
+    "Qp_W_per_m": 42.25977363016311,
+    "energy_residual_rel": 1.854153921716029e-13,
+    "newton_residual": 1.0577625812574044e-13,
+    "pcg_iters": 2755,
+    "err_vs_BVP_rel": 1.3738063337020017e-07
+   },
+   {
+    "nx": 1280,
+    "ny": 8,
+    "Qp_W_per_m": 42.2597779843949,
+    "energy_residual_rel": 5.191125226885544e-14,
+    "newton_residual": 1.465190792563236e-13,
+    "pcg_iters": 72041,
+    "err_vs_BVP_rel": 3.434574181954914e-08
+   }
+  ],
+  "scipy_direct": [
+   {
+    "nx": 320,
+    "Qp_W_per_m": 42.25975621324616,
+    "err_vs_BVP_rel": 5.495199577919745e-07
+   },
+   {
+    "nx": 640,
+    "Qp_W_per_m": 42.259773630075884,
+    "err_vs_BVP_rel": 1.373826974185082e-07
+   },
+   {
+    "nx": 1280,
+    "Qp_W_per_m": 42.2597779839019,
+    "err_vs_BVP_rel": 3.435740782865665e-08
+   },
+   {
+    "nx": 2560,
+    "Qp_W_per_m": 42.25977907277829,
+    "err_vs_BVP_rel": 8.591149634624026e-09
+   },
+   {
+    "nx": 5120,
+    "Qp_W_per_m": 42.25977934436657,
+    "err_vs_BVP_rel": 2.1645121099622257e-09
+   },
+   {
+    "nx": 10240,
+    "Qp_W_per_m": 42.25977940775869,
+    "err_vs_BVP_rel": 6.644540732104619e-10
+   }
+  ],
+  "observed_order": 1.9999985756760157,
+  "richardson_Qp": 42.25977943580741,
+  "richardson_err_vs_BVP_rel": 7.32740512085232e-13,
+  "production_grid_err_vs_BVP_rel": 5.495197926815608e-07
+ }
+}

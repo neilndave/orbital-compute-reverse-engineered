@@ -1,7 +1,7 @@
 """t454 item 2: per-column pump + reverse-return column manifold, NVIDIA Warp ladder network (warp.optim.linear.cg nodal solve, Picard on turbulent K).  ESTIMATE; hose ID, hinge K, corrugation factor, pump efficiency/mass ASSUMED."""
 import sys, json, math, time, numpy as np, warp as wp
 wp.config.quiet = True
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/ai1_replica"); sys.path.insert(0, "/tmp/gtcfc_root/inputs/ai1_replica/checks_t444")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/ai1_replica"); sys.path.insert(0, "/tmp/gtcv2_root/inputs/ai1_replica/checks_t444")
 import coolant_t423d as CT
 from warp.optim.linear import cg, aslinearoperator
 RHO, MU = 978.0, 4.0e-4
