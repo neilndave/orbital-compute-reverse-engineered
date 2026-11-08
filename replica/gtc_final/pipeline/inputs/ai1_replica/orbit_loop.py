@@ -4,7 +4,7 @@ Labels: STATEMENT / ESTIMATE / INFERENCE / ASSUMED in every lever record.  Box o
 Run: eclipse/venv/bin/python orbit_loop.py   (needs repo src on path for env_leo; numpy only)"""
 import sys, os, json, math, csv, time, copy, itertools
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "gb10_runner"))
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src"); sys.dont_write_bytecode = True
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src"); sys.dont_write_bytecode = True
 import numpy as np
 from rack_two_skies import env_leo
 import plog
@@ -35,7 +35,7 @@ def q_abs(h, beta, alpha, eps_ir=0.90, f_g=0.0, M_IR=239.0, albedo=0.30, E=1368.
     return eps_ir * M_IR * p["F"] + alpha * albedo * E * p["Ag"] + f_g * alpha * E * p["g"]
 # dose tables (repo toolchain AE8/AP8+SHIELDOSE-2 at 550; same script run here at other altitudes) -------------
 DEPTH = np.array([0.5, 1, 2, 3, 5, 7.5, 10, 15, 20, 30, 50, 75, 100])
-_rd = json.load(open("/tmp/gtcfc_root/inputs/repo/results/mass_claims/dose_total.json"))
+_rd = json.load(open("/tmp/gtcv2_root/inputs/repo/results/mass_claims/dose_total.json"))
 NOM550 = np.array(_rd["design_5yr_rad_si"]["nominal"]); LOW550 = np.array(_rd["design_5yr_rad_si"]["low"]); HIGH550 = np.array(_rd["design_5yr_rad_si"]["high"])
 def _tot(b, comps): return sum(np.maximum(np.array(b[c])[:, 2], 2 * np.array(b[c])[:, 0]) for c in comps)
 def trapped_mid(j):
@@ -44,7 +44,7 @@ def trapped_mid(j):
     return 5 * 0.5 * (lo + hi)
 _dose_files = {400: "dose_400km_97.03deg.json", 500: "dose_500km_97.40deg.json", 550: None, 600: "dose_600km_97.79deg.json", 725: "dose_725km_98.28deg.json",
                800: "dose_800km_98.60deg.json", 1000: "dose_1000km_99.47deg.json", 1200: "dose_1200km_100.4deg.json"}
-_t550 = trapped_mid(json.load(open("/tmp/gtcfc_root/inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json")))
+_t550 = trapped_mid(json.load(open("/tmp/gtcv2_root/inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json")))
 _adder = NOM550 - _t550     # non-trapped part (SPE + GCR) at 550, reused at all altitudes (ESTIMATE: SPE cutoff differs little for polar orbits)
 def dose5(h):
     f = _dose_files.get(h)

@@ -1,0 +1,9 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <home>/.cache/warp/1.18.0
+Module __main__ 962387d load on device 'cuda:0' took 0.66 ms  (cached)
+{"machine": "aarch64", "device": "cuda:0", "device_name": "NVIDIA GB10", "warp_version": "1.18.0", "max_abs_difference": 1.4381384971784428e-10, "passed": true, "configuration_sha256": "a57a4a1e2f3631481f2b3f494d0f36daad1d55935e57db9523884c6c54f848c1"}

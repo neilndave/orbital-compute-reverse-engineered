@@ -41,8 +41,8 @@ def solve(x:wp.array2d(dtype=wp.float64),mass:wp.array2d(dtype=wp.float64),tab:w
  out[i,0]=Q;out[i,1]=rise;out[i,2]=supply;out[i,3]=ref;out[i,4]=ref+wp.float64(1.7)*load*(wp.float64(14.22)+x[i,9]);out[i,5]=ref+wp.float64(18.0)*load;out[i,6]=supply+rise;out[i,7]=m;out[i,8]=x[i,7]*m+wp.float64(2000.0)
  out[i,9]=Q-(P+wp.float64(2000.0)+pump)/wp.float64(.92)-x[i,8]
 import os
-R=Path(os.environ.get('GTCFC_ROOT','/tmp/gtcfc_root'));cfg=R/'final/GTC_FINAL_CANDIDATE.json';c=json.loads(cfg.read_text());th=json.loads((R/'stages/spin1/THERMAL_SPIN1.json').read_text())['cases']
-b=json.loads((R/'stages/baseline/GTC_SCOPED_BASELINE_EXACT.json').read_text());tabp=R/'stages/baseline/F3_FIN_LOOKUP.json';t=json.loads(tabp.read_text());inp=[];m=[];expected=[];labels=[]
+R=Path(os.environ.get('GTCFC_ROOT','/tmp/gtcv2_root'));cfg=R/'final/GTC_FINAL_CANDIDATE.json';c=json.loads(cfg.read_text());th=json.loads((R/'stages/spin1/THERMAL_SPIN1.json').read_text())['cases']
+b=json.loads((R/'stages/baseline/GTC_SCOPED_BASELINE_EXACT.json').read_text());tabp=R/'stages/baseline/FIN_LOOKUP.json';t=json.loads(tabp.read_text());inp=[];m=[];expected=[];labels=[]
 for i,f in enumerate(c['fleets']):
  nm=f['case'];T=th[nm];bf=b['fleets'][i];A=bf['radiator_effective_area_m2'];fac=bf['nominal']['fin_area_factor'];N=f['spacecraft_count']['value']
  L=list(f['ledger_kg']['value'].values());BL=[r['kg'] for r in bf['ledger']]

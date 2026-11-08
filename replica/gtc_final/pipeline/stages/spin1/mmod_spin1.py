@@ -11,7 +11,7 @@ Geometry: inherited c13 header model used for the baseline coolant mass: supply 
  central trunks: 4 lines x 2.05 m (CT.cool run_scale 0.5), bore from CT.cool diag; root flex hoses: ASSUMED 2 x 1.0 m per column at 20 mm bore.
  Header routing in the render is NOT verified; a short-edge routing sensitivity (0.7264 m header per panel = 2 x panel width) is reported."""
 import sys, os, json, math, numpy as np
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src")
 from rack_two_skies.mmod_env import nasa90, gruen, earth_factor, rho_met, d_lim_cm
 H, INC, YR, S10, LIFE = 600.0, 97.6, 2030, 1.5, 5.0
 RHO_AL = 2.7; SIG_KSI = 241.0 / 6.895; WALL_CM = 0.08
@@ -66,7 +66,7 @@ def optimise(case, Pt, fm=1.0):
         if r["meets"] and (best is None or r["total_kg"] < best["total_kg"]): best = r
     return best, rows
 if __name__ == "__main__":
-    base = json.load(open("/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
+    base = json.load(open("/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
     CASES = {"June": dict(npan=77, ncol=8, trunk_bore_m=24.1656e-3), "August": dict(npan=128, ncol=13, trunk_bore_m=31.1977e-3)}
     out = dict(method=__doc__, cases={})
     for nm, c in CASES.items():

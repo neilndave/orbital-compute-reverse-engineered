@@ -1,0 +1,6 @@
+host_arch x86_64 python Python 3.13.5 start 2026-11-07 16:44:17 CST
+E1 run 1 rc 0 wall_s 66.431 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E1 run 2 rc 0 wall_s 60.462 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E1 run 3 rc 0 wall_s 57.119 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E2 cpu wall_s 169.836 device cpu solver_wall_s 168.92 max_abs_d_eta_vs_vendored 3.1086244689504383e-15
+end 2026-11-07 16:50:11 CST

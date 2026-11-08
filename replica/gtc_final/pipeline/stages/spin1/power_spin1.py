@@ -1,6 +1,6 @@
 """SPIN1 item 1: peak-power buffering on the GTC scoped baseline (no geometry change for the battery option).  Labels: SOURCED / INHERITED / ASSUMED."""
 import json, math
-base = json.load(open("/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
+base = json.load(open("/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
 SRC = dict(
   VES16_cell_Wh_kg=">155 Wh/kg cell, 16 Wh, <=112 g (Saft VES16; https://newspacemarket.com/products/saft-ves16-cell/ ; NASA-hosted Saft LEO test update https://www.nasa.gov/wp-content/uploads/2024/01/saft-ves16-cell-life-test-performance-update.pdf)",
   VES16_pack="VES16 8s4p module 512 Wh, 5.8 kg -> 88.3 Wh/kg incl. cell balancing, heaters, sensors, Al plate; LEO DoD 30 % (https://www.satnow.com/products/batteries/saft/98-1277-ves16-8s4p-battery ; https://www.directindustry.com/prod/saft/product-19840-2536059.html)",
@@ -9,7 +9,7 @@ SRC = dict(
   AZUR_4G32="AZUR 4G32C-Advanced 31.3 % BOL at 1367 W/m2 (https://www.azurspace.com/media/uploads/file_links/file/bdb_00010895-02-00_4g32-advanced_4x8.pdf)")
 ASM = dict(peak_window_min=30.0, eta_discharge_chain=0.93, eta_charge_chain=0.93, DoD=0.30, capacity_EOL_fraction=0.88, pack_Wh_kg=512.0 / 5.8,
            bcdr_kW_per_kg=5.57, integration_frac=0.05, batt_rad_kg_m2=3.0, batt_rad_net_W_m2=270.0, batt_heater_ctrl_kg=0.5, eol_array_retention=0.94)
-_E = json.load(open("/tmp/gtcfc_root/stages/spin1/../orbit/ECLIPSE_600KM.json"))   # FINAL: 600-km grid values (spin1 used the 550-km t590 21.66 min)
+_E = json.load(open("/tmp/gtcv2_root/stages/spin1/../orbit/ECLIPSE_600KM.json"))   # FINAL: 600-km grid values (spin1 used the 550-km t590 21.66 min)
 ORBIT = dict(T_orb_min=_E["T_orb_min"], max_shadow_min=_E["max_shadow_min"], orbits_per_year=_E["orbits_per_year"], life_yr=5.0)
 def battery(deficit_W, window_min, nominal_headroom_W):
     E_bus = deficit_W * window_min / 60.0                      # Wh delivered to bus

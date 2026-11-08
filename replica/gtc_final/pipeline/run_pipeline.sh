@@ -1,7 +1,7 @@
 #!/bin/bash
-# GTC final candidate: full pipeline from the vendored inputs. Run from a clean copy at /tmp/gtcfc_root (canonical root; scripts use absolute paths under it).
+# GTC final candidate: full pipeline from the vendored inputs. Run from a clean copy at /tmp/gtcv2_root (canonical root; scripts use absolute paths under it).
 set -euo pipefail
-export GTCFC_ROOT=/tmp/gtcfc_root; cd $GTCFC_ROOT
+export GTCFC_ROOT=/tmp/gtcv2_root; cd $GTCFC_ROOT
 export PY=${PY:-python3}; export PYTHONDONTWRITEBYTECODE=1; export PYTHONHASHSEED=0; export PYTHONPYCACHEPREFIX=$GTCFC_ROOT/.nopycache   # never read stale __pycache__ next to sources
 export PYTHONPATH=$GTCFC_ROOT/tools/trace:$GTCFC_ROOT/inputs/repo/src:$GTCFC_ROOT/stages/spin1
 mkdir -p trace; rm -f trace/*.jsonl

@@ -1,0 +1,10 @@
+host_arch aarch64 python Python 3.12.3 start 2026-11-07 00:52:06 PST
+E1 run 1 rc 0 wall_s 23.02 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E1 run 2 rc 0 wall_s 23.169 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E1 run 3 rc 0 wall_s 22.527 files 40 sha256 21b80da2f0cff8624d191a41918c9e1d102581fabb829300d1465057347af498
+E3 run 1 wall_s 0.939 {"machine": "aarch64", "device": "cuda:0", "device_name": "NVIDIA GB10", "warp_version": "1.18.0", "max_abs_difference": 1.4381384971784428e-10, "passed": true, "configuration_sha256": "a57a4a1e2f3631
+E3 run 2 wall_s 0.847 {"machine": "aarch64", "device": "cuda:0", "device_name": "NVIDIA GB10", "warp_version": "1.18.0", "max_abs_difference": 1.4381384971784428e-10, "passed": true, "configuration_sha256": "a57a4a1e2f3631
+E3 run 3 wall_s 0.846 {"machine": "aarch64", "device": "cuda:0", "device_name": "NVIDIA GB10", "warp_version": "1.18.0", "max_abs_difference": 1.4381384971784428e-10, "passed": true, "configuration_sha256": "a57a4a1e2f3631
+E2 gpu wall_s 102.62 device cuda:0 solver_wall_s 101.9 max_abs_d_eta_vs_vendored 2.886579864025407e-15
+E2 cpu wall_s 88.255 device cpu solver_wall_s 87.99 max_abs_d_eta_vs_vendored 3.1086244689504383e-15
+end 2026-11-07 00:56:29 PST

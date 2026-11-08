@@ -1,7 +1,7 @@
 """t456 bumper: (a) repo Whipple at 1 mm S resolution for P>=0.90 (exact exp(-N), checked vs Warp Poisson MC); (b) NASA Nextel/Kevlar stuffed-Whipple BLE (Christiansen NASA/TP-2003-210788 HV eq 4-19; design eqs c_b=0.15, c_NK=0.23) in the same flux model; shield sized
 by the design equations at the BLE critical diameter, strip geometry as repo (strip width = tube + 2 S tan30; stuffing strip at S/2).  Standoff hardware: ASSUMED placeholder, reported separately.  ESTIMATE."""
 import sys, json, math, numpy as np
-sys.path.insert(0, "/tmp/gtcfc_root/inputs/repo/src")
+sys.path.insert(0, "/tmp/gtcv2_root/inputs/repo/src")
 import rack_two_skies.mmod_env as M
 from rack_two_skies.mmod_env import nasa90, gruen, earth_factor, rho_met, d_lim_whipple_cm
 LM = 2.944557955166043; TW = 6.094e-3; PW = 0.3634176; NT = 4; H, INC, YR, S10 = 600.0, 97.6, 2030, 1.5

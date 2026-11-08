@@ -6,7 +6,7 @@ Changes vs nbf_t596 (all deliberate, listed so the port is auditable):
  * fluid selectable: water (baseline proxy; liquidus 273.15 K, 0.5 K mushy band, latent 334 kJ/kg) or MPG40 (Dow DOWFROST wt% liquidus, as t596);
  * gas/EPDM insert on for MPG40 (t596 NB2F2 cord), off for water;
  * header: inherited c13 round tapered header (fluid kg/panel = C13.FLP x rho ratio), length per panel and radiating width are inputs; the header is lumped as in t596;
- * fin heat capacity matched to the baseline wet radiator ledger (122.28/203.77 kg) minus tube walls and panel fluid; fin conduction Al 6061 0.5 mm (F3_L40_t0p5);
+ * fin heat capacity matched to the baseline wet radiator ledger (122.28/203.77 kg) minus tube walls and panel fluid; fin conduction Al 6061 (v2: 0.225 mm, 6 tubes/panel from scenario NT/tf_m; spin1: 0.5 mm, 4 tubes);
  * rack nodes: Chw = 0.5 x rack kg x mixed cp (t596 convention), Cfl = central rack+trunk fluid (headers are in the panel model).
 Everything else (heater logic, open criterion liquidus+2 K, bypass restart, IT throttle, bus loss, energy closure) follows nbf_t596."""
 import os, sys, json, math, numpy as np
@@ -28,12 +28,13 @@ def make_fluid(name):
     return F, TLIQ, xice, (lambda H: np.interp(H, Hg, Tg)), (lambda T: np.interp(T, Tg, Hg))
 def run(S, fluid="MPG40", ecl_min=21.66, q_t=40.0, q_h=0.0, QLOSS=500.0, NL=6, NF=6, DT=0.1, pre_s=3600.0, post_s=3600.0, HL=5.602, hdr_w=0.016):
     F, TLIQ, xice, T_of_H, H_of_T = make_fluid(fluid); CPL, RHO, KL = F["cp"], F["rho"], F["k"]
-    NT = 4; L = 2.9446; B = 2.954e-3; AO = 6.094e-3; PHI_C = 0.057 if F["insert"] else 0.0; DC = 0.8e-3
+    DT = S.get("DT", DT)   # v2 t619: 0.225 mm / 6-tube fin nodes need a smaller explicit step (stability Cf/(Gf+G0) ~ 0.08 s)
+    NT = S.get("NT", 4); L = 2.9446; B = 2.954e-3; AO = 6.094e-3; PHI_C = 0.057 if F["insert"] else 0.0; DC = 0.8e-3
     A_bore = B * B; A_f = A_bore * (1 - PHI_C); P_w = 4 * B; Dh = 4 * A_f / (P_w + (math.pi * DC if PHI_C > 0 else 0.0))
     C_cord = A_bore * PHI_C * 0.3 * 1200 * 1500
     A_alt = AO * AO - B * B; C_wall = A_alt * RAL * CAL + C_cord
     npan = S["npan"]; W = S["plan"] / L
-    hw = W / NT / 2 - AO / 2; dx = hw / NF; tf_k = 0.5e-3
+    hw = W / NT / 2 - AO / 2; dx = hw / NF; tf_k = S.get("tf_m", 0.5e-3)   # v2 t619: 6 tubes/panel, Al 0.225 mm fin
     Cf = S["fin_cap_J_per_m2K"] * dx; Gf = KAL * tf_k / dx; G0 = KAL * tf_k / (dx / 2 + AO / 4)
     dz = L / NL; Mseg = A_f * RHO * dz
     Mh_tot = S["hdr_fluid_kg_per_panel"] * (1 - PHI_C); Mh = Mh_tot / 2; Chw_h = S["hdr_wall_kg_per_panel"] * CAL / 2

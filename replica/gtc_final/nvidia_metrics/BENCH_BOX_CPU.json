@@ -1,0 +1,177 @@
+{
+ "meta": {
+  "machine": "x86_64",
+  "python": "3.13.5",
+  "warp": "1.19.0",
+  "numpy": "2.5.4",
+  "cpu": [
+   "Model name:                              Intel(R) Xeon(R) Processor",
+   "8"
+  ],
+  "gpu": null,
+  "precision": "fp64 throughout",
+  "quick": false,
+  "host_label": "box",
+  "started": "2026-11-07 16:21:10 CST",
+  "script_sha256": "ed60e736cb37c8543f2ccdc1ab88ec8473175186f4a8f4fb9d7fde67816c9f4f",
+  "fin_table_sha256": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
+  "config_sha256": "a57a4a1e2f3631481f2b3f494d0f36daad1d55935e57db9523884c6c54f848c1",
+  "scipy": "1.18.1",
+  "gpu_idle_W": null,
+  "max_cells": 40960,
+  "finished": "2026-11-07 16:31:04 CST"
+ },
+ "B1_fin": [
+  {
+   "nx": 320,
+   "ny": 8,
+   "cells": 2560,
+   "warp_cpu": {
+    "repeats": 5,
+    "median_s": 0.2664184109889902,
+    "min_s": 0.2623125860118307,
+    "max_s": 0.2685374499997124,
+    "Q_W": 0.0274688415386145,
+    "pcg_iters": 1425,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "scipy_direct_cpu": {
+    "repeats": 5,
+    "median_s": 0.0050121120002586395,
+    "min_s": 0.0049959159950958565,
+    "max_s": 0.005539011996006593,
+    "Q_W": 0.027468842303369205,
+    "newton": 2
+   }
+  },
+  {
+   "nx": 640,
+   "ny": 16,
+   "cells": 10240,
+   "warp_cpu": {
+    "repeats": 5,
+    "median_s": 1.2122966930037364,
+    "min_s": 1.1917853020131588,
+    "max_s": 1.2158771960093873,
+    "Q_W": 0.027468852859606048,
+    "pcg_iters": 2896,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "scipy_direct_cpu": {
+    "repeats": 5,
+    "median_s": 0.024334457993973047,
+    "min_s": 0.023972718001459725,
+    "max_s": 0.025966169996536337,
+    "Q_W": 0.027468853624357796,
+    "newton": 2
+   }
+  },
+  {
+   "nx": 1280,
+   "ny": 32,
+   "cells": 40960,
+   "warp_cpu": {
+    "repeats": 3,
+    "median_s": 105.7300640649919,
+    "min_s": 104.41132229901268,
+    "max_s": 105.7896664889995,
+    "Q_W": 0.02746885568985694,
+    "pcg_iters": 76451,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "scipy_direct_cpu": {
+    "repeats": 5,
+    "median_s": 0.11990061101096217,
+    "min_s": 0.11687174599501304,
+    "max_s": 0.1308207910042256,
+    "Q_W": 0.027468856454624286,
+    "newton": 2
+   }
+  }
+ ],
+ "B2_mc": [
+  {
+   "N": 1000,
+   "numpy_cpu": {
+    "repeats": 3,
+    "median_s": 0.024521988001652062,
+    "draws_per_s": 40779.72797036804
+   },
+   "warp_cpu": {
+    "repeats": 3,
+    "median_s": 0.003913342006853782,
+    "min_s": 0.003885465004714206,
+    "draws_per_s": 255536.06054584845,
+    "alloc_copy_s": 0.00048432098992634565,
+    "max_abs_diff_vs_numpy": 0.0,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "GPU_K_mean_numpy": 383.07209754039593,
+   "GPU_K_p99_numpy": 393.3408848485877
+  },
+  {
+   "N": 10000,
+   "numpy_cpu": {
+    "repeats": 3,
+    "median_s": 0.12064792000455782,
+    "draws_per_s": 82885.80523909755
+   },
+   "warp_cpu": {
+    "repeats": 3,
+    "median_s": 0.03953903500223532,
+    "min_s": 0.039510428003268316,
+    "draws_per_s": 252914.61967735566,
+    "alloc_copy_s": 0.0006883089954499155,
+    "max_abs_diff_vs_numpy": 0.0,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "GPU_K_mean_numpy": 382.9216814976685,
+   "GPU_K_p99_numpy": 393.26533129317494
+  },
+  {
+   "N": 100000,
+   "numpy_cpu": {
+    "repeats": 3,
+    "median_s": 1.5703111790062394,
+    "draws_per_s": 63681.64561070266
+   },
+   "warp_cpu": {
+    "repeats": 3,
+    "median_s": 0.3957270550017711,
+    "min_s": 0.3945395210030256,
+    "draws_per_s": 252699.42688035936,
+    "alloc_copy_s": 0.006904743000632152,
+    "max_abs_diff_vs_numpy": 0.0,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "GPU_K_mean_numpy": 382.8728726741991,
+   "GPU_K_p99_numpy": 393.31120230872364
+  },
+  {
+   "N": 1000000,
+   "numpy_cpu": {
+    "repeats": 3,
+    "median_s": 26.502366870990954,
+    "draws_per_s": 37732.47894679864
+   },
+   "warp_cpu": {
+    "repeats": 3,
+    "median_s": 3.9695223860035185,
+    "min_s": 3.9589580570027465,
+    "draws_per_s": 251919.4761379823,
+    "alloc_copy_s": 0.2331983379990561,
+    "max_abs_diff_vs_numpy": 0.0,
+    "gpu_mean_W": null,
+    "n_power_samples": 0
+   },
+   "GPU_K_mean_numpy": 382.86535708545995,
+   "GPU_K_p99_numpy": 393.31407461319304
+  }
+ ]
+}

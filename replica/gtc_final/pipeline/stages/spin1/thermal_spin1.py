@@ -1,12 +1,13 @@
-"""SPIN1 thermal rerun (box CPU, scipy brentq; same model as the frozen baseline's operating(): model_t549 fin table F3_L40_t0p5, K13D area factor, 0.44 K MC margin,
+"""SPIN1 thermal rerun (box CPU, scipy brentq; same model as the frozen baseline's operating(): v2: Al6061 26/0.225 Warp fin table (fin_v2.py), area factor 1.0 (was F3_L40_t0p5 / K13D 0.9913), 0.44 K MC margin,
 pmad 0.92, aux 2 kW, rack rise 20 K at the load, radiator rise = 20 K x Q/IT). Knobs added (defaults reproduce the frozen baseline exactly):
   fluid: 'water_proxy' (rho 978, cp 4180, mu 4e-4 = baseline CT.G) or 'MPG40' (CoolProp INCOMP::MPG[0.4] at the rack-mean temperature, iterated);
          MPG40 hydraulic penalty: rack and column dp scaled by mu_MPG40/mu_model (laminar-conservative, ASSUMED), trunk via Re (CT.cool);
   extra_heat_W: added heat into the main radiator (battery-recharge PMAD loss);  F_scale: emission view multiplier (bumper ridge blockage).
 Plate resistance 14.22 K/kW and HBM 18 K/load-fraction are unchanged (inherited)."""
 import sys, json, math, copy
-ARGS = sys.argv[1:]; sys.argv = sys.argv[:1]; sys.path.insert(0, "/tmp/gtcfc_root/inputs/ai1_replica/checks_t538")
+ARGS = sys.argv[1:]; sys.argv = sys.argv[:1]; sys.path.insert(0, "/tmp/gtcv2_root/inputs/ai1_replica/checks_t538")
 import model_t549 as M
+sys.path.insert(0, '/tmp/gtcv2_root/stages'); import fin_v2 as FV; FIN_TAB = FV.register(M, '/tmp/gtcv2_root')   # v2 t619 Al fin table
 import CoolProp.CoolProp as CPr
 CT = M.CT; C13 = M.C13
 WATER = dict(rho=978.0, cp=4180.0, mu=4.0e-4)
@@ -31,7 +32,7 @@ def operating(mo, load, fluid="water_proxy", extra_heat_W=0.0, F_scale=1.0, dR_K
         c, pump, mod, inv = cool2f(p, area, npan, ncol, dT, 2, fp)
         Q = (p * 1000 + 2000 + pump) / .92 + extra_heat_W; rad_dT = dT * Q / (p * 1000)
         k = M.DEFAULTS; F = mo.Fe * k['yoke_Feff_scale'] * (k['coat_F0'] / .99) * F_scale; ee, sink, beta = M._ee_Ts(k['eps0'], F, k['alpha_eol'], k['qscale'])
-        root = M.supply_for_area(Q, area / M.K13D_AREA_FACTOR, k['eps0'], F, k['alpha_eol'], k['qscale'], rad_dT, 'F3_L40_t0p5')
+        root = M.supply_for_area(Q, area / FV.AREA_FACTOR, k['eps0'], F, k['alpha_eol'], k['qscale'], rad_dT, FIN_TAB)
         supply = root + .44; ref = supply + dT / 2
         it += 1
         if fluid == "water_proxy" or abs(ref - Tm) < 1e-6 or it > 30: break
@@ -48,7 +49,7 @@ def coolant_line(mo, fluid):
     credit = scale * C13.PANEL_FLUID * mo.npan0 * (fp["rho"] / WATER["rho"])
     return scale * raw - credit, dict(raw=raw, scale=scale, credit=credit, props_at_K=372.0 if fluid != "water_proxy" else None)
 if __name__ == "__main__":
-    base = json.load(open("/tmp/gtcfc_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
+    base = json.load(open("/tmp/gtcv2_root/stages/baseline/GTC_SCOPED_BASELINE_EXACT.json"))
     inp = json.load(open(ARGS[0])) if len(ARGS) > 0 else {}
     out = dict(doc=__doc__, cases={})
     for i, tag in enumerate(["J8", "A4"]):

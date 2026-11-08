@@ -2,7 +2,7 @@
 (eclipse_model.py: skyfield + JPL DE421 Sun, J2 SSO, conical shadow).  Replaces the 550-km t590 values (21.66 / 17.41 min, 1514 /yr) that spin1
 had inherited from the t596 freeze work."""
 import csv, json, math
-R0 = "/tmp/gtcfc_root/inputs/ai1_replica/eclipse"
+R0 = "/tmp/gtcv2_root/inputs/ai1_replica/eclipse"
 row = [r for r in csv.DictReader(open(R0 + "/eclipse_grid.csv")) if int(float(r["h_km"])) == 600 and abs(float(r["ltan_h"]) - 6.0) < 1e-6][0]
 daily = json.load(open(R0 + "/eclipse_daily.json"))["600_6.0"]; ecl_days = [d for d in daily if d["shadow_min_day"] > 0]
 n_ecl = int(float(row["n_ecl_orbits_shadow"])); shadow_h = sum(d["shadow_min_day"] for d in daily) / 60.0

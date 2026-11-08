@@ -2,9 +2,9 @@
 Emission 2*ee*sigma*(T^4-Ts_ecl^4) on the physical planform (no fin-efficiency credit: conservative), eclipse sink = 'table' Earth IR. Pump electric power + 500 W bus loss (as nbf) treated as heat in."""
 import json, math
 SIG = 5.670374419e-8; out = {}
-_E = json.load(open("/tmp/gtcfc_root/stages/spin1/../orbit/ECLIPSE_600KM.json"))   # FINAL: 600-km eclipse facts
+_E = json.load(open("/tmp/gtcv2_root/stages/spin1/../orbit/ECLIPSE_600KM.json"))   # FINAL: 600-km eclipse facts
 for tag, nm in (("J8", "June"), ("A4", "August")):
-    S = json.load(open(f"scen_{tag}_water_table.json")); TH = json.load(open("/tmp/gtcfc_root/stages/spin1/THERMAL_SPIN1.json"))["cases"][nm]["T0_baseline_nominal"]
+    S = json.load(open(f"scen_{tag}_water_table.json")); TH = json.load(open("/tmp/gtcv2_root/stages/spin1/THERMAL_SPIN1.json"))["cases"][nm]["T0_baseline_nominal"]
     tube_wall = 4 * (6.094e-3 ** 2 - 2.954e-3 ** 2) * 2.9446 * 2700.0
     inv = TH["inventory"]; fluid = inv["fluid_rack"] + inv["fluid_trunk"] + inv["hdr_fluid"] + inv["panel_fluid"]
     C = fluid * 4190 + S["npan"] * (S["fin_kg_per_panel"] + tube_wall + S["hdr_wall_kg_per_panel"]) * 900 + S["Chw"]

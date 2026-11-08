@@ -1,16 +1,37 @@
 {
- "label": "GTC final candidate configuration (scoped baseline t602/t603 + spin1 recommended additions)",
- "configuration_id": "AI1_GTC_FINAL_CANDIDATE_v1",
- "adopted_baseline": false,
- "status": "CANDIDATE for the final repo; not published; not vendor-qualified",
+ "label": "GTC FINAL v2 baseline (scoped baseline t602/t603 + spin1 additions + t619 all-aluminium radiator, GTC_FINAL_AL option (b))",
+ "configuration_id": "AI1_GTC_FINAL_V2_AL",
+ "supersedes": {
+  "configuration_id": "AI1_GTC_FINAL_CANDIDATE_v1",
+  "sha256": "b89c202f6372032f0337f4cb81888e99df3f5c7290745c26fac786c4f0a24d00",
+  "change": "K13D70 30/0.20 bonded CFRP fins -> Al 6061-T6 26 mm / 0.225 mm integral/brazed fins, same 77/128 panels"
+ },
+ "radiator_fin": {
+  "alloy": "Al 6061-T6",
+  "k_W_mK": 167.0,
+  "rho_kg_m3": 2700.0,
+  "half_length_mm": 26.0,
+  "thickness_mm": 0.225,
+  "tube_pitch_mm": 60.0,
+  "bondline": false,
+  "warp_table": "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json",
+  "area_factor": 1.0,
+  "coating": "unchanged",
+  "material_source": "ASM/MatWeb 6061-T6 (AA typical)"
+ },
+ "adopted_baseline": true,
+ "status": "FINAL v2 baseline (adopted t619); not published; not vendor-qualified",
  "geometry_unchanged": true,
  "render_change": false,
  "authority": [
   "the author t602/t603: scoped baseline, 0 % weight reserve, 370/378.15 K caps waived for this concept",
   "the author t605: spin1 items 1-3 (item 3 not rendered)",
-  "the author t606: final-candidate audit"
+  "the author t606: final-candidate audit",
+  "the author t612-t615: Al-only radiator study (GTC_FINAL_AL)",
+  "the author t619: ADOPT Al option (b) as the new final baseline"
  ],
  "mass_reserve_fraction": 0.0,
+ "mass_reserve_policy": "Minimum weight reserve 0 %; all unused mass under the 100 t launch budget is listed as RESERVE (kg/sc, t/launch, % of 100 t) (t615).",
  "launch_payload_budget_kg": 100000.0,
  "dispenser_all_in_kg": 2000.0,
  "orbit": {
@@ -23,7 +44,7 @@
    "json_path": "max_shadow_min",
    "stage": "s02_eclipse_600km",
    "script": "stages/orbit/eclipse_600km.py",
-   "script_sha256": "abb56e589e1459283977e627d9f2bdf503682ecfed2c19fecfeaa940d1ebbf27",
+   "script_sha256": "d2fa5f23d0b14a390c99646d8c34ffeab9a862437be253bf866098080a697ec5",
    "source_file_sha256": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
@@ -34,7 +55,7 @@
    "json_path": "eclipsed_orbits_per_year",
    "stage": "s02_eclipse_600km",
    "script": "stages/orbit/eclipse_600km.py",
-   "script_sha256": "abb56e589e1459283977e627d9f2bdf503682ecfed2c19fecfeaa940d1ebbf27",
+   "script_sha256": "d2fa5f23d0b14a390c99646d8c34ffeab9a862437be253bf866098080a697ec5",
    "source_file_sha256": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
@@ -45,7 +66,7 @@
    "json_path": "mean_shadow_min_when_eclipsed",
    "stage": "s02_eclipse_600km",
    "script": "stages/orbit/eclipse_600km.py",
-   "script_sha256": "abb56e589e1459283977e627d9f2bdf503682ecfed2c19fecfeaa940d1ebbf27",
+   "script_sha256": "d2fa5f23d0b14a390c99646d8c34ffeab9a862437be253bf866098080a697ec5",
    "source_file_sha256": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
@@ -56,7 +77,7 @@
    "json_path": "shadow_hours_per_year",
    "stage": "s02_eclipse_600km",
    "script": "stages/orbit/eclipse_600km.py",
-   "script_sha256": "abb56e589e1459283977e627d9f2bdf503682ecfed2c19fecfeaa940d1ebbf27",
+   "script_sha256": "d2fa5f23d0b14a390c99646d8c34ffeab9a862437be253bf866098080a697ec5",
    "source_file_sha256": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
@@ -73,7 +94,9 @@
   "deployment/capture/release/interlock hardware (70/120 kg allocation)",
   "life/hardening/compute provision (50/80 kg allocation)",
   "sustained / EOL peak power (battery covers <=30-min BOL bursts only)",
-  "MPG40 peak inlet 404 K > Dow 393 K recommended max (pressurisation, glycol life)",
+  "MPG40 peak inlet 403.4/404.1 K > Dow 393 K recommended max (pressurisation, glycol life)",
+  "6061 braze process for the integral/brazed fin-tube panel (narrow braze window; post-braze re-age) not designed",
+  "+13 % tube length per m2 (60 vs 68 mm pitch) raises tube MMOD exposure; not re-screened",
   "ORDEM-based MMOD flux (NASA90+Gruen used)",
   "launcher same-orbit performance, finite-hardware packing/CG, qualification"
  ],
@@ -88,8 +111,8 @@
     "json_path": "fleets[0].count",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "installed_peak_per_sc_kW": {
@@ -99,8 +122,8 @@
     "json_path": "fleets[0].peak_per_sc_kW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "nominal_per_sc_kW": {
@@ -110,8 +133,8 @@
     "json_path": "fleets[0].nominal_per_sc_kW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "installed_peak_per_launch_MW": {
@@ -121,8 +144,8 @@
     "json_path": "fleets[0].peak_installed_compute_MW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "installed peak compute-power-equivalent rating; not continuous delivery"
    },
@@ -133,50 +156,77 @@
     "json_path": "fleets[0].nominal_fleet_IT_MW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "sc_mass_kg": {
-    "value": 1937.7708698068952,
+    "value": 1963.4924655863942,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[0].sc_mass_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "launch_mass_kg": {
-    "value": 91137.46001111717,
+    "value": 92320.65341697414,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[0].launch_total_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "includes 2 t all-in dispenser; 0 % weight reserve"
    },
    "headroom_to_100t_kg": {
-    "value": 8862.539988882825,
+    "value": 7679.346583025865,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[0].margin_to_100t_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "note": "unused payload budget, not launched reserve"
+    "note": "alias of reserve_kg (t615)"
+   },
+   "reserve_kg": {
+    "value": 7679.346583025865,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[0].margin_to_100t_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "RESERVE per launch = all unused mass under 100 t (0 % minimum)"
+   },
+   "reserve_kg_per_sc": {
+    "value": 166.9423170223014,
+    "unit": "kg",
+    "derivation": "reserve_kg / spacecraft_count"
+   },
+   "reserve_t_per_launch": {
+    "value": 7.679346583025865,
+    "unit": "t",
+    "derivation": "reserve_kg / 1000"
+   },
+   "reserve_pct_of_100t": {
+    "value": 7.679346583025865,
+    "unit": "%",
+    "derivation": "reserve_kg / 100000 x 100"
    },
    "ledger_kg": {
     "value": {
      "rack": 408.53,
      "array": 486.87,
-     "radiator": 122.28,
+     "radiator": 141.89049904973984,
      "coolant_loop": 204.50596360709588,
      "structure_mech": 64.78,
      "power_electronics": 43.76,
@@ -186,104 +236,105 @@
      "adapter": 0.0,
      "deployment_mechanisms": 70.0,
      "MMOD_spare_panel_allocation": 80.0,
-     "freeze_restart_including_battery": 60.0,
+     "freeze_restart_including_battery": 65.65989728387235,
      "life_and_compute_provision": 50.0,
+     "propellant_delta_al_radiator_c13_prop": 0.3501450779352453,
      "peak_power_buffer_battery_NEW": 120.25561598576772,
-     "propellant_delta_inherited_c13_prop": 2.3092902140315914
+     "propellant_delta_inherited_c13_prop": 2.41034458198331
     },
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[0].ledger_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "GPU_nominal_K": {
-    "value": 389.8499838853224,
+    "value": 389.68255662619544,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2_rec_nominal_MPG40_plus_recharge.GPU_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "HBM_nominal_K": {
-    "value": 384.91078388532236,
+    "value": 384.7433566261954,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2_rec_nominal_MPG40_plus_recharge.HBM_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "GPU_peak_K": {
-    "value": 415.7919059172273,
+    "value": 415.45553236474717,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T1_MPG40_peak.GPU_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
     "note": "full-peak steady diagnostic (battery-buffered <=30 min/orbit)"
    },
    "HBM_peak_K": {
-    "value": 409.61790591722735,
+    "value": 409.2815323647472,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T1_MPG40_peak.HBM_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_supply_nominal_K": {
-    "value": 360.5107838853224,
+    "value": 360.34335662619543,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2.coolant_supply_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_radiator_inlet_nominal_K": {
-    "value": 382.79830042614805,
+    "value": 382.6311802924471,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2.coolant_radiator_inlet_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_radiator_inlet_peak_K": {
-    "value": 403.77487630799493,
+    "value": 403.4385027555148,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T1.coolant_radiator_inlet_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
     "note": "exceeds Dow 393.15 K recommended max"
    },
    "rack_rise_K": {
@@ -293,20 +344,20 @@
     "json_path": "cases/June.T2 (fixed dT_loop 20 K in operating())",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "ASSUMED loop convention"
    },
    "radiator_rise_nominal_K": {
-    "value": 22.287516540825642,
+    "value": 22.287823666251676,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2.radiator_delta_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_rise_peak_K": {
@@ -316,19 +367,19 @@
     "json_path": "cases/June.T1.radiator_delta_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "rejected_heat_nominal_W": {
-    "value": 133725.09924495386,
+    "value": 133726.94199751006,
     "unit": "W",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/June.T2.total_solar_power_and_rejected_heat_W",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_effective_area_m2": {
@@ -338,8 +389,8 @@
     "json_path": "fleets[0].radiator_effective_area_m2",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_panels": {
@@ -349,8 +400,8 @@
     "json_path": "fleets[0].physical_panels",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "solar_area_m2": {
@@ -360,8 +411,8 @@
     "json_path": "fleets[0].solar_area_m2",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "coolant": {
@@ -374,30 +425,30 @@
      "json_path": "fleets[0].ledger_kg.coolant_loop",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "MPG40_inventory_kg": {
-     "value": 118.95202525297576,
+     "value": 118.9623406763115,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
      "json_path": "June.MPG40_inventory_kg",
      "stage": "s12_freeze_mass",
      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
-     "script_sha256": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
-     "source_file_sha256": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175",
+     "script_sha256": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
+     "source_file_sha256": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "mass_flow_kg_s": {
-     "value": 1.5194903149575896,
+     "value": 1.519685026600199,
      "unit": "kg/s",
      "source_file": "stages/spin1/THERMAL_SPIN1.json",
      "json_path": "cases/June.T2.mass_flow_kg_s",
      "stage": "s08_thermal",
      "script": "stages/spin1/thermal_spin1.py",
-     "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-     "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+     "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+     "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "swap_delta_kg": {
@@ -407,8 +458,8 @@
      "json_path": "cases/June.coolant_line_delta_kg",
      "stage": "s08_thermal",
      "script": "stages/spin1/thermal_spin1.py",
-     "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-     "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+     "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+     "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     }
    },
@@ -421,7 +472,7 @@
      "json_path": "cases/June.battery_table.30min.nameplate_Wh/1000",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -432,7 +483,7 @@
      "json_path": "cases/June.battery_table.30min.total_kg",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -443,7 +494,7 @@
      "json_path": "cases/June.battery_table.30min.cycles_5yr",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -454,7 +505,7 @@
      "json_path": "cases/June.battery_table.30min.P_charge_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -465,7 +516,7 @@
      "json_path": "cases/June.verified_deficit_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -476,102 +527,102 @@
      "json_path": "cases/June.EOL.peak_deficit_EOL_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     }
    },
    "freeze_restart": {
     "hardware_kg": {
-     "value": 58.4414584128774,
+     "value": 65.65989728387235,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
      "json_path": "June.freeze_hw_total_kg",
      "stage": "s12_freeze_mass",
      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
-     "script_sha256": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
-     "source_file_sha256": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175",
+     "script_sha256": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
+     "source_file_sha256": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
-    "allocation_kg": 60.0,
+    "allocation_kg": 66.0,
     "pass_hardware": true,
     "pass_incl_glycol_swap": false,
     "heater_kW": {
-     "value": 36.28,
+     "value": 54.42,
      "unit": "kW",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json",
      "json_path": "heater_kW",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_cold": {
-     "value": 7.32,
+     "value": 4.84,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_table": {
-     "value": 6.58,
+     "value": 4.29,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_table_qt40.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "5efb0c482be158ff74e0ff82cc1e0fa7a29f0ed38d3964e483339eda9a820875",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "ba1655990db6075c03fdf7ad4a749be8af69e77838ec890b4fdbba0916e23fee",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_60Wm": {
-     "value": 4.09,
+     "value": 2.95,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt60.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "27ba5390cf6a4e94a1af147391bc43af0ed315b2dc16bee9c7c8f3fd25337b6c",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "78895045e1fc9b2cab458dc38818cd6b1cae78528de09fc27aecad8e77546cdc",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_550km_envelope": {
-     "value": 7.36,
+     "value": 4.88,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt40_e550max.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "df0bb9abea375547ebc4e36afd8c2ddf47f24037fb4d763a707ee3e7e64b68b2",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "50936bbe4b8c780941cd83c3456679830f7b10fce368f45cac884737c1ae4117",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "21.66-min eclipse (550-km t590 count) conservative sensitivity"
     },
     "tube_min_K": {
-     "value": 181.557,
+     "value": 189.683,
      "unit": "K",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json",
      "json_path": "T_tube_fluid_min_in_eclipse",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "header_fluid_min_K": {
-     "value": 312.304,
+     "value": 309.429,
      "unit": "K",
      "source_file": "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json",
      "json_path": "T_header_fluid_min_in_eclipse",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "slush_max": {
@@ -581,22 +632,22 @@
      "json_path": "ice_max_tube",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "clamped at 0.385 (Dow-data limit)"
     },
     "added_downtime_h_per_yr": {
-     "value": 169.70200000000003,
+     "value": 112.20733333333332,
      "unit": "h/yr",
-     "derivation": "t_open_min(cold,40 W/m) x eclipsed_orbits_per_year / 60 = 7.32 x 1391 / 60",
+     "derivation": "t_open_min(cold,40 W/m) x eclipsed_orbits_per_year / 60 = 4.84 x 1391 / 60",
      "sources": [
       "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json",
       "stages/orbit/ECLIPSE_600KM.json"
      ]
     },
     "added_downtime_frac": {
-     "value": 0.01935911476157883,
+     "value": 0.012800288995360863,
      "unit": "-",
      "derivation": "/ 8766 h"
     },
@@ -610,18 +661,18 @@
     },
     "water_pumps_off": {
      "ice_max_tube": 1.0,
-     "t_open_min": null,
+     "t_open_min": 10.21,
      "verdict": "FAIL (freezes solid)"
     },
     "water_keepwarm_battery_kg": {
-     "value": 114.0415538430346,
+     "value": 120.90701350811301,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json",
      "json_path": "June.battery_pack_kg",
      "stage": "s11_water_keepwarm",
      "script": "stages/spin1/freeze/water_keepwarm.py",
-     "script_sha256": "26c1bad99ef9aa787b36327b6325f2ed60ed6cdea708f32ec10b84ef6d3de0a1",
-     "source_file_sha256": "6d9aed306154c2e6fb948fd445212474977e3dc4080b9e3217532f599efc8719",
+     "script_sha256": "0c189d32e78740cb08a8966552cb26acb927476a023b6fe081e570617bb26246",
+     "source_file_sha256": "3a841810328f3b3866dcd4df58d52c0b4997676c7425fbf9300065573afdaba3",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "alternative rejected: exceeds allocation"
     }
@@ -634,8 +685,8 @@
      "json_path": "fleets[0].item3_mmod.trunk_SPF_recommended.total_kg",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "trunk_PNP_5yr_flux_x3": {
@@ -645,8 +696,8 @@
      "json_path": "fleets[0].item3_mmod.trunk_SPF_recommended.PNP",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "allocation_kg": 80.0,
@@ -657,8 +708,8 @@
      "json_path": "fleets[0].item3_mmod.unprotected.ledger.N_5yr",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "header_N_le_1_kg": {
@@ -668,8 +719,8 @@
      "json_path": "fleets[0].item3_mmod.header_N_le_1_ledger_routing.total_kg",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "OPEN; would cost +5.7-5.8 K GPU and push August over 100 t"
     },
@@ -679,14 +730,14 @@
    "open_item_allocations_kg": {
     "deployment_mechanisms": 70.0,
     "MMOD_spare_panel_allocation": 80.0,
-    "freeze_restart_including_battery": 60.0,
+    "freeze_restart_including_battery": 65.65989728387235,
     "life_and_compute_provision": 50.0
    },
    "baseline_reference": {
-    "launch_mass_kg": 85081.69867172463,
-    "GPU_nominal_K": 389.494806992163,
-    "HBM_nominal_K": 384.55560699216295,
-    "GPU_peak_K": 415.63412275058715
+    "launch_mass_kg": 85999.88830159768,
+    "GPU_nominal_K": 389.3292261785471,
+    "HBM_nominal_K": 384.3900261785471,
+    "GPU_peak_K": 415.2993027517811
    }
   },
   {
@@ -699,8 +750,8 @@
     "json_path": "fleets[1].count",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "installed_peak_per_sc_kW": {
@@ -710,8 +761,8 @@
     "json_path": "fleets[1].peak_per_sc_kW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "nominal_per_sc_kW": {
@@ -721,8 +772,8 @@
     "json_path": "fleets[1].nominal_per_sc_kW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "installed_peak_per_launch_MW": {
@@ -732,8 +783,8 @@
     "json_path": "fleets[1].peak_installed_compute_MW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "installed peak compute-power-equivalent rating; not continuous delivery"
    },
@@ -744,50 +795,77 @@
     "json_path": "fleets[1].nominal_fleet_IT_MW",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "sc_mass_kg": {
-    "value": 3024.075702175173,
+    "value": 3057.3385534837944,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[1].sc_mass_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "launch_mass_kg": {
-    "value": 92722.27106525519,
+    "value": 93720.15660451383,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[1].launch_total_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "includes 2 t all-in dispenser; 0 % weight reserve"
    },
    "headroom_to_100t_kg": {
-    "value": 7277.7289347448095,
+    "value": 6279.843395486168,
     "unit": "kg",
     "source_file": "stages/spin1/SPIN1_EXACT.json",
     "json_path": "fleets[1].margin_to_100t_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "note": "unused payload budget, not launched reserve"
+    "note": "alias of reserve_kg (t615)"
+   },
+   "reserve_kg": {
+    "value": 6279.843395486168,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].margin_to_100t_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "RESERVE per launch = all unused mass under 100 t (0 % minimum)"
+   },
+   "reserve_kg_per_sc": {
+    "value": 209.32811318287227,
+    "unit": "kg",
+    "derivation": "reserve_kg / spacecraft_count"
+   },
+   "reserve_t_per_launch": {
+    "value": 6.279843395486169,
+    "unit": "t",
+    "derivation": "reserve_kg / 1000"
+   },
+   "reserve_pct_of_100t": {
+    "value": 6.279843395486169,
+    "unit": "%",
+    "derivation": "reserve_kg / 100000 x 100"
    },
    "ledger_kg": {
     "value": {
      "rack": 640.38,
      "array": 813.82,
-     "radiator": 203.77,
+     "radiator": 236.44935387116035,
      "coolant_loop": 328.74310544966113,
      "structure_mech": 116.48,
      "power_electronics": 61.71,
@@ -799,6 +877,7 @@
      "MMOD_spare_panel_allocation": 140.0,
      "freeze_restart_including_battery": 90.0,
      "life_and_compute_provision": 80.0,
+     "propellant_delta_al_radiator_c13_prop": 0.5834974374609843,
      "peak_power_buffer_battery_NEW": 163.69073429025062,
      "propellant_delta_inherited_c13_prop": 3.1918624352610436
     },
@@ -807,94 +886,94 @@
     "json_path": "fleets[1].ledger_kg",
     "stage": "s13_assemble_spin1",
     "script": "stages/spin1/assemble_spin1.py",
-    "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-    "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+    "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+    "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "GPU_nominal_K": {
-    "value": 376.0677815472184,
+    "value": 375.98740035316655,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.GPU_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "HBM_nominal_K": {
-    "value": 371.7459815472184,
+    "value": 371.66560035316655,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.HBM_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "GPU_peak_K": {
-    "value": 416.51618752822395,
+    "value": 416.1870071629465,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T1_MPG40_peak.GPU_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
     "note": "full-peak steady diagnostic (battery-buffered <=30 min/orbit)"
    },
    "HBM_peak_K": {
-    "value": 410.342187528224,
+    "value": 410.0130071629465,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T1_MPG40_peak.HBM_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_supply_nominal_K": {
-    "value": 349.14598154721835,
+    "value": 349.06560035316653,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2.coolant_supply_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_radiator_inlet_nominal_K": {
-    "value": 371.3383519520863,
+    "value": 371.2581510518078,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2.coolant_radiator_inlet_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
    },
    "coolant_radiator_inlet_peak_K": {
-    "value": 404.38239381803703,
+    "value": 404.05321345275956,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T1.coolant_radiator_inlet_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
-    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json (sha256 f928fb7463c5308b...) produced by NVIDIA Warp CUDA on GB10 (t410 runner, Warp 1.18.0); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
     "note": "exceeds Dow 393.15 K recommended max"
    },
    "rack_rise_K": {
@@ -904,20 +983,20 @@
     "json_path": "cases/August.T2 (fixed dT_loop 20 K in operating())",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
     "note": "ASSUMED loop convention"
    },
    "radiator_rise_nominal_K": {
-    "value": 22.192370404867997,
+    "value": 22.192550698641224,
     "unit": "K",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2.radiator_delta_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_rise_peak_K": {
@@ -927,19 +1006,19 @@
     "json_path": "cases/August.T1.radiator_delta_K",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "rejected_heat_nominal_W": {
-    "value": 194183.24104259498,
+    "value": 194184.81861311072,
     "unit": "W",
     "source_file": "stages/spin1/THERMAL_SPIN1.json",
     "json_path": "cases/August.T2.total_solar_power_and_rejected_heat_W",
     "stage": "s08_thermal",
     "script": "stages/spin1/thermal_spin1.py",
-    "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-    "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+    "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+    "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_effective_area_m2": {
@@ -949,8 +1028,8 @@
     "json_path": "fleets[1].radiator_effective_area_m2",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "radiator_panels": {
@@ -960,8 +1039,8 @@
     "json_path": "fleets[1].physical_panels",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "solar_area_m2": {
@@ -971,8 +1050,8 @@
     "json_path": "fleets[1].solar_area_m2",
     "stage": "s01_baseline_freeze",
     "script": "stages/baseline/freeze_scoped_baseline.py",
-    "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
-    "source_file_sha256": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
+    "source_file_sha256": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
    },
    "coolant": {
@@ -985,30 +1064,30 @@
      "json_path": "fleets[1].ledger_kg.coolant_loop",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "MPG40_inventory_kg": {
-     "value": 191.0265013884077,
+     "value": 191.03473892034845,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
      "json_path": "August.MPG40_inventory_kg",
      "stage": "s12_freeze_mass",
      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
-     "script_sha256": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
-     "source_file_sha256": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175",
+     "script_sha256": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
+     "source_file_sha256": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "mass_flow_kg_s": {
-     "value": 2.2354661742228745,
+     "value": 2.235606357202989,
      "unit": "kg/s",
      "source_file": "stages/spin1/THERMAL_SPIN1.json",
      "json_path": "cases/August.T2.mass_flow_kg_s",
      "stage": "s08_thermal",
      "script": "stages/spin1/thermal_spin1.py",
-     "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-     "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+     "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+     "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "swap_delta_kg": {
@@ -1018,8 +1097,8 @@
      "json_path": "cases/August.coolant_line_delta_kg",
      "stage": "s08_thermal",
      "script": "stages/spin1/thermal_spin1.py",
-     "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
-     "source_file_sha256": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
+     "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
+     "source_file_sha256": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     }
    },
@@ -1032,7 +1111,7 @@
      "json_path": "cases/August.battery_table.30min.nameplate_Wh/1000",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -1043,7 +1122,7 @@
      "json_path": "cases/August.battery_table.30min.total_kg",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -1054,7 +1133,7 @@
      "json_path": "cases/August.battery_table.30min.cycles_5yr",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -1065,7 +1144,7 @@
      "json_path": "cases/August.battery_table.30min.P_charge_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -1076,7 +1155,7 @@
      "json_path": "cases/August.verified_deficit_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
@@ -1087,102 +1166,102 @@
      "json_path": "cases/August.EOL.peak_deficit_EOL_W",
      "stage": "s03_power",
      "script": "stages/spin1/power_spin1.py",
-     "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+     "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
      "source_file_sha256": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     }
    },
    "freeze_restart": {
     "hardware_kg": {
-     "value": 73.4507311937783,
+     "value": 85.48471794483015,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
      "json_path": "August.freeze_hw_total_kg",
      "stage": "s12_freeze_mass",
      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
-     "script_sha256": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
-     "source_file_sha256": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175",
+     "script_sha256": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
+     "source_file_sha256": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "allocation_kg": 90.0,
     "pass_hardware": true,
-    "pass_incl_glycol_swap": true,
+    "pass_incl_glycol_swap": false,
     "heater_kW": {
-     "value": 60.31,
+     "value": 90.46,
      "unit": "kW",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
      "json_path": "heater_kW",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_cold": {
-     "value": 7.22,
+     "value": 4.81,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_table": {
-     "value": 6.48,
+     "value": 4.25,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_table_qt40.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "3674aa9fee159927eaa6a30cc3b57be4991d77d48a22aa7282d1f3170633ad57",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "8a699c3606b4162651ab3a89d4241613627d4dec05363cfb2d65bccb78d24bd6",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_60Wm": {
-     "value": 4.06,
+     "value": 2.93,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "cbe132956a1d742615d66bc23904e3677057fa55df13688a8969a183acca78a4",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "d0f1971450bd309b9eeb0d4847187d084b50518d968125f219ab2fefd2b5cdcc",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "restart_open_min_550km_envelope": {
-     "value": 7.26,
+     "value": 4.85,
      "unit": "min",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json",
      "json_path": "t_open_min",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "32ab1594279b7a795d5e460cf05a27fdf727b4440e3b7e3faec48eeb1f6f8bdc",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "13b4dbaa1a699fd00aabc1da3577d8315cb48bf6c8d1a27ae2b9c6b88e4656fd",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "21.66-min eclipse (550-km t590 count) conservative sensitivity"
     },
     "tube_min_K": {
-     "value": 181.871,
+     "value": 189.849,
      "unit": "K",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
      "json_path": "T_tube_fluid_min_in_eclipse",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "header_fluid_min_K": {
-     "value": 306.289,
+     "value": 303.607,
      "unit": "K",
      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
      "json_path": "T_header_fluid_min_in_eclipse",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "slush_max": {
@@ -1192,22 +1271,22 @@
      "json_path": "ice_max_tube",
      "stage": "s10_freeze_transients",
      "script": "stages/spin1/freeze/nbf_spin1.py",
-     "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-     "source_file_sha256": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
+     "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+     "source_file_sha256": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "clamped at 0.385 (Dow-data limit)"
     },
     "added_downtime_h_per_yr": {
-     "value": 167.38366666666667,
+     "value": 111.51183333333331,
      "unit": "h/yr",
-     "derivation": "t_open_min(cold,40 W/m) x eclipsed_orbits_per_year / 60 = 7.22 x 1391 / 60",
+     "derivation": "t_open_min(cold,40 W/m) x eclipsed_orbits_per_year / 60 = 4.81 x 1391 / 60",
      "sources": [
       "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
       "stages/orbit/ECLIPSE_600KM.json"
      ]
     },
     "added_downtime_frac": {
-     "value": 0.01909464598068294,
+     "value": 0.012720948361092096,
      "unit": "-",
      "derivation": "/ 8766 h"
     },
@@ -1221,18 +1300,18 @@
     },
     "water_pumps_off": {
      "ice_max_tube": 1.0,
-     "t_open_min": null,
+     "t_open_min": 10.06,
      "verdict": "FAIL (freezes solid)"
     },
     "water_keepwarm_battery_kg": {
-     "value": 243.22720344814437,
+     "value": 253.25697700868162,
      "unit": "kg",
      "source_file": "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json",
      "json_path": "August.battery_pack_kg",
      "stage": "s11_water_keepwarm",
      "script": "stages/spin1/freeze/water_keepwarm.py",
-     "script_sha256": "26c1bad99ef9aa787b36327b6325f2ed60ed6cdea708f32ec10b84ef6d3de0a1",
-     "source_file_sha256": "6d9aed306154c2e6fb948fd445212474977e3dc4080b9e3217532f599efc8719",
+     "script_sha256": "0c189d32e78740cb08a8966552cb26acb927476a023b6fe081e570617bb26246",
+     "source_file_sha256": "3a841810328f3b3866dcd4df58d52c0b4997676c7425fbf9300065573afdaba3",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "alternative rejected: exceeds allocation"
     }
@@ -1245,8 +1324,8 @@
      "json_path": "fleets[1].item3_mmod.trunk_SPF_recommended.total_kg",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "trunk_PNP_5yr_flux_x3": {
@@ -1256,8 +1335,8 @@
      "json_path": "fleets[1].item3_mmod.trunk_SPF_recommended.PNP",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "allocation_kg": 140.0,
@@ -1268,8 +1347,8 @@
      "json_path": "fleets[1].item3_mmod.unprotected.ledger.N_5yr",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
     },
     "header_N_le_1_kg": {
@@ -1279,8 +1358,8 @@
      "json_path": "fleets[1].item3_mmod.header_N_le_1_ledger_routing.total_kg",
      "stage": "s13_assemble_spin1",
      "script": "stages/spin1/assemble_spin1.py",
-     "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
-     "source_file_sha256": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e",
+     "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
+     "source_file_sha256": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605",
      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
      "note": "OPEN; would cost +5.7-5.8 K GPU and push August over 100 t"
     },
@@ -1294,23 +1373,23 @@
     "life_and_compute_provision": 80.0
    },
    "baseline_reference": {
-    "launch_mass_kg": 87263.54448141009,
-    "GPU_nominal_K": 375.66193928344603,
-    "HBM_nominal_K": 371.34013928344604,
-    "GPU_peak_K": 416.3573166156606
+    "launch_mass_kg": 88261.43002066875,
+    "GPU_nominal_K": 375.583880722659,
+    "HBM_nominal_K": 371.262080722659,
+    "GPU_peak_K": 416.02968573910124
    }
   }
  ],
  "stages": {
   "s00_t600_screen": {
    "script": "stages/t600/baseline_plus_deletions.py",
-   "script_sha256": "f47dd720cc9779c2405ccadfc1c7e62ddc94a68271b3080985753a9a8b5ff095",
+   "script_sha256": "aa5cff31406a4799a411f02b29aa347cd8b549518045f471ebffaf5c3821b42f",
    "inputs": {
     "inputs/ai1_replica/checks_t444/c8_viewfactor.json": "a39569be84e8cce161f74ed2d767f4f10fba0ac8fcd241cc72ce1d75f8b282d7",
-    "inputs/ai1_replica/checks_t454/c10_coolant.py": "e937337dcb05eb917a89e2504bbe948384c1e9f0741f06dce43b71e4c9e41edb",
+    "inputs/ai1_replica/checks_t454/c10_coolant.py": "4a9ac39d274f1967bf16df9150965b2986d79976df00a649043208639e963473",
     "inputs/ai1_replica/checks_t454/c10c_taper.py": "466954144a5334d53dbbfd59a317f5d61d08ea355a1837fe0f6eaf0ff49068d6",
-    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "f5837b3dcdc835deb80df6e9c4a407dbb874b198cb64908ae6ce4d1e33c409a2",
-    "inputs/ai1_replica/checks_t454/c13_trade.py": "203911d89e47529478a05c8716e1c9d48942e226062b4f78d510429c1fdbc3c9",
+    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "40a7f755d41e51e95a21220407f4808f4727df5b22226209dd5be188f0e078a4",
+    "inputs/ai1_replica/checks_t454/c13_trade.py": "ba802e3e9ea2b1f73f6f3f62e6b60b136ff0ea9f7a9b511115761d0e11cffcfb",
     "inputs/ai1_replica/checks_t454/c14_thermal.json": "9bff707f118818790650c03d36892f1cd8de06b4ec5407482c1c1806b4b52954",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_128.json": "269310941ffb399b12381efab7f6b7d3fa97f49d03b41cb75ea1e9242a23564f",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_138.json": "76734d03a7837596c3a41e0863a8911de2907ee06e11936ee4d5603ea8d4a1c3",
@@ -1327,7 +1406,7 @@
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_84_ns8.json": "79f140919c27a25e31c233d4237733b204574f5dfc07a1825a81b3d429bc6609",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90.json": "667f66e1af5b2ad7139ad1ef96a6af4a483363f63324fbb69d11ae857d1c2f14",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90_ns8.json": "35d53927d53ba15290e89bcd27fc50f89806862d22a0b222235310975ea1bf6e",
-    "inputs/ai1_replica/checks_t454/c21_bumper.py": "deed5f98e59074e0f8257cd7fd07452a7ffd03bab374a9615aeb097634d45ae3",
+    "inputs/ai1_replica/checks_t454/c21_bumper.py": "0d11bccdbd860fd9c9582c4d29d26c11a78ce75f59967402740f861558dc83b1",
     "inputs/ai1_replica/checks_t454/t523_results.json": "339d351fd070ea6b41b5bf7b926135ffa30438e447d9e72dcb7e63f2fa6b5167",
     "inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
     "inputs/ai1_replica/checks_t538/pack_Aug_150_p7.json": "8a38cd30f60eee9993b478e75d5185888b9a240f8fa1e474d4b9d51117acb1c7",
@@ -1409,7 +1488,7 @@
     "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
     "inputs/ai1_replica/gtc_params/point_A4_C1.json": "5418603f78349caff0e8c85536fb98abd41c491823a86cb429d3712b1192fb0b",
     "inputs/ai1_replica/gtc_params/point_J8_C1.json": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0",
-    "inputs/ai1_replica/orbit_loop.py": "09ae4fd66d5ad593e209145da0ecbad9f87cf40ab8799ede48498eccc61603d8",
+    "inputs/ai1_replica/orbit_loop.py": "e4507176fa302c41756a6c88c8ec46659df591be060a98b9630fe930c0cab481",
     "inputs/ai1_replica/plog.py": "90ef9c1eb323b776c07eb45a86173663fdcd284f4136e21922322403b4acb999",
     "inputs/ai1_replica/results/t434_region.json": "82ac04e7767f181ffd7bf416e4349a30be7fbc54197e98161501b1bbc9411215",
     "inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json": "7356df61af8646b2926aabfb47724b7bb3f69830ffbc12545f6e74d6e2571a8e",
@@ -1419,19 +1498,19 @@
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016"
    },
    "outputs": {
-    "stages/t600/BASELINE_PLUS_DELETIONS_SCREEN.json": "bdc189546a7e64a73c9f8531affb37c4f3bbbf8d96490c7724b83488c79a9a3b"
+    "stages/t600/BASELINE_PLUS_DELETIONS_SCREEN.json": "cc95c2c28ceee977cab8254a9dbcddbf40802db72f50b30a2b346274363c216d"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s01_baseline_freeze": {
    "script": "stages/baseline/freeze_scoped_baseline.py",
-   "script_sha256": "667e734a123985fc1250f3281fc29b66321a588923bb37e1331e802b2a21afde",
+   "script_sha256": "01cf54d4c8ca61eeadf6e11bb1ca2e0a5fcfaa2aef39d098ef60297ebf97f508",
    "inputs": {
     "inputs/ai1_replica/checks_t444/c8_viewfactor.json": "a39569be84e8cce161f74ed2d767f4f10fba0ac8fcd241cc72ce1d75f8b282d7",
-    "inputs/ai1_replica/checks_t454/c10_coolant.py": "e937337dcb05eb917a89e2504bbe948384c1e9f0741f06dce43b71e4c9e41edb",
+    "inputs/ai1_replica/checks_t454/c10_coolant.py": "4a9ac39d274f1967bf16df9150965b2986d79976df00a649043208639e963473",
     "inputs/ai1_replica/checks_t454/c10c_taper.py": "466954144a5334d53dbbfd59a317f5d61d08ea355a1837fe0f6eaf0ff49068d6",
-    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "f5837b3dcdc835deb80df6e9c4a407dbb874b198cb64908ae6ce4d1e33c409a2",
-    "inputs/ai1_replica/checks_t454/c13_trade.py": "203911d89e47529478a05c8716e1c9d48942e226062b4f78d510429c1fdbc3c9",
+    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "40a7f755d41e51e95a21220407f4808f4727df5b22226209dd5be188f0e078a4",
+    "inputs/ai1_replica/checks_t454/c13_trade.py": "ba802e3e9ea2b1f73f6f3f62e6b60b136ff0ea9f7a9b511115761d0e11cffcfb",
     "inputs/ai1_replica/checks_t454/c14_thermal.json": "9bff707f118818790650c03d36892f1cd8de06b4ec5407482c1c1806b4b52954",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_128.json": "269310941ffb399b12381efab7f6b7d3fa97f49d03b41cb75ea1e9242a23564f",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_138.json": "76734d03a7837596c3a41e0863a8911de2907ee06e11936ee4d5603ea8d4a1c3",
@@ -1448,7 +1527,7 @@
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_84_ns8.json": "79f140919c27a25e31c233d4237733b204574f5dfc07a1825a81b3d429bc6609",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90.json": "667f66e1af5b2ad7139ad1ef96a6af4a483363f63324fbb69d11ae857d1c2f14",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90_ns8.json": "35d53927d53ba15290e89bcd27fc50f89806862d22a0b222235310975ea1bf6e",
-    "inputs/ai1_replica/checks_t454/c21_bumper.py": "deed5f98e59074e0f8257cd7fd07452a7ffd03bab374a9615aeb097634d45ae3",
+    "inputs/ai1_replica/checks_t454/c21_bumper.py": "0d11bccdbd860fd9c9582c4d29d26c11a78ce75f59967402740f861558dc83b1",
     "inputs/ai1_replica/checks_t454/t523_results.json": "339d351fd070ea6b41b5bf7b926135ffa30438e447d9e72dcb7e63f2fa6b5167",
     "inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
     "inputs/ai1_replica/checks_t538/pack_Aug_150_p7.json": "8a38cd30f60eee9993b478e75d5185888b9a240f8fa1e474d4b9d51117acb1c7",
@@ -1524,13 +1603,14 @@
     "inputs/ai1_replica/eclipse/eclipse_daily.json": "9de190a5939dd7a74c914112f6157f9fb338b9007beae296eb6c87075edfd305",
     "inputs/ai1_replica/eclipse/eclipse_grid.csv": "6e309e4cca31229b27a95544d99210588f7d09a0aea992b565a0954568310a6b",
     "inputs/ai1_replica/eclipse/env_parts.json": "e8a646e7eb8e1fef34745c8466f37513b4d5000edca821e2c2305e1e02569bb7",
+    "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
     "inputs/ai1_replica/gb10_gtc/thermal/ai1_specs.py": "08193a54c2772a7c89ec061694ab274f0027f8a99ac567c970f6b2092066bea7",
     "inputs/ai1_replica/gb10_gtc/thermal/data/env_table.json": "2e69faf2fa406fc2ac69fe652553a4950fee414babe9e3242aefaadc941bc57d",
     "inputs/ai1_replica/gb10_run_t410/results/table_F1_L60_t0p8.json": "30cf96df002c9c783d709754c339aa8fecdbf1d8f0f10a6a00c81d179861c519",
     "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
     "inputs/ai1_replica/gtc_params/point_A4_C1.json": "5418603f78349caff0e8c85536fb98abd41c491823a86cb429d3712b1192fb0b",
     "inputs/ai1_replica/gtc_params/point_J8_C1.json": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0",
-    "inputs/ai1_replica/orbit_loop.py": "09ae4fd66d5ad593e209145da0ecbad9f87cf40ab8799ede48498eccc61603d8",
+    "inputs/ai1_replica/orbit_loop.py": "e4507176fa302c41756a6c88c8ec46659df591be060a98b9630fe930c0cab481",
     "inputs/ai1_replica/plog.py": "90ef9c1eb323b776c07eb45a86173663fdcd284f4136e21922322403b4acb999",
     "inputs/ai1_replica/results/t434_region.json": "82ac04e7767f181ffd7bf416e4349a30be7fbc54197e98161501b1bbc9411215",
     "inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json": "7356df61af8646b2926aabfb47724b7bb3f69830ffbc12545f6e74d6e2571a8e",
@@ -1538,18 +1618,19 @@
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/env_leo.py": "fa5534964e48e87cb30d9af45046f4ecebc2a4fbb943107084265d97bfc2353c",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/t600/BASELINE_PLUS_DELETIONS_SCREEN.json": "bdc189546a7e64a73c9f8531affb37c4f3bbbf8d96490c7724b83488c79a9a3b"
+    "stages/fin_v2.py": "60b322f33f3d89d2b358e08b95bcc859b15bb363375084a3a8bfce0b413c0e49",
+    "stages/t600/BASELINE_PLUS_DELETIONS_SCREEN.json": "cc95c2c28ceee977cab8254a9dbcddbf40802db72f50b30a2b346274363c216d"
    },
    "outputs": {
-    "stages/baseline/F3_FIN_LOOKUP.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
-    "stages/baseline/MODEL_SOURCE_TRACE.json": "c51755f4e7987a145646399f7d75e66e830a1d84202ba5a58757c13faecce3e7"
+    "stages/baseline/FIN_LOOKUP.json": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
+    "stages/baseline/MODEL_SOURCE_TRACE.json": "d500759f97f026949242ea563cdc049ccac8ab6837550a6493cfd6e0ff7de3d5"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s02_eclipse_600km": {
    "script": "stages/orbit/eclipse_600km.py",
-   "script_sha256": "abb56e589e1459283977e627d9f2bdf503682ecfed2c19fecfeaa940d1ebbf27",
+   "script_sha256": "d2fa5f23d0b14a390c99646d8c34ffeab9a862437be253bf866098080a697ec5",
    "inputs": {
     "inputs/ai1_replica/eclipse/eclipse_daily.json": "9de190a5939dd7a74c914112f6157f9fb338b9007beae296eb6c87075edfd305",
     "inputs/ai1_replica/eclipse/eclipse_grid.csv": "6e309e4cca31229b27a95544d99210588f7d09a0aea992b565a0954568310a6b"
@@ -1561,9 +1642,9 @@
   },
   "s03_power": {
    "script": "stages/spin1/power_spin1.py",
-   "script_sha256": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
+   "script_sha256": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
    "inputs": {
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "stages/orbit/ECLIPSE_600KM.json": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137"
    },
    "outputs": {
@@ -1573,11 +1654,11 @@
   },
   "s04_mmod": {
    "script": "stages/spin1/mmod_spin1.py",
-   "script_sha256": "1c37c68f563535f9de5cb1f8876e376756a406bf090d7688ce7dbe237318ecf0",
+   "script_sha256": "c9ac9b3001f84c2da55e72807421f2d50cfeec64b613aa598a5d103284c2ce9e",
    "inputs": {
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67"
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72"
    },
    "outputs": {
     "stages/spin1/MMOD_SPIN1.json": "87136c912ecd578b49d8f2677c2eb66944a01b5762a9592ffaeed4d1c375ead0"
@@ -1590,7 +1671,7 @@
    "inputs": {
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/spin1/mmod_spin1.py": "1c37c68f563535f9de5cb1f8876e376756a406bf090d7688ce7dbe237318ecf0"
+    "stages/spin1/mmod_spin1.py": "c9ac9b3001f84c2da55e72807421f2d50cfeec64b613aa598a5d103284c2ce9e"
    },
    "outputs": {
     "stages/spin1/MMOD_GRID_SPIN1.json": "70614724745f447b42a0e66611d566e4e385ce2415f574b771636fe4a739217b"
@@ -1599,12 +1680,12 @@
   },
   "s06_mmod_trunk": {
    "script": "stages/spin1/mmod_trunk_alloc_spin1.py",
-   "script_sha256": "d9f39e3b8e33f2b0013df397f18a9805f020c03d1f2516b16300468f38c8b48d",
+   "script_sha256": "a3c2c3045eb6089dc912de8e9018ac678d30aa6d7d970bb7e3b9056f74896cc5",
    "inputs": {
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
     "stages/spin1/mmod_grid_spin1.py": "4f94d3a013a8fb6bbe3c094ae5154ab9a4a61910c2a2b04ece1abbf7e95632e4",
-    "stages/spin1/mmod_spin1.py": "1c37c68f563535f9de5cb1f8876e376756a406bf090d7688ce7dbe237318ecf0"
+    "stages/spin1/mmod_spin1.py": "c9ac9b3001f84c2da55e72807421f2d50cfeec64b613aa598a5d103284c2ce9e"
    },
    "outputs": {
     "stages/spin1/MMOD_TRUNK_ALLOC_SPIN1.json": "b7d696dead08649f5d17f968179fba1a647ee9b10e8e966888049570a59feb35"
@@ -1625,13 +1706,13 @@
   },
   "s08_thermal": {
    "script": "stages/spin1/thermal_spin1.py",
-   "script_sha256": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b",
+   "script_sha256": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989",
    "inputs": {
     "inputs/ai1_replica/checks_t444/c8_viewfactor.json": "a39569be84e8cce161f74ed2d767f4f10fba0ac8fcd241cc72ce1d75f8b282d7",
-    "inputs/ai1_replica/checks_t454/c10_coolant.py": "e937337dcb05eb917a89e2504bbe948384c1e9f0741f06dce43b71e4c9e41edb",
+    "inputs/ai1_replica/checks_t454/c10_coolant.py": "4a9ac39d274f1967bf16df9150965b2986d79976df00a649043208639e963473",
     "inputs/ai1_replica/checks_t454/c10c_taper.py": "466954144a5334d53dbbfd59a317f5d61d08ea355a1837fe0f6eaf0ff49068d6",
-    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "f5837b3dcdc835deb80df6e9c4a407dbb874b198cb64908ae6ce4d1e33c409a2",
-    "inputs/ai1_replica/checks_t454/c13_trade.py": "203911d89e47529478a05c8716e1c9d48942e226062b4f78d510429c1fdbc3c9",
+    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "40a7f755d41e51e95a21220407f4808f4727df5b22226209dd5be188f0e078a4",
+    "inputs/ai1_replica/checks_t454/c13_trade.py": "ba802e3e9ea2b1f73f6f3f62e6b60b136ff0ea9f7a9b511115761d0e11cffcfb",
     "inputs/ai1_replica/checks_t454/c14_thermal.json": "9bff707f118818790650c03d36892f1cd8de06b4ec5407482c1c1806b4b52954",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_128.json": "269310941ffb399b12381efab7f6b7d3fa97f49d03b41cb75ea1e9242a23564f",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_138.json": "76734d03a7837596c3a41e0863a8911de2907ee06e11936ee4d5603ea8d4a1c3",
@@ -1648,7 +1729,7 @@
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_84_ns8.json": "79f140919c27a25e31c233d4237733b204574f5dfc07a1825a81b3d429bc6609",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90.json": "667f66e1af5b2ad7139ad1ef96a6af4a483363f63324fbb69d11ae857d1c2f14",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90_ns8.json": "35d53927d53ba15290e89bcd27fc50f89806862d22a0b222235310975ea1bf6e",
-    "inputs/ai1_replica/checks_t454/c21_bumper.py": "deed5f98e59074e0f8257cd7fd07452a7ffd03bab374a9615aeb097634d45ae3",
+    "inputs/ai1_replica/checks_t454/c21_bumper.py": "0d11bccdbd860fd9c9582c4d29d26c11a78ce75f59967402740f861558dc83b1",
     "inputs/ai1_replica/checks_t454/t523_results.json": "339d351fd070ea6b41b5bf7b926135ffa30438e447d9e72dcb7e63f2fa6b5167",
     "inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
     "inputs/ai1_replica/checks_t538/pack_Aug_150_p7.json": "8a38cd30f60eee9993b478e75d5185888b9a240f8fa1e474d4b9d51117acb1c7",
@@ -1724,13 +1805,14 @@
     "inputs/ai1_replica/eclipse/eclipse_daily.json": "9de190a5939dd7a74c914112f6157f9fb338b9007beae296eb6c87075edfd305",
     "inputs/ai1_replica/eclipse/eclipse_grid.csv": "6e309e4cca31229b27a95544d99210588f7d09a0aea992b565a0954568310a6b",
     "inputs/ai1_replica/eclipse/env_parts.json": "e8a646e7eb8e1fef34745c8466f37513b4d5000edca821e2c2305e1e02569bb7",
+    "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
     "inputs/ai1_replica/gb10_gtc/thermal/ai1_specs.py": "08193a54c2772a7c89ec061694ab274f0027f8a99ac567c970f6b2092066bea7",
     "inputs/ai1_replica/gb10_gtc/thermal/data/env_table.json": "2e69faf2fa406fc2ac69fe652553a4950fee414babe9e3242aefaadc941bc57d",
     "inputs/ai1_replica/gb10_run_t410/results/table_F1_L60_t0p8.json": "30cf96df002c9c783d709754c339aa8fecdbf1d8f0f10a6a00c81d179861c519",
     "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
     "inputs/ai1_replica/gtc_params/point_A4_C1.json": "5418603f78349caff0e8c85536fb98abd41c491823a86cb429d3712b1192fb0b",
     "inputs/ai1_replica/gtc_params/point_J8_C1.json": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0",
-    "inputs/ai1_replica/orbit_loop.py": "09ae4fd66d5ad593e209145da0ecbad9f87cf40ab8799ede48498eccc61603d8",
+    "inputs/ai1_replica/orbit_loop.py": "e4507176fa302c41756a6c88c8ec46659df591be060a98b9630fe930c0cab481",
     "inputs/ai1_replica/plog.py": "90ef9c1eb323b776c07eb45a86173663fdcd284f4136e21922322403b4acb999",
     "inputs/ai1_replica/results/t434_region.json": "82ac04e7767f181ffd7bf416e4349a30be7fbc54197e98161501b1bbc9411215",
     "inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json": "7356df61af8646b2926aabfb47724b7bb3f69830ffbc12545f6e74d6e2571a8e",
@@ -1738,23 +1820,24 @@
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/env_leo.py": "fa5534964e48e87cb30d9af45046f4ecebc2a4fbb943107084265d97bfc2353c",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
+    "stages/fin_v2.py": "60b322f33f3d89d2b358e08b95bcc859b15bb363375084a3a8bfce0b413c0e49",
     "stages/spin1/THERMAL_INPUTS_SPIN1.json": "d90e057d103c096e9816ec44a4fb170bc860bb24e9044f2b6ad27ccdc427c7ed"
    },
    "outputs": {
-    "stages/spin1/THERMAL_SPIN1.json": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d"
+    "stages/spin1/THERMAL_SPIN1.json": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s09_freeze_scen": {
    "script": "stages/spin1/freeze/build_scen.py",
-   "script_sha256": "96232479e50d60b1a7b9436fc9a12eed1234dd640f76eae4842299a2dae85ec0",
+   "script_sha256": "85a9258b0357e539344a8cf0957781a68d0cd87e316e7f646c4649e1524794c0",
    "inputs": {
     "inputs/ai1_replica/checks_t444/c8_viewfactor.json": "a39569be84e8cce161f74ed2d767f4f10fba0ac8fcd241cc72ce1d75f8b282d7",
-    "inputs/ai1_replica/checks_t454/c10_coolant.py": "e937337dcb05eb917a89e2504bbe948384c1e9f0741f06dce43b71e4c9e41edb",
+    "inputs/ai1_replica/checks_t454/c10_coolant.py": "4a9ac39d274f1967bf16df9150965b2986d79976df00a649043208639e963473",
     "inputs/ai1_replica/checks_t454/c10c_taper.py": "466954144a5334d53dbbfd59a317f5d61d08ea355a1837fe0f6eaf0ff49068d6",
-    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "f5837b3dcdc835deb80df6e9c4a407dbb874b198cb64908ae6ce4d1e33c409a2",
-    "inputs/ai1_replica/checks_t454/c13_trade.py": "203911d89e47529478a05c8716e1c9d48942e226062b4f78d510429c1fdbc3c9",
+    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "40a7f755d41e51e95a21220407f4808f4727df5b22226209dd5be188f0e078a4",
+    "inputs/ai1_replica/checks_t454/c13_trade.py": "ba802e3e9ea2b1f73f6f3f62e6b60b136ff0ea9f7a9b511115761d0e11cffcfb",
     "inputs/ai1_replica/checks_t454/c14_thermal.json": "9bff707f118818790650c03d36892f1cd8de06b4ec5407482c1c1806b4b52954",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_128.json": "269310941ffb399b12381efab7f6b7d3fa97f49d03b41cb75ea1e9242a23564f",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_138.json": "76734d03a7837596c3a41e0863a8911de2907ee06e11936ee4d5603ea8d4a1c3",
@@ -1771,7 +1854,7 @@
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_84_ns8.json": "79f140919c27a25e31c233d4237733b204574f5dfc07a1825a81b3d429bc6609",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90.json": "667f66e1af5b2ad7139ad1ef96a6af4a483363f63324fbb69d11ae857d1c2f14",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90_ns8.json": "35d53927d53ba15290e89bcd27fc50f89806862d22a0b222235310975ea1bf6e",
-    "inputs/ai1_replica/checks_t454/c21_bumper.py": "deed5f98e59074e0f8257cd7fd07452a7ffd03bab374a9615aeb097634d45ae3",
+    "inputs/ai1_replica/checks_t454/c21_bumper.py": "0d11bccdbd860fd9c9582c4d29d26c11a78ce75f59967402740f861558dc83b1",
     "inputs/ai1_replica/checks_t454/t523_results.json": "339d351fd070ea6b41b5bf7b926135ffa30438e447d9e72dcb7e63f2fa6b5167",
     "inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
     "inputs/ai1_replica/checks_t538/pack_Aug_150_p7.json": "8a38cd30f60eee9993b478e75d5185888b9a240f8fa1e474d4b9d51117acb1c7",
@@ -1853,7 +1936,7 @@
     "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
     "inputs/ai1_replica/gtc_params/point_A4_C1.json": "5418603f78349caff0e8c85536fb98abd41c491823a86cb429d3712b1192fb0b",
     "inputs/ai1_replica/gtc_params/point_J8_C1.json": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0",
-    "inputs/ai1_replica/orbit_loop.py": "09ae4fd66d5ad593e209145da0ecbad9f87cf40ab8799ede48498eccc61603d8",
+    "inputs/ai1_replica/orbit_loop.py": "e4507176fa302c41756a6c88c8ec46659df591be060a98b9630fe930c0cab481",
     "inputs/ai1_replica/plog.py": "90ef9c1eb323b776c07eb45a86173663fdcd284f4136e21922322403b4acb999",
     "inputs/ai1_replica/results/t434_region.json": "82ac04e7767f181ffd7bf416e4349a30be7fbc54197e98161501b1bbc9411215",
     "inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json": "7356df61af8646b2926aabfb47724b7bb3f69830ffbc12545f6e74d6e2571a8e",
@@ -1861,91 +1944,93 @@
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/env_leo.py": "fa5534964e48e87cb30d9af45046f4ecebc2a4fbb943107084265d97bfc2353c",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
+    "stages/fin_v2.py": "60b322f33f3d89d2b358e08b95bcc859b15bb363375084a3a8bfce0b413c0e49",
     "stages/orbit/ECLIPSE_600KM.json": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
-    "stages/spin1/THERMAL_SPIN1.json": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d"
+    "stages/spin1/THERMAL_SPIN1.json": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c"
    },
    "outputs": {
-    "stages/spin1/freeze/scen_A4_MPG40_cold.json": "1bc1ecc2fef5377ffe79e3ceaa3ac3aa14b9a1c4ea76609449c45ed7482398ef",
-    "stages/spin1/freeze/scen_A4_MPG40_table.json": "87838c1c57eda24ecba9938ee734f7f5acdc45a57a7f15018848e521ccfec5f3",
-    "stages/spin1/freeze/scen_A4_water_cold.json": "cc9e57a8331f492f022b662d39455de1d2a9aaa65a4451e37e72aa1f9878b987",
-    "stages/spin1/freeze/scen_A4_water_table.json": "f3814796474e4ebcb7adb0c04b68904246633cdaa790b212aa1989282608cb2e",
-    "stages/spin1/freeze/scen_J8_MPG40_cold.json": "73afbfb6495ca60c7503e4555d64d02a74a469ae21c61ee02e9795a231a39f01",
-    "stages/spin1/freeze/scen_J8_MPG40_table.json": "8e30cce64ed37b282fa42794cc23f0bf5309df3651d09ede00d6c999d8771d8c",
-    "stages/spin1/freeze/scen_J8_water_cold.json": "abf00c8157d76b93a7193d45ffc35f64e970dd95e1483704967c176b9e80dd44",
-    "stages/spin1/freeze/scen_J8_water_table.json": "86b15fb4f64684fe2a432622d8705058b6e61f4f1cdee13861ac161f9b9ceb48"
+    "stages/spin1/freeze/scen_A4_MPG40_cold.json": "7d08bd0ca3ab495cb30842b4ac774e084094fdedf5b929d332c9240d99766933",
+    "stages/spin1/freeze/scen_A4_MPG40_table.json": "fe9d7dab61425bc775fde89d0ae831be2bda8a510378bc71d559c85c82646d8b",
+    "stages/spin1/freeze/scen_A4_water_cold.json": "18fb94906ee4ca1eca7854c9d72358caaf327b554e41d44b68d8f1a059ae33ad",
+    "stages/spin1/freeze/scen_A4_water_table.json": "3dbbba817bb916fc80aa76b3730f3220a70c7d51e12852273c8102509067c9bf",
+    "stages/spin1/freeze/scen_J8_MPG40_cold.json": "abec9edc7be8de6f69c34a6fae8ee7645f4da38d13751b2c24ec5027e2ecaa2a",
+    "stages/spin1/freeze/scen_J8_MPG40_table.json": "881901bb875243b54a0e4237da8958b5c285400d030fa9bf7af54b27d42259e6",
+    "stages/spin1/freeze/scen_J8_water_cold.json": "7db20f37dfe89aa5beba231040a1013067bfac2a671159e7af9b38585c8fc18d",
+    "stages/spin1/freeze/scen_J8_water_table.json": "42a732311bec3ad5352ebe3347595a532c58032db1c949f29645a396c4d80494"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s10_freeze_transients": {
    "script": "stages/spin1/freeze/nbf_spin1.py",
-   "script_sha256": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
+   "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
    "inputs": {
     "stages/orbit/ECLIPSE_600KM.json": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
-    "stages/spin1/freeze/scen_A4_MPG40_cold.json": "1bc1ecc2fef5377ffe79e3ceaa3ac3aa14b9a1c4ea76609449c45ed7482398ef",
-    "stages/spin1/freeze/scen_A4_MPG40_table.json": "87838c1c57eda24ecba9938ee734f7f5acdc45a57a7f15018848e521ccfec5f3",
-    "stages/spin1/freeze/scen_A4_water_cold.json": "cc9e57a8331f492f022b662d39455de1d2a9aaa65a4451e37e72aa1f9878b987",
-    "stages/spin1/freeze/scen_A4_water_table.json": "f3814796474e4ebcb7adb0c04b68904246633cdaa790b212aa1989282608cb2e",
-    "stages/spin1/freeze/scen_J8_MPG40_cold.json": "73afbfb6495ca60c7503e4555d64d02a74a469ae21c61ee02e9795a231a39f01",
-    "stages/spin1/freeze/scen_J8_MPG40_table.json": "8e30cce64ed37b282fa42794cc23f0bf5309df3651d09ede00d6c999d8771d8c",
-    "stages/spin1/freeze/scen_J8_water_cold.json": "abf00c8157d76b93a7193d45ffc35f64e970dd95e1483704967c176b9e80dd44",
-    "stages/spin1/freeze/scen_J8_water_table.json": "86b15fb4f64684fe2a432622d8705058b6e61f4f1cdee13861ac161f9b9ceb48"
+    "stages/spin1/freeze/scen_A4_MPG40_cold.json": "7d08bd0ca3ab495cb30842b4ac774e084094fdedf5b929d332c9240d99766933",
+    "stages/spin1/freeze/scen_A4_MPG40_table.json": "fe9d7dab61425bc775fde89d0ae831be2bda8a510378bc71d559c85c82646d8b",
+    "stages/spin1/freeze/scen_A4_water_cold.json": "18fb94906ee4ca1eca7854c9d72358caaf327b554e41d44b68d8f1a059ae33ad",
+    "stages/spin1/freeze/scen_A4_water_table.json": "3dbbba817bb916fc80aa76b3730f3220a70c7d51e12852273c8102509067c9bf",
+    "stages/spin1/freeze/scen_J8_MPG40_cold.json": "abec9edc7be8de6f69c34a6fae8ee7645f4da38d13751b2c24ec5027e2ecaa2a",
+    "stages/spin1/freeze/scen_J8_MPG40_table.json": "881901bb875243b54a0e4237da8958b5c285400d030fa9bf7af54b27d42259e6",
+    "stages/spin1/freeze/scen_J8_water_cold.json": "7db20f37dfe89aa5beba231040a1013067bfac2a671159e7af9b38585c8fc18d",
+    "stages/spin1/freeze/scen_J8_water_table.json": "42a732311bec3ad5352ebe3347595a532c58032db1c949f29645a396c4d80494"
    },
    "outputs": {
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json": "32ab1594279b7a795d5e460cf05a27fdf727b4440e3b7e3faec48eeb1f6f8bdc",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_ql1500.json": "ea8c2990b5008ce74110b172d62bddcb5fbba7be31b6766c9f7bde51c68fafad",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json": "cbe132956a1d742615d66bc23904e3677057fa55df13688a8969a183acca78a4",
-    "stages/spin1/freeze/out_A4_MPG40_table_qt40.json": "3674aa9fee159927eaa6a30cc3b57be4991d77d48a22aa7282d1f3170633ad57",
-    "stages/spin1/freeze/out_A4_MPG40_table_qt40_emean.json": "a3bfbadce62ba36554ac50bc63fb0a44a735e5a29af72fce7f7340f94d16eaf2",
-    "stages/spin1/freeze/out_A4_water_cold_qt40.json": "4d237101858305e9fe3656e3c340359ccead864368811e574075434a9c26fefa",
-    "stages/spin1/freeze/out_A4_water_table_qt40.json": "5da2e54e89e5c17a4a82920061d8718ad20d1345ecf5bd4a0bc3d91c4b08bc37",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_e550max.json": "df0bb9abea375547ebc4e36afd8c2ddf47f24037fb4d763a707ee3e7e64b68b2",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_ql1500.json": "2739d11478b688654c8c63021bfb0158a261e8e9ee27a2de642da00843515af8",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt60.json": "27ba5390cf6a4e94a1af147391bc43af0ed315b2dc16bee9c7c8f3fd25337b6c",
-    "stages/spin1/freeze/out_J8_MPG40_table_qt40.json": "5efb0c482be158ff74e0ff82cc1e0fa7a29f0ed38d3964e483339eda9a820875",
-    "stages/spin1/freeze/out_J8_MPG40_table_qt40_emean.json": "d65c4800d0152b29ee658017ab268255a72f68a4aef5bf1ddc1d5c6b13b160a3",
-    "stages/spin1/freeze/out_J8_water_cold_qt40.json": "8162faa1ba7770b6afa48ba19601b7c3898e5045888fe6e8275575a4a98ef64c",
-    "stages/spin1/freeze/out_J8_water_table_qt40.json": "158d703dcc1ec73218fa6362e8850a31a93e762c3dbe36fe71575477f1e1d585"
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json": "13b4dbaa1a699fd00aabc1da3577d8315cb48bf6c8d1a27ae2b9c6b88e4656fd",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_ql1500.json": "c4ffcbc04df8f39df142e8fb76e63239fd813a0431b073f8d02dde8c9a7ec182",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json": "d0f1971450bd309b9eeb0d4847187d084b50518d968125f219ab2fefd2b5cdcc",
+    "stages/spin1/freeze/out_A4_MPG40_table_qt40.json": "8a699c3606b4162651ab3a89d4241613627d4dec05363cfb2d65bccb78d24bd6",
+    "stages/spin1/freeze/out_A4_MPG40_table_qt40_emean.json": "aedec88a82a32edb4fe8fae3e2b8cfac4cbaf4cf3ece15995456a5ac5eb0f50f",
+    "stages/spin1/freeze/out_A4_water_cold_qt40.json": "4985cec79027249119a32e2e844626ffc6463860f843ff42ea810a3064ced8a2",
+    "stages/spin1/freeze/out_A4_water_table_qt40.json": "811e07039b3fce67c766a29619543f7c5e405d369d4e27ba6f83fbb66589e64c",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_e550max.json": "50936bbe4b8c780941cd83c3456679830f7b10fce368f45cac884737c1ae4117",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_ql1500.json": "becea7c63713652c3e1f48931b367a810e1fd4d63637d70a1393e18f172aaaaa",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt60.json": "78895045e1fc9b2cab458dc38818cd6b1cae78528de09fc27aecad8e77546cdc",
+    "stages/spin1/freeze/out_J8_MPG40_table_qt40.json": "ba1655990db6075c03fdf7ad4a749be8af69e77838ec890b4fdbba0916e23fee",
+    "stages/spin1/freeze/out_J8_MPG40_table_qt40_emean.json": "0e6f7329aeb4df86d4d849a5e7371940da7f851f7e71f771789d04fa3c07dcd7",
+    "stages/spin1/freeze/out_J8_water_cold_qt40.json": "2dd72767d598d0b3562440949083f40585afef2e3e1c4dd864d1187e8fde812c",
+    "stages/spin1/freeze/out_J8_water_table_qt40.json": "9ce51c7861e7643eaaa97f6784c3a7c0b8a4a15b633f9bf181c8a265f294afea"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s11_water_keepwarm": {
    "script": "stages/spin1/freeze/water_keepwarm.py",
-   "script_sha256": "26c1bad99ef9aa787b36327b6325f2ed60ed6cdea708f32ec10b84ef6d3de0a1",
+   "script_sha256": "0c189d32e78740cb08a8966552cb26acb927476a023b6fe081e570617bb26246",
    "inputs": {
     "stages/orbit/ECLIPSE_600KM.json": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
-    "stages/spin1/THERMAL_SPIN1.json": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
-    "stages/spin1/freeze/scen_A4_water_table.json": "f3814796474e4ebcb7adb0c04b68904246633cdaa790b212aa1989282608cb2e",
-    "stages/spin1/freeze/scen_J8_water_table.json": "86b15fb4f64684fe2a432622d8705058b6e61f4f1cdee13861ac161f9b9ceb48"
+    "stages/spin1/THERMAL_SPIN1.json": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
+    "stages/spin1/freeze/scen_A4_water_table.json": "3dbbba817bb916fc80aa76b3730f3220a70c7d51e12852273c8102509067c9bf",
+    "stages/spin1/freeze/scen_J8_water_table.json": "42a732311bec3ad5352ebe3347595a532c58032db1c949f29645a396c4d80494"
    },
    "outputs": {
-    "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json": "6d9aed306154c2e6fb948fd445212474977e3dc4080b9e3217532f599efc8719"
+    "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json": "3a841810328f3b3866dcd4df58d52c0b4997676c7425fbf9300065573afdaba3"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s12_freeze_mass": {
    "script": "stages/spin1/freeze/freeze_mass_spin1.py",
-   "script_sha256": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
+   "script_sha256": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
    "inputs": {
     "inputs/ai1_replica/checks_t538/t596/final_config_NB2F2_t596.json": "f636da5c72425d9530051f45f00946874da209f2d3dfd0bf90851ceb06859a71",
-    "stages/spin1/THERMAL_SPIN1.json": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d"
+    "stages/fin_v2.py": "60b322f33f3d89d2b358e08b95bcc859b15bb363375084a3a8bfce0b413c0e49",
+    "stages/spin1/THERMAL_SPIN1.json": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c"
    },
    "outputs": {
-    "stages/spin1/freeze/FREEZE_MASS_SPIN1.json": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175"
+    "stages/spin1/freeze/FREEZE_MASS_SPIN1.json": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   },
   "s13_assemble_spin1": {
    "script": "stages/spin1/assemble_spin1.py",
-   "script_sha256": "8b659d4d2f62d6c411c3fc2f73d2b0bbd560fe7173a784590e02248bee30081f",
+   "script_sha256": "1d2940588432d881499e9be57c4ffe081327435ccc8d1174ef004e809eba6fb9",
    "inputs": {
     "inputs/ai1_replica/checks_t444/c8_viewfactor.json": "a39569be84e8cce161f74ed2d767f4f10fba0ac8fcd241cc72ce1d75f8b282d7",
-    "inputs/ai1_replica/checks_t454/c10_coolant.py": "e937337dcb05eb917a89e2504bbe948384c1e9f0741f06dce43b71e4c9e41edb",
+    "inputs/ai1_replica/checks_t454/c10_coolant.py": "4a9ac39d274f1967bf16df9150965b2986d79976df00a649043208639e963473",
     "inputs/ai1_replica/checks_t454/c10c_taper.py": "466954144a5334d53dbbfd59a317f5d61d08ea355a1837fe0f6eaf0ff49068d6",
-    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "f5837b3dcdc835deb80df6e9c4a407dbb874b198cb64908ae6ce4d1e33c409a2",
-    "inputs/ai1_replica/checks_t454/c13_trade.py": "203911d89e47529478a05c8716e1c9d48942e226062b4f78d510429c1fdbc3c9",
+    "inputs/ai1_replica/checks_t454/c12_mmod_fn.py": "40a7f755d41e51e95a21220407f4808f4727df5b22226209dd5be188f0e078a4",
+    "inputs/ai1_replica/checks_t454/c13_trade.py": "ba802e3e9ea2b1f73f6f3f62e6b60b136ff0ea9f7a9b511115761d0e11cffcfb",
     "inputs/ai1_replica/checks_t454/c14_thermal.json": "9bff707f118818790650c03d36892f1cd8de06b4ec5407482c1c1806b4b52954",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_128.json": "269310941ffb399b12381efab7f6b7d3fa97f49d03b41cb75ea1e9242a23564f",
     "inputs/ai1_replica/checks_t454/c15_pack_Aug_138.json": "76734d03a7837596c3a41e0863a8911de2907ee06e11936ee4d5603ea8d4a1c3",
@@ -1962,7 +2047,7 @@
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_84_ns8.json": "79f140919c27a25e31c233d4237733b204574f5dfc07a1825a81b3d429bc6609",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90.json": "667f66e1af5b2ad7139ad1ef96a6af4a483363f63324fbb69d11ae857d1c2f14",
     "inputs/ai1_replica/checks_t454/c15_pack_Jun_90_ns8.json": "35d53927d53ba15290e89bcd27fc50f89806862d22a0b222235310975ea1bf6e",
-    "inputs/ai1_replica/checks_t454/c21_bumper.py": "deed5f98e59074e0f8257cd7fd07452a7ffd03bab374a9615aeb097634d45ae3",
+    "inputs/ai1_replica/checks_t454/c21_bumper.py": "0d11bccdbd860fd9c9582c4d29d26c11a78ce75f59967402740f861558dc83b1",
     "inputs/ai1_replica/checks_t454/t523_results.json": "339d351fd070ea6b41b5bf7b926135ffa30438e447d9e72dcb7e63f2fa6b5167",
     "inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
     "inputs/ai1_replica/checks_t538/pack_Aug_150_p7.json": "8a38cd30f60eee9993b478e75d5185888b9a240f8fa1e474d4b9d51117acb1c7",
@@ -2044,7 +2129,7 @@
     "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
     "inputs/ai1_replica/gtc_params/point_A4_C1.json": "5418603f78349caff0e8c85536fb98abd41c491823a86cb429d3712b1192fb0b",
     "inputs/ai1_replica/gtc_params/point_J8_C1.json": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0",
-    "inputs/ai1_replica/orbit_loop.py": "09ae4fd66d5ad593e209145da0ecbad9f87cf40ab8799ede48498eccc61603d8",
+    "inputs/ai1_replica/orbit_loop.py": "e4507176fa302c41756a6c88c8ec46659df591be060a98b9630fe930c0cab481",
     "inputs/ai1_replica/plog.py": "90ef9c1eb323b776c07eb45a86173663fdcd284f4136e21922322403b4acb999",
     "inputs/ai1_replica/results/t434_region.json": "82ac04e7767f181ffd7bf416e4349a30be7fbc54197e98161501b1bbc9411215",
     "inputs/repo/results/mass_claims/dose_depth_550km_97.6deg.json": "7356df61af8646b2926aabfb47724b7bb3f69830ffbc12545f6e74d6e2571a8e",
@@ -2052,52 +2137,57 @@
     "inputs/repo/src/rack_two_skies/__init__.py": "d7de368e0e3e040c651834ea8e759faa82faab658a1841c34c93f33ad662bb48",
     "inputs/repo/src/rack_two_skies/env_leo.py": "fa5534964e48e87cb30d9af45046f4ecebc2a4fbb943107084265d97bfc2353c",
     "inputs/repo/src/rack_two_skies/mmod_env.py": "f25ecd8d4a78739c284a4c4f44e3f94b85c9063f779831c21a8eafa41fa08016",
-    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "fb79d0a4972ce98adc705a648007cb8dc5cedc447d9a22a30fa2d099dba9ed67",
+    "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json": "c3d8ce2b98820b935f022555414566f8395baf697909ba2801e2af7822c84e72",
     "stages/spin1/MMOD_GRID_SPIN1.json": "70614724745f447b42a0e66611d566e4e385ce2415f574b771636fe4a739217b",
     "stages/spin1/MMOD_SPIN1.json": "87136c912ecd578b49d8f2677c2eb66944a01b5762a9592ffaeed4d1c375ead0",
     "stages/spin1/MMOD_TRUNK_ALLOC_SPIN1.json": "b7d696dead08649f5d17f968179fba1a647ee9b10e8e966888049570a59feb35",
     "stages/spin1/POWER_SPIN1.json": "59fa20a0d636d575170171769c21bb19532db15c735271191759c3765744de9c",
-    "stages/spin1/THERMAL_SPIN1.json": "e0630f9b5cc347764fd8b4c7e5203fb6f4245162b1e9450715f70ec417f1836d",
-    "stages/spin1/freeze/FREEZE_MASS_SPIN1.json": "0e232ebc95ff1f4f4fab7a6ca07ae065b509d0afa0f6abbcd99eb80efb300175",
-    "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json": "6d9aed306154c2e6fb948fd445212474977e3dc4080b9e3217532f599efc8719",
-    "stages/spin1/freeze/build_scen.py": "96232479e50d60b1a7b9436fc9a12eed1234dd640f76eae4842299a2dae85ec0",
-    "stages/spin1/freeze/freeze_mass_spin1.py": "5fe9ddd458b1846171464b704eda3199d4b6d99dc1ec2ef7adabe436a1a8cc1c",
-    "stages/spin1/freeze/nbf_spin1.py": "216d01936c6243189ca22402a990917068ec0751658f5463a4c5dc1c78102aea",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json": "fbe4ab6779adf10418452896264477d0022154ad3de0cabe54244584d783d288",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json": "32ab1594279b7a795d5e460cf05a27fdf727b4440e3b7e3faec48eeb1f6f8bdc",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_ql1500.json": "ea8c2990b5008ce74110b172d62bddcb5fbba7be31b6766c9f7bde51c68fafad",
-    "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json": "cbe132956a1d742615d66bc23904e3677057fa55df13688a8969a183acca78a4",
-    "stages/spin1/freeze/out_A4_MPG40_table_qt40.json": "3674aa9fee159927eaa6a30cc3b57be4991d77d48a22aa7282d1f3170633ad57",
-    "stages/spin1/freeze/out_A4_MPG40_table_qt40_emean.json": "a3bfbadce62ba36554ac50bc63fb0a44a735e5a29af72fce7f7340f94d16eaf2",
-    "stages/spin1/freeze/out_A4_water_cold_qt40.json": "4d237101858305e9fe3656e3c340359ccead864368811e574075434a9c26fefa",
-    "stages/spin1/freeze/out_A4_water_table_qt40.json": "5da2e54e89e5c17a4a82920061d8718ad20d1345ecf5bd4a0bc3d91c4b08bc37",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json": "2e8f9152ef92b0f3978044c0f0543fa8893d281ccbb011c6390fae2c464b4fe8",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_e550max.json": "df0bb9abea375547ebc4e36afd8c2ddf47f24037fb4d763a707ee3e7e64b68b2",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_ql1500.json": "2739d11478b688654c8c63021bfb0158a261e8e9ee27a2de642da00843515af8",
-    "stages/spin1/freeze/out_J8_MPG40_cold_qt60.json": "27ba5390cf6a4e94a1af147391bc43af0ed315b2dc16bee9c7c8f3fd25337b6c",
-    "stages/spin1/freeze/out_J8_MPG40_table_qt40.json": "5efb0c482be158ff74e0ff82cc1e0fa7a29f0ed38d3964e483339eda9a820875",
-    "stages/spin1/freeze/out_J8_MPG40_table_qt40_emean.json": "d65c4800d0152b29ee658017ab268255a72f68a4aef5bf1ddc1d5c6b13b160a3",
-    "stages/spin1/freeze/out_J8_water_cold_qt40.json": "8162faa1ba7770b6afa48ba19601b7c3898e5045888fe6e8275575a4a98ef64c",
-    "stages/spin1/freeze/out_J8_water_table_qt40.json": "158d703dcc1ec73218fa6362e8850a31a93e762c3dbe36fe71575477f1e1d585",
-    "stages/spin1/freeze/water_keepwarm.py": "26c1bad99ef9aa787b36327b6325f2ed60ed6cdea708f32ec10b84ef6d3de0a1",
+    "stages/spin1/THERMAL_SPIN1.json": "3d4e127067a25b8a213dd3ba56b7f22684dc0b8e5184ced67eb8d71c4d546f8c",
+    "stages/spin1/freeze/FREEZE_MASS_SPIN1.json": "f01f526f192b0b9901e185b5e56f4c403b7a00b32465b6749a17eb9ef48c17d6",
+    "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json": "3a841810328f3b3866dcd4df58d52c0b4997676c7425fbf9300065573afdaba3",
+    "stages/spin1/freeze/build_scen.py": "85a9258b0357e539344a8cf0957781a68d0cd87e316e7f646c4649e1524794c0",
+    "stages/spin1/freeze/freeze_mass_spin1.py": "423749c110d6ccbd460b4557d5e79a3d3e706b8b938bedf8b4d6ad9a36668aa9",
+    "stages/spin1/freeze/nbf_spin1.py": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json": "18cb1c41e507c336afeec658ec26a3f2a8b73a330e23be90987325a77951adc2",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json": "13b4dbaa1a699fd00aabc1da3577d8315cb48bf6c8d1a27ae2b9c6b88e4656fd",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt40_ql1500.json": "c4ffcbc04df8f39df142e8fb76e63239fd813a0431b073f8d02dde8c9a7ec182",
+    "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json": "d0f1971450bd309b9eeb0d4847187d084b50518d968125f219ab2fefd2b5cdcc",
+    "stages/spin1/freeze/out_A4_MPG40_table_qt40.json": "8a699c3606b4162651ab3a89d4241613627d4dec05363cfb2d65bccb78d24bd6",
+    "stages/spin1/freeze/out_A4_MPG40_table_qt40_emean.json": "aedec88a82a32edb4fe8fae3e2b8cfac4cbaf4cf3ece15995456a5ac5eb0f50f",
+    "stages/spin1/freeze/out_A4_water_cold_qt40.json": "4985cec79027249119a32e2e844626ffc6463860f843ff42ea810a3064ced8a2",
+    "stages/spin1/freeze/out_A4_water_table_qt40.json": "811e07039b3fce67c766a29619543f7c5e405d369d4e27ba6f83fbb66589e64c",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40.json": "860b81de3039935c18bcbd66dd9f189773b0ed28720c609d6f1b1f3a3dafaec1",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_e550max.json": "50936bbe4b8c780941cd83c3456679830f7b10fce368f45cac884737c1ae4117",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt40_ql1500.json": "becea7c63713652c3e1f48931b367a810e1fd4d63637d70a1393e18f172aaaaa",
+    "stages/spin1/freeze/out_J8_MPG40_cold_qt60.json": "78895045e1fc9b2cab458dc38818cd6b1cae78528de09fc27aecad8e77546cdc",
+    "stages/spin1/freeze/out_J8_MPG40_table_qt40.json": "ba1655990db6075c03fdf7ad4a749be8af69e77838ec890b4fdbba0916e23fee",
+    "stages/spin1/freeze/out_J8_MPG40_table_qt40_emean.json": "0e6f7329aeb4df86d4d849a5e7371940da7f851f7e71f771789d04fa3c07dcd7",
+    "stages/spin1/freeze/out_J8_water_cold_qt40.json": "2dd72767d598d0b3562440949083f40585afef2e3e1c4dd864d1187e8fde812c",
+    "stages/spin1/freeze/out_J8_water_table_qt40.json": "9ce51c7861e7643eaaa97f6784c3a7c0b8a4a15b633f9bf181c8a265f294afea",
+    "stages/spin1/freeze/water_keepwarm.py": "0c189d32e78740cb08a8966552cb26acb927476a023b6fe081e570617bb26246",
     "stages/spin1/gen_thermal_inputs_spin1.py": "865821d16b76581322e83d240e72d76d7536d849f7aba3e4311375b850810aad",
     "stages/spin1/mmod_grid_spin1.py": "4f94d3a013a8fb6bbe3c094ae5154ab9a4a61910c2a2b04ece1abbf7e95632e4",
-    "stages/spin1/mmod_spin1.py": "1c37c68f563535f9de5cb1f8876e376756a406bf090d7688ce7dbe237318ecf0",
-    "stages/spin1/mmod_trunk_alloc_spin1.py": "d9f39e3b8e33f2b0013df397f18a9805f020c03d1f2516b16300468f38c8b48d",
-    "stages/spin1/power_spin1.py": "5fd1a2ec6bc08b9442b1938af493f27e0880bae47d26b0ecf03e395da7263575",
-    "stages/spin1/thermal_spin1.py": "265f2c1a732da52a9a6169c92e8b020781ba9f75908044ec7d045864c015ee0b"
+    "stages/spin1/mmod_spin1.py": "c9ac9b3001f84c2da55e72807421f2d50cfeec64b613aa598a5d103284c2ce9e",
+    "stages/spin1/mmod_trunk_alloc_spin1.py": "a3c2c3045eb6089dc912de8e9018ac678d30aa6d7d970bb7e3b9056f74896cc5",
+    "stages/spin1/power_spin1.py": "f2a838a19421f410987395a857c7c3e1d8a14d5fe42bc5033f9e4127c20ac48f",
+    "stages/spin1/thermal_spin1.py": "fc7107c2a7662fbafc7de085a93277e638ef4d003bc0edfa3894854783c50989"
    },
    "outputs": {
-    "stages/spin1/SPIN1_EXACT.json": "f2959db2d2bc71e8cfd042d1430bd749f63cc5b75211a9ecfc7acfb2c90c3c9e"
+    "stages/spin1/SPIN1_EXACT.json": "45e93e9d849d232d14648916fbff1c801ec9c179a8ac5fc16c0cf8efd67fa605"
    },
    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
   }
  },
  "NVIDIA_upstream_inputs": {
-  "inputs/ai1_replica/gb10_run_t410/results/table_F3_L40_t0p5.json": {
-   "sha256": "f928fb7463c5308b52562d5f4a7d70ff5da18e7d1958ff763762c484e1dc64ce",
-   "produced_by": "NVIDIA Warp CUDA fin solves on GB10 (t410 runner, Warp 1.18.0, 2026-11-03)",
-   "used_by": "every coolant/GPU/HBM temperature via model_t549.supply_for_area"
+  "inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json": {
+   "sha256": "bf440d5df2d90320ecca493d76751a992705f91cb2c06cc65c09c800ae65fb1a",
+   "produced_by": "NVIDIA Warp 1.18.0 fp64 CUDA fin solves on GB10 cuda:0 (fin_al.py table mode, 585 solves, nx 320 x ny 8; 2026-11-06 PT); box-CPU Warp reproduction max |d eta| 3.1e-15",
+   "used_by": "every coolant/GPU/HBM temperature via model_t549.supply_for_area (area factor 1.0)"
+  },
+  "inputs/ai1_replica/gb10_final_al/screen_al_fine.json": {
+   "sha256": "f4520de392723e654498a778b5a8f22577631e31717f4022aeabbb4bbe453e92",
+   "produced_by": "NVIDIA Warp fp64 GB10 fin screen (fin_al_v2.py)",
+   "used_by": "Al/K13D areal ratio -> radiator mass line (fin_v2.FIN_MASS_REL)"
   }
  }
 }
