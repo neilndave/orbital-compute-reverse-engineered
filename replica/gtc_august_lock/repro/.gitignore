@@ -1,0 +1,4 @@
+work/
+.nopycache/
+__pycache__/
+*.pyc

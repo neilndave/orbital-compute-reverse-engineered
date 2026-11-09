@@ -1,0 +1,422 @@
+{
+  "label": "GTC scoped baseline concept",
+  "configuration_id": "AI1_GTC_t602_t603_scoped_baseline_v2_Al",
+  "frozen": true,
+  "adopted_baseline": false,
+  "geometry_unchanged": true,
+  "hybrid_radiator_upsizing": "DROPPED_BY_AUTHOR_t602_t603;no hybrid selected",
+  "authority": "the author t602/t603 steering:0%mass reserve only;accept calculated nominal temperatures;370Knominal and378.15Kcap explicitly waived for this concept. Other modeled margins unchanged.",
+  "mass_reserve_fraction": 0.0,
+  "mass_reserve_policy": "Delete weight growth reserve only. All unused mass under 100 t is listed as RESERVE (t615); 0 % is the minimum. Do not delete thermal/structural margins.",
+  "launch_payload_budget_kg": 100000.0,
+  "launcher_performance_status": "100t is the chosen design budget,not verified same-orbit Starship performance.",
+  "dispenser_all_in_kg": 2000.0,
+  "dispenser_scope": "Includes decks,struts,rails,restraints,releases and interfaces;NOTDESIGNED,inside100t.No additionalDECKX or62kg/scadapter.",
+  "adapter_per_sc_kg": 0.0,
+  "thermal_limits": {
+    "nominal_370K_waived": true,
+    "prior_peak_378p15K_waived": true,
+    "waiver_is_not_hardware_qualification": true
+  },
+  "coolant_model": "Inherited liquid-water warm-property proxy:rho978kg/m3,cp4180J/kgK;no MPG40 imposed. Cold survival,freeze/restart and space qualification remain NOTDESIGNED.",
+  "other_margins_retained": {
+    "mc_temperature_margin_K": 0.44,
+    "fin_and_bond_model": "v2 t619: Al6061-T6 26mm/0.225mm integral/brazed fins (no bondline), own GB10 Warp eta table, area factor 1.0; radiator line = K13D wet line x Al/K13D areal ratio",
+    "radiation_environment": "InheritedEarthIR239/albedo/opticsandrender-yokeviews,no removal",
+    "structural_factors": "Inheritedconceptload/modelassumptionsunchanged;implementationandlauncherCLAopen"
+  },
+  "open_item_allocations_kg": {
+    "radiator_deployment": [
+      70.0,
+      120.0
+    ],
+    "MMOD_and_spare_panel_coverage": [
+      80.0,
+      140.0
+    ],
+    "freeze_restart_including_31p25kg_battery_once": [
+      66.0,
+      90.0
+    ],
+    "life_hardening_and_compute_provision": [
+      50.0,
+      80.0
+    ],
+    "wet_routing": "Inside retained coolant package (pumps,rack fluid,piping,headers/swivels): do NOT also add120/200kg pool."
+  },
+  "public_compute_interpretation": "6.9/7.5MW is installed PEAK compute-power-equivalent rating:46x150 and30x250kW. Nominalthermal loads120/175kW give5.52/5.25MW. These are notFLOPSandnot a guaranteedcontinuous/annual deliveredpower claim.",
+  "fleets": [
+    {
+      "case": "June",
+      "count": 46,
+      "peak_per_sc_kW": 150.0,
+      "nominal_per_sc_kW": 120.0,
+      "peak_installed_compute_MW": 6.9,
+      "nominal_fleet_IT_MW": 5.52,
+      "radiator_effective_area_m2": 81.62815837399465,
+      "physical_panels": 77,
+      "physical_radiator_planform_m2": 82.3977,
+      "solar_area_m2": 503.85509611136735,
+      "panel_dimensions_m": [
+        0.3634175776637853,
+        2.944557955166043
+      ],
+      "layout_columns": 8,
+      "array_fold_n": 5,
+      "array_leaf_pitch_m": 0.006,
+      "radiator_stack_pitch_m": 0.01,
+      "runtime_yoke_root_m": 4.137,
+      "ledger": [
+        {
+          "item": "rack",
+          "kg": 408.53,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "array",
+          "kg": 486.87,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "radiator",
+          "kg": 141.89049904973984,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "coolant_loop",
+          "kg": 195.4238841679267,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "structure_mech",
+          "kg": 64.78,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "power_electronics",
+          "kg": 43.76,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "harness",
+          "kg": 22.44,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "propulsion_adcs",
+          "kg": 134.44,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "avionics_links",
+          "kg": 67.6,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "adapter",
+          "kg": 0.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "deployment_mechanisms",
+          "kg": 70.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "MMOD_spare_panel_allocation",
+          "kg": 80.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "freeze_restart_including_battery",
+          "kg": 60.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "life_and_compute_provision",
+          "kg": 50.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "propellant_delta_al_radiator_c13_prop",
+          "kg": 0.3501450779352453,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        }
+      ],
+      "mass_reserve_kg": 0.0,
+      "sc_mass_kg": 1826.0845282956016,
+      "launch_total_kg": 85999.88830159768,
+      "margin_to_100t_kg": 14000.111698402325,
+      "mass_fit": true,
+      "panel_fluid_doublecount_credit_kg": 6.586115832073287,
+      "panel_fluid_credit_basis": {
+        "raw_panel_fluid_kg_per_panel": 0.1005185316311232,
+        "panels": 77,
+        "raw_total_kg": 7.739926935596487,
+        "coolant_line_calibration": 0.8509273907720318,
+        "old_coolant_line_kg": 202.01,
+        "corrected_coolant_package_kg": 195.4238841679267,
+        "method": "Subtract identified duplicated PANEL_FLUID component from calibrated coolant line. Keep inherited WET radiator aggregate unchanged. No second panel-fluid charge or unverified larger credit."
+      },
+      "nominal": {
+        "load_fraction": 0.8,
+        "IT_kW": 120.0,
+        "pump_electric_W": 493.20005192314727,
+        "total_solar_power_and_rejected_heat_W": 133144.78266513385,
+        "rack_delta_K": 20.0,
+        "radiator_delta_K": 22.19079711085564,
+        "coolant_supply_K": 359.9900261785471,
+        "coolant_rack_mean_K": 369.9900261785471,
+        "coolant_rack_return_K": 379.9900261785471,
+        "coolant_radiator_inlet_K": 382.1808232894027,
+        "GPU_K": 389.3292261785471,
+        "HBM_K": 384.3900261785471,
+        "all_modeled_coolant_colder_than_both_chips": true,
+        "rho_kg_m3": 978.0,
+        "cp_J_kgK": 4180.0,
+        "mass_flow_kg_s": 1.4354066985645932,
+        "volume_flow_L_s": 1.4676960108022428,
+        "effective_emissivity": 0.8919908588528411,
+        "effective_radiation_sink_K": 185.63214687303105,
+        "fin_area_factor": 1.0,
+        "fin_table": "AL6061_L26_t0p225",
+        "mc_temperature_margin_K": 0.44,
+        "radiation_root_without_mc_K": 359.5500261785471,
+        "heat_pickup_location": "Rack -> auxiliary/PMAD/pump losses -> radiator -> cold supply. Rack20K rise follows IT, radiator rise follows TOTAL heat at same massflow.",
+        "pmad_efficiency": 0.92,
+        "auxiliary_power_W": 2000,
+        "thermal_limit_pass_claimed": false
+      },
+      "full_peak_steady_sensitivity": {
+        "load_fraction": 1.0,
+        "IT_kW": 150.0,
+        "pump_electric_W": 613.3941347472963,
+        "total_solar_power_and_rejected_heat_W": 165884.1240595079,
+        "rack_delta_K": 20.0,
+        "radiator_delta_K": 22.117883207934387,
+        "coolant_supply_K": 381.12530275178113,
+        "coolant_rack_mean_K": 391.12530275178113,
+        "coolant_rack_return_K": 401.12530275178113,
+        "coolant_radiator_inlet_K": 403.2431859597155,
+        "GPU_K": 415.2993027517811,
+        "HBM_K": 409.12530275178113,
+        "all_modeled_coolant_colder_than_both_chips": true,
+        "rho_kg_m3": 978.0,
+        "cp_J_kgK": 4180.0,
+        "mass_flow_kg_s": 1.7942583732057416,
+        "volume_flow_L_s": 1.8346200135028032,
+        "effective_emissivity": 0.8919908588528411,
+        "effective_radiation_sink_K": 185.63214687303105,
+        "fin_area_factor": 1.0,
+        "fin_table": "AL6061_L26_t0p225",
+        "mc_temperature_margin_K": 0.44,
+        "radiation_root_without_mc_K": 380.68530275178114,
+        "heat_pickup_location": "Rack -> auxiliary/PMAD/pump losses -> radiator -> cold supply. Rack20K rise follows IT, radiator rise follows TOTAL heat at same massflow.",
+        "pmad_efficiency": 0.92,
+        "auxiliary_power_W": 2000,
+        "thermal_limit_pass_claimed": false
+      },
+      "previous_t600_nominal_GPU_K": 390.6166281266995,
+      "previous_t600_nominal_HBM_K": 385.67742812669945,
+      "thermal_reconciliation": "Previous390.6/376.7K screen imposed20Kbothrackandradiator while rejectingmorethanITheat. Now same flow:20Krackrise,22.2/22.1Ktotal-radiatorrise. This correction\u2014notnewgeometryorloweredmargin\u2014slightlylowerscalculatednominalchips.",
+      "original_solar_BOL_W_per_m2": 319.7,
+      "original_array_gross_BOL_W": 161082.47422680413,
+      "nominal_BOL_solar_headroom_W": 27937.691561670275,
+      "full_peak_BOL_power_shortfall_W": 4801.649832703784,
+      "power_scope": "Sunlit nominalenergybalancefitsinoriginalgrossBOLarrayestimate. Peaknameplateisinstalledrating;peakbuffer/arrayoutput/EOL/continuous-deliveryclosure NOTDESIGNED. Do not spendhousekeepingbatteryforpeakwithoutdesign.",
+      "packing_status": "Existingrender/idealizedpackingfamilyretained;no newfullfinitehardwarepacking/CG/launcherinterfacepass.",
+      "source_point_path": "$GTCFC_ROOT/inputs/ai1_replica/gtc_params/point_J8_C1.json",
+      "source_point_sha256": "d27640019beff5b105bbac5e9a04155692c0e3d6273b6fb0caeb059df2b1a2d0"
+    },
+    {
+      "case": "August",
+      "count": 30,
+      "peak_per_sc_kW": 250.0,
+      "nominal_per_sc_kW": 175.0,
+      "peak_installed_compute_MW": 7.5,
+      "nominal_fleet_IT_MW": 5.25,
+      "radiator_effective_area_m2": 136.0469306233244,
+      "physical_panels": 128,
+      "physical_radiator_planform_m2": 136.9728,
+      "solar_area_m2": 839.7584935189456,
+      "panel_dimensions_m": [
+        0.3634175776637853,
+        2.944557955166043
+      ],
+      "layout_columns": 13,
+      "array_fold_n": 6,
+      "array_leaf_pitch_m": 0.006,
+      "radiator_stack_pitch_m": 0.01,
+      "runtime_yoke_root_m": 4.137,
+      "ledger": [
+        {
+          "item": "rack",
+          "kg": 640.38,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "array",
+          "kg": 813.82,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "radiator",
+          "kg": 236.44935387116035,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "coolant_loop",
+          "kg": 313.66814938033656,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "structure_mech",
+          "kg": 116.48,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "power_electronics",
+          "kg": 61.71,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "harness",
+          "kg": 37.41,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "propulsion_adcs",
+          "kg": 157.28,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "avionics_links",
+          "kg": 67.6,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "adapter",
+          "kg": 0.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "deployment_mechanisms",
+          "kg": 120.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "MMOD_spare_panel_allocation",
+          "kg": 140.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "freeze_restart_including_battery",
+          "kg": 90.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "life_and_compute_provision",
+          "kg": 80.0,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        },
+        {
+          "item": "propellant_delta_al_radiator_c13_prop",
+          "kg": 0.5834974374609843,
+          "status": "OPEN_IMPLEMENTATION_ALLOCATION"
+        }
+      ],
+      "mass_reserve_kg": 0.0,
+      "sc_mass_kg": 2875.381000688958,
+      "launch_total_kg": 88261.43002066875,
+      "margin_to_100t_kg": 11738.569979331252,
+      "mass_fit": true,
+      "panel_fluid_doublecount_credit_kg": 10.891850619663444,
+      "panel_fluid_credit_basis": {
+        "raw_panel_fluid_kg_per_panel": 0.1005185316311232,
+        "panels": 128,
+        "raw_total_kg": 12.86637204878377,
+        "coolant_line_calibration": 0.8465362713254532,
+        "old_coolant_line_kg": 324.56,
+        "corrected_coolant_package_kg": 313.66814938033656,
+        "method": "Subtract identified duplicated PANEL_FLUID component from calibrated coolant line. Keep inherited WET radiator aggregate unchanged. No second panel-fluid charge or unverified larger credit."
+      },
+      "nominal": {
+        "load_fraction": 0.7,
+        "IT_kW": 175.0,
+        "pump_electric_W": 713.4026155406368,
+        "total_solar_power_and_rejected_heat_W": 193166.7419734137,
+        "rack_delta_K": 20.0,
+        "radiator_delta_K": 22.076199082675853,
+        "coolant_supply_K": 348.66208072265897,
+        "coolant_rack_mean_K": 358.66208072265897,
+        "coolant_rack_return_K": 368.66208072265897,
+        "coolant_radiator_inlet_K": 370.7382798053348,
+        "GPU_K": 375.583880722659,
+        "HBM_K": 371.262080722659,
+        "all_modeled_coolant_colder_than_both_chips": true,
+        "rho_kg_m3": 978.0,
+        "cp_J_kgK": 4180.0,
+        "mass_flow_kg_s": 2.0933014354066986,
+        "volume_flow_L_s": 2.1403900157532703,
+        "effective_emissivity": 0.8808900326405731,
+        "effective_radiation_sink_K": 186.2142294872348,
+        "fin_area_factor": 1.0,
+        "fin_table": "AL6061_L26_t0p225",
+        "mc_temperature_margin_K": 0.44,
+        "radiation_root_without_mc_K": 348.222080722659,
+        "heat_pickup_location": "Rack -> auxiliary/PMAD/pump losses -> radiator -> cold supply. Rack20K rise follows IT, radiator rise follows TOTAL heat at same massflow.",
+        "pmad_efficiency": 0.92,
+        "auxiliary_power_W": 2000,
+        "thermal_limit_pass_claimed": false
+      },
+      "full_peak_steady_sensitivity": {
+        "load_fraction": 1.0,
+        "IT_kW": 250.0,
+        "pump_electric_W": 1012.8697302684923,
+        "total_solar_power_and_rejected_heat_W": 275013.98883724835,
+        "rack_delta_K": 20.0,
+        "radiator_delta_K": 22.001119106979868,
+        "coolant_supply_K": 381.85568573910126,
+        "coolant_rack_mean_K": 391.85568573910126,
+        "coolant_rack_return_K": 401.85568573910126,
+        "coolant_radiator_inlet_K": 403.8568048460811,
+        "GPU_K": 416.02968573910124,
+        "HBM_K": 409.85568573910126,
+        "all_modeled_coolant_colder_than_both_chips": true,
+        "rho_kg_m3": 978.0,
+        "cp_J_kgK": 4180.0,
+        "mass_flow_kg_s": 2.9904306220095696,
+        "volume_flow_L_s": 3.057700022504672,
+        "effective_emissivity": 0.8808900326405731,
+        "effective_radiation_sink_K": 186.2142294872348,
+        "fin_area_factor": 1.0,
+        "fin_table": "AL6061_L26_t0p225",
+        "mc_temperature_margin_K": 0.44,
+        "radiation_root_without_mc_K": 381.41568573910126,
+        "heat_pickup_location": "Rack -> auxiliary/PMAD/pump losses -> radiator -> cold supply. Rack20K rise follows IT, radiator rise follows TOTAL heat at same massflow.",
+        "pmad_efficiency": 0.92,
+        "auxiliary_power_W": 2000,
+        "thermal_limit_pass_claimed": false
+      },
+      "previous_t600_nominal_GPU_K": 376.726084944391,
+      "previous_t600_nominal_HBM_K": 372.404284944391,
+      "thermal_reconciliation": "Previous390.6/376.7K screen imposed20Kbothrackandradiator while rejectingmorethanITheat. Now same flow:20Krackrise,22.2/22.1Ktotal-radiatorrise. This correction\u2014notnewgeometryorloweredmargin\u2014slightlylowerscalculatednominalchips.",
+      "original_solar_BOL_W_per_m2": 319.7,
+      "original_array_gross_BOL_W": 268470.7903780069,
+      "nominal_BOL_solar_headroom_W": 75304.04840459317,
+      "full_peak_BOL_power_shortfall_W": 6543.198459241481,
+      "power_scope": "Sunlit nominalenergybalancefitsinoriginalgrossBOLarrayestimate. Peaknameplateisinstalledrating;peakbuffer/arrayoutput/EOL/continuous-deliveryclosure NOTDESIGNED. Do not spendhousekeepingbatteryforpeakwithoutdesign.",
+      "packing_status": "Existingrender/idealizedpackingfamilyretained;no newfullfinitehardwarepacking/CG/launcherinterfacepass.",
+      "source_point_path": "$GTCFC_ROOT/inputs/ai1_replica/gtc_params/point_A4_C1.json",
+      "source_point_sha256": "bd7d849ed1f59bb7989f1a9e337f73e33a6d13248ea19bf626f1d32fd8d52645"
+    }
+  ],
+  "source_hashes": {
+    "$GTCFC_ROOT/stages/baseline/freeze_scoped_baseline.py": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "$GTCFC_ROOT/inputs/ai1_replica/checks_t538/model_t549.py": "fb555b1ece21606086c4baadf74191d37bf931b17a83e1173463e868e5dbe09a",
+    "$GTCFC_ROOT/inputs/ai1_replica/coolant_t423d.py": "a7f2012d007345d6423adc9f2e32a174e6387f50de444ead92b75a88764d493f",
+    "$GTCFC_ROOT/inputs/ai1_replica/checks_t454/c13_trade.py": "dddf2053e87084453c0f8628f4e48e8cdaed77670b30fe5bc192e2e696663ba1",
+    "$GTCFC_ROOT/stages/t600/BASELINE_PLUS_DELETIONS_SCREEN.json": "f47177c3bb4e08a52dcf9c87857c4395ed61480732ddf691dd88a1be64ea092d"
+  },
+  "high_level_claim_guard": "Mass,installedpeakratingandmodelednominalwarmthermalpointare specified. No full-qualifiedspacecraft/continuouspeak-delivery/completepacking/lifetimeclaim. the author waivesformerthermalcaps;notvendorjunctionlimits."
+}

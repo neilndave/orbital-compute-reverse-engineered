@@ -1,0 +1,535 @@
+{
+ "label": "REV-t596-NB2F2-v1 (concept-internal significant revision; NOT baseline/DR/poster/GitHub)",
+ "written": "2026-11-06 05:37:08 PST",
+ "env": {
+  "VALVE": "0.45",
+  "G": "1",
+  "TCAP": "378.15",
+  "DTL": "8",
+  "RTOT": "14.22",
+  "FLUX": "1.865",
+  "DECKX_J8": "871",
+  "DECKX_A4": "803",
+  "BAT_J8": "61.45",
+  "BAT_A4": "79.9",
+  "FLX": "MPG40",
+  "COLDP": "123.5",
+  "HFILM": "0.90",
+  "ADD_KG_PER_PANEL": "0.553",
+  "RES": "0.10"
+ },
+ "BAT_breakdown": {
+  "J8": {
+   "row80_safe_mode": 31.25,
+   "accumulator": 3.3,
+   "heater_strips_fin_root": 14.7,
+   "heater_harness": 8.8,
+   "swivel_patch_heaters": 1.36,
+   "switching": 2.0,
+   "total": 61.45
+  },
+  "A4": {
+   "row80_safe_mode": 31.25,
+   "accumulator": 5.15,
+   "heater_strips_fin_root": 24.5,
+   "heater_harness": 14.7,
+   "swivel_patch_heaters": 2.27,
+   "switching": 2.0,
+   "total": 79.9
+  }
+ },
+ "ADD_breakdown_kg_per_panel": {
+  "base": 0.519,
+  "insert_cord": 0.024,
+  "fitting_swivel_compliance_plugs": 0.01,
+  "total": 0.553
+ },
+ "DECKX": {
+  "J8": 871,
+  "A4": 803,
+  "source": "t596s chain rerun at mass-cap sats 2112.4/3241.5 kg and panel 3.73 kg (SB3 with trays - trays + SP2)"
+ },
+ "thresholds_Wkg": {
+  "0": {
+   "J8": 288.7,
+   "A4": 318.2,
+   "fleet": 318.2,
+   "exact": {
+    "J8": 288.6324788243667,
+    "A4": 318.1793693402475
+   },
+   "sats_at_ceil": {
+    "J8": 46,
+    "A4": 30
+   }
+  },
+  "0.05": {
+   "J8": 347.4,
+   "A4": 383.9,
+   "fleet": 383.9,
+   "exact": {
+    "J8": 347.37664885902416,
+    "A4": 383.87784548515384
+   },
+   "sats_at_ceil": {
+    "J8": 46,
+    "A4": 30
+   }
+  },
+  "0.10": {
+   "J8": 426.4,
+   "A4": 472.8,
+   "fleet": 472.8,
+   "exact": {
+    "J8": 426.39865096993515,
+    "A4": 472.7655835517909
+   },
+   "sats_at_ceil": {
+    "J8": 46,
+    "A4": 30
+   }
+  }
+ },
+ "at_332_45": {
+  "0": {
+   "J8": {
+    "M_req": 2034.8,
+    "physical": 2034.8,
+    "reserve_kg": 0.0,
+    "sats_mass_limited": 47,
+    "sats_packing_verified_cap": 46
+   },
+   "A4": {
+    "M_req": 3202.0,
+    "physical": 3202.0,
+    "reserve_kg": 0.0,
+    "sats_mass_limited": 30,
+    "sats_packing_verified_cap": 30
+   }
+  },
+  "0.05": {
+   "J8": {
+    "M_req": 2134.3,
+    "physical": 2034.8,
+    "reserve_kg": 99.5,
+    "sats_mass_limited": 45,
+    "sats_packing_verified_cap": 46
+   },
+   "A4": {
+    "M_req": 3358.6,
+    "physical": 3202.0,
+    "reserve_kg": 156.6,
+    "sats_mass_limited": 28,
+    "sats_packing_verified_cap": 30
+   }
+  },
+  "0.10": {
+   "J8": {
+    "M_req": 2233.8,
+    "physical": 2034.8,
+    "reserve_kg": 199.0,
+    "sats_mass_limited": 43,
+    "sats_packing_verified_cap": 46
+   },
+   "A4": {
+    "M_req": 3515.2,
+    "physical": 3202.0,
+    "reserve_kg": 313.1,
+    "sats_mass_limited": 27,
+    "sats_packing_verified_cap": 30
+   }
+  }
+ },
+ "panels": {
+  "J8": 125,
+  "A4": 208,
+  "packed": [
+   129,
+   214
+  ]
+ },
+ "pumps": {
+  "J8": {
+   "stages": 5,
+   "par": 2,
+   "npump": 15,
+   "pumps_kg": 48.4,
+   "dp_kPa": 346.7,
+   "Vdot_Ls": 4.845,
+   "valves_kg": 109.8,
+   "n_valves": 244,
+   "pump_el_W": 3499,
+   "col_hw_kg": 102.4
+  },
+  "A4": {
+   "stages": 5,
+   "par": 4,
+   "npump": 25,
+   "pumps_kg": 80.6,
+   "dp_kPa": 345.4,
+   "Vdot_Ls": 8.074,
+   "valves_kg": 185.4,
+   "n_valves": 412,
+   "pump_el_W": 5811,
+   "col_hw_kg": 172.4
+  }
+ },
+ "temps": {
+  "J8": {
+   "avg": {
+    "P_kW": 120.0,
+    "Tsup": 333.51,
+    "Tgpu": 356.05,
+    "Thbm": 351.11,
+    "Q_rej_kW": 135.3
+   },
+   "peak": {
+    "P_kW": 150.0,
+    "Tsup": 349.98,
+    "Tgpu": 378.15,
+    "Thbm": 371.98,
+    "Q_rej_kW": 166.8
+   }
+  },
+  "A4": {
+   "avg": {
+    "P_kW": 175.0,
+    "Tsup": 328.91,
+    "Tgpu": 348.63,
+    "Thbm": 344.31,
+    "Q_rej_kW": 199.9
+   },
+   "peak": {
+    "P_kW": 250.0,
+    "Tsup": 349.98,
+    "Tgpu": 378.15,
+    "Thbm": 371.98,
+    "Q_rej_kW": 278.1
+   }
+  }
+ },
+ "insert": {
+  "gas_frac": 0.04,
+  "cord_frac": 0.057,
+  "fill_MPa": 0.18,
+  "pocket_MPa_at_x0385": 0.98,
+  "pocket_MPa_at_x043": 2.05,
+  "wall_sigma_Kt3_MPa_at_x0385": 4.8,
+  "wall_sigma_Kt3_MPa_at_x043": 9.9,
+  "yield_6061O_MPa": 55.2,
+  "fatigue_6061O_MPa": 62.1
+ },
+ "accumulator": {
+  "J8": {
+   "m_fluid_rack_kg": 60.7,
+   "m_fluid_panels_kg": 27.2,
+   "dV_cold240_to_hot352_L": 5.4,
+   "accumulator_gas_L_at_pmin": 8.99,
+   "p_operating_static_MPa": 0.235,
+   "p_eclipse_freeze_onset_MPa": 0.18,
+   "p_range_design_MPa": [
+    0.12,
+    0.3
+   ],
+   "accumulator_kg": 3.3,
+   "shell_kg": 0.54,
+   "bellows_kg": 2.16,
+   "insert_fill_MPa_at_252K": 0.18,
+   "insert_gas_frac_hot_radiator_inlet": 0.0319,
+   "insert_gas_frac_hot_outlet": 0.04,
+   "cord_cell_differential_hot_MPa": 0.0,
+   "cord_area_frac_used_for_dp": 0.057
+  },
+  "A4": {
+   "m_fluid_rack_kg": 110.3,
+   "m_fluid_panels_kg": 45.3,
+   "dV_cold240_to_hot352_L": 9.56,
+   "accumulator_gas_L_at_pmin": 15.93,
+   "p_operating_static_MPa": 0.22,
+   "p_eclipse_freeze_onset_MPa": 0.175,
+   "p_range_design_MPa": [
+    0.12,
+    0.3
+   ],
+   "accumulator_kg": 5.15,
+   "shell_kg": 0.73,
+   "bellows_kg": 3.82,
+   "insert_fill_MPa_at_252K": 0.175,
+   "insert_gas_frac_hot_radiator_inlet": 0.0322,
+   "insert_gas_frac_hot_outlet": 0.04,
+   "cord_cell_differential_hot_MPa": 0.0,
+   "cord_area_frac_used_for_dp": 0.057
+  }
+ },
+ "downtime": {
+  "J8_table": {
+   "lost_kWh_per_mean_eclipse": 59.89,
+   "equiv_min": 29.9,
+   "thaw_min": 8.09,
+   "annual_h": 756.0,
+   "annual_pct": 8.62,
+   "eclipse_pause_pct": 5.01,
+   "thaw_pct": 2.33
+  },
+  "J8_cold": {
+   "lost_kWh_per_mean_eclipse": 61.65,
+   "equiv_min": 30.8,
+   "thaw_min": 9.08,
+   "annual_h": 778.0,
+   "annual_pct": 8.87,
+   "eclipse_pause_pct": 5.01,
+   "thaw_pct": 2.61
+  },
+  "A4_table": {
+   "lost_kWh_per_mean_eclipse": 81.03,
+   "equiv_min": 27.8,
+   "thaw_min": 7.99,
+   "annual_h": 701.0,
+   "annual_pct": 8.0,
+   "eclipse_pause_pct": 5.01,
+   "thaw_pct": 2.3
+  },
+  "A4_cold": {
+   "lost_kWh_per_mean_eclipse": 83.74,
+   "equiv_min": 28.7,
+   "thaw_min": 8.98,
+   "annual_h": 724.0,
+   "annual_pct": 8.26,
+   "eclipse_pause_pct": 5.01,
+   "thaw_pct": 2.58
+  }
+ },
+ "eclipse": {
+  "per_year": 1514,
+  "mean_min": 17.41,
+  "max_min": 21.66,
+  "hours_per_year": 439.3,
+  "fraction": 0.0501
+ },
+ "transient_fin_root_q40": {
+  "A4_cold_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 210.347,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 8.98,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 14.67,
+   "E_lost_kWh": 83.74,
+   "eclipse_pause_kWh": 50.78,
+   "Thw_min": 313.491,
+   "supply_min_after_open": 306.93,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_cold_e21.66_qt40_qh0_ql1500_fin": {
+   "T_rad_min": 201.229,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.13,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 16.55,
+   "E_lost_kWh": 98.76,
+   "eclipse_pause_kWh": 63.17,
+   "Thw_min": 312.999,
+   "supply_min_after_open": 306.437,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_cold_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 201.229,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.13,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 16.55,
+   "E_lost_kWh": 99.18,
+   "eclipse_pause_kWh": 63.17,
+   "Thw_min": 313.14,
+   "supply_min_after_open": 306.578,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_cold_e21.66_qt60_qh0_ql500_fin": {
+   "T_rad_min": 201.23,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 5.52,
+   "heater_kW": 147.0,
+   "E_heater_kWh": 13.52,
+   "E_lost_kWh": 86.57,
+   "eclipse_pause_kWh": 63.17,
+   "Thw_min": 313.498,
+   "supply_min_after_open": 306.936,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_deep_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 197.585,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.58,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 17.28,
+   "E_lost_kWh": 88.07,
+   "eclipse_pause_kWh": 50.78,
+   "Thw_min": 313.307,
+   "supply_min_after_open": 306.745,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_deep_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 186.192,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 11.87,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 19.39,
+   "E_lost_kWh": 103.91,
+   "eclipse_pause_kWh": 63.17,
+   "Thw_min": 312.942,
+   "supply_min_after_open": 306.38,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_table_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 217.371,
+   "ice_max_tube": 0.359,
+   "ice_max_header": 0.0,
+   "t_open_min": 7.99,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 13.05,
+   "E_lost_kWh": 81.03,
+   "eclipse_pause_kWh": 50.78,
+   "Thw_min": 313.606,
+   "supply_min_after_open": 307.045,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "A4_table_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 209.631,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 9.07,
+   "heater_kW": 98.0,
+   "E_heater_kWh": 14.82,
+   "E_lost_kWh": 96.3,
+   "eclipse_pause_kWh": 63.17,
+   "Thw_min": 313.265,
+   "supply_min_after_open": 306.703,
+   "energy_closure": 0.0,
+   "presun_Tsup": 331.27
+  },
+  "J8_cold_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 210.674,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 9.08,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 8.91,
+   "E_lost_kWh": 61.65,
+   "eclipse_pause_kWh": 34.82,
+   "Thw_min": 319.312,
+   "supply_min_after_open": 311.896,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_cold_e21.66_qt40_qh0_ql1500_fin": {
+   "T_rad_min": 201.315,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.27,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 10.08,
+   "E_lost_kWh": 71.79,
+   "eclipse_pause_kWh": 43.32,
+   "Thw_min": 318.538,
+   "supply_min_after_open": 311.121,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_cold_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 201.315,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.27,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 10.08,
+   "E_lost_kWh": 72.2,
+   "eclipse_pause_kWh": 43.32,
+   "Thw_min": 318.901,
+   "supply_min_after_open": 311.484,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_cold_e21.66_qt60_qh0_ql500_fin": {
+   "T_rad_min": 201.316,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 5.55,
+   "heater_kW": 88.3,
+   "E_heater_kWh": 8.17,
+   "E_lost_kWh": 63.78,
+   "eclipse_pause_kWh": 43.32,
+   "Thw_min": 319.312,
+   "supply_min_after_open": 311.896,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_deep_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 198.091,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 10.66,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 10.47,
+   "E_lost_kWh": 64.47,
+   "eclipse_pause_kWh": 34.82,
+   "Thw_min": 319.114,
+   "supply_min_after_open": 311.697,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_deep_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 186.471,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 11.99,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 11.77,
+   "E_lost_kWh": 75.27,
+   "eclipse_pause_kWh": 43.32,
+   "Thw_min": 318.692,
+   "supply_min_after_open": 311.275,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_table_e17.41_qt40_qh0_ql500_fin": {
+   "T_rad_min": 217.585,
+   "ice_max_tube": 0.357,
+   "ice_max_header": 0.0,
+   "t_open_min": 8.09,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 7.94,
+   "E_lost_kWh": 59.89,
+   "eclipse_pause_kWh": 34.82,
+   "Thw_min": 319.438,
+   "supply_min_after_open": 312.022,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  },
+  "J8_table_e21.66_qt40_qh0_ql500_fin": {
+   "T_rad_min": 209.613,
+   "ice_max_tube": 0.385,
+   "ice_max_header": 0.0,
+   "t_open_min": 9.21,
+   "heater_kW": 58.9,
+   "E_heater_kWh": 9.04,
+   "E_lost_kWh": 70.33,
+   "eclipse_pause_kWh": 43.32,
+   "Thw_min": 319.033,
+   "supply_min_after_open": 311.616,
+   "energy_closure": 0.0,
+   "presun_Tsup": 340.7
+  }
+ }
+}

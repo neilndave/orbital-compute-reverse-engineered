@@ -1,0 +1,233 @@
+{
+  "revision": "r11_candidate",
+  "matplotlib_audit": {
+    "layout_revision": "r11_candidate",
+    "matplotlib_layout_passed": true,
+    "numbers_sha256": "c7b01951725b2bc4678bbe0d04e40c12de019688858ac22427a42c1c604cfff2",
+    "minimum_text_pt": 24,
+    "required_white_margin_inches": 1,
+    "bounds_inches": [
+      1,
+      1,
+      42,
+      23
+    ],
+    "nvidia_module_area_inches2": 505.92499999999995,
+    "live_area_inches2": 902,
+    "nvidia_area_percent": 56.089246119733914,
+    "modules": {
+      "m1": [
+        12.25,
+        11.825,
+        14.75,
+        8.575
+      ],
+      "m2": [
+        27.25,
+        11.825,
+        14.75,
+        8.575
+      ],
+      "m3": [
+        12.25,
+        3.0,
+        14.75,
+        8.575
+      ],
+      "m4": [
+        27.25,
+        3.0,
+        14.75,
+        8.575
+      ]
+    },
+    "qr_size_inches": 1.92,
+    "qr_bounds_inches": [
+      39.5,
+      20.899999999999995,
+      41.42,
+      22.819999999999997
+    ],
+    "qr_caption": "Full repo (GitHub)",
+    "qr_caption_bounds_inches": [
+      39.0028125,
+      20.46666666666667,
+      41.917187500000004,
+      20.8
+    ],
+    "hero_size_inches": [
+      7.063530092592603,
+      3.973235677083339
+    ],
+    "hero_bounds_inches": [
+      2.888234953703699,
+      2.02,
+      9.951765046296302,
+      5.99323567708334
+    ],
+    "hero_source_pixels": [
+      2160,
+      3840
+    ],
+    "hero_effective_dpi": 543.6375225507907,
+    "r10_hero_size_inches": [
+      4.088888888888889,
+      2.3
+    ],
+    "workflow_total_width_inches": 27.062239583333326,
+    "numbers_used": [
+      "GPU_est_K",
+      "HBM_est_K",
+      "angle_parity_deg",
+      "annual_kW",
+      "configurations",
+      "coolant_inlet_peak_K",
+      "cpu_kernel_s",
+      "device_target_K",
+      "dispenser_t",
+      "effort_days",
+      "effort_hours",
+      "emissivity",
+      "fleet_peak_MW",
+      "fleet_t",
+      "frame_f1_Hz",
+      "frame_kg",
+      "gpu_kernel_s",
+      "hard_feasible",
+      "hinge_locks",
+      "inputs_sha256",
+      "launch_t",
+      "module_rating_W_m2",
+      "newton_version",
+      "nominal_kW",
+      "panel_f1_max_Hz",
+      "panel_f1_min_Hz",
+      "panel_f1_nominal_Hz",
+      "peak_target_kW",
+      "radiator_panels",
+      "reserve_t",
+      "satellites",
+      "sc_mass_kg",
+      "scenario_draws",
+      "scenario_pass_pct",
+      "solar_area_m2",
+      "solver_mass_kg",
+      "speedup_x",
+      "surrogate_heldout",
+      "surrogate_heldout_max_abs_eta",
+      "surrogate_train",
+      "tape_gap_pct",
+      "tape_gradient_max_rel_err",
+      "throughput_Mps",
+      "warp_version"
+    ],
+    "generator_sha256": "dbe0e92f933a89604fbef9fe93fe0ae171348ef2f7baef8b3af0e0552f3f5b81",
+    "violations": []
+  },
+  "pdf": {
+    "GTC_POSTER_R11_CANDIDATE_DRAFT.pdf": {
+      "page_inches": [
+        43.0,
+        24.0
+      ],
+      "text_spans": 149,
+      "poppler_words": 710,
+      "min_font_pt": 24.0,
+      "images": [
+        {
+          "px": [
+            576,
+            576
+          ],
+          "bbox": [
+            39.5,
+            1.179999245537652,
+            41.41999986436632,
+            3.0999993218315973
+          ],
+          "dpi": [
+            300.00002119276434,
+            299.9999880790715
+          ]
+        },
+        {
+          "px": [
+            2120,
+            1192
+          ],
+          "bbox": [
+            2.8866666158040366,
+            18.006668090820312,
+            9.953333536783854,
+            21.980000813802082
+          ],
+          "dpi": [
+            299.99998920368745,
+            300.0000460835983
+          ]
+        }
+      ],
+      "drawings": 2177,
+      "extents": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.76290711111111,
+        "left_in": 1.0,
+        "right_in": 41.93425835503472
+      },
+      "violations": [],
+      "pdf_sha256": "b7a82a7564a0e52990aca0b3868df92d44cb54e766618b829dce1ac4ce405eb9"
+    },
+    "GTC_POSTER_R11_CANDIDATE_PUBLIC.pdf": {
+      "page_inches": [
+        43.0,
+        24.0
+      ],
+      "text_spans": 149,
+      "poppler_words": 710,
+      "min_font_pt": 24.0,
+      "images": [
+        {
+          "px": [
+            576,
+            576
+          ],
+          "bbox": [
+            39.5,
+            1.179999245537652,
+            41.41999986436632,
+            3.0999993218315973
+          ],
+          "dpi": [
+            300.00002119276434,
+            299.9999880790715
+          ]
+        },
+        {
+          "px": [
+            2120,
+            1192
+          ],
+          "bbox": [
+            2.8866666158040366,
+            18.006668090820312,
+            9.953333536783854,
+            21.980000813802082
+          ],
+          "dpi": [
+            299.99998920368745,
+            300.0000460835983
+          ]
+        }
+      ],
+      "drawings": 2177,
+      "extents": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.76290711111111,
+        "left_in": 1.0,
+        "right_in": 41.93425835503472
+      },
+      "violations": [],
+      "pdf_sha256": "b7a82a7564a0e52990aca0b3868df92d44cb54e766618b829dce1ac4ce405eb9"
+    }
+  }
+}

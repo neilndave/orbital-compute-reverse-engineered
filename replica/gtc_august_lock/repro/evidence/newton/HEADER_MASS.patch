@@ -1,0 +1,18 @@
+--- control
++++ corrected
+@@ -15,13 +15,13 @@
+ if kind=='solar':
+  A.ARRAY_KG_TOTAL=G['ledger_kg']['array'];A.A_TOTAL=G['solar_area_m2'];A.W_LEAF=14.;A.WING_L=G['array_wing_length_m'];A.YOKE_L=G['array_root_m']-(A.BX/2+A.STANDOFF);A.N_LEAF=20;A.M_YOKE=4.1;A.M_LEAF=A.ARRAY_KG_TOTAL/2/20
+ else:
+- A.N_LEAF=10;A.W_LEAF=G['radiator']['panel_width_m'];A.WING_L=10*(G['radiator']['panel_length_m']+.004);A.YOKE_L=1.06-(A.BX/2+A.STANDOFF);A.M_YOKE=1.5;A.M_LEAF=G['ledger_kg']['radiator']/140+1.1831331157142857;A.ARRAY_KG_TOTAL=2*A.N_LEAF*A.M_LEAF
++ A.N_LEAF=10;A.W_LEAF=G['radiator']['panel_width_m'];A.WING_L=10*(G['radiator']['panel_length_m']+.004);A.YOKE_L=1.06-(A.BX/2+A.STANDOFF);A.M_YOKE=1.5;A.M_LEAF=G['ledger_kg']['radiator']/140+G['radiator_header_lump_kg'];A.ARRAY_KG_TOTAL=2*A.N_LEAF*A.M_LEAF
+ A.L_LEAF=A.WING_L/A.N_LEAF;A.N_HINGE=A.N_LEAF+1;A.STROKE=np.array([math.pi/2]+[math.pi]*A.N_LEAF);A.SIGN=np.array([1. if i%2==0 else -1. for i in range(A.N_HINGE)]);A.LEN=np.array([A.YOKE_L]+[A.L_LEAF]*A.N_LEAF);A.MASS=np.array([A.M_YOKE]+[A.M_LEAF]*A.N_LEAF);A.I_OUT=A.outboard_I();A.I_LEAF_HINGE=A.MASS*A.LEN**2/3
+ if kind!='solar':
+  # The final geometry anchors the first radiator panel at Y=1.06 m, already
+  # aligned +Y. Delete the legacy fictitious root boom + 90-degree root sweep.
+  A.BX=1.82;A.N_LEAF=10;A.N_HINGE=10
+- A.LEN=np.full(10,G['radiator']['panel_length_m']+.004);A.MASS=np.full(10,G['ledger_kg']['radiator']/140+1.1831331157142857)
++ A.LEN=np.full(10,G['radiator']['panel_length_m']+.004);A.MASS=np.full(10,G['ledger_kg']['radiator']/140+G['radiator_header_lump_kg'])
+  A.MASS[0]+=1.5 # inherited root support mass, conservatively spread on first panel
+  A.STROKE=np.array([0.]+[math.pi]*9);A.SIGN=np.array([1. if i%2==0 else -1. for i in range(10)])
+  A.I_OUT=A.outboard_I();A.I_LEAF_HINGE=A.MASS*A.LEN**2/3

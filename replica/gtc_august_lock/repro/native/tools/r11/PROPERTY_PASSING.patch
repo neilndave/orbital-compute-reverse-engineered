@@ -1,0 +1,25 @@
+--- a/inputs/ai1_replica/coolant_t423d.py
++++ b/inputs/ai1_replica/coolant_t423d.py
+@@ -11,9 +11,9 @@
+          # CoolProp 6.x saturated liquid at 343 K: rho 526.6, cp 5468; sat pressure 33.0 bar at 343 K (59 bar at 370 K); design pressure = 1.3 x sat (ESTIMATE); mu ESTIMATE kept at water value (not looked up)
+          "nh3": dict(rho=526.6, cp=5468.0, mu=2.0e-4, p_des=1.3 * 33.0e5)}
+ def cool(P, A_rad, dT=9.8, pump=1.0, fluid="water", spares=1, panel_fluid=True, run_scale=1.0, rack_liq_scale=1.0, two_phase=False, x_exit=0.5, hfg=2.265e6, u_vap=25.0,
+-         rho_vap=0.54, pm_floor=0.25):
++         rho_vap=0.54, pm_floor=0.25, fluid_props=None):
+     """kg of pumps/valves/piping/fluid for a loop carrying P kW (peak) with radiator planform A_rad (m2, one face).  pump = multiplier on the ISS module mass (repo's 0.25 = 'light pump')."""
+-    g = dict(G); g.update(FLUID[fluid]); r = P / P_REF; ar = A_rad / A_REF
++    g = dict(G); g.update(FLUID[fluid]); g.update(fluid_props or {}); r = P / P_REF; ar = A_rad / A_REF
+     if two_phase: mdot = P * 1e3 / (hfg * x_exit)
+     else: mdot = P * 1e3 / (g["cp"] * dT)
+     Vdot = mdot / g["rho"]; nt = g["n_trunk"]; nl = 2 * nt; q = Vdot / nt
+--- a/stages/spin1/thermal_spin1.py
++++ b/stages/spin1/thermal_spin1.py
+@@ -18,7 +18,7 @@
+     return dict(rho=CPr.PropsSI("D", "T", T, "P", 3e5, "INCOMP::MPG[0.4]"), cp=CPr.PropsSI("C", "T", T, "P", 3e5, "INCOMP::MPG[0.4]"), mu=CPr.PropsSI("V", "T", T, "P", 3e5, "INCOMP::MPG[0.4]"), k=CPr.PropsSI("L", "T", T, "P", 3e5, "INCOMP::MPG[0.4]"))
+ def cool2f(P, A_rad, npan, ncol, dT, ps, fp, pump_unit=2.0, valve=0.5, eta=0.20, head_extra_kPa=10.0, dp_col_kPa=40.4):
+     mur = fp["mu"] / WATER["mu"]; G0 = dict(CT.G); CT.G.update(man_dp=0.0, panel_dp0=0.0, cp=fp["cp"], rho=fp["rho"], mu=fp["mu"], rack_dp=CT.G["rack_dp"] * mur)
+-    try: c = CT.cool(P, A_rad, dT=dT, panel_fluid=False, run_scale=0.5, pump=0.10, spares=2)
++    try: c = CT.cool(P, A_rad, dT=dT, panel_fluid=False, run_scale=0.5, pump=0.10, spares=2, fluid_props=fp)
+     finally: CT.G.clear(); CT.G.update(G0)
+     c = dict(c); c["fluid_total"] = c["fluid_rack"] + c["fluid_trunk"]; ctot = c["pumps"] + c["valves"] + c["piping"] + c["fluid_total"]
+     rr = fp["rho"] / WATER["rho"]

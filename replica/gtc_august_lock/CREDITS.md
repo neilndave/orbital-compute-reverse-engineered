@@ -12,4 +12,4 @@ Original study scripts/data: Copyright2026 the author, Apache-2.0 (LICENSE). Thi
 - NASA Blue Marble: NASA Earth Observatory/Robert Simmon and Reto Stöckli; https://visibleearth.nasa.gov/images/73909 . Earth visual credit for the included finished render; no raw texture binary is redistributed. NASA imagery-use terms apply; no endorsement.
 - SpaceX public AI1 comparison: https://www.spacex.com/spacexai/starmind (reference only; not SpaceX hardware or affiliation).
 - Dow DOWFROST TDS and Christiansen Whipple-shield equations (NASA NTRS20030068423): linked research references, not relicensed documents. NASA90/Gruen are screening environment assumptions, not ORDEM/MASTER qualification.
-- AI assistance: Grok Bot supported analysis, code, checks and drafting; the author retains responsibility for assumptions and claims.
+- AI-assisted analysis, code, checks and drafting; the author retains responsibility for assumptions and claims.

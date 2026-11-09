@@ -1,0 +1,97 @@
+{
+  "n_per_member": 16,
+  "n_nodes": 1884,
+  "n_beam_elements": 960,
+  "frame_kg": 45.69868499481628,
+  "model_mass_from_1g_reaction_kg": 640.2414687992332,
+  "frequencies_Hz": [
+    35.88428,
+    39.90747,
+    45.92942,
+    50.51837,
+    51.13141,
+    52.85277,
+    52.86423,
+    53.45812
+  ],
+  "corners": {
+    "max_axial": {
+      "max_von_mises_MPa": 27.886808036629844,
+      "worst_angle_deg": 135,
+      "elem": 608,
+      "max_disp_mm": 0.5220855155652512,
+      "MS_yield_FS1p25": 13.429761895712126,
+      "MS_yield_FS1p25_x_fitting1p5": 8.619841263808084
+    },
+    "max_lateral": {
+      "max_von_mises_MPa": 26.211491724127555,
+      "worst_angle_deg": 135,
+      "elem": 544,
+      "max_disp_mm": 0.5913233397139758,
+      "MS_yield_FS1p25": 14.352044982224065,
+      "MS_yield_FS1p25_x_fitting1p5": 9.234696654816043
+    },
+    "tension_lat": {
+      "max_von_mises_MPa": 23.54862999347465,
+      "worst_angle_deg": 45,
+      "elem": 1,
+      "max_disp_mm": 0.49396759517532113,
+      "MS_yield_FS1p25": 16.088042918484238,
+      "MS_yield_FS1p25_x_fitting1p5": 10.392028612322827
+    },
+    "max_tension": {
+      "max_von_mises_MPa": 11.161085545087259,
+      "worst_angle_deg": 315,
+      "elem": 608,
+      "max_disp_mm": 0.20865049425370769,
+      "MS_yield_FS1p25": 35.05384067476512,
+      "MS_yield_FS1p25_x_fitting1p5": 23.035893783176743
+    }
+  },
+  "min_MS_yield_FS1p25": 13.429761895712126,
+  "min_MS_with_fitting": 8.619841263808084,
+  "timing": {
+    "modal_s": 0.8840653896331787,
+    "static_s": 12.216763257980347,
+    "buckle_s": 0.7340483665466309
+  },
+  "buckling_factor_on_7p5g_axial": [
+    29.76708,
+    30.07217,
+    30.73065
+  ],
+  "scope": "CONTROL REPRODUCTION ONLY: t771 assumed box/allocation; inherited rigid4level frame, equipment smeared on side rails, not the separate67module trial. This cannot rescue the failed MPC mass-location calculation.",
+  "frame_design": {
+    "W": 0.6,
+    "D": 1.2,
+    "H": 0.9372146118721462,
+    "n_tray": 4,
+    "m_equip": 594.6813150051837,
+    "post": [
+      0.12,
+      0.12,
+      0.003
+    ],
+    "rail": [
+      0.08,
+      0.06,
+      0.002
+    ],
+    "xrail": [
+      0.08,
+      0.08,
+      0.002
+    ],
+    "brace": [
+      0.008,
+      0.001
+    ],
+    "top_brace": true,
+    "back_brace": true,
+    "side_brace": true,
+    "front_brace": false,
+    "top_tie": false
+  },
+  "frame_plus25pct_fittings_assumption_kg": 57.123356243520355,
+  "remaining_electronics_if25pct_fittings_kg": 583.2566437564797
+}

@@ -1,0 +1,419 @@
+{
+  "revision": "r11_candidate",
+  "adopted": false,
+  "passed": true,
+  "n_predicates": 51,
+  "n_failed": 0,
+  "predicates": [
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: page is 43x24 in",
+      "passed": true,
+      "detail": [
+        43.0,
+        24.0
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: every text span, poppler word, image and drawing inside 1-in margins (physical PDF)",
+      "passed": true,
+      "detail": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.76290711111111,
+        "left_in": 1.0,
+        "right_in": 41.93425835503472
+      }
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: minimum font >= 24 pt",
+      "passed": true,
+      "detail": 24.0
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: every raster image >= 300 dpi (0.1 dpi pixel-quantization rounding)",
+      "passed": true,
+      "detail": [
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: QR caption \"Full repo (GitHub)\" directly under the QR code",
+      "passed": true,
+      "detail": {
+        "qr": [
+          39.5,
+          1.179999245537652,
+          41.41999986436632,
+          3.0999993218315973
+        ],
+        "caption": [
+          38.98615180121528,
+          3.143588807847765,
+          41.93425835503472,
+          3.5319222344292536
+        ]
+      }
+    },
+    {
+      "gate": "M6",
+      "predicate": "DRAFT: approved author line is bold and on its own line",
+      "passed": true,
+      "detail": "DejaVuSans-Bold"
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: no footer (lowest text is the effort footnote, no reference/repo footer)",
+      "passed": true,
+      "detail": [
+        "Illustrative Isaac Sim RTX render, not flight validation. Earth:",
+        "NASA Blue Marble."
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: page is 43x24 in",
+      "passed": true,
+      "detail": [
+        43.0,
+        24.0
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: every text span, poppler word, image and drawing inside 1-in margins (physical PDF)",
+      "passed": true,
+      "detail": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.76290711111111,
+        "left_in": 1.0,
+        "right_in": 41.93425835503472
+      }
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: minimum font >= 24 pt",
+      "passed": true,
+      "detail": 24.0
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: every raster image >= 300 dpi (0.1 dpi pixel-quantization rounding)",
+      "passed": true,
+      "detail": [
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: QR caption \"Full repo (GitHub)\" directly under the QR code",
+      "passed": true,
+      "detail": {
+        "qr": [
+          39.5,
+          1.179999245537652,
+          41.41999986436632,
+          3.0999993218315973
+        ],
+        "caption": [
+          38.98615180121528,
+          3.143588807847765,
+          41.93425835503472,
+          3.5319222344292536
+        ]
+      }
+    },
+    {
+      "gate": "M6",
+      "predicate": "PUBLIC: approved author line is bold and on its own line",
+      "passed": true,
+      "detail": "DejaVuSans-Bold"
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: no footer (lowest text is the effort footnote, no reference/repo footer)",
+      "passed": true,
+      "detail": [
+        "Illustrative Isaac Sim RTX render, not flight validation. Earth:",
+        "NASA Blue Marble."
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT and PUBLIC text identical",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M1",
+      "predicate": "sunlit nominal vs eclipse-included annual disclosed with traced values",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Simulation study, not flight qualification\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not flight validation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"junction temperatures not yet qualified\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Assumed 640.38 kg payload allocation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not flight reliability\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not hardware validation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Flexible hardware and force-step convergence remain open\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not adopted hardware or a global optimum\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not GPU-hours\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M3",
+      "predicate": "PDF records 1 CPU core / 1 thread and every CPU benchmark ran pinned to one core with 1 thread",
+      "passed": true,
+      "detail": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ]
+    },
+    {
+      "gate": "M5",
+      "predicate": "problem states published targets, fp64 benchmark spec and primary source line",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M7",
+      "predicate": "coating emissivity 0.92 BOL specification printed and traced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M8",
+      "predicate": "module rating labelled as assumed remaining-planar rating; arithmetic closes; no active-cell claim",
+      "passed": true,
+      "detail": 275502.57862266316
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 4: one Vera Rubin NVL72, 72 GPUs + 36 CPUs; 30 satellites explicit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 1: 250 kW peak at beginning of life; available peak >= 249.9 kW acceptance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 2: 370 K nominal target wording, estimates from traced sensitivity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 3 + standing rules: no coolant-chemistry/vendor/process-history/gate claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "effort strip keeps ≈11 days and ≥44.1 h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "no NVIDIA logo: only images are the QR code, the render and the charts are vector",
+      "passed": true,
+      "detail": [
+        [
+          576,
+          576
+        ],
+        [
+          2120,
+          1192
+        ]
+      ]
+    },
+    {
+      "gate": "C",
+      "predicate": "NVIDIA content >= 55% of live area",
+      "passed": true,
+      "detail": 56.089246119733914
+    },
+    {
+      "gate": "V4B",
+      "predicate": "every numeric token in claim text is a traced derived number or a documented constant",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "V4B",
+      "predicate": "every numeric token in the actual PDF comes from a checked claim string or an axis tick",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "HASH",
+      "predicate": "GB10 sweep kernel hash == committed sweep/gpu_core.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "GB10 sweep inputs hash == committed sweep/SWEEP_INPUTS.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "SWEEP_INPUTS generator hash recorded == committed make_sweep_inputs.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "numbers derive-script hash == committed numbers/derive_numbers.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "every numbers source file hash still matches",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "HASH",
+      "predicate": "poster trace generator/numbers/PDF hashes match committed files",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "poster chart inputs hashes match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V3A",
+      "predicate": "box CPU, GB10 CPU and GB10 CUDA sweeps agree on counts and selected index",
+      "passed": true,
+      "detail": [
+        [
+          3048,
+          2347,
+          1037888
+        ],
+        [
+          3048,
+          2347,
+          1037888
+        ],
+        [
+          3048,
+          2347,
+          1037888
+        ]
+      ]
+    },
+    {
+      "gate": "V3A",
+      "predicate": "box/GB10 sweeps used identical inputs and kernel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V3A",
+      "predicate": "selected design values agree box vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "gate": "V3A",
+      "predicate": "sampled sweep parity box CPU vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 3.364281513164454e-16
+    },
+    {
+      "gate": "V3A",
+      "predicate": "scenario fraction identical box CPU vs GB10 CUDA",
+      "passed": true,
+      "detail": [
+        0.4166250228881836,
+        0.4166250228881836
+      ]
+    },
+    {
+      "gate": "V3A",
+      "predicate": "sampled MC parity box CPU vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 1.2165909910973054e-12
+    }
+  ]
+}

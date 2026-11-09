@@ -1,0 +1,1595 @@
+{
+  "audited_reproduction_source_sha256": {
+    "lock/audit_gate.py": "cca53f4fcda48a8fbc4f097d88be40b371cd8d2df30e27deb0b559a3387be4eb",
+    "lock/build_lock_deliverables.py": "16b4ced9941301c632d08dde18e85d6ead9060bc0630b73a69525b9cfb904d35",
+    "lock/checks/packing14.py": "38b77d69192f61c69431bf752bba949f682cad9c6d54f5ef190e52d26f3df656",
+    "lock/checks/packing14_broad.py": "38c0b2c622545bcb509b0fa53fd7abe222b08b62eda628c4ffa4c2fe2e766d83",
+    "lock/checks/packing14_yokes.py": "c7d4a4cac6c59b5e5cf485ba2a48e43e3e227dea1255138280a6e45edc90e989",
+    "lock/checks/packing14_yokes_fold2.py": "d09ebc51847ccbf4d7859f4050eb03fe0d5e747f7c376fbf00b811177d599f90",
+    "lock/checks/packing14_yokes_preplace.py": "42603f5b69e662f7e95a9f3fdbb1d2bd568a1b63455020af69dc026e531c1859",
+    "lock/checks/validate_packing.py": "1d143ca0d92212ba2e85b76cda6d34ca0d83528a52e0cb225f92682912779b19",
+    "lock/dynamics/assemble_newton.py": "2741ec017769437cfeb9853b742f87506418d107f720d889d1946ee4fcc5569f",
+    "lock/dynamics/attempts/continuous_motor/experiments/newton_array/run_array.py": "1daebf8e695dbaa61f6a698151c953f0dc600318efb7b50f43e4ec0ed0f1859d",
+    "lock/dynamics/attempts/continuous_motor/experiments/phase2/fold_chain_T45.py": "090e19b7d75804400519865c1120dd6e751c2a2dee7971969fcc09c7f693233a",
+    "lock/dynamics/attempts/continuous_motor/experiments/phase2/newton_xcheck_T45.py": "f9fb342d88f8256f352427fa71522e9f722dc002b48cc8003099384ccec2523d",
+    "lock/dynamics/attempts/motoroff_own_inertia/experiments/newton_array/run_array.py": "ddf49bc79e05583a6ff615c7b071e8ea6a751752dfe0b210cb0afa5767cdac26",
+    "lock/dynamics/attempts/motoroff_own_inertia/experiments/phase2/fold_chain_T45.py": "aec8bc99434b227a50f7edd4a1f9d45183ade9380aaeb2e8b65a16b87d8a6f62",
+    "lock/dynamics/attempts/motoroff_own_inertia/experiments/phase2/newton_xcheck_T45.py": "059f3f05dccf6592ec9460cb16dd759f132b9aa0b9f56ae785dfaf6fe8324072",
+    "lock/dynamics/check_actual_traces.py": "d9cac22f0ee1ae57da990c9a8e5db7838ace5da972001d46893fa656f65dfca1",
+    "lock/dynamics/configure_final_newton.py": "b9b206adacc9c5c642d086df51c1549244b457b00b3450708aac3c438eeef478",
+    "lock/dynamics/experiments/newton_array/run_array.py": "ddf49bc79e05583a6ff615c7b071e8ea6a751752dfe0b210cb0afa5767cdac26",
+    "lock/dynamics/experiments/phase2/fold_chain_T45.py": "24c9838e3876f107c6552860b1a223fdfc9a711cac26d7a9d133666e9c7b2f7d",
+    "lock/dynamics/experiments/phase2/newton_xcheck_T45.py": "d6f95b5a0ce50f360eaf5eaaeebf910473399650955465315eb9c811ee14bfb3",
+    "lock/dynamics/final_model/experiments/newton_array/run_array.py": "ddf49bc79e05583a6ff615c7b071e8ea6a751752dfe0b210cb0afa5767cdac26",
+    "lock/dynamics/final_model/experiments/phase2/fold_chain_T45.py": "24c9838e3876f107c6552860b1a223fdfc9a711cac26d7a9d133666e9c7b2f7d",
+    "lock/dynamics/final_model/experiments/phase2/newton_xcheck_T45.py": "d6f95b5a0ce50f360eaf5eaaeebf910473399650955465315eb9c811ee14bfb3",
+    "lock/dynamics/finite_clearance.py": "af5859ed1fc54871751abe1b6571abe067b604336122e1249da4cbdbe5818047",
+    "lock/dynamics/run_final_newton.py": "7f49d861e207d4fe4904b8f3ec750700fd2d528e8140a4ed2462531e237d3d90",
+    "lock/dynamics/run_lock_newton.py": "7e8bdb1e96cb2bf22f40ed196fa3b1188a53adcaa65b8f80d80d18948a41f5d7",
+    "lock/dynamics/run_warp_convergence.py": "9298b011400abf0a16b407e7c111c3677f8b64d5a507a2769e85adec44d5c855",
+    "lock/dynamics/solve_seam_clearance.py": "5dcaa9a9f2affc8252e5cd449ea02189ddc6221d81deaaa4493ac76ae9924057",
+    "lock/fea/check_root_loads.py": "0eb8162d59664fa9b170691fe1036033d125ab46cbc05c518fddeec5fb173a0c",
+    "lock/fea/collect_fea.py": "1a644e464ce0002dd37d8e6f713a79069fb10046a3992702d2a037f25c17caa7",
+    "lock/fea/global_structural_screen.py": "88808abd13517ec3f67636d0afd0be70973b8c630224f8ddfa22a9e60220fa8f",
+    "lock/fea/postprocess_fine_statics.py": "91b940208e8e38e4f24852bd7df62712f2d327c519bc5603d22f3c025efd83d4",
+    "lock/fea/root_yoke_screen.py": "5a828af30d1d1d7688c83d80863733f029d72caa2d988fe8bf69938a2892daa5",
+    "lock/fea/run_final_fea.py": "332e2a3a7533d209650adef95891e5b3b34b604a8ebed9cb47a4aba78a5b10ee",
+    "lock/freeze_lock_inputs.py": "758c62f502a3fc819ad87035a97d5087ed7c7214e2d26499fccc56796d22fcae",
+    "lock/gpu/fin_al_benchmark.py": "270d10e21ee42a79914aa8a3846f6bd811d6ded594b9e763f9858ea4fbdafd06",
+    "lock/gpu/gpu_core.py": "c6fd09c357081e97f71ccede8236d06b0612613f87715e4a85b99f5b925c6d53",
+    "lock/gpu/make_fin_dataset.py": "551c54aae66858fdc779af1c322f909b6d53672d2e9fd33ed275e4439b10b173",
+    "lock/gpu/make_sweep_inputs.py": "4287e0671d6c9a706a621ee8eeb108c8cc393641d0cb10507bf1fd26cc1edccb",
+    "lock/gpu/packing_bound_august.py": "a804243931727c33f8a7ce87676cf7d1b9370d9c679b893bf63e181cfbacad81",
+    "lock/gpu/packing_final_domain_august.py": "880506fd1868692a80aa2bb566352f3b9db153bc9fc5de58c872ae00d376880b",
+    "lock/gpu/packing_modular_august.py": "dd42c95b970f9570da16e6e25fefa12ae949445b5721a75b93e0e948bd048485",
+    "lock/gpu/packing_refine_august.py": "b7d31521408e8167b21ac60446f7d5ffd458efd385eb063f742edc2c37c29818",
+    "lock/gpu/packing_shared_interface_august.py": "4f8a6174ec57bdca10a885e877f2214e5fc0e4206a0e0ca8a4fd730634d5baf1",
+    "lock/gpu/repair_cpu_baseline.py": "ece5122a838b92f950b74f660f4848d5f3514a9ab704e688f2caf43f6082eef9",
+    "lock/gpu/run_tools.py": "475aebad4accc8f721ca1660c34f2abca5a058f04d30894ce6254d0c36f8bc32",
+    "lock/gpu/train_surrogate.py": "468c4d478ec327adc1e23d21602b8830eae696aff73a3ba1cffdefe0bbb153f3",
+    "lock/gpu/validate_and_plot.py": "4f2494a907458d18897dbe431fc7fa67f9ec489df65b1fc132fa286f0299e8d0",
+    "lock/gpu/verify_packing_selected.py": "706920f5b7b118a85d8fdff64034a4805addf70633ebc4c1a4dbc284009d7790",
+    "lock/gpu/warp_fin_ref.py": "4acd67024b700310bb36cf765a0094f7864da52b8d3bf0d941c9ba82e78a131c",
+    "lock/header/evaluate_header.py": "581f358f1871e2711c6aa2cb290aba60ef12b20005a3bd903f0feb07a42f11da",
+    "lock/make_mechanical_figures.py": "b3b7625360ed0419fc3dae1dcabdb8feb570cb32ef12b02808fa6bb6c4db9186",
+    "lock/operational_screens.py": "5cf9f66e886be69d809444c5a9a93e6474b129dd6d1201f4efe26745c907345e",
+    "lock/preflight_speed_figure.py": "0b05e7d94dd6461be0e2571f103644e4696cb543c595044bc9284b58cb344423",
+    "lock/publication/build_publish.py": "3aaee9a68e0d97c646a992739fa496bd7cf132d638774d38cae7cfaeca4723fb",
+    "lock/publication/make_dr_doc_source.py": "23dc7b6691830663345d54170f83a2ad111c4061d939919c0b091c6859ca566e",
+    "lock/publication/make_portal_copy.py": "242ed5a117ba3f89ee1b61934645aee283977ae09316de1089d574a01041562e",
+    "lock/publication/make_poster_pdf.py": "d1ae84c48deb3efebb6944dd2fb4f9f125dabd73a54b94ccd8f2241639c207f6",
+    "lock/publication/quick_preview.py": "93c402c30f24f28246ffc3fbfc5ebe9e28be8b0f7e09860fc23b6252602a1a09",
+    "lock/publication/reproduce_public.py": "614e3bcc770793797bb45247ae40f94b3ae9cb80edfce4d75e6392fc0c84acfb",
+    "lock/render/check_settled_optics.py": "e0ad9447432b5a1e7ebca11a639ed4eb32da6f0490111d718624bfe50e6ae803",
+    "lock/render/evaluate_thermal_geometry_screen.py": "c163f273921e74e6b85a021bbcb1b033af44c728af125b3330498257811f912e",
+    "lock/render/fleet_static_final.py": "3f8144ba770f2cfc1a8ac0e0e0d676966531dbe8b7d82f764dad9532254bca6a",
+    "lock/render/geometry_final.py": "43e19b4109fa9415b9fe6227402de10ee01327af428fd7e9063edb602f954b7c",
+    "lock/render/make_render_assets.py": "e876e084fe099bdf5ed53de23b5250063f0d1331eac1c3bea298651e276efc88",
+    "lock/render/render_final_rtx.py": "3cc42668d15b82065b5e1aceedd5223c9c5a0980e438dddff2fe79fb12d3f8c2",
+    "lock/render/yoke_view_delta.py": "177ccff23c87930a808fe1a7c86b2e4f2720b108753c245078a3ec73eed86117",
+    "lock/sources/fleet_kin_T45.py": "2caa0287cbe69b1c30ca5c1c9bc694865905728cd58a91025099554f1473efa6",
+    "lock/sources/geometry_attempt1.py": "f4a94a7200be52cdd68413362919369b1db7a5fa810081fb658f7144b33082ea",
+    "lock/sources/geometry_pre_seam.py": "002889c3cba2a6ee50d4264497a9c749f8b87622babeb2dddd56f24e17a6c447",
+    "lock/sources/p8a_helpers.py": "bc241625e02145e1ec817d1f680af522e412056d6d63ca904dc0b89f388aa674",
+    "lock/sources/render_fleet_omniverse_t498.py": "c2cdd7cc00150bd3d6f672ed54223ddae0ad2365a8a1b37950632463a98588d7",
+    "lock/sources/run_array.py": "17eaf54f7ef49545dc62a7b423f83b9971fd31178867a4ee6267c746fbf99aa8",
+    "lock/sources/run_array_sync.py": "cb64de695e3f3c64286f29827e59ae3a5d7233698898793f881fe2df37e8d90c",
+    "lock/sources/stack_modes_legacy.py": "e287ccbf75d0f63c6a8b87777d35b8800fed8ecd9fe65a46522962230777c90e"
+  },
+  "fea": {
+    "local_checks_passed": true,
+    "mesh_comparison": {
+      "first_mode_Hz": {
+        "coarse": 95.92105,
+        "fine": 128.3703,
+        "relative_difference": 0.2527784853661633
+      },
+      "max_abs_uz_mm": {
+        "coarse": 0.22821930749436967,
+        "fine": 0.1403522605,
+        "relative_difference": 0.6260465394810629
+      },
+      "min_yield_margin": {
+        "coarse": 24.24030655386361,
+        "fine": 33.49159255014645,
+        "relative_difference": 0.27622711528067917
+      }
+    },
+    "mesh_convergence_note": "Coarse/fine support-pad discretization changes supported-mode/deflection appreciably; both local strength/gap screens pass, but no mesh-converged/final support-hardware claim. Use conservative coarse/fine bounds; actual rails/contacts and coupled loads remain OPEN.",
+    "mesh_convergence_status": "OPEN",
+    "provenance": {
+      "input_sha256": {
+        "deployed_ny84_f16": "53a7faf70d99b2f78253ece7cf878c7fd8edd01382223eb7768a59c60333c327",
+        "stack_ny42_f16": "bc3c2d061fe7b32c58eed0aa2b0b52c2b03c918db5b992b38271431626f43158",
+        "stack_ny84_f16": "762ad069a22031e0c813dfa83b3fb3ec63e60b7e90e8476ab4c7fd6e97b77e9f"
+      },
+      "raw_file_manifest": [
+        {
+          "bytes": 5997824,
+          "case": "stack_ny84_f16",
+          "name": "panel.12d",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "c0dc856b17ee136051f708bb0b3dd12e64ea3cb42166ef95edd56d03f8324423"
+        },
+        {
+          "bytes": 0,
+          "case": "stack_ny84_f16",
+          "name": "spooles.out",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 148472100,
+          "case": "stack_ny84_f16",
+          "name": "panel.dat",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "242c2fe3f4a4e93aece984718b65fa11db85971a24ec10007f722d057e58e1fc"
+        },
+        {
+          "bytes": 4569,
+          "case": "stack_ny84_f16",
+          "name": "solver.log",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "50742e713e0a7cf78170cdd6f474e4395fd280dba81d3a87b07f4f4a61181584"
+        },
+        {
+          "bytes": 9675393,
+          "case": "stack_ny84_f16",
+          "name": "panel.frd",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "662893e692df90a5fc299e16fc8dedb4a11f293d8d9837e237ed293311c2c7fa"
+        },
+        {
+          "bytes": 314,
+          "case": "stack_ny84_f16",
+          "name": "panel.sta",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "92309906ae07ca70ed9bc6ea03391c51670a3aad8d33b096591b0fef2ba98776"
+        },
+        {
+          "bytes": 274,
+          "case": "stack_ny84_f16",
+          "name": "panel.cvg",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "65086dedb4572132b815ace04b294909c7f6f337111f9704fc310b02320f67f7"
+        },
+        {
+          "bytes": 6057324,
+          "case": "deployed_ny84_f16",
+          "name": "panel.12d",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "2c5f977151999f1dc65aa65e0a9202d9fa631afaa2d42bb8679a76074f43b288"
+        },
+        {
+          "bytes": 0,
+          "case": "deployed_ny84_f16",
+          "name": "spooles.out",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 3187,
+          "case": "deployed_ny84_f16",
+          "name": "panel.dat",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "6d6eea3fc2ec79774ef0eb7c5eb58f15ff82435940a0b2069d3640f653372110"
+        },
+        {
+          "bytes": 3002,
+          "case": "deployed_ny84_f16",
+          "name": "solver.log",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "2623841ac7997b1f8b4e03bedfcd0698729eff6e00f674c059e78c56b233c3e0"
+        },
+        {
+          "bytes": 9675393,
+          "case": "deployed_ny84_f16",
+          "name": "panel.frd",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "92aa72bfe40b82bf510983af59c258a570e62e0de7a440f5fd564e7f8364b446"
+        },
+        {
+          "bytes": 98,
+          "case": "deployed_ny84_f16",
+          "name": "panel.sta",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "20946efba93047e4092386fb9fedd29e43961806698459a19066356660f2e1a9"
+        },
+        {
+          "bytes": 274,
+          "case": "deployed_ny84_f16",
+          "name": "panel.cvg",
+          "retention": "External sibling work area; not part of release",
+          "sha256": "65086dedb4572132b815ace04b294909c7f6f337111f9704fc310b02320f67f7"
+        }
+      ],
+      "source_sha256": {
+        "lock/fea/run_final_fea.py": "332e2a3a7533d209650adef95891e5b3b34b604a8ebed9cb47a4aba78a5b10ee",
+        "lock/sources/p8a_helpers.py": "bc241625e02145e1ec817d1f680af522e412056d6d63ca904dc0b89f388aa674"
+      }
+    },
+    "qualification": "OPEN: pad rail/contact/hardware, braze/re-age, whole-wing latch stiffness, launcher coupled loads. Falcon 35 Hz is a comparison reference, not an asserted Starship requirement.",
+    "results": [
+      {
+        "frequencies_Hz": [
+          95.92105,
+          96.00463,
+          99.26103,
+          100.3921,
+          100.5397,
+          105.7735,
+          116.8323,
+          117.0012
+        ],
+        "geometric_gap_mm": 2.0,
+        "header_lump_kg": 1.1831331157142857,
+        "launch_corners": {
+          "max_axial": {
+            "FS1p25_yield_margin": 24.24030655386361,
+            "max_abs_uz_mm": 0.22821930749436967,
+            "max_von_mises_MPa": 7.638576004952979,
+            "worst_angle_deg": 15
+          },
+          "max_lateral": {
+            "FS1p25_yield_margin": 38.58189781631375,
+            "max_abs_uz_mm": 0.1526925399774787,
+            "max_von_mises_MPa": 4.870913489159105,
+            "worst_angle_deg": 15
+          },
+          "max_tension": {
+            "FS1p25_yield_margin": 72.38842656828619,
+            "max_abs_uz_mm": 0.07989058749436968,
+            "max_von_mises_MPa": 2.6271172310882585,
+            "worst_angle_deg": 195
+          },
+          "tension_lat": {
+            "FS1p25_yield_margin": 80.48966237926359,
+            "max_abs_uz_mm": 0.07852817997747868,
+            "max_von_mises_MPa": 2.3659442728168814,
+            "worst_angle_deg": 195
+          }
+        },
+        "layout": "stack",
+        "max_abs_uz_mm": 0.22821930749436967,
+        "min_yield_margin": 24.24030655386361,
+        "modal_35Hz_reference_pass": true,
+        "n_elements": 6048,
+        "n_nodes": 17922,
+        "ny": 42,
+        "panel_wet_kg": 2.0753031231228767,
+        "solver": "CalculiX 2.21, box CPU, 2 threads",
+        "structural_metal_kg": 1.2910026315777703,
+        "total_model_kg": 3.2584362388375,
+        "tube_facets": 16,
+        "two_adjacent_worst_case_gap_margin_mm": 1.5435613850112606,
+        "wall_s": 650.861431
+      },
+      {
+        "frequencies_Hz": [
+          128.3703,
+          128.7777,
+          128.985,
+          129.057,
+          129.4188,
+          129.5327,
+          129.8597,
+          130.0117
+        ],
+        "geometric_gap_mm": 2.0,
+        "header_lump_kg": 1.1831331157142857,
+        "launch_corners": {
+          "max_axial": {
+            "FS1p25_yield_margin": 33.49159255014645,
+            "max_abs_uz_mm": 0.1403522605,
+            "max_von_mises_MPa": 5.5897679911327085,
+            "worst_angle_deg": 0
+          },
+          "max_lateral": {
+            "FS1p25_yield_margin": 52.8995082181303,
+            "max_abs_uz_mm": 0.096152062,
+            "max_von_mises_MPa": 3.5770270708174556,
+            "worst_angle_deg": 0
+          },
+          "max_tension": {
+            "FS1p25_yield_margin": 99.16542524189653,
+            "max_abs_uz_mm": 0.049568113,
+            "max_von_mises_MPa": 1.9248158686931518,
+            "worst_angle_deg": 180
+          },
+          "tension_lat": {
+            "FS1p25_yield_margin": 109.39672858209421,
+            "max_abs_uz_mm": 0.050765222,
+            "max_von_mises_MPa": 1.746428562478899,
+            "worst_angle_deg": 180
+          }
+        },
+        "layout": "stack",
+        "max_abs_uz_mm": 0.1403522605,
+        "min_yield_margin": 33.49159255014645,
+        "modal_35Hz_reference_pass": true,
+        "n_elements": 12096,
+        "n_nodes": 35562,
+        "ny": 84,
+        "panel_wet_kg": 2.0753031231228767,
+        "solver": "CalculiX 2.21, box CPU, 2 threads",
+        "structural_metal_kg": 1.2910026315779293,
+        "total_model_kg": 3.258436238837707,
+        "tube_facets": 16,
+        "two_adjacent_worst_case_gap_margin_mm": 1.719295479,
+        "wall_s": 11799.697739526004
+      },
+      {
+        "frequencies_Hz": [
+          0.3278245,
+          2.426888,
+          3.896804,
+          7.254783,
+          9.429004,
+          10.21741,
+          14.75006,
+          16.99951
+        ],
+        "header_lump_kg": 1.1831331157142857,
+        "layout": "deployed",
+        "n_elements": 12096,
+        "n_nodes": 35562,
+        "ny": 84,
+        "panel_wet_kg": 2.0753031231228767,
+        "solver": "CalculiX 2.21, box CPU, 2 threads",
+        "structural_metal_kg": 1.2910026315779293,
+        "total_model_kg": 3.258436238837707,
+        "tube_facets": 16,
+        "wall_s": 1312.205691143994
+      }
+    ],
+    "scope": "Final circular-tube shell FEA, reusing historical P8a Mesh/write_inp/surface_stress.\n6061-T6, wet panel mass, retained seven-station launch pads (all seven tubes).\nRound shell represented by 16 facets; fin at tube mid-wall equator. NO stiffness from\nheaders/coolant/coating; their allocated mass is retained. Screening, not qualification.\n"
+  },
+  "finite_clearance": {
+    "geometry": "lock/render/geometry_final.py",
+    "results": [
+      {
+        "frames": [],
+        "intersecting_samples": 0,
+        "max_OBB_penetration_m": 0,
+        "samples": 481,
+        "sequence": "root_then_long_then_width_then_radiator",
+        "worst_pairs": []
+      }
+    ],
+    "scope": "Independent OBB separating-axis audit of finite 8-mm tubes and 5-mm solar blocks.\nNo tube headers, hinge housings, hoses, or deployed flexible deformation are certified.\nChecks the representative one-spacecraft staged unfold, not a 30-spacecraft release contact solve.\n",
+    "status": "PASS",
+    "wall_s": 50.483886044006795
+  },
+  "geometry": {
+    "array_root_m": 4.1366,
+    "array_width_m": 14.0,
+    "array_wing_length_m": 30.776909002040213,
+    "canonical_sha256": null,
+    "case": "August",
+    "finite_body_repair": {
+      "array_main_leaf_seam_m": 0.023,
+      "array_width_fold_height_m": 0.72,
+      "array_width_pitch_m": 0.006,
+      "array_width_sections": 6,
+      "root_yoke_depth_m": 0.06,
+      "root_yoke_normal_offset_m": 0.09,
+      "root_yoke_width_m": 0.25
+    },
+    "ledger_kg": {
+      "MMOD_spare_panel_allocation": 140.0,
+      "adapter": 0.0,
+      "array": 835.1355773900347,
+      "avionics_links": 67.6,
+      "coolant_loop": 346.74742873532784,
+      "deployment_mechanisms": 131.25,
+      "freeze_restart_including_battery": 100.32492807112897,
+      "harness": 38.38984290157675,
+      "life_and_compute_provision": 80.0,
+      "power_electronics": 63.32630861952156,
+      "propellant_delta_al_radiator_c13_prop": 0.5834974374609843,
+      "propellant_delta_inherited_c13_prop": 3.522390894846282,
+      "propulsion_adcs": 157.28,
+      "rack": 640.38,
+      "radiator": 290.5424372372027,
+      "structure_mech": 127.4
+    },
+    "mass_sc_kg": 3022.4824112870997,
+    "metadata_correction": "Unused legacy packing count 13 -> 14; physical dynamics/thermal inputs unchanged. Original consumed input preserved in TESTED_GEOMETRY_INPUT.json.",
+    "packing_items": [
+      [
+        "array_0",
+        "array",
+        [
+          2.3333333333333335,
+          1.5388454501020106,
+          0.72
+        ]
+      ],
+      [
+        "array_1",
+        "array",
+        [
+          2.3333333333333335,
+          1.5388454501020106,
+          0.72
+        ]
+      ],
+      [
+        "rack",
+        "bus",
+        [
+          0.6,
+          1.2,
+          0.9372146118721462
+        ]
+      ],
+      [
+        "equip",
+        "bus",
+        [
+          0.7,
+          2.0,
+          1.4975098936170215
+        ]
+      ],
+      [
+        "rad_0",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_1",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_2",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_3",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_4",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_5",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_6",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_7",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_8",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_9",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_10",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_11",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_12",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "rad_13",
+        "radiator",
+        [
+          0.3634175776637853,
+          2.9446,
+          0.098
+        ]
+      ],
+      [
+        "yoke_0",
+        "yoke",
+        [
+          0.25,
+          0.06,
+          3.6366
+        ]
+      ],
+      [
+        "yoke_1",
+        "yoke",
+        [
+          0.25,
+          0.06,
+          3.6366
+        ]
+      ]
+    ],
+    "packing_stacks": 14,
+    "panels_per_column": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "parent_canonical_sha256": "213a17554108b45f8452d10f7e67f21300e7b96b4a9deb98dbeb25bac052e636",
+    "proposal_scope": "Owner-approved high-level first iteration; repaired representative rigid deployment and local supported-panel FEA; whole-system qualification OPEN.",
+    "radiator": {
+      "NT": 7,
+      "fin_id": "AL6061_V3_AUG",
+      "fluid_geometry": "round",
+      "half_length_m": 0.021958398404556094,
+      "panel_length_m": 2.9446,
+      "panel_width_m": 0.3634175776637853,
+      "radiator_film": true,
+      "source": "Final once-only GB10 lock/gpu/SWEEP_GB10_GPU.json verifies the owner-approved NVIDIA-selected hardware",
+      "table_rel": "inputs/ai1_replica/gb10_final_al/table_AL6061_V3_AUG.json",
+      "thickness_m": 0.0002587301587301587,
+      "tube_ID_m": 0.007,
+      "tube_OD_m": 0.008
+    },
+    "radiator_columns": 14,
+    "radiator_panels": 140,
+    "solar_area_m2": 861.753452057126
+  },
+  "global_structural": {
+    "deployed_radiator": {
+      "EI_Nm2": 40.12886378001057,
+      "beam_FE_modes_Hz": [
+        0.0038685645502725824,
+        0.02424387605533286,
+        0.06788355951089865,
+        0.13302470758666776,
+        0.21989946740919622,
+        0.32849200049641547
+      ],
+      "cantilever_analytical_first_Hz": 0.0038685638937351564,
+      "fix_attempts": [
+        {
+          "comment": "Fourfold reduction of the ideal commanded inertial term versus 300 s; friction/latch peaks do not scale this way. Slower staged commissioning does not raise the deployed frequency.",
+          "deployment_seconds": 600,
+          "option": "Slow deployment/attitude sequence"
+        },
+        {
+          "comment": "Not adopted: a roughly hundredfold tube-stiffness increase breaks thin-panel stow and cascades geometry/mass. A guyed/trussed wing is a future detail-design task, not silently credited.",
+          "option": "Raise radiator f1 to 0.05 Hz by tube-metal stiffness alone",
+          "required_EI_multiplier": 167.04762791823953
+        }
+      ],
+      "mass_per_length_kg_m": 1.110799404165664,
+      "relative_parity_error": 1.6971089111805782e-07,
+      "status": "LOW FREQUENCY / OPEN for attitude-control interaction. Rigid latches are an upper-bound stiffness; no deployed frequency cap supplied.",
+      "total_length_m": 29.485999999999997
+    },
+    "qualification": "Screening only; do not put launcher/deployed frequency PASS or elastic solar-array qualification on poster.",
+    "scope": "Rerun historical stack_modes with actual v3 spacecraft mass and revised packing.\nAlso an Euler-Bernoulli FE screen of one deployed 10-panel radiator column using\nseven circular tubes and wet/inventory loading. Neither includes joint/launcher compliance.\nSolar blanket EI was NEVER specified by the prior rigid Newton model: required EI is\nreported rather than inventing an elastic laminate and claiming solar-array FEA closure.\n",
+    "solar_array": {
+      "elastic_properties_status": "OPEN: no laminate/boom sectional stiffness in historical solar rigid-body model. No defensible final natural frequency without it.",
+      "mass_per_length_kg_m": 13.567567446988798,
+      "required_stiffness_screen": [
+        {
+          "required_equivalent_EI_Nm2": 3887.4088860888855,
+          "target_Hz": 0.01
+        },
+        {
+          "required_equivalent_EI_Nm2": 97185.22215222211,
+          "target_Hz": 0.05
+        },
+        {
+          "required_equivalent_EI_Nm2": 388740.88860888843,
+          "target_Hz": 0.1
+        }
+      ],
+      "wing_length_m": 30.776909002040213
+    },
+    "stack": {
+      "attempts": [
+        {
+          "axial_Hz": 7.207245075810919,
+          "increment_over_structure_allowance_kg": 0,
+          "lateral_Hz_bending_upper_bound": 3.718040546972695,
+          "launch_t": 92.67447233861299,
+          "launch_t_if_post_mass_is_additive": 93.52975734220865,
+          "post_area_scale": 1.0,
+          "post_mass_sc_kg": 28.50950011985581,
+          "verdict": "not adopted; inherited launcher proxy is not a Starship requirement; load paths/actual rails unresolved"
+        },
+        {
+          "axial_Hz": 25.0,
+          "increment_over_structure_allowance_kg": 215.62915988145542,
+          "lateral_Hz_bending_upper_bound": 12.896885383609499,
+          "launch_t": 99.14334713505666,
+          "launch_t_if_post_mass_is_additive": 102.96534713505666,
+          "post_area_scale": 12.032100122392125,
+          "post_mass_sc_kg": 343.0291598814554,
+          "verdict": "not adopted; inherited launcher proxy is not a Starship requirement; load paths/actual rails unresolved"
+        },
+        {
+          "axial_Hz": 19.38452522170369,
+          "increment_over_structure_allowance_kg": 78.83451953609261,
+          "lateral_Hz_bending_upper_bound": 10.0,
+          "launch_t": 95.03950792469576,
+          "launch_t_if_post_mass_is_additive": 98.86150792469577,
+          "post_area_scale": 7.233887604800826,
+          "post_mass_sc_kg": 206.23451953609262,
+          "verdict": "not adopted; inherited launcher proxy is not a Starship requirement; load paths/actual rails unresolved"
+        },
+        {
+          "axial_Hz": 25.0,
+          "increment_over_structure_allowance_kg": 215.62915988145542,
+          "lateral_Hz_bending_upper_bound": 12.896885383609499,
+          "launch_t": 99.14334713505666,
+          "launch_t_if_post_mass_is_additive": 102.96534713505666,
+          "post_area_scale": 12.032100122392125,
+          "post_mass_sc_kg": 343.0291598814554,
+          "verdict": "not adopted; inherited launcher proxy is not a Starship requirement; load paths/actual rails unresolved"
+        }
+      ],
+      "axial_strength_only_f1_Hz": 7.207245075810919,
+      "effective_columns": 1.7647058823529411,
+      "lateral_bending_rigid_shear_upper_bound_Hz": 3.718040546972695,
+      "levels": 17,
+      "spacecraft_count": 30,
+      "spacecraft_mass_kg": 3022.4824112870997,
+      "status": "OPEN: Falcon 25/10-Hz proxy is not a Starship requirement; strength-sized rigid-base estimate only. Cannot certify frequencies or launcher loads from unsigned stack layout.",
+      "strength_sized_post_mass_sc_kg": 28.50950011985581,
+      "structure_allowance_kg": 127.4,
+      "top_m": 15.6
+    },
+    "wall_s": 0.009526617999654263
+  },
+  "header": {
+    "adopted": false,
+    "assumptions": "Short-end wrap candidate screen. No adopted baseline files are modified.\nConservative retained legacy hydraulic head plus explicit NEW short-end friction/minors;\nno speculative mass or pressure credit for removed legacy routes. Folded wraps rigid.\n",
+    "baseline_hash": "213a17554108b45f8452d10f7e67f21300e7b96b4a9deb98dbeb25bac052e636",
+    "reason": "Rigid 43.4/64.2-mm short-end wrap intersects neighboring headers at the required 10-mm fold. Explicit enlarged-stack packing fails 30. Retractable bumpers or staggered headers need new mechanisms/root routing and a new packing architecture (large cascading changes), not a clean header-only adoption. Thermal and launch-mass lower bounds alone are not closure.",
+    "results": [
+      {
+        "added_array_area_m2": 0.07290551523522026,
+        "at_10mm_pitch_header_overlap_m": 0.0334,
+        "flux_multiplier": 1.0,
+        "full_header_blockage_frac": 0.006398517072244521,
+        "hydraulic_added_dp_Pa": 1402.575413907376,
+        "hydraulic_added_pump_W": 21.443274373345503,
+        "hydraulic_spans": [
+          {
+            "Re": 22858.82378407745,
+            "bore_m": 0.02,
+            "two_headers_dp_Pa": 39.977417203937705,
+            "velocity_m_s": 0.7354913242774909
+          },
+          {
+            "Re": 21163.158516457763,
+            "bore_m": 0.01851640199545103,
+            "two_headers_dp_Pa": 44.01616813971919,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 19319.23217920247,
+            "bore_m": 0.016903085094570332,
+            "two_headers_dp_Pa": 49.33469025074398,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 17279.646570319248,
+            "bore_m": 0.015118578920369089,
+            "two_headers_dp_Pa": 56.74688823241204,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 14964.612898313118,
+            "bore_m": 0.013093073414159542,
+            "two_headers_dp_Pa": 68.0106312881475,
+            "velocity_m_s": 0.7354913242774911
+          },
+          {
+            "Re": 12218.555266379608,
+            "bore_m": 0.010690449676496976,
+            "two_headers_dp_Pa": 87.88812289158915,
+            "velocity_m_s": 0.7354913242774909
+          }
+        ],
+        "incremental_shield_blockage_frac": 0.0036847810977826932,
+        "inlet_pass": true,
+        "launch_mass_lower_bound_t": 93.37063622908263,
+        "legacy_taper_length_sc_m": 784.3276,
+        "mass_lower_bound_sc_kg": 3045.6878743027546,
+        "mass_scope": "Shield+small array growth only; no pipe mass credit and no rerouting mechanism allowance. Thus optimistic lower-bound mass, not a complete revised ledger.",
+        "nominal_GPU_K": 366.7232609076946,
+        "nominal_HBM_K": 362.4014609076946,
+        "packing_30_pass": false,
+        "packing_constructive_count": 16,
+        "packing_sequence": [
+          {
+            "H": 1.47,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 0.05
+          },
+          {
+            "H": 1.47,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 1.59
+          },
+          {
+            "H": 1.47,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 3.13
+          },
+          {
+            "H": 1.47,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 4.67
+          },
+          {
+            "H": 3.15,
+            "X": 3.1,
+            "Y": 1.95,
+            "corner_r": 3.676,
+            "m": 4,
+            "z0": 6.21
+          },
+          {
+            "H": 2.58,
+            "X": 3.1,
+            "Y": 2.71,
+            "corner_r": 3.131,
+            "m": 2,
+            "z0": 9.43
+          },
+          {
+            "H": 1.47,
+            "X": 3.98,
+            "Y": 3.97,
+            "corner_r": 2.811,
+            "m": 1,
+            "z0": 12.08
+          },
+          {
+            "H": 2.58,
+            "X": 3.1,
+            "Y": 2.71,
+            "corner_r": 2.059,
+            "m": 1,
+            "z0": 13.62
+          }
+        ],
+        "packing_wall_s": 1.0520719819978694,
+        "peak_inlet_K": 392.5352766092736,
+        "pump_baseline_W": 1462.372332850098,
+        "pump_candidate_W": 1483.8156072234435,
+        "reserve_upper_bound_launch_t": 6.629363770917363,
+        "retained_root_hoses_total_m": 28,
+        "rigid_wrap_pitch_m": 0.0454,
+        "shield": {
+          "N_5yr": 0.8702609638459917,
+          "PNP": 0.41884223230456846,
+          "S_mm": 10,
+          "blockage_incremental_frac": 0.0036847810977826932,
+          "blockage_total_frac": 0.006398517072244521,
+          "bumper_kg": 17.471458034843533,
+          "d_c_debris_mm": 1.0351378496811774,
+          "max_envelope_depth_m": 0.0434,
+          "t_b_mm": 0.5,
+          "total_kg": 23.134809695953805,
+          "tw_mm": 1.2,
+          "wall_add_kg": 5.663351661110273
+        },
+        "short_end_total_length_sc_m": 101.75692174585988,
+        "solar_area_m2": 861.8263576152352,
+        "view_effective_baseline": 0.9679388756,
+        "view_effective_candidate": 0.9615400752664538
+      },
+      {
+        "added_array_area_m2": 0.07290551523522026,
+        "at_10mm_pitch_header_overlap_m": 0.054200000000000005,
+        "flux_multiplier": 3.0,
+        "full_header_blockage_frac": 0.009901498230984806,
+        "hydraulic_added_dp_Pa": 1402.575413907376,
+        "hydraulic_added_pump_W": 21.443274373345503,
+        "hydraulic_spans": [
+          {
+            "Re": 22858.82378407745,
+            "bore_m": 0.02,
+            "two_headers_dp_Pa": 39.977417203937705,
+            "velocity_m_s": 0.7354913242774909
+          },
+          {
+            "Re": 21163.158516457763,
+            "bore_m": 0.01851640199545103,
+            "two_headers_dp_Pa": 44.01616813971919,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 19319.23217920247,
+            "bore_m": 0.016903085094570332,
+            "two_headers_dp_Pa": 49.33469025074398,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 17279.646570319248,
+            "bore_m": 0.015118578920369089,
+            "two_headers_dp_Pa": 56.74688823241204,
+            "velocity_m_s": 0.735491324277491
+          },
+          {
+            "Re": 14964.612898313118,
+            "bore_m": 0.013093073414159542,
+            "two_headers_dp_Pa": 68.0106312881475,
+            "velocity_m_s": 0.7354913242774911
+          },
+          {
+            "Re": 12218.555266379608,
+            "bore_m": 0.010690449676496976,
+            "two_headers_dp_Pa": 87.88812289158915,
+            "velocity_m_s": 0.7354913242774909
+          }
+        ],
+        "incremental_shield_blockage_frac": 0.007187762256522978,
+        "inlet_pass": true,
+        "launch_mass_lower_bound_t": 93.8450500145566,
+        "legacy_taper_length_sc_m": 784.3276,
+        "mass_lower_bound_sc_kg": 3061.501667151887,
+        "mass_scope": "Shield+small array growth only; no pipe mass credit and no rerouting mechanism allowance. Thus optimistic lower-bound mass, not a complete revised ledger.",
+        "nominal_GPU_K": 367.0306048698239,
+        "nominal_HBM_K": 362.7088048698239,
+        "packing_30_pass": false,
+        "packing_constructive_count": 13,
+        "packing_sequence": [
+          {
+            "H": 1.75,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 0.05
+          },
+          {
+            "H": 1.75,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 1.87
+          },
+          {
+            "H": 1.75,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 3.69
+          },
+          {
+            "H": 1.75,
+            "X": 4.7,
+            "Y": 3.15,
+            "corner_r": 3.938,
+            "m": 2,
+            "z0": 5.51
+          },
+          {
+            "H": 2.13,
+            "X": 3.9,
+            "Y": 3.05,
+            "corner_r": 3.629,
+            "m": 2,
+            "z0": 7.33
+          },
+          {
+            "H": 1.49,
+            "X": 3.98,
+            "Y": 3.97,
+            "corner_r": 2.811,
+            "m": 1,
+            "z0": 9.53
+          },
+          {
+            "H": 1.49,
+            "X": 3.98,
+            "Y": 3.97,
+            "corner_r": 2.811,
+            "m": 1,
+            "z0": 11.09
+          },
+          {
+            "H": 2.13,
+            "X": 3.9,
+            "Y": 3.05,
+            "corner_r": 2.476,
+            "m": 1,
+            "z0": 12.65
+          }
+        ],
+        "packing_wall_s": 1.0341117729985854,
+        "peak_inlet_K": 392.87773774596036,
+        "pump_baseline_W": 1462.372332850098,
+        "pump_candidate_W": 1483.8156072234435,
+        "reserve_upper_bound_launch_t": 6.154949985443396,
+        "retained_root_hoses_total_m": 28,
+        "rigid_wrap_pitch_m": 0.06620000000000001,
+        "shield": {
+          "N_5yr": 0.894235301298346,
+          "PNP": 0.4089201798410018,
+          "S_mm": 20,
+          "blockage_incremental_frac": 0.007187762256522978,
+          "blockage_total_frac": 0.009901498230984806,
+          "bumper_kg": 27.34569674155881,
+          "d_c_debris_mm": 1.5799160527147647,
+          "max_envelope_depth_m": 0.06420000000000001,
+          "t_b_mm": 0.5,
+          "total_kg": 38.948602545086075,
+          "tw_mm": 1.6,
+          "wall_add_kg": 11.602905803527268
+        },
+        "short_end_total_length_sc_m": 101.75692174585988,
+        "solar_area_m2": 861.8263576152352,
+        "view_effective_baseline": 0.9679388756,
+        "view_effective_candidate": 0.9580370941077134
+      }
+    ],
+    "stagger_fix_screen": {
+      "comment": "Alternatively deploy/retract bumper each fold. Neither new axial hose routing nor bumper mechanisms is present in the model/ledger. Not adopted.",
+      "minimum_axial_offset_per_panel_m": 0.0434,
+      "total_offset_11panel_stack_m": 0.434
+    },
+    "verdict": "ABANDON"
+  },
+  "newton": {
+    "audited_reproduction_source_sha256": {
+      "lock/dynamics/experiments/phase2/fold_chain_T45.py": "24c9838e3876f107c6552860b1a223fdfc9a711cac26d7a9d133666e9c7b2f7d",
+      "lock/dynamics/experiments/phase2/newton_xcheck_T45.py": "d6f95b5a0ce50f360eaf5eaaeebf910473399650955465315eb9c811ee14bfb3",
+      "lock/dynamics/run_final_newton.py": "7f49d861e207d4fe4904b8f3ec750700fd2d528e8140a4ed2462531e237d3d90"
+    },
+    "cases": [
+      {
+        "Newton_FK_max_abs_m": 2.4687489066366197e-05,
+        "actual_damping_inertia_cap": 64,
+        "actual_settle_seconds": 990,
+        "all_latched": true,
+        "body_COM_offsets_m": [
+          0.09,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003
+        ],
+        "child_hinge_offsets_m": [
+          0.0,
+          0.015,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015,
+          -0.021,
+          0.015
+        ],
+        "control_main_seconds": 600.0,
+        "control_root_seconds": 180.0,
+        "device": "cuda:0",
+        "dt": 0.01,
+        "final_err_deg_newton": 0.03593820425162577,
+        "final_err_deg_warp": 0.03594105318188667,
+        "final_mass_sc_kg": 3022.4824112870997,
+        "finite": true,
+        "geometry_SHA256": "10f1cb08445b936687a2dd1dfd527e5dc948548baeb382e6976b564b4f675105",
+        "implicit_damp": true,
+        "kind": "solar",
+        "klat": 5000.0,
+        "klat_Nm_rad": 5000.0,
+        "label": "lock_solar_780_0.01",
+        "latch_damping_policy": "0.7 critical against min(outboard inertia, 64 times own hinge inertia); hardware qualification OPEN",
+        "latch_time_diff_s_max": 0.0400390625,
+        "lengths_m": [
+          3.6365999999999996,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106,
+          1.5388454501020106
+        ],
+        "masses_kg": [
+          4.1,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865,
+          20.878389434750865
+        ],
+        "max_angle_diff_deg": 0.006147383246570826,
+        "max_angle_diff_deg_per_hinge_p50": 0.0025341149885207415,
+        "n_latched_newton": 21,
+        "n_latched_warp": 21,
+        "newton_compile_and_run_s": 1432.7508649749216,
+        "newton_version": "1.7.0",
+        "newton_wall_s": 1432.495864391327,
+        "peak_root_force_warp_N": 5.3969011306762695,
+        "peak_root_moment_newton": 63.00923538208008,
+        "peak_root_moment_warp": 63.01732635498047,
+        "peak_torque_newton": 63.00923538208008,
+        "peak_torque_warp": 63.01732635498047,
+        "rms_angle_diff_deg": 0.00010411890980321914,
+        "scope": "Rerun existing Newton Featherstone + Warp reference on final masses and spans.\nRigid panels, fixed bus; mirror-pair reactions cancel by ideal symmetry only. No Newton\ncontact claim: independent finite-box geometry checks are mandatory. Model setup fixes:\nfull sc mass, actual 4.1366-m bus-axis root, 140-panel loading, finite hinge/COM offsets, root-first motor sequence, 5-kNm/rad damped latches, motor disabled after lock, latch damping sized to bounded outboard inertia, graph batch 100.\n",
+        "settle_seconds": 990.0,
+        "t_latch_last_newton": 747.5,
+        "t_latch_last_warp": 747.5,
+        "t_nan_newton_s": null,
+        "tdep_s": 780.0,
+        "warp_version": "1.18.0",
+        "warp_wall_s": 30.811333894729614,
+        "zlat": 0.7
+      },
+      {
+        "Newton_FK_max_abs_m": 1.569381647570367e-05,
+        "actual_damping_inertia_cap": 1,
+        "actual_settle_seconds": 30,
+        "all_latched": true,
+        "body_COM_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "child_hinge_offsets_m": [
+          0.0,
+          -0.005,
+          0.005,
+          -0.005,
+          0.005,
+          -0.005,
+          0.005,
+          -0.005,
+          0.005,
+          -0.005
+        ],
+        "control_main_seconds": 600.0,
+        "control_root_seconds": 60.0,
+        "device": "cuda:0",
+        "dt": 0.01,
+        "final_err_deg_newton": 0.0007272246837964795,
+        "final_err_deg_warp": 0.0007288954802788794,
+        "final_mass_sc_kg": 3022.4824112870997,
+        "finite": true,
+        "geometry_SHA256": "10f1cb08445b936687a2dd1dfd527e5dc948548baeb382e6976b564b4f675105",
+        "implicit_damp": true,
+        "kind": "radiator",
+        "klat": 5000.0,
+        "klat_Nm_rad": 5000.0,
+        "label": "lock_radiator_660_0.01",
+        "latch_time_diff_s_max": 0.010009765625,
+        "lengths_m": [
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486,
+          2.9486
+        ],
+        "masses_kg": [
+          4.758436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162,
+          3.258436238837162
+        ],
+        "max_angle_diff_deg": 0.0009618101175874472,
+        "max_angle_diff_deg_per_hinge_p50": 0.00035539944656193256,
+        "n_latched_newton": 10,
+        "n_latched_warp": 10,
+        "newton_compile_and_run_s": 80.58592551096808,
+        "newton_version": "1.7.0",
+        "newton_wall_s": 79.78919076919556,
+        "peak_root_force_warp_N": 0.5518578290939331,
+        "peak_root_moment_newton": 4.306819915771484,
+        "peak_root_moment_warp": 4.316978454589844,
+        "peak_torque_newton": 4.306819915771484,
+        "peak_torque_warp": 4.316978454589844,
+        "rms_angle_diff_deg": 7.581108366139233e-05,
+        "scope": "Rerun existing Newton Featherstone + Warp reference on final masses and spans.\nRigid panels, fixed bus; mirror-pair reactions cancel by ideal symmetry only. No Newton\ncontact claim: independent finite-box geometry checks are mandatory. Model setup fixes:\nfull sc mass, actual 4.1366-m bus-axis root, 140-panel loading, finite hinge/COM offsets, root-first motor sequence, 5-kNm/rad damped latches, motor disabled after lock, graph batch 100.\n",
+        "t_latch_last_newton": 598.4299926757812,
+        "t_latch_last_warp": 598.4400024414062,
+        "t_nan_newton_s": null,
+        "tdep_s": 660.0,
+        "warp_version": "1.18.0",
+        "warp_wall_s": 7.8772218227386475,
+        "zlat": 0.7
+      }
+    ],
+    "passed": false,
+    "precision": "Newton and independent Warp dynamics fp32; thermal/parity studies separately fp64",
+    "reaction_force_timestep_status": "OPEN",
+    "required_model_checks_passed": true,
+    "scope": "Final representative rigid solar wing and radiator column; fixed bus. Not full-wing elastic/contact/hose/fleet/launcher qualification. Width fold screened geometrically, not an independently actuated dynamics model.",
+    "timestep_checks": [
+      {
+        "half_step": {
+          "device": "cuda:0",
+          "dt": 0.005,
+          "final_error_deg": 0.035953063517808914,
+          "finite": true,
+          "kind": "solar",
+          "latched": 21,
+          "peak_hinge_Nm": 63.05518341064453,
+          "peak_root_force_N": 7.633431434631348,
+          "peak_root_moment_Nm": 63.05518341064453,
+          "scope": "Independent half-timestep Warp reference, identical final rigid dynamics setup.\nLoads only the setup prefix of our audited final runner, not its Newton solve.\n",
+          "tool": "NVIDIA Warp",
+          "wall_s": 61.61749339103699,
+          "warp": "1.18.0"
+        },
+        "kind": "solar",
+        "passed": false,
+        "relative_root_force_difference": 0.4144100938300541,
+        "relative_root_moment_difference": 0.000600740428922855,
+        "threshold_relative": 0.1
+      },
+      {
+        "half_step": {
+          "device": "cuda:0",
+          "dt": 0.005,
+          "final_error_deg": 0.0007086559198796749,
+          "finite": true,
+          "kind": "radiator",
+          "latched": 10,
+          "peak_hinge_Nm": 4.275866508483887,
+          "peak_root_force_N": 0.566528856754303,
+          "peak_root_moment_Nm": 4.275866508483887,
+          "scope": "Independent half-timestep Warp reference, identical final rigid dynamics setup.\nLoads only the setup prefix of our audited final runner, not its Newton solve.\n",
+          "tool": "NVIDIA Warp",
+          "wall_s": 5.634313106536865,
+          "warp": "1.18.0"
+        },
+        "kind": "radiator",
+        "passed": true,
+        "relative_root_force_difference": 0.02658479573345453,
+        "relative_root_moment_difference": 0.009523315100691898,
+        "threshold_relative": 0.1
+      }
+    ]
+  },
+  "operational": {
+    "annual_average_IT_MW_per_launch": 4.9330105045725,
+    "annual_average_IT_kW_per_sc": 164.43368348574998,
+    "average_requirement_status": "OPEN: public 175 kW average is not met by this175-kW sunlit pause/restart schedule; wording is nominal (sunlit) pending author decision.",
+    "boiling": {
+      "assumed_property_pressure_Pa": 300000,
+      "peak_inlet_K": 391.9053633,
+      "pure_water_surrogate_pressure_margin_Pa": 109032.27130228281,
+      "pure_water_surrogate_psat_Pa": 190967.7286977172,
+      "pure_water_surrogate_saturation_K": 406.6724204609365,
+      "pure_water_surrogate_temperature_margin_K": 14.767057160936531,
+      "qualification": "3 bar is the fluid-property evaluation pressure, NOT a specified accumulator setpoint. Pure-water surrogate is not a validated MPG40 saturation calculation; pressurization, transients and life remain OPEN.",
+      "status": "OPEN"
+    },
+    "coating_absorptivity_spec": 0.2,
+    "coating_emissivity_spec": 0.92,
+    "emissivity_sensitivity": [
+      {
+        "delta_inlet_K": 3.9451923744953206,
+        "emissivity": 0.88,
+        "native_anchored_inlet_K": 395.85055567449524
+      },
+      {
+        "delta_inlet_K": 1.9442488242488025,
+        "emissivity": 0.9,
+        "native_anchored_inlet_K": 393.8496121242488
+      },
+      {
+        "delta_inlet_K": 0.0,
+        "emissivity": 0.92,
+        "native_anchored_inlet_K": 391.9053633
+      },
+      {
+        "delta_inlet_K": -1.89038324426906,
+        "emissivity": 0.94,
+        "native_anchored_inlet_K": 390.0149800557309
+      },
+      {
+        "delta_inlet_K": -3.7294734263371083,
+        "emissivity": 0.96,
+        "native_anchored_inlet_K": 388.17588987366287
+      }
+    ],
+    "hydraulic": {
+      "Darcy_f": 0.03210071545582684,
+      "Re": 9330.132157,
+      "head_remainder_for_fittings_Pa": 24965.368176713688,
+      "qualification": "Smooth circular straight-tube Darcy screen only; headers, root hoses, fittings, roughness and full circuit qualification OPEN. No pump/mass credit.",
+      "retained_scaled_head_Pa": 73474.77367534538,
+      "series_length_m": 29.445999999999998,
+      "status": "PASS_STRAIGHT_COLUMN_SCREEN",
+      "straight_column_dp_Pa": 48509.40549863169,
+      "velocity_m_s": 0.8577158300826973
+    },
+    "module_seam": {
+      "additional_axis_clearance_m": 0.0005,
+      "gross_planform_loss_fraction": 0.014946270269360268,
+      "interfering_pairs_examined": 252,
+      "local_active_surface_W_m2_required": 324.5508243366797,
+      "recommended_m": 0.023,
+      "required_max_m": 0.02268067515751028,
+      "scope": "One-dimensional exact SAT support bound for the recorded width-fold path.\nShrinking only finite opaque leaf bodies inside unchanged gross module/hinge envelopes.\nAssembly masses, hinge pitch and conservative gross assembly inertia unchanged.\n",
+      "within_bounded_30mm_fix": true,
+      "worst_pair": {
+        "a": "plate_0",
+        "b": "plate_6",
+        "frame": 61,
+        "required_m": 0.02268067515751028
+      }
+    },
+    "nominal_sunlit_kW": 175.0,
+    "optical_basis": "BOL epsilon0.92/alpha0.20. Deterministic epsilon sensitivity uses the frozen surrogate/independent SciPy root delta anchored to native inlet. Not EOL coating qualification.",
+    "public_envelope": {
+      "model_full_gross_wingspan_m": 69.82701800408043,
+      "model_radiator_column_m": 29.485999999999997,
+      "model_specific_peak_kW_t": 82.71346727780842,
+      "public_height_m": 30,
+      "public_specific_kW_t": 75,
+      "public_wingspan_m": 75,
+      "qualification": "Public dimensions are approximate; axis interpretation is ours, not reverse-engineered flight geometry.",
+      "source": "https://www.spacex.com/spacexai/starmind"
+    },
+    "safe_mode_energy": {
+      "assumed_eclipse_bus_kW": 2.0,
+      "assumed_pack_specific_Wh_kg": [
+        100.0,
+        150.0
+      ],
+      "eclipse_DoD_fraction": [
+        0.22577777781333336,
+        0.15051851854222223
+      ],
+      "eclipse_energy_kWh": 0.7055555556666667,
+      "five_year_eclipse_cycles": 6955,
+      "nameplate_kWh": [
+        3.125,
+        4.6875
+      ],
+      "pack_mass_kg": 31.25,
+      "qualification": "OPEN: assumed safe-mode bus equals modeled sunlit auxiliary load; usable capacity, aging, temperature, reserve, heater/ADCS loads and cycle life not certified.",
+      "status": "PASS_CONDITIONAL_SCREEN"
+    },
+    "scope": "Supplementary no-credit screens. Engineering assumptions explicit; no geometry/mass/solar-size changes.",
+    "surrogate_sha256": "22b39be64975047a1d2560b0de45e0633954e5245a224f9c9a2e901455090ebd"
+  },
+  "optical": {
+    "mast_screen": "Conservative opaque-area bound, not a validated prediction; a new conducting/radiating support model and altered packing would be required.",
+    "new_mast_no_emission_credit_upper_blockage_peak_inlet_K": 401.3092862430062,
+    "new_yoke_if_differential_view_credit_taken_peak_inlet_K": 391.88607578710577,
+    "retained_fluid_rating_K": 393.0,
+    "retained_peak_inlet_K": 391.90536333083764,
+    "scope": "Native-model optical screens; no added thermal or mass credit adopted.",
+    "view_credit_adopted": false
+  },
+  "packing": {
+    "PASS": true,
+    "caveat": "Idealized component envelopes, inherited 50-mm adapters and 20-mm interlayer gap; connected harness/hinge interfaces, rails, CG and flight dispenser remain OPEN.",
+    "components_per_sc": 20,
+    "count": 30,
+    "min_component_separating_gap_m": 0.010000000000000009,
+    "min_payload_profile_radial_margin_m": 0.003950441069623167,
+    "panel_fold_pitch_mm": 10.0,
+    "radiator_stacks_per_sc": 14,
+    "rigid_solar_yokes_per_sc": 2,
+    "scope": "Independent exact AABB + payload-profile validation of constructive packing.",
+    "top_payload_m": 15.6
+  },
+  "proposal_scope": "Owner-approved high-level first iteration; repaired representative rigid deployment and local supported-panel FEA; whole-system qualification OPEN.",
+  "seam_requirement": {
+    "additional_axis_clearance_m": 0.0005,
+    "gross_planform_loss_fraction": 0.014946270269360268,
+    "interfering_pairs_examined": 252,
+    "local_active_surface_W_m2_required": 324.5508243366797,
+    "recommended_m": 0.023,
+    "required_max_m": 0.02268067515751028,
+    "scope": "One-dimensional exact SAT support bound for the recorded width-fold path.\nShrinking only finite opaque leaf bodies inside unchanged gross module/hinge envelopes.\nAssembly masses, hinge pitch and conservative gross assembly inertia unchanged.\n",
+    "within_bounded_30mm_fix": true,
+    "worst_pair": {
+      "a": "plate_0",
+      "b": "plate_6",
+      "frame": 61,
+      "required_m": 0.02268067515751028
+    }
+  },
+  "settled_optics": {
+    "array_delta": -0.00030446137401164697,
+    "ideal_array_view_factor": 0.02955156361962675,
+    "optical_credit_adopted": false,
+    "repaired_yoke_differential_view": -0.0001996091908781849,
+    "retained_old_thermal_view_is_conservative": true,
+    "scope": "Differential Nusselt contour screen on settled final Newton rigid geometry.\nSame inherited three radiator points/panel. This tests the no-optical-credit decision;\nnot a new array-temperature/reradiation, bus-occlusion or flexible-body qualification.\n",
+    "settled_array_view_factor": 0.0292471022456151,
+    "total_differential_blocked_view_factor": -0.0005040705648898319
+  },
+  "sources": {
+    "lock/OPERATIONAL_SCREENS.json": "8bb9c1afe6260cdfa282442b8a7634db8ea7851080527137b80a6d2e141fc31d",
+    "lock/checks/PACKING_VALIDATION.json": "e7b8bf2471062c6d67cb2af01cd46080f6f9477c8c8762417b27bc7649dcd2dc",
+    "lock/dynamics/FINITE_CLEARANCE.json": "67fc864685c9dbb773b4e5be21fb3a4a22bdbdbd86bd2f001a889309178bf913",
+    "lock/dynamics/NEWTON_FINAL.json": "14d83d7fe1e5adbe0860d7394f863aa8ae5768ece29402e07743326d31a9468c",
+    "lock/dynamics/SEAM_REQUIREMENT.json": "7ddeddae12a8a04c47e3a74a9116c352c12a62928dbfa97f4b835fcd481f422a",
+    "lock/dynamics/TRACE_CLEARANCE.json": "8c6e7c4f2118108e7bda36131b71db9b8004db748a00e1fda751195677e4909e",
+    "lock/fea/FEA_EVIDENCE.json": "ddff0556968e0dae32c5c9d2d596bf5d17ff94b555b093e1b1250d50a405c808",
+    "lock/fea/GLOBAL_STRUCTURAL_SCREEN.json": "63cbcd0a5a84198b4f475f2b4f6239c9eab0bc61b4ec55d7f67ded98effaf69d",
+    "lock/fea/ROOT_YOKE_LOAD_CHECK.json": "62f007352dc657cee156ecc6c2b9c994ff2fbc8e3e9ca6f89ee744b894b48656",
+    "lock/fea/ROOT_YOKE_SCREEN.json": "90ecbfb28c06899f485fff82878cae350ab7031eee4c76b0d71b63144721f385",
+    "lock/header/HEADER_REROUTE_VERDICT.json": "c399f452ae0796f28696ca073c8149ba3df2a39352a13d8088d8bda4840f0960",
+    "lock/render/SETTLED_OPTICS.json": "6e311d576207dd07723d43f9c7022e5b91e456c682a4f487de4bda5d73154330",
+    "lock/render/THERMAL_GEOMETRY_SCREEN.json": "8455b21e3ba72b3d8f122c43323af83eb7630d41d1cc31e4f344e6883182a25a"
+  },
+  "tested_geometry_input_sha256": "10f1cb08445b936687a2dd1dfd527e5dc948548baeb382e6976b564b4f675105",
+  "trace_clearance": {
+    "passed": true,
+    "penetration_tolerance_m": 1e-06,
+    "rows": [
+      {
+        "intersecting_samples": 0,
+        "min_separating_axis_gap_m": 0.000929566253190778,
+        "samples": 961,
+        "stage": "solar_Newton",
+        "worst_pairs": []
+      },
+      {
+        "intersecting_samples": 0,
+        "min_separating_axis_gap_m": -4.440892098500626e-16,
+        "samples": 121,
+        "stage": "width_fold",
+        "worst_pairs": []
+      },
+      {
+        "intersecting_samples": 0,
+        "min_separating_axis_gap_m": -4.440892098500626e-16,
+        "samples": 691,
+        "stage": "radiator_Newton",
+        "worst_pairs": []
+      }
+    ],
+    "scope": "Finite-body collision checks on recorded Newton trajectories, plus width fold.\nRepresentative spacecraft, rigid bodies; neither continuous-time contact proof nor\nfull fleet release/hose/hinge/flexible-body qualification.\n",
+    "source_hashes": {
+      "lock/dynamics/results_lock/radiator_t660_dt0.01_kl5000.npz": "4395c464c1b1debb055b6c2873808a34a84c2eff5fb478b664c6c6e0cc64bab7",
+      "lock/dynamics/results_lock/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f"
+    },
+    "wall_s": 76.70361684600357
+  },
+  "yoke": {
+    "assumed_wing_length_m": 30.776909002040213,
+    "assumed_wing_mass_kg": 417.5677886950173,
+    "buckling_FS": 1.5,
+    "buckling_root_moment_capacity_weak_Nm": 137.18115550570326,
+    "cells": 5,
+    "length_m": 3.6366,
+    "local_plate_buckling_stress_MPa": 23.44302955019744,
+    "metal_mass_kg": 4.0724380730880005,
+    "outer_depth_m": 0.06,
+    "outer_wall_m": 0.00048,
+    "outer_width_m": 0.25,
+    "qualification": "OPEN: fabricated wall tolerance, braze/re-age and fittings, local distortion, panel/hinge flexibility, complete load path. 4.1 kg is a historical root-model allowance within existing structure/deployment lines, not a new independent ledger credit.",
+    "records": {
+      "strong_y": {
+        "EI_N_m2": 172333.10090328672,
+        "frequencies_Hz": [
+          0.08736793075248707,
+          3.497821840849751,
+          106.00417386032798,
+          291.54125656591503
+        ],
+        "tip_angle_rad_per_N": 3.8370050468523803e-05,
+        "tip_angle_rad_per_Nm": 2.11021561184332e-05,
+        "tip_displacement_m_per_N": 9.302435035513635e-05,
+        "tip_displacement_m_per_Nm": 3.837005046856787e-05
+      },
+      "weak_z": {
+        "EI_N_m2": 18143.14023427278,
+        "frequencies_Hz": [
+          0.02835730507530164,
+          1.1349296744582542,
+          34.39496273080871,
+          94.59580964585443
+        ],
+        "tip_angle_rad_per_N": 0.0003644589466734964,
+        "tip_angle_rad_per_Nm": 0.0002004393921175681,
+        "tip_displacement_m_per_N": 0.0008835942703085266,
+        "tip_displacement_m_per_Nm": 0.00036445894667374624
+      }
+    },
+    "reinforcement_trial": {
+      "OD_m": 0.12,
+      "added_EI_per_wing_N_m2": 55269.342822491184,
+      "allowance_for_new_joints_spreaders_cables_kg": 18.0,
+      "blocked_planform_fraction_upper_bound": 0.094470633108318,
+      "extra_mass_kg": 89.67126445713855,
+      "mast_metal_kg": 71.67126445713855,
+      "masts": 4,
+      "material": "Al6061-T6",
+      "packed_column_height_m": 1.2,
+      "verdict": "NOT ADOPTED: 120-mm mast contradicts 10-mm integrated fold; four new 1.2-m-high bundles and forty structural hinges, optical/thermal recoupling and packing redesign are large cascading changes. Frequencies alone do not close a deployable radiator.",
+      "wall_m": 0.0006
+    },
+    "retained_mass_allocation_kg": 4.1,
+    "scope": "Finite-element beam screen of repaired five-cell Al6061 root yoke.\nIncludes the full rigid solar-wing translation/rotation mass matrix; solar laminate\nflexibility and latch compliance omitted, so frequencies are upper-bound screens.\nThe 4.1-kg historical root allocation is retained; no metal-mass credit is taken.\n",
+    "wall_s": 0.03060532199742738,
+    "web_wall_m": 0.0005,
+    "within_root_metal_allocation": true,
+    "yield_root_moment_capacity_weak_Nm": 1692.3064524275724
+  },
+  "yoke_loads": {
+    "FS1p5_buckling_capacity_Nm": 137.18115550570326,
+    "buckling_margin": 0.31029593176757464,
+    "conservative_weak_axis_bending_envelope_Nm": 104.69478854341507,
+    "force_uncertainty_multiplier": 1.5,
+    "measured_root_force_N": 7.633431434631348,
+    "measured_root_moment_Nm": 63.05518341064453,
+    "metal_mass_kg": 4.0724380730880005,
+    "passed": true,
+    "qualification": "Allocated damper/hinge masses, manufacturing tolerance, fittings/bearing, local launch support and flexible-wing coupling remain OPEN.",
+    "reaction_force_convergence_status": "OPEN",
+    "retained_root_mass_kg": 4.1,
+    "scope": "Conservative repaired-yoke load transfer from final rigid deployment.\nRoot-moment plus force-times-full-span is an intentionally conservative envelope;\nnot a substitute for joint fitting/bearing/local distortion qualification.\n"
+  }
+}

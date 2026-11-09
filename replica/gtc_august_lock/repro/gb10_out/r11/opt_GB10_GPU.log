@@ -1,0 +1,9 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module gpu_core 84eddc7 load on device 'cuda:0' took 15.77 ms  (cached)
+OPT_GB10_GPU.json {"gradient_check": [{"parameter": "panel_relaxation", "tape_gradient": -2069.739718295686, "finite_difference": -2069.739718740493, "relative_error": 2.149096451674209e-10, "passed": true}, {"parameter": "fin_length", "tape_gradient": 453.13745911038086, "finite_difference": 453.13745915223075, "relative_error": 9.235583213448736e-11, "passed": true}, {"parameter": "fin_thickness", "tape_gradient": -197.2955064297381, "finite_difference": -197.29550625413592, "relative_error": 8.900466068862973e-10, "passed": true}], "best_relaxed": {"radiator_mass_kg": 289.4887971757325, "radiator_panels_relaxed": 140.0, "half_fin_m": 0.02070763388740557, "fin_thickness_m": 0.00022528203310944402, "GPU_nominal_K": 366.1980173428316, "inlet_peak_K": 391.9996550707631, "run": 1, "step": 282, "z": [1.0, 0.6777248639732528, 0.31320508277361003]}, "passed": true, "sweep_cross_check": {"grid_min_radiator_mass_kg": 291.37615577613127, "relaxed_best_kg": 289.4887971757325, "relative_difference": -0.0064773955005736905, "note": "Same radiator objective and temperature goals; continuous relaxation may be below discrete grid. The adopted minimum-spacecraft-mass choice may differ."}}

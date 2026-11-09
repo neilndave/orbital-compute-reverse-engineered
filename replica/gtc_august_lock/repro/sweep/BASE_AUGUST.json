@@ -1,0 +1,895 @@
+{
+  "case": "August",
+  "point": "A4_C1",
+  "spacecraft_count": {
+    "value": 30,
+    "unit": "-",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].count",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "installed_peak_per_sc_kW": {
+    "value": 250.0,
+    "unit": "kW",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].peak_per_sc_kW",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "nominal_per_sc_kW": {
+    "value": 175.0,
+    "unit": "kW",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].nominal_per_sc_kW",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "installed_peak_per_launch_MW": {
+    "value": 7.5,
+    "unit": "MW",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].peak_installed_compute_MW",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "installed peak compute-power-equivalent rating; not continuous delivery"
+  },
+  "nominal_IT_per_launch_MW": {
+    "value": 5.25,
+    "unit": "MW",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].nominal_fleet_IT_MW",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "sc_mass_kg": {
+    "value": 2915.2675402769264,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].sc_mass_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+    "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "launch_mass_kg": {
+    "value": 89458.0262083078,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].launch_total_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+    "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "includes 2 t all-in dispenser; 0 % weight reserve"
+  },
+  "headroom_to_100t_kg": {
+    "value": 10541.973791692202,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].margin_to_100t_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+    "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "alias of reserve_kg (t615)"
+  },
+  "reserve_kg": {
+    "value": 10541.973791692202,
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].margin_to_100t_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+    "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "RESERVE per launch = all unused mass under 100 t (0 % minimum)"
+  },
+  "reserve_kg_per_sc": {
+    "value": 351.39912638974005,
+    "unit": "kg",
+    "derivation": "reserve_kg / spacecraft_count"
+  },
+  "reserve_t_per_launch": {
+    "value": 10.541973791692202,
+    "unit": "t",
+    "derivation": "reserve_kg / 1000"
+  },
+  "reserve_pct_of_100t": {
+    "value": 10.541973791692202,
+    "unit": "%",
+    "derivation": "reserve_kg / 100000 x 100"
+  },
+  "ledger_kg": {
+    "value": {
+      "rack": 640.38,
+      "array": 835.1355773900347,
+      "radiator": 236.44935387116035,
+      "coolant_loop": 328.74310544966113,
+      "structure_mech": 116.48,
+      "power_electronics": 63.32630861952156,
+      "harness": 38.38984290157675,
+      "propulsion_adcs": 157.28,
+      "avionics_links": 67.6,
+      "adapter": 0.0,
+      "deployment_mechanisms": 120.0,
+      "MMOD_spare_panel_allocation": 140.0,
+      "freeze_restart_including_battery": 90.0,
+      "life_and_compute_provision": 80.0,
+      "propellant_delta_al_radiator_c13_prop": 0.5834974374609843,
+      "propellant_delta_inherited_c13_prop": 0.8998546075107967
+    },
+    "unit": "kg",
+    "source_file": "stages/spin1/SPIN1_EXACT.json",
+    "json_path": "fleets[1].ledger_kg",
+    "stage": "s13_assemble_spin1",
+    "script": "stages/spin1/assemble_spin1.py",
+    "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+    "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "GPU_nominal_K": {
+    "value": 375.8260269391473,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.GPU_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+  },
+  "HBM_nominal_K": {
+    "value": 371.5042269391473,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.HBM_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+  },
+  "GPU_peak_K": {
+    "value": 416.196306081264,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T1_MPG40_peak.GPU_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "note": "full-peak steady sunlit BOL diagnostic; no battery; eclipse/restart pause retained"
+  },
+  "HBM_peak_K": {
+    "value": 410.02230608126405,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T1_MPG40_peak.HBM_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+  },
+  "coolant_supply_nominal_K": {
+    "value": 348.9042269391473,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.coolant_supply_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+  },
+  "coolant_radiator_inlet_nominal_K": {
+    "value": 371.0477239374916,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.coolant_radiator_inlet_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)"
+  },
+  "coolant_radiator_inlet_peak_K": {
+    "value": 404.0625123710771,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T1_MPG40_peak.coolant_radiator_inlet_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "upstream_NVIDIA": "fin-efficiency table inputs/ai1_replica/gb10_final_al/table_AL6061_L26_t0p225.json (sha256 bf440d5df2d90320...) produced by NVIDIA Warp fp64 CUDA on GB10 (fin_al.py, t410 table format, Warp 1.18.0, 2026-11-06 PT); thermal root re-verified by native Warp fp64 GB10 parity (GB10_FINAL_PARITY_RESULT.json)",
+    "note": "exceeds Dow 393.15 K recommended max"
+  },
+  "rack_rise_K": {
+    "value": 20.0,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2 (fixed dT_loop 20 K in operating())",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+    "note": "ASSUMED loop convention"
+  },
+  "radiator_rise_nominal_K": {
+    "value": 22.14349699834427,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.radiator_delta_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "radiator_rise_peak_K": {
+    "value": 22.040206289813053,
+    "unit": "K",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T1_MPG40_peak.radiator_delta_K",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "rejected_heat_nominal_W": {
+    "value": 193755.59873551235,
+    "unit": "W",
+    "source_file": "stages/spin1/THERMAL_SPIN1.json",
+    "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.total_solar_power_and_rejected_heat_W",
+    "stage": "s08_thermal",
+    "script": "stages/spin1/thermal_spin1.py",
+    "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+    "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "radiator_effective_area_m2": {
+    "value": 136.0469306233244,
+    "unit": "m2",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].radiator_effective_area_m2",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "radiator_panels": {
+    "value": 128,
+    "unit": "-",
+    "source_file": "stages/baseline/GTC_SCOPED_BASELINE_EXACT.json",
+    "json_path": "fleets[1].physical_panels",
+    "stage": "s01_baseline_freeze",
+    "script": "stages/baseline/freeze_scoped_baseline.py",
+    "script_sha256": "3499b8d7cd51356c7ed1ca25d0e983616427ca72c7fff52f00aec02dffa822d6",
+    "source_file_sha256": "6e2d1b5bf3ce063496c4051dbb834caf00ebe80127e2d191104079e5992f7833",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "solar_area_m2": {
+    "value": 861.753452057126,
+    "unit": "m2",
+    "source_file": "stages/spin1/POWER_SPIN1.json",
+    "json_path": "cases/August.adopted_array.area_m2",
+    "stage": "s03_power",
+    "script": "stages/spin1/power_spin1.py",
+    "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+    "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+    "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+  },
+  "coolant": {
+    "fluid": "MPG40 (40 wt% propylene glycol), CoolProp INCOMP::MPG[0.4]",
+    "liquidus_K": 252.05,
+    "loop_package_kg": {
+      "value": 328.74310544966113,
+      "unit": "kg",
+      "source_file": "stages/spin1/SPIN1_EXACT.json",
+      "json_path": "fleets[1].ledger_kg.coolant_loop",
+      "stage": "s13_assemble_spin1",
+      "script": "stages/spin1/assemble_spin1.py",
+      "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+      "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "MPG40_inventory_kg": {
+      "value": 191.05127556444728,
+      "unit": "kg",
+      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
+      "json_path": "August.MPG40_inventory_kg",
+      "stage": "s12_freeze_mass",
+      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
+      "script_sha256": "f5ae27edbe004d15e9cb47fcf61a100c494874e9116325778b343435636cec6e",
+      "source_file_sha256": "534ec550154b2807581d5a52508811f34586217a94f0d95a670012642741ac90",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "mass_flow_kg_s": {
+      "value": 2.2358878728371065,
+      "unit": "kg/s",
+      "source_file": "stages/spin1/THERMAL_SPIN1.json",
+      "json_path": "cases/August.T2_rec_nominal_MPG40_plus_recharge.mass_flow_kg_s",
+      "stage": "s08_thermal",
+      "script": "stages/spin1/thermal_spin1.py",
+      "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+      "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "swap_delta_kg": {
+      "value": 15.074956069324571,
+      "unit": "kg",
+      "source_file": "stages/spin1/THERMAL_SPIN1.json",
+      "json_path": "cases/August.coolant_line_delta_kg",
+      "stage": "s08_thermal",
+      "script": "stages/spin1/thermal_spin1.py",
+      "script_sha256": "1625d02775999d131eb3c30592b3efc68bce1bf76ffa100e6731d9723a5d3458",
+      "source_file_sha256": "cd69682513de38cea145d7d2e36edbfd1fab18cd219a2a6b0b4748ac24b0d282",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    }
+  },
+  "battery": {
+    "adopted": false,
+    "total_kg": {
+      "value": 0.0,
+      "unit": "kg",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.peak_battery_kg",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "safe_mode_kg": 31.25,
+    "note": "31.25 kg safe-mode pack retained once inside freeze hardware; no peak pack/BCDR/radiator/heaters/integration/recharge"
+  },
+  "array_v3": {
+    "original_area_m2": {
+      "value": 839.7584935189456,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.original_area_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "area_m2": {
+      "value": 861.753452057126,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.area_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "added_area_m2": {
+      "value": 21.994958538180413,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.added_area_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "added_area_frac": {
+      "value": 0.02619200485369566,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.added_area_frac",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "array_kg": {
+      "value": 835.1355773900347,
+      "unit": "kg",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.array_kg",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "added_kg": {
+      "value": 21.315577390034605,
+      "unit": "kg",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.added_kg",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "kg_per_m2_inherited": {
+      "value": 0.9691119604992,
+      "unit": "kg/m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.kg_per_m2_inherited",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "area_ratio": {
+      "value": 1.0261920048536957,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.area_ratio",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "array_gross_BOL_W": {
+      "value": 275502.57862266316,
+      "unit": "W",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.array_gross_BOL_W",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "actual_peak_input_W": {
+      "value": 275502.57862266316,
+      "unit": "W",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.actual_peak_input_W",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "peak_deficit_BOL_W": {
+      "value": 0.0,
+      "unit": "W",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.peak_deficit_BOL_W",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "wing_length_m": {
+      "value": 30.776909002040213,
+      "unit": "m",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.wing_length_m",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "wing_length_change_m": {
+      "value": 0.7855342335064434,
+      "unit": "m",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.wing_length_change_m",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "legacy_option_added_area_m2": {
+      "value": 20.46668270016103,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.legacy_option_added_area_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "extra_area_for_MPG40_pumps_m2": {
+      "value": 1.5282758380193826,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.extra_area_for_MPG40_pumps_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "old_array_view_factor": {
+      "value": 0.031967952059897914,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.old_array_view_factor",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "new_array_view_factor": {
+      "value": 0.03206162608321116,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.new_array_view_factor",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "delta_array_view_factor": {
+      "value": 9.367402331324909e-05,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.delta_array_view_factor",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "effective_view_old": {
+      "value": 0.9659851763576578,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.effective_view_old",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "effective_view_new": {
+      "value": 0.9658915023343445,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.effective_view_new",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "peak_battery_kg": {
+      "value": 0.0,
+      "unit": "kg",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.peak_battery_kg",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "peak_battery_radiator_m2": {
+      "value": 0.0,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.peak_battery_radiator_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "recharge_heat_W": {
+      "value": 0.0,
+      "unit": "W",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.recharge_heat_W",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "EOL_peak_deficit_W": {
+      "value": 16530.154717359805,
+      "unit": "W",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.EOL_peak_deficit_W",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "EOL_cover_total_area_m2": {
+      "value": 916.758991550134,
+      "unit": "m2",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.EOL_cover_total_area_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "EOL_cover_extra_vs_v3_m2": {
+      "value": 55.00553949300802,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.EOL_cover_extra_vs_v3_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "EOL_cover_growth_vs_v2_m2": {
+      "value": 77.0004980311885,
+      "unit": "-",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.EOL_cover_growth_vs_v2_m2",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "EOL_cover_extra_mass_vs_v3_kg": {
+      "value": 53.30652621638517,
+      "unit": "kg",
+      "source_file": "stages/spin1/POWER_SPIN1.json",
+      "json_path": "cases/August.adopted_array.EOL_cover_extra_mass_vs_v3_kg",
+      "stage": "s03_power",
+      "script": "stages/spin1/power_spin1.py",
+      "script_sha256": "bf2db08bc33a81f5b26a402b5fb69ae2e8805e0d5c2a65fa566b93e05c5ceb65",
+      "source_file_sha256": "811ce730ce8fa39f6bc17fc04ca8f5dd234488846564f03803ff82ebbacedd8c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    }
+  },
+  "freeze_restart": {
+    "hardware_kg": {
+      "value": 85.48640040265164,
+      "unit": "kg",
+      "source_file": "stages/spin1/freeze/FREEZE_MASS_SPIN1.json",
+      "json_path": "August.freeze_hw_total_kg",
+      "stage": "s12_freeze_mass",
+      "script": "stages/spin1/freeze/freeze_mass_spin1.py",
+      "script_sha256": "f5ae27edbe004d15e9cb47fcf61a100c494874e9116325778b343435636cec6e",
+      "source_file_sha256": "534ec550154b2807581d5a52508811f34586217a94f0d95a670012642741ac90",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "allocation_kg": 90.0,
+    "pass_hardware": true,
+    "pass_incl_glycol_swap": false,
+    "heater_kW": {
+      "value": 90.46,
+      "unit": "kW",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "json_path": "heater_kW",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "2b3edf52038fb6963af2f0b3f903b81d0f4cc9979008059442e2977999fe0005",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "restart_open_min_cold": {
+      "value": 4.81,
+      "unit": "min",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "json_path": "t_open_min",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "2b3edf52038fb6963af2f0b3f903b81d0f4cc9979008059442e2977999fe0005",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "restart_open_min_table": {
+      "value": 4.25,
+      "unit": "min",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_table_qt40.json",
+      "json_path": "t_open_min",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "dd5fc83c069e457d6b4e8eb148c40f025fde910ba2265b812e9ff08b823696a2",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "restart_open_min_60Wm": {
+      "value": 2.93,
+      "unit": "min",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt60.json",
+      "json_path": "t_open_min",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "45a0d02f5a8f5ff7301a11535e2c9084ef481bbd76cf3a042aea5a2ab16e199c",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "restart_open_min_550km_envelope": {
+      "value": 4.85,
+      "unit": "min",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40_e550max.json",
+      "json_path": "t_open_min",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "80d9745362d2a6a4306d8437a0332c4add35408649cde3f4cc2ee274385525e0",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+      "note": "21.66-min eclipse (550-km t590 count) conservative sensitivity"
+    },
+    "tube_min_K": {
+      "value": 189.847,
+      "unit": "K",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "json_path": "T_tube_fluid_min_in_eclipse",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "2b3edf52038fb6963af2f0b3f903b81d0f4cc9979008059442e2977999fe0005",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "header_fluid_min_K": {
+      "value": 303.515,
+      "unit": "K",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "json_path": "T_header_fluid_min_in_eclipse",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "2b3edf52038fb6963af2f0b3f903b81d0f4cc9979008059442e2977999fe0005",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "slush_max": {
+      "value": 0.385,
+      "unit": "-",
+      "source_file": "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "json_path": "ice_max_tube",
+      "stage": "s10_freeze_transients",
+      "script": "stages/spin1/freeze/nbf_spin1.py",
+      "script_sha256": "2e765fb8205e029787bb22c912db076caa60af7537aa0ad7dd4580fd4c16900d",
+      "source_file_sha256": "2b3edf52038fb6963af2f0b3f903b81d0f4cc9979008059442e2977999fe0005",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+      "note": "clamped at 0.385 (Dow-data limit)"
+    },
+    "added_downtime_h_per_yr": {
+      "value": 111.51183333333331,
+      "unit": "h/yr",
+      "derivation": "t_open_min(cold,40 W/m) x eclipsed_orbits_per_year / 60 = 4.81 x 1391 / 60",
+      "sources": [
+        "stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+        "stages/orbit/ECLIPSE_600KM.json"
+      ]
+    },
+    "added_downtime_frac": {
+      "value": 0.012720948361092096,
+      "unit": "-",
+      "derivation": "/ 8766 h"
+    },
+    "eclipse_pause_frac": {
+      "value": 0.04482818718787233,
+      "unit": "-",
+      "derivation": "shadow_hours_per_year / 8766 h",
+      "sources": [
+        "stages/orbit/ECLIPSE_600KM.json"
+      ]
+    },
+    "water_pumps_off": {
+      "ice_max_tube": 1.0,
+      "t_open_min": 10.06,
+      "verdict": "FAIL (freezes solid)"
+    },
+    "water_keepwarm_battery_kg": {
+      "value": 253.25697700868162,
+      "unit": "kg",
+      "source_file": "stages/spin1/freeze/WATER_KEEPWARM_SPIN1.json",
+      "json_path": "August.battery_pack_kg",
+      "stage": "s11_water_keepwarm",
+      "script": "stages/spin1/freeze/water_keepwarm.py",
+      "script_sha256": "907f6fbc32fa5b51b8cfb5aa8d0800abda077b7a364fdfa2b80b94655c3c07ed",
+      "source_file_sha256": "3a841810328f3b3866dcd4df58d52c0b4997676c7425fbf9300065573afdaba3",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+      "note": "alternative rejected: exceeds allocation"
+    }
+  },
+  "mmod": {
+    "trunk_shield_kg": {
+      "value": 8.726023450599161,
+      "unit": "kg",
+      "source_file": "stages/spin1/SPIN1_EXACT.json",
+      "json_path": "fleets[1].item3_mmod.trunk_SPF_recommended.total_kg",
+      "stage": "s13_assemble_spin1",
+      "script": "stages/spin1/assemble_spin1.py",
+      "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+      "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "trunk_PNP_5yr_flux_x3": {
+      "value": 0.9509650023884613,
+      "unit": "-",
+      "source_file": "stages/spin1/SPIN1_EXACT.json",
+      "json_path": "fleets[1].item3_mmod.trunk_SPF_recommended.PNP",
+      "stage": "s13_assemble_spin1",
+      "script": "stages/spin1/assemble_spin1.py",
+      "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+      "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "allocation_kg": 140.0,
+    "header_unprotected_N_5yr": {
+      "value": 636.3765422535147,
+      "unit": "-",
+      "source_file": "stages/spin1/SPIN1_EXACT.json",
+      "json_path": "fleets[1].item3_mmod.unprotected.ledger.N_5yr",
+      "stage": "s13_assemble_spin1",
+      "script": "stages/spin1/assemble_spin1.py",
+      "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+      "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself"
+    },
+    "header_N_le_1_kg": {
+      "value": 495.31546884726947,
+      "unit": "kg",
+      "source_file": "stages/spin1/SPIN1_EXACT.json",
+      "json_path": "fleets[1].item3_mmod.header_N_le_1_ledger_routing.total_kg",
+      "stage": "s13_assemble_spin1",
+      "script": "stages/spin1/assemble_spin1.py",
+      "script_sha256": "5909b533cbff1d69f138adca923f8b6617b50a2fe8d30e980311fa13c679fc29",
+      "source_file_sha256": "e00b082241c54ba521134392e26bb2611bfe141e8c79715f90bf0f0e1dc4d0e9",
+      "tool": "CPU Python 3 (numpy/scipy brentq/CoolProp); deterministic; no GPU in the pipeline itself",
+      "note": "OPEN; would cost +5.7-5.8 K GPU and push August over 100 t"
+    },
+    "header_status": "OPEN",
+    "spares_status": "OPEN"
+  },
+  "open_item_allocations_kg": {
+    "deployment_mechanisms": 120.0,
+    "MMOD_spare_panel_allocation": 140.0,
+    "freeze_restart_including_battery": 90.0,
+    "life_and_compute_provision": 80.0
+  },
+  "baseline_reference": {
+    "launch_mass_kg": 88261.43002066875,
+    "GPU_nominal_K": 375.583880722659,
+    "HBM_nominal_K": 371.262080722659,
+    "GPU_peak_K": 416.02968573910124
+  }
+}

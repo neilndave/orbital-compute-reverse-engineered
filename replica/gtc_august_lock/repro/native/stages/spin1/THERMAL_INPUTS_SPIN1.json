@@ -1,0 +1,10 @@
+{
+ "June": {
+  "recharge_heat_W": 0.0,
+  "header_protect_F_scale": 0.943380959252936
+ },
+ "August": {
+  "recharge_heat_W": 0.0,
+  "header_protect_F_scale": 0.9405477175757616
+ }
+}

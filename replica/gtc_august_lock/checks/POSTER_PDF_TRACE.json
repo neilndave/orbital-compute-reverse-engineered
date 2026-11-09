@@ -1,214 +1,135 @@
 {
-  "process_metrics_sha256": "47c6b39df9352de26fe118d15fbb0f3f6419723e78eaad5c98916f286f83ae80",
-  "repository_link": "https://github.com/OWNER/REPOSITORY",
-  "canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
-  "pdf_sha256": "ff40844ba24d857b5b72f04d74a7140ddb99374ffca0c3f7038b17c529a1a2a8",
-  "file": "GTC_POSTER_DRAFT.pdf",
-  "size_bytes": 2037889,
+  "layout_revision": "r11_candidate",
+  "file": "GTC_POSTER_R11_CANDIDATE_DRAFT.pdf",
+  "pdf_sha256": "b7a82a7564a0e52990aca0b3868df92d44cb54e766618b829dce1ac4ce405eb9",
+  "size_bytes": 1332052,
   "page_inches": [
     43,
     24
   ],
-  "margin_inches": 1,
-  "source_generator_sha256": "801faa07b7ec7dba236c682df1fe56f91865385fc107bb16cb47d4970d63ea1d",
-  "all_text": "Agent-orchestrated engineering: batch first, verify natively\nthe author\nOne engineer + an AI agent + open analysis: GPU exploration with native verification on NVIDIA GB10.\n8.49 million designs/s; 33.1\u00d7 warm sweep speedup vs one GB10 Cortex-X925 CPU core.\n\u224811-day documented build | 1.81M designs screened | 1.05M uncertainty scenarios | 2 release-audit gates\nHuman requirements /\ndesign decisions\nAI agent: inference\nclosed-product black box\nOpen analysis scripts\nApache-2.0\nGPU: Warp 1\u20133; PhysicsNeMo 4; Newton 5\n4: train \u2192 infer; CPU: CalculiX FEA; speed 6\nNative numerical\nchecks\nHuman approval\ngates A + B\n1  Warp | discrete sizing\n1,806,336 designs\nMinimum full mass in verified stow subset. Star:\nsurrogate estimate; native check: 3022.48 kg/sc, 140\npanels.\n2  Warp | stress uncertainty\n42.08% scenario pass fraction\n1,048,576 bounded engineering scenarios + rank\nsensitivity, not measured reliability. Coating spec:\n\u03b5 = 0.92 (BOL).\n3  warp.Tape | gradients\n0.82% relaxed mass gap\nFinite-difference gradient check PASS. Continuous\nrelaxation cross-checks the grid; not adopted\nhardware or a global optimum.\n4  PhysicsNeMo | held out\nMax |\u0394\u03b7| = 9.3e-05\n384 native training labels; 128 independent held-out\nlabels. Selected fins re-solved natively.\n5  Newton | rigid deployment\n31 / 31 representative locks\nSampled clearance PASS; angle parity 0.0061 deg.\nForce-step convergence and flexible hardware OPEN.\nBoth solvers on CUDA.\n6  Honest speed | same fp64 work\nBatching wins; serial work can lose\nSame fp64 kernel; CPU: 1 core / 1 thread, not all 20\nArm cores. Warm runs exclude setup/JIT/training;\nserial GPU work can lose.\nVerified mass-and-thermal trade point\n30 \u00d7 250 kW = 7.5 MW installed peak\n175 kW nominal (sunlit); annual 164.4 kW/sc\n92.674 t incl. 2-t dispenser; 7.326 t reserve\n140 panels; 861.75 m\u00b2 gross array\nGPU/HBM 366.16 / 361.84 K nominal\nPeak inlet 391.91 K [BOL; \u03b5 = 0.92]\nEarth: NASA Blue Marble; rendered in Isaac Sim (RTX\npath tracing); illustrative\nDesigned / screened\nNot designed / OPEN\n861.75 m\u00b2 solar array.\n140-panel Al 6061-T6.\n7 round 8/7-mm tubes.\nMPG40; 31.25-kg pack.\nEclipse compute pause.\n30-envelope stow; FEA.\nMMOD: 694 / 5 yr.\nEOL: \u221216.53 kW/sc.\nPeak GPU: 404.0 K.\nFlight loads / stow.\nFlex / force tests.\nRadiation; ADCS / links.\nSo what? A verified trade point\nScreened 1.81M designs, quantified uncertainty,\nverified natively; exposed OPEN limits in \u224811 days.\nOpen, reproducible analogue: Dassault / Synopsys\nshowed agentic engineering at GTC Berlin 2026.\n23-mm seams 1.495%: 319.7 \u2192 324.55 W/m\u00b2 active.\nFill / annual OPEN; freeze FAIL waived, mass charged.\nHardware: GB10 GPU; CPU: 1 Cortex-X925 core / 1 thread; box: x86 VM. Warp 1.18.0 / 1.19.0; Newton 1.7.0; PhysicsNeMo 2.2.0; CalculiX 2.21.\nhttps://github.com/OWNER/REPOSITORY  |  References: SpaceX; Warp; Newton; PhysicsNeMo; Dow; NASA NTRS 20030068423.\nApache-2.0 analysis scripts; proprietary AI agent and Isaac Sim renderer. AI assistance: Grok Bot; author responsible. Not flight qualification.\nCanonical SHA256: f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
-  "numeric_trace": [
-    {
-      "source": "timings/SWEEP/CPU_kernel_seconds \u00f7 GPU_kernel_seconds",
-      "raw": 33.093666063092066,
-      "shown": "33.1"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/sweep/throughput_configs_per_second",
-      "raw": 8487452.416,
-      "scale": 1e-06,
-      "format": ".2f",
-      "shown": "8.49"
-    },
-    {
-      "source": "checks/PROCESS_METRICS.json",
-      "sha256": "47c6b39df9352de26fe118d15fbb0f3f6419723e78eaad5c98916f286f83ae80",
-      "shown": "\u224811-day documented build | 1.81M designs screened | 1.05M uncertainty scenarios | 2 release-audit gates",
-      "scope": "Separately hashed process provenance, not physical canonical fields"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/sweep/configurations",
-      "raw": 1806336,
-      "scale": 1,
-      "format": ",.0f",
-      "shown": "1,806,336"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/sc_mass_kg/value",
-      "raw": 3022.482411,
-      "scale": 1,
-      "format": ".2f",
-      "shown": "3022.48"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/uncertainty/P_inlet_le_393",
-      "raw": 0.420791626,
-      "scale": 100,
-      "format": ".2f",
-      "shown": "42.08"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/uncertainty/draws",
-      "raw": 1048576,
-      "scale": 1,
-      "format": ",.0f",
-      "shown": "1,048,576"
-    },
-    {
-      "source": "differentiable/sweep_cross_check/relative_difference absolute \u00d7100",
-      "raw": 0.8189544692999999,
-      "shown": "0.82"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/surrogate/heldout_max_abs_eta",
-      "raw": 9.301506847e-05,
-      "scale": 1,
-      "format": ".2g",
-      "shown": "9.3e-05"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/surrogate/training_labels",
-      "raw": 384,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "384"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/NVIDIA_design_decision/surrogate/heldout_labels",
-      "raw": 128,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "128"
-    },
-    {
-      "source": "MECHANICAL_LOCK/newton/cases/*/n_latched_newton sum",
-      "raw": 31,
-      "shown": "31"
-    },
-    {
-      "source": "MECHANICAL_LOCK/newton/cases/0/max_angle_diff_deg",
-      "raw": 0.006147383247,
-      "scale": 1,
-      "format": ".4f",
-      "shown": "0.0061"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/spacecraft_count/value",
-      "raw": 30,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "30"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/installed_peak_per_sc_kW/value",
-      "raw": 250.0,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "250"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/installed_peak_per_launch_MW/value",
-      "raw": 7.5,
-      "scale": 1,
-      "format": ".1f",
-      "shown": "7.5"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/nominal_per_sc_kW/value",
-      "raw": 175.0,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "175"
-    },
-    {
-      "source": "operational/annual_average_IT_kW_per_sc",
-      "raw": 164.4336835,
-      "scale": 1,
-      "format": ".1f",
-      "shown": "164.4"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/launch_mass_kg/value",
-      "raw": 92674.47234,
-      "scale": 0.001,
-      "format": ".3f",
-      "shown": "92.674"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/reserve_t_per_launch/value",
-      "raw": 7.325527661,
-      "scale": 1,
-      "format": ".3f",
-      "shown": "7.326"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/radiator_panels/value",
-      "raw": 140,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "140"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/solar_area_m2/value",
-      "raw": 861.7534521,
-      "scale": 1,
-      "format": ".2f",
-      "shown": "861.75"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/GPU_nominal_K/value",
-      "raw": 366.159729,
-      "scale": 1,
-      "format": ".2f",
-      "shown": "366.16"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/HBM_nominal_K/value",
-      "raw": 361.837929,
-      "scale": 1,
-      "format": ".2f",
-      "shown": "361.84"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/coolant_radiator_inlet_peak_K/value",
-      "raw": 391.9053633,
-      "scale": 1,
-      "format": ".2f",
-      "shown": "391.91"
-    },
-    {
-      "source": "mmod/header_unprotected_N_5yr/value",
-      "raw": 694.244405,
-      "scale": 1,
-      "format": ".0f",
-      "shown": "694"
-    },
-    {
-      "source": "array_v3/EOL_peak_deficit_W/value",
-      "raw": 16530.15472,
-      "scale": 0.001,
-      "format": ".2f",
-      "shown": "16.53"
-    },
-    {
-      "source": "final/GTC_FINAL_CANDIDATE.json/fleets/1/GPU_peak_K/value",
-      "raw": 404.039157,
-      "scale": 1,
-      "format": ".1f",
-      "shown": "404.0"
-    }
+  "numbers_sha256": "c7b01951725b2bc4678bbe0d04e40c12de019688858ac22427a42c1c604cfff2",
+  "generator_sha256": "dbe0e92f933a89604fbef9fe93fe0ae171348ef2f7baef8b3af0e0552f3f5b81",
+  "repository_link": "https://github.com/OWNER/REPOSITORY",
+  "all_text": "Accelerating AI compute satellite engineering with an AI agent and GPU simulation\nAuthor: <author> assisted by AI agent <assistant>\nEngineers set the requirements. An AI agent runs the analysis. Physics solvers check the selected design.\nHuman requirements /\ndesign decisions\nAI agent (closed source)\nOpen analysis scripts\nApache-2.0\nGPU: Warp, PhysicsNeMo, Newton\nCPU: CalculiX FEA\nSolver checks\nHuman review /\napproval\nFull repo (GitHub)\nPROBLEM\nPutting AI data centers in orbit can ease power generation\nconcerns on Earth, but the satellites must be mass- and\nvolume-efficient to meet launch and radiative cooling needs.\nSpaceX's published targets of 250 kW peak per satellite and 75\nkW per ton imply 30 satellites × 250 kW = 7.5 MW installed\npeak per 100 t Starship launch. An engineer and an AI agent\nexplored the design space and selected a high-level\narchitecture to meet that target.\nSource: spacex.com/spacexai/starmind\nDESIGN ARCHITECTURE (PER SATELLITE)\nCompute:\none Vera Rubin NVL72 (72 GPUs + 36 CPUs); 250\nkW peak at beginning of life. Assumed 640.38 kg payload\nallocation in a 600 × 1200 × 937 mm box.\nMass:\n3,026 kg per satellite; all 30 satellites fit one 100 t\nStarship at 90.8 t, leaving 2 t for the dispenser and a 7.2 t\nreserve.\nPower:\n862 m² solar array; assumed module rating 324.55\nW/m² on its remaining planar area; 175 kW nominal in sunlight\nand a 164.4 kW annual average, including eclipse.\nThermal:\nRubin GPU/HBM ≈370 K nominal target (est.\n371–373 K), higher in edge cases; junction temperatures not\nyet qualified. Coolant inlet peaks at 392 K. 140 radiator\npanels; coating emissivity 0.92. Fins and tubes selected by\nsearch; modeled glycol-water loop.\nRack structure:\nCompute rack screening (CalculiX beam\nmodel, 6 g axial / 2 g lateral, FS 1.25): a ≈50 kg aluminum\nframe inside the 640 kg allocation reaches 35 Hz (Falcon\nreference) with large strength margins.\nPanel vibration:\nStowed radiator-panel first mode 128–153\nHz across support-pad assumptions (≈139 Hz nominal), well\nabove the 35 Hz reference.\nFolding and deployment:\n31/31 representative hinge locks\nlatch in Newton rigid simulation; sampled clearance passes.\nA basis for further detailed design. Simulation study, not flight\nqualification.\nIllustrative Isaac Sim RTX render, not flight validation. Earth:\nNASA Blue Marble.\n1  What did the search find? | Warp\n1.81M designs; 3,048 feasible, lightest picked\nScreening candidates (color: panels)\nStress scenarios\nOnly 41.66% of assumed scenarios meet the 393 K coolant cap.\n1.05M coating / power / sun-exposure scenarios; not flight reliability.\nStar: screening estimate. Diamond: solver re-check, 3026.21 kg / 140 panels.\n2  What ran faster? | GB10 benchmark\n32.9× faster than one GB10 CPU core\n0.214 s\n7.02 s\nSame fp64 workload; warm kernel only; median of 3 runs. Warp 1.18.0.\n1,806,336 combinations; CPU: 1 Cortex-X925 core / 1 thread.\nDevice-synchronized timer; setup/JIT/readback excluded.\n8.46M designs/s; input SHA256 94e1b3ae978b… (full hash in repo).\n3  Can we trust the search? | PhysicsNeMo / Tape\nMax |Δη| = 9.3e-5 (held out)\nPhysicsNeMo: 384 training / 128 held-out labels; η = fin efficiency.\nSelected fins re-solved with Warp; approximation is not flight validation.\nwarp.Tape: 0.65% relaxed mass gap; gradient check passed.\nContinuous relaxation, not adopted hardware or a global optimum.\n4  Does it deploy? | Newton / Warp\n31 / 31 modeled hinge locks\nRigid panels / fixed bus; representative hinges, not full flight tests.\nIndependent sampled-clearance check passed; angle parity 0.0061°.\nNewton 1.7.0 and Warp 1.18.0 on CUDA; agreement is not hardware validation.\nFlexible hardware and force-step convergence remain open.\n≈11 days recorded span | ≥44.1 h GB10 computer-job time* | Why it matters: more checks before hardware, not just a faster kernel\n*CPU + GPU jobs, including rendering; not GPU-hours. Start: earliest-retained-input timestamp proxy, not verified first problem definition.",
+  "claim_texts": [
+    "Accelerating AI compute satellite engineering with an AI agent and GPU simulation",
+    "Author: <author> assisted by AI agent <assistant>",
+    "Engineers set the requirements. An AI agent runs the analysis. Physics solvers check the selected design.",
+    "Human requirements /\ndesign decisions",
+    "AI agent (closed source)",
+    "Open analysis scripts\nApache-2.0",
+    "GPU: Warp, PhysicsNeMo, Newton\nCPU: CalculiX FEA",
+    "Solver checks",
+    "Human review /\napproval",
+    "Full repo (GitHub)",
+    "PROBLEM",
+    "Putting AI data centers in orbit can ease power generation\nconcerns on Earth, but the satellites must be mass- and\nvolume-efficient to meet launch and radiative cooling needs.\nSpaceX's published targets of 250 kW peak per satellite and 75\nkW per ton imply 30 satellites × 250 kW = 7.5 MW installed\npeak per 100 t Starship launch. An engineer and an AI agent\nexplored the design space and selected a high-level\narchitecture to meet that target.",
+    "Source: spacex.com/spacexai/starmind",
+    "DESIGN ARCHITECTURE (PER SATELLITE)",
+    "Compute:",
+    "one Vera Rubin NVL72 (72 GPUs + 36 CPUs); 250",
+    "kW peak at beginning of life. Assumed 640.38 kg payload\nallocation in a 600 × 1200 × 937 mm box.",
+    "Mass:",
+    "3,026 kg per satellite; all 30 satellites fit one 100 t",
+    "Starship at 90.8 t, leaving 2 t for the dispenser and a 7.2 t\nreserve.",
+    "Power:",
+    "862 m² solar array; assumed module rating 324.55",
+    "W/m² on its remaining planar area; 175 kW nominal in sunlight\nand a 164.4 kW annual average, including eclipse.",
+    "Thermal:",
+    "Rubin GPU/HBM ≈370 K nominal target (est.",
+    "371–373 K), higher in edge cases; junction temperatures not\nyet qualified. Coolant inlet peaks at 392 K. 140 radiator\npanels; coating emissivity 0.92. Fins and tubes selected by\nsearch; modeled glycol-water loop.",
+    "Rack structure:",
+    "Compute rack screening (CalculiX beam",
+    "model, 6 g axial / 2 g lateral, FS 1.25): a ≈50 kg aluminum\nframe inside the 640 kg allocation reaches 35 Hz (Falcon\nreference) with large strength margins.",
+    "Panel vibration:",
+    "Stowed radiator-panel first mode 128–153",
+    "Hz across support-pad assumptions (≈139 Hz nominal), well\nabove the 35 Hz reference.",
+    "Folding and deployment:",
+    "31/31 representative hinge locks",
+    "latch in Newton rigid simulation; sampled clearance passes.",
+    "A basis for further detailed design. Simulation study, not flight\nqualification.",
+    "Illustrative Isaac Sim RTX render, not flight validation. Earth:\nNASA Blue Marble.",
+    "1  What did the search find? | Warp",
+    "1.81M designs; 3,048 feasible, lightest picked",
+    "Screening candidates (color: panels)",
+    "Stress scenarios",
+    "Only 41.66% of assumed scenarios meet the 393 K coolant cap.",
+    "1.05M coating / power / sun-exposure scenarios; not flight reliability.",
+    "Star: screening estimate. Diamond: solver re-check, 3026.21 kg / 140 panels.",
+    "2  What ran faster? | GB10 benchmark",
+    "32.9× faster than one GB10 CPU core",
+    "0.214 s",
+    "7.02 s",
+    "Same fp64 workload; warm kernel only; median of 3 runs. Warp 1.18.0.\n1,806,336 combinations; CPU: 1 Cortex-X925 core / 1 thread.\nDevice-synchronized timer; setup/JIT/readback excluded.",
+    "8.46M designs/s; input SHA256 94e1b3ae978b… (full hash in repo).",
+    "3  Can we trust the search? | PhysicsNeMo / Tape",
+    "Max |Δη| = 9.3e-5 (held out)",
+    "PhysicsNeMo: 384 training / 128 held-out labels; η = fin efficiency.\nSelected fins re-solved with Warp; approximation is not flight validation.\nwarp.Tape: 0.65% relaxed mass gap; gradient check passed.\nContinuous relaxation, not adopted hardware or a global optimum.",
+    "4  Does it deploy? | Newton / Warp",
+    "31 / 31 modeled hinge locks",
+    "Rigid panels / fixed bus; representative hinges, not full flight tests.\nIndependent sampled-clearance check passed; angle parity 0.0061°.\nNewton 1.7.0 and Warp 1.18.0 on CUDA; agreement is not hardware validation.\nFlexible hardware and force-step convergence remain open.",
+    "≈11 days recorded span | ≥44.1 h GB10 computer-job time* | Why it matters: more checks before hardware, not just a faster kernel",
+    "*CPU + GPU jobs, including rendering; not GPU-hours. Start: earliest-retained-input timestamp proxy, not verified first problem definition."
+  ],
+  "axis_tick_labels": [
+    "0",
+    "0.000",
+    "0.025",
+    "0.050",
+    "0.075",
+    "0.100",
+    "0.125",
+    "0.4",
+    "0.5",
+    "0.6",
+    "0.7",
+    "0.8",
+    "0.9",
+    "1.0",
+    "1.1",
+    "1.2",
+    "100",
+    "1000",
+    "1250",
+    "150",
+    "1500",
+    "1750",
+    "2",
+    "200",
+    "2000",
+    "250",
+    "2800",
+    "2850",
+    "2900",
+    "2950",
+    "3000",
+    "3050",
+    "3100",
+    "3150",
+    "380",
+    "390",
+    "393",
+    "4",
+    "400",
+    "405",
+    "410",
+    "420",
+    "430",
+    "50",
+    "500",
+    "6",
+    "750",
+    "8",
+    "GB10 CPU\n1 core / 1 thread",
+    "NVIDIA GB10 GPU",
+    "−250",
+    "−50"
   ],
   "chart_inputs": {
-    "lock/gpu/SWEEP_PLOT_GB10_GPU.npz": "7a566220213bc872cf6a4bbce6958f84958211cad0d26d0c6d07ab4e25784a67",
-    "lock/gpu/MC_PLOT_GB10_GPU.npz": "b5e5db1355b6026544192d86239fdc4689f8a529557456b275a7d44f5f57a0ec",
-    "lock/gpu/SURROGATE_VALIDATION.npz": "bec178ca7b124503d8aae3c7c910a920e8df458442b6b94a41564a6ecfa5f2ca",
-    "lock/dynamics/results_lock/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f",
-    "figs/v3_lock_hero.png": "9639a5f408b9cf3adeccd3c22fd773f5a07f6cbc5e19f23a444dc807ab01c5c5"
-  },
-  "scope": "Layout-only agentic framing, connected observable workflow, separate process provenance, QR, final-design claims and final 4K hero. Scientific canonical unchanged. The public target and author identity appear only in the poster PDF."
+    "gb10_out/r11/SWEEP_PLOT_GB10_GPU.npz": "aa68ec89499d39a665fd109e7064533709ebd5a83b11dcd52f066505d7489a32",
+    "gb10_out/r11/MC_PLOT_GB10_GPU.npz": "e4148848850fa8cf7bc82d3529e140982143db81139a4fcd6e599fc22a4d20be",
+    "poster_inputs/SURROGATE_VALIDATION.npz": "bec178ca7b124503d8aae3c7c910a920e8df458442b6b94a41564a6ecfa5f2ca",
+    "poster_inputs/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f",
+    "poster_inputs/v3_lock_hero.png": "9639a5f408b9cf3adeccd3c22fd773f5a07f6cbc5e19f23a444dc807ab01c5c5"
+  }
 }

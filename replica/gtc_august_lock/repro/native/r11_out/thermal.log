@@ -1,0 +1,18 @@
+June T0_baseline_nominal Q 133144.8 pump 493.2 sup 359.99 GPU 389.329 HBM 384.39 inlet 382.181
+June T0_baseline_peak Q 165884.1 pump 613.4 sup 381.125 GPU 415.299 HBM 409.125 inlet 403.243
+June T1_MPG40_nominal Q 133459.9 pump 783.1 sup 360.192 GPU 389.531 HBM 384.592 inlet 382.435
+June T1_MPG40_peak Q 166234.7 pump 936.0 sup 381.323 GPU 415.497 HBM 409.323 inlet 403.488
+June T2_rec_nominal_MPG40_plus_recharge Q 133459.9 pump 783.1 sup 360.192 GPU 389.531 HBM 384.592 inlet 382.435
+June T4_sens_header_protected_nominal Q 133425.7 pump 751.6 sup 365.507 GPU 394.846 HBM 389.907 inlet 387.745
+June T4_sens_header_protected_peak Q 166234.7 pump 936.0 sup 386.942 GPU 421.116 HBM 414.942 inlet 409.107
+June T5_sens_film_nominal Q 133459.9 pump 783.1 sup 360.192 GPU 394.344 HBM 384.592 inlet 382.435
+June checks [0.0, 0.0] [0.0, 0.0] coolant 195.4238841679267 206.81247886336777 195.4238841679267 dR 3.5386173045948177
+August T0_baseline_nominal Q 193166.7 pump 713.4 sup 348.662 GPU 375.584 HBM 371.262 inlet 370.738
+August T0_baseline_peak Q 275014.0 pump 1012.9 sup 381.856 GPU 416.03 HBM 409.856 inlet 403.857
+August T1_MPG40_nominal Q 194066.5 pump 1541.2 sup 339.274 GPU 366.195 HBM 361.874 inlet 361.453
+August T1_MPG40_peak Q 275596.9 pump 1549.1 sup 369.894 GPU 404.068 HBM 397.894 inlet 391.941
+August T2_rec_nominal_MPG40_plus_recharge Q 194066.5 pump 1541.2 sup 339.274 GPU 366.195 HBM 361.874 inlet 361.453
+August T4_sens_header_protected_nominal Q 193937.1 pump 1422.2 sup 344.47 GPU 371.392 HBM 367.07 inlet 366.634
+August T4_sens_header_protected_peak Q 275596.9 pump 1549.1 sup 375.676 GPU 409.85 HBM 403.676 inlet 397.723
+August T5_sens_film_nominal Q 194066.5 pump 1541.2 sup 339.274 GPU 370.589 HBM 361.874 inlet 361.453
+August checks [0.0, 0.0] [0.0, 0.0] coolant 313.66814938033656 350.3510180868935 313.66814938033656 dR 3.691913941192105
