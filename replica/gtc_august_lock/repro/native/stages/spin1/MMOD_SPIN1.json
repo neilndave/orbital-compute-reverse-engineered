@@ -1,0 +1,726 @@
+{
+ "method": "SPIN1 item 3: header/trunk MMOD protection screen on the GTC scoped baseline (no render change). Box CPU.\nFlux: inherited repo rack_two_skies.mmod_env (NASA90 debris + Gruen 1985 meteoroids, SPENVIS forms; repo itself labels NASA90 OUTDATED, ORDEM/MASTER not run),\nsame orbit/epoch convention as c21_bumper.py (600 km, i 97.6 deg, year 2030, F10.7 index 1.5 -> S=150 in NASA90 convention as used by the repo, 5 yr),\ndebris 2.8 g/cc at 10 km/s, meteoroids at 20 km/s with Gruen density iteration, normal incidence.\nExposure convention (repo, conservative): impacts = flux x total exposed surface area (pi*d_out*L for tubes).\nBLEs: Whipple = Christiansen NNO hypervelocity form (NASA JSC 'Whipple shield sizing equations', NTRS 19920010826; Christiansen NASA/TP-2003-210788):\n   d_c = 3.918 t_w^(2/3) S^(1/3) rho_p^(-1/3) rho_b^(-1/9) (V cos th)^(-2/3) (sigma/70)^(1/3)   [cm, g/cc, km/s, ksi]\n   bumper sizing t_b = c_b d_c rho_p/rho_b, c_b = 0.25 (S/d < 30) -> applied at the debris design d_c, floor 0.5 mm (repo min gauge, ASSUMED)\n Single wall (unprotected / thick-wall armour): repo Cour-Palais thin-plate d_lim_cm (K1 0.44).\nGeometry: inherited c13 header model used for the baseline coolant mass: supply taper 20->10 mm (10 segments), return (9 segments), segment = LS 2.9486 m per panel, wall 0.8 mm Al;\n central trunks: 4 lines x 2.05 m (CT.cool run_scale 0.5), bore from CT.cool diag; root flex hoses: ASSUMED 2 x 1.0 m per column at 20 mm bore.\n Header routing in the render is NOT verified; a short-edge routing sensitivity (0.7264 m header per panel = 2 x panel width) is reported.",
+ "cases": {
+  "June": {
+   "ledger": {
+    "tubes": [
+     [
+      0.0216,
+      22.704
+     ],
+     [
+      0.02057,
+      22.704
+     ],
+     [
+      0.01949,
+      22.704
+     ],
+     [
+      0.01833,
+      22.704
+     ],
+     [
+      0.01709,
+      22.704
+     ],
+     [
+      0.01574,
+      22.704
+     ],
+     [
+      0.01425,
+      22.704
+     ],
+     [
+      0.01255,
+      22.704
+     ],
+     [
+      0.0116,
+      22.704
+     ],
+     [
+      0.0116,
+      22.704
+     ],
+     [
+      0.0116,
+      22.704
+     ],
+     [
+      0.0116,
+      22.704
+     ],
+     [
+      0.01255,
+      22.704
+     ],
+     [
+      0.01425,
+      22.704
+     ],
+     [
+      0.01574,
+      22.704
+     ],
+     [
+      0.01709,
+      22.704
+     ],
+     [
+      0.01833,
+      22.704
+     ],
+     [
+      0.01949,
+      22.704
+     ],
+     [
+      0.02057,
+      22.704
+     ],
+     [
+      0.02577,
+      8.2
+     ],
+     [
+      0.0216,
+      16.0
+     ]
+    ],
+    "unprotected": {
+     "A_exposed_m2": 23.43772992649054,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 385.7809502756986,
+     "PNP_5yr": 2.8672269618493815e-168
+    },
+    "unprotected_flux_x3": {
+     "A_exposed_m2": 23.43772992649054,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 957.5419418978306,
+     "PNP_5yr": 0.0
+    },
+    "whipple_opt_P0.9_flux1": null,
+    "armour_P0.9_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.9_flux3": null,
+    "armour_P0.9_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux1": null,
+    "armour_P0.95_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux3": null,
+    "armour_P0.95_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux1": null,
+    "armour_P0.99_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux3": null,
+    "armour_P0.99_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_S10_P0.95": {
+     "S_mm": 10.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.7899580263573823,
+     "d_c_met_mm": 0.7014068928114066,
+     "N_5yr": 7.6786113658271535,
+     "PNP_5yr": 0.00046261685853356336,
+     "bumper_area_m2": 52.06267685867285,
+     "bumper_sheet_kg": 70.28461375920834,
+     "supports_kg": 7.028461375920834,
+     "total_kg": 77.31307513512917,
+     "meets": false
+    },
+    "whipple_S15_P0.95": {
+     "S_mm": 15.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.904276203790616,
+     "d_c_met_mm": 0.8029104600262955,
+     "N_5yr": 5.394796827251747,
+     "PNP_5yr": 0.004540142738378,
+     "bumper_area_m2": 66.37515032476401,
+     "bumper_sheet_kg": 89.6064529384314,
+     "supports_kg": 8.960645293843141,
+     "total_kg": 98.56709823227455,
+     "meets": false
+    },
+    "whipple_S20_P0.95": {
+     "S_mm": 20.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.9952847459410752,
+     "d_c_met_mm": 0.8837173087944483,
+     "N_5yr": 4.204146609157562,
+     "PNP_5yr": 0.014933524766031717,
+     "bumper_area_m2": 80.68762379085517,
+     "bumper_sheet_kg": 108.92829211765448,
+     "supports_kg": 10.892829211765449,
+     "total_kg": 119.82112132941992,
+     "meets": false
+    }
+   },
+   "short_edge": {
+    "tubes": [
+     [
+      0.0216,
+      2.946
+     ],
+     [
+      0.02057,
+      2.946
+     ],
+     [
+      0.01949,
+      2.946
+     ],
+     [
+      0.01833,
+      2.946
+     ],
+     [
+      0.01709,
+      2.946
+     ],
+     [
+      0.01574,
+      2.946
+     ],
+     [
+      0.01425,
+      2.946
+     ],
+     [
+      0.01255,
+      2.946
+     ],
+     [
+      0.0116,
+      2.946
+     ],
+     [
+      0.0116,
+      2.946
+     ],
+     [
+      0.0116,
+      2.946
+     ],
+     [
+      0.0116,
+      2.946
+     ],
+     [
+      0.01255,
+      2.946
+     ],
+     [
+      0.01425,
+      2.946
+     ],
+     [
+      0.01574,
+      2.946
+     ],
+     [
+      0.01709,
+      2.946
+     ],
+     [
+      0.01833,
+      2.946
+     ],
+     [
+      0.01949,
+      2.946
+     ],
+     [
+      0.02057,
+      2.946
+     ],
+     [
+      0.02577,
+      8.2
+     ],
+     [
+      0.0216,
+      16.0
+     ]
+    ],
+    "unprotected": {
+     "A_exposed_m2": 4.563268518762163,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 75.11060461284376,
+     "PNP_5yr": 2.398164027261531e-33
+    },
+    "unprotected_flux_x3": {
+     "A_exposed_m2": 4.563268518762163,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 186.43106702574033,
+     "PNP_5yr": 1.0814746287038536e-81
+    },
+    "whipple_opt_P0.9_flux1": null,
+    "armour_P0.9_flux1": {
+     "wall_mm": 11.50000000000001,
+     "PNP_5yr": 0.9008053831543065,
+     "added_kg": 209.68541827500673,
+     "d_crit_debris_mm": 2.2220408145469674
+    },
+    "whipple_opt_P0.9_flux3": null,
+    "armour_P0.9_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux1": null,
+    "armour_P0.95_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux3": null,
+    "armour_P0.95_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux1": null,
+    "armour_P0.99_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux3": null,
+    "armour_P0.99_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_S10_P0.95": {
+     "S_mm": 10.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.7899580263573823,
+     "d_c_met_mm": 0.7014068928114066,
+     "N_5yr": 1.4950067955977617,
+     "PNP_5yr": 0.22424708083239686,
+     "bumper_area_m2": 9.600266138995377,
+     "bumper_sheet_kg": 12.96035928764376,
+     "supports_kg": 1.2960359287643761,
+     "total_kg": 14.256395216408135,
+     "meets": false
+    },
+    "whipple_S15_P0.95": {
+     "S_mm": 15.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.904276203790616,
+     "d_c_met_mm": 0.8029104600262955,
+     "N_5yr": 1.0503537076383604,
+     "PNP_5yr": 0.3498139953439607,
+     "bumper_area_m2": 12.118764949111982,
+     "bumper_sheet_kg": 16.360332681301177,
+     "supports_kg": 1.6360332681301177,
+     "total_kg": 17.996365949431294,
+     "meets": false
+    },
+    "whipple_S20_P0.95": {
+     "S_mm": 20.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.9952847459410752,
+     "d_c_met_mm": 0.8837173087944483,
+     "N_5yr": 0.8185370311032516,
+     "PNP_5yr": 0.4410764638707015,
+     "bumper_area_m2": 14.63726375922859,
+     "bumper_sheet_kg": 19.7603060749586,
+     "supports_kg": 1.97603060749586,
+     "total_kg": 21.73633668245446,
+     "meets": false
+    }
+   }
+  },
+  "August": {
+   "ledger": {
+    "tubes": [
+     [
+      0.0216,
+      41.28
+     ],
+     [
+      0.02057,
+      41.28
+     ],
+     [
+      0.01949,
+      41.28
+     ],
+     [
+      0.01833,
+      41.28
+     ],
+     [
+      0.01709,
+      41.28
+     ],
+     [
+      0.01574,
+      41.28
+     ],
+     [
+      0.01425,
+      41.28
+     ],
+     [
+      0.01255,
+      41.28
+     ],
+     [
+      0.0116,
+      41.28
+     ],
+     [
+      0.0116,
+      41.28
+     ],
+     [
+      0.0116,
+      41.28
+     ],
+     [
+      0.0116,
+      41.28
+     ],
+     [
+      0.01255,
+      41.28
+     ],
+     [
+      0.01425,
+      41.28
+     ],
+     [
+      0.01574,
+      41.28
+     ],
+     [
+      0.01709,
+      41.28
+     ],
+     [
+      0.01833,
+      41.28
+     ],
+     [
+      0.01949,
+      41.28
+     ],
+     [
+      0.02057,
+      41.28
+     ],
+     [
+      0.0328,
+      8.2
+     ],
+     [
+      0.0216,
+      28.0
+     ]
+    ],
+    "unprotected": {
+     "A_exposed_m2": 42.17811391760349,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 694.2444050257118,
+     "PNP_5yr": 3.1151990743315824e-302
+    },
+    "unprotected_flux_x3": {
+     "A_exposed_m2": 42.17811391760349,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 1723.1751211793817,
+     "PNP_5yr": 0.0
+    },
+    "whipple_opt_P0.9_flux1": null,
+    "armour_P0.9_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.9_flux3": null,
+    "armour_P0.9_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux1": null,
+    "armour_P0.95_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux3": null,
+    "armour_P0.95_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux1": null,
+    "armour_P0.99_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux3": null,
+    "armour_P0.99_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_S10_P0.95": {
+     "S_mm": 10.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.7899580263573823,
+     "d_c_met_mm": 0.7014068928114066,
+     "N_5yr": 13.818289822975077,
+     "PNP_5yr": 9.972245935706964e-07,
+     "bumper_area_m2": 93.73338352215677,
+     "bumper_sheet_kg": 126.54006775491163,
+     "supports_kg": 12.654006775491164,
+     "total_kg": 139.1940745304028,
+     "meets": false
+    },
+    "whipple_S15_P0.95": {
+     "S_mm": 15.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.904276203790616,
+     "d_c_met_mm": 0.8029104600262955,
+     "N_5yr": 9.708378578292681,
+     "PNP_5yr": 6.077217156507209e-05,
+     "bumper_area_m2": 119.51101832443341,
+     "bumper_sheet_kg": 161.3398747379851,
+     "supports_kg": 16.13398747379851,
+     "total_kg": 177.4738622117836,
+     "meets": false
+    },
+    "whipple_S20_P0.95": {
+     "S_mm": 20.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.9952847459410752,
+     "d_c_met_mm": 0.8837173087944483,
+     "N_5yr": 7.565706028847719,
+     "PNP_5yr": 0.0005179115781395647,
+     "bumper_area_m2": 145.28865312671007,
+     "bumper_sheet_kg": 196.1396817210586,
+     "supports_kg": 19.61396817210586,
+     "total_kg": 215.75364989316446,
+     "meets": false
+    }
+   },
+   "short_edge": {
+    "tubes": [
+     [
+      0.0216,
+      5.356
+     ],
+     [
+      0.02057,
+      5.356
+     ],
+     [
+      0.01949,
+      5.356
+     ],
+     [
+      0.01833,
+      5.356
+     ],
+     [
+      0.01709,
+      5.356
+     ],
+     [
+      0.01574,
+      5.356
+     ],
+     [
+      0.01425,
+      5.356
+     ],
+     [
+      0.01255,
+      5.356
+     ],
+     [
+      0.0116,
+      5.356
+     ],
+     [
+      0.0116,
+      5.356
+     ],
+     [
+      0.0116,
+      5.356
+     ],
+     [
+      0.0116,
+      5.356
+     ],
+     [
+      0.01255,
+      5.356
+     ],
+     [
+      0.01425,
+      5.356
+     ],
+     [
+      0.01574,
+      5.356
+     ],
+     [
+      0.01709,
+      5.356
+     ],
+     [
+      0.01833,
+      5.356
+     ],
+     [
+      0.01949,
+      5.356
+     ],
+     [
+      0.02057,
+      5.356
+     ],
+     [
+      0.0328,
+      8.2
+     ],
+     [
+      0.0216,
+      28.0
+     ]
+    ],
+    "unprotected": {
+     "A_exposed_m2": 7.86091135809735,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 129.38923109324838,
+     "PNP_5yr": 6.411666409405416e-57
+    },
+    "unprotected_flux_x3": {
+     "A_exposed_m2": 7.86091135809735,
+     "d_crit_debris_mm": 0.17804610351504835,
+     "d_crit_met_mm": 0.16629051760855,
+     "N_5yr": 321.1553486846724,
+     "PNP_5yr": 3.3419829702835153e-140
+    },
+    "whipple_opt_P0.9_flux1": null,
+    "armour_P0.9_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.9_flux3": null,
+    "armour_P0.9_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux1": null,
+    "armour_P0.95_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.95_flux3": null,
+    "armour_P0.95_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux1": null,
+    "armour_P0.99_flux1": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_opt_P0.99_flux3": null,
+    "armour_P0.99_flux3": {
+     "wall_mm": null,
+     "PNP_5yr": null,
+     "added_kg": Infinity
+    },
+    "whipple_S10_P0.95": {
+     "S_mm": 10.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.7899580263573823,
+     "d_c_met_mm": 0.7014068928114066,
+     "N_5yr": 2.575372422558,
+     "PNP_5yr": 0.0761254666776795,
+     "bumper_area_m2": 16.529000395470458,
+     "bumper_sheet_kg": 22.314150533885115,
+     "supports_kg": 2.2314150533885115,
+     "total_kg": 24.54556558727363,
+     "meets": false
+    },
+    "whipple_S15_P0.95": {
+     "S_mm": 15.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.904276203790616,
+     "d_c_met_mm": 0.8029104600262955,
+     "N_5yr": 1.8093910880865238,
+     "PNP_5yr": 0.16375381810177825,
+     "bumper_area_m2": 20.86304491415701,
+     "bumper_sheet_kg": 28.16511063411196,
+     "supports_kg": 2.8165110634111965,
+     "total_kg": 30.98162169752316,
+     "meets": false
+    },
+    "whipple_S20_P0.95": {
+     "S_mm": 20.0,
+     "t_b_mm": 0.5,
+     "d_c_debris_mm": 0.9952847459410752,
+     "d_c_met_mm": 0.8837173087944483,
+     "N_5yr": 1.4100522505671549,
+     "PNP_5yr": 0.2441305268616899,
+     "bumper_area_m2": 25.197089432843566,
+     "bumper_sheet_kg": 34.01607073433881,
+     "supports_kg": 3.4016070734338815,
+     "total_kg": 37.41767780777269,
+     "meets": false
+    }
+   }
+  }
+ },
+ "header_mean_OD_m": 0.01600347801168711,
+ "blockage_examples": {
+  "h_8mm": 0.021775662220985696,
+  "h_13mm": 0.035136540052571344,
+  "h_18mm": 0.04830849938741201,
+  "h_28mm": 0.0740870945887425,
+  "h_48mm": 0.12339884556199389
+ }
+}

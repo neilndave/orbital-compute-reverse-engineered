@@ -1,0 +1,64 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module gpu_core 84eddc7 load on device 'cuda:0' took 14.12 ms  (cached)
+{
+  "stage": "sweep",
+  "label": "GPU_3",
+  "device": "cuda:0",
+  "machine": "aarch64",
+  "tool": "NVIDIA Warp",
+  "warp": "1.18.0",
+  "numpy": "2.5.4",
+  "precision": "fp64",
+  "model_scope": "fp64 Warp reduced-model design/UQ/Tape kernels. Shared exactly by CUDA and CPU.\nSurrogate is PhysicsNeMo trained on independent Warp finite-volume labels, tabulated in a,b.\nPanel mass uses exact circular 8/7-mm tube annulus; coolant head stays conservatively inherited.\n",
+  "surrogate_sha256": "22b39be64975047a1d2560b0de45e0633954e5245a224f9c9a2e901455090ebd",
+  "inputs_sha256": "94e1b3ae978b83fe5fc0b3d87bf8ccbe9b277d4d44fdd523403ec328db7cc12b",
+  "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13",
+  "compilation_excluded_from_warm_kernel": true,
+  "compile_and_warmup_seconds": 0.019931189017370343,
+  "configurations": 1806336,
+  "kernel_seconds": 0.213579794857651,
+  "throughput_configs_per_second": 8457429.230156844,
+  "hard_feasible_count": 3048,
+  "design_margin_feasible_count": 2347,
+  "selected_index": 1037888,
+  "status": "FEASIBLE",
+  "physical_feasibility_passed": true,
+  "measurement_completed": true,
+  "minimum_required_array_m2": 861.753452057126,
+  "packing_maximum_array_m2": 861.753452057126,
+  "postprocess_seconds": 0.052818747935816646,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "timer_scope": "512-warmup then full frozen fp64 Warp kernel; synchronize; exclude setup,JIT,readback,postprocess. Reporting adapter only; numerical kernel unchanged."
+}

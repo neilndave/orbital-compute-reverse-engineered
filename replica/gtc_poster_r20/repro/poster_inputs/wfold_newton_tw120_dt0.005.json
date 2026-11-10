@@ -1,0 +1,105 @@
+{
+ "scope": "[t892] Solar-wing WIDTH fold (6 sections, 5 hinges) in NVIDIA Newton 1.7.0 (SolverFeatherstone), chained after the r11-lock solar run\n(solar_t780_dt0.01_kl5000: all 21 accordion/root hinges latched by 747.5 s). Same modelling style and parameters as run_final_newton.py /\nnewton_xcheck_T45.py (motor mode): rigid bodies, zero gravity, no contact, fixed base, min-jerk PD motor with torque limit sized by\nmotor_par2 (margin 3, 3 deg error at limit, kd at zeta 0.7 on own hinge inertia), 3 deg overdrive, Coulomb friction F_NOM = 2 N m (eps 1e-3 rad/s),\ncaptured penalty latch K = 5 kN m/rad (LOCK_KLAT) zeta 0.7 on min(outboard inertia, 64 x own hinge inertia) (LOCK_DAMP_CAP), motor off after\ncapture, stow-side stop, implicit damping through joint_armature (t476 fix).\nBodies: one wing's 6 full-length width sections (each wing_length x 14/6 m, array mass / 2 wings / 6). Base = section 1 (fixed: it is carried by\nthe latched leaf chain; the planar leaf chain and this width chain are run as separate planar models, as in the existing study).\nHinge axes = the wing length direction. Sections 0 | 1(base) | 2 3 4 5 ; folded angles (render convention) [-pi, -pi, +pi, -pi, +pi].\nusage: python newton_wfold_t892.py TW DT TSETTLE [device]  -> wfold_newton_tw<TW>_dt<DT>.npz / .json",
+ "newton_version": "1.7.0",
+ "warp_version": "1.18.0",
+ "device": "cpu",
+ "tw_s": 120.0,
+ "dt_s": 0.005,
+ "tend_s": 180.0,
+ "wall_s": 8.555615186691284,
+ "t_nan": null,
+ "n_sections": 6,
+ "section_width_m": 2.3333333333333335,
+ "section_length_m": 30.776909,
+ "section_mass_kg": 69.59463145,
+ "hinge_child": [
+  0,
+  2,
+  3,
+  4,
+  5
+ ],
+ "hinge_parent": [
+  1,
+  1,
+  2,
+  3,
+  4
+ ],
+ "sign": [
+  -1.0,
+  -1.0,
+  1.0,
+  -1.0,
+  1.0
+ ],
+ "I_out_kgm2": [
+  126.30136818703704,
+  8083.28756397037,
+  3410.13694105,
+  1010.4109454962962,
+  126.30136818703704
+ ],
+ "I_own_kgm2": [
+  126.30136818703706,
+  126.30136818703706,
+  126.30136818703706,
+  126.30136818703706,
+  126.30136818703706
+ ],
+ "tmax_Nm": [
+  6.47697158104342,
+  36.526181186778956,
+  18.87823268817237,
+  9.81577264834737,
+  6.47697158104342
+ ],
+ "kp_Nm_rad": [
+  123.70104520665467,
+  697.5986745775275,
+  360.54768589939584,
+  187.467448470085,
+  123.70104520665467
+ ],
+ "kd": [
+  174.99222285948406,
+  415.5610994877004,
+  298.75378727389716,
+  215.42445231523047,
+  174.99222285948406
+ ],
+ "klat_Nm_rad": 5000.0,
+ "zlat": 0.7,
+ "clat": [
+  1112.543665764613,
+  8900.349326116902,
+  5780.946464229712,
+  3146.7486817131903,
+  1112.543665764613
+ ],
+ "t_latch_s": [
+  106.63499450683594,
+  104.36000061035156,
+  109.88999938964844,
+  104.93499755859375,
+  109.08999633789062
+ ],
+ "all_latched": true,
+ "t_latch_last_s": 109.88999938964844,
+ "settle_time_s_within_0p1deg": 114.95,
+ "peak_hinge_torque_Nm": [
+  10.70461368560791,
+  90.72360229492188,
+  72.76097869873047,
+  49.57577896118164,
+  9.268139839172363
+ ],
+ "final_err_deg": [
+  4.335578343574681e-42,
+  3.941495691668671e-13,
+  2.3303212098191856e-13,
+  4.8173806236396566e-14,
+  8.791780158330973e-15
+ ],
+ "max_overtravel_deg": 0.20635754386625982
+}

@@ -1,0 +1,56 @@
+{
+ "source": "poster_inputs/v3_lock_hero.png",
+ "source_sha256": "9639a5f408b9cf3adeccd3c22fd773f5a07f6cbc5e19f23a444dc807ab01c5c5",
+ "wing_quads_preview_px_x3p75": {
+  "left": [
+   [
+    201.6,
+    204.8
+   ],
+   [
+    308.5,
+    169.3
+   ],
+   [
+    526.4,
+    241.9
+   ],
+   [
+    420.0,
+    292.8
+   ]
+  ],
+  "right": [
+   [
+    502.1,
+    325.6
+   ],
+   [
+    608.8,
+    269.9
+   ],
+   [
+    945.9,
+    382.4
+   ],
+   [
+    862.7,
+    469.1
+   ]
+  ]
+ },
+ "wing_gamma": 0.6,
+ "backdrop_dim": 0.8,
+ "rim_glow": {
+  "dilate_px": 13,
+  "sigma_px": 5,
+  "alpha": 0.3,
+  "color_rgb": [
+   0.8,
+   0.92,
+   1.0
+  ]
+ },
+ "geometry_pixels_moved": 0,
+ "note": "Tone-only edit. No pixels moved, no geometry added or removed."
+}

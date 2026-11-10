@@ -1,0 +1,237 @@
+{
+  "stage": "mc",
+  "label": "GB10_CPU",
+  "device": "cpu",
+  "machine": "aarch64",
+  "tool": "NVIDIA Warp",
+  "warp": "1.18.0",
+  "numpy": "2.5.4",
+  "precision": "fp64",
+  "model_scope": "fp64 Warp reduced-model design/UQ/Tape kernels. Shared exactly by CUDA and CPU.\nSurrogate is PhysicsNeMo trained on independent Warp finite-volume labels, tabulated in a,b.\nPanel mass uses exact circular 8/7-mm tube annulus; coolant head stays conservatively inherited.\n",
+  "surrogate_sha256": "22b39be64975047a1d2560b0de45e0633954e5245a224f9c9a2e901455090ebd",
+  "inputs_sha256": "94e1b3ae978b83fe5fc0b3d87bf8ccbe9b277d4d44fdd523403ec328db7cc12b",
+  "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13",
+  "compilation_excluded_from_warm_kernel": true,
+  "design_input": "SELECTED.json",
+  "design_input_sha256": "65bbf26f0c6622d281cb1dcd2407d396726db65227e9bb1536edf0a3cec70c70",
+  "compile_and_warmup_seconds": 0.0058404451701790094,
+  "draws": 1048576,
+  "seed": 20261107,
+  "distributions": "Independent bounded uniform engineering scenario ranges, NOT measured risk probabilities; independence and ranges are assumptions",
+  "ranges": {
+    "emissivity": [
+      0.88,
+      0.96
+    ],
+    "plate_resistance": [
+      12.8,
+      17.1
+    ],
+    "HBM_rise": [
+      16.0,
+      22.0
+    ],
+    "PMAD": [
+      0.88,
+      0.95
+    ],
+    "rack_rise": [
+      16.0,
+      24.0
+    ],
+    "film_scale": [
+      0.8,
+      1.2
+    ],
+    "solar_W_m2": [
+      300.0,
+      335.0
+    ],
+    "environment_scale": [
+      0.85,
+      1.15
+    ],
+    "view_scale": [
+      0.98,
+      1.0
+    ],
+    "pump_scale": [
+      0.8,
+      1.3
+    ],
+    "fin_conductivity": [
+      150.0,
+      175.0
+    ],
+    "radiator_film_multiplier": [
+      0.6,
+      1.4
+    ],
+    "fluid_cp_scale": [
+      0.95,
+      1.05
+    ],
+    "fluid_viscosity_scale": [
+      0.8,
+      1.2
+    ]
+  },
+  "film_policy": "Plate resistance split 50% conduction / 50% film; film multiplier acts only on film half, avoiding full-R double counting",
+  "statistics": {
+    "GPU_nominal_K": {
+      "mean": 368.71611447907685,
+      "std": 3.2861559278909507,
+      "quantiles": {
+        "p01": 361.4830026379393,
+        "p05": 363.3506827347337,
+        "p50": 368.68417839654865,
+        "p95": 374.19088289936735,
+        "p99": 376.24131586615806
+      }
+    },
+    "HBM_nominal_K": {
+      "mean": 364.1042712594917,
+      "std": 2.9896363113987423,
+      "quantiles": {
+        "p01": 357.5419391188891,
+        "p05": 359.19205356645006,
+        "p50": 364.08396319625956,
+        "p95": 369.0661190620739,
+        "p99": 370.78433244806905
+      }
+    },
+    "inlet_peak_K": {
+      "mean": 393.81071332207995,
+      "std": 3.540847669796964,
+      "quantiles": {
+        "p01": 386.1818939430269,
+        "p05": 388.0054631607112,
+        "p50": 393.7836626937778,
+        "p95": 399.73112578488815,
+        "p99": 401.6984408039095
+      }
+    },
+    "BOL_peak_power_margin_W": {
+      "mean": -3785.861164814691,
+      "std": 10671.675273805671,
+      "quantiles": {
+        "p01": -26092.531663149362,
+        "p05": -21572.56025179127,
+        "p50": -3788.560853824514,
+        "p95": 13896.31887556451,
+        "p99": 18206.112553915373
+      }
+    }
+  },
+  "P_inlet_le_393": 0.4166250228881836,
+  "P_GPU_le_370": 0.6490974426269531,
+  "P_HBM_le_378p15": 1.0,
+  "P_BOL_full_peak_generation": 0.37462902069091797,
+  "rank_sensitivity": [
+    {
+      "input": "emissivity",
+      "GPU": -0.6062690902083732,
+      "HBM": -0.6705609991325825,
+      "inlet": -0.6209184449104316
+    },
+    {
+      "input": "plate_resistance",
+      "GPU": 0.4444348943642726,
+      "HBM": 0.004305597373438884,
+      "inlet": 0.004396406206084161
+    },
+    {
+      "input": "HBM_rise",
+      "GPU": 0.002049025445154075,
+      "HBM": 0.3952843831245095,
+      "inlet": 0.0035195049229438313
+    },
+    {
+      "input": "PMAD",
+      "GPU": -0.48671975062545997,
+      "HBM": -0.5304284004435905,
+      "inlet": -0.6591664667687777
+    },
+    {
+      "input": "rack_rise",
+      "GPU": -0.05334126039733097,
+      "HBM": -0.05448864781672201,
+      "inlet": 0.323820625416111
+    },
+    {
+      "input": "film_scale",
+      "GPU": -0.3011683670997675,
+      "HBM": 0.002278978301366959,
+      "inlet": 0.0037513810096706742
+    },
+    {
+      "input": "solar_W_m2",
+      "GPU": -0.004975214110906931,
+      "HBM": -0.0032437458208838953,
+      "inlet": -0.004222091044186622
+    },
+    {
+      "input": "environment_scale",
+      "GPU": 0.18722414824966163,
+      "HBM": 0.20393393566573437,
+      "inlet": 0.13366705788074282
+    },
+    {
+      "input": "view_scale",
+      "GPU": -0.14811079134943336,
+      "HBM": -0.15913954179354078,
+      "inlet": -0.143023818529376
+    },
+    {
+      "input": "pump_scale",
+      "GPU": 0.029535069504943612,
+      "HBM": 0.03197451168013103,
+      "inlet": 0.025370306929483874
+    },
+    {
+      "input": "fin_conductivity",
+      "GPU": -0.05605517312822042,
+      "HBM": -0.05857737819291815,
+      "inlet": -0.06924411012833069
+    },
+    {
+      "input": "radiator_film_multiplier",
+      "GPU": -0.0888653173937537,
+      "HBM": -0.09970534983838165,
+      "inlet": -0.06039453576237723
+    },
+    {
+      "input": "fluid_cp_scale",
+      "GPU": 0.010489025859681818,
+      "HBM": 0.012972106748514062,
+      "inlet": 0.01000333468993936
+    },
+    {
+      "input": "fluid_viscosity_scale",
+      "GPU": 0.034855551186539525,
+      "HBM": 0.03395572117631687,
+      "inlet": 0.021906769889467912
+    }
+  ],
+  "rank_subset_draws": 65536,
+  "kernel_seconds": 3.792313776910305,
+  "throughput_draws_per_second": 276500.3271576071,
+  "input_generation_and_transfer_seconds": 0.08622052008286119,
+  "postprocess_seconds": 0.4497454271186143,
+  "cached_model_time_to_answer_seconds": 4.328280172077939,
+  "passed": true,
+  "cpu_baseline": {
+    "backend": "Warp CPU single-threaded",
+    "software_threads": 1,
+    "physical_cores_used": 1,
+    "host_logical_cpus": 20,
+    "process_cpu_affinity": [
+      5
+    ],
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  }
+}

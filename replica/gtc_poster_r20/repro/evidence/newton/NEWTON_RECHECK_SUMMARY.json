@@ -1,0 +1,83 @@
+{
+  "diagnostic_only": true,
+  "full_solar_simulation_rerun": false,
+  "solar_scope": "21hingesandfixedmovingarraymasses/geometryunchanged; copiedfrozenNewton/Warptrajectories, fixedbus/zerogravity. Originalfullsolarforce-stepconvergenceFAIL41.441% remainsOPEN.",
+  "solar_max_angle_difference_deg_recomputed": 0.006147383246570826,
+  "radiator": {
+    "control": {
+      "rerun": true,
+      "latched": 10,
+      "reference_latched": 10,
+      "max_angle_difference_deg": 0.0009618101175874472,
+      "half_step_force_relative_difference": 0.026584795733454625,
+      "half_step_moment_relative_difference": 0.009523315100691931,
+      "half_step_passed_unchanged_10pct_threshold": true,
+      "per_moving_panel_mass_kg": 3.258436238837162,
+      "final_mass_sc_kg": 3022.4824112870997,
+      "finite": true,
+      "newton_version": "1.7.0",
+      "warp_version": "1.18.0",
+      "Newton_FK_max_abs_m": 1.569381647570367e-05
+    },
+    "corrected": {
+      "rerun": true,
+      "latched": 10,
+      "reference_latched": 10,
+      "max_angle_difference_deg": 0.0009889558423310518,
+      "half_step_force_relative_difference": 0.048763406613308025,
+      "half_step_moment_relative_difference": 0.007963491733881445,
+      "half_step_passed_unchanged_10pct_threshold": true,
+      "per_moving_panel_mass_kg": 3.258410647260277,
+      "final_mass_sc_kg": 3026.214466978738,
+      "finite": true,
+      "newton_version": "1.7.0",
+      "warp_version": "1.18.0",
+      "Newton_FK_max_abs_m": 1.1128066855548013e-05
+    }
+  },
+  "control_reference_scalar_deltas": {
+    "max_angle_diff_deg": 0.0,
+    "rms_angle_diff_deg": 0.0,
+    "peak_torque_newton": 0.0,
+    "peak_torque_warp": 0.0,
+    "peak_root_force_warp_N": 0.0,
+    "Newton_FK_max_abs_m": 0.0
+  },
+  "clearance": {
+    "scope": "Finite-body collision checks on recorded Newton trajectories, plus width fold.\nRepresentative spacecraft, rigid bodies; neither continuous-time contact proof nor\nfull fleet release/hose/hinge/flexible-body qualification.\n",
+    "source_hashes": {
+      "lock/dynamics/results_lock/solar_t780_dt0.01_kl5000.npz": "30350d769f6e54f536706ca535df0c47fc28d87483fbc9e108732c23a4bd052f",
+      "lock/dynamics/results_lock/radiator_t660_dt0.01_kl5000.npz": "0fd6d728c59390147b4a4837e1375803e5147506a77bec2f9d3373fb35473b2d"
+    },
+    "rows": [
+      {
+        "stage": "solar_Newton",
+        "samples": 961,
+        "intersecting_samples": 0,
+        "worst_pairs": [],
+        "min_separating_axis_gap_m": 0.000929566253190778
+      },
+      {
+        "stage": "width_fold",
+        "samples": 121,
+        "intersecting_samples": 0,
+        "worst_pairs": [],
+        "min_separating_axis_gap_m": -4.440892098500626e-16
+      },
+      {
+        "stage": "radiator_Newton",
+        "samples": 691,
+        "intersecting_samples": 0,
+        "worst_pairs": [],
+        "min_separating_axis_gap_m": -4.440892098500626e-16
+      }
+    ],
+    "wall_s": 49.689108840888366,
+    "passed": true,
+    "penetration_tolerance_m": 1e-06
+  },
+  "aggregate_latched": 31,
+  "aggregate_max_angle_difference_deg": 0.006147383246570826,
+  "overall_deployment_qualification_passed": false,
+  "scope": "Radiatorchangedmovingheaderlumpnowrerunwithnativecorrectedmass, fixedjoints/control/noRorpressuretuning; solarreusednotrerun. Freshindependentclearancesampledgeometryincludesupdatedradiatortrajectory. Force/flex/contact/hose/flightqualificationremainopen."
+}

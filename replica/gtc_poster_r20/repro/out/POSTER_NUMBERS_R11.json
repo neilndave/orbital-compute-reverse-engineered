@@ -1,0 +1,588 @@
+{
+  "revision": "r11_candidate",
+  "adopted": false,
+  "numbers": {
+    "satellites": {
+      "raw": 30,
+      "shown": "30",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "config_v3/parameters/design_requirements/spacecraft_per_launch",
+      "note": ""
+    },
+    "peak_target_kW": {
+      "raw": 250,
+      "shown": "250",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "config_v3/parameters/design_requirements/installed_peak_per_sc_kW",
+      "note": ""
+    },
+    "fleet_peak_MW": {
+      "raw": 7.5,
+      "shown": "7.5",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "30 x 250 kW",
+      "note": ""
+    },
+    "launch_t": {
+      "raw": 100,
+      "shown": "100",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "config_v3/parameters/design_requirements/launch_budget_kg",
+      "note": ""
+    },
+    "sc_mass_kg": {
+      "raw": 3026.214466978738,
+      "shown": "3,026",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "fleets/1/sc_mass_kg/value",
+      "note": ""
+    },
+    "fleet_t": {
+      "raw": 90.78643400936214,
+      "shown": "90.8",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "30 x fleets/1/sc_mass_kg/value / 1000",
+      "note": ""
+    },
+    "dispenser_t": {
+      "raw": 2.0,
+      "shown": "2",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "dispenser_all_in_kg",
+      "note": ""
+    },
+    "reserve_t": {
+      "raw": 7.213565990637857,
+      "shown": "7.2",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "fleets/1/reserve_t_per_launch/value",
+      "note": ""
+    },
+    "solar_area_m2": {
+      "raw": 861.753452057126,
+      "shown": "862",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "solar/gross_planform_m2",
+      "note": ""
+    },
+    "module_rating_W_m2": {
+      "raw": 324.5508243366797,
+      "shown": "324.55",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "solar/locked_remaining_surface_rating_W_m2",
+      "note": "remaining-planar equivalent module rating (assumed)"
+    },
+    "peak_available_BOL_kW": {
+      "raw": 249.9137517330319,
+      "shown": "249.9",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "solar/maximum_feasible_payload_BOL_kW",
+      "note": "rounds to 250 kW; acceptance threshold 249.9 kW (rounding tolerance)"
+    },
+    "peak_BOL_shortfall_W": {
+      "raw": 94.32230678381165,
+      "shown": "94",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "states/peak/solar_margin_W (negated)",
+      "note": ""
+    },
+    "nominal_kW": {
+      "raw": 175,
+      "shown": "175",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "states/nominal/IT_kW",
+      "note": ""
+    },
+    "nominal_BOL_margin_W": {
+      "raw": 81436.10862986394,
+      "shown": "81436",
+      "source": "native/r11_out/NATIVE_CHECKS.json",
+      "key_path": "states/nominal/solar_margin_W",
+      "note": ""
+    },
+    "annual_kW": {
+      "raw": 164.43368348670367,
+      "shown": "164.4",
+      "source": "native/stages/orbit/ECLIPSE_600KM.json",
+      "key_path": "175*(1-shadow_hours_per_year/8766-(t_open_min*eclipsed_orbits_per_year/60)/8766); t_open_min from native/stages/spin1/freeze/out_A4_MPG40_cold_qt40.json",
+      "note": ""
+    },
+    "coolant_inlet_peak_K": {
+      "raw": 391.9412845563338,
+      "shown": "392",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "fleets/1/coolant_radiator_inlet_peak_K/value",
+      "note": ""
+    },
+    "radiator_panels": {
+      "raw": 140,
+      "shown": "140",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "fleets/1/radiator_panels/value",
+      "note": ""
+    },
+    "emissivity": {
+      "raw": 0.92,
+      "shown": "0.92",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "coating emissivity BOL specification",
+      "note": ""
+    },
+    "device_target_K": {
+      "raw": 370,
+      "shown": "370",
+      "source": "out/DEVICE_THERMAL_RECHECK.json",
+      "key_path": "nominal device target (owner decision); edge cases above 370 K accepted",
+      "note": ""
+    },
+    "GPU_est_K": {
+      "raw": 370.75451980019255,
+      "shown": "371",
+      "source": "out/DEVICE_THERMAL_RECHECK.json",
+      "key_path": "thermal_sensitivities[nominal_175,1650W,HBM 20%,R_die .0072,R_HBM .02,property factor 1.0]/T_GPU_die_conditional_K",
+      "note": "conditional sensitivity, not qualified junction temperature"
+    },
+    "HBM_est_K": {
+      "raw": 372.60251980019257,
+      "shown": "373",
+      "source": "out/DEVICE_THERMAL_RECHECK.json",
+      "key_path": "same row/T_HBM_conditional_K",
+      "note": ""
+    },
+    "configurations": {
+      "raw": 1806336,
+      "shown": "1.81",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "configurations",
+      "note": ""
+    },
+    "hard_feasible": {
+      "raw": 3048,
+      "shown": "3,048",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "hard_feasible_count",
+      "note": ""
+    },
+    "design_feasible": {
+      "raw": 2347,
+      "shown": "2,347",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "design_margin_feasible_count",
+      "note": ""
+    },
+    "selected_index": {
+      "raw": 1037888,
+      "shown": "1037888",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "selected/index",
+      "note": ""
+    },
+    "screen_mass_kg": {
+      "raw": 3024.6011227948306,
+      "shown": "3024.60",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "selected/sc_mass_kg",
+      "note": "reduced-model screening estimate (star)"
+    },
+    "solver_mass_kg": {
+      "raw": 3026.214466978738,
+      "shown": "3026.21",
+      "source": "native/final/GTC_FINAL_CANDIDATE.json",
+      "key_path": "fleets/1/sc_mass_kg/value",
+      "note": "native solver re-check (diamond)"
+    },
+    "scenario_draws": {
+      "raw": 1048576,
+      "shown": "1.05",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "draws",
+      "note": ""
+    },
+    "sens_rank_draws": {
+      "raw": 65536,
+      "shown": "65,536",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_subset_draws",
+      "note": ""
+    },
+    "inlet_p05_K": {
+      "raw": 388.0054631607112,
+      "shown": "388",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "statistics/inlet_peak_K/quantiles/p05",
+      "note": ""
+    },
+    "inlet_p95_K": {
+      "raw": 399.7311257848882,
+      "shown": "400",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "statistics/inlet_peak_K/quantiles/p95",
+      "note": ""
+    },
+    "gpu_mc_median_K": {
+      "raw": 368.6841783965486,
+      "shown": "368.7",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "statistics/GPU_nominal_K/quantiles/p50",
+      "note": ""
+    },
+    "rho_PMAD_inlet": {
+      "raw": -0.6591664667687777,
+      "shown": "-0.66",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[PMAD]/inlet",
+      "note": ""
+    },
+    "rho_PMAD_gpu": {
+      "raw": -0.48671975062545997,
+      "shown": "-0.49",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[PMAD]/GPU",
+      "note": ""
+    },
+    "rho_emissivity_inlet": {
+      "raw": -0.6209184449104316,
+      "shown": "-0.62",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[emissivity]/inlet",
+      "note": ""
+    },
+    "rho_emissivity_gpu": {
+      "raw": -0.6062690902083732,
+      "shown": "-0.61",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[emissivity]/GPU",
+      "note": ""
+    },
+    "rho_plate_resistance_inlet": {
+      "raw": 0.004396406206084161,
+      "shown": "0.00",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[plate_resistance]/inlet",
+      "note": ""
+    },
+    "rho_plate_resistance_gpu": {
+      "raw": 0.4444348943642726,
+      "shown": "0.44",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[plate_resistance]/GPU",
+      "note": ""
+    },
+    "rho_rack_rise_inlet": {
+      "raw": 0.323820625416111,
+      "shown": "0.32",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[rack_rise]/inlet",
+      "note": ""
+    },
+    "rho_rack_rise_gpu": {
+      "raw": -0.05334126039733097,
+      "shown": "-0.05",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[rack_rise]/GPU",
+      "note": ""
+    },
+    "rho_film_scale_inlet": {
+      "raw": 0.0037513810096706742,
+      "shown": "0.00",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[film_scale]/inlet",
+      "note": ""
+    },
+    "rho_film_scale_gpu": {
+      "raw": -0.3011683670997675,
+      "shown": "-0.30",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[film_scale]/GPU",
+      "note": ""
+    },
+    "rho_environment_scale_inlet": {
+      "raw": 0.13366705788074282,
+      "shown": "0.13",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[environment_scale]/inlet",
+      "note": ""
+    },
+    "rho_environment_scale_gpu": {
+      "raw": 0.18722414824966163,
+      "shown": "0.19",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[environment_scale]/GPU",
+      "note": ""
+    },
+    "rho_view_scale_inlet": {
+      "raw": -0.143023818529376,
+      "shown": "-0.14",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[view_scale]/inlet",
+      "note": ""
+    },
+    "rho_view_scale_gpu": {
+      "raw": -0.14811079134943336,
+      "shown": "-0.15",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "rank_sensitivity[view_scale]/GPU",
+      "note": ""
+    },
+    "range_PMAD_lo": {
+      "raw": 88.0,
+      "shown": "88",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/PMAD[0] x 100",
+      "note": ""
+    },
+    "range_PMAD_hi": {
+      "raw": 95.0,
+      "shown": "95",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/PMAD[1] x 100",
+      "note": ""
+    },
+    "range_emissivity_lo": {
+      "raw": 0.88,
+      "shown": "0.88",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/emissivity[0]",
+      "note": ""
+    },
+    "range_emissivity_hi": {
+      "raw": 0.96,
+      "shown": "0.96",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/emissivity[1]",
+      "note": ""
+    },
+    "range_plate_lo": {
+      "raw": 12.8,
+      "shown": "12.8",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/plate_resistance[0]",
+      "note": ""
+    },
+    "range_plate_hi": {
+      "raw": 17.1,
+      "shown": "17.1",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/plate_resistance[1]",
+      "note": ""
+    },
+    "range_rack_lo": {
+      "raw": 16.0,
+      "shown": "16",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/rack_rise[0]",
+      "note": ""
+    },
+    "range_rack_hi": {
+      "raw": 24.0,
+      "shown": "24",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/rack_rise[1]",
+      "note": ""
+    },
+    "range_film_lo": {
+      "raw": 0.8,
+      "shown": "0.8",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/film_scale[0]",
+      "note": ""
+    },
+    "range_film_hi": {
+      "raw": 1.2,
+      "shown": "1.2",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/film_scale[1]",
+      "note": ""
+    },
+    "range_env_pct": {
+      "raw": 15,
+      "shown": "15",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/environment_scale → ±pct from 1.0",
+      "note": ""
+    },
+    "range_view_lo": {
+      "raw": 98.0,
+      "shown": "98",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/view_scale[0] x 100",
+      "note": ""
+    },
+    "range_view_hi": {
+      "raw": 100.0,
+      "shown": "100",
+      "source": "gb10_out/r11/MC_GB10_GPU.json",
+      "key_path": "ranges/view_scale[1] x 100",
+      "note": ""
+    },
+    "tape_gap_pct": {
+      "raw": 0.647739550057369,
+      "shown": "0.65",
+      "source": "gb10_out/r11/OPT_GB10_GPU.json",
+      "key_path": "abs(sweep_cross_check/relative_difference) x 100",
+      "note": "relaxed optimum vs feasible discrete grid minimum (same radiator objective)"
+    },
+    "tape_gradient_max_rel_err": {
+      "raw": 8.900466068862973e-10,
+      "shown": "passed",
+      "source": "gb10_out/r11/OPT_GB10_GPU.json",
+      "key_path": "gradient_check/*/relative_error (<0.003)",
+      "note": ""
+    },
+    "gpu_kernel_s": {
+      "raw": 0.213579794857651,
+      "shown": "0.214",
+      "source": "gb10_out/r11/BENCH_GPU_1.json",
+      "key_path": "median over BENCH_GPU_{1,2,3}/kernel_seconds",
+      "note": ""
+    },
+    "cpu_kernel_s": {
+      "raw": 7.020124776987359,
+      "shown": "7.02",
+      "source": "gb10_out/r11/BENCH_GPU_1.json",
+      "key_path": "median over BENCH_CPU_{1,2,3}/kernel_seconds",
+      "note": ""
+    },
+    "speedup_x": {
+      "raw": 32.86886187743653,
+      "shown": "32.9",
+      "source": "gb10_out/r11/BENCH_GPU_1.json",
+      "key_path": "median CPU / median GPU kernel seconds",
+      "note": ""
+    },
+    "throughput_Mps": {
+      "raw": 8.457429230156844,
+      "shown": "8.46",
+      "source": "gb10_out/r11/BENCH_GPU_1.json",
+      "key_path": "configurations / median GPU kernel seconds / 1e6",
+      "note": ""
+    },
+    "warp_version": {
+      "raw": "1.18.0",
+      "shown": "1.18.0",
+      "source": "gb10_out/r11/BENCH_GPU_1.json",
+      "key_path": "warp",
+      "note": ""
+    },
+    "inputs_sha256": {
+      "raw": "94e1b3ae978b83fe5fc0b3d87bf8ccbe9b277d4d44fdd523403ec328db7cc12b",
+      "shown": "94e1b3ae978b",
+      "source": "gb10_out/r11/SWEEP_GB10_GPU.json",
+      "key_path": "inputs_sha256",
+      "note": ""
+    },
+    "surrogate_heldout_max_abs_eta": {
+      "raw": 9.301506847186891e-05,
+      "shown": "9.3e-5",
+      "source": "evidence/fin/FIN_RECHECK_SUMMARY.json",
+      "key_path": "checkpoint/heldout_max_abs_eta",
+      "note": ""
+    },
+    "surrogate_train": {
+      "raw": 384,
+      "shown": "384",
+      "source": "evidence/fin/FIN_RECHECK_SUMMARY.json",
+      "key_path": "checkpoint/training_labels",
+      "note": ""
+    },
+    "surrogate_heldout": {
+      "raw": 128,
+      "shown": "128",
+      "source": "evidence/fin/FIN_RECHECK_SUMMARY.json",
+      "key_path": "checkpoint/heldout_labels",
+      "note": ""
+    },
+    "hinge_locks": {
+      "raw": 31,
+      "shown": "31",
+      "source": "evidence/newton/NEWTON_RECHECK_SUMMARY.json",
+      "key_path": "aggregate_latched",
+      "note": ""
+    },
+    "angle_parity_deg": {
+      "raw": 0.006147383246570826,
+      "shown": "0.0061",
+      "source": "evidence/newton/NEWTON_RECHECK_SUMMARY.json",
+      "key_path": "aggregate_max_angle_difference_deg",
+      "note": ""
+    },
+    "newton_version": {
+      "raw": "1.7.0",
+      "shown": "1.7.0",
+      "source": "evidence/newton/NEWTON_RECHECK_SUMMARY.json",
+      "key_path": "radiator/corrected/newton_version",
+      "note": ""
+    },
+    "frame_kg": {
+      "raw": 45.69868499481628,
+      "shown": "≈50",
+      "source": "evidence/frame/FRAME_CONTROL_REPRODUCTION.json",
+      "key_path": "frame_kg (45.70 kg, rounded up to ≈50 kg allocation wording)",
+      "note": ""
+    },
+    "frame_f1_Hz": {
+      "raw": 35.88428,
+      "shown": "35",
+      "source": "evidence/frame/FRAME_CONTROL_REPRODUCTION.json",
+      "key_path": "frequencies_Hz[0] (35.88 Hz, stated as reaches 35 Hz)",
+      "note": ""
+    },
+    "panel_f1_min_Hz": {
+      "raw": 127.74165507442557,
+      "shown": "128",
+      "source": "evidence/panel/PANEL_RECHECK_SUMMARY.json",
+      "key_path": "min cases/new_f1_Hz",
+      "note": ""
+    },
+    "panel_f1_max_Hz": {
+      "raw": 153.01164584750333,
+      "shown": "153",
+      "source": "evidence/panel/PANEL_RECHECK_SUMMARY.json",
+      "key_path": "max cases/new_f1_Hz",
+      "note": ""
+    },
+    "panel_f1_nominal_Hz": {
+      "raw": 139.05203797695228,
+      "shown": "139",
+      "source": "evidence/panel/PANEL_RECHECK_SUMMARY.json",
+      "key_path": "finest_nominal_L3_reused",
+      "note": ""
+    },
+    "effort_days": {
+      "raw": 11.175972222222223,
+      "shown": "≈11",
+      "source": "evidence/effort/HISTORICAL_TIME_RECHECK.json",
+      "key_path": "elapsed_days_recomputed",
+      "note": ""
+    },
+    "effort_hours": {
+      "raw": 44.14888888888889,
+      "shown": "≥44.1",
+      "source": "evidence/effort/HISTORICAL_TIME_RECHECK.json",
+      "key_path": "gb10_busy_hours_lower_bound_archived/value (floored to 0.1 h)",
+      "note": ""
+    }
+  },
+  "source_sha256": {
+    "native/final/GTC_FINAL_CANDIDATE.json": "b9ba76da573aa1f05c6b958c16b5236911591e8cd1ff54c3d7b675e87f25f99d",
+    "native/r11_out/NATIVE_CHECKS.json": "3fb6cbf2d1c05c2b69c06baef3553b17d532f755bc89ca6825d72087732891ad",
+    "native/stages/orbit/ECLIPSE_600KM.json": "b3b1d8fcbaada9192346d820899cc042b6f852b73b91393e2624a48da1844137",
+    "native/stages/spin1/freeze/out_A4_MPG40_cold_qt40.json": "c345f972caebcb1aa68d9559b066c9e399ea87d91f7312eb32104c7335eac9c5",
+    "out/DEVICE_THERMAL_RECHECK.json": "16387963c30d105ff144feb1decfd62d767c5c7f0f8a6b2e5c41766726db8b0b",
+    "gb10_out/r11/SWEEP_GB10_GPU.json": "bc83492975f4dfbfbed28943fa4cbee454944d5d6667a1e46bb0388a59e1c065",
+    "gb10_out/r11/MC_GB10_GPU.json": "398966ac229d753332e8c6e4c65ffffc39d30a8132bcb09ec0b77ac411403138",
+    "gb10_out/r11/OPT_GB10_GPU.json": "c148672aa2beac8d3ff99d61d6021a0dcbadb915b75ea832947500bf0e1443d2",
+    "gb10_out/r11/BENCH_GPU_1.json": "9601d273667450b6da32a5b73bee0e1250ba06adcb7c2140e5ad11b87a6d857d",
+    "gb10_out/r11/BENCH_GPU_2.json": "b10e0d82c86570ca2c7d9f098f8912354909f34d08511a6ac9eb5ca3a3ecbb2d",
+    "gb10_out/r11/BENCH_GPU_3.json": "16405b141e244d19fb96c24f78c26a2f7cd16288b60b452111933428c316f158",
+    "gb10_out/r11/BENCH_CPU_1.json": "d892a867230fd2407a08c496f19677c9b2fd47d7f09feb759f4a61c2169fb357",
+    "gb10_out/r11/BENCH_CPU_2.json": "ea6d963cbd1ee0f0ad40af71292d1dbd778cf74294f14014e19553a35f397b35",
+    "gb10_out/r11/BENCH_CPU_3.json": "0b02ab72baaad4e26b607cdbc62efccb8297aff8da11ef68d5b4b83a8ee2b2b2",
+    "evidence/fin/FIN_RECHECK_SUMMARY.json": "e2ad21898ee2931c8fab7b1a03368aac3c547d9c67fe5e793b0b32cc4199c437",
+    "evidence/newton/NEWTON_RECHECK_SUMMARY.json": "ebfeb10af59356a320bdc20e0622ad82abccee9aae22dfb50c786672773bddb2",
+    "evidence/frame/FRAME_CONTROL_REPRODUCTION.json": "e5ee2b64c958903f73641313b04988d4910b660dbcf83ae8cdfc536669fbc050",
+    "evidence/panel/PANEL_RECHECK_SUMMARY.json": "8d50a80756e4f6e90b6fa4f1ae1102a45194e36ba35e22faf200425a0bb5527b",
+    "evidence/effort/HISTORICAL_TIME_RECHECK.json": "e3a4e17b679a4e7094dca78305b9f3c10d1fa68f82af44d37cbf39cebab22cae"
+  },
+  "derive_script_sha256": "bb806a77101c96c4b3426b84e40f1ddb1e059a7934f0acc3c765405f514da5b0"
+}

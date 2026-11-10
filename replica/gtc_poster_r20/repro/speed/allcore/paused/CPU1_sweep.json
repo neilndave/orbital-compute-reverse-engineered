@@ -1,0 +1,16 @@
+{
+ "stage": "sweep",
+ "mode": "cpu",
+ "kernel_seconds": 7.024119830224663,
+ "cpu_affinity": [
+  5
+ ],
+ "hard_feasible": 3048,
+ "design_feasible": 2347,
+ "selected_index": 1037888,
+ "warp": "1.18.0",
+ "numpy": "2.5.4",
+ "machine": "aarch64",
+ "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13",
+ "time_unix": 1794228426.8132071
+}

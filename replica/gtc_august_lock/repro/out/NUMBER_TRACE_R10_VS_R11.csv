@@ -1,0 +1,43 @@
+item,r10,r11,numeric_change_pct,moves_more_than_1pct,printed_text_changed,why
+Compute,"NVL72-based, 79 GPUs","one Vera Rubin NVL72, 72 GPUs + 36 CPUs",-8.861,True,True,Decision 4: exactly one NVL72 (primary-sourced topology)
+Payload allocation,"assumed 640 kg, lightweighted",assumed 640.38 kg allocation; 600×1200×937 mm box,0.059,False,True,Wording: explicit assumption; no lightweighting claim
+Peak power per satellite,250 kW,250 kW peak at beginning of life,0.0,False,True,Decision 1: modeled available 249.9 kW rounds to 250; acceptance ≥249.9 kW
+Satellites per launch,30,30,0.0,False,False,
+Fleet installed peak,7.5 MW,7.5 MW,0.0,False,False,
+Launch budget,100 t,100 t,0.0,False,False,
+Satellite mass,"3,022 kg","3,026 kg",0.132,False,True,"MPG40 property fix: coolant loop +3.60, accumulator/freeze +0.06, propellant +0.07 kg"
+Fleet mass,90.7 t,90.8 t,0.11,False,True,30 × satellite mass
+Dispenser,2 t,2 t,0.0,False,False,
+Reserve,7.3 t,7.2 t,-1.37,True,True,100 − fleet − dispenser
+Solar array area,862 m²,862 m²,0.0,False,False,Unchanged August array (fixed)
+Solar rating,324.55 W/m² on active cells,"324.55 W/m² assumed module rating, remaining planar area",0.0,False,True,Wording only
+Nominal sunlit power,175 kW,175 kW,0.0,False,False,
+Annual average,164.4 kW,164.4 kW,0.0,False,False,
+GPU temperature,366 K nominal,≈370 K nominal target (est. 371 K),1.366,True,True,"Decision 2; 366 K was the 1.7 kW/offset model, unsupported for Rubin; estimate is a conditional sensitivity"
+HBM temperature,362 K nominal,"est. 373 K, higher in edge cases; not yet qualified",3.039,True,True,Decision 2
+Coolant inlet peak,392 K,392 K,0.0,False,False,Bulk model; chemistry caveat omitted per decision 3
+Radiator panels,140,140,0.0,False,False,Same selected geometry
+Coating emissivity,0.92,0.92,0.0,False,False,
+Rack frame mass,≈50 kg,≈50 kg (45.70 kg),0.0,False,False,Rerun in t773 with full 640.38 kg; printed value unchanged
+Rack frame mode,35 Hz,35 Hz (35.88 Hz),0.0,False,False,
+Panel first mode,"128–153 Hz, ≈139 nominal","128–153 Hz, ≈139 nominal",0.0,False,False,
+Designs screened,1.81M,1.81M,0.0,False,False,
+Search result,"""a mass-feasible trade point"" (3,095 hard / 2,398 design-margin feasible)","3,048 hard / 2,347 design-margin feasible; lightest picked",-1.519,True,True,Corrected MPG40 inputs; 249.9 kW acceptance; selected index unchanged (1037888)
+Screen estimate (star),"(not printed) 3,020.89 kg",3024.60 kg,0.123,False,True,"Reduced model, same index"
+Solver re-check (diamond),3022.48 kg / 140 panels,3026.21 kg / 140 panels,0.123,False,True,Native pipeline
+Scenario pass fraction,42.08%,41.66%,-0.998,False,True,"Same 1,048,576 draws/seed; corrected inputs"
+Scenario draws,1.05M,1.05M,0.0,False,False,
+GPU speedup,33.1×,32.9×,-0.604,False,True,Fresh median-of-3 rerun (kernel gained the explicit power check)
+GPU warm sweep,0.213 s,0.214 s,0.469,False,True,
+CPU warm sweep,7.04 s,7.02 s,-0.284,False,True,
+Throughput,8.49M designs/s,8.46M designs/s,-0.353,False,True,
+Input SHA256 prefix,619e2da5375d…,94e1b3ae978b…,,False,True,Single-source regenerated inputs
+PhysicsNeMo held-out max |Δη|,9.3e-5,9.3e-5,0.0,False,False,
+PhysicsNeMo labels,384 / 128,384 / 128,0.0,False,False,
+warp.Tape relaxed mass gap,0.82%,0.65%,-20.732,True,True,"Recomputed against the feasible discrete optimum (restored, new value)"
+Hinge locks,31 / 31,31 / 31,0.0,False,False,
+Angle parity,0.0061°,0.0061°,0.0,False,False,
+Newton / Warp versions,1.7.0 / 1.18.0,1.7.0 / 1.18.0,,False,False,
+Effort span,≈11 days,≈11 days,0.0,False,False,
+GB10 job time,≥44.1 h,≥44.1 h,0.0,False,False,
+Release gates,2 passed release gates,(removed),,False,True,Claim dropped

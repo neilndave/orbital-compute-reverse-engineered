@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "scope": "Satellite engineering effort from earliest retained clearly orbital input to August lock; engineering process and CPU/GPU compute, not labor hours.",
+  "canonical_sha256": "f02f82201c45c9b1c98b1052f8adc795f47c441e642059bd450b288b5de88846",
+  "window": {
+    "start_pacific": "2026-10-27T22:21:18-07:00",
+    "start_taipei": "2026-10-28T13:21:18+08:00",
+    "end_pacific": "2026-11-08T01:34:42-08:00",
+    "end_taipei": "2026-11-08T17:34:42+08:00",
+    "elapsed_hours": 268.22333333333336,
+    "elapsed_days": 11.175972222222223,
+    "original_requested_start_pacific": "2026-10-28T01:12:00-07:00",
+    "original_requested_elapsed_days": 11.057430555555555,
+    "start_status": "artifact-timestamp proxy, not proven first problem-definition message",
+    "start_evidence": "tar member study3_torch.py in retained src_pack.tgz: last-save epoch 1793164878; verified orbital/heat-pump/radiator model content",
+    "unresolved_earlier_claim": "Retrospective timeline says a scoping plan existed by Oct 27 18:41 PDT / Oct 28 09:41 Taipei. Original artifact and first-message timestamp not recovered. Do not assert an exact first-idea start."
+  },
+  "metrics": {
+    "gb10_busy_hours_lower_bound": {
+      "value": 44.14888888888889,
+      "status": "lower-bound",
+      "unit": "wall-clock hours",
+      "sources": [
+        "GB10 render process logs with embedded UTC stamps and process wall timers",
+        "GB10: rack_two_skies/gb10_queue_t533/logs/status.csv"
+      ],
+      "method_note": "Union of intervals; includes CPU or GPU job process occupancy, not GPU utilization. Downloads/installations and gaps between jobs excluded."
+    },
+    "gb10_busy_hours_best_recovered_estimate": {
+      "value": 58.718562939299474,
+      "status": "estimated",
+      "unit": "wall-clock hours",
+      "sources": [
+        "<archived>/derived_evidence.json",
+        "<archived>/gb10_ccx_metadata.json"
+      ],
+      "method_note": "Adds output-time minus recorded duration for Newton/Warp jobs, and first .12d to final .frd spans for primary CalculiX cases. Copied-result mtimes are uncertain. Not complete metering or an upper bound; missing jobs are not extrapolated."
+    },
+    "gb10_busy_share_lower_bound": {
+      "value": 16.459749545362282,
+      "status": "lower-bound",
+      "unit": "percent of elapsed window",
+      "sources": [],
+      "method_note": ""
+    },
+    "gb10_busy_share_best_recovered_estimate": {
+      "value": 21.891668487441862,
+      "status": "estimated",
+      "unit": "percent of elapsed window",
+      "sources": [],
+      "method_note": ""
+    },
+    "explicitly_timed_process_sessions": {
+      "value": 94,
+      "status": "lower-bound",
+      "unit": "sessions",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "83 renderer processes plus 11 sequential queue jobs. Queue children are not added again."
+    },
+    "gb10_distinct_solver_or_render_executions": {
+      "value": 869,
+      "status": "lower-bound",
+      "unit": "executions",
+      "sources": [
+        "<archived>/gb10_ccx_metadata.json",
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "A solver invocation or renderer process is the counting unit, not scheduler submission. Overwritten runs absent. Excludes 4 ambiguous CalculiX scratch cases, Warp array references, and thermal/sweep batches to prevent wrapper double counting."
+    },
+    "design_evaluations": {
+      "value": 11047980,
+      "status": "lower-bound",
+      "unit": "candidate evaluations",
+      "sources": [
+        "<archived>/derived_evidence.json",
+        "<archived>/SURROGATE_V2.json#screening",
+        "<archived>/timing.jsonl"
+      ],
+      "method_note": "6 sweep results x 1,806,336, plus 2 v2 screens x 100,000 and 9,964 early mass/orbit evaluations. CPU/GPU parity replays count as evaluations, NOT new unique designs. Many older searches have no retained scalar counters."
+    },
+    "gpu_sweep_evaluations_subset": {
+      "value": 3612672,
+      "status": "lower-bound",
+      "unit": "GPU candidate evaluations",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "Two 1,806,336-entry GPU sweeps under distinct input hashes. Same grid replayed under revised inputs; unique physical design count is not claimed."
+    },
+    "mc_scenario_evaluations": {
+      "value": 2267268608,
+      "status": "lower-bound",
+      "unit": "scenario evaluations",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "599 distinct retained result payloads after canonical-content deduplication. Includes scenario/model/repetition changes and CPU/GPU parity; NOT unique independent random draws or flight-risk probabilities. Excludes benchmark-only and view-factor-ray counts. Mostly reduced thermal models."
+    },
+    "calculix_structural_fea_gb10": {
+      "value": 682,
+      "status": "lower-bound",
+      "unit": "output-producing solver executions",
+      "sources": [
+        "<archived>/gb10_ccx_metadata.json"
+      ],
+      "method_note": "Primary non-backup work directories, paired .12d/.sta/.frd outputs. Counts executions producing result files, not all-passing qualification cases."
+    },
+    "calculix_structural_fea_total": {
+      "value": 685,
+      "status": "lower-bound",
+      "unit": "solver executions",
+      "sources": [
+        "<archived>/gb10_ccx_metadata.json",
+        "<archived>/GPU_STUDY_INDEX.json#fea.results"
+      ],
+      "method_note": "Adds three final-lock box CPU cases; no exhaustive box history count."
+    },
+    "calculix_structural_gb10_job_hours": {
+      "value": 29.512913022173777,
+      "status": "estimated",
+      "unit": "CPU job wall-hours",
+      "sources": [
+        "<archived>/gb10_ccx_metadata.json"
+      ],
+      "method_note": "Sum across case spans, so parallel jobs overlap. GPU hours = 0: CalculiX ran on CPUs."
+    },
+    "calculix_thermal_runs_gb10": {
+      "value": 49,
+      "status": "lower-bound",
+      "unit": "output-producing thermal solves",
+      "sources": [
+        "<archived>/gb10_ccx_metadata.json"
+      ],
+      "method_note": "44 P7 thermal cases plus 5 thermal cross-check mesh cases."
+    },
+    "thermal_numerical_solves": {
+      "value": 16257,
+      "status": "lower-bound",
+      "unit": "numerical thermal solves",
+      "sources": [
+        "<archived>/train_results_main.json#dataset_line",
+        "<archived>/table_AL6061_L30_t0p25.json",
+        "<archived>/table_AL6061_L30_t0p20.json",
+        "<archived>/table_F3_L40_t0p5.json",
+        "<archived>/table_AL6061_L26_t0p225.json",
+        "<archived>/table_AL6061_L25_t0p20.json",
+        "<archived>/table_AL6061_L25_t0p25.json",
+        "<archived>/table_AL6061_L20_t0p20.json",
+        "<archived>/table_AL6061_L30_t0p30.json",
+        "<archived>/FIN_DATASET_RESULT.json",
+        "<archived>/gb10_ccx_metadata.json"
+      ],
+      "method_note": "11,000 initial labels + 8 x 585 fin-table solves + 512 v3 labels + 16 independent-grid checks + 49 CalculiX thermal solves. Additional thermal optimization calls and panel2d dataset generation are excluded from this conservative subtotal."
+    },
+    "timed_thermal_batches_gb10": {
+      "value": 24,
+      "status": "lower-bound",
+      "unit": "batch result records",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": ""
+    },
+    "timed_thermal_gpu_job_hours": {
+      "value": 7.211925115717782,
+      "status": "lower-bound",
+      "unit": "GPU-using job wall-hours",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "Recorded process wall time, not integrated GPU active time; overlapping jobs not unioned in this category sum."
+    },
+    "newton_library_runs": {
+      "value": 55,
+      "status": "lower-bound",
+      "unit": "timed result records",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "Excludes 24 custom Warp array/deployment reference runs despite the historical newton_array directory name. Includes failed/unstable trials; does not claim all passed."
+    },
+    "newton_library_job_hours": {
+      "value": 10.403376313726108,
+      "status": "lower-bound",
+      "unit": "GPU-using job wall-hours",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "Summed recorded Newton durations. Concurrency and utilization mean these are not exclusive active-GPU hours."
+    },
+    "warp_deployment_reference_runs": {
+      "value": 24,
+      "status": "lower-bound",
+      "unit": "timed result records",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": ""
+    },
+    "physicsnemo_training_runs": {
+      "value": 10,
+      "status": "lower-bound",
+      "unit": "training sessions",
+      "sources": [
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_fno.json",
+        "<archived>/surrogate_results_T45.json",
+        "GB10: rack_two_skies/gb10_queue_t533/logs/job5_pnemo.log",
+        "<archived>/SURROGATE_V2.json",
+        "<archived>/SURROGATE_RESULT.json",
+        "<archived>/SURROGATE_RESULT.json"
+      ],
+      "method_note": "A suite with three local thermal models counts as one training session. More scarcity/prototype training attempts exist but are not included."
+    },
+    "physicsnemo_training_job_hours": {
+      "value": 1.2380834788235822,
+      "status": "lower-bound",
+      "unit": "GPU-using training/evaluation wall-hours",
+      "sources": [
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_results_main.json",
+        "<archived>/train_fno.json",
+        "<archived>/surrogate_results_T45.json",
+        "GB10: rack_two_skies/gb10_queue_t533/logs/job5_pnemo.log",
+        "<archived>/SURROGATE_V2.json",
+        "<archived>/SURROGATE_RESULT.json",
+        "<archived>/SURROGATE_RESULT.json"
+      ],
+      "method_note": "Mixed training-only timers and one combined train/eval timer; not a GPU-utilization integral."
+    },
+    "render_process_runs": {
+      "value": 83,
+      "status": "lower-bound",
+      "unit": "render process attempts",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": "Includes sparse-frame tests, rerenders, and timed partial/cancelled runs, not 83 finished movies."
+    },
+    "render_job_hours": {
+      "value": 43.23166666666667,
+      "status": "lower-bound",
+      "unit": "GPU-using renderer process hours",
+      "sources": [
+        "<archived>/derived_evidence.json"
+      ],
+      "method_note": ""
+    },
+    "recorded_design_loop_passes": {
+      "value": 700,
+      "status": "lower-bound",
+      "unit": "recorded passes",
+      "sources": [
+        "<archived>/iterations.jsonl",
+        "<archived>/t423_passes.jsonl"
+      ],
+      "method_note": "106 initial iteration records + 594 target/requirement exploration passes. Repeated runs and convergence checks included; not 700 distinct redesigns or adopted baselines."
+    },
+    "named_requirement_exploration_families": {
+      "value": 38,
+      "status": "measured",
+      "unit": "task families",
+      "sources": [
+        "<archived>/t423_passes.jsonl"
+      ],
+      "method_note": "Unique task labels, e.g. array specific power, eclipse battery, supply limit, leave-one-out, credible/stretch stacks. These are exploration families, not 38 independent formal requirements documents."
+    },
+    "final_candidate_revision_notes": {
+      "value": 12,
+      "status": "lower-bound",
+      "unit": "retained revision documents",
+      "sources": [
+        "<archived>/FINAL_CANDIDATE_t556*.md"
+      ],
+      "method_note": "Unbacked-up notes: initial t556 plus b through l; not automatically 12 accepted designs."
+    },
+    "radiator_trade_study_notes": {
+      "value": 5,
+      "status": "lower-bound",
+      "unit": "study documents",
+      "sources": [
+        "<archived>/RAD_t512.md",
+        "<archived>/RAD_t513.md",
+        "<archived>/RAD_t514.md",
+        "<archived>/RAD_t521.md",
+        "<archived>/RAD_t523.md"
+      ],
+      "method_note": ""
+    },
+    "final_baseline_generations": {
+      "value": 3,
+      "status": "lower-bound",
+      "unit": "baseline generations",
+      "sources": [
+        "<archived>/gtc_final_candidate",
+        "<archived>/gtc_final_v2",
+        "<archived>/gtc_final_v3_lock"
+      ],
+      "method_note": "Final candidate / Al-radiator v2 / no-peak-battery grown-array v3 lock; earlier baseline generations and sublocks not added."
+    },
+    "design_review_revisions": {
+      "value": 4,
+      "status": "lower-bound",
+      "unit": "review revisions",
+      "sources": [
+        "<archived>/DESIGN_REVIEW.md#revision-history",
+        "<archived>/DR_REV4.md"
+      ],
+      "method_note": "Revision labels 1-4, not four independent reviewers or four flight-qualification approvals."
+    },
+    "full_release_audit_gates": {
+      "value": 2,
+      "status": "measured",
+      "unit": "passed gates",
+      "sources": [
+        "<archived>/GATE_A.json",
+        "<archived>/GATE_B.json"
+      ],
+      "method_note": "A and B; associated reproducibility checks are components, not extra full gates."
+    },
+    "retained_check_reports": {
+      "value": 13,
+      "status": "lower-bound",
+      "unit": "check reports",
+      "sources": [
+        "<archived>/CHECKS_*.md"
+      ],
+      "method_note": "Some record failures or unresolved issues; do not label all 13 as passed audits."
+    },
+    "cataloged_source_urls": {
+      "value": 165,
+      "status": "lower-bound",
+      "unit": "distinct cataloged URLs",
+      "sources": [
+        "<archived>/sources.jsonl",
+        "<archived>/SOURCES_t532.md",
+        "<archived>/SOURCES_370K_t540.md",
+        "<archived>/BUS_VENDOR_DATA.md",
+        "<archived>/FOLD_PITCH_SOURCES_T45.md",
+        "<archived>/DEPLOY_REFERENCES_T45.md",
+        "<archived>/SPACEX_ENVELOPE.md"
+      ],
+      "method_note": "URLs in 7 satellite-specific source collections; fragment and trailing slash deduped. Not a recovered count of web searches, page opens, or unique underlying documents. Some source entries are snippet-only and remain labelled as such."
+    },
+    "source_catalog_library_documents": {
+      "value": 7,
+      "status": "lower-bound",
+      "unit": "source/library registers",
+      "sources": [
+        "<archived>/sources.jsonl",
+        "<archived>/SOURCES_t532.md",
+        "<archived>/SOURCES_370K_t540.md",
+        "<archived>/BUS_VENDOR_DATA.md",
+        "<archived>/FOLD_PITCH_SOURCES_T45.md",
+        "<archived>/DEPLOY_REFERENCES_T45.md",
+        "<archived>/SPACEX_ENVELOPE.md"
+      ],
+      "method_note": "Curated retained source registers for parts, materials, deployment and launch envelopes. Not a claim of 7 executable code libraries."
+    },
+    "requirements_bounds_plan_documents": {
+      "value": 6,
+      "status": "lower-bound",
+      "unit": "retained planning documents",
+      "sources": [
+        "<archived>/model_spec.md",
+        "<archived>/BOUNDS.md",
+        "<archived>/KNOB_TEST_PLAN.md",
+        "<archived>/PLAN.md",
+        "<archived>/GTC_REPLICA_PLAN.md",
+        "<archived>/variable_register.md"
+      ],
+      "method_note": ""
+    },
+    "github_default_branch_commits": {
+      "value": 35,
+      "status": "lower-bound",
+      "unit": "commits",
+      "sources": [
+        "GitHub list_commits for both named project repositories, per_page=100, since/until window"
+      ],
+      "method_note": "20 original-project + 15 replica-project default-branch commits. SHA sets are disjoint. Unmerged branch commits are not exhaustively enumerated; local snapshot commits are separate."
+    },
+    "github_pull_requests_in_window": {
+      "value": 14,
+      "status": "measured",
+      "unit": "PRs",
+      "sources": [
+        "GitHub list_pull_requests state=all, per_page=100 for both project repositories"
+      ],
+      "method_note": "8 original-project + 6 replica-project PRs created within window. Replica PR 7 was created at Nov 8 01:46:26 PST / 17:46:26 Taipei, after the cutoff, and is excluded."
+    },
+    "local_backup_snapshot_commits": {
+      "value": 70,
+      "status": "measured",
+      "unit": "local snapshot commits",
+      "sources": [
+        "<archived>/gb10_git_history.txt"
+      ],
+      "method_note": "Read-only git log --all within window on existing bare backup; these are not additional GitHub commits or 70 redesigns."
+    },
+    "major_scope_requirement_pivots": {
+      "value": 6,
+      "status": "estimated",
+      "unit": "curated major changes",
+      "sources": [
+        "<archived>/TIMELINE.md#M23",
+        "<archived>/DECISIONS.md#57",
+        "<archived>/DECISIONS.md#65-66",
+        "<archived>/PLAN.md; process_log/events.jsonl",
+        "<archived>/DR_REV4.md#revision-history",
+        "<archived>/DR_REV4.md#6.1; <archived>/CONFIG_V3.json"
+      ],
+      "method_note": "Analyst grouping of documented changes, not an objective exhaustive count. SpaceX-target and replica reframing are grouped, not counted twice; June-to-August scope narrowing is grouped with the final lock."
+    }
+  },
+  "poster_facing": {
+    "safe_headline_facts": [
+      "≈11-day satellite effort",
+      "Over 40 hours of measured desktop compute-job time",
+      "Hundreds of solver runs",
+      "Four design-review revisions",
+      "700 recorded design-loop passes (including reruns)"
+    ],
+    "candidate_so_what_lines": [
+      "One engineer + AI agent: hundreds of solver runs and four design reviews in ≈11 days, with open tools and rerunnable results.",
+      "More engineering cycles before hardware: 700 recorded design-loop passes, followed by thermal, structural, and deployment checks.",
+      "Over 40 hours of desktop compute—not just a fast sweep. The agent runs checks while the engineer sets requirements and makes decisions.",
+      "Test alternatives before cutting metal: millions of design evaluations, repeated redesigns, and solver-checked thermal, structural, and deployment models.",
+      "One engineer and an AI agent carried a satellite design through four review revisions in ≈11 days—keeping engineering judgment at the center.",
+      "Accelerate the learning loop, not just one kernel: explore alternatives, revisit requirements, and verify the chosen design with independent solvers."
+    ],
+    "recommended_line_indices_1_based": [
+      1,
+      3
+    ],
+    "avoid_claims": [
+      "59 GPU-hours: busy-time estimate includes CPU jobs and process occupancy",
+      "Millions of distinct full spacecraft designs: counted evaluations include replays and reduced models",
+      "Billions of independent flight-risk cases: scenario evaluations reuse models and assumptions",
+      "A measured labor or staffing reduction: no team-size or human-hours counterfactual was measured",
+      "700 accepted redesigns: the iteration ledger includes reruns and convergence checks"
+    ]
+  },
+  "evidence_detail": {
+    "sweep_results": [
+      {
+        "path": "<archived>/SWEEP_GB10_ARM_CPU.json",
+        "device": "cpu",
+        "label": "GB10_ARM_CPU",
+        "inputs_sha256": "619e2da5375db0de128d4e9e5b3e00c2369e5e1dc848b4bff386f8103fbde6e5",
+        "kernel_seconds": 7.043135851039551,
+        "configurations": 1806336
+      },
+      {
+        "path": "<archived>/SWEEP_BOX_CPU.json",
+        "device": "cpu",
+        "label": "BOX_CPU",
+        "inputs_sha256": "619e2da5375db0de128d4e9e5b3e00c2369e5e1dc848b4bff386f8103fbde6e5",
+        "kernel_seconds": 9.878087233999395,
+        "configurations": 1806336
+      },
+      {
+        "path": "<archived>/SWEEP_GB10_GPU.json",
+        "device": "cuda:0",
+        "label": "GB10_GPU",
+        "inputs_sha256": "619e2da5375db0de128d4e9e5b3e00c2369e5e1dc848b4bff386f8103fbde6e5",
+        "kernel_seconds": 0.21282428596168756,
+        "configurations": 1806336
+      },
+      {
+        "path": "<archived>/SWEEP_GRACE_CPU.json",
+        "device": "cpu",
+        "label": "GRACE_CPU",
+        "inputs_sha256": "f37b7d359430904b4925c3231d3c3eeec6d10adae759329bb012f68d3c29a51c",
+        "kernel_seconds": 7.029865700984374,
+        "configurations": 1806336
+      },
+      {
+        "path": "<archived>/SWEEP_BOX_CPU.json",
+        "device": "cpu",
+        "label": "BOX_CPU",
+        "inputs_sha256": "f37b7d359430904b4925c3231d3c3eeec6d10adae759329bb012f68d3c29a51c",
+        "kernel_seconds": 9.803859552997892,
+        "configurations": 1806336
+      },
+      {
+        "path": "<archived>/SWEEP_GB10_GPU.json",
+        "device": "cuda:0",
+        "label": "GB10_GPU",
+        "inputs_sha256": "f37b7d359430904b4925c3231d3c3eeec6d10adae759329bb012f68d3c29a51c",
+        "kernel_seconds": 0.21306062303483486,
+        "configurations": 1806336
+      }
+    ],
+    "training_sessions": [
+      {
+        "source": "<archived>/train_results_main.json",
+        "model": "MLP seed 0",
+        "seconds": 113.0
+      },
+      {
+        "source": "<archived>/train_results_main.json",
+        "model": "MLP seed 1",
+        "seconds": 106.4
+      },
+      {
+        "source": "<archived>/train_results_main.json",
+        "model": "MLP seed 2",
+        "seconds": 107.3
+      },
+      {
+        "source": "<archived>/train_results_main.json",
+        "model": "FNO full",
+        "seconds": 105.13866472244263
+      },
+      {
+        "source": "<archived>/train_fno.json",
+        "model": "panel2d FNO",
+        "seconds": 3601.7012152671814
+      },
+      {
+        "source": "<archived>/surrogate_results_T45.json",
+        "model": "thermal three-model train/eval suite",
+        "seconds": 324.0364589691162
+      },
+      {
+        "source": "GB10: rack_two_skies/gb10_queue_t533/logs/job5_pnemo.log",
+        "model": "queue surrogate train",
+        "seconds": 79
+      },
+      {
+        "source": "<archived>/SURROGATE_V2.json",
+        "model": "v2 local fin",
+        "seconds": 8.924586296081543
+      },
+      {
+        "source": "<archived>/SURROGATE_RESULT.json",
+        "model": "v3 August fin",
+        "seconds": 5.616222002077848
+      },
+      {
+        "source": "<archived>/SURROGATE_RESULT.json",
+        "model": "v3 August fin",
+        "seconds": 5.9833765079965815
+      }
+    ],
+    "major_pivots": [
+      {
+        "change": "Use an open idealized 3-D CAD/solver workflow instead of waiting for commercial-tool verification",
+        "source": "<archived>/TIMELINE.md#M23"
+      },
+      {
+        "change": "Adopt rated coolant baseline; retain hotter-loop case only as sensitivity",
+        "source": "<archived>/DECISIONS.md#57"
+      },
+      {
+        "change": "Pause compute in eclipse instead of full eclipse battery ride-through",
+        "source": "<archived>/DECISIONS.md#65-66"
+      },
+      {
+        "change": "Reframe the satellite study around public SpaceX targets and replica budgets",
+        "source": "<archived>/PLAN.md; process_log/events.jsonl"
+      },
+      {
+        "change": "Replace composite radiator approach with Al-only final baseline",
+        "source": "<archived>/DR_REV4.md#revision-history"
+      },
+      {
+        "change": "Delete peak battery and grow array for full sunlit peak; lock August scope",
+        "source": "<archived>/DR_REV4.md#6.1; <archived>/CONFIG_V3.json"
+      }
+    ],
+    "cataloged_urls": [
+      "<archived>/starcloud_wp.txt",
+      "Gigabyte A1O3-CC0 tank page; HPE GB200 NVL72 spec",
+      "IEEE ECCE 2024; IEEE 2021 GaN converter paper",
+      "SpaceX careers posting: Sr. Device Physics Engineer, Solar Cells (Starlink), Bastrop TX",
+      "https://airdrive.eventsair.com/eventsairwesteuprod/production-atpi-public/9eda1038dda648a79708c5ceff5b9c3d",
+      "https://aivres.com/product/krs8000v4",
+      "https://api-prod.fcc.gov/icfs-attachment/exp/api/v1/a81df57a93db4f10ac9c39bfa8373c08",
+      "https://api.sodern.com/uploads/HYDRA_BASELINE_762a952db4.pdf",
+      "https://arstechnica.com/space/2026/10/spacex-will-attempt-to-reach-weekly-starship-launches-by-early-2027",
+      "https://arxiv.org/html/2511.19468",
+      "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories",
+      "https://dcatlas.io/en/frontiers/orbit/the-operations-problem",
+      "https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories",
+      "https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer",
+      "https://docs.fcc.gov/public/attachments/DA-26-113A1.txt",
+      "https://doi.org/10.21203/rs.3.rs-11473415/v1",
+      "https://download.se.com/files?p_Doc_Ref=RD115DSR0",
+      "https://earth.esa.int/eogateway/documents/20142/37627/2-Sentinel-1_Instrument_Overview.pdf/d6d67efa-758a-804b-6800-be19d60812b2?t=1739980899132",
+      "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station",
+      "https://forum.nasaspaceflight.com/index.php?topic=50049.160",
+      "https://fundstrat.com/wp-content/uploads/2026/08/20260827-First-to-Market-Can-SpaceX-Really-Send-Compute-Into-Orbit-Next-Year.pdf",
+      "https://investor.nvidia.com/news/press-release-details/2026/SpaceXAI-Adopts-NVIDIA-Vera-CPU-to-Accelerate-Agentic-AI-at-Massive-Scale/default.aspx",
+      "https://ir.spacex.com/files/doc_financials/2026/q2/SpaceX-Reports-Second-Quarter-2026-Results.pdf",
+      "https://liten.cea.fr/cea-tech/liten/english/Pages/Medias/News/2025/major-breakthrough-for-photovoltaic-technology-space.aspx",
+      "https://mediaassets.airbus.com/pm_38_551_551596-fcjwjdxhpt.pdf",
+      "https://mldevices.co.uk/20cm2-cells",
+      "https://mynaric.com/products/space/condor-mk3",
+      "https://new.spacex.com/spacexai/starmind",
+      "https://newsletter.semianalysis.com/p/vera-rubin-extreme-co-design-an-evolution",
+      "https://newspaceeconomy.ca/wp-content/uploads/2022/10/starship_users_guide_v1.pdf",
+      "https://newspacemarket.com/catalogues/solar-panels",
+      "https://ntrs.nasa.gov",
+      "https://ntrs.nasa.gov/api/citations/20050206379/downloads/20050206379.pdf",
+      "https://ntrs.nasa.gov/api/citations/20080018585/downloads/20080018585.pdf",
+      "https://ntrs.nasa.gov/api/citations/20220005587/downloads/Chamberlain%20-%20ASCE%20Earth%20and%20Space%20Final%20v2.pdf",
+      "https://ntrs.nasa.gov/citations/19920048673",
+      "https://ntrs.nasa.gov/citations/20080007075",
+      "https://nvidianews.nvidia.com/news/space-computing",
+      "https://phys.org/news/2026-09-silicon-solar-cells-satellite-power.html",
+      "https://prd-sc102-cdn.rtx.com/collinsaerospace/-/media/ca/product-assets/marketing/t/thermal-management/10832-active-thermal-control-systems_-ms_-datasheet-v3-web.pdf",
+      "https://rdw.com/wp-content/uploads/2023/06/redwire-roll-out-solar-array-flysheet.pdf",
+      "https://reports.nlr.nl/bitstreams/a17706c4-d297-49ad-8b4a-1b192fe9d10d/download",
+      "https://repository.tudelft.nl/record/uuid:5bfd6486-bf23-42d1-89f4-e0fe41ebc286",
+      "https://research.33fg.com/analysis/the-thermal-rejection-unlock-for-spacex-s-100-kw-ton-compute-satellites",
+      "https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design",
+      "https://rocketlabcorp.com/assets/Uploads/RL-SolAero-Data-Sheet-StarRay-final.pdf",
+      "https://roctelecom.com/insights/data-centers-in-space",
+      "https://s21.q4cdn.com/184289198/files/doc_financials/2026/q2/SpaceX-Q2-2026-Earnings_Transcript-FINAL.pdf",
+      "https://satellize.com/our-offerings/space-stack/components/optical-inter-satellite-links",
+      "https://sci.esa.int/web/juice/-/test-deployment-of-juice-s-solar-panels",
+      "https://science.nasa.gov/resource/nasas-mars-insight-lander-solar-array-deployment-test-time-lapse",
+      "https://siliconangle.com/2026/03/16/nvidia-previews-vera-rubin-space-1-module-orbital-data-centers",
+      "https://singjupost.com/interview-elon-musk-on-spacex-plans-transcript",
+      "https://spaceexplored.com/2023/03/07/heo-robotics-captures-photo-of-deployed-starlink-v2-satellite-on-orbit",
+      "https://spaceflightnow.com/2023/02/27/falcon-9-starlink-6-1-live-coverage",
+      "https://spacenews.com/inquiry-finds-cable-clip-blame-telstar-14r-deployment-failure",
+      "https://spacex.com.pl/files/2020-04/starship-users-guide-v1.pdf",
+      "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp",
+      "https://starlink.com/public-files/Gen2StarlinkSatellites.pdf",
+      "https://starlink.com/technology",
+      "https://stockanalysis.com/stocks/spcx/transcripts/723936-q3-2026",
+      "https://svs.gsfc.nasa.gov/14034",
+      "https://svs.gsfc.nasa.gov/14186",
+      "https://techcrunch.com/2026/05/26/starships-path-to-reusability-looks-murky-after-spacexs-s-1",
+      "https://techport.nasa.gov/projects/9814",
+      "https://thespacewiki.com/wiki/starmind",
+      "https://ttu-ir.tdl.org/server/api/core/bitstreams/eb1aee8c-3b09-4056-89a6-4400bbe17a39/content",
+      "https://twoweeks.lol/predictions/gigawatt-space-ai-compute-2027",
+      "https://vesperastro.com/components/613/honeywell-hr16-100",
+      "https://web.archive.org/web/20230301003229/twitter.com/SpaceX/status/1629948869239873538",
+      "https://whatsuptesla.com/2026/03/28/terafab",
+      "https://www.airbusdefenceandspacenetherlands.nl/dsstuff/uploads/2019/11/SWdatasheet062020web.pdf",
+      "https://www.americaspace.com/2014/05/04/photos-atk-validates-new-megaflex-solar-array-technology-for-nasas-future-solar-electric-propulsion-missions",
+      "https://www.amopack.com/wp-content/uploads/2018/05/MP-176065-INTEGRATION-TM-XTD-10.14.pdf",
+      "https://www.aztechnology.com/uploadimage/AZW-LA-II.pdf",
+      "https://www.bloomberg.com/news/articles/2026-05-21/spacex-aims-to-build-10-gigawatt-solar-factory-near-austin",
+      "https://www.datacenterdynamics.com/en/news/spacex-details-ai1-satellite-data-center-claims-150kw-peak-compute",
+      "https://www.datacenterdynamics.com/en/news/spacex-developing-laser-to-connect-starlink-satellites-with-third-party-satellites",
+      "https://www.dwarkesh.com/p/elon-musk",
+      "https://www.energy.gov/documents/2026-ieso-space-photovoltaics-workshop",
+      "https://www.esa.int/ESA_Multimedia/Images/2007/11/Two_tears_appeared_in_one_of_the_P6_solar_arrays_during_deployment",
+      "https://www.esa.int/ESA_Multimedia/Videos/2023/02/Deploying_Biomass_solar_wing",
+      "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/High-Voltage_High-Power_Solar_Array_For_Exploration_Missions",
+      "https://www.esmats.eu/esmatspapers/pastpapers/pdfs/2021/rivera.pdf",
+      "https://www.fierce-network.com/cloud/nvidia-has-no-chill",
+      "https://www.fool.com/research/space-launch-statistics",
+      "https://www.ispreview.co.uk/index.php/2023/02/spacex-set-to-launch-first-v2-mini-starlink-broadband-satellites.html",
+      "https://www.nasa.gov/blogs/spacestation/2023/06/15/nasa-spacewalkers-finish-installing-roll-out-solar-array",
+      "https://www.nasa.gov/mission/sts-120",
+      "https://www.nasa.gov/missions/nasa-team-troubleshoots-asteroid-bound-lucy-across-millions-of-miles",
+      "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems",
+      "https://www.nature.com/articles/s41560-024-01500-2",
+      "https://www.nextbigfuture.com/2026/04/heat-radiators-for-ai-data-centers-in-space-will-be-a-huge-advantage-and-not-a-huge-problem.html",
+      "https://www.nextbigfuture.com/2026/06/elon-details-spacex-ai-data-center-in-space-details-and-roadmap.html",
+      "https://www.planet4589.org/space/papers/space25.pdf",
+      "https://www.prnewswire.com/news-releases/atk-demonstrates-high-power-megaflex-solar-array-for-nasa-241276261.html",
+      "https://www.pv-magazine.com/2022/10/11/swiss-scientists-achieve-22-2-efficiency-for-flexible-cigs-solar-cell",
+      "https://www.redwirespace.com (rosa flysheet)",
+      "https://www.reuters.com/business/media-telecom/ahead-spacex-ipo-musk-says-ai-satellites-will-use-mostly-existing-technology-2026-06-09",
+      "https://www.rotorama.com/assets/docs/4d79a46cb46ab8c993c31e99d67328b2/30770-1/en-datasheet-50s.pdf",
+      "https://www.satcatalog.com/component/hr16-100",
+      "https://www.satnow.com/products/laser-communication-terminals/tesat-spacecom-gmbh-co-kg/155-1423-scot80",
+      "https://www.satnow.com/products/solar-panels/redwire-space/102-1191-roll-out-solar-array-rosa-",
+      "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm",
+      "https://www.sierraspace.com/wp-content/uploads/2025/01/696292313-coolant-pump-package.pdf",
+      "https://www.space.com/space-exploration/launches-spacecraft/wow-watch-spacexs-starship-megarocket-deploy-satellites-into-orbit-for-1st-time-ever-photos-video",
+      "https://www.space.com/space-exploration/satellites/spacex-wants-to-launch-100-000-starlink-satellites-to-orbit",
+      "https://www.spaceenvironmentalism.org/actions/public-statements-and-comments/spacex-1mODC-ex-parte-response",
+      "https://www.spacex.com/launches/starship-flight-14",
+      "https://www.spacex.com/spacexai/starmind",
+      "https://www.spacex.com/updates",
+      "https://www.spacex.com/vehicles/starship",
+      "https://www.spacex.com/vehicles/starship/technical-specifications",
+      "https://www.supercomputing.news/emerging/nvidia-nvl72-starmind-spacex-ai1-spec-sheets-diverge",
+      "https://www.terma.com/media/cf3no4py/bepicolombo-pcdu-oct-2021.pdf",
+      "https://www.teslaoracle.com/2026/09/30/spacex-deployed-26-terabits-per-second-of-starlink-v3-bandwidth-in-a-single-starship-launch-flight-14",
+      "https://www.theregister.com/off-prem/2026/08/25/spacex-claims-it-will-put-a-vera-rubin-nvl72-rack-scale-system-into-orbit-next-year/5292067",
+      "https://www.tomshardware.com/service-providers/network-providers/spacex-shows-off-massive-new-v3-starlink-satellites-expanded-technology-will-deliver-gigabit-internet-to-customers-for-the-first-time-and-enable-60-tera-bits-per-second-downlink-capacity",
+      "https://www.vicorpower.com",
+      "https://www.youtube.com/watch?v=1o0JTRmEYdI",
+      "https://www.youtube.com/watch?v=2U4WQQez_Wg",
+      "https://www.youtube.com/watch?v=3dZuiYqcbXI",
+      "https://www.youtube.com/watch?v=4rJdhiDTIq4",
+      "https://www.youtube.com/watch?v=6ecdXSWMADo",
+      "https://www.youtube.com/watch?v=6vjK9vGEw5Q",
+      "https://www.youtube.com/watch?v=Jlv_ba8YfJI",
+      "https://www.youtube.com/watch?v=ROULQXIPNng",
+      "https://www.youtube.com/watch?v=RzGLKQ7_KZQ",
+      "https://www.youtube.com/watch?v=UX4cCKKFVrs",
+      "https://www.youtube.com/watch?v=WhhSstllN8c",
+      "https://www.youtube.com/watch?v=Z3twtYCXxNo",
+      "https://www.youtube.com/watch?v=ZUKi2IVTwKc",
+      "https://www.youtube.com/watch?v=_Jb6OXo1LBo",
+      "https://www.youtube.com/watch?v=_a1H-_rl2-o",
+      "https://www.youtube.com/watch?v=caAVpgsX9Co",
+      "https://www.youtube.com/watch?v=fHxyFQSJR-g",
+      "https://www.youtube.com/watch?v=i90vaEsMiEQ",
+      "https://www.youtube.com/watch?v=i_UieK_13_w",
+      "https://www.youtube.com/watch?v=j-vl2I3bTEI",
+      "https://www.youtube.com/watch?v=rFLoGka4abk",
+      "https://www.youtube.com/watch?v=wkume9d4Ogw",
+      "https://www.youtube.com/watch?v=zCM8eJ3YOkM",
+      "https://x.com/Dr_Gingerballs/status/2026908730311250288",
+      "https://x.com/SawyerMerritt/status/2064140130063921153",
+      "https://x.com/SpaceX/status/2064099405758906727",
+      "https://x.com/VladSaigau/status/2026752242330558706",
+      "https://x.com/VladSaigau/status/2029643980695105947",
+      "https://x.com/aaronburnett/status/2013641166839783839",
+      "https://x.com/aaronburnett/status/2026759660590575765",
+      "https://x.com/elonmusk/status/1258580078218412033",
+      "https://x.com/elonmusk/status/1981530470358950277",
+      "https://x.com/elonmusk/status/2013676764099199156",
+      "https://x.com/elonmusk/status/2029823150566035575",
+      "https://x.com/elonmusk/status/2064371424052072488",
+      "https://x.com/elonmusk/status/2082612362226639328",
+      "https://x.com/elonmusk/status/2094570156995256542",
+      "https://x.com/elonmusk/status/2117462581371719779",
+      "https://x.com/elonmusk/status/2117466364407586921",
+      "https://x.com/firesidealpha/status/2110731226776789366",
+      "https://x.com/firesidealpha/status/2112378538154438936",
+      "https://x.com/garyyoung/status/2064903691744784868",
+      "https://x.com/grok/status/2013722956019490830",
+      "https://x.com/nextbigfuture/status/2093348097611182524",
+      "https://x.com/shaunmmaguire/status/2117325447600193900",
+      "press (Tom's Hardware, Converge Digest); SpaceX has not published V3 mass"
+    ],
+    "structural_case_count_gb10": 682,
+    "thermal_case_count_gb10": 49,
+    "ambiguous_scratch_case_count_excluded": 4,
+    "thermal_solve_components": {
+      "initial_labels": 11000,
+      "fin_table_points": 4680,
+      "final_labels": 512,
+      "independent_grid_checks": 16,
+      "calculix_thermal": 49
+    }
+  }
+}

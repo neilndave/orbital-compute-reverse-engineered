@@ -1,0 +1,47 @@
+{
+  "June": {
+    "panel_W_mm": 363.4175776637853,
+    "panel_L_mm": 2944.5579551660426,
+    "gap_mm": 4.0,
+    "wing_width_mm": 1465.6703106551413,
+    "y0_mm": 1060.0,
+    "panels_per_column": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      9,
+      9,
+      9
+    ],
+    "wing0_cols": 4,
+    "array_root_mm": 4136.6,
+    "source": "inherited c8 replica scene sampling, fixed runtime yoke 4.1366 m"
+  },
+  "August": {
+    "panel_W_mm": 363.4175776637853,
+    "panel_L_mm": 2944.5579551660426,
+    "gap_mm": 4.0,
+    "wing_width_mm": 2567.9230436464973,
+    "y0_mm": 1060.0,
+    "panels_per_column": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      9,
+      9
+    ],
+    "wing0_cols": 7,
+    "array_root_mm": 4136.6,
+    "source": "inherited c8 replica scene sampling, fixed runtime yoke 4.1366 m"
+  }
+}

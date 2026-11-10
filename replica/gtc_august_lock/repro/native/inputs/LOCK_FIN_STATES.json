@@ -1,0 +1,62 @@
+{
+  "tool": "NVIDIA Warp",
+  "version": "1.18.0",
+  "device": "cuda:0",
+  "precision": "fp64",
+  "grid": [
+    320,
+    8
+  ],
+  "fin_geometry_changed": true,
+  "rows": [
+    {
+      "case": "August",
+      "state": "T2_rec_nominal_MPG40_plus_recharge",
+      "wall_seconds": 0.7180370760615915,
+      "q_Wm2": [
+        1132.7912774513193,
+        1299.0733530930816,
+        1480.6038853397274
+      ],
+      "q_simpson_Wm2": 1301.6147625272288,
+      "eta_cell": [
+        0.9554278530649127,
+        0.9513168218116659,
+        0.9470110443460403
+      ],
+      "areal_kg_m2": 2.0079679767986893,
+      "sheet_kg_m2": 0.5909266628683459,
+      "tube_kg_m2": 0.6535303166626544,
+      "fluid_kg_m2": 0.763510997267689,
+      "kg_per_kW": 1.5426745567175326,
+      "tube_pitch_mm": 51.916796809112185,
+      "T_root_last": 360.12023573293834
+    },
+    {
+      "case": "August",
+      "state": "T1_MPG40_peak",
+      "wall_seconds": 0.5234073679894209,
+      "q_Wm2": [
+        1635.3326757113987,
+        1844.7726709543138,
+        2071.343336691977
+      ],
+      "q_simpson_Wm2": 1847.6277827034385,
+      "eta_cell": [
+        0.9434730404617788,
+        0.9388549884069224,
+        0.9340555841993612
+      ],
+      "areal_kg_m2": 2.0079679767986893,
+      "sheet_kg_m2": 0.5909266628683459,
+      "tube_kg_m2": 0.6535303166626544,
+      "fluid_kg_m2": 0.763510997267689,
+      "kg_per_kW": 1.0867816535323158,
+      "tube_pitch_mm": 51.916796809112185,
+      "T_root_last": 390.91918206951243
+    }
+  ],
+  "wall_seconds": 1.2414565569488332,
+  "configuration_sha256": "444c8ab1755434c3b3a26aa9e2051207ee2c82713bc693541bc78fda19bc6b2f",
+  "note": "Selected August geometry and wall-temperature states re-solved with native fp64 Warp; explicit film drop removed from fluid temperatures before finite-volume fin solve. Only adopted August states are benchmarked here. Independent selected 585-point table also regenerated. Not qualification."
+}

@@ -1,0 +1,16 @@
+{
+  "diagnostic_only": true,
+  "training_rerun": false,
+  "inference_rerun": true,
+  "native_labels_rerun": true,
+  "training_labels": 384,
+  "heldout_labels": 128,
+  "heldout_max_abs_eta": 9.301506847186891e-05,
+  "heldout_RMSE": 2.7113144201544087e-05,
+  "max_difference_from_frozen_predictions": 0.0,
+  "torch": "2.13.0a0+9186a08b2c.nv26.07",
+  "physicsnemo": "2.2.0",
+  "checkpoint_sha256": "1b30a2667884d6b3f8412ca8f8a5f0eaef44ee2f8a877466aeb94c3414847f38",
+  "passed": true,
+  "scope": "Inference and independently regenerated native labels; not training rerun and not Rubin hardware qualification."
+}

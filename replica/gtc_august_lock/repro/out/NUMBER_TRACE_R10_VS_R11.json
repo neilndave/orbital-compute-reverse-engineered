@@ -1,0 +1,380 @@
+[
+  {
+    "item": "Compute",
+    "r10": "NVL72-based, 79 GPUs",
+    "r11": "one Vera Rubin NVL72, 72 GPUs + 36 CPUs",
+    "numeric_change_pct": -8.861,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "Decision 4: exactly one NVL72 (primary-sourced topology)"
+  },
+  {
+    "item": "Payload allocation",
+    "r10": "assumed 640 kg, lightweighted",
+    "r11": "assumed 640.38 kg allocation; 600×1200×937 mm box",
+    "numeric_change_pct": 0.059,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Wording: explicit assumption; no lightweighting claim"
+  },
+  {
+    "item": "Peak power per satellite",
+    "r10": "250 kW",
+    "r11": "250 kW peak at beginning of life",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Decision 1: modeled available 249.9 kW rounds to 250; acceptance ≥249.9 kW"
+  },
+  {
+    "item": "Satellites per launch",
+    "r10": "30",
+    "r11": "30",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Fleet installed peak",
+    "r10": "7.5 MW",
+    "r11": "7.5 MW",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Launch budget",
+    "r10": "100 t",
+    "r11": "100 t",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Satellite mass",
+    "r10": "3,022 kg",
+    "r11": "3,026 kg",
+    "numeric_change_pct": 0.132,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "MPG40 property fix: coolant loop +3.60, accumulator/freeze +0.06, propellant +0.07 kg"
+  },
+  {
+    "item": "Fleet mass",
+    "r10": "90.7 t",
+    "r11": "90.8 t",
+    "numeric_change_pct": 0.11,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "30 × satellite mass"
+  },
+  {
+    "item": "Dispenser",
+    "r10": "2 t",
+    "r11": "2 t",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Reserve",
+    "r10": "7.3 t",
+    "r11": "7.2 t",
+    "numeric_change_pct": -1.37,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "100 − fleet − dispenser"
+  },
+  {
+    "item": "Solar array area",
+    "r10": "862 m²",
+    "r11": "862 m²",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": "Unchanged August array (fixed)"
+  },
+  {
+    "item": "Solar rating",
+    "r10": "324.55 W/m² on active cells",
+    "r11": "324.55 W/m² assumed module rating, remaining planar area",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Wording only"
+  },
+  {
+    "item": "Nominal sunlit power",
+    "r10": "175 kW",
+    "r11": "175 kW",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Annual average",
+    "r10": "164.4 kW",
+    "r11": "164.4 kW",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "GPU temperature",
+    "r10": "366 K nominal",
+    "r11": "≈370 K nominal target (est. 371 K)",
+    "numeric_change_pct": 1.366,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "Decision 2; 366 K was the 1.7 kW/offset model, unsupported for Rubin; estimate is a conditional sensitivity"
+  },
+  {
+    "item": "HBM temperature",
+    "r10": "362 K nominal",
+    "r11": "est. 373 K, higher in edge cases; not yet qualified",
+    "numeric_change_pct": 3.039,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "Decision 2"
+  },
+  {
+    "item": "Coolant inlet peak",
+    "r10": "392 K",
+    "r11": "392 K",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": "Bulk model; chemistry caveat omitted per decision 3"
+  },
+  {
+    "item": "Radiator panels",
+    "r10": "140",
+    "r11": "140",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": "Same selected geometry"
+  },
+  {
+    "item": "Coating emissivity",
+    "r10": "0.92",
+    "r11": "0.92",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Rack frame mass",
+    "r10": "≈50 kg",
+    "r11": "≈50 kg (45.70 kg)",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": "Rerun in t773 with full 640.38 kg; printed value unchanged"
+  },
+  {
+    "item": "Rack frame mode",
+    "r10": "35 Hz",
+    "r11": "35 Hz (35.88 Hz)",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Panel first mode",
+    "r10": "128–153 Hz, ≈139 nominal",
+    "r11": "128–153 Hz, ≈139 nominal",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Designs screened",
+    "r10": "1.81M",
+    "r11": "1.81M",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Search result",
+    "r10": "\"a mass-feasible trade point\" (3,095 hard / 2,398 design-margin feasible)",
+    "r11": "3,048 hard / 2,347 design-margin feasible; lightest picked",
+    "numeric_change_pct": -1.519,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "Corrected MPG40 inputs; 249.9 kW acceptance; selected index unchanged (1037888)"
+  },
+  {
+    "item": "Screen estimate (star)",
+    "r10": "(not printed) 3,020.89 kg",
+    "r11": "3024.60 kg",
+    "numeric_change_pct": 0.123,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Reduced model, same index"
+  },
+  {
+    "item": "Solver re-check (diamond)",
+    "r10": "3022.48 kg / 140 panels",
+    "r11": "3026.21 kg / 140 panels",
+    "numeric_change_pct": 0.123,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Native pipeline"
+  },
+  {
+    "item": "Scenario pass fraction",
+    "r10": "42.08%",
+    "r11": "41.66%",
+    "numeric_change_pct": -0.998,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Same 1,048,576 draws/seed; corrected inputs"
+  },
+  {
+    "item": "Scenario draws",
+    "r10": "1.05M",
+    "r11": "1.05M",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "GPU speedup",
+    "r10": "33.1×",
+    "r11": "32.9×",
+    "numeric_change_pct": -0.604,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Fresh median-of-3 rerun (kernel gained the explicit power check)"
+  },
+  {
+    "item": "GPU warm sweep",
+    "r10": "0.213 s",
+    "r11": "0.214 s",
+    "numeric_change_pct": 0.469,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": ""
+  },
+  {
+    "item": "CPU warm sweep",
+    "r10": "7.04 s",
+    "r11": "7.02 s",
+    "numeric_change_pct": -0.284,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": ""
+  },
+  {
+    "item": "Throughput",
+    "r10": "8.49M designs/s",
+    "r11": "8.46M designs/s",
+    "numeric_change_pct": -0.353,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": ""
+  },
+  {
+    "item": "Input SHA256 prefix",
+    "r10": "619e2da5375d…",
+    "r11": "94e1b3ae978b…",
+    "numeric_change_pct": null,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Single-source regenerated inputs"
+  },
+  {
+    "item": "PhysicsNeMo held-out max |Δη|",
+    "r10": "9.3e-5",
+    "r11": "9.3e-5",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "PhysicsNeMo labels",
+    "r10": "384 / 128",
+    "r11": "384 / 128",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "warp.Tape relaxed mass gap",
+    "r10": "0.82%",
+    "r11": "0.65%",
+    "numeric_change_pct": -20.732,
+    "moves_more_than_1pct": true,
+    "printed_text_changed": true,
+    "why": "Recomputed against the feasible discrete optimum (restored, new value)"
+  },
+  {
+    "item": "Hinge locks",
+    "r10": "31 / 31",
+    "r11": "31 / 31",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Angle parity",
+    "r10": "0.0061°",
+    "r11": "0.0061°",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Newton / Warp versions",
+    "r10": "1.7.0 / 1.18.0",
+    "r11": "1.7.0 / 1.18.0",
+    "numeric_change_pct": null,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Effort span",
+    "r10": "≈11 days",
+    "r11": "≈11 days",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "GB10 job time",
+    "r10": "≥44.1 h",
+    "r11": "≥44.1 h",
+    "numeric_change_pct": 0.0,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": false,
+    "why": ""
+  },
+  {
+    "item": "Release gates",
+    "r10": "2 passed release gates",
+    "r11": "(removed)",
+    "numeric_change_pct": null,
+    "moves_more_than_1pct": false,
+    "printed_text_changed": true,
+    "why": "Claim dropped"
+  }
+]

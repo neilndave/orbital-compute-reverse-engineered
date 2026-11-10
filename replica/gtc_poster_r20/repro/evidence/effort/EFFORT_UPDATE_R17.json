@@ -1,0 +1,220 @@
+{
+ "revision": "r17_candidate",
+ "method": "Union of GB10 job intervals (overlaps counted once) from the earliest-retained-input start proxy to the cutoff. Counted tier = r16 definition (Kit-UTC-stamped renderer intervals + queue status.csv; archived 11-day union reused verbatim). Solid tiers add: metrics.csv chunk rows (in-process end stamp + wall timer); explicit window files; job stdout logs whose filesystem span (ext4 birth -> mtime) is corroborated by an in-file timer; CalculiX last run per directory (.12d mtime -> last solver-output mtime); result JSONs written once (birth == mtime) minus their in-file wall time. Excluded: copies (birth > mtime, backup/mirror/extract paths), waiter/monitor logs, installs/downloads, logs with no corroborating timer (reported as file-time only), box CPU work. Records collected read-only.",
+ "window_start_pacific": "2026-10-27T22:21:18-07:00",
+ "window_start_taipei": "2026-10-28T13:21:18+08:00",
+ "cutoff_iso_pacific": "2026-11-09T06:14:32-08:00",
+ "cutoff_iso_taipei": "2026-11-09T22:14:32+08:00",
+ "elapsed_days_to_cutoff": 12.370303752187777,
+ "counted_r16_definition_h": 46.618,
+ "all_solid_h": 66.565,
+ "poster_hours_floor": 66,
+ "not_claimed_file_time_only_h": 31.746,
+ "tiers": [
+  {
+   "step": "Counted (archived renderer+queue union; r16 renders; 720p to log mtime)",
+   "confidence": "High",
+   "records": 110,
+   "cumulative_h": 46.618,
+   "added_h": 46.618
+  },
+  {
+   "step": "+ metrics.csv chunk rows (in-process end stamp + wall timer)",
+   "confidence": "High",
+   "records": 777,
+   "cumulative_h": 46.847,
+   "added_h": 0.229
+  },
+  {
+   "step": "+ explicit window files",
+   "confidence": "High",
+   "records": 1,
+   "cumulative_h": 46.865,
+   "added_h": 0.019
+  },
+  {
+   "step": "+ job stdout logs, birth->mtime corroborated by in-file timer",
+   "confidence": "High",
+   "records": 152,
+   "cumulative_h": 58.38,
+   "added_h": 11.515
+  },
+  {
+   "step": "+ CalculiX last run (.12d mtime -> last output mtime)",
+   "confidence": "Medium-high (median span = logged CalculiX time x1.00 where logged)",
+   "records": 733,
+   "cumulative_h": 62.98,
+   "added_h": 4.6
+  },
+  {
+   "step": "+ result JSONs written once: end mtime - in-file wall",
+   "confidence": "Medium-high",
+   "records": 211,
+   "cumulative_h": 66.565,
+   "added_h": 3.585
+  },
+  {
+   "step": "[not proposed] + job/driver logs birth->mtime without timer, CCX dirs without .12d",
+   "confidence": "Medium-low (can span retries/idle)",
+   "records": 812,
+   "cumulative_h": 98.311,
+   "added_h": 31.745
+  }
+ ],
+ "categories": [
+  {
+   "category": "20-core all-core benchmark",
+   "records": 17,
+   "solid_union_h": 0.036191808647579614,
+   "solid_not_in_counted_h": 0.036191808647579614,
+   "with_filetime_union_h": 0.07856581297185686,
+   "filetime_extra_not_in_counted_or_solid_h": 0.016540670990943907,
+   "record_kinds": {
+    "explicit window file": 1,
+    "job log birth->mtime, no in-file timer": 2,
+    "job log birth->mtime, timer-corroborated": 14
+   }
+  },
+  {
+   "category": "72-GPU fix suite (r11 GB10 suite)",
+   "records": 14,
+   "solid_union_h": 0.01484650194644928,
+   "solid_not_in_counted_h": 0.01484650194644928,
+   "with_filetime_union_h": 0.050804036723242865,
+   "filetime_extra_not_in_counted_or_solid_h": 0.03595753477679359,
+   "record_kinds": {
+    "wrapper/driver log birth->mtime": 1,
+    "job log birth->mtime, no in-file timer": 2,
+    "job log birth->mtime, timer-corroborated": 10,
+    "result JSON (written once) end - in-file wall": 1
+   }
+  },
+  {
+   "category": "CalculiX FEA",
+   "records": 863,
+   "solid_union_h": 5.30915226591958,
+   "solid_not_in_counted_h": 5.30915226591958,
+   "with_filetime_union_h": 6.728117315438059,
+   "filetime_extra_not_in_counted_or_solid_h": 1.4189650495184793,
+   "record_kinds": {
+    "CalculiX last run: .12d mtime (solver start) -> last output mtime": 733,
+    "job log birth->mtime, no in-file timer": 81,
+    "wrapper/driver log birth->mtime": 3,
+    "job log birth->mtime, timer-corroborated": 43,
+    "result JSON (written once) end - in-file wall": 3
+   }
+  },
+  {
+   "category": "Newton deployment",
+   "records": 127,
+   "solid_union_h": 10.66717381450865,
+   "solid_not_in_counted_h": 10.66717381450865,
+   "with_filetime_union_h": 11.815371771852176,
+   "filetime_extra_not_in_counted_or_solid_h": 0.6955144049061669,
+   "record_kinds": {
+    "job log birth->mtime, no in-file timer": 25,
+    "job log birth->mtime, timer-corroborated": 32,
+    "wrapper/driver log birth->mtime": 2,
+    "result JSON (written once) end - in-file wall": 68
+   }
+  },
+  {
+   "category": "Other GB10 jobs",
+   "records": 471,
+   "solid_union_h": 1.0709752187463972,
+   "solid_not_in_counted_h": 1.054087875419193,
+   "with_filetime_union_h": 43.289861298799515,
+   "filetime_extra_not_in_counted_or_solid_h": 20.409415816730924,
+   "record_kinds": {
+    "job log birth->mtime, no in-file timer": 420,
+    "job log birth->mtime, timer-corroborated": 15,
+    "wrapper/driver log birth->mtime": 7,
+    "result JSON (written once) end - in-file wall": 29
+   }
+  },
+  {
+   "category": "PhysicsNeMo training/eval",
+   "records": 22,
+   "solid_union_h": 2.0947668834527335,
+   "solid_not_in_counted_h": 2.0947668834527335,
+   "with_filetime_union_h": 3.3966619127326543,
+   "filetime_extra_not_in_counted_or_solid_h": 1.0488394737243651,
+   "record_kinds": {
+    "job log birth->mtime, no in-file timer": 17,
+    "job log birth->mtime, timer-corroborated": 1,
+    "result JSON (written once) end - in-file wall": 4
+   }
+  },
+  {
+   "category": "Rendering (Isaac Sim/Omniverse)",
+   "records": 192,
+   "solid_union_h": 2.4686523516310586,
+   "solid_not_in_counted_h": 0.0,
+   "with_filetime_union_h": 59.60109296215905,
+   "filetime_extra_not_in_counted_or_solid_h": 12.027802111506462,
+   "record_kinds": {
+    "r16 renderer log": 16,
+    "running render log mtime (same process)": 1,
+    "job log birth->mtime, no in-file timer": 167,
+    "wrapper/driver log birth->mtime": 8
+   }
+  },
+  {
+   "category": "Rendering (Isaac Sim/Omniverse) + queue (archived)",
+   "records": 93,
+   "solid_union_h": 44.14888888888889,
+   "solid_not_in_counted_h": 0.0,
+   "with_filetime_union_h": 44.14888888888889,
+   "filetime_extra_not_in_counted_or_solid_h": 0.0,
+   "record_kinds": {
+    "archived union": 93
+   }
+  },
+  {
+   "category": "Warp sweeps/MC/fin tables",
+   "records": 914,
+   "solid_union_h": 1.7040958270099429,
+   "solid_not_in_counted_h": 1.7012488825453653,
+   "with_filetime_union_h": 5.835981339878506,
+   "filetime_extra_not_in_counted_or_solid_h": 4.085186019341151,
+   "record_kinds": {
+    "metrics.csv row (in-process stamp+timer)": 777,
+    "job log birth->mtime, no in-file timer": 44,
+    "wrapper/driver log birth->mtime": 4,
+    "result JSON (written once) end - in-file wall": 89
+   }
+  },
+  {
+   "category": "r10 recheck suite (fin/Newton)",
+   "records": 45,
+   "solid_union_h": 0.14621513227621713,
+   "solid_not_in_counted_h": 0.14621513227621713,
+   "with_filetime_union_h": 0.15464958382977378,
+   "filetime_extra_not_in_counted_or_solid_h": 0.006920607023768955,
+   "record_kinds": {
+    "wrapper/driver log birth->mtime": 4,
+    "job log birth->mtime, timer-corroborated": 20,
+    "job log birth->mtime, no in-file timer": 13,
+    "result JSON (written once) end - in-file wall": 8
+   }
+  },
+  {
+   "category": "r11 variants speed suite",
+   "records": 38,
+   "solid_union_h": 0.2485007992055681,
+   "solid_not_in_counted_h": 0.2485007992055681,
+   "with_filetime_union_h": 0.25712981945938534,
+   "filetime_extra_not_in_counted_or_solid_h": 0.008629020253817241,
+   "record_kinds": {
+    "wrapper/driver log birth->mtime": 1,
+    "job log birth->mtime, no in-file timer": 11,
+    "job log birth->mtime, timer-corroborated": 17,
+    "result JSON (written once) end - in-file wall": 9
+   }
+  }
+ ],
+ "unanchored_distinct": {
+  "Warp sweeps/MC/fin tables": 1
+ },
+ "note": "The 720p fleet render (still running at collection) is counted up to its log mtime at the cutoff. Cutoff is recorded here only; the poster shows days and floored hours."
+}

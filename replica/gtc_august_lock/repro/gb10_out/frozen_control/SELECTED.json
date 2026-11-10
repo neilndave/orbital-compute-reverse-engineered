@@ -1,0 +1,22 @@
+{
+  "sc_mass_kg": 3020.886550962454,
+  "GPU_nominal_K": 366.1206503803063,
+  "HBM_nominal_K": 361.7988503803063,
+  "inlet_peak_K": 391.9091451796792,
+  "radiator_panels": 140.0,
+  "tubes_per_panel": 7.0,
+  "half_fin_m": 0.021958398404556094,
+  "fin_thickness_m": 0.0002587301587301587,
+  "array_area_m2": 861.753452057126,
+  "hard_feasible": 1.0,
+  "design_margin_feasible": 1.0,
+  "radiator_mass_kg": 291.37615577613127,
+  "index": 1037888,
+  "reserve_t_per_launch": 7.3734034711263945,
+  "launch_t": 92.6265965288736,
+  "reserve_pct_of_100t": 7.3734034711263945,
+  "peak_kW_per_sc": 250.0,
+  "nominal_kW_per_sc": 175.0,
+  "spacecraft_count": 30,
+  "compute_MW_per_launch": 7.5
+}

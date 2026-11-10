@@ -1,0 +1,25 @@
+{
+ "h_km": 600,
+ "ltan_h": 6.0,
+ "inc_deg": 97.78766952549154,
+ "T_orb_min": 96.80888949163787,
+ "orbits_per_year": 5429.2534782707135,
+ "season": "Nov 04 - Feb 06",
+ "season_days": 95,
+ "max_shadow_min": 21.166666666666668,
+ "eclipsed_orbits_per_year": 1391,
+ "shadow_hours_per_year": 392.96388888888885,
+ "mean_shadow_min_when_eclipsed": 16.950275581116703,
+ "beta_abs_range_on_eclipse_days_deg": [
+  58.77203528650115,
+  66.6228299107739
+ ],
+ "beta_star_deg": 66.06653484004894,
+ "sunlit_frac_equiv": 0.9568910618040453,
+ "superseded_550km_t590": {
+  "max_min": 21.66,
+  "mean_min": 17.41,
+  "eclipsed_orbits_per_year": 1514,
+  "note": "t590 count was at 550 km; kept only as a conservative sensitivity"
+ }
+}

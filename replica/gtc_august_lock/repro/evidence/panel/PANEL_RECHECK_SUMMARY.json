@@ -1,0 +1,38 @@
+{
+  "cases": [
+    {
+      "case": "PAD20",
+      "new_f1_Hz": 127.74165507442557,
+      "old_f1_Hz": 127.74165701614001,
+      "delta_Hz": -1.941714444342324e-06,
+      "max_relative_residual": 7.818585127417207e-07,
+      "rerun": true
+    },
+    {
+      "case": "PAD30",
+      "new_f1_Hz": 140.04665311652442,
+      "old_f1_Hz": 140.04664981888223,
+      "delta_Hz": 3.2976421948660573e-06,
+      "max_relative_residual": 8.005673194894599e-07,
+      "rerun": true
+    },
+    {
+      "case": "PAD40",
+      "new_f1_Hz": 153.01164584750333,
+      "old_f1_Hz": 153.01164290974552,
+      "delta_Hz": 2.937757813015196e-06,
+      "max_relative_residual": 5.841120538381205e-07,
+      "rerun": true
+    }
+  ],
+  "finest_nominal_L3_reused": 139.05203797695228,
+  "L3_rerun": false,
+  "scope": "Changednominalheaderfluidlump, fixedgeometry/supports/materials; freshL2pad20/30/40. L3 finestreference reused withmassperturbation bound, not new convergence pass.",
+  "L3_header_mass_only_Rayleigh_bound": {
+    "old_header_lump_kg": 1.1831331157142857,
+    "new_header_lump_kg": 1.1831075241374,
+    "max_fractional_positive_mass_reduction": 2.1630344502859763e-05,
+    "max_frequency_increase_Hz": 0.0015038961400364315,
+    "assumptions": "Stiffness/supports/mesh unchanged; only positive smeared header mass component reduced. Totalmass matrix changeboundedbyfractionalheaderchange; notnewL3solveorformalmeshGCI."
+  }
+}

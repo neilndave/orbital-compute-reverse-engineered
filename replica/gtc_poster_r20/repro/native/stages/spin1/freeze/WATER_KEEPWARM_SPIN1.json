@@ -1,0 +1,26 @@
+{
+ "June": {
+  "C_J_per_K": 800907.4216481526,
+  "fluid_kg": 118.90277922010489,
+  "t_reach_278K_min": 16.533333333333335,
+  "hold_power_kW": 40.16665138774959,
+  "heater_energy_kWh": 3.063665061285762,
+  "battery_nameplate_kWh": 9.358703144201373,
+  "battery_pack_kg": 106.01655905540616,
+  "cycles_5yr": 6955,
+  "pump_W": 493.20005192314727,
+  "note": "plus pump energy from battery; plus burst/drain risk if any branch stagnates"
+ },
+ "August": {
+  "C_J_per_K": 1818326.1931578421,
+  "fluid_kg": 296.830820800081,
+  "t_reach_278K_min": 17.816666666666666,
+  "hold_power_kW": 72.78293179290499,
+  "heater_energy_kWh": 4.023875304598809,
+  "battery_nameplate_kWh": 12.29189670270897,
+  "battery_pack_kg": 139.24414233537505,
+  "cycles_5yr": 6955,
+  "pump_W": 713.4026155406366,
+  "note": "plus pump energy from battery; plus burst/drain risk if any branch stagnates"
+ }
+}
