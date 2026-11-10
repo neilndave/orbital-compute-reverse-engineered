@@ -1,0 +1,161 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.35 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.25 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.30 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.24 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.12 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.23 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.13 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.19 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.24 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.79 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.78 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.78 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.80 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.79 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.74 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.73 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.74 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.74 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 0.73 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module allcore_kern a1e77f6 load on device 'cpu' took 1.31 ms  (cached)
+{"stage": "sweep", "mode": "allcore", "workers": 20, "chunk_rows": 8192, "kernel_wall_seconds": 0.501381620997563, "cores": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], "hard_feasible": 3048, "design_feasible": 2347, "selected_index": 1037888, "warp": "1.18.0", "numpy": "2.5.4", "machine": "aarch64", "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13", "time_unix": 1794228394.1294825}

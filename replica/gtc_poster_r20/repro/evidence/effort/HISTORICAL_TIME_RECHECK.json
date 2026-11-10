@@ -1,0 +1,21 @@
+{
+  "archived_scope": "Satellite engineering effort from earliest retained clearly orbital input to August lock; engineering process and CPU/GPU compute, not labor hours.",
+  "source": "<archived>/EFFORT_METRICS_11D.json",
+  "elapsed_days_recomputed": 11.175972222222223,
+  "elapsed_days_archived": 11.175972222222223,
+  "gb10_busy_hours_lower_bound_archived": {
+    "value": 44.14888888888889,
+    "status": "lower-bound",
+    "unit": "wall-clock hours",
+    "sources": [
+      "GB10 render process logs with embedded UTC stamps and process wall timers",
+      "GB10: rack_two_skies/gb10_queue_t533/logs/status.csv"
+    ],
+    "method_note": "Union of intervals; includes CPU or GPU job process occupancy, not GPU utilization. Downloads/installations and gaps between jobs excluded."
+  },
+  "start_and_end_as_reported_America_Los_Angeles": [
+    "2026-10-27 22:21:18 PDT",
+    "2026-11-08 01:34:42 PST"
+  ],
+  "status": "Timewindowarithmeticrecomputed;44.1489hunionrecordscopedreuse,NOfreshtelemetryunionreconstructionornewtotal."
+}

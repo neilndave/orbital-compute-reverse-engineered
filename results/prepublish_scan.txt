@@ -1,16 +1,13 @@
-Prepublish hygiene scan - Wed Nov 04 2026 23:15 Taipei (UTC+8) / 07:15 PT, routine refresh
-Tree: 844 files, 17.9 MB; no file over 50 MB; largest file 5172382 B (NASA Blue Marble 8192 texture)
+Prepublish hygiene scan - Tue Nov 10 2026 (Taipei, UTC+8), PR #7 update: GTC poster r20 final (replica/gtc_poster_r20/), r11 poster removal edits (replica/gtc_august_lock/), README.md
+Files scanned: 471 (contents of PDFs and binary images/arrays not scanned: the poster PDF is the only place the author line and repository link appear).
+No file over 50 MB.
 
-== Case-insensitive text patterns, scanned over every text file: machine and host names, personal names and usernames,
-   home/box paths, ssh config and keys, API tokens, passwords, emails, IP addresses, and out-of-scope project terms
-   Result: 0 hits
+Category counts: hostnames 0, IP addresses 1 (false positive: a joined axis-tick string in an audit predicate), usernames 0,
+personal names 0, absolute paths 0, keys/tokens 0, emails 0.
 
-== Image files: unchanged since the previous scan (8 project matplotlib figures, 2 credited NASA Blue Marble textures).
-   No SpaceX images or logos. No new binary files in this refresh.
-== Outside documents: none redistributed. The Starcloud white paper is cited by link only.
-
-Substitutions applied to copies only: machine names -> GB10 desktop; home and box paths and venv interpreter paths -> relative, ~/gb10_work or "python";
-personal names and usernames -> the author / user (this refresh also removes a surname left in three render-script comments);
-sibling repo path -> vendor/same_rack; internal message ids removed; out-of-scope comments reworded.
-Excluded by pattern: backups, caches, solver output (CalculiX .12d/.cvg/.dat/.frd/.sta and the regenerable ccx input decks), npz/usd/video/frames.
-Left by decision: Starcloud (public company) mentions; the sibling package name used by vendored imports.
+Substitutions applied to copies only: home-directory prefixes in repro/speed/allcore/paused/*.log -> <HOME>;
+machine-specific process listings (PS_*.txt, PG_*.txt) not published; the audit reads the author line from the build
+environment instead of a literal; reference-file paths in the audit come from POSTER_REF_DIR.
+Clean-copy check: generator rebuilds GTC_POSTER_R20.pdf byte-identical; audit 193/193 without reference files (196/196 with them);
+tools/check_r11_lock.py: r11 lock OK.
+Removed in this update: the r11 poster and its outputs (see the PR description); unused r20 extras were not added.

@@ -1,0 +1,17 @@
+{
+  "stage": "surrogate_inference",
+  "label": "CPU_3",
+  "device": "cpu",
+  "torch": "2.13.0a0+9186a08b2c.nv26.07",
+  "physicsnemo": "2.2.0",
+  "threads": 1,
+  "cpu_affinity": [
+    5
+  ],
+  "queries": 66177,
+  "warmup_seconds": 0.0005382609087973833,
+  "kernel_seconds": 0.019060531863942742,
+  "max_abs_diff_vs_table": 2.7921050786972046e-05,
+  "checkpoint_sha256": "1b30a2667884d6b3f8412ca8f8a5f0eaef44ee2f8a877466aeb94c3414847f38",
+  "method": "PhysicsNeMo surrogate inference stage: the frozen checkpoint (PHYSICSNEMO_SURROGATE.pt) evaluated on the 513 x 129 = 66,177-point\ndimensionless query grid that builds SURROGATE_TABLE.npz (same construction as train_surrogate.py). Model load, tensor creation and\nhost<->device copies excluded; warm-up forward pass excluded; timed = one no_grad forward pass, synchronized (CUDA) . CPU: torch.set_num_threads(1),\npinned to one core by taskset. Repetitions are separate processes. Also checks the rebuilt table against SURROGATE_TABLE.npz."
+}

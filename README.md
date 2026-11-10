@@ -1,40 +1,37 @@
 # Orbital Compute, Reverse-Engineered
-### working back from SpaceX's published AI1 numbers
 
-**Status: GTC final configuration v2 (Al 6061-T6 radiator fins).** The poster numbers come from one reproducible configuration in [`replica/gtc_final/`](replica/gtc_final/README.md) (scoped baseline + peak battery + MPG40 freeze/restart + trunk shields, with Al 6061-T6 radiator fins), plus the GPU-vs-CPU measurements in `replica/gtc_final/nvidia_metrics/`. Earlier documents in `docs/` and `replica/` describe the design history and use older configurations; where they differ, `replica/gtc_final/results/GTC_FINAL_CANDIDATE.json` wins. Renders are complete (Render 1: the August fleet from release to full unfold; Render 2: June and August single satellites side by side).
+**Status: GTC poster r20, "Cooling and Launching Orbital Data Centers: Concept to Architecture in 12 Days".** The poster and everything needed to rebuild it are in [`replica/gtc_poster_r20/`](replica/gtc_poster_r20/README.md).
+Its design numbers come from the locked r11 August design in [`replica/gtc_august_lock/`](replica/gtc_august_lock/README.md).
+Where older documents in `docs/` or `replica/` differ, those two folders win.
 
-## The story
-SpaceX has published headline figures for its AI1 orbital-compute satellites ([source](https://www.spacex.com/spacexai/starmind)): a June build of about 150 kW and 2,130 kg, 46 per Starship (about 70 kW/t), and an August build of about 250 kW and 3,270 kg, 30 per Starship (about 75 kW/t) (STATEMENT). This repo works backwards from those numbers. It does not use any non-public SpaceX information. We ask what a satellite would have to look like to hit them, using first-principles subsystem sizing and FCC-filing limits (4 t, 200 m² radiator, 1,500 m² array; STATEMENT). The answer is a band of designs, not a single point. It runs from **C1 "margin-forward"** (wing about 332 W/kg, rack about 2.6–2.7 kg/kW, 20.5 % growth margin) to **C2 "compute-limited"** (wing about 523 W/kg, rack about 5.1–5.4 kg/kW, 10 % growth) (ESTIMATE). We call this band the "SpaceX-like region". The poster designs are the C1 points: **June J8_C1, 46 per Starship, 70.4 kW/t** and **August A4_C1 (stow config E), 30 per Starship, 76.5 kW/t** (both ESTIMATE). We then check those designs with NVIDIA tools on one GB10 desktop (the final-candidate masses and specific power differ from these C1 points; see `replica/gtc_final/`):
-- radiator fin and thermal Monte Carlo in **NVIDIA Warp**
-- an exploratory **PhysicsNeMo** surrogate (not used by any final number)
-- array deployment in **NVIDIA Newton**
-- fleet renders in **Omniverse / Isaac Sim RTX**
+## The study
+Published targets for an orbital data center satellite (250 kW peak, 175 kW, 75 kW per ton; source below) and an assumed 100 t launch imply
+30 satellites per launch. Working only from public information, an engineer and an AI agent sized one satellite carrying one
+NVIDIA Vera Rubin NVL72 (72 GPUs + 36 CPUs) and checked the chosen architecture with NVIDIA tools on one GB10 desktop:
+- radiator design search (1.81M designs) and 1.05M what-if runs in **NVIDIA Warp**, run as CUDA kernels on the GB10 Grace Blackwell GPU and timed against its CPU cores;
+- a **PhysicsNeMo** learned model of radiator fin efficiency, checked against Warp solves;
+- solar-wing and radiator unfold in **NVIDIA Newton**, with a Warp re-solve;
+- illustrative renders in **Omniverse Isaac Sim RTX**; CalculiX for the rack frame and stowed panels.
 
-Box-side checks cover stowed packing, stack stiffness and a CalculiX panel cross-check.
-
-This is an independent analysis. SpaceX is named only as the source of the published numbers. Nothing here is endorsed by SpaceX or NVIDIA, and the repo contains no SpaceX imagery. Every figure is labelled STATEMENT (from a public source), ESTIMATE (our calculation), INFERENCE (reasoned) or ASSUMED (our input).
+It is a simulation study and a basis for detailed design, not flight qualification. Every limitation is listed in the poster folder README.
 
 ## What's in the repo
 | Path | Contents |
 |---|---|
-| `docs/CALIBRATION.md` | How the C1/C2 designs are solved to 70/75 kW/t and 46/30 per Starship, the sensitivities, and the volume re-check |
-| `docs/REPLICA_PLAN.md` | Plan and engineering log: tool inventory, packing loop, stow-assumption credibility, final configs, derisk gate, stack stiffness, render plan |
-| `replica/` | All the code, in its working layout: calibration (`t423*.py`, `gen_params_t434.py`, `t434_region.py`), box checks (`box_gtc/`, `checks_t444/`), the GB10 Warp/Newton bundle (`gb10_gtc/`), the Omniverse render bundle (`gb10_render_replica/`), parameter sets (`gtc_params/`), GB10 outputs (`gb10_gtc_results/`) and per-pass logs (`process_log/`) |
-| `results/figures/` | Small PNG figures (region, calibration, packing passes, stowed stack, final designs) |
-| `scripts/` | `get_blue_marble.sh`: downloads the Earth texture for renders at run time |
-| `vendor/same_rack/` | The few modules and inputs the replica code imports, plus the Omniverse / Isaac Sim render pipeline scripts the render bundle calls, reused from the sibling repo *Same Rack, Earth vs. Orbit* (provenance only; see `FILES.txt`) |
+| `replica/gtc_poster_r20/` | GTC poster r20 (PDF), gates and layout audits, and the full `repro/` tree (generator, audit, inputs, numbers) |
+| `replica/gtc_august_lock/` | Locked r11 August design: canonical record, number trace and the r11 repro (the r11 poster was removed; r20 is the only poster) |
+| `replica/gtc_final/`, `replica/gb10_*`, other `replica/` scripts | Earlier configurations and the design history (superseded where they differ) |
+| `docs/` | Calibration notes and the engineering log from the earlier phases (historical) |
+| `vendor/same_rack/` | Modules and render-pipeline scripts reused from a sibling project (provenance in `FILES.txt`) |
+| `scripts/get_blue_marble.sh` | Re-downloads the NASA Blue Marble texture used by the renders |
+| `FILES.txt` | Register of every tracked file |
 
-## How to reproduce
-1. Use Python 3.11+ with numpy, scipy, matplotlib and pyyaml. Add build123d for the CAD envelope and CalculiX (`ccx` on PATH) for the panel cross-check.
-2. Run from `replica/` with the vendored modules on the path: `export SAME_RACK_VENDOR=../vendor/same_rack`. Scripts refer to `vendor/same_rack`; you may need a symlink `replica/vendor -> ../vendor`.
-3. Calibration and parameter sets: `python t423g.py && python gen_params_t434.py && python t434_region.py`. Figures: `python make_fig_t423g.py` and the other `make_fig_*.py` scripts.
-4. Box checks (packing, stiffness, margins): the scripts in `box_gtc/` (`t438_loop.py`, `t440_stack.py`, `margin_table.py`, ...) and `checks_t444/check2_geometry.py`.
-5. GPU work on a GB10 desktop: see `replica/gb10_gtc/README.md` (`./run.sh thermal`, `./run.sh newton`). For renders, see `replica/gb10_render_replica/README.md`. These need NVIDIA Warp and Newton, and Isaac Sim for the renders.
+## Reproduce
+See `replica/gtc_poster_r20/repro/REPLICATE.md`: Tier 1 runs on any Linux box (CPU only); Tier 2 re-runs the GPU work on an NVIDIA GB10.
 
-Not every pass is fully scripted end to end yet. The process logs record the inputs of each pass.
-
-## Renders and Earth imagery
-The NASA Blue Marble textures the render scripts expect are included, with credit, in `vendor/same_rack/results/omniverse/assets/`. `scripts/get_blue_marble.sh` is a fallback that re-downloads them from NASA Visible Earth. Earth imagery: NASA Visible Earth / Blue Marble. Use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
+## Source and disclaimer
+Targets: https://www.spacex.com/spacexai/starmind. Independent study from public information; not affiliated with or endorsed by SpaceX.
+Earth imagery: NASA Visible Earth / Blue Marble; use of NASA imagery does not imply NASA endorsement. See `CREDITS.md`.
 
 ## Licence
 Apache-2.0. See `LICENSE`.

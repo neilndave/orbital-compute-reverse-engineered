@@ -1,0 +1,70 @@
+{
+ "June": {
+  "per_panel_kg": {
+   "heater_strips": 0.1764,
+   "heater_harness": 0.1056,
+   "swivel_patch_heaters": 0.01088,
+   "insert_cord": 0.024,
+   "compliance_plugs": 0.01
+  },
+  "items_kg": {
+   "heater_strips": 13.5828,
+   "heater_harness": 8.1312,
+   "swivel_patch_heaters": 0.8377600000000001,
+   "insert_cord": 1.848,
+   "compliance_plugs": 0.77,
+   "accumulator": 7.25607668481439,
+   "switching": 2.0,
+   "housekeeping_battery_once": 31.25
+  },
+  "MPG40_inventory_kg": 119.17540152409074,
+  "dV_240_to_nominal_inlet_L": 9.836208028871376,
+  "dV_240_to_peak_inlet_L": 11.873580029696276,
+  "T_hot_nominal_K": 382.4353529126999,
+  "T_hot_peak_K": 403.4879444014603,
+  "accumulator_kg_per_L_from_NB2F2": 0.611111111111111,
+  "freeze_hw_total_kg": 65.67583668481439,
+  "MPG40_coolant_line_delta_kg": 11.388594695441071,
+  "item_total_incl_glycol_swap_kg": 77.06443138025546,
+  "allocation_kg": 66.0,
+  "pass_hw_only": true,
+  "pass_incl_swap": false,
+  "heater_kW_array_powered": 54.416208,
+  "Dow_recommended_max_K": 393.15,
+  "peak_inlet_exceeds_Dow_max": true
+ },
+ "August": {
+  "per_panel_kg": {
+   "heater_strips": 0.20612980769230768,
+   "heater_harness": 0.12367788461538462,
+   "swivel_patch_heaters": 0.010913461538461539,
+   "insert_cord": 0.024,
+   "compliance_plugs": 0.01
+  },
+  "items_kg": {
+   "heater_strips": 28.858173076923077,
+   "heater_harness": 17.314903846153847,
+   "swivel_patch_heaters": 1.5278846153846155,
+   "insert_cord": 3.36,
+   "compliance_plugs": 1.4000000000000001,
+   "accumulator": 14.676964903389434,
+   "switching": 2.0,
+   "housekeeping_battery_once": 31.25
+  },
+  "MPG40_inventory_kg": 302.10058476488496,
+  "dV_240_to_nominal_inlet_L": 19.95113163087128,
+  "dV_240_to_peak_inlet_L": 27.24500669444718,
+  "T_hot_nominal_K": 361.452682381624,
+  "T_hot_peak_K": 391.9412845563338,
+  "accumulator_kg_per_L_from_NB2F2": 0.5387029288702929,
+  "freeze_hw_total_kg": 100.38792644185098,
+  "MPG40_coolant_line_delta_kg": 36.68286870655692,
+  "item_total_incl_glycol_swap_kg": 137.0707951484079,
+  "allocation_kg": 90.0,
+  "pass_hw_only": false,
+  "pass_incl_swap": false,
+  "heater_kW_array_powered": 115.42832000000001,
+  "Dow_recommended_max_K": 393.15,
+  "peak_inlet_exceeds_Dow_max": false
+ }
+}

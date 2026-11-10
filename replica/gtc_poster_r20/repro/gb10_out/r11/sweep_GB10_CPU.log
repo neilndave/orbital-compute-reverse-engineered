@@ -1,0 +1,9 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1347.34 ms  (compiled)
+SWEEP_GB10_CPU.json {"configurations": 1806336, "selected": {"sc_mass_kg": 3024.6011227948306, "GPU_nominal_K": 366.1503151389794, "HBM_nominal_K": 361.8285151389794, "inlet_peak_K": 391.94508349295165, "radiator_panels": 140.0, "tubes_per_panel": 7.0, "half_fin_m": 0.021958398404556094, "fin_thickness_m": 0.0002587301587301587, "array_area_m2": 861.753452057126, "hard_feasible": 1.0, "design_margin_feasible": 1.0, "radiator_mass_kg": 291.37615577613127, "index": 1037888, "reserve_t_per_launch": 7.261966316155082, "launch_t": 92.73803368384492, "reserve_pct_of_100t": 7.261966316155082, "peak_kW_per_sc": 250.0, "nominal_kW_per_sc": 175.0, "spacecraft_count": 30, "compute_MW_per_launch": 7.5}, "kernel_seconds": 7.02561799203977, "throughput_configs_per_second": 257107.0619049643, "passed": true}

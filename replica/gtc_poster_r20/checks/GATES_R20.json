@@ -1,0 +1,2047 @@
+{
+  "revision": "r20",
+  "adopted": false,
+  "skipped_without_reference_files": [],
+  "passed": true,
+  "n_predicates": 196,
+  "n_failed": 0,
+  "predicates": [
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: page is 43x24 in",
+      "passed": true,
+      "detail": [
+        43.0,
+        24.0
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: every text span, poppler word, image and drawing inside 1-in margins (physical PDF)",
+      "passed": true,
+      "detail": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.75057204166667,
+        "left_in": 1.0,
+        "right_in": 41.87379209722222
+      }
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: minimum font >= 24 pt",
+      "passed": true,
+      "detail": 24.0
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: every raster image >= 300 dpi (0.1 dpi pixel-quantization rounding)",
+      "passed": true,
+      "detail": [
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: QR caption \"GitHub\" directly under the repo QR code",
+      "passed": true,
+      "detail": {
+        "qr": [
+          39.86999850802951,
+          1.0199993981255426,
+          41.94999864366319,
+          3.0999993218315973
+        ],
+        "caption": [
+          40.332417805989586,
+          3.143588807847765,
+          41.48780653211806,
+          3.5319222344292536
+        ]
+      }
+    },
+    {
+      "gate": "M6",
+      "predicate": "DRAFT: approved author line is bold and on its own line",
+      "passed": true,
+      "detail": "DejaVuSans-Bold"
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT: no footer (lowest text is the source + disclaimer footnote, the closing line moved under it (owner t996), or the image captions; no reference/repo footer)",
+      "passed": true,
+      "detail": [
+        "assumed parameters).",
+        "Marble.",
+        "Targets: spacex.com/spacexai/starmind. Independent study from public information; not affiliated with or endorsed by SpaceX.",
+        "A basis for further detailed design. Simulation study, not flight qualification."
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: page is 43x24 in",
+      "passed": true,
+      "detail": [
+        43.0,
+        24.0
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: every text span, poppler word, image and drawing inside 1-in margins (physical PDF)",
+      "passed": true,
+      "detail": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.75057204166667,
+        "left_in": 1.0,
+        "right_in": 41.87379209722222
+      }
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: minimum font >= 24 pt",
+      "passed": true,
+      "detail": 24.0
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: every raster image >= 300 dpi (0.1 dpi pixel-quantization rounding)",
+      "passed": true,
+      "detail": [
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ],
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: QR caption \"GitHub\" directly under the repo QR code",
+      "passed": true,
+      "detail": {
+        "qr": [
+          39.86999850802951,
+          1.0199993981255426,
+          41.94999864366319,
+          3.0999993218315973
+        ],
+        "caption": [
+          40.332417805989586,
+          3.143588807847765,
+          41.48780653211806,
+          3.5319222344292536
+        ]
+      }
+    },
+    {
+      "gate": "M6",
+      "predicate": "PUBLIC: approved author line is bold and on its own line",
+      "passed": true,
+      "detail": "DejaVuSans-Bold"
+    },
+    {
+      "gate": "M4",
+      "predicate": "PUBLIC: no footer (lowest text is the source + disclaimer footnote, the closing line moved under it (owner t996), or the image captions; no reference/repo footer)",
+      "passed": true,
+      "detail": [
+        "assumed parameters).",
+        "Marble.",
+        "Targets: spacex.com/spacexai/starmind. Independent study from public information; not affiliated with or endorsed by SpaceX.",
+        "A basis for further detailed design. Simulation study, not flight qualification."
+      ]
+    },
+    {
+      "gate": "M4",
+      "predicate": "DRAFT and PUBLIC text identical apart from the DRAFT-only \"QR code / to come\" placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M1",
+      "predicate": "sunlit average vs eclipse-included annual disclosed with traced values (final r20: \"175 kW average in sunlight\")",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Simulation study, not flight qualification\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not flight validation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Cold-plate resistance assumed for Rubin GPU and HBM\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Assumed 640.38 kg payload allocation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"over assumed ranges, not measured probabilities\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"rigid Newton simulation\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"Rigid panels, assumed hinge parameters.\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"it is a local check, not a global optimum\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not affiliated with or endorsed by SpaceX\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M2",
+      "predicate": "scope/limit disclosed: \"not hand-tuned CPU code\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M3",
+      "predicate": "PDF records 1 CPU core / 1 thread and every CPU benchmark ran pinned to one core with 1 thread",
+      "passed": true,
+      "detail": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ]
+    },
+    {
+      "gate": "M5",
+      "predicate": "problem states published targets (final r20: \"250 kW peak / 175 kW average\", 100 t launch as the stated input), fp64 benchmark spec; source moved to the footnote",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M7",
+      "predicate": "coating emissivity 0.92 BOL specification printed and traced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "M8",
+      "predicate": "module rating labelled as assumed remaining-planar rating; arithmetic closes; no active-cell claim",
+      "passed": true,
+      "detail": 275502.57862266316
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 4: one Vera Rubin NVL72, 72 GPUs + 36 CPUs; 30 satellites explicit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 1: 250 kW peak at beginning of life; available peak >= 249.9 kW acceptance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 2: 370 K target wording; 175 kW average Rubin GPU (est.)/HBM = traced estimates; old edge-case/inlet-peak sentences gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "decision 3 + standing rules: no coolant-chemistry/vendor/process-history/gate claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "scatter key names the chosen marker (drawn marker + \"= chosen design.\", owner t996) and the colour/gray encoding; \"Lightest chosen\" annotation removed (owner t932)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "sensitivity framing (r19 words): drivers named in the sentence; no pass-rate / meet-the-cap / 41.66 / 42.08",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "sensitivity text (r20) traced: 3,048 hard-feasible of 1.81M; 1 K margin = inlet_cap_K - design_inlet_K; draws 1,048,576 -> 1.05M; 14 ranges; GPU p50; P(GPU<=370)=65%; P(HBM<=378.15)=1",
+      "passed": true,
+      "detail": {
+        "p50": 368.6841783965486,
+        "p370": 0.6490974426269531,
+        "phbm": 1.0
+      }
+    },
+    {
+      "gate": "C",
+      "predicate": "r19: working-time strip and job-time footnote removed (no ≈12 days span / ≥66 h / asterisk); 12 coworking days traced to the effort record span",
+      "passed": true,
+      "detail": 12.37
+    },
+    {
+      "gate": "C",
+      "predicate": "no NVIDIA logo: only images are the two QR codes (GitHub, YouTube), the hero render and the release frame; charts are vector",
+      "passed": true,
+      "detail": [
+        [
+          624,
+          624
+        ],
+        [
+          624,
+          624
+        ],
+        [
+          1849,
+          957
+        ],
+        [
+          1796,
+          957
+        ]
+      ]
+    },
+    {
+      "gate": "C",
+      "predicate": "NVIDIA content >= 55% of live area",
+      "passed": true,
+      "detail": 55.67627494456763
+    },
+    {
+      "gate": "C",
+      "predicate": "m1 sensitivity layout: no overlapping text / legend-over-data (matplotlib audit)",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    },
+    {
+      "gate": "V4B",
+      "predicate": "every numeric token in claim text is a traced derived number or a documented constant",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "V4B",
+      "predicate": "every numeric token in the actual PDF comes from a checked claim string or an axis tick",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "HASH",
+      "predicate": "GB10 sweep kernel hash == committed sweep/gpu_core.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "GB10 sweep inputs hash == committed sweep/SWEEP_INPUTS.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "SWEEP_INPUTS generator hash recorded == committed make_sweep_inputs.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "numbers derive-script hash == committed numbers/derive_numbers.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "every numbers source file hash still matches",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "HASH",
+      "predicate": "poster trace generator/numbers/PDF hashes match committed files",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "HASH",
+      "predicate": "poster chart inputs hashes match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V3A",
+      "predicate": "box CPU, GB10 CPU and GB10 CUDA sweeps agree on counts and selected index",
+      "passed": true,
+      "detail": [
+        [
+          3048,
+          2347,
+          1037888
+        ],
+        [
+          3048,
+          2347,
+          1037888
+        ],
+        [
+          3048,
+          2347,
+          1037888
+        ]
+      ]
+    },
+    {
+      "gate": "V3A",
+      "predicate": "box/GB10 sweeps used identical inputs and kernel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V3A",
+      "predicate": "selected design values agree box vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "gate": "V3A",
+      "predicate": "sampled sweep parity box CPU vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 3.364281513164454e-16
+    },
+    {
+      "gate": "V3A",
+      "predicate": "MC inlet-cap statistic identical box CPU vs GB10 CUDA (data identity; not a poster pass-rate)",
+      "passed": true,
+      "detail": [
+        0.4166250228881836,
+        0.4166250228881836
+      ]
+    },
+    {
+      "gate": "V4B",
+      "predicate": "traced Spearman inlet/GPU for top drivers match MC_GB10_GPU.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V4B",
+      "predicate": "traced inlet p5/p95 and GPU median match MC statistics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "V3A",
+      "predicate": "sampled MC parity box CPU vs GB10 CUDA (rel <= 1e-9)",
+      "passed": true,
+      "detail": 1.2165909910973054e-12
+    },
+    {
+      "gate": "C",
+      "predicate": "whole-poster text layout: no text↔text overlap, no text on bars, no legend over data, no annotation outside its axes (matplotlib audit, every panel + left + header + effort)",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    },
+    {
+      "gate": "C",
+      "predicate": "panel 2: exact headline (no ≈) + exactly two strips: search and sensitivity analysis, with traced times and ratios",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "C",
+      "predicate": "panel 2: no derived duplicate rows (combined row / per-hour / speed-buys table removed)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "speed numbers derive-script hash == committed speed/derive_speed.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "every speed-number source file hash still matches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "poster trace records the speed-numbers hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "speed headline equals locked benchmark ratio (same medians)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "scenario speed ratio = ratio of traced medians",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "every speed-suite Warp CPU run pinned to one core with 1 thread env",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "gate": "SPEED",
+      "predicate": "scaling run reproduces the r11 search result at the full grid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "title exactly \"Cooling and Launching Orbital Data Centers: Concept to Architecture in 12 Days\" (owner t985), also PDF metadata; 12 = traced coworking days",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "terminology: coined \"AI compute satellite\" / \"AI data centers in orbit\" absent; problem uses \"Orbital data centers\"; 30 satellites explicit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "panel 1 GPU number labelled as the what-if median (r15 approved wording \"GPU median\"); old \"est. 371–373 K\" range gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R16",
+      "predicate": "sensitivity sentence names cold-plate resistance (nominal plate_R_K_kW=14.22 inside the MC range); ranges not printed after the table removal",
+      "passed": true,
+      "detail": [
+        12.8,
+        17.1
+      ]
+    },
+    {
+      "gate": "R16",
+      "predicate": "panel 1 plain-language driver names in the sentence: radiator emissivity, cold-plate resistance, rack temperature rise; no \"Coolant film\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "393 K dashed line labelled as a reference (no limit/pass/threshold wording near it)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "panel 1 scatter colour scale is explained: coloured by radiator panel count with a labelled key; failing designs pale gray",
+      "passed": true,
+      "detail": {
+        "levels": [
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140
+        ],
+        "ticks": [
+          "132",
+          "140"
+        ],
+        "gray": 25176
+      }
+    },
+    {
+      "gate": "R14",
+      "predicate": "panel 2 CPU bar label and footnote wording",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "launch fit by mass: line printed and 90.8 + 2 + 7.2 = 100 t closes exactly in the lock numbers",
+      "passed": true,
+      "detail": [
+        90.78643400936214,
+        2.0,
+        7.213565990637857
+      ]
+    },
+    {
+      "gate": "R14",
+      "predicate": "launch fit by stowed volume: matches native/final/MECHANICAL_LOCK.json packing (PASS, count 30, top 15.6 m < 17.24 m, radial margin 3.95 mm ≥ 3.9; 10 mm component gaps in lock, not printed)",
+      "passed": true,
+      "detail": {
+        "PASS": true,
+        "caveat": "Idealized component envelopes, inherited 50-mm adapters and 20-mm interlayer gap; connected harness/hinge interfaces, rails, CG and flight dispenser remain OPEN.",
+        "components_per_sc": 20,
+        "count": 30,
+        "min_component_separating_gap_m": 0.010000000000000009,
+        "min_payload_profile_radial_margin_m": 0.003950441069623167,
+        "panel_fold_pitch_mm": 10.0,
+        "radiator_stacks_per_sc": 14,
+        "rigid_solar_yokes_per_sc": 2,
+        "scope": "Independent exact AABB + payload-profile validation of constructive packing.",
+        "top_payload_m": 15.6
+      }
+    },
+    {
+      "gate": "R14",
+      "predicate": "hero caption (Omniverse wording, owner t997) keeps illustrative/not-flight-validation/Blue Marble wording and discloses contrast enhancement",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "two render images side by side in the left image area (same top/bottom, no overlap, left of the chart panels)",
+      "passed": true,
+      "detail": [
+        [
+          1.1199999915228949,
+          17.76333279079861,
+          7.283333672417535,
+          20.953331841362846
+        ],
+        [
+          7.483333163791233,
+          17.76333279079861,
+          13.469999525282118,
+          20.953331841362846
+        ]
+      ]
+    },
+    {
+      "gate": "R14",
+      "predicate": "release caption (r19 wording, no disclaimer) printed exactly; hero caption = approved t997 wording",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "image captions are >= 24 pt (every caption span)",
+      "passed": true,
+      "detail": [
+        24.0
+      ]
+    },
+    {
+      "gate": "R14",
+      "predicate": "hero labels \"Solar Array\" and \"Radiator\" printed as vector text >= 24 pt bold (title caps)",
+      "passed": true,
+      "detail": [
+        [
+          "Solar Array",
+          26.0,
+          "DejaVuSans-Bold"
+        ],
+        [
+          "Radiator",
+          26.0,
+          "DejaVuSans-Bold"
+        ]
+      ]
+    },
+    {
+      "gate": "R14",
+      "predicate": "option A: both hero labels lie fully inside the hero image (no spill onto the release frame) and do not touch each other",
+      "passed": true,
+      "detail": [
+        [
+          "Solar Array",
+          [
+            8.637,
+            20.458,
+            10.92,
+            20.879
+          ]
+        ],
+        [
+          "Radiator",
+          [
+            10.552,
+            17.812,
+            12.298,
+            18.232
+          ]
+        ],
+        [
+          7.483333163791233,
+          17.76333279079861,
+          13.469999525282118,
+          20.953331841362846
+        ]
+      ]
+    },
+    {
+      "gate": "R14",
+      "predicate": "image resolution reported from source pixels / printed width (hero >= 300 ppi; release value recorded, flagged if < 300)",
+      "passed": true,
+      "detail": {
+        "hero_ppi": 501.2,
+        "release_ppi": 564.5,
+        "release_ge_300": true,
+        "release_path": "RELEASE_R11_K712_4K_CROP_fixed_r20right.png"
+      }
+    },
+    {
+      "gate": "R14",
+      "predicate": "NVIDIA panels >= 55% after narrowing (layout tradeoff recorded)",
+      "passed": true,
+      "detail": 55.67627494456763
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 3 wording (final r20): approved title, PhysicsNeMo explainer with traced 384/128 and max |Δη| (NBSP-joined), axis labels, new caveat paragraph (owner t974) with traced 0.65%; old caveat lines, duplicate held-out line and old headline gone; no \"Tape\" jargon",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 wording (final r20, owner t974): Warp re-solves all 21 solar-array hinges (root dashed), parity = max over all 21 hinges; All 36 representative hinges; rigid-panel caveat; \"(one wing and one radiator column)\" and old sentence gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R14",
+      "predicate": "panel headers and all text >= 24 pt after narrowing (PDF spans)",
+      "passed": true,
+      "detail": 24.0
+    },
+    {
+      "gate": "R16",
+      "predicate": "panel 1 sensitivity table removed (no table header, column headers, rank-correlation note or ρ values)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "all four panels identical size",
+      "passed": true,
+      "detail": {
+        "m1": [
+          13.850000000000001,
+          11.399999999999999,
+          13.95,
+          9.0
+        ],
+        "m2": [
+          28.05,
+          11.399999999999999,
+          13.95,
+          9.0
+        ],
+        "m3": [
+          13.850000000000001,
+          2.1499999999999986,
+          13.95,
+          9.0
+        ],
+        "m4": [
+          28.05,
+          2.1499999999999986,
+          13.95,
+          9.0
+        ]
+      }
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "row tops/bottoms equal (m1=m2, m3=m4); column left/right edges equal (m1=m3, m2=m4)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "gutters equal: horizontal panel gutter = vertical panel gutter = 0.25 in",
+      "passed": true,
+      "detail": {
+        "h": 0.25,
+        "v": 0.25
+      }
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "panel grid right edge on the 1 in margin (x=42); top row top at 20.4 in; bottom row clears effort strip",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "panel titles (r20): same x inset and one shared baseline (below the band top) in all four panels (within 2 px @300 dpi)",
+      "passed": true,
+      "detail": {
+        "x_inset": {
+          "m1": 0.18,
+          "m2": 0.18,
+          "m3": 0.18,
+          "m4": 0.18
+        },
+        "baseline_below_top": {
+          "m1": 0.6275,
+          "m2": 0.6275,
+          "m3": 0.6275,
+          "m4": 0.6275
+        }
+      }
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "r20 no headlines: no text above 30.5 pt except the poster title and the four panel titles (left-column 30 pt section heads unchanged from r19); panel bodies have no text above 26.5 pt (r19 26 pt bar values) except the 28 pt in-plot ①-④ band numbers and the two 28 pt bar-strip titles (unchanged from r19)",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "bottom-row caption blocks (r20): panel 3 and 4 text both end the same distance above the panel bottom (0.12 in, within 2 px) and start at the same x inset (p3 explainer vs p4 key ①)",
+      "passed": true,
+      "detail": {
+        "p3_bottom": 21.727237277560764,
+        "p4_bottom": 21.727237277560764,
+        "panel_bottom": 21.85
+      }
+    },
+    {
+      "gate": "ALIGN",
+      "predicate": "all panel text spans start inside and end inside their panel (no clipping after narrowing)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 1 title exactly \"1  Radiator search and sensitivity | Warp\" (owner t958), one 40 pt bold line; old \"Radiator search, sensitivity analysis\" and headline gone",
+      "passed": true,
+      "detail": 40.0
+    },
+    {
+      "gate": "R15",
+      "predicate": "panel 1 scatter axes \"Satellite mass (kg)\" / \"Coolant temp. at radiator inlet, steady 250 kW (K)\" (r19, steady-state basis)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "scatter data: all 3,048 hard-limit-passing designs in the plotted sample are coloured; failing designs are the gray layer; colour-key ends = min/max panel count",
+      "passed": true,
+      "detail": {
+        "feasible": 3048,
+        "gray": 25176
+      }
+    },
+    {
+      "gate": "R15",
+      "predicate": "panel 1: no statistician shorthand left (ρ, Spearman, draws, p5–p95, \"Sensitivity drivers\")",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 2: title exactly \"2  GPU-accelerated design search | GB10\" (40 pt); first line under the bars is the bold one-line finding, followed directly by the crossover sentence; old question title gone",
+      "passed": true,
+      "detail": [
+        28.25,
+        9.819972568088108,
+        41.25664944118924,
+        10.208306206597221
+      ]
+    },
+    {
+      "gate": "R15",
+      "predicate": "all-core run: outputs bitwise identical to 1-core Warp CPU and same kernel hash; selected design / counts unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "all-core ratios = median 20-core / median same-window GPU; medians of 3 reps",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "all-core ratio unchanged at shown precision if the R11 GPU medians (printed bars) are used instead of the same-window GPU",
+      "passed": true,
+      "detail": [
+        2.3475142924064016,
+        2.209022119475498
+      ]
+    },
+    {
+      "gate": "R15",
+      "predicate": "panel 2 third bars printed with traced 20-core times and ratios in both strips",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "panel 2 footnote: double-precision, median of 3, setup/compile excluded, 1-core spec, all-core = same Warp fp64 code on 20 cores (10 X925 + 10 A725), not hand-tuned; no Warp version",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "crossover line phrased vs one core; \"about 1,000\" and \"levels off at 32–33×\" match measured scaling (GPU slower at 256, faster from 1,024; 31.97× at 262,144, 33.0× at full grid)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "all-core numbers file hash recorded in both PDF traces",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 3: fin-efficiency equation removed (owner t974): no \"η =\", no numerator/denominator text, no fraction rule",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 3 title exactly \"3  AI fin model check | PhysicsNeMo / Warp\" (owner t960/t961), one 40 pt bold line inside the band (same size as the other titles); old \"vs. solver\" title gone",
+      "passed": true,
+      "detail": {
+        "pt": 40.0,
+        "width_in": 13.402604166666668,
+        "avail": 13.59
+      }
+    },
+    {
+      "gate": "R15",
+      "predicate": "radiator trace = the corrected Newton radiator run named in NEWTON_RECHECK_SUMMARY clearance source hashes; 21 solar + 10 radiator = 31 latched",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R15",
+      "predicate": "deploy timeline numbers in the caption match the traces: root 90°→~0 by 180 s; accordion folded until ~180 s and <1° by 780 s; radiator trace 0–690 s placed at 1,080 s → ends 1,770 s = solar trace end",
+      "passed": true,
+      "detail": {
+        "root180": 6.83137695887126e-05,
+        "acc180": 179.99855041503906,
+        "acc780": 0.45595255494117737,
+        "rad_end": 690.0
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 chart: no legend and no word labels (Root swing / Accordion / Width spread / Radiator / dashed-line label); bands carry only the circled numbers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 title \"4  Unfolding after release | Newton / Warp\" is one 40 pt bold line",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R16",
+      "predicate": "panel 1 scatter given the panel width: wider than r14 (4.55 in) and r15 (3.3 in)",
+      "passed": true,
+      "detail": 8.299999999999999
+    },
+    {
+      "gate": "R16",
+      "predicate": "panel 1 keeps colour key, dot/diamond key and the 393 K line label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R16",
+      "predicate": "\"move the temperatures most / matter less\" claim matches the traced rank correlations (top-2 max|ρ| > every other input) and the old \"Top drivers\" line is gone",
+      "passed": true,
+      "detail": {
+        "PMAD": 0.659,
+        "emissivity": 0.621,
+        "plate_resistance": 0.444,
+        "rack_rise": 0.324,
+        "film_scale": 0.301
+      }
+    },
+    {
+      "gate": "R16",
+      "predicate": "panel 2 bars ordered smallest to biggest in both charts: GPU, all 20 cores, 1 core",
+      "passed": true,
+      "detail": [
+        [
+          "GB10 GPU",
+          "GB10 CPU, all 20 cores",
+          "GB10 CPU, 1 core"
+        ],
+        [
+          "GB10 GPU",
+          "GB10 CPU, all 20 cores",
+          "GB10 CPU, 1 core"
+        ]
+      ]
+    },
+    {
+      "gate": "R16",
+      "predicate": "YouTube QR slot: same size as the repo QR, same row, 0.25 in gap to its left, captioned \"YouTube\" underneath (both PDFs)",
+      "passed": true,
+      "detail": {
+        "yt": [
+          37.54000000000001,
+          20.899999999999995,
+          39.62000000000001,
+          22.98
+        ],
+        "qr": [
+          39.870000000000005,
+          20.899999999999995,
+          41.95000000000001,
+          22.98
+        ]
+      }
+    },
+    {
+      "gate": "R17",
+      "predicate": "YouTube QR is real (no placeholder text or dashed box), encodes the approved playlist URL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R17",
+      "predicate": "QR captions exactly \"GitHub\" (right) and \"YouTube\" (left), once each per PDF",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R17",
+      "predicate": "effort record: counted tier reproduces the archived lower bound and r16 definition, all-solid >= counted >= 44.1489 h, file-time-only hours not claimed, cutoff recorded in Pacific and Taipei (record only)",
+      "passed": true,
+      "detail": {
+        "counted": 46.618,
+        "solid": 66.565,
+        "cut": "2026-11-09T06:14:32-08:00"
+      }
+    },
+    {
+      "gate": "R17",
+      "predicate": "release caption says \"launch vehicle\", not Starship; Starship kept in the design text (Launch fit, Problem)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R17",
+      "predicate": "exactly one SpaceX disclaimer per PDF (both layouts check their own DRAFT and PUBLIC), on the bottom footnote line; none in image captions or header",
+      "passed": true,
+      "detail": {
+        "GTC_POSTER_R20_DRAFT.pdf": 1,
+        "GTC_POSTER_R20_PUBLIC.pdf": 1
+      }
+    },
+    {
+      "gate": "R17",
+      "predicate": "panel 4 plots every hinge: 20 fold-out + 5 width + 10 radiator + root + Warp root check (37 lines); root solid line thicker than the dashed Warp line; group lines not faint (>= 2 pt)",
+      "passed": true,
+      "detail": {
+        "fold_out": 20,
+        "width": 5,
+        "radiator": 10,
+        "root": 1,
+        "root_lw": 4.2,
+        "warp_lw": 2.0,
+        "group_lw": 2.0,
+        "n_lines": 37
+      }
+    },
+    {
+      "gate": "R17",
+      "predicate": "footnote (source + disclaimer) fits on one line at >= 24 pt",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 1 text under the chart starts with the result: \"3,048 of 1.81M designs meet every hard limit; lightest with 1 K extra margin chosen, then 1.05M what-if runs co-varied 14 inputs\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R17",
+      "predicate": "QR codes decode from the rendered PDFs (OpenCV): left = YouTube playlist URL, right = the repo URL given as REPO_URL (same as --repo-url), in DRAFT and PUBLIC",
+      "passed": true,
+      "detail": {
+        "GTC_POSTER_R20_DRAFT.pdf": [
+          "https://www.youtube.com/playlist?list=PLHLk3Rx0ECWs",
+          "<REPO_URL>"
+        ],
+        "GTC_POSTER_R20_PUBLIC.pdf": [
+          "https://www.youtube.com/playlist?list=PLHLk3Rx0ECWs",
+          "<REPO_URL>"
+        ]
+      }
+    },
+    {
+      "gate": "R16",
+      "predicate": "no \"Full repo\" / no Spearman / no Warp version anywhere",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "image row (owner t961 + t981): release still (4-satellite r20right crop) and hero keep their aspect, same height and bottom, shrunk together by <=10% from the full-column size to make room for the Orbit item; each centred over its caption column; inside the left column (x 1.12 to the r20 v1 right edge)",
+      "passed": true,
+      "detail": {
+        "r20": {
+          "release": [
+            6.164254121871648,
+            3.188407304416369
+          ],
+          "hero": [
+            5.985745878128353,
+            3.188407304416369
+          ]
+        },
+        "scale": 1.0,
+        "v1": {
+          "release": [
+            6.462744445369061,
+            3.0294114587667473
+          ],
+          "hero": [
+            5.68725555463094,
+            3.0294114587667473
+          ]
+        }
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "printed image boxes (PDF, owner t981): both heights = the layout image height (>= 90% of r20 v1), tops and bottoms aligned (0.005 in); no overlap; inside the left column (x 1.12 to the v1 right edge) and above the captions",
+      "passed": true,
+      "detail": {
+        "r20": [
+          [
+            1.12,
+            17.763,
+            7.283,
+            20.953
+          ],
+          [
+            7.483,
+            17.763,
+            13.47,
+            20.953
+          ]
+        ],
+        "v1": [
+          [
+            1.12,
+            17.74,
+            7.583,
+            20.77
+          ],
+          [
+            7.783,
+            17.74,
+            13.47,
+            20.77
+          ]
+        ]
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "every axes: QR codes keep the r17 bottom edge, stay square and are at least the r17 size (enlarged, owner t996); images shrink at most 10% from the full-column size (owner t981; r20 v1/r17 enlarged them); every plot keeps its r17 width and is at least as tall as in r17/r19 (no plot shortened; r20 plots enlarged)",
+      "passed": true,
+      "detail": [
+        [
+          [
+            39.87,
+            20.9,
+            2.08,
+            2.08
+          ],
+          [
+            39.5,
+            20.9,
+            1.92,
+            1.92
+          ]
+        ],
+        [
+          [
+            37.54,
+            20.9,
+            2.08,
+            2.08
+          ],
+          [
+            37.33,
+            20.9,
+            1.92,
+            1.92
+          ]
+        ],
+        [
+          [
+            1.12,
+            3.046667,
+            6.164254,
+            3.188407
+          ],
+          [
+            1.12,
+            3.426079,
+            6.462744,
+            3.029411
+          ]
+        ],
+        [
+          [
+            7.484254,
+            3.046667,
+            5.985746,
+            3.188407
+          ],
+          [
+            7.782744,
+            3.426079,
+            5.687256,
+            3.029411
+          ]
+        ],
+        [
+          [
+            15.45,
+            14.813333,
+            8.3,
+            4.386667
+          ],
+          [
+            15.45,
+            14.45,
+            8.3,
+            3.9
+          ]
+        ],
+        [
+          [
+            24.1,
+            18.586667,
+            3.2,
+            0.2
+          ],
+          [
+            24.1,
+            17.736667,
+            3.2,
+            0.2
+          ]
+        ],
+        [
+          [
+            32.1,
+            16.868333,
+            9.7,
+            2.031667
+          ],
+          [
+            32.1,
+            16.26,
+            9.7,
+            1.62
+          ]
+        ],
+        [
+          [
+            32.1,
+            14.296667,
+            9.7,
+            2.031667
+          ],
+          [
+            32.1,
+            14.1,
+            9.7,
+            1.62
+          ]
+        ],
+        [
+          [
+            15.6,
+            6.213333,
+            11.65,
+            3.786667
+          ],
+          [
+            15.6,
+            6.28,
+            11.65,
+            3.17
+          ]
+        ],
+        [
+          [
+            29.45,
+            6.413333,
+            12.0,
+            3.586667
+          ],
+          [
+            29.45,
+            6.28,
+            12.0,
+            2.87
+          ]
+        ]
+      ]
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 1 scatter and panel 4 deploy plot: r17 widths, heights >= r17 (8.30 x >=3.90 in, 12.00 x >=2.87 in)",
+      "passed": true,
+      "detail": {
+        "r20": {
+          "m1_scatter": [
+            8.299999999999999,
+            4.386666666666668
+          ],
+          "m4_deploy": [
+            11.999999999999998,
+            3.586666666666668
+          ]
+        },
+        "r17": [
+          [
+            8.299999999999999,
+            3.8999999999999995
+          ],
+          [
+            11.999999999999998,
+            2.8699999999999997
+          ]
+        ]
+      }
+    },
+    {
+      "gate": "R19",
+      "predicate": "Problem text exact (owner t927/t931), no source URL in Problem; \"Why it matters\" directly under it with traced 12 days",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "\"Why it matters\" starts within 0.25 in under the last Problem line (left column)",
+      "passed": true,
+      "detail": {
+        "problem_bottom": 5.970571729871962,
+        "why_top": [
+          6.140255822075738
+        ]
+      }
+    },
+    {
+      "gate": "R19",
+      "predicate": "footnote = \"Targets: spacex.com/spacexai/starmind.\" + full single disclaimer; it is the lowest text in the panel column; URL appears exactly once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "footnote sits below the panel grid (bottom row), above the 1-in margin, at >= 24 pt",
+      "passed": true,
+      "detail": [
+        14.049999660915798,
+        21.948905097113716,
+        35.23854234483507,
+        22.337237887912327
+      ]
+    },
+    {
+      "gate": "R19",
+      "predicate": "thermal paragraph exact (owner t925 + t938 steady state) with every value = round(steady_check) (bracket-invariant, matches steady_reference supply / rack outlet)",
+      "passed": true,
+      "detail": {
+        "nom_rack_in": "339",
+        "nom_rack_out": "359",
+        "nom_GPU_rubin": "371",
+        "nom_HBM_rubin": "373",
+        "pk_rack_in": "370",
+        "pk_rack_out": "390",
+        "pk_GPU_rubin": "410",
+        "pk_HBM_rubin": "412"
+      }
+    },
+    {
+      "gate": "R19",
+      "predicate": "nominal Rubin GPU/HBM in thermal line equal the traced poster numbers GPU_est_K / HBM_est_K",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "glycol-water kept, exactly once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "no transient-model wording anywhere in the PDF text or in claim strings",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "gate": "R19",
+      "predicate": "no transient-only temperature value printed as \"<v> K\" (end_of_30min / max_over_event / t0_plus values not equal to a steady value), no time-constant value printed with a time unit",
+      "passed": true,
+      "detail": {
+        "temperature_hits": [],
+        "time_hits": [],
+        "n_transient_values": 89
+      }
+    },
+    {
+      "gate": "R19",
+      "predicate": "no \"392 K\" inlet claim and no \"Coolant inlet peaks\" sentence (steady 391.9 K appears only as the chart diamond)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "generator reads only steady fields of the thermal record (no end_of_30min / max_over_event / tau / series in make_poster_r20.py code)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 1 has no headline (r20): \"screened on GPU\" / \"pass every hard limit\" gone; result sentence under the chart instead",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "driver sentence matches MC_GB10_GPU.json rank_sensitivity: emissivity + PMAD beat all 12 others; plate resistance moves GPU (not inlet/HBM); rack rise moves the coolant inlet (not GPU/HBM)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "\"1 K extra temperature margin\": search picks lightest design at design_inlet_K 392 vs 393 K cap; chosen design steady inlet <= 392 K",
+      "passed": true,
+      "detail": 391.9412845563338
+    },
+    {
+      "gate": "R19",
+      "predicate": "\"393 K radiator-inlet design reference\" label printed once; y-axis label is the steady 250 kW radiator-inlet label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "width spread (Newton tw120): 5 hinges / 6 sections, all latched at 1,064-1,070 s and settled by 1,075 s on the deploy clock (inside 960-1,080 s); dt 0.005 run agrees (latch < 0.05 s, settle equal)",
+      "passed": true,
+      "detail": {
+        "latch": [
+          1066.6399993896484,
+          1064.3600006103516,
+          1069.8899993896484,
+          1064.9399948120117,
+          1069.0899963378906
+        ],
+        "settle": 1074.95
+      }
+    },
+    {
+      "gate": "R19",
+      "predicate": "36 hinges = 21 wing (solar npz) + 5 width (wfold npz) + 10 radiator (radiator npz); left column and panel 4 both say All 36 representative hinges",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 key names the parts: solar-array root / fold-out / width hinges and radiator hinges, solar-array root given as the example of ①",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 sequence: four tinted bands carrying only ①-④ in the plot + four-line key under the chart exactly as approved (t955), times matching the traces (solar 0-780 s, width 960-1,080 s, radiator 1,080-1,770 s)",
+      "passed": true,
+      "detail": [
+        "①",
+        "②",
+        "③",
+        "④"
+      ]
+    },
+    {
+      "gate": "R20",
+      "predicate": "release still (owner t961) = r18 rotation-fixed still cropped from the right only (pixel-identical left 3,480 of 3,840 columns; full height, not re-rendered); 4th satellite tip >= 80 px from the new edge and no grey satellite pixels in the last 80 columns (5th satellite edge removed)",
+      "passed": true,
+      "detail": {
+        "last_grey_col": 3363,
+        "width": 3480
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "\"Vehicle schematic ... dimensions.\" caption removed; release caption printed exactly",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "thermal line: \"Cold-plate resistance assumed for Rubin GPU and HBM.\" replaces \"Junction temperatures not yet qualified.\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "wording bans: no native verification / leaner teams / per hour / meet the 393 / pass rate / agent-hardware claim; vendor names only in disclaimer/source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R19",
+      "predicate": "author line exact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "titles exactly as approved (t955/t958), sizes 40 pt for all four, each measured width fits the band (13.59 in); titles contain no \"pass\"",
+      "passed": true,
+      "detail": {
+        "m1": 12.692,
+        "m2": 12.713,
+        "m3": 13.403,
+        "m4": 13.202
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "\"pass\" wording: no \"pass\" in any panel title or headline; the only uses are the colour key (\"passes every hard limit\") and Panel 3 none",
+      "passed": true,
+      "detail": [
+        "iator panels Each colored dot passes every har"
+      ]
+    },
+    {
+      "gate": "R20",
+      "predicate": "plot heights never below r19 (= r17) sizes: P1 scatter >= 3.90, P2 strips >= 1.62, P3 >= 3.17, P4 >= 2.87 in",
+      "passed": true,
+      "detail": {
+        "p1": 4.3866666666666685,
+        "p2": 2.031666666666667,
+        "p3": 3.786666666666666,
+        "p4": 3.586666666666667
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "workflow boxes (owner t956): each box = its printed text width + the same 0.34 in padding (r19 sized the GPU/CPU box from a longer unprinted label); GPU/CPU box narrower than r19; 6 boxes in the PDF with matching widths, no overlaps, equal 0.35 in gaps, one arrow in every gap",
+      "passed": true,
+      "detail": {
+        "boxes": [
+          4.064,
+          4.353,
+          3.859,
+          5.951,
+          2.605,
+          2.936
+        ],
+        "r19": [
+          4.064,
+          4.353,
+          3.859,
+          7.495,
+          2.605,
+          2.936
+        ],
+        "arrows": [
+          [
+            5.1168060302734375,
+            5.336452907986111
+          ],
+          [
+            9.819878472222221,
+            10.039526197645399
+          ],
+          [
+            14.029253641764322,
+            14.2489013671875
+          ],
+          [
+            20.330400254991318,
+            20.550047132703995
+          ],
+          [
+            23.285295274522568,
+            23.504942152235245
+          ]
+        ]
+      }
+    },
+    {
+      "gate": "R20",
+      "predicate": "workflow text inside its box (each label line within its PDF box) and >= 24 pt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 3: \"Max |Δη| = 9.3e-5\" kept on one printed line (NBSP); explainer directly above the new caveat paragraph",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "r19 deliverable untouched (sha256 prefix 8cff8cdc996bc4409370)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20",
+      "predicate": "panel 4 sentence and key printed below the chart, sentence in the muted colour; no text overlaps the plot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20F",
+      "predicate": "rack structure: \"(Falcon reference)\" -> \"(rack design target)\" (owner t974/t981); no \"Falcon\" anywhere",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20F",
+      "predicate": "175 kW wording follows the R20_LOAD_WORD switch (default \"in sunlight\") in Power, Thermal and Panel 1; Problem says \"250 kW peak / 175 kW average\"; \"nominal\" only if that option is chosen; 250 kW peak kept",
+      "passed": true,
+      "detail": {
+        "load_word": "in sunlight",
+        "count": 3
+      }
+    },
+    {
+      "gate": "R20F",
+      "predicate": "thermal lines say \"rack coolant\" on both power levels and \"Rubin GPU est.\" at 175 kW average; cold-plate sentence kept",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20F",
+      "predicate": "Panel 1: \"At 175 kW <load word> (screening model): GPU median 368.7 K\"; key exactly \"Each colored dot passes every hard limit; gray fails.\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20F",
+      "predicate": "PDF metadata contains no \"candidate\" (both PDFs; title, subject, keywords, author, creator, producer)",
+      "passed": true,
+      "detail": {
+        "GTC_POSTER_R20_PUBLIC.pdf": "August design, one Vera Rubin NVL72; r20; numbers SHA256 cfd9afe6fff289336bdd25e80e79cf4b08376d194e6ef51ad980655c7e7efdc6",
+        "GTC_POSTER_R20_DRAFT.pdf": "August design, one Vera Rubin NVL72; r20; numbers SHA256 cfd9afe6fff289336bdd25e80e79cf4b08376d194e6ef51ad980655c7e7efdc6"
+      }
+    },
+    {
+      "gate": "R20F",
+      "predicate": "S10: every printed Panel 2 ratio reproduces from the printed bar times (4 significant figures) at the printed precision",
+      "passed": true,
+      "detail": {
+        "bars": {
+          "sw_gpu": "0.2136",
+          "sw_cpu": "7.020",
+          "sw_20": "0.5014",
+          "mc_gpu": "0.1219",
+          "mc_cpu": "3.792",
+          "mc_20": "0.2694"
+        },
+        "ratios": [
+          "32.9",
+          "2.35",
+          "31.1",
+          "2.21"
+        ]
+      }
+    },
+    {
+      "gate": "R20F",
+      "predicate": "Why it matters box = Option A: 12% accent tint over the full column width + solid 0.12 in left bar, no border; t967 wording exact; label bold; all box text >= 24 pt, starts 0.15 in right of the bar, glyph ink ends >= 0.12 in inside the right edge (0.15 in would wrap to a 4th line and overflow the image row)",
+      "passed": true,
+      "detail": {
+        "box": [
+          1.12,
+          16.65012820512821,
+          13.469999999999999,
+          17.953333333333333
+        ],
+        "tint": 1,
+        "bar": 1,
+        "spans": 4
+      }
+    },
+    {
+      "gate": "R20F",
+      "predicate": "banned wording absent (native verification, leaner teams, per hour, meet the 393, pass rate, 392 K)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20F",
+      "predicate": "panel 4 rigid-panel caveat printed at >= 24 pt and the panel-4 text ends inside the panel (no overflow)",
+      "passed": true,
+      "detail": 0.11999999999999966
+    },
+    {
+      "gate": "R20G",
+      "predicate": "Orbit item exact, label bold at 24 pt, first item of the Power group (after Launch fit, before Power); 600 km / LTAN 06:00 dawn-dusk / SSO inclination and along-track (edge-on) radiator normal with both faces radiating match the orbit and environment sources",
+      "passed": true,
+      "detail": [
+        [
+          "Orbit:",
+          "DejaVuSans-Bold",
+          24.0
+        ]
+      ]
+    },
+    {
+      "gate": "R20G",
+      "predicate": "Orbit item takes 2 printed lines; left-column text clears the image row (slack >= 0) with item gap 0.08 in",
+      "passed": true,
+      "detail": {
+        "slack": 0.5393155521541431,
+        "gap": 0.08
+      }
+    },
+    {
+      "gate": "R20G",
+      "predicate": "\"Detailed engineering needed to reduce peak temperatures.\" removed (room for the Orbit item)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20G",
+      "predicate": "Panel 1 hard-limits sentence exact; the six kernel constraints match (GPU 370 K, inlet 393 K, mass 3,266.67 kg -> 3,267, panels <= 140 and array <= 861.75 m² packing -> launch envelope, BOL power >= 249.9 kW -> 250 kW); same kernel on GB10 copy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20G",
+      "predicate": "hard-limits sentence printed at >= 24 pt in the Panel 1 key column, above the caption (>= 0.12 in clear); banned \"meet the 393\" / \"pass rate\" absent",
+      "passed": true,
+      "detail": {
+        "clear": 0.22666666666667012
+      }
+    },
+    {
+      "gate": "R20G",
+      "predicate": "search-variable sentence exact in the Panel 1 caption; the four grid axes of the GB10 sweep are panel count, tubes, fin thickness, array growth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20G",
+      "predicate": "rack frame mass printed \"≈46 kg\" = round(model 45.70 kg); no \"≈50 kg\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20G",
+      "predicate": "Panel 1 scatter keeps its width and stays >= the r19 minimum (3.90 in); all Panel 1 text >= 24 pt",
+      "passed": true,
+      "detail": [
+        8.299999999999999,
+        4.386666666666668
+      ]
+    },
+    {
+      "gate": "R20G",
+      "predicate": "title (owner t985) is one 54 pt bold line, same position/style as before, inside the 1 in margin and >= 0.5 in left of the QR codes (no overflow)",
+      "passed": true,
+      "detail": [
+        [
+          [
+            1.0,
+            1.0731288062201605,
+            34.93299018012153,
+            1.9468788570827908
+          ],
+          54.0,
+          "DejaVuSans-Bold"
+        ]
+      ]
+    },
+    {
+      "gate": "R20H",
+      "predicate": "subtitle (owner t996) exact on one 24 pt line under the title: \"An engineer sets the requirements. An AI agent runs the analysis. Physics solvers check the selected design.\"; old \"Engineers set\" gone",
+      "passed": true,
+      "detail": [
+        [
+          "An engineer sets the requirements. An AI agent runs the analysis. Physics solvers check the selected design.",
+          24.0
+        ]
+      ]
+    },
+    {
+      "gate": "R20H",
+      "predicate": "closing line (owner t996) printed once, in the footer directly below the Targets line (same x, same 24 pt style, next line), not in the left column; footer bottom stays inside the 1 in margin",
+      "passed": true,
+      "detail": [
+        [
+          [
+            14.049999660915798,
+            22.36223856608073,
+            26.73061794704861,
+            22.75057135687934
+          ],
+          24.0
+        ],
+        [
+          [
+            14.049999660915798,
+            21.948905097113716,
+            35.23854234483507,
+            22.337237887912327
+          ],
+          24.0
+        ]
+      ]
+    },
+    {
+      "gate": "R20H",
+      "predicate": "images (owner t996) use the freed left-column space: full caption-column size (scale 1.0), larger than the t985 build (2.98 in tall), same height, aspect kept, centred; left-column slack >= 0",
+      "passed": true,
+      "detail": {
+        "sizes": {
+          "release": [
+            6.164254121871648,
+            3.188407304416369
+          ],
+          "hero": [
+            5.985745878128353,
+            3.188407304416369
+          ]
+        },
+        "slack": 0.5393155521541431
+      }
+    },
+    {
+      "gate": "R20H",
+      "predicate": "QR codes (owner t996) enlarged 1.92 -> >= 2.0 in, both the same size, square, bottom edge 20.90 in, inside the 1 in margins, 0.25 in apart, 4-module quiet zone kept (border=4 in generator), >= 0.5 in clear of the title",
+      "passed": true,
+      "detail": {
+        "qr": [
+          39.870000000000005,
+          20.899999999999995,
+          41.95000000000001,
+          22.98
+        ],
+        "yt": [
+          37.54000000000001,
+          20.899999999999995,
+          39.62000000000001,
+          22.98
+        ]
+      }
+    },
+    {
+      "gate": "R20H",
+      "predicate": "Panel 1 key marker (owner t996) is drawn with the plotted chosen-design marker properties (shape path, size, face colour, edge colour, line width identical); no text ◆ glyph",
+      "passed": true,
+      "detail": {
+        "chart": {
+          "size": 170.0,
+          "face": [
+            0.784314,
+            0.513725,
+            0.137255,
+            1.0
+          ],
+          "edge": [
+            0.094118,
+            0.192157,
+            0.262745,
+            1.0
+          ],
+          "lw": 1.0,
+          "path": [
+            [
+              -0.0,
+              -0.707107
+            ],
+            [
+              0.707107,
+              0.0
+            ],
+            [
+              0.0,
+              0.707107
+            ],
+            [
+              -0.707107,
+              0.0
+            ],
+            [
+              -0.0,
+              -0.707107
+            ]
+          ]
+        },
+        "key": {
+          "size": 170.0,
+          "face": [
+            0.784314,
+            0.513725,
+            0.137255,
+            1.0
+          ],
+          "edge": [
+            0.094118,
+            0.192157,
+            0.262745,
+            1.0
+          ],
+          "lw": 1.0,
+          "path": [
+            [
+              -0.0,
+              -0.707107
+            ],
+            [
+              0.707107,
+              0.0
+            ],
+            [
+              0.0,
+              0.707107
+            ],
+            [
+              -0.707107,
+              0.0
+            ],
+            [
+              -0.0,
+              -0.707107
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gate": "R20H",
+      "predicate": "hero caption (owner t997) says \"Illustrative Omniverse Isaac Sim RTX render\" because it keeps the caption block at the same line count (no image height lost)",
+      "passed": true,
+      "detail": {
+        "lines_without": 4,
+        "lines_with": 4,
+        "release_lines": 4,
+        "used": true
+      }
+    },
+    {
+      "gate": "R20H",
+      "predicate": "CUDA claim (owner t998) is true: the GB10 GPU timing record ran NVIDIA Warp kernels on device cuda:0 (run_tools default --device cuda:0, asserts a CUDA device); printed once as \"GPU: Warp kernels on CUDA.\" in the Panel 2 footnote",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20H",
+      "predicate": "\"GB10 Grace Blackwell\" (owner t998) printed once, at the first GB10 in the Panel 2 caption text; bar labels unchanged (\"GB10 GPU\", \"GB10 CPU, all 20 cores\", \"GB10 CPU, 1 core\"); no other \"Grace\"",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20H",
+      "predicate": "every portal NVIDIA technology appears on the poster (Warp, PhysicsNeMo, Newton, CUDA, GB10 Grace Blackwell, Omniverse Isaac Sim RTX, Rubin GPU / HBM, NVL72)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "gate": "R20H",
+      "predicate": "panel 2 title stays the approved one-line 40 pt \"2  GPU-accelerated design search | GB10\" unless R20_P2_TITLE is set: \"... | CUDA / GB10\" is 15.05 in at 40 pt vs 13.59 in available",
+      "passed": true,
+      "detail": {
+        "m1": 12.691666666666666,
+        "m2": 12.713281250000001,
+        "m3": 13.402604166666668,
+        "m4": 13.201996527777778
+      }
+    },
+    {
+      "gate": "R20H",
+      "predicate": "panel 2 bars stay >= the r19/r17 height (1.62 in) after the extra footnote line; all panel 2 text >= 24 pt",
+      "passed": true,
+      "detail": [
+        [
+          32.1,
+          16.868333,
+          9.7,
+          2.031667
+        ],
+        [
+          32.1,
+          14.296667,
+          9.7,
+          2.031667
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+{
+  "numbers": {
+    "sweep_gpu_s": {
+      "raw": 0.213579794857651,
+      "shown": "0.214",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json"
+      ],
+      "how": "median kernel_seconds, locked benchmark"
+    },
+    "sweep_cpu_s": {
+      "raw": 7.020124776987359,
+      "shown": "7.02",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json"
+      ],
+      "how": "median kernel_seconds, locked benchmark"
+    },
+    "speedup_x": {
+      "raw": 32.86886187743653,
+      "shown": "32.9",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json"
+      ],
+      "how": "ratio of medians"
+    },
+    "scaling_rows": {
+      "raw": [
+        {
+          "designs": 64,
+          "gpu_s": 0.0005300850607454777,
+          "cpu_s": 0.0002715550363063812,
+          "ratio": 0.5122857752762993
+        },
+        {
+          "designs": 256,
+          "gpu_s": 0.0014685741625726223,
+          "cpu_s": 0.001009482191875577,
+          "ratio": 0.6873893178858491
+        },
+        {
+          "designs": 1024,
+          "gpu_s": 0.00146255805157125,
+          "cpu_s": 0.0039934939704835415,
+          "ratio": 2.7304857856365192
+        },
+        {
+          "designs": 4096,
+          "gpu_s": 0.0014641419984400272,
+          "cpu_s": 0.01592732104472816,
+          "ratio": 10.87826253307258
+        },
+        {
+          "designs": 16384,
+          "gpu_s": 0.0029128920286893845,
+          "cpu_s": 0.06368637294508517,
+          "ratio": 21.863622927946277
+        },
+        {
+          "designs": 65536,
+          "gpu_s": 0.00870213215239346,
+          "cpu_s": 0.2546333489008248,
+          "ratio": 29.261029876544644
+        },
+        {
+          "designs": 262144,
+          "gpu_s": 0.03184787090867758,
+          "cpu_s": 1.018265696009621,
+          "ratio": 31.972802795183853
+        },
+        {
+          "designs": 1048576,
+          "gpu_s": 0.12445699097588658,
+          "cpu_s": 4.074819267028943,
+          "ratio": 32.740782458885214
+        },
+        {
+          "designs": 1806336,
+          "gpu_s": 0.21272432710975409,
+          "cpu_s": 7.02100486215204,
+          "ratio": 33.00518073106696
+        }
+      ],
+      "shown": "",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "per-N medians of 3 processes; first N designs of the same grid"
+    },
+    "crossover_low": {
+      "raw": 256,
+      "shown": "256",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "largest measured N where GPU kernel is slower"
+    },
+    "crossover_high": {
+      "raw": 1024,
+      "shown": "1,024",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "smallest measured N above it where GPU is faster"
+    },
+    "gpu_floor_ms": {
+      "raw": 1.4641419984400272,
+      "shown": "1.5",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "median GPU kernel time over N=256..4,096 (latency floor)"
+    },
+    "flat_upto": {
+      "raw": 4096,
+      "shown": "4,096",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "largest N on the flat GPU floor"
+    },
+    "scale_full_ratio": {
+      "raw": 33.00518073106696,
+      "shown": "33.0",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "scaling-run ratio at 1,806,336"
+    },
+    "sat_from": {
+      "raw": 262144,
+      "shown": "262,144",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "N from which measured ratio is within 5% of the full-grid ratio"
+    },
+    "sat_ratio_range": {
+      "raw": [
+        31.972802795183853,
+        33.00518073106696
+      ],
+      "shown": "32–33",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json",
+        "speed/results/SCALE_CPU_1.json",
+        "speed/results/SCALE_CPU_2.json",
+        "speed/results/SCALE_CPU_3.json"
+      ],
+      "how": "measured ratio range for N>=262,144 (rounded)"
+    },
+    "mc_gpu_s": {
+      "raw": 0.12193548888899386,
+      "shown": "0.122",
+      "sources": [
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "median kernel_seconds, 1,048,576 draws"
+    },
+    "mc_cpu_s": {
+      "raw": 3.7919265939854085,
+      "shown": "3.79",
+      "sources": [
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "median kernel_seconds"
+    },
+    "mc_speedup_x": {
+      "raw": 31.09780941164271,
+      "shown": "31.1",
+      "sources": [
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "ratio of medians"
+    },
+    "both_gpu_s": {
+      "raw": 0.33551528374664485,
+      "shown": "0.34",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "sweep median + scenario median"
+    },
+    "both_cpu_s": {
+      "raw": 10.812051370972767,
+      "shown": "10.8",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "sweep median + scenario median"
+    },
+    "per_hour_gpu": {
+      "raw": 16855.52700525519,
+      "shown": "≈16,860",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json"
+      ],
+      "how": "3,600 s / GPU sweep kernel median (kernel time only)"
+    },
+    "per_hour_cpu": {
+      "raw": 512.8113978545146,
+      "shown": "≈513",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json"
+      ],
+      "how": "3,600 s / CPU sweep kernel median"
+    },
+    "both_per_hour_gpu": {
+      "raw": 10729.764557367947,
+      "shown": "≈10,730",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "3,600 s / (sweep + scenarios), GPU"
+    },
+    "both_per_hour_cpu": {
+      "raw": 332.9617920300452,
+      "shown": "≈333",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json"
+      ],
+      "how": "3,600 s / (sweep + scenarios), CPU"
+    },
+    "gpu_readback_s": {
+      "raw": 0.04789382801391184,
+      "shown": "0.05",
+      "sources": [
+        "speed/results/SCALE_GPU_1.json",
+        "speed/results/SCALE_GPU_2.json",
+        "speed/results/SCALE_GPU_3.json"
+      ],
+      "how": "median readback+selection at 1.81M (excluded from kernel time)"
+    },
+    "surr_gpu_s": {
+      "raw": 0.006160011049360037,
+      "shown": "0.006",
+      "sources": [
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json"
+      ],
+      "how": "median forward pass, 66,177 queries"
+    },
+    "surr_cpu_s": {
+      "raw": 0.018949444871395826,
+      "shown": "0.019",
+      "sources": [
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json"
+      ],
+      "how": "median forward pass, 1 thread"
+    },
+    "surr_queries": {
+      "raw": 66177,
+      "shown": "66,177",
+      "sources": [
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json"
+      ],
+      "how": "query grid size"
+    },
+    "surr_cpu_table_diff": {
+      "raw": 2.7921050786972046e-05,
+      "shown": "2.8e-05",
+      "sources": [
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json"
+      ],
+      "how": "fp32 CPU vs CUDA rounding vs committed table"
+    },
+    "fin_gpu_s": {
+      "raw": 97.87389659881592,
+      "shown": "98",
+      "sources": [
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "median wall_s of fin_al_benchmark.py table (585 fp64 fin solves, 320x8 grid each)"
+    },
+    "fin_cpu_s": {
+      "raw": 83.63065934181213,
+      "shown": "84",
+      "sources": [
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "median wall_s, CPU pinned to one core"
+    },
+    "fin_points": {
+      "raw": 585,
+      "shown": "585",
+      "sources": [
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "table points"
+    },
+    "fin_grid": {
+      "raw": [
+        320,
+        8
+      ],
+      "shown": "320×8",
+      "sources": [
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "fin solver grid"
+    },
+    "fin_ratio": {
+      "raw": 0.8544735853790857,
+      "shown": "0.85",
+      "sources": [
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "CPU/GPU"
+    },
+    "newton_gpu_s": {
+      "raw": 78.09471326204948,
+      "shown": "78",
+      "sources": [
+        "speed/results/NEWTON_GPU_1.json",
+        "speed/results/NEWTON_GPU_2.json",
+        "speed/results/NEWTON_GPU_3.json"
+      ],
+      "how": "median newton_compile_and_run_s, radiator wing 690 simulated s at dt 0.01 (CUDA graph path; no CPU path)"
+    },
+    "total_gpu_s": {
+      "raw": 176.3102851556614,
+      "shown": "176",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json",
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json",
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json",
+        "speed/results/NEWTON_GPU_1.json",
+        "speed/results/NEWTON_GPU_2.json",
+        "speed/results/NEWTON_GPU_3.json"
+      ],
+      "how": "sum of GPU stage medians"
+    },
+    "total_cpu_measured_s": {
+      "raw": 94.4616601576563,
+      "shown": "94",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json",
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json",
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "sum of CPU stage medians (Newton not measured)"
+    },
+    "common_gpu_s": {
+      "raw": 98.21557189361192,
+      "shown": "98",
+      "sources": [
+        "gb10_out/r11/BENCH_GPU_1.json",
+        "gb10_out/r11/BENCH_GPU_2.json",
+        "gb10_out/r11/BENCH_GPU_3.json",
+        "gb10_out/r11/BENCH_CPU_1.json",
+        "gb10_out/r11/BENCH_CPU_2.json",
+        "gb10_out/r11/BENCH_CPU_3.json",
+        "speed/results/MC_GPU_1.json",
+        "speed/results/MC_GPU_2.json",
+        "speed/results/MC_GPU_3.json",
+        "speed/results/MC_CPU_1.json",
+        "speed/results/MC_CPU_2.json",
+        "speed/results/MC_CPU_3.json",
+        "speed/results/SURR_GPU_1.json",
+        "speed/results/SURR_GPU_2.json",
+        "speed/results/SURR_GPU_3.json",
+        "speed/results/SURR_CPU_1.json",
+        "speed/results/SURR_CPU_2.json",
+        "speed/results/SURR_CPU_3.json",
+        "speed/results/FIN_TABLE_GPU_1.json",
+        "speed/results/FIN_TABLE_GPU_2.json",
+        "speed/results/FIN_TABLE_GPU_3.json",
+        "speed/results/FIN_TABLE_CPU_1.json",
+        "speed/results/FIN_TABLE_CPU_2.json",
+        "speed/results/FIN_TABLE_CPU_3.json"
+      ],
+      "how": "GPU sum over stages that have a CPU equivalent"
+    }
+  },
+  "source_sha256": {
+    "gb10_out/r11/BENCH_CPU_1.json": "d892a867230fd2407a08c496f19677c9b2fd47d7f09feb759f4a61c2169fb357",
+    "gb10_out/r11/BENCH_CPU_2.json": "ea6d963cbd1ee0f0ad40af71292d1dbd778cf74294f14014e19553a35f397b35",
+    "gb10_out/r11/BENCH_CPU_3.json": "0b02ab72baaad4e26b607cdbc62efccb8297aff8da11ef68d5b4b83a8ee2b2b2",
+    "gb10_out/r11/BENCH_GPU_1.json": "9601d273667450b6da32a5b73bee0e1250ba06adcb7c2140e5ad11b87a6d857d",
+    "gb10_out/r11/BENCH_GPU_2.json": "b10e0d82c86570ca2c7d9f098f8912354909f34d08511a6ac9eb5ca3a3ecbb2d",
+    "gb10_out/r11/BENCH_GPU_3.json": "16405b141e244d19fb96c24f78c26a2f7cd16288b60b452111933428c316f158",
+    "speed/results/FIN_TABLE_CPU_1.json": "a1d59e73339ac1dcfbe821cec1970fdb7998d1d43cb91b312331825f1ccfe4f7",
+    "speed/results/FIN_TABLE_CPU_2.json": "9d24b425262e27977111f7bfcfa5a1978c008bf86e8c1270705ea205814153cd",
+    "speed/results/FIN_TABLE_CPU_3.json": "f6c50373ac89e94e2bdc9d88508ebc23ba3ed7292d4f5819bb09149718a56af6",
+    "speed/results/FIN_TABLE_GPU_1.json": "5f6e0364740642ba1c9719477d0e783f935fc8443e69e76d998624ebaa791b48",
+    "speed/results/FIN_TABLE_GPU_2.json": "1f47fd81d21f93bc6a8612b3490bd5690136e459392f8f6afbdfa29eba30c102",
+    "speed/results/FIN_TABLE_GPU_3.json": "27c6166d7b110ad283524334201a6bd9edf9eefc82217d311d5092effb866861",
+    "speed/results/MC_CPU_1.json": "4951e12d5664d9152964c791799feb0cc5cb9328c36073dd9c8cbdb3884c9885",
+    "speed/results/MC_CPU_2.json": "ec0d6d0880f1cf8d0515bd4a8239d5878eb9a595b37152118602b2b8eca7f57e",
+    "speed/results/MC_CPU_3.json": "0f5c1cb0d3cbb24c0256d3fee3f82bc9d10666acc787d5ed5aa7b674e017607d",
+    "speed/results/MC_GPU_1.json": "84409f6b33d6b914636848ea30fefb75da1ed6d1d4e19d88f5b7155fe097e53f",
+    "speed/results/MC_GPU_2.json": "441757ea645fb41d32eabcf092826c792d12c2678dcffcda1f0c782458ff9d26",
+    "speed/results/MC_GPU_3.json": "1962413fcec4f196dba637708397675779e9eb0d2fba805baab0f9c1cea71068",
+    "speed/results/NEWTON_GPU_1.json": "3e5fb44c202a4e77bd115c948fa14077b3d167294f6dc21c626e54512d3c1091",
+    "speed/results/NEWTON_GPU_2.json": "47d0c8293fd4825b4da5ae8c46a788617a3e8ec360a50970523025476c5b4349",
+    "speed/results/NEWTON_GPU_3.json": "8bd5dfa851fbba0d8d9d883321fa39b9a05ecbc2787952e008220c63964dcffe",
+    "speed/results/SCALE_CPU_1.json": "00afdbf1ceb53ed7ab6a2272a1a3039050149c411143bdaa9dd3ae51b755adb0",
+    "speed/results/SCALE_CPU_2.json": "2a648fb08fdeba5cf89f1dfe8d202bc05b3506a8f3cd5fab3da7836a8ffcd8b3",
+    "speed/results/SCALE_CPU_3.json": "8090a4bb961cd77987e3a81be23e97e29f4b422fb1d65291e0f8c513b07bdfcf",
+    "speed/results/SCALE_GPU_1.json": "02e4b150098f39f4a9accea7fcd64f0bbe3c550167172869275fc2abf8ddf31b",
+    "speed/results/SCALE_GPU_2.json": "79c457ba0e0c7bcde2b7353643c84a1b6a08e7794f2eed939f0c6f93ce176db8",
+    "speed/results/SCALE_GPU_3.json": "8336551814fadff1f2f549bb2345b572d5f344617735670f975d107735090697",
+    "speed/results/SURR_CPU_1.json": "5396b02ba72a8e008327c8f3372b8b3c42ec20b57bd214f8ce9fe07a621fda27",
+    "speed/results/SURR_CPU_2.json": "f9c216df4c6ff31d8aa0cb7b0bee0a670e21bc91083760e6a5c4d328c6ec434a",
+    "speed/results/SURR_CPU_3.json": "9ce30c50e020731c28e205b0884261b9898440a3a6419af4b28d9e1de25073a8",
+    "speed/results/SURR_GPU_1.json": "a38168432507ec4faf4b271be46658d15b2df59466e23e5da946170514cd0fba",
+    "speed/results/SURR_GPU_2.json": "690f6f6e566355a527d4eaf9fe1afb6617542da94ae88d401a6a8ba09ea52640",
+    "speed/results/SURR_GPU_3.json": "d61e8d5bda0ebba907b8dd84c33fd2ebc42babe205205e44d69d807ad1854f63"
+  },
+  "derive_script_sha256": "359202394960699d9c86421bed3891e29265503eab9d042073366013d03af439"
+}

@@ -1,0 +1,64 @@
+{
+  "stage": "scale",
+  "label": "CPU_3",
+  "device": "cpu",
+  "machine": "aarch64",
+  "warp": "1.18.0",
+  "numpy": "2.5.4",
+  "precision": "fp64",
+  "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13",
+  "inputs_sha256": "94e1b3ae978b83fe5fc0b3d87bf8ccbe9b277d4d44fdd523403ec328db7cc12b",
+  "surrogate_sha256": "22b39be64975047a1d2560b0de45e0633954e5245a224f9c9a2e901455090ebd",
+  "cpu_affinity": [
+    5
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "method": "r11 panel-2 speed study. Unmodified r11 fp64 Warp kernels (gpu_core.py sha cb07f775...), same inputs as the locked sweep.\nTiming method identical to sweep/run_benchmark.py: one process per repetition, 512-thread warm-up launch (JIT/module load excluded),\nthen wp.launch + wp.synchronize_device inside a perf_counter window; setup, host->device copies, readback and postprocess excluded.\nstage 'scale': sweep kernel launched with dim=N over the first N points of the 1,806,336-point grid (prefix of the same grid).\nstage 'mc'   : the 1,048,576-draw scenario kernel at the selected design (seed 20261107), as in run_tools.py mc.\nReadback+postprocess time is recorded separately (not part of the kernel time).",
+  "compile_and_warmup_seconds": 0.00585394399240613,
+  "rows": [
+    {
+      "designs": 64,
+      "kernel_seconds": 0.00027605099603533745
+    },
+    {
+      "designs": 256,
+      "kernel_seconds": 0.001009482191875577
+    },
+    {
+      "designs": 1024,
+      "kernel_seconds": 0.0039934939704835415
+    },
+    {
+      "designs": 4096,
+      "kernel_seconds": 0.015910998918116093
+    },
+    {
+      "designs": 16384,
+      "kernel_seconds": 0.06362130888737738
+    },
+    {
+      "designs": 65536,
+      "kernel_seconds": 0.2544872199650854
+    },
+    {
+      "designs": 262144,
+      "kernel_seconds": 1.017831867095083
+    },
+    {
+      "designs": 1048576,
+      "kernel_seconds": 4.072707102168351
+    },
+    {
+      "designs": 1806336,
+      "kernel_seconds": 7.017418375937268,
+      "readback_postprocess_seconds": 0.008766739163547754,
+      "hard_feasible": 3048,
+      "design_feasible": 2347,
+      "selected_index": 1037888
+    }
+  ]
+}

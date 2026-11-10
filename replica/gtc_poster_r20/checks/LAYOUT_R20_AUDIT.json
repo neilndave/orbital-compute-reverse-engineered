@@ -1,0 +1,741 @@
+{
+  "revision": "r20",
+  "matplotlib_audit": {
+    "layout_revision": "r20",
+    "poster_layout": "A",
+    "m1_scatter_single_colour": false,
+    "m1_scatter_coloured_by": "radiator_panels",
+    "hero_path": "poster_inputs/HERO_R13.png",
+    "hero_sha256": "de59a0872193ee1992cbd564801e50e7ebea5c161f9e88d63a6120c3223022c9",
+    "hero_credit": "Illustrative Omniverse Isaac Sim RTX render, contrast enhanced; not flight validation. Earth: NASA Blue Marble.",
+    "release_path": "poster_inputs/RELEASE_R11_K712_4K_CROP_fixed_r20right.png",
+    "release_sha256": "e743501dfa57d7714497ce63f4b52eef67352520e9be0cdecb5532de0a3b0817",
+    "release_credit": "Simulated release: 30 satellites leave the launch vehicle through a side slot and unfold (kinematic, assumed parameters).",
+    "release_size_inches": [
+      6.164254121871648,
+      3.188407304416369
+    ],
+    "release_source_pixels": [
+      1800,
+      3480
+    ],
+    "release_effective_ppi": 564.5451876574112,
+    "hero_crop_px": [
+      650,
+      216,
+      3650,
+      1814
+    ],
+    "hero_label_pt": 26,
+    "hero_labels": [
+      "Solar Array",
+      "Radiator"
+    ],
+    "hero_label_fontsizes": [
+      26.0,
+      26.0
+    ],
+    "caption_fontsizes": [
+      24.0,
+      24.0
+    ],
+    "panel_geometry": {
+      "m1": [
+        13.850000000000001,
+        11.399999999999999,
+        13.95,
+        9.0
+      ],
+      "m2": [
+        28.05,
+        11.399999999999999,
+        13.95,
+        9.0
+      ],
+      "m3": [
+        13.850000000000001,
+        2.1499999999999986,
+        13.95,
+        9.0
+      ],
+      "m4": [
+        28.05,
+        2.1499999999999986,
+        13.95,
+        9.0
+      ]
+    },
+    "matplotlib_layout_passed": true,
+    "m1_sensitivity_layout_passed": true,
+    "poster_text_layout_passed": true,
+    "numbers_sha256": "cfd9afe6fff289336bdd25e80e79cf4b08376d194e6ef51ad980655c7e7efdc6",
+    "minimum_text_pt": 24,
+    "required_white_margin_inches": 1,
+    "bounds_inches": [
+      1,
+      1,
+      42,
+      23
+    ],
+    "nvidia_module_area_inches2": 502.2,
+    "live_area_inches2": 902,
+    "nvidia_area_percent": 55.67627494456763,
+    "modules": {
+      "m1": [
+        13.850000000000001,
+        11.399999999999999,
+        13.95,
+        9.0
+      ],
+      "m2": [
+        28.05,
+        11.399999999999999,
+        13.95,
+        9.0
+      ],
+      "m3": [
+        13.850000000000001,
+        2.1499999999999986,
+        13.95,
+        9.0
+      ],
+      "m4": [
+        28.05,
+        2.1499999999999986,
+        13.95,
+        9.0
+      ]
+    },
+    "qr_size_inches": 2.08,
+    "qr_bounds_inches": [
+      39.870000000000005,
+      20.899999999999995,
+      41.95000000000001,
+      22.98
+    ],
+    "qr_caption": "GitHub",
+    "youtube_qr": {
+      "url_given": true,
+      "bounds_inches": [
+        37.54000000000001,
+        20.899999999999995,
+        39.62000000000001,
+        22.98
+      ],
+      "caption": "YouTube",
+      "caption_bounds_inches": [
+        37.91242187500001,
+        20.46666666666667,
+        39.247578125000004,
+        20.8
+      ]
+    },
+    "effort": {
+      "days": "12",
+      "source_sha256": "9317944fe9a10400a879bb828e4d2c8d59b4953ef726e8528b56ab834c9815d3"
+    },
+    "thermal_steady": {
+      "nom_rack_in": "339",
+      "nom_rack_out": "359",
+      "nom_GPU_rubin": "371",
+      "nom_HBM_rubin": "373",
+      "pk_rack_in": "370",
+      "pk_rack_out": "390",
+      "pk_GPU_rubin": "410",
+      "pk_HBM_rubin": "412"
+    },
+    "mc_numbers": {
+      "n_inputs": "14",
+      "p_gpu370": "65",
+      "gpu_p50": "368.7",
+      "margin": "1"
+    },
+    "n_hinges": 36,
+    "why_it_matters": "AI agents and GPU acceleration allow rapid digital prototyping; 12 coworking days for an engineer to go from concept to a chosen mechanical and thermal architecture ready for detailed design.",
+    "image_sizes_in": {
+      "release": [
+        6.164254121871648,
+        3.188407304416369
+      ],
+      "hero": [
+        5.985745878128353,
+        3.188407304416369
+      ]
+    },
+    "axes_in": [
+      [
+        39.87,
+        20.9,
+        2.08,
+        2.08
+      ],
+      [
+        37.54,
+        20.9,
+        2.08,
+        2.08
+      ],
+      [
+        1.12,
+        3.046667,
+        6.164254,
+        3.188407
+      ],
+      [
+        7.484254,
+        3.046667,
+        5.985746,
+        3.188407
+      ],
+      [
+        15.45,
+        14.813333,
+        8.3,
+        4.386667
+      ],
+      [
+        24.1,
+        18.586667,
+        3.2,
+        0.2
+      ],
+      [
+        32.1,
+        16.868333,
+        9.7,
+        2.031667
+      ],
+      [
+        32.1,
+        14.296667,
+        9.7,
+        2.031667
+      ],
+      [
+        15.6,
+        6.213333,
+        11.65,
+        3.786667
+      ],
+      [
+        29.45,
+        6.413333,
+        12.0,
+        3.586667
+      ]
+    ],
+    "axes_on": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "m1_key_marker_axes_in": [
+      24.05,
+      16.653333,
+      0.36,
+      0.333333
+    ],
+    "left_slack_in": 0.5393155521541431,
+    "hero_omniverse": {
+      "lines_without": 4,
+      "lines_with": 4,
+      "release_lines": 4,
+      "used": true
+    },
+    "subtitle": "An engineer sets the requirements. An AI agent runs the analysis. Physics solvers check the selected design.",
+    "closing_text": "A basis for further detailed design. Simulation study, not flight qualification.",
+    "footer_bottom_in": 1.2533333333333319,
+    "qr_side_in": 2.08,
+    "m1_marker": {
+      "chart": {
+        "size": 170.0,
+        "face": [
+          0.784314,
+          0.513725,
+          0.137255,
+          1.0
+        ],
+        "edge": [
+          0.094118,
+          0.192157,
+          0.262745,
+          1.0
+        ],
+        "lw": 1.0,
+        "path": [
+          [
+            -0.0,
+            -0.707107
+          ],
+          [
+            0.707107,
+            0.0
+          ],
+          [
+            0.0,
+            0.707107
+          ],
+          [
+            -0.707107,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.707107
+          ]
+        ]
+      },
+      "key": {
+        "size": 170.0,
+        "face": [
+          0.784314,
+          0.513725,
+          0.137255,
+          1.0
+        ],
+        "edge": [
+          0.094118,
+          0.192157,
+          0.262745,
+          1.0
+        ],
+        "lw": 1.0,
+        "path": [
+          [
+            -0.0,
+            -0.707107
+          ],
+          [
+            0.707107,
+            0.0
+          ],
+          [
+            0.0,
+            0.707107
+          ],
+          [
+            -0.707107,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.707107
+          ]
+        ]
+      }
+    },
+    "m1_key_clear_in": 0.22666666666667012,
+    "hard_limits_text": "Hard limits: GPU ≤370 K, radiator inlet ≤393 K, ≤3,267 kg, fits the launch envelope, 250 kW at start of life.",
+    "search_text": "Search varied panel count, tubes per panel, fin thickness and array size.",
+    "orbit_text": "600 km dawn-dusk sun-synchronous. Arrays face the Sun; radiators assumed edge-on to it, radiating from both faces.",
+    "frame_shown": "≈46",
+    "image_scale": 1.0,
+    "image_full_height_in": 3.188407304416369,
+    "image_x0_in": 1.12,
+    "hero_x0_in": 7.484254121871648,
+    "caption_columns_in": [
+      6.164254121871648,
+      5.985745878128353
+    ],
+    "left_leading": 1.0,
+    "left_item_gap_in": 0.08,
+    "sequence_key": "",
+    "band_labels": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "title_widths_in": {
+      "m1": 12.691666666666666,
+      "m2": 12.713281250000001,
+      "m3": 13.402604166666668,
+      "m4": 13.201996527777778
+    },
+    "titles": {
+      "m1": "1  Radiator search and sensitivity | Warp",
+      "m2": "2  GPU-accelerated design search | GB10",
+      "m3": "3  AI fin model check | PhysicsNeMo / Warp",
+      "m4": "4  Unfolding after release | Newton / Warp"
+    },
+    "p4_bottom_slack_in": 0.11999999999999966,
+    "plot_sizes_in": {
+      "m1_scatter": [
+        8.299999999999999,
+        4.386666666666668
+      ],
+      "m4_deploy": [
+        11.999999999999998,
+        3.586666666666668
+      ]
+    },
+    "qr_caption_bounds_inches": [
+      40.33500000000001,
+      20.46666666666667,
+      41.485,
+      20.8
+    ],
+    "hero_size_inches": [
+      5.985745878128353,
+      3.188407304416369
+    ],
+    "hero_bounds_inches": [
+      7.484254121871649,
+      3.046666666666667,
+      13.469999999999999,
+      6.235073971083035
+    ],
+    "hero_source_pixels": [
+      1598,
+      3000
+    ],
+    "hero_effective_dpi": 501.1906721536351,
+    "r10_hero_size_inches": [
+      4.088888888888889,
+      2.3
+    ],
+    "workflow_total_width_inches": 25.518489583333327,
+    "numbers_used": [
+      "allcore:mc_x20",
+      "allcore:sweep_x20",
+      "angle_parity_deg",
+      "annual_kW",
+      "configurations",
+      "cpu_kernel_s",
+      "device_target_K",
+      "dispenser_t",
+      "emissivity",
+      "fleet_peak_MW",
+      "fleet_t",
+      "frame_f1_Hz",
+      "frame_kg",
+      "gpu_kernel_s",
+      "gpu_mc_median_K",
+      "hard_feasible",
+      "hinge_locks",
+      "launch_t",
+      "module_rating_W_m2",
+      "nominal_kW",
+      "panel_f1_max_Hz",
+      "panel_f1_min_Hz",
+      "panel_f1_nominal_Hz",
+      "peak_target_kW",
+      "radiator_panels",
+      "reserve_t",
+      "satellites",
+      "sc_mass_kg",
+      "scenario_draws",
+      "screen_mass_kg",
+      "solar_area_m2",
+      "solver_mass_kg",
+      "speed:crossover_high",
+      "speed:mc_cpu_s",
+      "speed:mc_gpu_s",
+      "speed:mc_speedup_x",
+      "speed:scale_full_ratio",
+      "speedup_x",
+      "steady:nom_GPU_rubin",
+      "steady:nom_HBM_rubin",
+      "steady:nom_rack_in",
+      "steady:nom_rack_out",
+      "steady:pk_GPU_rubin",
+      "steady:pk_HBM_rubin",
+      "steady:pk_rack_in",
+      "steady:pk_rack_out",
+      "surrogate_heldout",
+      "surrogate_heldout_max_abs_eta",
+      "surrogate_train",
+      "tape_gap_pct",
+      "tape_gradient_max_rel_err"
+    ],
+    "generator_sha256": "140864faff728dd457865a1edcb4cc71a33f1ade9d8d8b5d84ea79e179e7a1ec",
+    "speed_numbers_sha256": "95d33857abd032e5960ba9e7b393dd0138c8d1f7d9fd58c49fc4e3071a368b81",
+    "allcore_sha256": "72027b6e42b82796413426c05bae0aa7de6ec24ba3d66c924bc01a4716dc7530",
+    "m2_bar_orders": [
+      [
+        "GB10 GPU",
+        "GB10 CPU, all 20 cores",
+        "GB10 CPU, 1 core"
+      ],
+      [
+        "GB10 GPU",
+        "GB10 CPU, all 20 cores",
+        "GB10 CPU, 1 core"
+      ]
+    ],
+    "m4_lines": {
+      "fold_out": 20,
+      "width": 5,
+      "radiator": 10,
+      "root": 1,
+      "root_lw": 4.2,
+      "warp_lw": 2.0,
+      "group_lw": 2.0,
+      "n_lines": 37
+    },
+    "youtube_url": "https://www.youtube.com/playlist?list=PLHLk3Rx0ECWs",
+    "disclaimer": "Independent study from public information; not affiliated with or endorsed by SpaceX.",
+    "footnote": "Targets: spacex.com/spacexai/starmind. Independent study from public information; not affiliated with or endorsed by SpaceX.",
+    "footnote_lines": 1,
+    "m1_scatter_width_in": 8.299999999999999,
+    "m1_scatter_height_in": 4.3866666666666685,
+    "m1_colour_levels": [
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140
+    ],
+    "m1_colourbar_ticks": [
+      "132",
+      "140"
+    ],
+    "m1_gray_points": 25176,
+    "m1_feasible_points": 3048,
+    "violations": [],
+    "p4_key": [
+      "① 0–180 s: solar-array root hinge swings each wing out from the body.",
+      "② 180–780 s: solar-array fold-out hinges open the folded panels accordion-style.",
+      "③ 960–1,080 s: solar-array width hinges spread the wing to full width.",
+      "④ 1,080–1,770 s: radiator hinges unfold the radiator."
+    ],
+    "p4_axes_legend": false,
+    "why_box": {
+      "right_clear_in": 0.12458333333333194,
+      "variant": "A",
+      "bounds_in": [
+        1.12,
+        16.65012820512821,
+        13.469999999999999,
+        17.953333333333333
+      ],
+      "pad_in": 0.15,
+      "bar_in": 0.12,
+      "text_x_in": 1.3900000000000001,
+      "text_w_in": 11.98
+    },
+    "load_word": "in sunlight",
+    "why_text": "AI agents and GPU acceleration allow rapid digital prototyping; 12 coworking days for an engineer to go from concept to a chosen mechanical and thermal architecture ready for detailed design.",
+    "workflow_box_widths_in_r19": [
+      4.064,
+      4.353,
+      3.859,
+      7.495,
+      2.605,
+      2.936
+    ],
+    "workflow_box_widths_in": [
+      4.064,
+      4.353,
+      3.859,
+      5.951,
+      2.605,
+      2.936
+    ],
+    "workflow_labels": [
+      "Human requirements /\ndesign decisions",
+      "AI agent (closed source)",
+      "Open analysis scripts\nApache-2.0",
+      "GPU: Warp, PhysicsNeMo, Newton\nCPU: CalculiX FEA",
+      "Solver checks",
+      "Human review /\napproval"
+    ],
+    "title_pt": {
+      "m1": 40.0,
+      "m2": 40.0,
+      "m3": 40.0,
+      "m4": 40.0
+    },
+    "p2_strip_h_in": 2.031666666666667,
+    "p3_plot_h_in": 3.786666666666666,
+    "p4_plot_h_in": 3.586666666666667,
+    "p1_plot_h_in": 4.3866666666666685,
+    "plot_min_in": {
+      "m1": 3.9,
+      "m2": 1.62,
+      "m3": 3.17,
+      "m4": 2.87
+    }
+  },
+  "pdf": {
+    "GTC_POSTER_R20_DRAFT.pdf": {
+      "page_inches": [
+        43.0,
+        24.0
+      ],
+      "text_spans": 175,
+      "poppler_words": 1014,
+      "min_font_pt": 24.0,
+      "images": [
+        {
+          "px": [
+            624,
+            624
+          ],
+          "bbox": [
+            39.86999850802951,
+            1.0199993981255426,
+            41.94999864366319,
+            3.0999993218315973
+          ],
+          "dpi": [
+            299.999980437451,
+            300.00001100393484
+          ]
+        },
+        {
+          "px": [
+            624,
+            624
+          ],
+          "bbox": [
+            37.539998372395836,
+            1.0199993981255426,
+            39.61999850802951,
+            3.0999993218315973
+          ],
+          "dpi": [
+            299.999980437452,
+            300.00001100393484
+          ]
+        },
+        {
+          "px": [
+            1849,
+            957
+          ],
+          "bbox": [
+            1.1199999915228949,
+            17.76333279079861,
+            7.283333672417535,
+            20.953331841362846
+          ],
+          "dpi": [
+            299.9999830824685,
+            300.00008928865645
+          ]
+        },
+        {
+          "px": [
+            1796,
+            957
+          ],
+          "bbox": [
+            7.483333163791233,
+            17.76333279079861,
+            13.469999525282118,
+            20.953331841362846
+          ],
+          "dpi": [
+            300.0000152927738,
+            300.00008928865645
+          ]
+        }
+      ],
+      "drawings": 21771,
+      "extents": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.75057204166667,
+        "left_in": 1.0,
+        "right_in": 41.87379209722222
+      },
+      "violations": [],
+      "pdf_sha256": "85c3f9f70ae72b38d3ee6692ea79dcf19f8d23788f50e7e0af44250475b4459b"
+    },
+    "GTC_POSTER_R20_PUBLIC.pdf": {
+      "page_inches": [
+        43.0,
+        24.0
+      ],
+      "text_spans": 175,
+      "poppler_words": 1014,
+      "min_font_pt": 24.0,
+      "images": [
+        {
+          "px": [
+            624,
+            624
+          ],
+          "bbox": [
+            39.86999850802951,
+            1.0199993981255426,
+            41.94999864366319,
+            3.0999993218315973
+          ],
+          "dpi": [
+            299.999980437451,
+            300.00001100393484
+          ]
+        },
+        {
+          "px": [
+            624,
+            624
+          ],
+          "bbox": [
+            37.539998372395836,
+            1.0199993981255426,
+            39.61999850802951,
+            3.0999993218315973
+          ],
+          "dpi": [
+            299.999980437452,
+            300.00001100393484
+          ]
+        },
+        {
+          "px": [
+            1849,
+            957
+          ],
+          "bbox": [
+            1.1199999915228949,
+            17.76333279079861,
+            7.283333672417535,
+            20.953331841362846
+          ],
+          "dpi": [
+            299.9999830824685,
+            300.00008928865645
+          ]
+        },
+        {
+          "px": [
+            1796,
+            957
+          ],
+          "bbox": [
+            7.483333163791233,
+            17.76333279079861,
+            13.469999525282118,
+            20.953331841362846
+          ],
+          "dpi": [
+            300.0000152927738,
+            300.00008928865645
+          ]
+        }
+      ],
+      "drawings": 21771,
+      "extents": {
+        "text_top_in": 1.073128472222222,
+        "text_bottom_from_top_in": 22.75057204166667,
+        "left_in": 1.0,
+        "right_in": 41.87379209722222
+      },
+      "violations": [],
+      "pdf_sha256": "85c3f9f70ae72b38d3ee6692ea79dcf19f8d23788f50e7e0af44250475b4459b"
+    }
+  }
+}

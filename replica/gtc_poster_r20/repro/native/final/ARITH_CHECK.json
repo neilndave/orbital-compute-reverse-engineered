@@ -1,0 +1,553 @@
+{
+ "n": 78,
+ "failed": [],
+ "passed": true,
+ "checks": [
+  {
+   "check": "June installed peak MW = N x kW",
+   "recomputed": 6.9,
+   "reported": 6.9,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal IT MW = N x kW",
+   "recomputed": 5.52,
+   "reported": 5.52,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal = 0.8 x peak",
+   "recomputed": 120.0,
+   "reported": 120.0,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June baseline sc mass = ledger sum",
+   "recomputed": 1826.0845282956018,
+   "reported": 1826.0845282956016,
+   "abs_diff": 2.2737367544323206e-13,
+   "passed": true
+  },
+  {
+   "check": "June baseline launch = N x sc + 2000",
+   "recomputed": 85999.88830159768,
+   "reported": 85999.88830159768,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June array area = full peak input / BOL flux",
+   "recomputed": 519.7912978753732,
+   "reported": 519.7912978753732,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June array inherited eratio scaling",
+   "recomputed": 502.2689879485641,
+   "reported": 502.2689879485641,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June harness inherited eratio scaling",
+   "recomputed": 23.14974446888446,
+   "reported": 23.14974446888446,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June power_electronics inherited eratio scaling",
+   "recomputed": 45.14406497140749,
+   "reported": 45.14406497140749,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June adopted peak battery zero",
+   "recomputed": 0,
+   "reported": 0.0,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June safe-mode battery retained",
+   "recomputed": 31.25,
+   "reported": 31.25,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June EOL deficit on grown array",
+   "recomputed": 9970.636675845417,
+   "reported": 9970.636675845417,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal rejected heat W",
+   "recomputed": 133411.62682717727,
+   "reported": 133411.62682717727,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal radiator rise K = 20 Q/IT",
+   "recomputed": 22.235271137862878,
+   "reported": 22.235271137862878,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal GPU = supply + 10 + 1.7 load 14.22",
+   "recomputed": 389.5019376270041,
+   "reported": 389.5019376270041,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal HBM = supply + 10 + 18 load",
+   "recomputed": 384.5627376270041,
+   "reported": 384.5627376270041,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June nominal inlet = supply + rise",
+   "recomputed": 382.398008764867,
+   "reported": 382.398008764867,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June peak rejected heat W",
+   "recomputed": 166177.2779307568,
+   "reported": 166177.2779307568,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June peak radiator rise K = 20 Q/IT",
+   "recomputed": 22.156970390767572,
+   "reported": 22.156970390767572,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June peak GPU = supply + 10 + 1.7 load 14.22",
+   "recomputed": 415.4667070633308,
+   "reported": 415.4667070633308,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June peak HBM = supply + 10 + 18 load",
+   "recomputed": 409.2927070633308,
+   "reported": 409.2927070633308,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June peak inlet = supply + rise",
+   "recomputed": 403.4496774540984,
+   "reported": 403.4496774540984,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June Al radiator inherited areal ratio",
+   "recomputed": 141.89049904973984,
+   "reported": 141.89049904973984,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June reserve kg/sc = reserve / N",
+   "recomputed": 271.390934823718,
+   "reported": 271.390934823718,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June freeze hardware kg",
+   "recomputed": 65.66124527320639,
+   "reported": 65.66124527320639,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June accumulator kg = (kg/L NB2F2) x dV",
+   "recomputed": 7.2414852732063935,
+   "reported": 7.2414852732063935,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June final sc mass = ledger sum",
+   "recomputed": 1859.0438477849777,
+   "reported": 1859.0438477849777,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June final launch = N x sc + 2000",
+   "recomputed": 87516.01699810897,
+   "reported": 87516.01699810897,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June headroom = 100000 - launch",
+   "recomputed": 12483.983001891029,
+   "reported": 12483.983001891029,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June added lines = array-distribution growth + coolant swap + propellant",
+   "recomputed": 32.95931948937596,
+   "reported": 32.95931948937593,
+   "abs_diff": 2.842170943040401e-14,
+   "passed": true
+  },
+  {
+   "check": "June coolant line = baseline + swap delta",
+   "recomputed": 204.50596360709588,
+   "reported": 204.50596360709588,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June propellant delta with larger ram area",
+   "recomputed": 0.7231973881443636,
+   "reported": 0.7231973881443565,
+   "abs_diff": 7.105427357601002e-15,
+   "passed": true
+  },
+  {
+   "check": "June area increment vs v2",
+   "recomputed": 15.93620176400583,
+   "reported": 15.93620176400583,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June wing extension = area increment / 28",
+   "recomputed": 0.5691500630002082,
+   "reported": 0.5691500630002082,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June EOL additional array area (not adopted)",
+   "recomputed": 33.17816794949189,
+   "reported": 33.17816794949189,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June added downtime h/yr",
+   "recomputed": 112.20733333333332,
+   "reported": 112.20733333333332,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "June trunk PNP = exp(-N)",
+   "recomputed": 0.9513864676800017,
+   "reported": 0.9513864676800017,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August installed peak MW = N x kW",
+   "recomputed": 7.5,
+   "reported": 7.5,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal IT MW = N x kW",
+   "recomputed": 5.25,
+   "reported": 5.25,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal = 0.7 x peak",
+   "recomputed": 175.0,
+   "reported": 175.0,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August baseline sc mass = ledger sum",
+   "recomputed": 2875.381000688958,
+   "reported": 2875.381000688958,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August baseline launch = N x sc + 2000",
+   "recomputed": 88261.43002066875,
+   "reported": 88261.43002066875,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August array area = full peak input / BOL flux",
+   "recomputed": 861.753452057126,
+   "reported": 861.753452057126,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August array inherited eratio scaling",
+   "recomputed": 835.1355773900347,
+   "reported": 835.1355773900347,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August harness inherited eratio scaling",
+   "recomputed": 38.38984290157675,
+   "reported": 38.38984290157675,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August power_electronics inherited eratio scaling",
+   "recomputed": 63.32630861952156,
+   "reported": 63.32630861952156,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August adopted peak battery zero",
+   "recomputed": 0,
+   "reported": 0.0,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August safe-mode battery retained",
+   "recomputed": 31.25,
+   "reported": 31.25,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August EOL deficit on grown array",
+   "recomputed": 16530.154717359805,
+   "reported": 16530.154717359805,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal rejected heat W",
+   "recomputed": 193969.38901727955,
+   "reported": 193969.38901727955,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal radiator rise K = 20 Q/IT",
+   "recomputed": 22.167930173403377,
+   "reported": 22.167930173403377,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal GPU = supply + 10 + 1.7 load 14.22",
+   "recomputed": 366.1597290275484,
+   "reported": 366.1597290275484,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal HBM = supply + 10 + 18 load",
+   "recomputed": 361.8379290275484,
+   "reported": 361.8379290275484,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August nominal inlet = supply + rise",
+   "recomputed": 361.40585920095174,
+   "reported": 361.40585920095174,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August peak rejected heat W",
+   "recomputed": 275502.57862266316,
+   "reported": 275502.57862266316,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August peak radiator rise K = 20 Q/IT",
+   "recomputed": 22.040206289813053,
+   "reported": 22.040206289813053,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August peak GPU = supply + 10 + 1.7 load 14.22",
+   "recomputed": 404.03915704444614,
+   "reported": 404.03915704444614,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August peak HBM = supply + 10 + 18 load",
+   "recomputed": 397.86515704444616,
+   "reported": 397.86515704444616,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August peak inlet = supply + rise",
+   "recomputed": 391.9053633342592,
+   "reported": 391.9053633342592,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August exact fin sheet + circular tube annulus + fluid wet mass",
+   "recomputed": 290.5424372372027,
+   "reported": 290.5424372372027,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August tube geometry closes panel width",
+   "recomputed": 0.3634175776637853,
+   "reported": 0.3634175776637853,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August T2_rec_nominal_MPG40_plus_recharge film heat balance",
+   "recomputed": 193969.38901727952,
+   "reported": 193969.38901727955,
+   "abs_diff": 2.9103830456733704e-11,
+   "passed": true
+  },
+  {
+   "check": "August T1_MPG40_peak film heat balance",
+   "recomputed": 275502.5786226631,
+   "reported": 275502.57862266316,
+   "abs_diff": 5.820766091346741e-11,
+   "passed": true
+  },
+  {
+   "check": "August reserve kg/sc = reserve / N",
+   "recomputed": 244.18425537956693,
+   "reported": 244.18425537956693,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August freeze hardware kg",
+   "recomputed": 100.32492807112898,
+   "reported": 100.32492807112897,
+   "abs_diff": 1.4210854715202004e-14,
+   "passed": true
+  },
+  {
+   "check": "August accumulator kg = (kg/L NB2F2) x dV",
+   "recomputed": 14.613966532667428,
+   "reported": 14.613966532667428,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August final sc mass = ledger sum",
+   "recomputed": 3022.4824112870997,
+   "reported": 3022.4824112870997,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August final launch = N x sc + 2000",
+   "recomputed": 92674.47233861299,
+   "reported": 92674.47233861299,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August headroom = 100000 - launch",
+   "recomputed": 7325.527661387008,
+   "reported": 7325.527661387008,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August added lines = array-distribution growth + coolant swap + propellant",
+   "recomputed": 147.10141059814168,
+   "reported": 147.1014105981418,
+   "abs_diff": 1.1368683772161603e-13,
+   "passed": true
+  },
+  {
+   "check": "August coolant line = baseline + swap delta",
+   "recomputed": 346.74742873532784,
+   "reported": 346.74742873532784,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August propellant delta with larger ram area",
+   "recomputed": 3.5223908948464384,
+   "reported": 3.522390894846282,
+   "abs_diff": 1.5631940186722204e-13,
+   "passed": true
+  },
+  {
+   "check": "August area increment vs v2",
+   "recomputed": 21.994958538180413,
+   "reported": 21.994958538180413,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August wing extension = area increment / 28",
+   "recomputed": 0.7855342335064434,
+   "reported": 0.7855342335064434,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August EOL additional array area (not adopted)",
+   "recomputed": 55.00553949300802,
+   "reported": 55.00553949300802,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August added downtime h/yr",
+   "recomputed": 136.318,
+   "reported": 136.318,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "August trunk PNP = exp(-N)",
+   "recomputed": 0.9509650023884613,
+   "reported": 0.9509650023884613,
+   "abs_diff": 0.0,
+   "passed": true
+  },
+  {
+   "check": "eclipse mean = shadow h x 60 / n",
+   "recomputed": 16.950275581116703,
+   "reported": 16.950275581116703,
+   "abs_diff": 0.0,
+   "passed": true
+  }
+ ]
+}

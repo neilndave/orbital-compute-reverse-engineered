@@ -1,0 +1,588 @@
+{
+  "diagnostic_only": true,
+  "adopted": false,
+  "provider": {
+    "Tmin": 173.15,
+    "Tmax": 373.15,
+    "out_of_range_error": "Your temperature 391.941285 is not between 173.150000 and 373.150000.",
+    "psat_unavailable": "Saturation pressure is not available below TminPsat=373.15 K (T=373.15 K)"
+  },
+  "manufacturer_sources": [
+    "sources/DOWFROST_PRIMARY.pdf p2",
+    "sources/DOWFROST_ENGLISH_MIRROR.pdf pp3-4",
+    "sources/DOWFROST_GUIDE.pdf pp12-13 and35"
+  ],
+  "concentration_basis": "CoolPropMPG0.4 is40mass%rawPG. Manufacturer table40mass%PG corresponds39.6volume%PG at reference basis. DOWFROST is inhibited, not identical rawMPG;39.6vol interpolation is an explicitly approximate comparison,40vol bounds conversion sensitivity.",
+  "interpolation": "Piecewise linear cp,rho,k; log-linear mu vsT; concentration interpolation30..40vol. All operating evaluations within10..120C. Linear-mu variant quantifies interpolation sensitivity. Tables are typical values, not sales specifications.",
+  "no_extrapolation": true,
+  "pressure": {
+    "peak_C": 118.79128455633384,
+    "approx_manufacturer_vapor_pressure_kPa_abs": 169.1523916147783,
+    "manufacturer_minimum_above_vapor_kPa": 35.0,
+    "required_local_pressure_kPa_abs": 204.1523916147783,
+    "assumed_property_evaluation_pressure_kPa_abs": 300.0,
+    "not_a_specified_loop_pressure": true
+  },
+  "manufacturer_limitations": [
+    "TDS recommended bulk up to120C; older guide121C. Peak118.791C is inside both, with little margin; CoolProp100Cfit limit is not itself chemical service limit.",
+    "Guidefilm149C andfilm-to-bulk<=28K; no coldplate wall/film qualification provided.",
+    "Closed system above66C to limit oxidation; inhibitor and coolant composition, oxygen ingress andwater quality require specification.",
+    "Guide explicitly does NOT recommend aluminum above66C because inhibitors do not fully protect it. Existing wetAl6061 radiator therefore NOT qualified by choosing DOWFROST property tables. No material/coolant substitution adopted.",
+    "At40mass%PG atmospheric boiling~103.9C, so119C requires pressure.300kPa property input is NOT established minimum circuit pressure orNPSH.",
+    "Manufacturer product freeze range is concentration dependent;240K is below40%mixture freezing. No liquid-only extrapolation to240K orvalidated frozen accumulator/slush update is claimed."
+  ],
+  "cases": [
+    {
+      "name": "retained_MPG40_clamp",
+      "states": {
+        "nominal": {
+          "radiator_film": {
+            "delta_K": 1.2856449510580104,
+            "Re": 4469.413222640441,
+            "Nu": 38.06995834237627,
+            "h_W_m2K": 2378.642429819183,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 337.98801228853176,
+          "load_fraction": 0.7,
+          "IT_kW": 175.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "rho": 994.5237927778285,
+            "cp": 3883.8941351324906,
+            "mu": 0.0009355697318319232,
+            "k": 0.43736577957324296
+          },
+          "pump_electric_W": 1541.1523933753003,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 194066.46999279922,
+          "radiator_delta_K": 22.179025142034195,
+          "coolant_supply_K": 339.2736572395898,
+          "coolant_rack_mean_K": 349.2736572395898,
+          "coolant_radiator_inlet_K": 361.452682381624,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.2528935381760893,
+          "inventory": {
+            "fluid_rack": 52.90020174350151,
+            "fluid_trunk": 4.618431753260981,
+            "hdr_fluid": 134.135053379236,
+            "panel_fluid": 110.44689788888644,
+            "mu_ratio": 2.338924329579808,
+            "Vdot_L_s": 2.2652987837359606
+          },
+          "BOL_margin_W": 81436.10862986394
+        },
+        "reference227": {
+          "radiator_film": {
+            "delta_K": 1.0004486829046833,
+            "Re": 8208.391390505041,
+            "Nu": 61.08903939659643,
+            "h_W_m2K": 3945.4004143175175,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 360.12781367029766,
+          "load_fraction": 0.908,
+          "IT_kW": 227.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "rho": 978.1365738628637,
+            "cp": 3950.5577070588843,
+            "mu": 0.0006496289914257295,
+            "k": 0.45209096710336144
+          },
+          "pump_electric_W": 1448.574566956958,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 250487.58105104015,
+          "radiator_delta_K": 22.0693904009727,
+          "coolant_supply_K": 361.12826235320233,
+          "coolant_rack_mean_K": 371.12826235320233,
+          "coolant_radiator_inlet_K": 383.197652754175,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.873012076173382,
+          "inventory": {
+            "fluid_rack": 67.48845053704258,
+            "fluid_trunk": 5.889674756155433,
+            "hdr_fluid": 131.9248493601281,
+            "panel_fluid": 108.62701433524252,
+            "mu_ratio": 1.6240724785643235,
+            "Vdot_L_s": 2.9372299870428757
+          },
+          "BOL_margin_W": 25014.99757162301
+        },
+        "target250": {
+          "radiator_film": {
+            "delta_K": 0.9865188982174443,
+            "Re": 9330.132156766307,
+            "Nu": 67.95798229445991,
+            "h_W_m2K": 4402.188391981634,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 368.9070135837606,
+          "load_fraction": 1.0,
+          "IT_kW": 250.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "rho": 976.621131596789,
+            "cp": 3956.6572744954833,
+            "mu": 0.0006284631056964889,
+            "k": 0.4534466401658245
+          },
+          "pump_electric_W": 1549.1488550912047,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 275596.900929447,
+          "radiator_delta_K": 22.04775207435576,
+          "coolant_supply_K": 369.89353248197807,
+          "coolant_rack_mean_K": 379.89353248197807,
+          "coolant_radiator_inlet_K": 391.9412845563338,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 3.1592324360703907,
+          "inventory": {
+            "fluid_rack": 74.21133218820584,
+            "fluid_trunk": 6.4764264939443,
+            "hdr_fluid": 131.7204561311986,
+            "panel_fluid": 108.4587168058791,
+            "mu_ratio": 1.5711577642412222,
+            "Vdot_L_s": 3.2348597975808717
+          },
+          "BOL_margin_W": -94.32230678381165
+        }
+      },
+      "limited_BOL_payload_kW": 249.91375173303186,
+      "calibrated_loop_mass_kg": 350.3510180868935,
+      "calibration_detail": {
+        "raw": 522.4185689145991,
+        "scale": 0.8465362713254532,
+        "credit": 91.89524931325055,
+        "props_at_K": 372.0
+      },
+      "full_spacecraft_mass": null,
+      "scope": "Operating-state and calibrated-loop sensitivity only; no new freeze/slush/accumulator/whole-ledger or MC result claimed for alternative formulation."
+    },
+    {
+      "name": "Dow39p6vol_logmu",
+      "states": {
+        "nominal": {
+          "radiator_film": {
+            "delta_K": 1.3176928170987525,
+            "Re": 4383.635698742456,
+            "Nu": 37.73400286288668,
+            "h_W_m2K": 2320.9406666177474,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 337.99261444101126,
+          "load_fraction": 0.7,
+          "IT_kW": 175.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3891.6822284952477,
+            "rho": 1000.8588288278414,
+            "k": 0.4305555582152027,
+            "mu": 0.0009519677364794809
+          },
+          "pump_electric_W": 1552.6664448575602,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 194078.9852661495,
+          "radiator_delta_K": 22.180455458988515,
+          "coolant_supply_K": 339.31030725811,
+          "coolant_rack_mean_K": 349.31030725811,
+          "coolant_radiator_inlet_K": 361.4907627170985,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.2483850135377734,
+          "inventory": {
+            "fluid_rack": 53.23717174616178,
+            "fluid_trunk": 4.609189277752434,
+            "hdr_fluid": 134.9894828105867,
+            "panel_fluid": 111.15043568739793,
+            "mu_ratio": 2.3799193411987023,
+            "Vdot_L_s": 2.2464556926284756
+          },
+          "BOL_margin_W": 81423.59335651365
+        },
+        "reference227": {
+          "radiator_film": {
+            "delta_K": 1.0468254058610178,
+            "Re": 7951.688794891497,
+            "Nu": 60.97243102499206,
+            "h_W_m2K": 3771.0143641446552,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 360.13628217047864,
+          "load_fraction": 0.908,
+          "IT_kW": 227.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3963.647170685159,
+            "rho": 982.4410149748343,
+            "k": 0.4329350184215658,
+            "mu": 0.0006683862414457339
+          },
+          "pump_electric_W": 1473.2703359667626,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 250514.42427822473,
+          "radiator_delta_K": 22.071755443015395,
+          "coolant_supply_K": 361.18310757633964,
+          "coolant_rack_mean_K": 371.18310757633964,
+          "coolant_radiator_inlet_K": 383.254863019355,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.863524302552397,
+          "inventory": {
+            "fluid_rack": 67.78544389036092,
+            "fluid_trunk": 5.870224820232414,
+            "hdr_fluid": 132.50540504166617,
+            "panel_fluid": 109.10504429431937,
+            "mu_ratio": 1.6709656036143348,
+            "Vdot_L_s": 2.914703538334815
+          },
+          "BOL_margin_W": 24988.15434443843
+        },
+        "target250": {
+          "radiator_film": {
+            "delta_K": 0.993646525317411,
+            "Re": 9714.653493033087,
+            "Nu": 70.73463076123143,
+            "h_W_m2K": 4369.350431045818,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 368.8833933835583,
+          "load_fraction": 1.0,
+          "IT_kW": 250.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3992.1400845346243,
+            "rho": 974.3394293404197,
+            "k": 0.4323971538151316,
+            "mu": 0.0005982227556559574
+          },
+          "pump_electric_W": 1476.0432126459013,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 275517.4382746151,
+          "radiator_delta_K": 22.041395061969205,
+          "coolant_supply_K": 369.8770399088757,
+          "coolant_rack_mean_K": 379.8770399088757,
+          "coolant_radiator_inlet_K": 391.9184349708449,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 3.1311526487821535,
+          "inventory": {
+            "fluid_rack": 74.03795055778265,
+            "fluid_trunk": 6.418862930003415,
+            "hdr_fluid": 131.41271462096407,
+            "panel_fluid": 108.20532222854256,
+            "mu_ratio": 1.4955568891398936,
+            "Vdot_L_s": 3.213615865778717
+          },
+          "BOL_margin_W": -14.859651951934211
+        }
+      },
+      "limited_BOL_payload_kW": 249.98633004151475,
+      "calibrated_loop_mass_kg": 352.1539675215129,
+      "calibration_detail": {
+        "raw": 525.0144555295693,
+        "scale": 0.8465362713254532,
+        "credit": 92.28981205445167,
+        "props_at_K": 372.0
+      },
+      "full_spacecraft_mass": null,
+      "scope": "Operating-state and calibrated-loop sensitivity only; no new freeze/slush/accumulator/whole-ledger or MC result claimed for alternative formulation."
+    },
+    {
+      "name": "Dow40vol_logmu",
+      "states": {
+        "nominal": {
+          "radiator_film": {
+            "delta_K": 1.3287679878359722,
+            "Re": 4353.484514208471,
+            "Nu": 37.60343949104834,
+            "h_W_m2K": 2301.7602617719353,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 337.9977131684598,
+          "load_fraction": 0.7,
+          "IT_kW": 175.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3887.1059166644136,
+            "rho": 1001.0482271089711,
+            "k": 0.42848000210829534,
+            "mu": 0.000959689354698992
+          },
+          "pump_electric_W": 1565.4235427946196,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 194092.85167695067,
+          "radiator_delta_K": 22.182040191651506,
+          "coolant_supply_K": 339.3264811562958,
+          "coolant_rack_mean_K": 349.3264811562958,
+          "coolant_radiator_inlet_K": 361.5085213479473,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.25103204995981,
+          "inventory": {
+            "fluid_rack": 53.247246122817614,
+            "fluid_trunk": 4.61461570241761,
+            "hdr_fluid": 135.0150276479589,
+            "panel_fluid": 111.17146932456998,
+            "mu_ratio": 2.39922338674748,
+            "Vdot_L_s": 2.2486749279410785
+          },
+          "BOL_margin_W": 81409.7269457125
+        },
+        "reference227": {
+          "radiator_film": {
+            "delta_K": 1.0539015978331117,
+            "Re": 7902.499565149702,
+            "Nu": 60.86729036339348,
+            "h_W_m2K": 3745.864880227903,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 360.13987241673016,
+          "load_fraction": 0.908,
+          "IT_kW": 227.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3959.544453672251,
+            "rho": 982.5871152333689,
+            "k": 0.4307905609901285,
+            "mu": 0.0006732434869882455
+          },
+          "pump_electric_W": 1483.7408012391643,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 250525.8052187382,
+          "radiator_delta_K": 22.072758169051827,
+          "coolant_supply_K": 361.19377401456325,
+          "coolant_rack_mean_K": 371.19377401456325,
+          "coolant_radiator_inlet_K": 383.2665321836151,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.8664913685900215,
+          "inventory": {
+            "fluid_rack": 67.79552436412607,
+            "fluid_trunk": 5.876307305609543,
+            "hdr_fluid": 132.5251101167177,
+            "panel_fluid": 109.12126946706344,
+            "mu_ratio": 1.6831087174706139,
+            "Vdot_L_s": 2.91728979970312
+          },
+          "BOL_margin_W": 24976.773403924948
+        },
+        "target250": {
+          "radiator_film": {
+            "delta_K": 0.9999800561953072,
+            "Re": 9656.77371256647,
+            "Nu": 70.6417941850584,
+            "h_W_m2K": 4341.846669238613,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 368.8866042993983,
+          "load_fraction": 1.0,
+          "IT_kW": 250.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3988.2307273970123,
+            "rho": 974.4680304882396,
+            "k": 0.4302400163428856,
+            "mu": 0.0006023982284990269
+          },
+          "pump_electric_W": 1485.9801899474407,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 275528.23933689937,
+          "radiator_delta_K": 22.042259146951952,
+          "coolant_supply_K": 369.8865843555936,
+          "coolant_rack_mean_K": 379.8865843555936,
+          "coolant_radiator_inlet_K": 391.92884350254553,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 3.1342218779198716,
+          "inventory": {
+            "fluid_rack": 74.04772268147717,
+            "fluid_trunk": 6.425154849735738,
+            "hdr_fluid": 131.43005952709171,
+            "panel_fluid": 108.21960403652425,
+            "mu_ratio": 1.505995571247567,
+            "Vdot_L_s": 3.2163414087063753
+          },
+          "BOL_margin_W": -25.660714236204512
+        }
+      },
+      "limited_BOL_payload_kW": 249.97639319279628,
+      "calibrated_loop_mass_kg": 352.56674059143177,
+      "calibration_detail": {
+        "raw": 525.5191958898743,
+        "scale": 0.8465362713254532,
+        "credit": 92.30432000713279,
+        "props_at_K": 372.0
+      },
+      "full_spacecraft_mass": null,
+      "scope": "Operating-state and calibrated-loop sensitivity only; no new freeze/slush/accumulator/whole-ledger or MC result claimed for alternative formulation."
+    },
+    {
+      "name": "Dow39p6vol_linear_mu",
+      "states": {
+        "nominal": {
+          "radiator_film": {
+            "delta_K": 1.3421041583992281,
+            "Re": 4278.798214456358,
+            "Nu": 37.05400673483472,
+            "h_W_m2K": 2279.1572428492354,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 338.0061377349133,
+          "load_fraction": 0.7,
+          "IT_kW": 175.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3891.8073217189008,
+            "rho": 1000.8288641147966,
+            "k": 0.4305634425479307,
+            "mu": 0.0009752611388643362
+          },
+          "pump_electric_W": 1586.5034947205463,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 194115.7646681745,
+          "radiator_delta_K": 22.184658819219944,
+          "coolant_supply_K": 339.34824189331255,
+          "coolant_rack_mean_K": 349.34824189331255,
+          "coolant_radiator_inlet_K": 361.53290071253247,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.248312744356361,
+          "inventory": {
+            "fluid_rack": 53.23557787844663,
+            "fluid_trunk": 4.609041125930538,
+            "hdr_fluid": 134.9854413603842,
+            "panel_fluid": 111.14710795444074,
+            "mu_ratio": 2.4381528471608402,
+            "Vdot_L_s": 2.2464507419507
+          },
+          "BOL_margin_W": 81386.81395448867
+        },
+        "reference227": {
+          "radiator_film": {
+            "delta_K": 1.0549987217024819,
+            "Re": 7846.344784426567,
+            "Nu": 60.50462368410216,
+            "h_W_m2K": 3742.0740098806373,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 360.14208075825144,
+          "load_fraction": 0.908,
+          "IT_kW": 227.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3963.692961447245,
+            "rho": 982.4279949733608,
+            "k": 0.4329341540231277,
+            "mu": 0.000677352083459987
+          },
+          "pump_electric_W": 1490.1813123642396,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 250532.80577430894,
+          "radiator_delta_K": 22.07337495808889,
+          "coolant_supply_K": 361.1970794799539,
+          "coolant_rack_mean_K": 371.1970794799539,
+          "coolant_radiator_inlet_K": 383.2704544380428,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 2.8634912215440185,
+          "inventory": {
+            "fluid_rack": 67.78454554983372,
+            "fluid_trunk": 5.870157004165238,
+            "hdr_fluid": 132.5036489865518,
+            "panel_fluid": 109.10359835729534,
+            "mu_ratio": 1.6933802086499674,
+            "Vdot_L_s": 2.9147084938491234
+          },
+          "BOL_margin_W": 24969.772848354216
+        },
+        "target250": {
+          "radiator_film": {
+            "delta_K": 1.0034693119515572,
+            "Re": 9541.186572715453,
+            "Nu": 70.04863896975661,
+            "h_W_m2K": 4326.965414364588,
+            "internal_area_m2": 63.46003337243706,
+            "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+          },
+          "fin_root_supply_K": 368.89069661522984,
+          "load_fraction": 1.0,
+          "IT_kW": 250.0,
+          "fluid": "MPG40",
+          "fluid_props": {
+            "cp": 3992.196212192667,
+            "rho": 974.3234701784152,
+            "k": 0.4323960942857039,
+            "mu": 0.000609090392720359
+          },
+          "pump_electric_W": 1498.6453163772755,
+          "extra_heat_W": 0.0,
+          "F_scale": 1.0,
+          "dR_plate_KW": 0.0,
+          "total_solar_power_and_rejected_heat_W": 275542.00577867095,
+          "radiator_delta_K": 22.043360462293677,
+          "coolant_supply_K": 369.8941659271814,
+          "coolant_rack_mean_K": 379.8941659271814,
+          "coolant_radiator_inlet_K": 391.93752638947507,
+          "effective_emissivity": 0.8826716274313522,
+          "effective_radiation_sink_K": 186.12019403387507,
+          "mass_flow_kg_s": 3.1311086268313755,
+          "inventory": {
+            "fluid_rack": 74.03673785550266,
+            "fluid_trunk": 6.418772685004317,
+            "hdr_fluid": 131.41056215054263,
+            "panel_fluid": 108.2035498828741,
+            "mu_ratio": 1.5227259818008974,
+            "Vdot_L_s": 3.213623321891257
+          },
+          "BOL_margin_W": -39.42715600779047
+        }
+      },
+      "limited_BOL_payload_kW": 249.96372685446548,
+      "calibrated_loop_mass_kg": 352.8033201301913,
+      "calibration_detail": {
+        "raw": 525.7815255662279,
+        "scale": 0.8465362713254532,
+        "credit": 92.28981205445167,
+        "props_at_K": 372.0
+      },
+      "full_spacecraft_mass": null,
+      "scope": "Operating-state and calibrated-loop sensitivity only; no new freeze/slush/accumulator/whole-ledger or MC result claimed for alternative formulation."
+    }
+  ]
+}

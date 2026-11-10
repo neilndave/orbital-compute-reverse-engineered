@@ -1,0 +1,915 @@
+{
+ "doc": "SPIN1 thermal rerun (box CPU, scipy brentq; same model as the frozen baseline's operating(): v2: Al6061 26/0.225 Warp fin table (fin_v2.py), area factor 1.0 (was F3_L40_t0p5 / K13D 0.9913), 0.44 K MC margin,\npmad 0.92, aux 2 kW, rack rise 20 K at the load, radiator rise = 20 K x Q/IT). Knobs added (defaults reproduce the frozen baseline exactly):\n  fluid: 'water_proxy' (rho 978, cp 4180, mu 4e-4 = baseline CT.G) or 'MPG40' (CoolProp INCOMP::MPG[0.4] at the rack-mean temperature, iterated);\n         MPG40 hydraulic penalty: rack and column dp scaled by mu_MPG40/mu_model (laminar-conservative, ASSUMED), trunk via Re (CT.cool);\n  extra_heat_W: added heat into the main radiator (battery-recharge PMAD loss);  F_scale: emission view multiplier (bumper ridge blockage).\nPlate resistance 14.22 K/kW and HBM 18 K/load-fraction are unchanged (inherited).",
+ "cases": {
+  "June": {
+   "T0_baseline_nominal": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 359.9900261785471,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 493.20005192314727,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 133144.78266513385,
+    "radiator_delta_K": 22.19079711085564,
+    "coolant_supply_K": 359.9900261785471,
+    "coolant_rack_mean_K": 369.9900261785471,
+    "coolant_radiator_inlet_K": 382.1808232894027,
+    "GPU_K": 389.3292261785471,
+    "HBM_K": 384.3900261785471,
+    "effective_emissivity": 0.8919908588528411,
+    "effective_radiation_sink_K": 185.63214687303105,
+    "mass_flow_kg_s": 1.4354066985645932,
+    "inventory": {
+     "fluid_rack": 35.671732522796354,
+     "fluid_trunk": 2.942583732057416,
+     "hdr_fluid": 72.54853602965463,
+     "panel_fluid": 7.739926935596487,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 1.4676960108022428
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T0_baseline_peak": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 381.12530275178113,
+    "load_fraction": 1.0,
+    "IT_kW": 150.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 613.3941347472963,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 165884.1240595079,
+    "radiator_delta_K": 22.117883207934387,
+    "coolant_supply_K": 381.12530275178113,
+    "coolant_rack_mean_K": 391.12530275178113,
+    "coolant_radiator_inlet_K": 403.2431859597155,
+    "GPU_K": 415.2993027517811,
+    "HBM_K": 409.12530275178113,
+    "effective_emissivity": 0.8919908588528411,
+    "effective_radiation_sink_K": 185.63214687303105,
+    "mass_flow_kg_s": 1.7942583732057416,
+    "inventory": {
+     "fluid_rack": 44.58966565349544,
+     "fluid_trunk": 3.67822966507177,
+     "hdr_fluid": 72.54853602965463,
+     "panel_fluid": 7.739926935596487,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 1.8346200135028032
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T0_check_GPU_diff_K": [
+    0.0,
+    0.0
+   ],
+   "T0_check_Q_diff_W": [
+    0.0,
+    0.0
+   ],
+   "geometry_v3": {
+    "radiator_panels": 77,
+    "radiator_face_area_m2": 81.62815837399467,
+    "radiator_columns": 8,
+    "fin": {
+     "id": "AL6061_L26_t0p225",
+     "alloy": "Al 6061-T6",
+     "half_length_m": 0.026,
+     "thickness_m": 0.000225,
+     "k_W_mK": 167.0,
+     "rho_kg_m3": 2700.0,
+     "bondline": false,
+     "tube_pitch_mm": 60.0
+    }
+   },
+   "coolant_line_water_kg": 195.4238841679267,
+   "coolant_line_MPG40_kg": 206.81247886336777,
+   "coolant_line_delta_kg": 11.388594695441071,
+   "coolant_line_baseline_kg": 195.4238841679267,
+   "coolant_detail": {
+    "raw": 250.77946056736528,
+    "scale": 0.8509273907720318,
+    "credit": 6.582633176438007,
+    "props_at_K": 372.0
+   },
+   "T0_scenario_new_geometry": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 360.00063244511836,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 493.20005192314727,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 133144.78266513385,
+    "radiator_delta_K": 22.19079711085564,
+    "coolant_supply_K": 360.00063244511836,
+    "coolant_rack_mean_K": 370.00063244511836,
+    "coolant_radiator_inlet_K": 382.19142955597397,
+    "GPU_K": 389.33983244511836,
+    "HBM_K": 384.40063244511833,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.4354066985645932,
+    "inventory": {
+     "fluid_rack": 35.671732522796354,
+     "fluid_trunk": 2.942583732057416,
+     "hdr_fluid": 72.54853602965463,
+     "panel_fluid": 7.739926935596487,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 1.4676960108022428
+    },
+    "coolant_colder_than_chips": true
+   },
+   "array_v3_view_factor_delta": 0.00011423481252858386,
+   "T1_MPG40_nominal": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 360.19203639346654,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 978.8390985618192,
+     "cp": 3947.729234779718,
+     "mu": 0.0006596337265081491,
+     "k": 0.4514625922896052
+    },
+    "pump_electric_W": 783.1071861681187,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 133459.89911540013,
+    "radiator_delta_K": 22.243316519233357,
+    "coolant_supply_K": 360.19203639346654,
+    "coolant_rack_mean_K": 370.19203639346654,
+    "coolant_radiator_inlet_K": 382.4353529126999,
+    "GPU_K": 389.53123639346654,
+    "HBM_K": 384.5920363934665,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.519861075359389,
+    "inventory": {
+     "fluid_rack": 35.70233794146453,
+     "fluid_trunk": 3.115715204486746,
+     "hdr_fluid": 72.61078078655092,
+     "panel_fluid": 7.746567591588557,
+     "mu_ratio": 1.6490843162703726,
+     "Vdot_L_s": 1.5527179876574997
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T1_MPG40_peak": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 381.323311271388,
+    "load_fraction": 1.0,
+    "IT_kW": 150.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 935.9685974990724,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 166234.74847554247,
+    "radiator_delta_K": 22.164633130072332,
+    "coolant_supply_K": 381.323311271388,
+    "coolant_rack_mean_K": 391.323311271388,
+    "coolant_radiator_inlet_K": 403.4879444014603,
+    "GPU_K": 415.49731127138796,
+    "HBM_K": 409.323311271388,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.8955394616422345,
+    "inventory": {
+     "fluid_rack": 44.526799312923515,
+     "fluid_trunk": 3.88585589636658,
+     "hdr_fluid": 72.44625087215923,
+     "panel_fluid": 7.72901452179827,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 1.940915878548523
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T2_rec_nominal_MPG40_plus_recharge": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 360.19203639346654,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 978.8390985618192,
+     "cp": 3947.729234779718,
+     "mu": 0.0006596337265081491,
+     "k": 0.4514625922896052
+    },
+    "pump_electric_W": 783.1071861681187,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 133459.89911540013,
+    "radiator_delta_K": 22.243316519233357,
+    "coolant_supply_K": 360.19203639346654,
+    "coolant_rack_mean_K": 370.19203639346654,
+    "coolant_radiator_inlet_K": 382.4353529126999,
+    "GPU_K": 389.53123639346654,
+    "HBM_K": 384.5920363934665,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.519861075359389,
+    "inventory": {
+     "fluid_rack": 35.70233794146453,
+     "fluid_trunk": 3.115715204486746,
+     "hdr_fluid": 72.61078078655092,
+     "panel_fluid": 7.746567591588557,
+     "mu_ratio": 1.6490843162703726,
+     "Vdot_L_s": 1.5527179876574997
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T2_rec_peak_MPG40": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 381.323311271388,
+    "load_fraction": 1.0,
+    "IT_kW": 150.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 935.9685974990724,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 166234.74847554247,
+    "radiator_delta_K": 22.164633130072332,
+    "coolant_supply_K": 381.323311271388,
+    "coolant_rack_mean_K": 391.323311271388,
+    "coolant_radiator_inlet_K": 403.4879444014603,
+    "GPU_K": 415.49731127138796,
+    "HBM_K": 409.323311271388,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.8955394616422345,
+    "inventory": {
+     "fluid_rack": 44.526799312923515,
+     "fluid_trunk": 3.88585589636658,
+     "hdr_fluid": 72.44625087215923,
+     "panel_fluid": 7.72901452179827,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 1.940915878548523
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T4_sens_header_protected_nominal": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 365.50697883993803,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 751.6131223883958,
+    "extra_heat_W": 0.0,
+    "F_scale": 0.943380959252936,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 133425.66643737868,
+    "radiator_delta_K": 22.237611072896446,
+    "coolant_supply_K": 365.50697883993803,
+    "coolant_rack_mean_K": 375.50697883993803,
+    "coolant_radiator_inlet_K": 387.7445899128345,
+    "GPU_K": 394.84617883993803,
+    "HBM_K": 389.906978839938,
+    "effective_emissivity": 0.8413889184811894,
+    "effective_radiation_sink_K": 188.36234624193847,
+    "mass_flow_kg_s": 1.5164315693137875,
+    "inventory": {
+     "fluid_rack": 35.621439450338805,
+     "fluid_trunk": 3.1086847170932645,
+     "hdr_fluid": 72.44625087215923,
+     "panel_fluid": 7.72901452179827,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 1.5527327028388185
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T4_sens_header_protected_peak": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 386.94218086502303,
+    "load_fraction": 1.0,
+    "IT_kW": 150.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 935.9685974990724,
+    "extra_heat_W": 0.0,
+    "F_scale": 0.943380959252936,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 166234.74847554247,
+    "radiator_delta_K": 22.164633130072332,
+    "coolant_supply_K": 386.94218086502303,
+    "coolant_rack_mean_K": 396.94218086502303,
+    "coolant_radiator_inlet_K": 409.10681399509537,
+    "GPU_K": 421.116180865023,
+    "HBM_K": 414.94218086502303,
+    "effective_emissivity": 0.8413889184811894,
+    "effective_radiation_sink_K": 188.36234624193847,
+    "mass_flow_kg_s": 1.8955394616422345,
+    "inventory": {
+     "fluid_rack": 44.526799312923515,
+     "fluid_trunk": 3.88585589636658,
+     "hdr_fluid": 72.44625087215923,
+     "panel_fluid": 7.72901452179827,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 1.940915878548523
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T5_sens_film_dR_KW": 3.5386173045948177,
+   "T5_sens_film_nominal": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 360.19203639346654,
+    "load_fraction": 0.8,
+    "IT_kW": 120.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 978.8390985618192,
+     "cp": 3947.729234779718,
+     "mu": 0.0006596337265081491,
+     "k": 0.4514625922896052
+    },
+    "pump_electric_W": 783.1071861681187,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 3.5386173045948177,
+    "total_solar_power_and_rejected_heat_W": 133459.89911540013,
+    "radiator_delta_K": 22.243316519233357,
+    "coolant_supply_K": 360.19203639346654,
+    "coolant_rack_mean_K": 370.19203639346654,
+    "coolant_radiator_inlet_K": 382.4353529126999,
+    "GPU_K": 394.3437559277155,
+    "HBM_K": 384.5920363934665,
+    "effective_emissivity": 0.8918866871634613,
+    "effective_radiation_sink_K": 185.63756705916484,
+    "mass_flow_kg_s": 1.519861075359389,
+    "inventory": {
+     "fluid_rack": 35.70233794146453,
+     "fluid_trunk": 3.115715204486746,
+     "hdr_fluid": 72.61078078655092,
+     "panel_fluid": 7.746567591588557,
+     "mu_ratio": 1.6490843162703726,
+     "Vdot_L_s": 1.5527179876574997
+    },
+    "coolant_colder_than_chips": true
+   }
+  },
+  "August": {
+   "T0_baseline_nominal": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 348.66208072265897,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 713.4026155406368,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 193166.7419734137,
+    "radiator_delta_K": 22.076199082675853,
+    "coolant_supply_K": 348.66208072265897,
+    "coolant_rack_mean_K": 358.66208072265897,
+    "coolant_radiator_inlet_K": 370.7382798053348,
+    "GPU_K": 375.583880722659,
+    "HBM_K": 371.262080722659,
+    "effective_emissivity": 0.8808900326405731,
+    "effective_radiation_sink_K": 186.2142294872348,
+    "mass_flow_kg_s": 2.0933014354066986,
+    "inventory": {
+     "fluid_rack": 52.02127659574468,
+     "fluid_trunk": 4.2912679425837315,
+     "hdr_fluid": 120.60016378955575,
+     "panel_fluid": 12.86637204878377,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 2.1403900157532703
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T0_baseline_peak": {
+    "radiator_film": {
+     "delta_K": 0.0,
+     "Re": 0.0,
+     "Nu": 0.0,
+     "h_W_m2K": 0.0
+    },
+    "fin_root_supply_K": 381.85568573910126,
+    "load_fraction": 1.0,
+    "IT_kW": 250.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 1012.8697302684923,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 275013.98883724835,
+    "radiator_delta_K": 22.001119106979868,
+    "coolant_supply_K": 381.85568573910126,
+    "coolant_rack_mean_K": 391.85568573910126,
+    "coolant_radiator_inlet_K": 403.8568048460811,
+    "GPU_K": 416.02968573910124,
+    "HBM_K": 409.85568573910126,
+    "effective_emissivity": 0.8808900326405731,
+    "effective_radiation_sink_K": 186.2142294872348,
+    "mass_flow_kg_s": 2.9904306220095696,
+    "inventory": {
+     "fluid_rack": 74.3161094224924,
+     "fluid_trunk": 6.130382775119617,
+     "hdr_fluid": 120.60016378955575,
+     "panel_fluid": 12.86637204878377,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 3.057700022504672
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T0_check_GPU_diff_K": [
+    0.0,
+    0.0
+   ],
+   "T0_check_Q_diff_W": [
+    0.0,
+    0.0
+   ],
+   "geometry_v3": {
+    "radiator_panels": 140,
+    "radiator_face_area_m2": 149.81671588642948,
+    "radiator_columns": 14,
+    "fin": {
+     "NT": 7,
+     "fin_id": "AL6061_V3_AUG",
+     "fluid_geometry": "round",
+     "half_length_m": 0.021958398404556094,
+     "panel_length_m": 2.9446,
+     "panel_width_m": 0.3634175776637853,
+     "radiator_film": true,
+     "source": "Final once-only GB10 lock/gpu/SWEEP_GB10_GPU.json verifies the owner-approved NVIDIA-selected hardware",
+     "table_rel": "inputs/ai1_replica/gb10_final_al/table_AL6061_V3_AUG.json",
+     "thickness_m": 0.0002587301587301587,
+     "tube_ID_m": 0.007,
+     "tube_OD_m": 0.008
+    }
+   },
+   "radiator_wet_mass_kg": 290.5424372372027,
+   "radiator_mass_reference_fluid_density_kg_m3": 992.4927459322697,
+   "coolant_line_water_kg": 313.66814938033656,
+   "coolant_line_MPG40_kg": 350.3510180868935,
+   "coolant_line_delta_kg": 36.68286870655692,
+   "coolant_line_baseline_kg": 313.66814938033656,
+   "coolant_detail": {
+    "raw": 522.4185689145991,
+    "scale": 0.8465362713254532,
+    "credit": 91.89524931325055,
+    "props_at_K": 372.0
+   },
+   "T0_scenario_new_geometry": {
+    "radiator_film": {
+     "delta_K": 0.6577441591812048,
+     "Re": 9713.098274820288,
+     "Nu": 53.99105927364441,
+     "h_W_m2K": 4627.805080598092,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 337.65655618839605,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "water_proxy",
+    "fluid_props": {
+     "rho": 978.0,
+     "cp": 4180.0,
+     "mu": 0.0004
+    },
+    "pump_electric_W": 713.4026155406366,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 193166.7419734137,
+    "radiator_delta_K": 22.076199082675853,
+    "coolant_supply_K": 338.3143003475773,
+    "coolant_rack_mean_K": 348.3143003475773,
+    "coolant_radiator_inlet_K": 360.3904994302531,
+    "GPU_K": 365.2361003475773,
+    "HBM_K": 360.9143003475773,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 2.0933014354066986,
+    "inventory": {
+     "fluid_rack": 52.02127659574468,
+     "fluid_trunk": 4.2912679425837315,
+     "hdr_fluid": 131.9064291448266,
+     "panel_fluid": 108.61184711692604,
+     "mu_ratio": 1.0,
+     "Vdot_L_s": 2.1403900157532703
+    },
+    "coolant_colder_than_chips": true
+   },
+   "array_v3_view_factor_delta": -0.0019536992069371442,
+   "T1_MPG40_nominal": {
+    "radiator_film": {
+     "delta_K": 1.2856449510580104,
+     "Re": 4469.413222640441,
+     "Nu": 38.06995834237627,
+     "h_W_m2K": 2378.642429819183,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 337.98801228853176,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 994.5237927778285,
+     "cp": 3883.8941351324906,
+     "mu": 0.0009355697318319232,
+     "k": 0.43736577957324296
+    },
+    "pump_electric_W": 1541.1523933753003,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 194066.46999279922,
+    "radiator_delta_K": 22.179025142034195,
+    "coolant_supply_K": 339.2736572395898,
+    "coolant_rack_mean_K": 349.2736572395898,
+    "coolant_radiator_inlet_K": 361.452682381624,
+    "GPU_K": 366.1954572395898,
+    "HBM_K": 361.8736572395898,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 2.2528935381760893,
+    "inventory": {
+     "fluid_rack": 52.90020174350151,
+     "fluid_trunk": 4.618431753260981,
+     "hdr_fluid": 134.135053379236,
+     "panel_fluid": 110.44689788888644,
+     "mu_ratio": 2.338924329579808,
+     "Vdot_L_s": 2.2652987837359606
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T1_MPG40_peak": {
+    "radiator_film": {
+     "delta_K": 0.9865188982174443,
+     "Re": 9330.132156766307,
+     "Nu": 67.95798229445991,
+     "h_W_m2K": 4402.188391981634,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 368.9070135837606,
+    "load_fraction": 1.0,
+    "IT_kW": 250.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 1549.1488550912047,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 275596.900929447,
+    "radiator_delta_K": 22.04775207435576,
+    "coolant_supply_K": 369.89353248197807,
+    "coolant_rack_mean_K": 379.89353248197807,
+    "coolant_radiator_inlet_K": 391.9412845563338,
+    "GPU_K": 404.06753248197805,
+    "HBM_K": 397.89353248197807,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 3.1592324360703907,
+    "inventory": {
+     "fluid_rack": 74.21133218820584,
+     "fluid_trunk": 6.4764264939443,
+     "hdr_fluid": 131.7204561311986,
+     "panel_fluid": 108.4587168058791,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 3.2348597975808717
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T2_rec_nominal_MPG40_plus_recharge": {
+    "radiator_film": {
+     "delta_K": 1.2856449510580104,
+     "Re": 4469.413222640441,
+     "Nu": 38.06995834237627,
+     "h_W_m2K": 2378.642429819183,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 337.98801228853176,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 994.5237927778285,
+     "cp": 3883.8941351324906,
+     "mu": 0.0009355697318319232,
+     "k": 0.43736577957324296
+    },
+    "pump_electric_W": 1541.1523933753003,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 194066.46999279922,
+    "radiator_delta_K": 22.179025142034195,
+    "coolant_supply_K": 339.2736572395898,
+    "coolant_rack_mean_K": 349.2736572395898,
+    "coolant_radiator_inlet_K": 361.452682381624,
+    "GPU_K": 366.1954572395898,
+    "HBM_K": 361.8736572395898,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 2.2528935381760893,
+    "inventory": {
+     "fluid_rack": 52.90020174350151,
+     "fluid_trunk": 4.618431753260981,
+     "hdr_fluid": 134.135053379236,
+     "panel_fluid": 110.44689788888644,
+     "mu_ratio": 2.338924329579808,
+     "Vdot_L_s": 2.2652987837359606
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T2_rec_peak_MPG40": {
+    "radiator_film": {
+     "delta_K": 0.9865188982174443,
+     "Re": 9330.132156766307,
+     "Nu": 67.95798229445991,
+     "h_W_m2K": 4402.188391981634,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 368.9070135837606,
+    "load_fraction": 1.0,
+    "IT_kW": 250.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 1549.1488550912047,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 275596.900929447,
+    "radiator_delta_K": 22.04775207435576,
+    "coolant_supply_K": 369.89353248197807,
+    "coolant_rack_mean_K": 379.89353248197807,
+    "coolant_radiator_inlet_K": 391.9412845563338,
+    "GPU_K": 404.06753248197805,
+    "HBM_K": 397.89353248197807,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 3.1592324360703907,
+    "inventory": {
+     "fluid_rack": 74.21133218820584,
+     "fluid_trunk": 6.4764264939443,
+     "hdr_fluid": 131.7204561311986,
+     "panel_fluid": 108.4587168058791,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 3.2348597975808717
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T4_sens_header_protected_nominal": {
+    "radiator_film": {
+     "delta_K": 1.2011813634145492,
+     "Re": 4872.183202405377,
+     "Nu": 40.39585596300945,
+     "h_W_m2K": 2544.2050036624787,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 343.26905122770097,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 990.646558092491,
+     "cp": 3899.8655863195436,
+     "mu": 0.0008547139790656748,
+     "k": 0.440872822250517
+    },
+    "pump_electric_W": 1422.1676515460042,
+    "extra_heat_W": 0.0,
+    "F_scale": 0.9405477175757616,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 193937.13875168044,
+    "radiator_delta_K": 22.16424442876348,
+    "coolant_supply_K": 344.4702325911155,
+    "coolant_rack_mean_K": 354.4702325911155,
+    "coolant_radiator_inlet_K": 366.634477019879,
+    "GPU_K": 371.39203259111554,
+    "HBM_K": 367.07023259111554,
+    "effective_emissivity": 0.8301947845494413,
+    "effective_radiation_sink_K": 188.99411807526207,
+    "mass_flow_kg_s": 2.243667071679185,
+    "inventory": {
+     "fluid_rack": 52.69396585598356,
+     "fluid_trunk": 4.599517496942329,
+     "hdr_fluid": 133.61211658751893,
+     "panel_fluid": 110.01631136446893,
+     "mu_ratio": 2.1367849476641867,
+     "Vdot_L_s": 2.2648512260512055
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T4_sens_header_protected_peak": {
+    "radiator_film": {
+     "delta_K": 0.9865188982174443,
+     "Re": 9330.132156766307,
+     "Nu": 67.95798229445991,
+     "h_W_m2K": 4402.188391981634,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 374.68916750215425,
+    "load_fraction": 1.0,
+    "IT_kW": 250.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 976.621131596789,
+     "cp": 3956.6572744954833,
+     "mu": 0.0006284631056964889,
+     "k": 0.4534466401658245
+    },
+    "pump_electric_W": 1549.1488550912047,
+    "extra_heat_W": 0.0,
+    "F_scale": 0.9405477175757616,
+    "dR_plate_KW": 0.0,
+    "total_solar_power_and_rejected_heat_W": 275596.900929447,
+    "radiator_delta_K": 22.04775207435576,
+    "coolant_supply_K": 375.6756864003717,
+    "coolant_rack_mean_K": 385.6756864003717,
+    "coolant_radiator_inlet_K": 397.72343847472746,
+    "GPU_K": 409.8496864003717,
+    "HBM_K": 403.6756864003717,
+    "effective_emissivity": 0.8301947845494413,
+    "effective_radiation_sink_K": 188.99411807526207,
+    "mass_flow_kg_s": 3.1592324360703907,
+    "inventory": {
+     "fluid_rack": 74.21133218820584,
+     "fluid_trunk": 6.4764264939443,
+     "hdr_fluid": 131.7204561311986,
+     "panel_fluid": 108.4587168058791,
+     "mu_ratio": 1.5711577642412222,
+     "Vdot_L_s": 3.2348597975808717
+    },
+    "coolant_colder_than_chips": true
+   },
+   "T5_sens_film_dR_KW": 3.691913941192105,
+   "T5_sens_film_nominal": {
+    "radiator_film": {
+     "delta_K": 1.2856449510580104,
+     "Re": 4469.413222640441,
+     "Nu": 38.06995834237627,
+     "h_W_m2K": 2378.642429819183,
+     "internal_area_m2": 63.46003337243706,
+     "model": "Gnielinski/laminar transition, circular 8/7-mm tubes; engineering correlation"
+    },
+    "fin_root_supply_K": 337.98801228853176,
+    "load_fraction": 0.7,
+    "IT_kW": 175.0,
+    "fluid": "MPG40",
+    "fluid_props": {
+     "rho": 994.5237927778285,
+     "cp": 3883.8941351324906,
+     "mu": 0.0009355697318319232,
+     "k": 0.43736577957324296
+    },
+    "pump_electric_W": 1541.1523933753003,
+    "extra_heat_W": 0.0,
+    "F_scale": 1.0,
+    "dR_plate_KW": 3.691913941192105,
+    "total_solar_power_and_rejected_heat_W": 194066.46999279922,
+    "radiator_delta_K": 22.179025142034195,
+    "coolant_supply_K": 339.2736572395898,
+    "coolant_rack_mean_K": 349.2736572395898,
+    "coolant_radiator_inlet_K": 361.452682381624,
+    "GPU_K": 370.5888348296084,
+    "HBM_K": 361.8736572395898,
+    "effective_emissivity": 0.8826716274313522,
+    "effective_radiation_sink_K": 186.12019403387507,
+    "mass_flow_kg_s": 2.2528935381760893,
+    "inventory": {
+     "fluid_rack": 52.90020174350151,
+     "fluid_trunk": 4.618431753260981,
+     "hdr_fluid": 134.135053379236,
+     "panel_fluid": 110.44689788888644,
+     "mu_ratio": 2.338924329579808,
+     "Vdot_L_s": 2.2652987837359606
+    },
+    "coolant_colder_than_chips": true
+   }
+  }
+ }
+}

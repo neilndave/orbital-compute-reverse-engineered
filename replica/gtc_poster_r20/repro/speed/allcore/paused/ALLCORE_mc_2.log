@@ -1,0 +1,161 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.85 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.84 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.33 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.32 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.36 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.39 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.39 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.20 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.43 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.46 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.48 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 1.26 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.87 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.86 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.86 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.84 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.86 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.90 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.86 ms  (cached)
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     <HOME>/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.93 ms  (cached)
+{"stage": "mc", "mode": "allcore", "workers": 20, "chunk_rows": 8192, "kernel_wall_seconds": 0.26931867306120694, "cores": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], "P_inlet_le_393": 0.4166250228881836, "warp": "1.18.0", "numpy": "2.5.4", "machine": "aarch64", "kernel_sha256": "cb07f775bcc65c2a82972119225fbe82e3c3319804f8ede45c30def3b5b8bb13", "time_unix": 1794228402.53356}

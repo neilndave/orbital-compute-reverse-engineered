@@ -1,0 +1,84 @@
+{
+  "array_view_parity": [
+    {
+      "case": "August",
+      "max_abs_difference": 2.7755575615628914e-17,
+      "passed": true,
+      "points": 420
+    }
+  ],
+  "columns": [
+    "total_heat_W",
+    "radiator_delta_K",
+    "coolant_supply_K",
+    "coolant_rack_mean_K",
+    "GPU_K",
+    "HBM_K",
+    "coolant_radiator_inlet_K",
+    "sc_mass_kg",
+    "launch_kg",
+    "energy_residual_W"
+  ],
+  "configuration_sha256": "444c8ab1755434c3b3a26aa9e2051207ee2c82713bc693541bc78fda19bc6b2f",
+  "device": "cuda:0",
+  "device_name": "NVIDIA GB10",
+  "fin_lookup_sha256": "ad608623b3cd719dd21c27a91c687c10cf89816d11643c70c793b0702f6ca20f",
+  "geometry_wall_seconds": 0.0014020550297573209,
+  "label": "Native NVIDIA Warp GB10 fp64 FINAL-CANDIDATE thermal-root and mass parity",
+  "machine": "aarch64",
+  "max_abs_difference": 1.4551915228366852e-11,
+  "passed": true,
+  "qualification_claim": false,
+  "rows": [
+    {
+      "case": "August_FINAL_nominal_T2",
+      "max_absolute_box_difference": 1.4551915228366852e-11,
+      "values": [
+        193969.38901727955,
+        22.167930173403377,
+        339.2379290275484,
+        349.2379290275484,
+        366.1597290275484,
+        361.8379290275484,
+        361.40585920095174,
+        3022.4824112871,
+        92674.472338613,
+        0.0
+      ]
+    },
+    {
+      "case": "August_FINAL_peak_T1",
+      "max_absolute_box_difference": 1.4551915228366852e-11,
+      "values": [
+        275502.57862266316,
+        22.040206289813053,
+        369.86515704444616,
+        379.86515704444616,
+        404.03915704444614,
+        397.86515704444616,
+        391.9053633342592,
+        3022.4824112871,
+        92674.472338613,
+        0.0
+      ]
+    }
+  ],
+  "scope": "Native NVIDIA Warp CUDA fp64 parity for the GTC FINAL CANDIDATE (independent GPU re-solve of every poster temperature root and the mass rollup). Derived from SPIN1: same inherited fin-table thermal root as the frozen baseline parity kernel, plus explicit extra radiator heat\n(battery-recharge loss), film dR, and the SPIN1 rollup ledger. Final August adopted states only: T2 nominal (zero peak-recharge heat), T1 MPG40 peak. Legacy comparison/sensitivity states are excluded. Not qualification.",
+  "script_sha256": "172daf4f0682d6a492c26393108373358739c5d6cc76c0b9df479376e2f68fd0",
+  "thermal_kernel_warm_median_seconds": 0.00018105702474713326,
+  "thermal_kernel_warm_seconds": [
+    0.00020920392125844955,
+    0.0001836660085245967,
+    0.00018105702474713326,
+    0.00017973000649362803,
+    0.00017932907212525606
+  ],
+  "thermal_sha256": "8b9f413ac7e4fcf17161b7e5b3939713ed73d66b00448811df9537ac3d5af783",
+  "tolerance": 1e-06,
+  "tool_versions": {
+    "numpy": "2.5.4",
+    "warp": "1.18.0"
+  },
+  "wall_seconds": 0.002656698226928711,
+  "warp_version": "1.18.0"
+}

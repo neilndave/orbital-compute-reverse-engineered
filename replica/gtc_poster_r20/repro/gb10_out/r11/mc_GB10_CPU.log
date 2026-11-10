@@ -1,0 +1,9 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "aarch64"
+     "cuda:0"   : "NVIDIA GB10" (120 GiB, sm_121, mempool enabled)
+   Kernel cache:
+     ~/.cache/warp/1.18.0
+Module gpu_core 0ee3d50 load on device 'cpu' took 0.88 ms  (cached)
+MC_GB10_CPU.json {"draws": 1048576, "P_inlet_le_393": 0.4166250228881836, "P_GPU_le_370": 0.6490974426269531, "kernel_seconds": 3.792313776910305, "throughput_draws_per_second": 276500.3271576071, "passed": true}
